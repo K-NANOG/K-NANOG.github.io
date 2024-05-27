@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="/css/vercelled.css" />
+  <link rel="icon" href="/img/jellyfish.svg" />
+</head>
+<style>
+  #text {
+    font-family: "FOT-Rodin Pro L", serif;
+    display: inline-block;
+    transition: opacity 0.1s ease-in-out;
+    color: rgb(255, 255, 255);
+  }
+
+  .green {
+    color: rgb(86, 191, 82);
+  }
+
+  .red {
+    color: rgb(238, 75, 43);
+  }
+
+  .blue {
+    color: rgb(0, 71, 171);
+  }
+
+  .yellow {
+    color: rgb(253, 218, 13);
+  }
+
+  .white {
+    color: rgb(255, 255, 255);
+  }
+
+  .grey-dot {
+    color: #949494;
+  }
+</style>
+
+<body>
+  <header class="header" style="background-color: rgb(0, 0, 0)">
+    <div class="logo">
+      <a href="/index.html">Kenan.⌬ggad</a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/html/about.html" style="
+                background-color: white;
+                color: black;
+                border-radius: 4px;
+                padding: 5px 10px;
+              ">About ⬙</a>
+        </li>
+
+        <li><a href="/img/CV.pdf">Resume ⬙</a></li>
+        <li><a href="/html/projects.html">Projects ⬙</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <div style="display: grid; place-items: center">
+    <h1 id="hero-heading" class="hero-heading;" style="margin-top: 120px; font-size: 80px">
+      <span id="text">About.</span>
+    </h1>
+    <!--I'd like a background animation like random dots microarray or just circuitry tree-->
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+    <div style="min-width: 300px; margin-left: 200px">
+      <p style="
+            color: white;
+            font-family: 'FOT-Rodin Pro L';
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+          ">
+        Hey, I'm Kenan, an undergraduate student at Paris-Saclay university
+        majoring in biology and computer science.<br><br> I'm fascinated by synthetic biology,
+        genetic engineering, artificial intelligence and more; here is a
+
+        <a href="/pages/cartography-of-my-interest.html" style="
+              text-decoration: underline;
+              color: inherit;
+              transition: color 0.3s ease-in-out;
+            " onmouseover="this.style.color='cyan'" onmouseout="this.style.color='inherit'"> general cartography</a> of my
+            interests.<br /><br>
+          I have a galaxy of influences but can be described as an
+          <a href="https://en.wikipedia.org/wiki/Extropianism" style="
+                text-decoration: underline;
+                color: inherit;
+                transition: color 0.3s ease-in-out;
+              " onmouseover="this.style.color='mediumslateblue'" onmouseout="this.style.color='inherit'">extropianist</a> &
+          <a href="https://en.wikipedia.org/wiki/Existentialism" style="
+          text-decoration: underline;
+          color: inherit;
+          transition: color 0.3s ease-in-out;
+          " onmouseover="this.style.color='mediumslateblue'" onmouseout="this.style.color='inherit'">existentialist</a>.<br><br>
+          Furthermore <a href="/pages/ArtGallery/index.html" style="
+          text-decoration: underline;
+          color: inherit;
+          transition: color 0.3s ease-in-out;
+          " onmouseover="this.style.color='mediumvioletred'" onmouseout="this.style.color='inherit'">art deeply moves me</a>, as it is often at the root of my every actions.<br><br>I constantly seek beauty and improve myself in the process, 
+          always striving to make the best of the <a href="/pages/time.html" style="
+          text-decoration: underline;
+          color: inherit;
+          transition: color 0.3s ease-in-out;
+          " onmouseover="this.style.color='seagreen'" onmouseout="this.style.color='inherit'">time I have</a>.<br><br>But other than that I'm a pretty chill guy, I'd happy to talk about anything interesting, so feel free to reach out !<br>
+          (My recent readings are also available on 
+          <a href="https://curius.app/zhi-zhang2" style="
+              text-decoration: underline;
+              color: inherit;
+              transition: color 0.3s ease-in-out;
+            " onmouseover="this.style.color='yellow'" onmouseout="this.style.color='inherit'">my Curius</a>.)
+      </p>
+    </div>
+    <div>
+      <img src="/img/png.png" style="width: 70%; height: auto" />
+    </div>
+  </div>
+
+
+</body>
+<script>
+  const text = document.getElementById("text");
+  const characters = ["a", "t", "c", "g"];
+  const aboutText = "About.";
+  const animationInterval = 150; // Faster animation
+  const aboutDelay = 2000;
+
+  let interval;
+  let currentIndex = 0;
+  let isStartingAnimation = true;
+
+  function generateRandomCharacters(count) {
+    let randomText = "";
+    for (let i = 0; i < count; i++) {
+      const randomChar =
+        characters[Math.floor(Math.random() * characters.length)];
+      randomText += `<span class="${randomChar === "a"
+          ? "green"
+          : randomChar === "t"
+            ? "red"
+            : randomChar === "c"
+              ? "blue"
+              : "yellow"
+        }">${randomChar}</span>`;
+    }
+    return randomText;
+  }
+
+  function updateText() {
+    let newText = "";
+
+    if (isStartingAnimation) {
+      newText = generateRandomCharacters(6);
+      isStartingAnimation = false;
+    } else {
+      if (currentIndex < aboutText.length) {
+        newText =
+          aboutText.substring(0, currentIndex + 1) +
+          generateRandomCharacters(aboutText.length - currentIndex - 1);
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+        newText = aboutText
+          .split("")
+          .map((char, index) => {
+            if (index === aboutText.length - 1) {
+              return `<span class="grey-dot">${char}</span>`; // Set the color of the dot to grey
+            } else {
+              return `<span class="white">${char}</span>`;
+            }
+          })
+          .join("");
+      }
+    }
+    text.innerHTML = newText;
+  }
+
+  interval = setInterval(updateText, animationInterval);
+</script>
+
+</html>

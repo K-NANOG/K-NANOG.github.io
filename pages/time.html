@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<style>
+  :root {
+    --rows-per-rect: 10;
+    --cols-per-rect: 26;
+  
+    --color-dark-gray: #333;
+    --color-black: #000;
+    --color-white: #fff;
+    --rect-gap: 10px;
+    --week-gap: 5px;
+    --week-size: 10px;
+  
+    --color-grey: #7a7a7a; /* Added grey color for elapsed cells */
+  }
+  
+  body {
+    background-color: var(--color-black); /* Set page background to black */
+    color: var(--color-white); /* Ensure text is readable on black background */
+  }
+  
+  @page {
+    size: a4 portrait;
+  }
+  
+  @media print {
+    .week-cell {
+      -webkit-print-color-adjust: exact;
+    }
+  }
+  
+  .title {
+    font-size: 50px;
+    margin: 0 0 25px;
+    text-align: center;
+  }
+  
+  .whitespace {
+    height: 30px;
+  }
+  
+  #calendar {
+    display: grid;
+    grid-gap: var(--rect-gap);
+    grid-template-columns: repeat(2, auto);
+    width: 90vw;
+  }
+  
+  @media screen {
+    #calendar {
+      justify-content: center;
+      margin: auto;
+    }
+  }
+  
+  .rect-container {
+    display: grid;
+    grid-gap: var(--week-gap);
+    grid-template-columns: repeat(var(--cols-per-rect), auto);
+  }
+  
+  .week-cell {
+    border: 1px solid var(--color-white); /* Set border color to white */
+    background-color: transparent; /* Set background color to transparent */
+    height: var(--week-size);
+    width: var(--week-size);
+  }
+  
+  .week-cell.filled {
+    border: 1px solid var(--color-grey);
+  }
+</style>
+<head>
+  <meta charset="utf-8" />
+  <title>Time</title>
+  <meta name="author" content="afonsocrg" /> <!--Credit to the initial author-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/vercelled.css">
+  <link rel="icon" href="/img/jellyfish.svg">
+
+
+</head>
+
+<body>
+  <header class="header" style="background: rgba(0, 0, 0, 0.2); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px) saturate(130%); -webkit-backdrop-filter: blur(5px) saturate(130%);">
+    <div class="logo">
+      <a href="/index.html">Kenan.⌬ggad</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/html/about.html">About ⬙</a></li>
+        <li><a href="/img/CV.pdf">Resume ⬙</a></li>
+        <li><a href="/html/projects.html">Projects ⬙</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="content">
+    <div class="whitespace"></div>
+    <!-- Will be filled by javascript later -->
+    <div id="calendar" style="padding-top: 100px;"></div>
+    <div class="whitespace"></div>
+  </div>
+  <div style="text-align: center; font-size: 1.1rem;">I strongly believe that time is invaluable and I always strive to use it wisely.<br>Each little square is a week and a full row is a year, starting from my birthday and going until 60 y/o.<br>
+    Since the 15th of April 2023 (17y/o) I have recorded and reflected on every day, ideally divided into 20min chunks.<br>This kind of stoic disciplin allows me to learn at an increased pace and to set each of my actions in relation to my overarching goals.<br>And everyday I feel grateful to have the chance to live pursuing my dream !<br></div>
+  <script src="time.js"></script>
+  </body>
+
+</html>

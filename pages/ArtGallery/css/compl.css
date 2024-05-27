@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'FOT-Rodin Pro L';
+  src: url('/font/FOT-Rodin\ Pro\ L.otf') format('opentype');
+}
+
+body {
+  font-family: 'FOT-Rodin Pro L';
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+.header {
+  /* background-color: #000000; */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  /* margin: 0 4rem; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-family: 'FOT-Rodin Pro L', Arial, sans-serif;
+  border-bottom: 1px solid #949494;
+  box-sizing: border-box;
+}
+
+.header a {
+
+  color: #707070;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+
+}
+
+
+.header a:hover {
+
+  color: #fff;
+
+}
+
+.logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.text {
+  align-items: center;
+  text-align: center;
+  font-size: large;
+  height: 180px;
+  width: 250px;
+  color: #fff;
+  font-family: 'FOT-Rodin Pro L', Arial, sans-serif;
+  line-height: 1.4;
+}
+.impose {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-decoration-line: underline;
+}
+
+.description {
+  color: darkgrey; /* set text color to dark grey */
+  font-size: small;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+@font-face {
+  font-family: 'FOT-Rodin Pro M';
+  src: url('/font/FOT-Rodin\ Pro\ M.otf') format('opentype');
+}
+@font-face {
+  font-family: 'FOT-Rodin Pro L';
+  src: url('/font/FOT-Rodin\ Pro\ L.otf') format('opentype');
+}
+
+.hero-heading {
+font-family: 'FOT-Rodin Pro L', serif;
+color: #ffffff;
+font-weight: lighter;
+font-size: 160px;
+letter-spacing: -0.07em;
+line-height: 1.168;
+text-align: center;
+width: 545.33px;
+margin-bottom: 0px;
+}
+.underline {
+text-decoration: underline;
+text-decoration-color: #222F5B;
+}
+.grid {
+  display: grid;
+}
+.titlehook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.videobg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+::selection {
+  background: #222F5B;
+}

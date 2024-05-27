@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K:/NANOG.art/👁👁</title>
+    <link>https://example.org/</link>
+    <description>Recent content on K:/NANOG.art/👁👁</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abstrait</title>
+      <link>https://example.org/painting/abstract-based-on-152-artists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/painting/abstract-based-on-152-artists/</guid><media:content url="https://example.org/painting/abstract-based-on-152-artists/feature_hueed03faa1cf07fa06515b3a84cc7b6b0_5316498_900x600_fill_q75_box_smart1.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://example.org/painting/abstract-based-on-152-artists/feature_hueed03faa1cf07fa06515b3a84cc7b6b0_5316498_900x600_fill_q75_box_smart1.jpg&quot; /&gt;
+          &lt;p&gt;Based on the work of 152 artists&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Academique</title>
+      <link>https://example.org/painting/academique-baed-on-92-artit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/painting/academique-baed-on-92-artit/</guid><media:content url="https://example.org/painting/academique-baed-on-92-artit/feature_hue8aa5a1cfd4623248d2f48a5c193ec4c_221272_900x600_fill_q75_box_smart1.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://example.org/painting/academique-baed-on-92-artit/feature_hue8aa5a1cfd4623248d2f48a5c193ec4c_221272_900x600_fill_q75_box_smart1.jpg&quot; /&gt;
+          &lt;p&gt;Based on the work of 92 artists&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Baroque</title>
+      <link>https://example.org/painting/baroque-based-on-158-artists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/painting/baroque-based-on-158-artists/</guid><media:content url="https://example.org/painting/baroque-based-on-158-artists/feature_hue212e06c3199653a01014aed16f72137_238105_900x600_fill_q75_box_smart1.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://example.org/painting/baroque-based-on-158-artists/feature_hue212e06c3199653a01014aed16f72137_238105_900x600_fill_q75_box_smart1.jpg&quot; /&gt;
+          &lt;p&gt;Based on the work of 158 artists&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Minimaliste</title>
+      <link>https://example.org/painting/minimalism-based-on-104-artists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/painting/minimalism-based-on-104-artists/</guid><media:content url="https://example.org/painting/minimalism-based-on-104-artists/feature_hu86b21f63bb1b0cbb094963f0fd6f8054_104004_900x600_fill_q75_box_smart1.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://example.org/painting/minimalism-based-on-104-artists/feature_hu86b21f63bb1b0cbb094963f0fd6f8054_104004_900x600_fill_q75_box_smart1.jpg&quot; /&gt;
+          &lt;p&gt;Based on the work of 104 artists&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Romantique</title>
+      <link>https://example.org/painting/romantique-based-on-280-artists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/painting/romantique-based-on-280-artists/</guid><media:content url="https://example.org/painting/romantique-based-on-280-artists/feature_hu040f7fa99701f1b5e38d16b972e5d93d_159249_900x600_fill_q75_box_smart1.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://example.org/painting/romantique-based-on-280-artists/feature_hu040f7fa99701f1b5e38d16b972e5d93d_159249_900x600_fill_q75_box_smart1.jpg&quot; /&gt;
+          &lt;p&gt;Based on the work of 280 artists&lt;/p&gt;
+        </description></item>
+  </channel>
+</rss>
