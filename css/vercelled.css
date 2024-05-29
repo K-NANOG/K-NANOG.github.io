@@ -25,11 +25,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  /*position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; */
   border-bottom: 1px solid #949494;
   box-sizing: border-box;
 }
@@ -169,6 +164,7 @@ font-size: 10rem;
 letter-spacing: -0.07em;
 line-height: 1.168;
 text-align: center;
+margin-top: 8rem;
 width: 34.08rem;
 margin-bottom: 0px; /*!!!!*/
 }
@@ -177,6 +173,7 @@ margin-bottom: 0px; /*!!!!*/
   .hero-heading {
     font-size: 6rem;
     width: 20rem;
+    margin-top: 6rem;
   }
   .titlehook .hero-description {
     font-size: 1rem;
@@ -192,7 +189,7 @@ margin-bottom: 0px; /*!!!!*/
   color: #777;
  /* font-family: serif;
   font-style: italic;*/
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding-top: 2em; /*!!!!*/
   text-align: center;
 }
@@ -276,7 +273,12 @@ text-decoration-color: #222F5B;
   }
   .bio-text {
     text-align: center;
+    font-size: 1rem;
   }
 }
+.li-elem {
+  font-family: 'FOT-Rodin Pro M';
+}
+
 
 
