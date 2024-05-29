@@ -273,6 +273,9 @@ text-decoration-color: #222F5B;
       width: 100%;
       margin-bottom: 0; 
   }
+  .bio-text {
+    text-align: center;
+  }
 }
 
 
