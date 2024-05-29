@@ -187,8 +187,8 @@ margin-bottom: 0px; /*!!!!*/
 
 .hero-description {
   color: #777;
- /* font-family: serif;
-  font-style: italic;*/
+  /*font-family: serif;*/
+  font-style: italic;
   font-size: 1.2rem;
   padding-top: 2em; /*!!!!*/
   text-align: center;
@@ -197,6 +197,10 @@ margin-bottom: 0px; /*!!!!*/
 .underline {
 text-decoration: underline;
 text-decoration-color: #222F5B;
+}
+.underoverline {
+  text-decoration:#222F5B underline;
+  text-decoration-thickness: 3px;
 }
 
 .titlehook {
