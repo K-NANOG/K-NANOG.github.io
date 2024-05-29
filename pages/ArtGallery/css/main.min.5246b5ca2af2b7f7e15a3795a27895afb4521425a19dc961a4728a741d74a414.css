@@ -139,32 +139,7 @@ body {
   background-color: var(--surface-1);
   color: var(--text-1);
 }
-body > header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  width: 100%;
-  min-height: 4rem;
-}
-body > header ul {
-  display: inline-flex;
-}
-body > header .btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  height: 3rem;
-  font-size: 1.25rem;
-  user-select: none;
-}
-body > header .btn-square {
-  padding: 0;
-  width: 3rem;
-}
+
 body > menu {
   margin: 3rem auto 4rem;
   padding-right: 1.5rem;
@@ -304,6 +279,7 @@ section.gallery {
   transform: scaleX(101%) scaleY(101%);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(255, 255, 255);
 }
 .card > div {
   display: flex;

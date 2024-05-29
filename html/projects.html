@@ -6,24 +6,57 @@
   <title>Projects</title>
   <link rel="stylesheet" href="/css/vercelled.css">
   <link rel="icon" href="/img/jellyfish.svg">
+  <style>
+    #text {
+      font-family: "FOT-Rodin Pro L", serif;
+      display: inline-block;
+      transition: opacity 0.1s ease-in-out;
+      color: rgb(255, 255, 255);
+    }
+
+    .green {
+      color: rgb(86, 191, 82);
+    }
+
+    .red {
+      color: rgb(238, 75, 43);
+    }
+
+    .blue {
+      color: rgb(0, 71, 171);
+    }
+
+    .yellow {
+      color: rgb(253, 218, 13);
+    }
+
+    .white {
+      color: rgb(255, 255, 255);
+    }
+
+    .grey-dot {
+      color: #949494;
+    }
+  </style>
 </head>
 <body>
-  <header class="header", style="background-color: rgb(0, 0, 0)">
+  <header class="header" style="background-color: rgb(0, 0, 0)">
     <div class="logo">
       <a href="/index.html">Kenan.⌬ggad</a>
     </div>
     <nav>
       <ul>
-        <li><a href="/html/about.html">About ⬙</a></li>
-        <li><a href="/img/CV.pdf">Resume ⬙</a></li>
-        <li><a href="/html/projects.html" style="background-color: white; color:black; border-radius: 4px; padding: 5px 10px;">Projects ⬙</a></li>
-
+        <li><a href="/html/about.html">⬙ About</a></li>
+        <li><a href="/img/CV.pdf">⬙ Resume</a></li>
+        <li><a href="/html/projects.html" style="background-color: white; color: black; border-radius: 4px; padding: 5px 10px;">⬙ Projects</a></li>
       </ul>
     </nav>
   </header>
-  <div style="display: grid; place-items: center;">
-    <h1 class="hero-heading" style="margin-top: 120px; font-size: 100px;">Projects.</h1>
-  </div>  
+  <div class="grid">
+    <h1 class="title-page">
+      <span id="text">Projects.</span>
+    </h1>
+  </div>
   <div class="cards">
     <article class="card">
       <img src="/img/among-the-ruins-1904.jpg">
@@ -68,12 +101,70 @@
       </div>
     </article>
   </div>
-  <!-- <div class="sidebar" >
+  <!-- <div class="sidebar">
     <div>
       <ul>
         <li><a href="https://github.com/K-NANOG">Filtrer par:</a></li>
       </ul>
     </div>
   </div> -->
+  <script>
+    const text = document.getElementById("text");
+    const characters = ["a", "t", "c", "g"];
+    const projectsText = "Projects.";
+    const animationInterval = 100; // Faster animation
+
+    let interval;
+    let currentIndex = 0;
+    let isStartingAnimation = true;
+
+    function generateRandomCharacters(count) {
+      let randomText = "";
+      for (let i = 0; i < count; i++) {
+        const randomChar =
+          characters[Math.floor(Math.random() * characters.length)];
+        randomText += `<span class="${randomChar === "a"
+            ? "green"
+            : randomChar === "t"
+              ? "red"
+              : randomChar === "c"
+                ? "blue"
+                : "yellow"
+          }">${randomChar}</span>`;
+      }
+      return randomText;
+    }
+
+    function updateText() {
+      let newText = "";
+
+      if (isStartingAnimation) {
+        newText = generateRandomCharacters(projectsText.length);
+        isStartingAnimation = false;
+      } else {
+        if (currentIndex < projectsText.length) {
+          newText =
+            projectsText.substring(0, currentIndex + 1) +
+            generateRandomCharacters(projectsText.length - currentIndex - 1);
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+          newText = projectsText
+            .split("")
+            .map((char, index) => {
+              if (index === projectsText.length - 1) {
+                return `<span class="grey-dot">${char}</span>`; // Set the color of the dot to grey
+              } else {
+                return `<span class="white">${char}</span>`;
+              }
+            })
+            .join("");
+        }
+      }
+      text.innerHTML = newText;
+    }
+
+    interval = setInterval(updateText, animationInterval);
+  </script>
 </body>
 </html>
