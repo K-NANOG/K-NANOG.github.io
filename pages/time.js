@@ -8,6 +8,11 @@ const numDecades = Math.floor(life_expectancy / 10);
 populate_calendar(numDecades);
 fill_calendar("23/05/2006");
 
+window.addEventListener('resize', () => {
+    adjust_week_size();
+    reload_calendar();
+});
+
 /**
  * Fill every week, counting from the given bday
  * bday format: dd/mm/yyyy
@@ -106,6 +111,25 @@ function spawn_cell() {
  */
 function get_css_variable(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+/**
+ * Adjust week size based on screen width
+ */
+function adjust_week_size() {
+    const isMobile = window.innerWidth <= 768;
+    document.documentElement.style.setProperty('--week-size', isMobile ? '5px' : '10px');
+}
+
+/**
+ * Reload calendar layout
+ */
+function reload_calendar() {
+    while (calendar.firstChild) {
+        calendar.removeChild(calendar.firstChild);
+    }
+    populate_calendar(numDecades);
+    fill_calendar("23/05/2006");
 }
 
 document.getElementById("downloadBtn").addEventListener("click", () => {

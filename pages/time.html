@@ -1,86 +1,99 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<style>
-  :root {
-    --rows-per-rect: 10;
-    --cols-per-rect: 26;
-  
-    --color-dark-gray: #333;
-    --color-black: #000;
-    --color-white: #fff;
-    --rect-gap: 10px;
-    --week-gap: 5px;
-    --week-size: 10px;
-  
-    --color-grey: #7a7a7a; /* Added grey color for elapsed cells */
-  }
-  
-  body {
-    background-color: var(--color-black); /* Set page background to black */
-    color: var(--color-white); /* Ensure text is readable on black background */
-  }
-  
-  @page {
-    size: a4 portrait;
-  }
-  
-  @media print {
-    .week-cell {
-      -webkit-print-color-adjust: exact;
-    }
-  }
-  
-  .title {
-    font-size: 50px;
-    margin: 0 0 25px;
-    text-align: center;
-  }
-  
-  .whitespace {
-    height: 30px;
-  }
-  
-  #calendar {
-    display: grid;
-    grid-gap: var(--rect-gap);
-    grid-template-columns: repeat(2, auto);
-    width: 90vw;
-  }
-  
-  @media screen {
-    #calendar {
-      justify-content: center;
-      margin: auto;
-    }
-  }
-  
-  .rect-container {
-    display: grid;
-    grid-gap: var(--week-gap);
-    grid-template-columns: repeat(var(--cols-per-rect), auto);
-  }
-  
-  .week-cell {
-    border: 1px solid var(--color-white); /* Set border color to white */
-    background-color: transparent; /* Set background color to transparent */
-    height: var(--week-size);
-    width: var(--week-size);
-  }
-  
-  .week-cell.filled {
-    border: 1px solid var(--color-grey);
-  }
-</style>
 <head>
   <meta charset="utf-8" />
   <title>Time</title>
-  <meta name="author" content="afonsocrg" /> <!--Credit to the initial author-->
+  <meta name="author" content="afonsocrg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/vercelled.css">
   <link rel="icon" href="/img/jellyfish.svg">
-
-
+  <style>
+    :root {
+      --rows-per-rect: 10;
+      --cols-per-rect: 26;
+      --color-dark-gray: #333;
+      --color-black: #000;
+      --color-white: #fff;
+      --rect-gap: 10px;
+      --week-gap: 5px;
+      --week-size: 10px;
+      --color-grey: #7a7a7a;
+    }
+    
+    body {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+    
+    @page {
+      size: a4 portrait;
+    }
+    
+    @media print {
+      .week-cell {
+        -webkit-print-color-adjust: exact;
+      }
+    }
+    
+    .title {
+      font-size: 50px;
+      margin: 0 0 25px;
+      text-align: center;
+    }
+    
+    .whitespace {
+      height: 30px;
+    }
+    
+    #calendar {
+      display: grid;
+      grid-gap: var(--rect-gap);
+      grid-template-columns: repeat(2, auto);
+      width: 90vw;
+    }
+    
+    @media screen {
+      #calendar {
+        justify-content: center;
+        margin: auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      :root {
+        --week-size: 5px; /* Smaller week size for mobile */
+      }
+      #calendar {
+        grid-template-columns: repeat(1, auto);
+        width: 100vw;
+      }
+      .rect-container-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .rect-container {
+        margin: var(--rect-gap);
+      }
+    }
+    
+    .rect-container {
+      display: grid;
+      grid-gap: var(--week-gap);
+      grid-template-columns: repeat(var(--cols-per-rect), auto);
+    }
+    
+    .week-cell {
+      border: 1px solid var(--color-white);
+      background-color: transparent;
+      height: var(--week-size);
+      width: var(--week-size);
+    }
+    
+    .week-cell.filled {
+      border: 1px solid var(--color-grey);
+    }
+  </style>
 </head>
 
 <body>
@@ -96,16 +109,24 @@
         <li><a href="/index.html">Home</a></li>
       </ul>
     </nav>
-</header>
+  </header>
+  
   <div class="content">
     <div class="whitespace"></div>
-    <!-- Will be filled by javascript later -->
-    <div id="calendar" style="padding-top: 100px;"></div>
+    <div id="calendar"></div>
     <div class="whitespace"></div>
   </div>
-  <div style="text-align: center; font-size: 1.125rem">I strongly believe that time is invaluable and I always strive to use it wisely.<br>Each little square is a week and a full row is a year, starting from my birthday and going until 60 y/o.<br><br>
-    Since the 15th of April 2023 (17y/o) I have recorded and reflected on every day, ideally divided into 20min chunks.<br>This kind of stoic disciplin allows me to learn at an increased pace and to set each of my actions in relation to my overarching goals.<br><br>Everyday I feel grateful to have the chance to live pursuing my dream !<br></div>
-  <script src="time.js"></script>
-  </body>
+  
+  <div class="bio-text" style="text-align: center;">
+    I strongly believe that time is invaluable and I always strive to use it wisely.<br>
+    Each cell represents a week and a block's row is half a year, starting from birth and going until 60 y/o.<br><br>
 
+    Starting from April 15th, 2023 (at 17), I've been recording and reflecting on each day, always aiming to find areas for improvement.<br><br>
+    
+    This kind of stoic disciplin allows me to learn at an increased pace and to set each of my actions in relation to my overarching goals.<br><br>
+    Everyday I feel grateful to have the chance to live pursuing my dreams!<br>
+  </div>
+  
+  <script src="time.js"></script>
+</body>
 </html>
