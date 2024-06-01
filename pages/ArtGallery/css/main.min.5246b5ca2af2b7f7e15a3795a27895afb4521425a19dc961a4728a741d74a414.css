@@ -8,6 +8,10 @@
   font-family: 'FOT-Rodin Pro L';
   src: url('/font/FOT-Rodin\ Pro\ L.otf') format('opentype');
 }
+@font-face {
+  font-family: 'Noto';
+  src: url('/pages/ArtGallery/font/static/NotoEmoji-Light.ttf') format('opentype');
+}
 html {
   line-height: 1.5;
   font-family: 'FOT-Rodin Pro L';
@@ -771,4 +775,13 @@ div.pswp__img--placeholder,
   bottom: 0;
   top: auto !important;
   left: 0 !important;
+}
+.emoji {
+  font-family: 'FOT-Rodin Pro L';
+}
+@media screen and (max-width: 600px) {
+  .emoji {
+    font-family: 'Noto';
+  }
+
 }
