@@ -292,10 +292,5 @@ text-decoration-color: #222F5B;
 a.no-underline {
   text-decoration: none;
 }
-@media (min-width: 1930px) {
-  .hero-heading {
-    margin-top: 0;
-  }
-}
 
 
