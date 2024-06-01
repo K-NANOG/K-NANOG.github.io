@@ -289,6 +289,13 @@ text-decoration-color: #222F5B;
 .li-elem {
   font-family: 'FOT-Rodin Pro M';
 }
-
+a.no-underline {
+  text-decoration: none;
+}
+@media (max-width: 1920px) {
+  .hero-heading {
+    margin-top: 0;
+  }
+}
 
 
