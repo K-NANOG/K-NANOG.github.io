@@ -183,6 +183,20 @@ margin-bottom: 0px; /*!!!!*/
 .hero-heading-life {
   font-family: serif;
   font-style: italic;
+  opacity: 0;
+  animation: fadeIn 4s forwards; 
+  animation-delay: 1s;
+}
+.hero-heading-science {
+  opacity: 0;
+  animation: fadeIn 4s forwards; 
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Ending opacity set to 1 */
+  }
 }
 
 .hero-description {
@@ -192,6 +206,21 @@ margin-bottom: 0px; /*!!!!*/
   font-size: 1.2rem;
   padding-top: 2em; /*!!!!*/
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px); /* Start position for slide-up effect */
+  animation: slideUp 2s ease-in-out forwards; /* Animation for slide-up effect */
+  animation-delay: 2.5s; /* Delay for the slide-up effect */
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End position */
+  }
 }
 
 .underline {
@@ -208,6 +237,8 @@ text-decoration-color: #222F5B;
   align-items: center;
   justify-content: center;
 }
+
+
 
 .videobg {
   position: absolute;
