@@ -67,17 +67,21 @@ nav li {
   }
 
   nav ul {
-    justify-content: center; 
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.1rem;
   }
 
   nav li {
     margin-bottom: 0.5rem; 
+    margin-right: 0rem;
   }
 
   nav li:last-child {
     margin-bottom: 0; 
   }
 }
+
 
 
 
