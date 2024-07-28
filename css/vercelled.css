@@ -199,7 +199,7 @@ margin-bottom: 0px; /*!!!!*/
 
 @keyframes fadeIn {
   to {
-    opacity: 1; /* Ending opacity set to 1 */
+    opacity: 1; 
   }
 }
 
@@ -211,19 +211,19 @@ margin-bottom: 0px; /*!!!!*/
   padding-top: 2em; /*!!!!*/
   text-align: center;
   opacity: 0;
-  transform: translateY(20px); /* Start position for slide-up effect */
-  animation: slideUp 2s ease-in-out forwards; /* Animation for slide-up effect */
-  animation-delay: 2.5s; /* Delay for the slide-up effect */
+  transform: translateY(20px); 
+  animation: slideUp 2s ease-in-out forwards; 
+  animation-delay: 2.5s; 
 }
 
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Start position */
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* End position */
+    transform: translateY(0); 
   }
 }
 
