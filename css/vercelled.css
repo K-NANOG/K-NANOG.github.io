@@ -163,7 +163,7 @@ nav li {
   .hero-heading {
     font-size: 6rem;
     width: 20rem;
-    margin-top: 6rem;
+    margin-top: 6rem !important;
   }
   .titlehook .hero-description {
     font-size: 1rem;
@@ -172,7 +172,7 @@ nav li {
 
 @media screen and (max-width: 1320px) {
   .hero-heading {
-    margin-top: 0;
+    margin-top: 1rem;
   }
 }
 
