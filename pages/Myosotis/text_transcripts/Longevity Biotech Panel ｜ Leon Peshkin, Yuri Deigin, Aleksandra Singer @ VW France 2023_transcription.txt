@@ -1,0 +1,733 @@
+[00:00] Thank you so so much for joining. The first one is longevity biotech and here I picked a quote from
+
+[00:05] engines of creation from Eric Drexler and he's asking when, which will be the last generation
+
+[00:12] to age and die and which will be the first to win through. So let's think big on this panel.
+
+[00:16] I'm really really happy to have Leon, he's like what we're not gonna make it. I'm just like to read the whole book.
+
+[00:23] I'm really happy to have a wonderful panel with us here. So we have Leon Peschgen who's been
+
+[00:28] a very very repeat guest at our longevity workshops and he's from Harvard, he's worked on
+
+[00:32] fantastic stuff on many of them. Alexandra Singer who's at Altos Labs and can tell you a lot about
+
+[00:37] the machine learning aspects of longevity biotech and we have Yuri Degen who as a previous Foresight fellow
+
+[00:43] and who's been really working across the board I think in the longevity field for quite some time.
+
+[00:47] So maybe just to kick us off I would love to know from you if you could give us a brief overview.
+
+[00:52] I mean you know I've already showed you like in 2017 when we still had our longevity workshops
+
+[00:57] next to a squash room. What has happened like in the past five years? How did you see the field change
+
+[01:02] and then also what do you think the next five years could bring if you were thinking
+
+[01:06] pretty ambitiously? Hugo first. All right well I think yeah in the past five years the field
+
+[01:15] has definitely seen a lot of growth both in terms of public acceptance and funding coming in from
+
+[01:22] investors who want to invest into longevity. I guess Altos Labs is a perfect example of very
+
+[01:30] you know seasoned investors willing to place large bets on longevity. They think you know we're
+
+[01:37] close to finding ways that can greatly extend lifespan and I think in terms of the science
+
+[01:44] over the past five years maybe it hasn't been kind of as fruitful as people hoped.
+
+[01:52] Oh spicy. Well I mean no I think I think everybody would agree that the optimism we had
+
+[02:00] over the past five years wasn't exactly realized. We already had reprogramming and partial
+
+[02:07] reprogramming is what got Altos Labs started as well as a few other very well funded companies
+
+[02:13] and I think the science is moving in the field of reprogramming and longevity in general is
+
+[02:18] moving forward but at the same time I don't think we've had any novel concepts like you know before
+
+[02:23] reprogramming we had senolytics killing senescence cells before that we had telomerase or you know
+
+[02:29] lengthening telomeres or just using telomerase for maybe some some other things besides lengthening
+
+[02:34] telomeres and since reprogramming we haven't really had you know this kind of novel concept
+
+[02:42] emerge and maybe that's you know something that I'd like to see happen. Do you have any hint for
+
+[02:49] what that could be? Well if I knew I probably would say but I think the only thing that maybe
+
+[02:55] people are thinking of these days is replacement replacing organs including replacing replacing
+
+[03:02] the brain Jean Hebert and other groups are working on that. What do you guys think about replacement
+
+[03:07] because it's also going to be one of the manifold questions who here knows about
+
+[03:11] Jean Hebert for example who's also in our community has done some replacement work
+
+[03:16] any spicy takes on replacement? What's replacement? Replacing organs basically instead of trying to
+
+[03:24] stop aging or prevent aging you replace the organs that have aged so basically the ship of the seers
+
+[03:32] right you. Is it different from transplantation that is it just a new word or? Well it's I guess
+
+[03:42] it you know transplantation is just one organ but this is the concept that you replace and maybe
+
+[03:47] even preemptively like before you have a kidney failure you just replace your old organs with new
+
+[03:52] ones and I guess the culmination of that is what they call full body replacement or just you know
+
+[03:58] transplanting your head or just your brain into your in either your clone new new body
+
+[04:05] or maybe some other. So sounds like there are two aspects of replacement which is different from
+
+[04:12] transplant one is when you people decide to do it right so it before it's dramatically bad you can
+
+[04:19] just opt to have a young kidney sounds fantastic if you can do it if you can get young kidney
+
+[04:24] somewhere and the other one is we are focused more on on artificially creating organs
+
+[04:33] right I don't know what to think about it it's great if we can actually do it there are some
+
+[04:38] interesting you know there is some interesting new science that I've seen
+
+[04:44] right but probably it's going to be a while and some organs are much more complex than others
+
+[04:49] right so it's going to come in very gradually but I am hopeful for that.
+
+[04:53] Oh brain lasts too bad. What do you think is exciting about the next five years like is there
+
+[04:58] any specific research areas that you think are like perhaps undervalued right now?
+
+[05:02] Well I guess I will be in my character also being the oldest guy on stage. My PhD was done
+
+[05:14] my PhD was done in artificial intelligence long time ago and just like with artificial intelligence
+
+[05:20] we see this kind of natural life cycle you know oh it's perceptron never mind or it's a
+
+[05:26] portraitor machine never mind deep deep learning that's exciting and I think it's also going to
+
+[05:30] come to not to disappear it will just find its place and we'll have another right but it's
+
+[05:38] it's not just amazing singularity coming on. Always overhyped it's the same with longevity
+
+[05:45] we've seen this you know telomeres getting shorter or well maybe not so important
+
+[05:50] senescent cells maybe there are no senescent cells and so we go through this
+
+[05:57] right so certainly new things will come along and I have certainly been a victim of being
+
+[06:04] terribly excited myself you know I was super excited about getting rid of senescent cells
+
+[06:09] of parabiosis of many other things and then kind of calmed down so I'm cautious that you know today
+
+[06:15] I'm excited about looking at extracellular matrix and you know but ask me in five years
+
+[06:25] one thing I am genuinely excited and do not expect to get unexcited is normalization of the
+
+[06:34] conversation itself I see steady progress in this just conversation being much more accepted
+
+[06:42] of radically extending life all right 20 years ago you were just a weirdo talking about this and now
+
+[06:51] everybody is discussing whether it's you know bad science or fraudulent business or
+
+[06:57] uh genuine philosophical discussion but this is just normal conversation accepted subject
+
+[07:04] and that's great. Do you want to chime in? I'm personally very interested in some of the
+
+[07:09] Stefanovarian reserve but I speak you know not as a biologist so I can't speak to the science of it
+
+[07:14] but I want to know if you know delaying menopause helps and and I'm a very big proponent of surrogacy
+
+[07:20] and artificial wounds. Do you want to say more on either of those?
+
+[07:27] Do either of you have anything to say about those topics? Artificial wounds
+
+[07:33] I don't think I have much to say. Well there were a few interesting products in the last year and
+
+[07:38] then I feel like they also kind of like withered so I would also love to see some more stuff on
+
+[07:43] that that would be very helpful for us. There's also a money for question out on that if you're
+
+[07:47] interested in checking it out. Okay well I want to ask you also like since you have I mean both of
+
+[07:53] you I think you know since they have also some AI expertise and I guess you also you know what do
+
+[07:58] you see like other technologies like how do you see them impacting longevity technology development?
+
+[08:02] I'm sure AI is a big one there but like if you want to speak to other fields too like
+
+[08:06] neuro tech we had a workshop on atomic precision like the molecular nanotech aspect related to
+
+[08:11] longevity technology but like do you see other fields that people are discussing here throughout
+
+[08:15] the weekend impacting that field at all? Are there any useful yeah any useful bridges?
+
+[08:21] Sure right now what I'm seeing the most across longevity biotech companies in terms of AI is that
+
+[08:27] AI is acting as a research aid. So for example you will have LLMs that are summarizing research
+
+[08:33] papers for people scanning through the literature. So you have LLMs kind of cutting down on how many
+
+[08:39] hours per day a scientist is spending reading versus thinking and what we're trending towards
+
+[08:45] there is trying to get the LLMs to actually even come up with ideas and talk with them and discuss
+
+[08:50] them more. So you always have something to bounce ideas off of but I'm very excited about AI kind of
+
+[08:56] going just from being a research aid to predicting more of the experiments that should be done and
+
+[09:02] suggesting new ideas as well. I got recently asked to contribute a chapter into a volume on
+
+[09:13] artificial intelligence in longevity and my first response was you probably don't want my chapter
+
+[09:20] because I think this is an empty set there is no artificial intelligence in longevity.
+
+[09:25] So they insisted and the chapter is out I suggest you read it because through the process of working
+
+[09:30] I actually think I was able to come up with something constructive and very briefly I describe
+
+[09:36] what I call a mechanical torque model of AI and longevity. If you're familiar with mechanical torque
+
+[09:43] it's actually a human midget playing chess pretending to be robotic. So largely today I think
+
+[09:50] successes of AI in biology and longevity is that is passing human successes as AI because the promise
+
+[09:59] is that it's going to scale up massively and give us a plethora of new molecule candidates and all
+
+[10:05] of that but I am quite excited about what was just mentioned about just large language models helping
+
+[10:13] us summarize the literature and being a very useful assistant with that. Do you have anything
+
+[10:21] that you're excited about in relation to other technologies? I'm generally excited about AI and
+
+[10:26] I think well scared and excited of course and everybody is scared as well about you know
+
+[10:32] uncontrollable AI but in terms of the science just watching you know gpt's grow exponentially
+
+[10:42] is the word used very frequently but really you know in the past year the intelligence of gpt
+
+[10:49] chat gpt has grown very very much and I think in the next few years it'll become even smarter and
+
+[10:56] it will actually tell us what kind of experiments to run, what new data it needs to make inferences,
+
+[11:02] for example you know how does aging work because obviously human intelligence wasn't good enough to
+
+[11:07] figure it out but I'm sure AI eventually will figure it out and I think the time span in which
+
+[11:15] it will do so is actually on the order of just a few years because it's getting much much smarter
+
+[11:21] and maybe it's not AGI but definitely it's going to be more intelligent than humans in terms of
+
+[11:26] doing science so yeah it will get left in the dust and maybe it's a good thing let's just let
+
+[11:33] the robots do the work. One of the questions are wonderful is will human intelligence solve longevity
+
+[11:38] before AGI does? Please start putting that in there. If I may I am very opposed to this narrative
+
+[11:51] of competition between artificial and natural intelligence right this is just not the way I see
+
+[11:58] things develop AI is a tool right it's a screwdriver which doesn't do things on itself
+
+[12:06] we control it we program it and it's going to develop symbiotically right so it's going to be
+
+[12:11] some sort of augmented intelligence that will solve longevity not human or artificial. Well
+
+[12:20] on there I'm really glad that we have Brett here from Kodika Labs who's definitely working on that
+
+[12:25] merger and I'm going to ask you one more question and then if anyone from the audience has any
+
+[12:29] questions feel free to raise your hand in a sec but you know in order to foreshadow a little bit
+
+[12:34] of the things that we're discussing tomorrow as well in the real political discussion like
+
+[12:38] if you think of like the non-technical bottlenecks for a while like you know the things that always
+
+[12:42] get discussed what is one thing that you know you think this field really needs I know that we've
+
+[12:46] seen a lot of discussion and like really like progress on biomarker standardization which
+
+[12:50] usually often comes up you know like is that one you think is important do you think something
+
+[12:54] else needs to really be done field-wide to like actually um yeah to bring it forward.
+
+[13:00] So right now with the big gold russian AI there is a shortage of GPUs shortage of A100s
+
+[13:08] so I think that problem needs to be solved in order for progress in machine learning for longevity
+
+[13:14] to actually be able to go forward. There's a bottleneck it's very hard to get A100s
+
+[13:19] one approach that we've tried to do in my work with Altos Labs is that we've contributed heavily
+
+[13:24] to dcubex which is kind of MLops platform that tries to kind of find the most cost-effective
+
+[13:31] GPUs and get them for us but we need more A100s we need a lot more GPUs and that's going to be
+
+[13:37] very hard to solve because of all the geopolitical problems which I want. Yeah I guess who doesn't I
+
+[13:42] think another related factor is also that like you know you've seen a lot of people from AI move
+
+[13:46] into longevity in the past few years and now they're moving back into AI because they actually think
+
+[13:50] that one of the fastest ways to solve most of the longevity problems is by just literally working
+
+[13:54] back in AI so that's one another one. So I think that whatever model of AI we have is not as
+
+[14:04] important as the data that goes to be analyzed and modeled and critical need is what I would call
+
+[14:13] data hygiene data quality standards which are completely lacking in the field. If today you
+
+[14:20] want to go and pull the data from hundreds or thousands of papers to co-analyze it it's just
+
+[14:27] impossible not hard not expensive just completely impossible. All right so introducing data standards
+
+[14:35] finding a way to get people to submit their code in their data with publications so that we move
+
+[14:42] away from being the field of humanity creating fun stories for journalists into actual hard science
+
+[14:49] finally is I think that's a very hard plus one on that you're completely right and it's there's so
+
+[14:58] much depth to what you're saying because it's there's layers upon layers so one is that academic
+
+[15:03] labs don't want to share data it's against their culture even when you try to change the culture
+
+[15:08] it takes time for people to change so there has to share data then once you convince them with a lot
+
+[15:13] of time to actually share their data something of different file formats those aren't standardized
+
+[15:19] different file formats different metadata the metadata that everyone uses is so different
+
+[15:25] and then even if you can match up the file formats and the metadata even if you do all those things
+
+[15:30] which by the way takes a lot of time because a lot of people are still keeping all their data on
+
+[15:34] little flash drives so once you do that even then a lot of the data the experiments run slightly
+
+[15:42] differently enough that you can't really generalize so what I'm seeing most longevity companies in the
+
+[15:47] space do is they raise a lot of funding and then they throw out all the old data and then they
+
+[15:53] create all new data which is incredibly inefficient yeah any other exercise like you want to pinpoint
+
+[16:00] too well I guess a bit of a different challenge that I see to the field in general is just how
+
+[16:07] small we are I think if we had you know 10 times or 100 more times times more people actual
+
+[16:14] scientists going into the field I think it'd be much more efficient and less prone to like this
+
+[16:19] group think that I think sometimes we're prone to and I think this is a problem of first of all
+
+[16:25] visibility in terms of the like how the bigger field of biology perceives longevity and it's
+
+[16:31] just the young people I think have very few have this incentive to go into aging at least that's
+
+[16:37] not their first choice so maybe that's something that we also need to try to change to recruit more
+
+[16:42] people recruit more young people into the field and just yeah grow grow the actual people doing
+
+[16:48] the science so I think it's true and nevertheless if I compare longevity with our neurotech
+
+[16:54] projects or if I compare it with our molecular machines track and it's like has gotten so much
+
+[16:58] more progress in the last week or just attention at least are there any audience questions anything
+
+[17:03] you want to yes just shout it out because we can't move the mic over there as a software engineer I
+
+[17:07] feel actually very confused by this coordination problem in science I feel that it came up already
+
+[17:13] at the beginning of your discussion first mentioned how AI can contribute it feels like the main problem is that the
+
+[17:20] human aspect of this cannot really coalesce into a super intelligent component that loves
+
+[17:26] in an efficient manner for all the problems that you mentioned now again
+
+[17:32] you're just confused is there like a specific question in it the question here is like
+
+[17:36] okay so what's the complete picture here why do we have this kind of culture in science how can we
+
+[17:42] well address it more systematically you mentioned a bunch of aspects of it and is there another line
+
+[17:46] factor that can connect them all well maybe altus labs is trying to address this they just kind of
+
+[17:53] vacuumed up all of the top scientists in the field and then they're trying to change the culture and
+
+[17:57] saying you know don't do things like you did in the lab let's all share data and maybe alexander
+
+[18:03] yeah so I've spent the past year working with altelabs to fix this issue which is why I'm so
+
+[18:08] passionate about it they did take something like 40 plus private labs over the world and privatize
+
+[18:14] them and that's when I say it takes time to change the culture so I'm talking from personal
+
+[18:19] experience that first people have this this emotional kind of feeling of I can't share my data
+
+[18:26] and finally two years into altos's creation they finally move past that and they're excited to work
+
+[18:30] with each other but then there's still the technical aspects so many of them said had data
+
+[18:36] on you know hard disks or flash drives or you know these various ways and so I've spent the
+
+[18:42] last year developing a centralized database that can store all of this you know so so that's that's
+
+[18:49] taken a lot of time quite frankly and and then like I mentioned that the metadata doesn't line up
+
+[18:57] the way that they did the experiments doesn't quite line up you end up really having to develop
+
+[19:02] a centralized database and a standardized metadata and have everyone start from scratch with all of
+
+[19:08] the new and generate new genomics data new microscopy data new mass spec data you start
+
+[19:13] from the drawing board right and that's going to take time for them to run all the experiments
+
+[19:18] and do everything so I'm very optimistic that you know that good research will come but there
+
+[19:24] have been people who've been kind of sitting waiting for something incredible and it takes
+
+[19:27] longer than you think because of these coordination problems I think these problems could be solved
+
+[19:35] by having these companies run more like tech companies and less like academia and I'm very
+
+[19:42] passionate about kind of having a you know strong co-o strong cto and many of these companies
+
+[19:48] that kind of set these technological standards and processes from the beginning
+
+[19:52] um instead of for example some companies will start with academics and a year later hire their
+
+[19:57] first software engineer I think we need software engineers in the room from the day one so they
+
+[20:02] could develop the systems alongside the scientists this may sound obvious to you but this is actually
+
+[20:06] not how it's being done in the industry and and and I'm very passionate I think this could really
+
+[20:11] accelerate a lot of the work so we're at the vision we can't hear I can suggest one
+
+[20:19] uh vision that I think would change how things are and solve this problem potentially
+
+[20:27] actually suggested it to somebody I'm not going to name who you know a wealthy person who said
+
+[20:34] how do I make impact and change things in the field right so today the life cycle of a scientific
+
+[20:41] project is that I propose something I get funded I measure I run one experiment collect the
+
+[20:48] measurements and then I spend the next three years trying to publish that so not to be scooped I
+
+[20:54] hug my data by the time my paper is out the data and the theory behind it is probably outdated
+
+[21:02] right and it goes somewhere to die now imagine that uh and I should say that uh NIH and other
+
+[21:11] funding agencies do require when I publish that I deposit the raw data this is a beautiful idea
+
+[21:19] and a terrible implementation I would uh actually establish a funding mechanism where
+
+[21:26] I get paid to immediately release the data the moment it is measured right whether because maybe
+
+[21:32] I'm hit by a bus maybe something happens that right so if you if I get the money as soon as I
+
+[21:39] start my experiment I go and I define publicly what am I measuring why am I measuring as soon
+
+[21:45] as I get data points it is public then I could interpret it take you know comment take it back
+
+[21:54] I don't see why this is not possible and I believe this would very much change how we operate
+
+[22:00] we have that internally internally within altos that's all join altos labs
+
+[22:05] um okay we have we have two more questions and then I want to get into the prediction
+
+[22:10] questions over here uh over here and then you had one done nothing right yeah go for it
+
+[22:15] so
+
+[22:34] thank you very much right we still do not have a good way to share uh the lab protocol and results
+
+[22:45] really no laptop it's only two quarters a year old but there's no laptop book that actually uses
+
+[22:50] lm property so it's an obvious combination so here's what we're doing scientists want to use
+
+[22:57] bencheling because that's what they're used to and bencheling we have a standardized template that
+
+[23:01] we have gotten the scientists to all agree to use which is not easy because it's 350 people with
+
+[23:05] different opinions they have a standardized bencheling notebook and that is when they create
+
+[23:11] a notebook that is automatically converted into a data package that is stored in our centralized
+
+[23:14] database and we do have lms that are working on that but yeah so even but even if you use
+
+[23:26] something else like we use bencheling but if you use something else uh could still easily use a lot
+
+[23:31] of the source of the tools that are not the bencheling part i guess
+
+[23:37] we are we are trying to develop a lot of old school we have a good chemical database that
+
+[23:43] can capture a little bit of bioassay data we're trying to standardize bioassay data even you know
+
+[23:47] the data we get in is very variable and the number of tests we get like there's there's we're trying
+
+[23:53] to standardize on people pharmacology data you know all the safety tests you know mostly small
+
+[23:58] molecules and transporter profile and then also describing the assets in consistent manner
+
+[24:03] because bioassays are just inherently variable and there's all kinds of parameters that you know
+
+[24:09] you never really standardized and stuff like that we distribute a system called global substance
+
+[24:15] registration system that's actually free and all the a lot of regulators are using it the ema
+
+[24:21] issues
+
+[24:28] and then they're you know doing some stuff on that and they're a very good resource of your small
+
+[24:32] company you get testing done and things like that so there's a lot of stuff out there we again we
+
+[24:38] were it's completely open source our system i mean i'm not a software developer but you know i've
+
+[24:43] been sort of managing this system for about 10 years we have all the drugs and clinical trials
+
+[24:49] and you know well we link in the clinical trials we link them to the adverse events we link them to
+
+[24:55] we can't make it to show the application data because that's of course private what we link
+
+[25:00] all the approved drugs to the end it is it's very difficult even sandwich data we're trying to
+
+[25:05] standardize the digital product data around the world all right you know these are things that
+
+[25:08] were on the market and what the elements are and that's been a project for 20 years you know we're
+
+[25:15] still getting there but the metadata and things like that there are efforts to do that i mean
+
+[25:20] there's the bio essay quarter but leon's right i mean nlm with pub cam and all that
+
+[25:25] data repository and it's almost useless i mean there's tons of data there but the
+
+[25:29] trying to find what's relevant or what's reliable is very different to aggregating in the way that
+
+[25:34] you're supposed to be very different yeah i guess like from from the panel like the discussion like
+
+[25:42] this is to be bringing the issues it's like the aligning the practices the technical issues that
+
+[25:48] you were mentioning like the writing the schools and the funding what's the biggest level right
+
+[25:53] especially in terms of funding right what what prevents the big funding organizations just like
+
+[26:00] enforce like more these rules is there anything from the community blocking it or is it just the
+
+[26:05] funders not being aware what's the what's the big level that you can use to change it
+
+[26:10] i have no idea how nh works within there there's a lot of inertia
+
+[26:20] because it seems to be that you know if the if the funders expect these things
+
+[26:25] then the money is going to come down to maybe like improving the tools and then the practices
+
+[26:30] are going to emerge once the tools are there and everybody's like adopting the same high
+
+[26:35] from what i've seen um there's a lot of funding for example altos lab started with three billion
+
+[26:40] three billion dollars right so it's not a problem of funding and the gpu shortage for example like
+
+[26:46] we we have this work around with dqbex like i mentioned um and so the problem remains that uh
+
+[26:52] the that you know the funders give this three billion for example i'm not talking about any
+
+[26:57] particular company but they give they give money they step away they put someone in charge usually
+
+[27:02] a scientist and scientists don't know how to run tech companies and to me that's the biggest kind
+
+[27:08] of that's the single biggest issue that we could solve because i don't think the problems uh in the
+
+[27:14] space i don't think that they're the biggest problems the biggest challenges they are not
+
+[27:19] researched i think they are operations great i love that we're already getting into the societal
+
+[27:25] discussion and of tomorrow i want to just leave some time to get to a few of the spicy manifold
+
+[27:30] questions and i want to have us all kind of like chime in on them here starting perhaps with the
+
+[27:35] panel so one of them is which intervention will add the most years of life to healthy people and
+
+[27:41] five years of research we have a few examples here telomer extending therapies stem cell therapies
+
+[27:46] somatic reprogramming surgery targeting therapies analytics reprimisin supplementation plus one
+
+[27:50] blood-based therapies organ replacement nad targeted therapies and microbiome replacement
+
+[27:55] genetic medicine calorie restriction not many people predicted here so let's just start with
+
+[28:00] panelists which of those do you think is the most promising or if you think none of them
+
+[28:04] uh then uh you know you already mentioned argument placement um perhaps that's not all the way five
+
+[28:08] years out but anyone any comments at this well i'm not sure if somatic reprogramming is what meant
+
+[28:14] to be partial reprogramming uh it's from the longevity biotech bottleneck survey and so they
+
+[28:20] rephrased it a little like it's their language and they explained it a little bit more in detail
+
+[28:24] there so yes just take it as that obviously biased because you are working on reprogramming and i
+
+[28:29] think it is the most promising of the existing approaches so yeah definitely i would go with that
+
+[28:34] okay anyone here uh none i think that we are under enormous pressure from entrepreneurs to turn
+
+[28:43] questionable science into products so unfortunately i am hopeful about some scientific directions
+
+[28:50] which might become interventions eventually but today uh nothing i wish i had added a non in there
+
+[28:57] next time leo next time just for you alex
+
+[29:02] okay uh anyone here wants to venture out what do you think is really promising there we disagree
+
+[29:08] with each other so which one of us do you agree with uh i mean cellular reprogramming seems like
+
+[29:14] a good avenue and and and also i and heard about ecm until i guess yesterday when you told me about
+
+[29:20] it um but again i i'm more i'm more gung-ho on the ai portions of it and i know less about the
+
+[29:27] biology fair enough all right the artificial womb question will an artificial womb deliver a human
+
+[29:32] baby by starting with 2025 4 2040 the highest mark so far 80 percent does anyone have a who
+
+[29:42] you think is going to be 2025 2028 oh i like it okay 2031 okay more 2034 and everything that
+
+[29:53] is after that concert that okay wow okay so people are more optimistic than actually manifold i think
+
+[29:59] 2037 2040 okay cool well good love the read of the room um all right let's see if we have
+
+[30:09] another spicy one in here that i'd love you guys's take on um please also start predicting that
+
+[30:18] would be really wonderful because i think that they're and start adding your questions to it
+
+[30:22] that would be absolutely amazing um okay so we have this one here first question is are you in
+
+[30:32] favor of indefinite life extension or are you mostly in favor of health ban extension um let's
+
+[30:38] just start with that one here oh yeah absolutely i'm a maximalist i'm all for making death optional
+
+[30:46] and stopping aging so um in the meantime of course you know health span extension as they kind of the
+
+[30:54] minimal goal i'm all for it so but of course i think anybody who says our ultimate goal is
+
+[31:00] not defeating aging i'm not sure how they have this cognitive dissonance they're like yeah i want
+
+[31:05] to be healthy until 200 and just anyways what do you think uh i i think this question reminds me of
+
+[31:14] discussions of uh ethical time travel and environmentally friendly teleportation
+
+[31:22] we're so far from extending uh life that it's just impossible to imagine indefinite life extension so
+
+[31:32] i don't really know what this means but uh sure i'm in favor of course armchair here you can venture
+
+[31:38] all the way out indefinite is health span okay let's just uh uh maybe do a show of hand uh who's in
+
+[31:45] favor of a definite life extension um anyone just like let's just stick with health span extension i
+
+[31:52] guess lev is kind of like eventually leading to that anyone just like let's just do health span
+
+[31:56] fair enough you guys are so you guys have a point if we only got that we'd also all be pretty happy
+
+[32:02] already um do you think any of these arguments um by skeptics are the ones that you really want to
+
+[32:10] bust yes i'll so if you're in favor of an infinite life extension what are the biggest myths to bust
+
+[32:16] for skeptics indefinite life extension would make life boring and meaningless indefinite life
+
+[32:20] extension would lead to overpopulation indefinite life extension would increase wealth disparities
+
+[32:24] indefinite life extension would lead to power consolidation or it would lead to culture decay
+
+[32:28] and slowing down of progress like the science advances one funeral at a time question you know
+
+[32:32] obviously our population is the most you know everybody's favorite objection when they first
+
+[32:37] hear of life extension and it's the biggest myth it is absolutely yeah i mean we're not going to
+
+[32:44] overpopulate the planet just because people are going to stop dying and even at this point we're
+
+[32:49] already facing the opposite potential yeah depopulation i would say uh for a change i agree
+
+[32:57] with you uh but it it comes from some sort of a very naive picture where we suddenly indefinitely
+
+[33:07] extend life but remain at the same level of primitive technology everywhere else right you
+
+[33:13] cannot imagine that if we advanced enough to extend life we probably advanced enough to
+
+[33:19] uh change the desert uh to a livable place to very easily produce food and medicine and to do a bunch
+
+[33:27] of other things right we usually go hand in hand so it's a general lack of imagination and you want
+
+[33:32] to speak to it or no i i also think overpopulation is a huge myth and i am worried about depopulation
+
+[33:39] um another reason why i care so much about artificial wounds it all comes back together
+
+[33:43] wonderful okay so we're almost at time i just want to
+
+[33:49] power consolidation
+
+[33:54] hashtag infinite putin uh it's not a biggest myth i think i guess it's a valid concern but
+
+[34:06] condemning eight billion people to keep dying just because you worried about three dictators
+
+[34:10] before dictators staying in power i think it's silly and it's not like we have right now a magic
+
+[34:16] way to change dictatorship put in dyes there's going to be another dictator so uh yeah this is
+
+[34:21] silly like let's stop scientific progress just because people are going to live longer including
+
+[34:26] dictators i think it's a very silly let's maybe close it here i want to hear from you in the
+
+[34:31] closing thoughts um just after we're going to have the molecular machines panel come up here in a
+
+[34:36] second but after that we're going to have a combined speaking reading read so if there's
+
+[34:40] one thing people should really be seeking you out for like one thing that you find undervalued one
+
+[34:44] spicy topic they want to discuss with people what would that be
+
+[34:49] um i'm really annoyed by people asking over there yet uh you know whenever going to have the cure
+
+[34:58] get know what to not ask you there's so many ways to actually bring it closer get involved there
+
+[35:04] there's citizen science there's uh in many forms of activism uh in addition to just sending
+
+[35:13] the money to the field uh and yeah talk to me if you want ideas cool alex yeah i like talking
+
+[35:20] about operations and how to make sure that tech companies run effectively so that you're not
+
+[35:25] wasting a year just trying to fix devops before you can launch any apps in your company for example
+
+[35:30] not that i'm speaking from personal experience or anything
+
+[35:36] i can talk about partial reprogramming if you're skeptical about reprogramming i can maybe convince
+
+[35:41] you to be less skeptical i can talk to leon about that uh also myths yeah happy to talk to people
+
+[35:47] about you know objections to extending lifespan and if you're in general opposed to indefinite
+
+[35:52] life extension i'm happy to talk to you maybe try to convince you that you shouldn't be
+
+[35:56] wonderful okay if you want to know any more about the biotechnology field we have a lot of different
+
+[36:03] uh areas out here we have the longevity prize we have the report from our previous workshop
+
+[36:08] that's also lying out here so if you want to dig deeper there's a seminar series that are all in
+
+[36:12] summaries here you can meet our fellows in that field and we have lots of publications and a very
+
+[36:18] rich longevity tech tree that's the one that's perhaps the furthest built out so if you just
+
+[36:22] want to kind of like take a peek about what that field all of it that it involves it has a pretty
+
+[36:27] good extracellular matrix section and then it goes all the way into head transplants and
+
+[36:32] and whatnot so it's pretty built out so if you want to know more about that please feel free to
+
+[36:37] dive in but yes i just i just want to take a second to say that there is practical longevity
+
+[36:44] session tonight uh so please come yeah tonight we're gonna have a personal self-experimenting
+
+[36:51] session for those and who stay at the chateau and our speakers and fellows and it's going to
+
+[36:55] be pretty hands-on um okay thank you so so much for our Paris panel we're going to do a quick
+
+[37:01] switch to Malekka Maschine so if you're on that panel meet me up on stage and we're going to start
+
+[37:05] in a minute thank you so much

@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>Myosotis</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2 class="header">Reto Stamm | Computer Controlled Protein 3D Printing @ Paths to Progress</h2>
+<pre class="transcript"><a href="https://www.youtube.com/watch?v=t3oJxiyKbVE">[00:00]</a> All right, so I first want to thank everybody who started and runs this foresight thing because
+
+[00:05] I, about 10-15 years ago, I went to a conference and I decided to go back to school. Finished my
+
+[00:11] bachelor's last year and I'm doing a PhD program in biomolecular engineering now. I was doing like
+
+[00:16] software and electronics for like Fortune 500s and startups before, so it's been really
+
+[00:22] inspiring and I just wanted to say thank you. So what we want is like a 3D printer that you can
+
+[00:28] control from a computer that is kind of easy enough to use and what we have is we have the
+
+[00:34] computer and we have like this molecular machinery that is self-replicating in scales and can make
+
+[00:39] proteins and very precise atomic devices and what's missing is like the stuff in between,
+
+[00:45] so that's what I'm going to talk about. So quick review, we have the central dogma of biology,
+
+[00:52] so we have genetic material, what you inherit from your parents, who inherited it from like
+
+[00:57] whatever the first organism ever, ultimately, that gets translated all the time into RNA,
+
+[01:04] which then gets translated, so the RNA is a temporary kind of message carrier that we usually
+
+[01:10] say, but it has more functions and we get into that and then that goes through the ribosome and
+
+[01:14] it makes a protein, so that's kind of how the biology usually works. Now, RNA has interesting
+
+[01:19] side effects, there's secondary structures in the RNA, this is a tRNA, but essentially it finds the
+
+[01:26] lowest energy state and based on the sequence that you put in, it shapes into a specific shape
+
+[01:32] and those shapes have function as well, so they have enzymatic function, but also they can work
+
+[01:38] as logic gates, so there are logic gates that depend on the presence and absence of chemicals
+
+[01:43] and then can make or not make other chemicals and a number of these gates exist and they have been
+
+[01:49] somewhat studied and so we can make logic and the way it works essentially when this binds,
+
+[01:55] when this is present, the lowest energy state of the system changes and then this end bit here may
+
+[02:01] disappear and fold up against itself and then it's no longer available for the ribosome to do
+
+[02:07] a protein expression, so the ribosome is essentially the machinery that takes the RNA and makes the
+
+[02:14] protein and it has a complicated like initiation step and if the initiation step is not working,
+
+[02:21] then it's not making the protein, so it's kind of like, you know, it's a sensitive thing and we've
+
+[02:26] figured out a way to mess with it with light, so there's a nice mechanism, it has millisecond
+
+[02:32] time step, so if you shine the light it stops the expression of the thing if you have to write
+
+[02:39] sequence setup and so that's been shown, we can do that. Here is kind of like, oh I messed up,
+
+[02:47] here's kind of like an example, this is a protein that changes shape when the light shines, so this
+
+[02:53] is when the light is on and this is when the light is off I think, so you see it changes shape and so
+
+[02:58] when it's in one state, RNA can wind around it and bind to the surface of the protein and is not
+
+[03:04] available otherwise in the system and when it's in this state, it doesn't fit and then it's available
+
+[03:09] in the system, so when the light is on, it does one thing, when the light is off, it does the other
+
+[03:13] thing, so that's kind of how it works underneath and there's all kinds of explanations to it, but
+
+[03:18] so we have a lot of these molecules actually, a number of those exist, there's a database,
+
+[03:23] it's about a hundred I think now and they all work on different colors and all that and it's great,
+
+[03:28] right, the field is exploding, there's thousand two hundred papers, but really there's only a few
+
+[03:34] different colors, these evolved eons ago and there's one at 450 nanometers and you know, like it has
+
+[03:42] evolved like a long long time ago and it has kind of gone into different organisms, taken on different
+
+[03:47] functions, but the light sensor is still at 450 nanometers, so if we want to address many many
+
+[03:52] things, we want to control thousands of building blocks and turn them on and off, it's not going
+
+[03:57] to work because it's not right and even if we had them, we're working with a protein machine learning
+
+[04:03] and protein design tools, we're working on shifting these wavelengths around, even if we had them,
+
+[04:08] there's a spectral breadth, you can only be so narrow, so you can only address so many things
+
+[04:13] at once, so it's not going to be enough, so what we're going to do is we're going to steal something
+
+[04:20] from electronics engineering, we're going to make a shift register, the shift register has two inputs
+
+[04:27] and then use time to store things over time, so here when the green light, when the green ball,
+
+[04:33] when the ball is green, it's going to make the protein and when the ball is gray, it's not going
+
+[04:37] to make that protein, so in this case, we can encode for four proteins, so what I'm going to do
+
+[04:42] is walk through a little example here, when the red light comes on, the first thing there, A, is
+
+[04:48] looking at the green light and it's either becoming green because the light is green or it's not, D is
+
+[04:54] looking at C and becomes whatever that is, C is looking at B and becomes whatever that is, B is
+
+[04:59] looking at A and comes whatever, just whatever that, and that happens just when the light turns on,
+
+[05:04] in an instant, so and I'm going to explain how this works later, so we start with this, the green
+
+[05:10] light is on, the red light come on, now the first circle is green and we do it again, this time only
+
+[05:16] the red light comes on, so the first circle is gray now, but the second circle is green because
+
+[05:20] it's moved over there, so the green light is on, the red light comes on, now there's a green ball
+
+[05:27] there and this is the first green light that went on at the beginning, so and now this is kind of
+
+[05:32] the final state, so I'm going to do it again, just for, so we start like this, it's dark,
+
+[05:38] red light comes on, stores it, shifts it over, shifts it over, shifts it over, and this is our
+
+[05:43] final state, so we make A, we make B, and we make D, and we don't make C, so we store that, and that's
+
+[05:50] the mode, and there's a proposed RNA structure that does this, where we have a ripple of clock
+
+[05:58] confirmation changes that goes this way, which allows this guy to steal information from here,
+
+[06:03] and this guy steals information from that guy, and at the very front you set the bit that you put into
+
+[06:10] the first position, and there's an optical readout if we want to, anyway, so that's the
+
+[06:15] proposal here, and so what it allows us to do, it allows us to control the RNA concentration,
+
+[06:20] which allows us to control the ribosome and other things, so we can control, make protein A first,
+
+[06:28] we set the shift register to enable protein A generation, now we make B, and then it self-assembles
+
+[06:35] because they fit, and then we make C, and then C assembles here, and then we make D, now D fits in
+
+[06:42] the same kind of slot here, but because C has already been there, D can only fit in the slot
+
+[06:46] that's given by C, and there is protection and deprotection things that we can also do,
+
+[06:50] and then we can make another one E, and that kind of fits in the open slot, but the other thing we
+
+[06:56] can do, we can have a little guide RNA that's present or not present that makes E stick to D,
+
+[07:02] and F cannot go in there because this guide kind of keeps it out, so we can have a little
+
+[07:07] programmable aptamer kind of linker that enables or disables the thing, so now that's the, that's
+
+[07:14] essentially the blinking light step that allows us to control the inside of the bacteria that we
+
+[07:18] modified to contain our tool chain, and another cool thing that we can do if we control RNA bits
+
+[07:24] is we can make, assume this is a protein, so it has this shape like this, right, like this,
+
+[07:31] and there's a long piece of RNA we've enabled in the solution, so it hangs on here and it puts it
+
+[07:36] in this shape, and if we take that piece of RNA out of solution and put a shorter one in there,
+
+[07:42] it is physically constrained to go like that, so we have a motor arm that we can control in multiple
+
+[07:47] steps, and because, you know, lots of permutations are possible here, lots of motion is possible in
+
+[07:54] a molecule, in a protein, we can fix and release multiple things, we can actually have many degrees
+
+[08:01] of freedom that we can control with the digital thing, and I'm done, any questions? Oh, damn, okay,
+
+[08:07] that wasn't precise, thank you. Okay, we have one, we're gonna have time for one, then we do the rest
+
+[08:16] and breakouts. Are you proposing to make it in E. coli? Yeah, probably, yeast might be nice, but E. coli
+
+[08:24] is probably cheaper and faster, so we want fast development cycle times, I think. So how do you
+
+[08:28] deal with stoichiometry of the proteins, because, you know, you sequentially can produce them, but
+
+[08:34] as soon as you have not one-to-one ratio, they will start contaminating it. It's over time, I guess,
+
+[08:40] it's, the yield is a big problem, and I have no idea what the yield is going to be, and if we have
+
+[08:45] like 80% precision, it's not enough, if we have 90% precision, it's not enough, it's going to be
+
+[08:50] pretty high. You know, like DNA synthesis that is under very controlled conditions only can get you
+
+[08:56] 99.8 yields. Yeah, that would be, you know, for starters, I think, we can do error testing with that maybe. For single step, and for like 100
+
+[09:03] nucleotides, it's about 70%, for this, I expect it's going to be zero at five percent. Oh, we're doing
+
+[09:10] the, we're using the bacteria to do the DNA and RNA generation for us, right?
+
+[09:18] How do you get rid of excess of each component on each stage? Of the proteins that are made? Yeah, yeah.
+
+[09:25] I don't know. Because the proteins, three are going to stick to protein two. Right. I figure I let
+
+[09:32] the cellular mechanism clean it up. No comments. Thank you so much. It's a good question though. Thank you.</pre>
+</body>
+</html>

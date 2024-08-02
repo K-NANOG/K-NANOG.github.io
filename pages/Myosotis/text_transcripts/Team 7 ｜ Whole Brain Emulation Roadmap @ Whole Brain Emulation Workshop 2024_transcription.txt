@@ -1,0 +1,223 @@
+[00:00] Okay, so one of these presentations isn't like others because we're not actually trying to solve the problem per se.
+
+[00:08] We're talking about the meta about how to write about how we're trying to solve these problems.
+
+[00:13] So here we are talking about the roadmap project.
+
+[00:20] This is what Chatjipati thinks it should look like.
+
+[00:24] It still can't spell, but at least it looks very impressive.
+
+[00:28] So I think in many ways it's kind of obvious what this is all about.
+
+[00:36] There is the old roadmap. I think it's influenced a lot of us. It's been fairly useful.
+
+[00:42] Everybody's been going on for ages that we ought to do an update because stuff has happened.
+
+[00:48] And we should be trying to do that. Why should we do it?
+
+[00:52] Well, partially for our own sake. We actually might want to have a way of organizing our thoughts.
+
+[00:58] There have been a lot of really clever ideas coming up over the past hours, for example.
+
+[01:04] But we need to organize this in a better way. We need to have some common frames of reference.
+
+[01:10] It's also very useful for getting funders interested or getting companies interested.
+
+[01:15] Eventually, when we start talking to policymakers and the public about it,
+
+[01:19] we need to have something to point to that is a bit solid.
+
+[01:23] There are various papers like Randall's Success Criteria paper and other reviews of various particular methodologies
+
+[01:33] that obviously have moved things forward, but it might be nice to integrate it.
+
+[01:38] Now to the practical part, how do you actually write a roadmap?
+
+[01:43] The first one was more or less done by me. That was a small project.
+
+[01:48] But now it's getting bigger and we also need to get info from a lot more people.
+
+[01:52] So it's pretty clear that we want to have probably at least two leads.
+
+[01:56] Simply because if one drops the ball, the others can start saying, hey, what is going on?
+
+[02:02] Randall has chosen to be involved here. I don't know whether you're the general of this or so.
+
+[02:09] But at least I'm happy to point that I'm happy to be involved.
+
+[02:13] We should probably figure out a better organization for that.
+
+[02:16] And then once you have leads, then we want to get the new technical details in, add some of the new discussions.
+
+[02:25] When you think about what is the main bottleneck for success besides that we might still not write things,
+
+[02:32] I think part of it is defining the success criteria, because that is actually a key kind of almost philosophical thing
+
+[02:40] that is actually non-trivial, as we have been finding over the past few days.
+
+[02:45] There are many different levels of success criteria and it also defines very much what we want to achieve.
+
+[02:51] Once we imagine that we achieved one of those success criteria, it's fairly easy to move backwards
+
+[02:56] and say what would have needed to be true to get there.
+
+[02:59] And that is actually what turns into the actual roadmap of it later on.
+
+[03:03] Exactly how long this would take to pursue is an interesting question.
+
+[03:07] I would assume a few months. How much it would cost?
+
+[03:10] Well, on its own and not necessarily much, but it's probably a good idea if one could have somebody
+
+[03:14] that actually had it as a job to make sure it actually happens.
+
+[03:18] There are various sketches on how one could go about it.
+
+[03:24] Are there ethical risks with making a roadmap? I would say, yeah, actually there is.
+
+[03:29] There is a risk that you set in stone, the proper approach and any other approach is not the proper one.
+
+[03:34] On the other hand, it's also very useful if you have a decent roadmap to use that to actually set priorities.
+
+[03:42] And maybe even focus on the leverage points by listing what are the big unsolved key problems.
+
+[03:48] If we figure them out or if we do some fail-or-fail approach to that, it will actually help us do it.
+
+[03:54] So this is probably where we need more engagement.
+
+[03:57] As the roadmap starts to take shape, there is going to have to be sending it out to you guys
+
+[04:02] for review and commentary and integrating that and making sure that it's flexible.
+
+[04:06] And presumably, I would assume eventually it would have to become a regular thing that gets updated year by year,
+
+[04:12] like the semiconductor roadmap.
+
+[04:14] So we have been thinking a little bit about the structure.
+
+[04:18] So basically what you want to start out with is some opening about, well, what's brain emulation?
+
+[04:23] Why are we interested? Why should anybody care about it?
+
+[04:27] Then a chapter about defining success criteria.
+
+[04:31] Then you get basically the big chapter that lays out the roadmap.
+
+[04:35] And then after that, the rest of the bulk of the document is going to be a lot of appendices actually going into it.
+
+[04:42] So what about the expansion microscopy with X-rays?
+
+[04:46] What about the different methods that are needed for actually running an emulation data center?
+
+[04:52] What aspects of biochemistry would we need to figure out before we can be able to do that?
+
+[04:58] What are the applications to AGI safety?
+
+[05:01] What are the computer securities and the project security standpoints that might need to?
+
+[05:07] There's probably going to be a lot of stuff here and we're going to find out more as we're working on it.
+
+[05:12] And that's basically that. Have I missed something?
+
+[05:16] No, that's it. And I'm just standing here for moral support.
+
+[05:19] You have been very successful. I feel very supported.
+
+[05:23] Questions, comments, considerations.
+
+[05:32] Super obvious question probably.
+
+[05:38] But like, is there like so many different ways of doing whole brain emulation?
+
+[05:43] How can you have like one roadmap or do you see as like the potential to like integrate it all together into one thing?
+
+[05:50] Yeah, so if it was one Apollo project like thing, I think it would be much easier to make a roadmap.
+
+[05:58] I think what we're having here is that we need to actually have a roadmap that actually consists of several different alternative pathways.
+
+[06:06] Because even on a particular pathway like conic atomic scanning, you still have a bunch of alternative.
+
+[06:13] It's a little bit like the Manhattan Project where they didn't know how to do isotope separation.
+
+[06:17] So they used three pathways in parallel.
+
+[06:20] Here it might be more like we want to map out that there might be these different pathways, see what is needed for them.
+
+[06:26] So just to link into that, I think actually like the real power of like having a roadmap, right, is that it's kind of a rallying cry if there's like a clear outline.
+
+[06:35] And I guess I can see this kind of devolve into, OK, you have six different tracks and then they have different sub roadmaps.
+
+[06:45] And then it's like very hard to disentangle like what the actual plan is for the community to kind of get around and also for funders and politicians.
+
+[06:55] I think it's good criticism, but I think that it's I mean, it's just a fact that we're not at the point where we can do an Intel roadmap, you know, where you basically know what you're going to do.
+
+[07:03] And you're just telling people how fast and what you're exactly how you're engineering it.
+
+[07:08] But but it's a good critique.
+
+[07:10] And that's why the part about making this have an emphasis on what someone would want to fund.
+
+[07:17] So basically that rallying cry part, that's an important change, for example, from the way we looked at the roadmap last year when we were thinking about it, because that really wasn't a major part of it.
+
+[07:28] OK, Patrick.
+
+[07:34] I didn't know if you had a point.
+
+[07:36] OK, sorry, I just thought you were passing the mic.
+
+[07:39] So I guess sort of in response to the last question, I guess I would think that the roadmap would be.
+
+[07:46] And I guess this is some of the statement, but people can feel free to respond.
+
+[07:49] I would think that the roadmap would be more of a more of a set of options and then particular organizations could choose sort of a path on the roadmap to pursue.
+
+[08:00] But it would be more up to that organization to flesh out the ultra specific details of that path.
+
+[08:05] Is that sort of what you guys are thinking?
+
+[08:08] Yeah, we might just need a better word than roadmap.
+
+[08:12] Although I think that's actually a really good description of what a roadmap is.
+
+[08:15] You have a map of the terrain, a bunch of different roads that take you there.
+
+[08:18] Right, right. So I mean, you would.
+
+[08:21] And so I think having a lack of specific roads, like not having just one road is actually good because then, you know, the the the organization can choose a path.
+
+[08:32] But we're just providing the bigger structure of what paths there might be.
+
+[08:38] I'm pointing out the scenic spots and here is a somewhat dangerous part of the road.
+
+[08:45] Right. Construction. Exactly.
+
+[08:49] Yeah, I love this.
+
+[08:52] I'm wondering how you are thinking about incentive structures to create this roadmap because, you know, I think it's been floated maybe in previous workshops that gosh, wouldn't it be great if we had this roadmap.
+
+[09:05] And it seems like a lot of work. Like I imagine that the first roadmap was like 100 pages or so.
+
+[09:12] This one's probably going to be like 300 ish. I imagine. Right.
+
+[09:16] It's consensus. Yeah. Yeah. How are you going to.
+
+[09:20] Yeah, I'm not afraid of very thick text. I love them.
+
+[09:27] Nobody else does.
+
+[09:31] There is actually an important thing here about distilling things down because while I'm very happy with a thousand page set of appendices getting into the deepest details we know today and reviewing every little obscure way of improving the robotic handling of expansion microscopy
+
+[09:47] and the gel cubes. Yeah, maybe the point is the main roadmap sketch and then you want to go as deep as you need. But we need to get that part done well.
+
+[09:58] I think personally that if we make that part really well, and even that appendices never get written in time, we might still actually have something that's darn useful.
+
+[10:07] But I would be much happier if we could motivate every little line in that diagram.
+
+[10:12] Yeah, I think incentive structures are important. And sometimes it's difficult to motivate exactly the people that you would like to have write something or contribute to the roadmap.
+
+[10:21] But it turned out not to be super difficult to get buy in last time around. So we still kind of have on file the yeses from a number of experts who said they would happily contribute to this that we can take as a start anyway.
+
+[10:35] And then some of us are just intrinsically motivated and happy to dig in. So that's useful as well.
+
+[10:41] All right. Thank you guys so much.

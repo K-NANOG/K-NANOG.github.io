@@ -1,0 +1,325 @@
+[00:00] I got a faculty position at UC Berkeley two years ago and now I raised about six million
+
+[00:06] in the first two years of my faculty job.
+
+[00:12] So my dream, I have many dreams, but my main dream was to build a new life form.
+
+[00:19] When I encountered death and sickness in my family, I thought could we build a biology
+
+[00:27] where we don't have to die, where we can upgrade parts of our body on the fly and live happier
+
+[00:33] and healthier.
+
+[00:36] And of course, it's very hard to find this idea, especially if you're an undergrad or
+
+[00:41] a graduate student.
+
+[00:42] So I did my undergrad in chemistry, my PhD is in chemistry too.
+
+[00:48] I grew up in Russia and of course, funding is not that great, political situation not
+
+[00:53] So I'm here just across the bridge from San Francisco.
+
+[00:59] And I have a lab now about 20 people.
+
+[01:02] And so the goal of our lab is to fit this entire Intel factory into a test tube.
+
+[01:12] It's not even molecular printer.
+
+[01:14] So actually, maybe printer is not required.
+
+[01:18] You can just build an information into components.
+
+[01:21] And if you look at how nanoscale devices are built these days, through top down approach,
+
+[01:29] which is probably the most sophisticated technology that humanity ever developed.
+
+[01:35] And that's part of many, many devices that we use every day, like computer chips, microfluidics,
+
+[01:44] optical interconnects.
+
+[01:47] But it's somewhat inflexible approach.
+
+[01:50] And if you know the cost of the most recent asml tool that allows you to do extreme UV
+
+[01:55] lithography is about $500 million.
+
+[01:59] And that's many companies like Intel, Samsung already bought five of them, even though only
+
+[02:05] one was built so far.
+
+[02:08] And if you look at this Intel factory and the devices that manufactured there, you can
+
+[02:16] see if you zoom in that they're not super precise.
+
+[02:21] But if you zoom in on the Pond scum near the parking lot of this Intel factory, you can
+
+[02:29] find a totally different approach to nanofabrication, namely bottom up self assembly.
+
+[02:36] A single bacterium about one micron in size can make billions of different biomolecules
+
+[02:44] in a scalable fashion and with much higher precision.
+
+[02:48] For example, every ATPase in our body is made of exactly the same number of atoms,
+
+[02:54] atomically precise manufacturing.
+
+[02:57] And many of you mentioned it today.
+
+[02:59] Moreover, this molecular devices, structures can exhibit behavior, complex behavior when
+
+[03:09] the potential across the membrane increases.
+
+[03:11] This molecular rotor rotates at different speed.
+
+[03:18] And so my dream in high school was to maybe take this biological components and try to
+
+[03:25] build a new life form where we build things in a more rational way.
+
+[03:32] Because if you now try to disrupt this biological system, like for example, I want to change
+
+[03:42] the electric property refractive index of alpha crystalline, which is a component of OI.
+
+[03:49] Unfortunately, I can cause a cancer too, because it's this alpha crystalline is a
+
+[03:55] component of many metabolic pathways.
+
+[03:58] And so you cannot just take it out slightly change it.
+
+[04:03] It changes the whole pathway.
+
+[04:05] So I turned to engineering and I'm an engineering professor at Berkeley.
+
+[04:11] And there, what I like is a modular approach where you can take transistor, resistor and
+
+[04:19] capacitor, put them together in a very complex integrated circuits and build machines, devices
+
+[04:26] that challenge complexity of a human brain in many ways outperform it.
+
+[04:32] Yeah, well, maybe not for much longer.
+
+[04:35] We we can outperform human brain completely.
+
+[04:42] But if you look at the natural designs, there are many really bad designs.
+
+[04:46] We eat and breathe through the same passageway, major choking hazard.
+
+[04:50] You probably can come up with some other examples.
+
+[04:55] Anybody, bad designs in your body in nature?
+
+[04:58] Yeah, blind spot in the eye, Christine says.
+
+[05:03] Yes.
+
+[05:04] What?
+
+[05:10] Good way to put it.
+
+[05:12] So the sloyringial nerve that I used to speak to you right now, that's two feet of wasted
+
+[05:17] wiring, right?
+
+[05:18] Just because we evolved from fish.
+
+[05:20] You know, as an engineer, you would just nip it, reconnect at the top.
+
+[05:23] But since we evolved from fish, it's not possible.
+
+[05:26] Nano scale, rubisco is the laziest possible enzyme.
+
+[05:31] Typically, enzymes convert thousands of molecules per minute, per second.
+
+[05:36] Rubisco makes maybe two molecules of oxygen from CO2.
+
+[05:41] Sometimes it grabs oxygen and burns glucose.
+
+[05:45] So I said, could we maybe combine the strengths of rational top-down engineering of,
+
+[05:52] let's say, electrical engineering, nanofabrication, and bottom-up self-assembly,
+
+[05:59] something like this, to build a new nanotechnology.
+
+[06:05] And I think it's possible.
+
+[06:07] And I'm not sure what's the best technology, but what I'm using right now is DNA nanotechnology.
+
+[06:12] And many of you know what DNA is, stack of bases, very simple rules, ATGC.
+
+[06:18] You can consider it one and zero.
+
+[06:20] And you can use those rules to build very complex molecules like DNA origami
+
+[06:27] that Adam and some other people already referred to.
+
+[06:31] It's really an amazing process that allows you to assemble, for example, this.
+
+[06:37] So you use ATGC to bring this long black scaffold together with a bunch of synthetic DNA strands.
+
+[06:47] And they'll magically assemble into a structure like this smiley face
+
+[06:52] or map of North America.
+
+[06:53] So basically, it's kind of 2D positioning, no printer required.
+
+[07:00] So what's revolutionary here is you suddenly doubt molecules with the programming language.
+
+[07:06] By programming sequence of these molecules, you can make them fold into any shapes.
+
+[07:13] And I have to say, go Beres, because I'm from Berkeley.
+
+[07:18] And so single DNA origami, it's about 100 by 100 nanometers,
+
+[07:23] and it's big enough to make a single transistor.
+
+[07:26] But if you want to make something more complex like this photoreceptor circuit,
+
+[07:30] we need a much larger breadboard, one minute left.
+
+[07:33] So I'm going to tell you a bit my work as a postdoc.
+
+[07:38] I tried to make a single DNA origami.
+
+[07:41] Postdoc, I tried to make nanoscale monoliths.
+
+[07:47] And it's not Da Vinci, but we can make trillions of this in a test tube.
+
+[07:52] It's atomic force microscope.
+
+[07:55] And I'm just going to quickly switch to tell you what my lab is doing right now.
+
+[08:01] We're trying to bring in materials with interest in physics and use DNA as information bearing molecule.
+
+[08:08] So you can see it's kind of 3D printing.
+
+[08:11] But in a massively parallel way.
+
+[08:13] And there is always the question, what's the first killer app?
+
+[08:16] What would convince this country or bigger scientific community to invest more money?
+
+[08:24] We're not competing with Russia to go to the moon.
+
+[08:28] We're trying to spend taxpayers' money in a sensible way to cure cancer
+
+[08:33] or build some devices that can make profit.
+
+[08:36] So one of these devices is a bear filter.
+
+[08:40] You all have it in your cameras.
+
+[08:41] That kind of allows us to analyze RGB components because you only have three cones in your eye.
+
+[08:49] And so we can assemble this structure in 3D by encoding DNA.
+
+[08:57] By endowing two dielectrics, you only need two different materials.
+
+[09:00] Let's say silicon oxide and titanium dioxide.
+
+[09:03] And just need to attach DNA strands in precise position
+
+[09:07] to make them self-assemble into these complex structures.
+
+[09:11] And we do inverse electromagnetic designs, design software for DNA structure design.
+
+[09:18] And we self-assemble them.
+
+[09:20] And this is an example of how this kind of 3D printer, but a scalable 3D printer,
+
+[09:28] that would allow you to make billions of devices
+
+[09:30] so you can satisfy demands of humanity for this particular component quickly.
+
+[09:37] And as a very first PhD student who joined my lab, he played hockey for MIT.
+
+[09:45] And he got concussion.
+
+[09:47] And since then, he got interested in neurodegenerative diseases.
+
+[09:53] And so he wanted to find a way to read out single neuron activity with millisecond resolution.
+
+[10:02] But we cannot use optogenetics.
+
+[10:05] Many of you know optogenetics.
+
+[10:07] So typically right now it's done by drilling a hole.
+
+[10:11] So that's electrochemical readout, electrical readout.
+
+[10:14] You drill a hole and you insert this neuropixel electrode
+
+[10:20] that can at most read out 200 neurons at the same time.
+
+[10:25] So he is now developing a way to read out many more neurons in a non-invasive way
+
+[10:31] that uses magnetic field that, of course, can go very well through the skull.
+
+[10:37] And this, let me conclude because Alison is looking at me.
+
+[10:49] Yeah, this is my lab.
+
+[10:52] Thank you.
+
+[10:57] Yeah, Durham.
+
+[10:59] Okay, questions, comments?
+
+[11:01] Maybe if number one.
+
+[11:03] I will leave it to the, yeah.
+
+[11:07] Well.
+
+[11:09] So interesting talk.
+
+[11:10] The DNA kind of matching.
+
+[11:12] So you're using the complementarity of DNA as the main kind of organizational tool.
+
+[11:18] But of course, in biology, so DNA has multiple levels of organization,
+
+[11:22] epigenetics essentially.
+
+[11:23] So you can have small scale around a histone or you can have macro domains and such.
+
+[11:30] So has any of that been explored in kind of the evolved kind of macro assembly properties
+
+[11:36] or is it still right now just the small scale interaction that's still being used?
+
+[11:40] Yeah, great question.
+
+[11:41] We also use multiple scales.
+
+[11:44] We do things in a hierarchical way.
+
+[11:47] So ideally what you want to do is to mix thousands of components and they recognize each other.
+
+[11:54] But turns out the yields are pretty low.
+
+[11:57] So what we eventually ended up using is you make a system that, for example,
+
+[12:03] assembles from four building blocks into one building block.
+
+[12:07] You use four of those bigger building blocks to make even bigger and so on.
+
+[12:12] So called fractal or hierarchical assembly.
+
+[12:15] And our body is actually hierarchical.
+
+[12:16] We go from molecules to cells to tissues to organs.
+
+[12:22] What is guiding the larger scale interactions though?
+
+[12:25] I mean fractal, yeah, you just repeat the pattern over and over again.
+
+[12:28] But what is there a greater kind of than interaction?
+
+[12:31] Yeah, we try to keep the same rules.
+
+[12:34] We use DNA sticky ends only for each step.
+
+[12:37] Okay, it's still the sticky end.
+
+[12:38] It's the sequence of ETGCs.
+
+[12:42] Thank you so much.

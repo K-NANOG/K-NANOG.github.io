@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'FOT-Rodin Pro L';
+  src: url('/font/FOT-Rodin Pro L.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'FOT-Rodin Pro M';
+  src: url('/font/FOT-Rodin Pro M.otf') format('opentype');
+}
+
+body {
+  font-family: 'FOT-Rodin Pro L';
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #7696ff;
+  text-decoration: none; 
+}
+
+.transcript {
+  font-family: 'FOT-Rodin Pro M';
+  padding: 1rem;
+}
+
+.header {
+  color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.title-page {
+  font-size: 4rem;
+  letter-spacing: -0.06em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: lighter;
+  opacity: 0;
+  transform: translateY(20px); 
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+::selection {
+  background: #7696ff;
+}
+
+.cardsss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-left: 12.5rem;
+  margin-right: 12.5rem;
+  opacity: 0;
+  transform: translateY(20px); 
+  animation: slideUp 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .title-page #text {
+    font-size: 5rem;
+  }
+}
+
+.carded {
+  width: 1000px;
+  height: 50px;
+  margin: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+
+.carded:hover {
+  cursor: pointer;
+}
+
+.carded img {
+  width: 100%;
+  height: 100%;
+  -webkit-object-fit: cover;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Styles for the card-link to ensure it's not colored nor underlined */
+.card-link {
+  color: inherit;
+  text-decoration: none;
+  display: block; /* Ensure the entire card is clickable */
+}

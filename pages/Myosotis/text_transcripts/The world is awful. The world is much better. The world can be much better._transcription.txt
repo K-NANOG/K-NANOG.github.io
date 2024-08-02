@@ -1,0 +1,157 @@
+[00:00] This video is based on an article by Max Rosa at Our World in Data.
+
+[00:06] Ourworldindata.org is a website providing open access research and data to make progress against the world's largest problems.
+
+[00:14] The world is awful.
+
+[00:17] The world is much better than it was.
+
+[00:20] The world can be much better than it is.
+
+[00:23] All three statements are true at the same time.
+
+[00:27] It's wrong to think that these three statements contradict each other.
+
+[00:30] We need to see that they are all true to see that a better world is possible.
+
+[00:35] Discussions about the state of the world too often focus on the first statement.
+
+[00:40] The news highlights what's going wrong, rarely mentioning any positive development.
+
+[00:45] A pushback on this narrative takes it to the other extreme, which is equally damaging.
+
+[00:50] Solely communicating the progress that the world has achieved becomes unhelpful or even repugnant when it glosses over the problems that are real today.
+
+[00:59] It's hard to resist falling for only one of these perspectives.
+
+[01:03] But to see that a better world is possible, we need to see that both are true at the same time.
+
+[01:08] The world is awful, and the world is much better than it was.
+
+[01:12] To illustrate what I mean, I'll use the example of one of humanity's biggest tragedies, the death of its children.
+
+[01:19] But the same is true for many of the world's other problems.
+
+[01:22] Humanity faces many problems where things have improved over time, which are still terrible and for which we know that things can get better.
+
+[01:31] The world is awful.
+
+[01:33] Globally, 4.3% of children die before they're 15 years old.
+
+[01:39] This is the data for 2020, the latest available year.
+
+[01:43] This means that 5.9 million children die every year.
+
+[01:47] 16,000 children on any average day, or 11 children every minute.
+
+[01:53] Clearly, a world where thousands of tragedies happen every single day is awful.
+
+[02:00] The world is much better than it was.
+
+[02:03] History's big lesson is that things change.
+
+[02:07] But it's hard to imagine how dire living conditions once were, and that makes it difficult to grasp just how much the world has changed.
+
+[02:15] Perhaps looking at the data can help us get our head around the scale of the change.
+
+[02:20] Historians estimate that in the past, around half of all children died before they reached the end of puberty.
+
+[02:27] This was true no matter where in the world a child was born, and it only started to change in the 19th century, just a few generations ago.
+
+[02:35] It's hard to imagine, but child mortality in the very worst off places today is much better than anywhere in the past.
+
+[02:43] Even in the world's richest countries, the mortality of children was much higher very recently.
+
+[02:49] In Somalia, the country with the highest mortality today, around 14% of all children die.
+
+[02:55] Just a few generations ago, the mortality rate was more than three times as high, even in the best off places.
+
+[03:02] What we learn from our history is that it's possible to change the world.
+
+[03:07] Unfortunately, long-run data on how living conditions have changed is rarely studied in school and rarely reported in the media.
+
+[03:15] As a result, many people are entirely unaware of even the most fundamental positive developments in the world.
+
+[03:21] But this fact, that it is possible to change the world and achieve extraordinary progress for entire societies, is something that everyone should know.
+
+[03:31] The world can be much better than it is.
+
+[03:35] Progress over time shows that it was possible to change the world in the past.
+
+[03:40] But do we know that it's possible to continue this progress into the future?
+
+[03:44] Or were we perhaps born at that unlucky moment in history at which progress has come to a halt?
+
+[03:50] Studying the global data suggests that the answer is no.
+
+[03:54] One way to see this is to look at the places in the world with the highest living conditions today.
+
+[03:59] The best off places show that extremely low child mortality is not just a possibility, but is already a reality.
+
+[04:07] The world region where children have the best chance of surviving childhood is the European Union.
+
+[04:12] 99.55% of all children born in the EU survive childhood.
+
+[04:18] To see how much better the world can be, we can ask what the world would look like if this became the reality everywhere.
+
+[04:25] What if children around the world would be as well off as children in the EU?
+
+[04:30] 5 million fewer children would die every year.
+
+[04:33] Of course, the child mortality rate in the EU is still too high, and there's no reason that progress should stop there.
+
+[04:40] Cancers like leukemia and brain tumors kill hundreds of children, even in today's richest countries.
+
+[04:46] We should strive to find ways to prevent these tragic deaths.
+
+[04:50] However, the largest opportunities to prevent the pain and suffering of children are in the poorer countries.
+
+[04:56] There we know not only that things can be better, but how to make them better.
+
+[05:01] You can use this research on how to make the world a better place to contribute to this progress yourself.
+
+[05:07] I recommend relying on research published by the non-profit organization GiveWell.org.
+
+[05:12] GiveWell's team spent years identifying the most cost-effective charities,
+
+[05:16] so that your donation can have the biggest positive impact on the lives of others.
+
+[05:20] Several of the recommended charities focus on improving the health of children,
+
+[05:24] offering you the opportunity to contribute to the progress against child mortality.
+
+[05:29] Research on how to prevent child deaths and the fact that child mortality in entire world regions is tenfold lower than the global average show what is possible.
+
+[05:39] Millions of child deaths are preventable.
+
+[05:42] We know that it is possible to make the world a better place.
+
+[05:47] The world is awful. This is why we need to know about progress.
+
+[05:51] The news often focuses on how awful the world is.
+
+[05:55] There's a large audience for bad news, and it's easier to scare people than to encourage them to achieve positive change.
+
+[06:02] I agree that it is important that we know what's wrong with the world.
+
+[06:06] But given the scale of what we've achieved already and of what's possible in the future,
+
+[06:10] I think it's irresponsible to only report on how awful our situation is.
+
+[06:15] To see that the world has become a better place does not mean to deny that we are facing very serious problems.
+
+[06:21] To the contrary, if we had achieved the best of all possible worlds, I wouldn't spend my life writing and researching about how we got here.
+
+[06:28] It is because the world is still terrible that it is so important to see how the world became so much better than it was.
+
+[06:35] I wish we could change our culture so that we take this possibility of progress more seriously.
+
+[06:41] This is a solvable problem. We have the data and the research, but we are currently not using it.
+
+[06:47] The data is often stored in inaccessible databases, the research locked away behind paywalls and buried under jargon in academic papers.
+
+[06:56] With our world in data, we want to change this.
+
+[06:59] If we want more people to dedicate their energy and money to making the world a better place,
+
+[07:05] then we should make it much more widely known that it is possible to make the world a better place.

@@ -1,0 +1,127 @@
+[00:00] And now without further ado, the final presentation in the morning session, we'll have Julian Engel. Thank you so much for joining us.
+
+[00:05] Hey, so I'm Julian, co-founder and CEO of AdaptiveBio. We're a protein engineering company, and I apologize for the title of the talk, which makes it sound like we are building a protein printer.
+
+[00:15] So there's two things. I'm running a protein engineering startup. We're thinking hard about how to make protein engineering easier for people so that you can use these great machine learning models to design new proteins, get them tested in real life.
+
+[00:26] And then we were brainstorming about some interesting concept for how to make DNA cheaper, and that resulted in this idea for a protein printer. So I'll go through both of them real quick.
+
+[00:35] AdaptiveBio, we're convinced proteins are nature's nanotechnology. We can do so many cool things with them in our bodies. They modify DNA, transport cargo around, defend our body against infections, and produce energy, transduce these photons hitting our retina into signals for our brain.
+
+[00:53] All of these cool things. And right now we just suck at protein engineering. So our mission is basically to turn protein engineering labs from looking like this into something that looks like this, and from making the job of the protein engineer from doing this to doing something like this.
+
+[01:08] And in order to do so, we're trying to build a full stack protein engineering foundry that integrates everything from the synthetic biology to DNA design, assembly, protein synthesis, protein testing, doing that then in an automated fashion on lab equipment, integrating the data from all of this, and exposing that to users via an easy to use software interface or an API so that you can just design proteins from your computer, send the designs to the lab, get them tested, get the functional data back, and iterate this way.
+
+[01:38] And a couple of mock ups of what we'll have coming up basically just like web interface where you can see all your experiments for your proteins, your projects, and you can then basically design a new experiment, run it on the platform, get the data back as soon as the experiment is finished, and iterate this way.
+
+[01:54] So that's what we're doing with adaptive. And if you look through like a simple protein engineering experiment from protein design to building the DNA, to building the protein, to testing the protein, and we take something like just using an AI model like RF diffusion, what Alexey introduced in the beginning, for example, state of the art, open source protein design model, getting a DNA fragment from someone like Twist, DNA synthesis vendor, and then we can actually
+
+[02:24] and then making the protein using self-reexpression and then testing the protein for binding. If you just look at the costs associated with that, right now the cost for DNA exceeds all the other costs by like a factor of 10x or something.
+
+[02:36] And that was always something that we were thinking about. And then one night in cold Switzerland last winter, we were brainstorming, we were thinking, okay, what if, so we come to a conclusion that DNA is still way too expensive, hasn't dropped much in the last five years or so.
+
+[02:53] If you look at these calls and curves, they're still stuck at something like five cents per base pair for DNA synthesis costs. So if you order this gene at Twist, you have to pay 50 bucks, although the other steps in the process are not that expensive.
+
+[03:05] So what if you could make a protein without having to use DNA? We have the central dogma of molecular biology. DNA gets transcribed into RNA. The RNA gets translated into protein.
+
+[03:17] The protein actually is much smaller than the RNA. There's a great book on that. Biology by the numbers, recommend checking out. What if we could just skip the DNA part and directly encode somehow the functionality of the amino acids into some sort of protein printer and then make the protein from that.
+
+[03:36] And that got us brainstorming. And then in the end, co wrote something with Nico McCarthy who runs this synthetic biology sub stack called code on. And that's what I'm going to go through quickly here. Now present this as if this was a working like molecular machine.
+
+[03:52] And then in the end, we can find all the mistakes that are in there because they are tons in there. So, okay, we know about the ribosome. We know it translates basically the mRNA into protein.
+
+[04:02] And now if you want to get rid of the DNA of the mRNA, we basically have to encode all of those signals for the different amino acids somehow into some sort of pattern that we can direct the ribosome to do.
+
+[04:13] And with something like 20 amino acids, you need at least five bits basically in order to do that and five bits with, for example, some optogenetic signal.
+
+[04:22] If you imagine the ribosome changing and then incorporating a different amino acid, that's already like crazy molecular engineering that no one can do right now.
+
+[04:29] So at this point, we were thinking, okay, what if you you have already all these like encoding agents, basically the tRNAs. What if you just kept them?
+
+[04:38] You put them all in like a ring and then you basically dial up the tRNA that you actually want to have or the code and that you want to have. Here's the original sketch for that. That makes it much clearer.
+
+[04:47] Basically imagine like a rotary phone where you dial up the codon that you want to actually use and then you can go back and forth maybe or you just go in a circle and you reset and then you put in.
+
+[04:57] Then you have like a signal that says, okay, now incorporate, please, whatever codon is there. And then the ribosome will produce that protein.
+
+[05:04] Okay, here is a bit more cleaned up. We just assume we have two signals, blue light, red light. The blue light opens up some sort of gate on the A side of the ribosome, which now allows the tRNA to bring the amino acid for whatever codon we're currently at.
+
+[05:22] And then with the red light, we're going to move the ribosome along this like rotary codon stretch to whatever codon we want.
+
+[05:30] And if we then put it like this, we can make our encoding scheme for whatever protein we want to synthesize.
+
+[05:39] We have our two signals. We have a rotary dial. We have a dial up table. And then if we want to start with methionine, okay, we just incorporate.
+
+[05:48] Then for alanine, we move one codon we incorporate. For speragine, we have to move three or three codons and then we incorporate and so on.
+
+[05:58] And we move along this table. And if we have to go basically one codon back, we cannot go back. So we just go like around the entire table and we have 20 red signals and then one blue one.
+
+[06:09] But it would work. Maybe, you know, it's kind of hard. Like I said, we're going to get to all the problems that are in there.
+
+[06:16] But basically, that was the idea. Like digitally encode proteins without having to use DNA.
+
+[06:21] And then you could put this basically into a miniaturized protein synthesizer where you just have a grid of programmable LEDs.
+
+[06:29] They can be very small. If you look at the OLED feature sizes that we have currently, then a grid of these rotary ribosomes where we immobilize them.
+
+[06:37] And then underneath a grid of microwelds where we can do actual functional protein testing.
+
+[06:42] And then in something like a box smaller than a smartphone, we could basically produce like millions of potentially billions of proteins in parallel and test them for their function and iterate quickly towards new protein designs.
+
+[06:53] So there was the whole basically speculative exercise of designing this protein printer. And I don't have a good idea of the time right now. Could you tell me how much?
+
+[07:02] Twenty seconds. Perfect. Then I'll stop here and we can move over to the Q&A next. I have a summary slide.
+
+[07:08] I have a summary slide. OK, so basically, it's a protein engineering foundry with adaptive.
+
+[07:12] We try to make it easy for you to order a protein to be tested. And then this is with code on newsletter, just like speculative protein printer that gets rid of DNA and basically kills twists business model.
+
+[07:25] OK, wonderful. Thank you.
+
+[07:32] We have time for one or two questions before I ask you the discussion prompt.
+
+[07:37] It just seems to be very susceptible to slipping by one errors. What do you do about that?
+
+[07:43] Yeah, no idea. Basically, in order to have any significant quantity of protein to test to pick up with like common protein assay methods, you have to have like a million of protein or so.
+
+[07:54] So basically you have to imagine, OK, I have a million ribosomes and they probably get out of sync. And then there's lots of problems with that.
+
+[08:02] One more question. Sorry.
+
+[08:07] Maybe single molecule detection could work for this, but yeah, it's a very clear idea. I was just wondering what's the photo responsive unit here in your design?
+
+[08:16] What's the actual component that respond to either blue or red light? Yeah, so that would be a light sensitive protein. I mean, they're photosensitive switches.
+
+[08:25] So I think the actual the the blue light protein basically that could basically a bit easier.
+
+[08:32] You have a protein which just has a mechanical deformation upon registering this photon of a certain wavelength.
+
+[08:38] And that basically blocks the side. But then this probably has some refractory period where it just like resets after a while and then something else could incorporate.
+
+[08:46] So this requires first better protein engineering of the building blocks so that you can then put together this more complicated machine.
+
+[08:54] Maybe if I can ask another one, how would you achieve unit rationality here?
+
+[08:57] Because it looks like your design relies in the whole thing always moving in the same direction.
+
+[09:03] But how would you make sure that that actually happens in the machine? Directionality as in forward and backward? Yeah.
+
+[09:10] Yeah, you don't need that. You can just move forward by one codon at a time.
+
+[09:14] How do you know it will always move forward? Well, I mean, that depends on the type of motor protein.
+
+[09:20] For example, if you have like a nanopore that unwinds DNA for DNA sequencing with nanopore sequencers, like it only moves the DNA in one direction.
+
+[09:28] So I think that's fairly established, although no one has ever put this together in such a machine.
+
+[09:34] Right. So then the question from us is, again, if you look at the other architectures, it's not in anywhere. Is it a new proposal?
+
+[09:42] I don't think it's a it's a new new proposal or something.
+
+[09:44] We're just trying to basically build something functional for basic building blocks so that you could even go ahead and design a new let's say reagent nanobody reagent antibodies are like a 10 billion market by itself.
+
+[09:56] Use them all over the world. But right now, if you have our diffusion, like a machine learning model, you cannot easily design something that you could sell on the market to advance protein engineering.
+
+[10:04] So that's kind of like the low level stuff that we're doing with the startup.
+
+[10:07] And this as like a more complex thing to put together different building blocks just serves as like inspiration for more protein engineers and molecular engineers to maybe get into the field to start using those tools.
