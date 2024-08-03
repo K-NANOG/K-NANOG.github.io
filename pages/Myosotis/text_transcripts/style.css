@@ -22,6 +22,8 @@ a {
 .transcript {
   font-family: 'FOT-Rodin Pro M';
   padding: 1rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .header {

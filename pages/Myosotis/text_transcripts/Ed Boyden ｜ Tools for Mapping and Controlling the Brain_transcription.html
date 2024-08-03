@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ed Boyden ｜ Tools for Mapping and Controlling the Brain_transcription</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h2 class="header">Ed Boyden ｜ Tools for Mapping and Controlling the Brain_transcription</h2>
+  <pre class="transcript"><a href="https://www.youtube.com/watch?v=HwWEbaN9xaM">[00:00]</a> Hi, I would say Ed, we're already recording and this will go live on YouTube.
+
+[00:05] And yeah, I'm going to hand it over to Radell to do the program today.
+
+[00:11] Thank you, Alison. It's wonderful to see you here.
+
+[00:13] And hi, Ed. It's great to see you again.
+
+[00:17] And we won't take too long to get started. I'm just going to say, of course, many of you already know who Ed Boyden is.
+
+[00:24] But just in case you don't, he's a professor at MIT and he's got so many different positions, it's impossible to mention them all.
+
+[00:33] At the Media Lab, HHMI, the Engineering Computer Sciences, all of them.
+
+[00:40] So it's Ed has been incredibly busy for untold years in working on developing ways for neuroscience to better collect data, analyze data, work with data.
+
+[00:54] So the tool set that neuroscience uses is really the thing that Ed has always been pushing forward.
+
+[01:00] Everything from optogenetics to expansion microscopy.
+
+[01:05] And I hope that today Ed is going to be able to give us new insights that can drive us forward in this direction.
+
+[01:14] We've already started talking about this direction a little bit the last time when we had Conrad Cording here and he was kind of giving us his view on what is fundamental to understanding the brain and how that maybe differs from some of the things that neuroscience has been doing so far.
+
+[01:28] Or what tends to be the trend.
+
+[01:31] And we're going to be carrying on in that spirit as well with the next talk being for next month's talk being Chris Owen from Boxa who will dive a little deeper on a very specific type of neurotechnology and data collection.
+
+[01:46] So with all of that said, and with Ed being ready to go and all of us here, I'm going to hand it over to you, Ed. Please take it away.
+
+[01:55] Great, thank you. All right, let me do some screen sharing here.
+
+[01:59] So I've been here just about 20 minutes of slides.
+
+[02:05] Really to try to convey two things. One is,
+
+[02:10] what are the principles underlying our goals, right? You know, we do seek what aspirationally I like to call ground truth.
+
+[02:19] To understand the building blocks of the brain and how they work together.
+
+[02:27] The history of science has shown that, you know, when it feels like physics got down to quantum mechanics, right, you know, particles and how they interact and, you know, now we have computers and lasers and the internet and cell phones and so forth.
+
+[02:40] Or in chemistry, it got down to molecular bonds and the periodic table. And now, of course, we have so many kinds of polymers and interesting materials every day.
+
+[02:51] So it's aspirational because we're obviously not there yet. But what would it take to get to the ground truth for the brain? What are the building blocks? How do they interact?
+
+[03:02] So our hypothesis in our group at MIT is that in between the aspiration and the error of generating the data that tell us how to cure brain diseases and how to understand brain computations, there's a necessary building block that we have to achieve in this technology.
+
+[03:21] You have to see things and control things.
+
+[03:25] And so today I just will tell you a couple of very short stories about how we're trying to see and control different things.
+
+[03:31] Aspirational, we are trying to go for ground truth.
+
+[03:34] Are we there yet in all cases? Definitely not.
+
+[03:38] But my hope is that we can start by talking about what we want to do, how far we've gotten so far, and what are the cutting edges of where we are at, and where might we go next?
+
+[03:51] So let me try screen sharing.
+
+[03:54] Is this working?
+
+[03:57] Wonderful.
+
+[03:59] Let me try to move the bar of people so it's on the side, but not including the slide.
+
+[04:06] Okay. Oops.
+
+[04:09] My screen just went blank. I wonder what just happened.
+
+[04:12] Does anyone know what causes that in Zoom? Okay, I think I saw.
+
+[04:15] I still see, yeah, we can see the slide.
+
+[04:18] I see the slide fine now. Great.
+
+[04:21] Might be delay.
+
+[04:23] Great.
+
+[04:25] So, the general theme that we're pursuing is can we see what's going on in the brain, and can we control what's going on in the brain?
+
+[04:33] And can we build tools that are ideally getting down as close to ground truth as possible, the building blocks of life, how they interact and so forth.
+
+[04:42] But, and this is where a lot of the tension comes in.
+
+[04:45] We have to also look at the brain system scale.
+
+[04:49] So, brain cells are enormous objects right, they can be centimeters in spatial extent in our brains right, and they have these beautiful tree like architectures.
+
+[04:58] But the building blocks of life biomolecules are nanoscale.
+
+[05:02] So, centimeter scale nanoscale, we're dealing with an enormous dynamic range of spatial scale, if you want to understand the brain.
+
+[05:13] So that's one tension.
+
+[05:15] Another tension is time dynamics right.
+
+[05:18] Brain cells compute using fairly high speed, as far as biological things go, primitives right electrical pulses, action potentials that last a thousandth of a second that brain cells generate in order to compute.
+
+[05:31] And then chemical exchanges between brain cells at context called synapses.
+
+[05:36] So a brain cell would have this elaborate tree like shape, it might form thousand or 10,000 synapses with other brain cells.
+
+[05:43] How do you see that? How do you control that?
+
+[05:46] It's a really complex problem.
+
+[05:49] So I made a few animations, essentially illustrate the tension that we're dealing with.
+
+[05:55] So in the brain you have these enormous brain cells that could be centimeters in spatial extent.
+
+[06:01] And then if you zoom in, you know, the wire the brain is nanoscale right, you know the the axons and dendrites these branches can be 100 nanometers or even thinner in diameter.
+
+[06:14] So if there are what 30,000 or so genes in the human genome, they encode for who knows how many gene products, proteins other biomolecules.
+
+[06:22] Those are nanoscale and they are often organized in nanoscale precision. So these are cartoons of course, images like this cannot yet be taken.
+
+[06:31] But they illustrate where we'd like to be right again aspirational ground truth at scale.
+
+[06:37] So brain cells of course are competing with these millisecond timescale electrical pulses, not shown here in this animation are chemical exchanging between brain cells.
+
+[06:47] How the heck do we see and control those.
+
+[06:51] So I'll just tell you three short story statement how we are trying to build tools that can confront the spatial and temporal scales.
+
+[06:59] Let's start with expansion microscopy.
+
+[07:02] So, there are many methods for nanoscale imaging, probably many people on this call know more about this than I do, given the theme of this, this group.
+
+[07:12] But these different techniques like electron microscopy and super resolution microscopy. They require expensive equipment.
+
+[07:19] And they really can struggle in terms of speed and and cost to image large 3d objects.
+
+[07:26] So in our group we often think about doing the opposite of what people have been doing in the past.
+
+[07:31] And so we've been working on ways to take a brains and synthesize dense spider web like measures of swallowable polymer throughout them.
+
+[07:40] Basically the same kind of material that you find in baby diapers.
+
+[07:45] Process the tissue appropriately, add water, and as the baby diaper material swells, you'll expand the brain.
+
+[07:52] So, importantly we're synthesizing this dense spider web like mesh of baby diaper polymer inside brain cells and outside brain cells in between biomolecules and around biomolecules.
+
+[08:03] We're trying to really permeate the entire brain and the brain cells within very very densely and evenly.
+
+[08:10] We anchor key biomolecules to the polymer by attaching little handles that bridge the biomolecules and the baller.
+
+[08:17] We soften the brain using detergents enzymes or heat.
+
+[08:21] We add water and the baby diaper polymer swells, but as it swells it pulls apart the biomolecules.
+
+[08:27] So of course this does not work on living brains. This only works on preserved brains.
+
+[08:32] That's true for pretty much pretty much all nanoscale methods that you would apply to 3d brain tissue.
+
+[08:37] They work on preserved brains, not living ones.
+
+[08:45] So in 2015, we showed that this works and panel B is a small piece of the mouse brain and panel C we've expanded it by 100 times in volume, about four and a half times in each direction.
+
+[09:00] And so we were able to physically magnify the brain.
+
+[09:03] And importantly, because the spider web like mesh of the baby diaper polymer is so dense.
+
+[09:09] And so even it preserves nanoscale information as we do this fellow.
+
+[09:15] And we show that in a number of early studies, where we validated it by comparing to earlier nanoscale imaging methods that are very accurate, but require expensive equipment and again can be quite slow to apply to large 3d objects like brain circuitry.
+
+[09:35] So the other thing we've been doing is is applying a technique that we did not invent, but that others invented before us, which is color coding brain cells.
+
+[09:44] So you can take genes from fluorescent that encode for fluorescent proteins from jellyfish and coral and so forth.
+
+[09:51] And you can express them in combinations of the brain.
+
+[09:55] And this is the the rainbow technique developed by several groups that
+
+[10:01] A little bit of background noise. I don't know if maybe somebody needs to mute.
+
+[10:06] But yeah, so this is a piece of the best of the campus, a part of the brain involved with many functions including memory and emotion related functions and other functions.
+
+[10:16] We use viruses to express fluorescent proteins in the brain.
+
+[10:20] If you zoom in on a small patch of the wiring of the brain, these are different axons and dendrites. Well, it's blurry right.
+
+[10:28] But if you expand, this is the same field of view in the upper right as in the upper middle.
+
+[10:33] If you expand the brain and an image it now you can see the individual wiring of the brain, right.
+
+[10:39] So very excited this idea of using some kind of color code, plus expansion to enable nanoscale imaging of a brain circuitry.
+
+[10:51] Expansion process is pretty easy to use.
+
+[10:57] This slide isn't really meant to be read but almost 350 experimental papers and preprints have already come out to date doing expansion is being applied to early cancer detection to kidney disease to the microbiome.
+
+[11:11] It really democratizes nano imaging. Now anybody can do nano imaging.
+
+[11:16] And we, we trained hundreds of groups with hands-on workshops before COVID but in summer 2020 of course that was not possible.
+
+[11:23] And so we posted online, a simple photographic tutorial with rudimentary skills like how do we handle a cover slip and how to use a paintbrush and so forth.
+
+[11:34] And so many people have continued to learn expansion in the time since.
+
+[11:39] So to summarize this first little short story, we developed a way to physically magnify brains and other biological systems, not living but preserved.
+
+[11:48] It's very easy to do, it's already being used in many many hundreds of research groups, maybe over 1000 research groups at this point.
+
+[11:55] And yeah, one hope is that we can really make in the near future maps of brain circuitry within a resolution that maybe we could try to do things like, you know, perform computational models of how neural circuits work and the time to come.
+
+[12:14] Now the obvious limitation of expansion of course is that it doesn't work on living things. And so that's a nice segue into the second short story I want to tell you about which is optogenetics.
+
+[12:23] Optogenetics is a technology that allows you to control the brain with light.
+
+[12:29] This started when my clavator called I saw off and I were both students at Stanford and we were just brainstorming. How do we control brain cells very precisely.
+
+[12:37] And so we just started going through all the laws of physics there's only so many kinds of energy you can deliver to the brain, and we thought light would be cool.
+
+[12:43] You can bring light into the brain using optical fibers.
+
+[12:46] In the same way that electrodes are commonly lowered into the living brain.
+
+[12:51] And then the question became, how do we make brain cells sense light, because most of them don't.
+
+[12:57] And so I became really fascinated by microbial absence. These are proteins that look like the one in the lower left. There's seven transmembrane proteins down and single solid microbes.
+
+[13:08] And they're used by the single cell microbes to convert light energy into chemical energy.
+
+[13:16] So, the first to be found was a light driven proton pump.
+
+[13:19] Later people found light driven chloride pumps, and later people found like driven ion channels.
+
+[13:25] And as a catch people up to the present day what what we and our group members and alumni and collaborators and so forth have found is that basically all these families and molecules can yield molecules that are safe, fast and effective for controlling
+
+[13:38] neural activity, express the gene and a neuron shine light, and you could turn neurons on or off.
+
+[13:44] So by turning neurons on, you can figure out what kinds of, for example, behaviors they can initiate. You can figure out whether they can trigger a pathological or, you know, curative state potentially of the brain by turning neurons off, you can figure out what
+
+[13:59] they're needed for, you know, can you delete a memory or turn off an emotion, and so on and so forth.
+
+[14:06] So many.
+
+[14:07] Again, just as of the expansion microscopy.
+
+[14:10] You know these tools are now in use by many hundreds perhaps over 1000 neuroscience groups that we use to study how activated or silencing neurons could trigger all manner of behaviors or pathological states.
+
+[14:23] And so, you know, this short talk we have, we don't have time to discuss everything that's happened in the last, you know, really almost two decades since our first paper on this but really just want to comment on a couple interesting recent developments.
+
+[14:34] Last summer, a European team announced that they were actually starting to use optogenetics in people.
+
+[14:41] So most of the results to date have been used in animal models like mice, you know, to turn off a memory or activate an emotion or, or try to change, you know, cancel out a Parkinson's symptom and so forth, which is great, right, we're learning a lot about the
+
+[14:56] which is very, very valuable.
+
+[14:58] But a group in Europe did show that they could take a patient who has retinitis pigmentosa for a blindness that causes the light sensing cells of the eye to actually or die off.
+
+[15:08] They put in a gene therapy vector with the gene for crimson, which is an optogenetic molecule that we reported in 2014.
+
+[15:16] And this person had a partial restoration of functional vision.
+
+[15:19] So this is a disease that that can't be, be, be cured.
+
+[15:25] And this person was able to recover partial functional vision to recognize objects, to see lines like a crosswalk.
+
+[15:32] Couldn't read text or recognize faces yet but still a major step forward.
+
+[15:40] More commonly people use these tools to study the brain so my collaborator leeway side has used up to genetics to drive the brain of Alzheimer's model mice. These are mice that get Alzheimer's like symptoms.
+
+[15:51] And she showed that if you drive the brick in 40 times a second, the brain gets better.
+
+[15:57] The teams went on under her leadership to show that you can then simulate those brainwaves by showing mice flickering light through their eyes, no need for the optogenetics anymore.
+
+[16:06] And just have the mice watch a movie, basically.
+
+[16:09] And more recently the team show that you can add in a clicking sound, have the mice watch a flickering light and hear a clicking sound, and they will then get better.
+
+[16:17] So now, she and I co founded a company called Vito, which is trying to, which is doing and has a very exciting early data, showing that with actual Alzheimer's patients, perhaps exposing them to flickering lights and clicking sounds could be a potential treatment for
+
+[16:37] for Alzheimer's disease. And so it's early days. This is not an FDA approved therapy. Neither it's the blindness treatment that I mentioned earlier, but it points the way towards, you know, how optogenetics either directly people or by inspiring ways for
+
+[16:54] modulating the brain to treat other diseases could yield potential therapeutics down the road.
+
+[17:01] And so the final short story I want to tell you about is, you know, basically the opposite of optogenetics. Can we watch the brain in action.
+
+[17:08] Now lots of genetics we were really lucky. The natural world made these molecules through evolution that allow us to control brain activity, basically without modification, for the most part.
+
+[17:19] But for imaging brain activity.
+
+[17:22] We were not so lucky.
+
+[17:24] We couldn't find a molecule just out of the natural world that all by itself, or report, you know, brain activity with high fidelity.
+
+[17:32] And so we thought, well, if the world doesn't want to evolve this for us.
+
+[17:36] Let's evolve it in the lab.
+
+[17:38] So we built a robot that does evolution in the laboratory.
+
+[17:41] And many groups of course have done directed evolution before us but we wanted to devise an evolution robot that would give us what we want a fluorescent indicator, a glowing indicator of neural activity that would be safe, effective, fast, and so forth.
+
+[17:57] And so flash forward to the current day, we use this product to develop a molecule called Archon.
+
+[18:02] And working with show Hans group at BU we showed that the Archon molecule could be used to image neural activity with a fairly simple optical setup.
+
+[18:11] Shine light on the brain from a red laser, collect the infrared light.
+
+[18:15] What you see on this slide looks like electrode traces, but they're not, they're being imaged on a camera.
+
+[18:21] And what that means is you can image many cells right because cameras have many pixels.
+
+[18:25] And so we're able to do that with a very simple and an awake behaving mouse where we're imaging, you know, eight neurons and seeing activity in their brains.
+
+[18:37] So we're very excited about each of these tool sets.
+
+[18:41] We want to see the brain in action. That's being empowered by technologies like the voltage imaging that we're doing want to control the brain, that's where optogenetic tools can be quite powerful.
+
+[18:53] In these short form talks, I was asked to keep it to 2030 minutes. I didn't have time to acknowledge all the people led the projects but their names are on the slides.
+
+[19:02] And I'll end on this slide because it even longer list of people in the lab at the top or clavaries around the world in the middle of the slide have helped to make these projects successful.
+
+[19:12] And we share all of our tools as freely as possible. Please visit our website sithneuro.org in the upper right.
+
+[19:19] And don't hesitate to email me at Ed Boyden at MIT.edu if I can be helpful.
+
+[19:35] Yes, you have time for questions now.
+
+[19:36] Yeah, I think we still have quite a lot of time. Thank you very much, Ed. That was fantastic. As usual, a wonderful contribution.
+
+[19:44] I'm sure we all have questions even though it looks like we didn't all put them in the chat here.
+
+[19:50] So I guess just speak up or put them in the chat now if you like. I'll, I'll give it a start. I had one question that came to mind right away as you were talking about therapy for Alzheimer's patients, and I was wondering if you could give us a little bit of a
+
+[20:02] about the sort of the mechanistic underpinnings of that. Like what is the theory behind why this works or seems to work?
+
+[20:12] Yeah, so in the studies that Li Wei and her group led, they have been investigating this and we have some joint students working across their group and our group.
+
+[20:22] It does seem to clean up amyloid. It also seems to clean up tau. Blood flow seems to improve. Microglia look like they're less inflammatory and more phagocytic. So there's a lot of different things change.
+
+[20:38] And so what is the proximal cause, the thing that triggers everything else? I think to be honest, we don't know for sure yet. It's still early days, but it's really one of the reasons that I was excited to, you know, co-found the company and help get this into the clinic was it did seem to address many different problems.
+
+[20:58] And that made at least suggested to me that, you know, we'd have a better chance of being a shot on goal than a strategy that only addresses one of the many, many things that happened in all cyber cities. So that's one thing I'm excited about.
+
+[21:12] Thank you. I had a question. Dr. Boyden. My name is Andy. I'm an MD PhD student at Colorado. We met like a couple times, but I know you meet a lot of people.
+
+[21:22] I like you've developed a lot of really interesting tools, even everything from like the wireless TBS to everything you talked about today. Do you think that we're at the phase now where we have enough tools to try to get at some of the deeper questions in
+
+[21:43] Neuroscience or do we still need better tools like higher density recording probes or some type of angio recording method to get more network activity in live and live networks?
+
+[22:00] It depends on the scientific question, right? I mean, a lot of scientific questions can be answered with classic tools being used in clever ways. My first when I was doing my PhD with Jennifer Raymond and Dick Chan at Stanford.
+
+[22:14] My first paper from graduate school was pure behavior, just watching mice move their eyes.
+
+[22:23] No molecules, no physiology, no imaging.
+
+[22:27] And that was great training for me because I trained previously as an engineer learning how to really ask great questions.
+
+[22:34] You know, it's a very powerful skill and working for Jennifer and Dick was really great training.
+
+[22:43] And yeah, looking at behavior is important, right? You can learn a lot by just looking at things. So yeah, I mean, in our group, we'd like to combine all these in small brains like fish and worms.
+
+[22:54] So the worm scale Gans has 302 neurons, the larval zebrafish, maybe 100,000 or so, you know, a mouse, of course, as 100 million or so, and a human has on the order of 100 billions.
+
+[23:05] So, you know, sort of the interesting questions is, can we combine these techniques, whole brain imaging, expansion, optogenetics, and so forth, and integrate those data sets.
+
+[23:15] So I think in the coming years, that's something that we really want to do.
+
+[23:20] I would love to see if we could simulate entire small brains, for example. Yeah, that's a reasonably ambitious, but not entirely unwieldy goal.
+
+[23:32] Given the quality of the current tools.
+
+[23:36] Will we, you know, and this is what they call, this is what I sometimes like to call real science, you know, we don't know what the answer will be. So, the answer to many more of your questions might be, I don't know.
+
+[23:47] Thank you.
+
+[23:50] Hey, hey Edward Boyden.
+
+[23:54] My name is Roshan. I've actually known about you since 18 years old and since high school.
+
+[24:01] I even wrote a blog post, connecting, voting off of some of your ideas so it's quite amazing that I get to talk to you personally now.
+
+[24:10] Thanks to, thanks to Alison here.
+
+[24:14] But my question is, I guess half question more also statement. I feel like, have you heard of a woman named Mary Lou Jepsen?
+
+[24:25] Yes, we almost shared lab space when she was going to start MIT faculty herself.
+
+[24:29] Oh, okay, great.
+
+[24:31] Start up companies.
+
+[24:34] Well, you know, of course her risk as you mentioned that with brain imaging.
+
+[24:40] Her research, if you probably know is, is, is would be groundbreaking, completely groundbreaking.
+
+[24:47] I guess if not everyone here knows about her but basically she's she's building what is essentially a very high fidelity, high quality MRI and the size of a cap.
+
+[25:04] Literally you can put it on just your head. It's so small. And the actual physics behind it is very complex.
+
+[25:12] Basically she allows you to see at the level of a neuron in real time.
+
+[25:19] And you can also see there's no limit in the depth as well. And she was watching a talk she knows about your work.
+
+[25:28] Not only would this allow for reading, like if you like reading the brain reading all the neurons in the brain doesn't matter how deep you're looking as well.
+
+[25:38] But also you could with ever wins technology. If you combine the two you could write potentially right to the brain as well read and write.
+
+[25:47] And this would be another. Basically this would be a non invasive form of very high quality non invasive form of what neural link is trying to accomplish.
+
+[25:59] I was curious if like if you. So you already know about her if you are you interested in actually doing something like that with with with with the, I guess the technology she and her company is building open water I believe is the name of the company.
+
+[26:19] Yeah, always eager to to learn about technology and try out technology and yeah yeah as soon as there's something where we can look at the specifications and so forth eager eager to learn more for sure.
+
+[26:32] You have heard about that particular helmet or in the sub more of us more like brain imaging kept at the beginning. Yeah, you've you've you've heard of this as well.
+
+[26:45] I've talked about it many times yes. I see. Okay, okay. Okay, good.
+
+[26:50] Yeah. Also have Nikolai with the question.
+
+[26:56] Yes, here to ask a question that might pull us a little bit to the side I'm very excited about the brain reconstruction.
+
+[27:03] But my question is going to be different. Just relative to the techniques that you described that's just half of the techniques that you have developed you have developed so many other techniques.
+
+[27:14] And recently there was a talk about, you know, Ellen Musk in all those robots.
+
+[27:21] And there's a huge level of fanciness about surgical robots that work on the brain.
+
+[27:28] And I remember that at the time you were working on the on the robot that was supposed to do craniotomies for mice.
+
+[27:36] And how precise this has to be and how many difficulties they are. So if you can just express some comments about the.
+
+[27:47] How do you see robotics in neurosurgery in the future and where you think this can go and how, how many difficulties they will have to resolve before before being able to do something meaningful.
+
+[28:04] We had several robotics collaborations in the past, which yielded a auto-craniality robot, a robot, which is a way of introducing electrodes into the brain to record neurons.
+
+[28:13] And yeah, those are now commercially available devices. And, you know, we once what something is out there, we kind of move on to the next thing.
+
+[28:20] So that's why I didn't talk about it. I was trying to emphasize more recent things that we're working on now.
+
+[28:24] But yeah, those technologies are out there and people can use them to acknowledge they're all being used only in animal models in nurse basic neuroscience.
+
+[28:33] I don't know if they're being used in in clinical realms, but they haven't really. I did not really follow that field quite as closely as much as those technologies have matured out of the out of the lab.
+
+[28:45] We saw a few products related to those things, but but mostly focusing on new topics.
+
+[28:55] I also have a question. One was related to a company that you said you recently started. What was it called? Corbido?
+
+[29:04] Cognitotherapeutics. That's doing the auto-craniality.
+
+[29:08] Could you add a little bit more about what the roadmap of this company is and what's next for you there?
+
+[29:16] Yeah, so the company has described some of its early trials and so that's out there.
+
+[29:30] And yeah, the Red Vaughn is the CEO.
+
+[29:35] He could tell, I think, your audience more about what the company is doing right now.
+
+[29:41] But yeah, I think it's very exciting to see if the trials could be scaled up.
+
+[29:47] And yeah, it'd be also a goal to go for FDA approval.
+
+[29:54] Very cool. Okay, I'll post more about it here in the chat.
+
+[29:57] And then you also mentioned the kind of ambitious and perhaps that's the ambitious goal of simulating small brain.
+
+[30:04] Do you have any more, yeah, I guess any more like hunch to share of like what the potential timeline around this could look like or what would need to happen as first steps to get there?
+
+[30:20] This is all very new and we're exploring it actively building collaborations, recruiting people to join the team.
+
+[30:28] And I don't I don't have much more to say at this point.
+
+[30:31] As I mentioned earlier, this is what I said is called, you know, real science.
+
+[30:34] You know, it's not like you follow the recipe and you're guaranteed pancakes or noodles at a certain time of day.
+
+[30:42] I know you just said that you don't have much more to say about that.
+
+[30:45] But I am really curious because, of course, generating huge amounts of data, either by, you know, using electron microscopy or expansion microscopy or dynamic recordings of any kind.
+
+[30:57] You end up with piles of data and neuroscience is used to looking at that data in the way where you've you know, you studied it in the context of an experiment.
+
+[31:07] And then you make a hypothesis and then you build a model and then you make a model that then tries to predict something that you then test.
+
+[31:14] But there really hasn't been that much work in taking data directly from this big pile of measured data and then trying to populate the parameters of a model based on that.
+
+[31:25] I think that some of the work that that, for instance, Professor Lou Scheffer is trying to do at Janelia right now to try to model visual neurons in Drosophila based on on data that they actually acquired from electron microscopy is very interesting.
+
+[31:40] But I don't see a huge plethora of that kind of work.
+
+[31:44] And it feels to me like you get the best results from this kind of brain mapping science and all this technology that's being developed around it.
+
+[31:52] If you have a feedback loop right where you're trying to use the data that's being collected to make something to then see how well it works, how well it predicts.
+
+[32:01] And then to go back and say, well, actually, we needed to measure this a little bit differently, or we really need that data or something like that.
+
+[32:08] You want to have this cycle going on. Where would you say is the best example of that kind of work that you know of if you care to share?
+
+[32:20] Yeah, great question. I mean, yeah, I think the, you know, Eve Marder, of course, has done beautiful work where they, on the Crab Somatic Astro Ganglion, where they can record all the neurons, they know the wiring, they can look at the molecular
+
+[32:37] content, and then they analyze the data from very first principles ways. You know, they look at the how does the gene expression, you know, across cells correlate?
+
+[32:46] How does the, you know, what kind of parameters could generate a given output pattern? So I always learn a lot from her papers.
+
+[32:53] That's a good example.
+
+[32:55] Yeah.
+
+[32:57] I think Nikola also mentioned Sebastian Tung.
+
+[33:03] Yeah, that was an example.
+
+[33:05] You all know Sebastian Tung's work. They spent lots of time, money and involvement to rebuild a millimeter of human retina.
+
+[33:16] And the outcome that he did was that he was able to use that structure to recapture a model that exists from the 60s about the function of the area detecting moving images.
+
+[33:33] And I think that the big problem between fixed data and data in motion in dynamics is it's the scale. It's always scaling it up.
+
+[33:51] Was the question how to scale up or I didn't quite follow the end?
+
+[33:55] No, it was more of a comment. It's the scale. It's, I mean, the clarity technique. It's a great way to reveal structural properties of the brain.
+
+[34:08] Transferring it into the dynamics of the brain.
+
+[34:13] It's difficult. It's difficult because of scaling. It's difficult because of looking at different examples of elements interacting and acting.
+
+[34:28] That's exactly why I sort of prefaced the talk by saying that we want to think of the temporal spatial scales as the most important drivers of what we want, right?
+
+[34:36] And that's why expansionary microscopy lets you do scalable neural imaging. It's why, you know, optogenetics and imaging and neural dynamics scale because cameras and computers are always getting better and better.
+
+[34:48] Yeah, so scale is really one of the prime drivers of the technologies we build.
+
+[34:55] Okay, wonderful. We have two folks lined up, Steve, Potter and Andrew. Do you want to go first, Steve?
+
+[35:01] Okay, thanks. Fantastic stuff, Ed, as always. I wanted you to talk a little bit more about the Sommel-Arkin voltage sensitive fluorescent protein.
+
+[35:14] You know, this has been a holy grail. I've been following this since Larry Cohen was doing his dyes and to get a protein that has this single spike resolution, single cell resolution, millisecond resolution is fantastic.
+
+[35:28] What are the limitations? Like, why isn't this? It seems like that would have been just like the revolution that would give us the most ground truth of what's going on in the brain of any technology I could think of,
+
+[35:40] especially when you combine it with optogenetic stimulation of the neurons using the same optics that you're doing some recording with.
+
+[35:48] So what are the current limitations and why are we really taking off with this like you were with optogenetics when that came out?
+
+[35:57] Yeah, so, first of all, it's just new, right? I mean, our first object pair was 2005. You know, a lot of the discovery oriented papers started really pouring out at a rapid rate, 2009, 2010, 2011.
+
+[36:13] You know, no technology exists in isolation, so we can build an indicator, but something might need to, you know, you might need a fast camera, you might need, you know, an optical setup, you know, there's a lot of moving parts.
+
+[36:24] So, I do think that there is a cycle beginning where, oh, you got a new indicator, let's try to build a microscope that, you know, optimally interfaces to it. Let's, you know, but no technology exists in a vacuum.
+
+[36:36] Second thing is that I think it is very clear that nobody's made a perfect voltage indicator. So as I was trying to elude to during the talk, you know, with optogenetics, we're just so lucky that these molecules out of the wild, off the shelf, so to speak, were strong enough, fast enough and safe enough that, you know, you can use them to drive and cancel neural activity.
+
+[36:54] So for voltage indicators, you know, Archon is a very high dynamic range, very good signal to noise, not as bright as some of the others, of course, there are lots of the molecules that are much brighter, but they have smaller dynamic range and lower signal to noise quite often.
+
+[37:09] And then, so yeah, I think making a molecule that's bright, high dynamic range, fast, doesn't photo bleach, the perfect voltage indicator, I think you could argue has not been invented yet. So we have many others are continuing to try to screen for molecules that are, you know, you know, fast, bright, high dynamic range, all these things at the same time.
+
+[37:37] Are these voltage indicators amenable to light sheet microscopy?
+
+[37:41] I mean, actually, I guess, you know, the molecule will take light from whatever source and will then emit it. So light sheet, there's light field microscopy, you know, all manner of microscopy. Yeah, I think there's a bit of a mix and matching that could be done where we have different indicators and different styles of imaging.
+
+[38:07] And then there's also different brain. It also depends on what species one is looking at, you know, our group is working a lot on small animals like fish and worms where, you know, you know, if you have a light sheet microscope which has a fairly small volume that will fit between the two lenses, you know, a small brain might be one that's preferred.
+
+[38:24] But of course, you know, there are large brains too that people work on like mice and others.
+
+[38:28] So it might depend on the exact side of the question, if can, to be honest.
+
+[38:38] Inodding.
+
+[38:39] Next on we have Andy.
+
+[38:44] Andy, you might just mute it.
+
+[38:52] Thanks for that.
+
+[38:54] The answer to this is probably I don't know, or it depends.
+
+[38:58] But if you were finishing your PhD around now and you were interested in building either
+
+[39:07] therapeutic or commercial market products and tools, do you think that pursuing a more
+
+[39:16] traditional academic path, professorship and grants and spinning out IP with university
+
+[39:24] or going more straight towards a private route is best in the type of environment we're in,
+
+[39:33] given the work that people like you have done to give us so many great tools and understandings.
+
+[39:41] So it kind of does depend, right?
+
+[39:48] Because a PhD that was very clinical might have a different path than a PhD was pure
+
+[39:52] programming, right?
+
+[39:53] A PhD that was very experimental and hands on might be different from one that was more
+
+[39:57] theory oriented.
+
+[39:58] And of course, there were different time scales, right?
+
+[40:02] I mean, the time between our first genetics paper and the paper Nature Medicine last summer
+
+[40:08] that showed the first data in people was what, almost 17 years?
+
+[40:13] So that's probably longer than a dilutive capital funded startup would probably be able
+
+[40:18] to tolerate.
+
+[40:22] And so on the other hand, when the project that Leeway led on movies for Alzheimer's,
+
+[40:35] you know, doing a scaled human trial, you know, is something that could be envisioned
+
+[40:45] on a reasonably short time scale, right?
+
+[40:47] So yeah, probably depends on the nature of what the PhD is about, what the nature of
+
+[40:50] the problem is.
+
+[40:51] Yeah, did you have something specific in mind?
+
+[40:56] Yeah, so I do in vivo electrophysiology, I work pretty closely with neurosurgical teams.
+
+[41:05] One of your ventures, like the inner cosmos idea that you and a few others were working
+
+[41:09] on, like some sort of neural modulatory approach leveraging things like wireless DBS and TMS
+
+[41:16] and maybe near infrared recordings, like that type of thing.
+
+[41:20] I don't know, I guess, yeah, that's the route.
+
+[41:24] That's my background.
+
+[41:25] That's the skill set I have and what I'm interested in.
+
+[41:29] And I don't know, it seems pretty even in my mind, which route would be most advantageous.
+
+[41:36] But yeah.
+
+[41:37] Yeah, well, the other thing too is that new skill sets can be acquired, right?
+
+[41:46] And as we discussed earlier, some things like in vivo physiology could be automated so that,
+
+[41:52] you know, the skill required to do it would be far less.
+
+[41:57] So the skills are always evolving and the technology is always evolving.
+
+[42:01] Yeah, so it kind of depends, you know, whether one is sort of driven by a kind of impact,
+
+[42:06] right?
+
+[42:07] You want to solve this problem and if you just switch fields and become a chemist, that's
+
+[42:10] what you do.
+
+[42:11] Or do you like a certain skill?
+
+[42:12] You know, some people just like to write code, you know, are they going to do it for Amazon
+
+[42:16] or Google or for a startup or for an academic group?
+
+[42:19] You know, that's negotiable.
+
+[42:20] So it depends if you're skill driven or impact driven.
+
+[42:25] Yeah, thank you.
+
+[42:28] Wonderful.
+
+[42:29] We had another question, I think, from Rashan.
+
+[42:33] Do you want to ask it yourself?
+
+[42:36] Yes, I just wanted to know if Boyden has heard about bioelectric computation outside of the
+
+[42:48] nervous system research by Professor Michael Levin from the Alan Discovery Center at the
+
+[42:56] Tufts University.
+
+[42:57] It's a recent, it's quite very recent, but I would say completely groundbreaking research
+
+[43:04] when it comes to, well, biology and generally, well, a lot of different things.
+
+[43:11] But yeah, I'm just curious, have you even have you heard about this?
+
+[43:15] Oh, absolutely.
+
+[43:16] Yeah.
+
+[43:18] So, you know, the brain cells are used as a tool to drive electrical functions.
+
+[43:22] They use one of them to drive regeneration of a tadpole tail, if I recall.
+
+[43:26] Yes, yes, yeah, exactly.
+
+[43:28] The use of the molecule we published in 2010 to do that.
+
+[43:32] And yeah, there are lots of computations that occur without brain cells.
+
+[43:36] I mean, you know, even beyond electricity, you know, cells in the body are thousands
+
+[43:42] of gene products and they're sensing and they're acting.
+
+[43:45] I mean, our immune system is a great example, right?
+
+[43:47] It's a great example of how the brain can fight the invader.
+
+[43:51] It can fight it, it has memory, right?
+
+[43:53] You know, it remembers the invaders, so it can fight it better the next time.
+
+[43:57] That's how vaccines work and so forth.
+
+[43:59] Yeah, it did.
+
+[44:01] And people even have mapped out some of the pathways and immune cells and they have, you
+
+[44:06] know, very interesting relationships to the pathways that are involved with human or neural
+
+[44:13] computations of different kinds.
+
+[44:16] And so, you know, I think it's a way of taking some kind of input, making some kind of
+
+[44:20] evaluation of what to do, and then making some kind of output.
+
+[44:24] I think it boils down to the simple problem that all living things have, but is that
+
+[44:28] your cells or your brain can anticipate many outcomes.
+
+[44:31] But at the end, your body has to do approximately one or a few things, right?
+
+[44:36] You know, I can't be out finding food and finding water and avoiding the lion and
+
+[44:40] everything all at the same time.
+
+[44:42] At least it sounds like a stressful day if I'm doing all that.
+
+[44:45] But and so, yeah, I think I think computation is ubiquitous.
+
+[44:49] And Michael's work is a great example of that.
+
+[44:53] Lots of people now are finding that very simple organisms can do extremely sophisticated
+
+[44:56] things.
+
+[44:58] Yeah, they showed it was I found it so amazing when he didn't necessarily show this, but
+
+[45:02] this is one example when he talked about the how the butterfly when it first is a
+
+[45:09] caterpillar, it will actually even though when it's transforming into a butterfly,
+
+[45:15] its body turns into basically indifferentiated goop.
+
+[45:19] There is no brain cells.
+
+[45:21] There's no skin cells.
+
+[45:23] There's no body cells.
+
+[45:25] It's all indifferentiated as it as it then turns into into a butterfly, but it will
+
+[45:30] actually remember things that it learned when it was a caterpillar.
+
+[45:36] After it turns into a butterfly.
+
+[45:39] It's amazing.
+
+[45:40] Memories don't even need to exist within the connections between the neurons.
+
+[45:45] It's just completely.
+
+[45:47] And of course, they show other things as well, like the fact that you can actually see
+
+[45:52] like a bioelectric outline of a face of the tadpole before the face even forms.
+
+[46:00] That completely blew my mind.
+
+[46:03] I shared more info on Michael Levin's talk also in here for those of you guys who want
+
+[46:09] to know more about it.
+
+[46:11] We also have a few more folks and Kew, I think we have Steve and then Wendell again,
+
+[46:17] just watching the time if not 10 more minutes.
+
+[46:28] Steve, would you like to unmute?
+
+[46:30] No, thanks. I had just accidentally left my hand up.
+
+[46:34] I enjoyed listening.
+
+[46:36] Let me have Brandon.
+
+[46:37] I just wanted to try to see if I could turn things around for a second, because, you
+
+[46:41] know, we're we've started this neuro group and we get together every once in a while
+
+[46:45] and it was so nice to come out and give us a talk and to field answers to all of our
+
+[46:51] questions. I was wondering, what can we do for you?
+
+[46:55] Like, what is it that makes you want to come talk at a group like this?
+
+[46:59] What are you hoping that maybe you could get out of it?
+
+[47:02] Is there something that anyone can help you with or what is your biggest desire right
+
+[47:06] now that you'd like to push forward either in general or for your group or your
+
+[47:12] lab? Is there something, anything like that?
+
+[47:17] Well, I think we're in serendipity, you know, but we discoveries are driven by
+
+[47:23] luck. So we're always looking out.
+
+[47:25] I think I CRISPR, right?
+
+[47:27] They got PCR, you know, penicillin.
+
+[47:29] These are all stumbled across by basically by accident, right?
+
+[47:32] The natural molecules aspirin, right?
+
+[47:34] Optogenetics comes from natural molecules.
+
+[47:37] So, yeah, I've always tried to find out, you know, how do we build the the team
+
+[47:43] with the insights that will get the next revolution?
+
+[47:46] And and so we're launching a network to try to collect organisms from all over
+
+[47:53] the earth, which we could then analyze for new tools.
+
+[47:57] Yeah, I'm always I'm always seeking serendipity.
+
+[48:01] Serendipity, it is then.
+
+[48:03] OK, fantastic.
+
+[48:06] I want to be able to.
+
+[48:09] I can I comment on Randall's question?
+
+[48:13] I think something that we could really use in this field is somebody like Carl
+
+[48:19] Sagan, who could, you know, be a spokesperson to the lay public to get a
+
+[48:24] little bit more acceptance and more excitement about it.
+
+[48:27] You know, there are a few few people out there who are trying to do this.
+
+[48:33] David Eagleman is and, you know, Stephen Fry had a very good series on the
+
+[48:39] brain.
+
+[48:41] It wasn't a whole lot of this high tech stuff, though, in it.
+
+[48:45] I think if anybody here wants to become the spokesperson for this, I think that
+
+[48:49] would be wonderful.
+
+[48:51] That's a good idea.
+
+[48:53] Right.
+
+[48:55] I mean, I think that adds to quite a lot of that, at least whenever I have
+
+[48:59] someone that your name always usually pops up as the first one that people feel
+
+[49:03] really inspired by.
+
+[49:05] So whether it's accidental or whether it's on purpose, I think it's happening
+
+[49:10] to some extent.
+
+[49:12] I think also one question that we always ask our speakers, which we send by
+
+[49:16] email is if there's one challenge that you think could really advance this field
+
+[49:22] tremendously, then where you're always like, I just wish this one particular
+
+[49:26] thing was solved that you want to put out there for potential others to take on
+
+[49:32] what comes to mind.
+
+[49:36] Oh,
+
+[49:39] do you want me to describe a problem that needs to solve there?
+
+[49:42] Yeah, a problem that needs solving where you like, but only this one particular
+
+[49:45] thing was solved.
+
+[49:46] Then all of that work in our area would be much easier.
+
+[49:49] This can be something inside of your field, but it could also just be perhaps
+
+[49:52] an adjacent field that just needs to progress so that you can make more
+
+[49:55] progress using those tools.
+
+[49:56] And we talked a bit about tools before, but I think we always want to just
+
+[50:00] leave space for like, what's the number one thing that people in the field
+
+[50:03] think needs to happen to drive the field forward?
+
+[50:12] Good question.
+
+[50:14] The problem is we often don't know what we don't know.
+
+[50:16] There's so many molecules in the brain that people characterize at the chemical
+
+[50:20] level, but we don't know what they do at the systems level.
+
+[50:23] For example, some brain cells will generate gases like nitric oxide.
+
+[50:29] What are they doing in a specific behavior?
+
+[50:31] Well, we don't have the tools to see or control nitric oxide in specific 3D
+
+[50:36] locations throughout a brain and awake behaving animals.
+
+[50:40] That's my knowledge.
+
+[50:41] Canabinoids, right?
+
+[50:42] Brain cells make molecules that have some of the same features of the active
+
+[50:47] ingredients in marijuana.
+
+[50:48] What are they doing?
+
+[50:49] The list of things that we don't know is just so large.
+
+[50:56] We need to see everything in the brain and control everything in the brain, I guess.
+
+[51:02] That's at a very early stage.
+
+[51:06] Wonderful.
+
+[51:08] Thanks, Brenda.
+
+[51:09] I'm not sure if you'd like to close it out.
+
+[51:11] You're welcome to.
+
+[51:12] No, you can go ahead and close it out.
+
+[51:13] Sure.
+
+[51:15] Okay.
+
+[51:16] Well, thank you so, so much, Ed, for joining.
+
+[51:18] This was really wonderful.
+
+[51:19] I think really sparked a ton of excitement in that we're going to be able to
+
+[51:24] talk about the next few weeks.
+
+[51:26] And I think we're going to be able to talk about the next few weeks.
+
+[51:29] And I think we're going to be able to talk about the next few weeks.
+
+[51:32] Thank you so much, Ed, for your time.
+
+[51:34] It was really wonderful.
+
+[51:35] And yeah, hope you all have a rest of lovely day.
+
+[51:38] And I'll see you next week.
+
+[52:02] And we'll see you very soon.</pre>
+</body>
+</html>

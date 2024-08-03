@@ -1,0 +1,501 @@
+[00:00] I'm very happy to introduce Mary Lou Jepson from Open Water.
+
+[00:05] Mary Lou is developing truly revolutionary wearable devices for diagnostics and treatment
+
+[00:12] of stroke and various diseases.
+
+[00:15] Thanks.
+
+[00:16] It's fantastic to be here in person.
+
+[00:19] And Nathan, that was amazing.
+
+[00:20] Wow.
+
+[00:21] The whole conference is amazing.
+
+[00:23] Thank you, Lisa.
+
+[00:24] I'm going to talk about a wearable future for neuro.
+
+[00:28] This is my latest startup, but I started six years ago.
+
+[00:31] It was completely nuts.
+
+[00:33] But I'm going to tell you how we've been doing.
+
+[00:35] And I've reported on it on and off at these fantastic conferences.
+
+[00:39] So this is an update.
+
+[00:41] So I started the company six years ago to try to answer this question.
+
+[00:46] This is pretty personal for me.
+
+[00:49] In my 20s, I nearly died.
+
+[00:51] But I was lucky enough, as I dropped out of my physics PhD, to get empathy.
+
+[00:58] And somebody gave me an MRI scan.
+
+[00:59] And they found my brain tumor.
+
+[01:01] So I was thrilled.
+
+[01:03] Most of my friends and family were mortified.
+
+[01:05] I found a neurosurgeon, got done at the Brigham, and petitioned to get back into grad school
+
+[01:12] using the I had a brain tumor excuse, which worked.
+
+[01:16] I got the empathy vote, finished my PhD in six months, and was off and running, really
+
+[01:23] changing the visual future of display.
+
+[01:25] And so I'm a display designer, high volume consumer electronics person that's designed
+
+[01:32] your big screen TVs and projectors and virtual reality and augmented reality.
+
+[01:37] Most recently, I was executive director of engineering at Facebook Oculus, driving that
+
+[01:42] future of VR and AR.
+
+[01:44] So what the hell am I doing here?
+
+[01:46] I'm about to explain.
+
+[01:49] But really, I think of this as I along the way I found it, co-founded something called
+
+[01:54] One Laptop per Child when I was a professor here at MIT.
+
+[01:58] And we had pretty profound impact in crossing the digital divide and getting laptops to
+
+[02:04] kids and their families so that they could have access to information and be part of
+
+[02:11] the conversations.
+
+[02:12] This is a $100 laptop, works outside, works without power, still going, new kinds of battery
+
+[02:17] technology, lots of stuff in this.
+
+[02:21] And I think of what I'm trying to do at Open Water as One Laptop per Child, part two.
+
+[02:27] The vast majority of humanity still lacks access to the best diagnostics like MR, CT,
+
+[02:35] and the best therapies.
+
+[02:37] And maybe there's something that I could do with my vast consumer electronics experience
+
+[02:42] in Moore's Law to perhaps change that.
+
+[02:45] So by the way, One Laptop per Child had a lot of impact, made billions of dollars for
+
+[02:51] people, became the fastest growing consumer electronic category ever recorded, but most
+
+[02:56] importantly changed the equation of what a minister of education could do for the children
+
+[03:02] of their country.
+
+[03:03] So six years later, we have headsets.
+
+[03:07] And they're a little different than what Nathan was talking about, although we love to collaborate,
+
+[03:11] love what they're doing.
+
+[03:13] These are both diagnostic and therapeutic.
+
+[03:17] There's no drugs, no ionizing radiation.
+
+[03:21] And they use this breakthrough phase wave chip technology that we're developing at Open
+
+[03:27] Water and I'm going to talk a bit about.
+
+[03:31] Why the brain?
+
+[03:34] It's a huge problem.
+
+[03:35] There's a lot of, the last 250 drugs developed for Alzheimer's had a billion dollars a pop.
+
+[03:42] You know how many work?
+
+[03:43] Zero.
+
+[03:45] So maybe we need to look at some different approaches.
+
+[03:49] It's funny, an investor was saying most doctors don't take physics.
+
+[03:54] So physics is a really rare approach for health because they take a lot of biochemistry and
+
+[03:59] so pharma is the first choice.
+
+[04:02] So what can we do on this?
+
+[04:05] Numbers are staggering and these are the diseases we're trying to go after with our headset,
+
+[04:10] all of these.
+
+[04:11] So all of mental disease where there's 25 million people just in the U.S. alone living
+
+[04:17] with severe mental disease, six million with Alzheimer's, there's about 15K with glioblastoma,
+
+[04:23] which we think we have a good shot at.
+
+[04:25] And there's a million strokes a year.
+
+[04:26] There's more deaths due to stroke in the U.S. than COVID right now.
+
+[04:32] And that will occur every year.
+
+[04:35] And there's so little that we can do about it.
+
+[04:37] One day you're seemingly fine and the next you're dead or you don't walk again, talk
+
+[04:41] again, et cetera.
+
+[04:42] There's things we can do about it.
+
+[04:45] So how does this all work?
+
+[04:47] We use Moore's Law and these exponential technologies finally hitting the sensors and emitters like
+
+[04:56] lasers and ultrasounds that I've worked with for decades to pioneer consumer electronics.
+
+[05:03] And so what do I mean by that precisely?
+
+[05:07] The camera chip in all of your smartphone is really small.
+
+[05:11] That's because if you use less silicon area, it costs less.
+
+[05:15] So right now the camera chip in your smartphone costs a buck and has pixel sizes the size
+
+[05:22] of the wavelength of light.
+
+[05:23] And that means we can record the waves and the wavelength of light or their phase, which
+
+[05:28] gives us fundamentally more information.
+
+[05:31] And what our images look like is a lot like the water out there on the Charles.
+
+[05:35] We can read the waves and the interference patterns to extract more information as we
+
+[05:41] use light that penetrates your body.
+
+[05:44] The invention of fire was really key.
+
+[05:46] It warms us, not the light we see, but the light we don't see that warms our belly, our
+
+[05:51] rib.
+
+[05:53] And light goes right through us and we can extract information from it by recording the
+
+[05:57] phase.
+
+[05:59] The other thing we do is we craft the shape of the waves and even can steer the beams
+
+[06:06] by here you see a yellow line of emitters where the wave is delayed from one emitter
+
+[06:12] to the next emitter so that we can focus near or far or with a similar principle up, down,
+
+[06:19] left to deliver therapy wherever we wish to.
+
+[06:27] So what we built is a series of headsets that are in trials right now for diagnostics and
+
+[06:33] therapeutics and I'll talk to you about some of the diseases we're trying to get at.
+
+[06:38] Glioblastoma is a death sentence.
+
+[06:41] That's not the type of brain tumor I had by the way because I'm alive.
+
+[06:44] I had the good type.
+
+[06:46] If there is a good type.
+
+[06:49] So here you see the glioblastoma cells represented by orange spheres can hide out amid neurons
+
+[06:57] so it's almost impossible for the neurosurgeon to get the whole tumor out and it divides
+
+[07:03] really rapidly.
+
+[07:04] But we exploit something that we haven't really seen exploited in the past in aggressive cancers.
+
+[07:10] All aggressive cancers have this.
+
+[07:12] They have brittle cell membranes.
+
+[07:14] They also have larger nucleases, different cytoplasms, but the brittle cell membranes
+
+[07:19] can be exploited much like an opera singer can burst a wine glass because it's brittle
+
+[07:27] and not harm anything else in the room while it shatters that wine glass.
+
+[07:32] So we do that by applying a harmonic frequency to the glioblastoma cells so that they move.
+
+[07:41] They're like rickety ships, these fast dividing cells with the brittle cell membranes.
+
+[07:47] What we can do is then burst the glioblastoma cells and not harm any other tissue.
+
+[07:56] It's sort of like the fast dividing cells have the brittle cell membranes but none of
+
+[08:02] the other cells in your body do.
+
+[08:03] So most of your cells are sort of like the Golden Gate Bridge can withstand earthquakes
+
+[08:08] but not these.
+
+[08:09] The cool thing is that when they burst, they emit proteins that can vaccinate the brain
+
+[08:16] from the exact cancer.
+
+[08:19] So what are we doing now?
+
+[08:21] That sounds big.
+
+[08:22] So we grew a bunch of human brain organoids to try this out with real lines of glioblastoma
+
+[08:30] but the full working brain in a sub-millimeter Petri dish and applied different chemo and
+
+[08:40] our treatment.
+
+[08:42] This was the first experiment.
+
+[08:43] We're doing five times better than chemotherapy in the first experiment.
+
+[08:47] We kept going.
+
+[08:48] We've tuned the frequencies.
+
+[08:50] We ran about 200 different organoids a week and we swept through lots of frequencies,
+
+[08:55] pulse sequences, duty cycles and so forth.
+
+[08:58] And by the way, these are all diagnostic ultrasound intensities, not therapeutic.
+
+[09:05] So the FDA was like, wait, what?
+
+[09:07] Did we get that wrong?
+
+[09:09] Like lower than the doses that have been used for the last 50 years on pregnant women and
+
+[09:15] their fetuses.
+
+[09:16] So it's sort of shocking and sort of stunning.
+
+[09:20] So we finished the brain organoid studies now and we're going into mice.
+
+[09:25] We're growing glioblastoma and hopefully we can be in humans inside of the year.
+
+[09:29] It depends what the FDA says.
+
+[09:31] We'll follow all that.
+
+[09:32] But yeah, it's extremely exciting.
+
+[09:35] But that's not the first product that we're going to put on the market.
+
+[09:39] The first product has been in trials now for human testing for about a year and a half.
+
+[09:46] And it really answers this question.
+
+[09:48] Why do so many people die of stroke or are permanently dependent and disabled?
+
+[09:56] Why?
+
+[09:57] I mean, it's just a plumbing problem.
+
+[09:59] Ninety percent of the time it's a clot.
+
+[10:01] We have treatments to remove the clots.
+
+[10:03] So why do so many people die?
+
+[10:07] It's a time to diagnosis crisis.
+
+[10:11] EMT shows up.
+
+[10:13] Somebody is on the ground, on the floor slurring their words.
+
+[10:18] Are they drunk?
+
+[10:19] Are they on drugs?
+
+[10:20] Do they just fall?
+
+[10:21] Do they have a stroke?
+
+[10:22] All four are possible.
+
+[10:25] Why can't we just put an EKG on them like we can do for a heart attack and see if there's a heart attack?
+
+[10:30] Well, we can put an EKG on your forehead, but that's not going to tell you if you've got stroke.
+
+[10:34] What you want to be able to do is see right, left hemisphere blood flow difference.
+
+[10:38] And then you can get that patient, if it's in particular a large vessel occlusion, directly to a thrombectomy rather than going into the ER, waiting behind the gunshot victims, then realizing they need a scan, transferring them to another hospital.
+
+[10:57] If we can go from stroke onset to treatment within two hours, there's 90% chance of no neural deficit whatsoever for what now kills and disables permanently the majority of the victims of the large vessel severe stroke.
+
+[11:14] So how does this work?
+
+[11:16] We made a special laser that pulses.
+
+[11:18] This laser is infrared light.
+
+[11:20] And so this is, yeah, oops, can I go back?
+
+[11:27] So this, I'm showing particle theory of light here while I'm talking about phase, but this shows that the light penetrates the skin, the skull, the brain, infrared light, its heat, but it's a highly coherent heat that's pulsed.
+
+[11:42] And so we do about 100 microsecond pulse.
+
+[11:48] And so that's a lot like you're on the dance floor, the strobe light hits, it looks like you're frozen.
+
+[11:54] But if you got in and it's stretched out that time, the one thing you'd see moving is blood.
+
+[12:01] So we have a camera, that $1 camera chip from everybody's smartphone on the other side.
+
+[12:07] And what that camera chip sees is the light that goes through this arc shape.
+
+[12:12] Just by the nature of the scattering, it sees that arc.
+
+[12:15] And so what we do here is we interrogate a blood vessel, an artery.
+
+[12:20] Those are red blood cells moving.
+
+[12:22] As those red blood cells move, they make the light ricochet in different ways.
+
+[12:27] And we see that the way the waves are interfering on the camera chip.
+
+[12:32] And we read that much like a sailor can read the waves out in the water and know where the fish are and know where the land is.
+
+[12:40] We use Fourier transforms and stuff like that and are able to figure out what's moving.
+
+[12:45] The spatial frequency changes, the contrast changes.
+
+[12:48] And we read that with extraordinary precision.
+
+[12:51] We can see blood flow and blood volume.
+
+[12:54] So here's what we can see.
+
+[12:56] We can even see the boom boom of your heart.
+
+[12:59] And we see these patterns.
+
+[13:01] So this is the camera image and we decode it.
+
+[13:05] And it looks something like this.
+
+[13:07] We put these modules on different parts of your brain.
+
+[13:10] We look at in the case of our large vessel occlusion detector, the ACA, the middle cerebral artery is superior and inferior.
+
+[13:17] Those are the big branches off of the carotid and where the worst type stroke come from.
+
+[13:23] So we do that and we get these images of right, left hemisphere blood flow difference.
+
+[13:29] This person needs a thrombectomy.
+
+[13:32] And so we don't expect the EMT to read this.
+
+[13:35] What we envision instead is a cell phone interface that tells the doctor, hey, get ready, a thrombectomy is coming in.
+
+[13:44] The stroke doctors know more about when their Uber Eats order is coming than when they're getting somebody who's losing 1.8 million neurons a minute with a severe stroke.
+
+[13:56] So they can start prepping the cath lab.
+
+[13:59] So they can basically, the solution for this, it really is plumbing, is snaking a catheter up, pieces of steel will pull out.
+
+[14:05] I mean, it's more complicated than that, but not really.
+
+[14:10] So, you know, the person just needs the clot removed and we can make that happen faster.
+
+[14:15] So, again, if we can change that from stroke onset to thrombectomy, even the worst case of large vessel occlusion, we can go from the majority of people being dead or dependent, like not walking again, not talking again, not having a job again, maybe not going home again, to a 90 percent chance of no neural deficit whatsoever.
+
+[14:38] So that's what we're working on.
+
+[14:40] So with different resonant frequencies, though, like the miglioblastoma, we can excite neurons or suppress neurons.
+
+[14:49] So we're starting some trials on severe depression and OCD, severe depression won this year, so that we can stimulate neurons.
+
+[14:59] I mean, a lot of things cause mental disease, but one of the end results is either the neurons are firing too much or not enough.
+
+[15:06] And so we can address that at different harmonic frequencies.
+
+[15:10] And we're working also on Alzheimer's with different harmonic frequencies that seem to do, and this is the earliest, there's some published research on it, that shows synaptogenesis and neurogenesis.
+
+[15:22] So here's a bit on that. Transcranial magnetic stimulation is used and direct current stimulation, but we can focus energy anywhere we wish to in the brain.
+
+[15:37] We're not stuck with a two centimeter depth, and we can control the intensity quite precisely.
+
+[15:45] And these intensities are, again, diagnostic level.
+
+[15:49] They're below the 100 percent mechanical index used for that.
+
+[15:55] So that's pretty cool.
+
+[15:57] So here we are. We've been in humans for a while now for stroke, and we're scaling up those trials.
+
+[16:03] We're starting in humans in a neuro stimulation this fall via NRB at University of Arizona.
+
+[16:13] And on the glioblastoma, we're going into mice and hoping to be in humans once we walk through that.
+
+[16:20] So they're really big problems with very little solutions.
+
+[16:24] We're trying to look at our technology and apply them to large human unmet needs.
+
+[16:29] And here's an impressive and growing array of clinical partners using our devices.
+
+[16:36] We're really it's amazing how we track the manufacturing trends because we're using low cost components that can be made in the silicon fabs of the world.
+
+[16:46] The fabs that I've lived and breathed and shipped high volume consumer electronics for decades now.
+
+[16:52] So here's a summary.
+
+[16:57] Basically, it's new hardware and software technology, diagnostics and therapeutics.
+
+[17:04] And we're trying to accelerate. It's delight to be here.
+
+[17:07] And thank you very much for listening.
+
+[17:15] Are there any questions? Sure. Hi. Thank you. That was great.
+
+[17:22] Can you help me understand? I understand how you're looking at light scatter to look at from a diagnostic point of view.
+
+[17:29] Can you help me understand how you achieve neuronal excitation through the harmonic distribution of light?
+
+[17:36] We're using sound in that case. So low frequency ultrasound with phased array.
+
+[17:45] Sorry, I didn't make that clear. And thanks for the question.
+
+[17:49] Yeah.
+
+[18:00] It's interesting. It depends what you throw at it. I showed live on stage at Ted a few years ago, focusing to a micron.
+
+[18:07] But that was combining light and sound.
+
+[18:11] And so we could see a single neuron firing in practice.
+
+[18:17] We can do sub millimeter. We haven't looked at a need for more, but it depends what your needs are.
+
+[18:27] Oh, it's phased array. Phased array.
+
+[18:31] And we also compensate for the skull, which isn't, you know, a suma spherical cow.
+
+[18:38] So we would take a scan data and compensate for and so we look at the FMRI data to decide where in the case of, say, depression, we deliver the radiation.
+
+[18:51] So this tracks on transcranial magnetic stimulation and and TDCS.
+
+[18:58] But it just it's a wearable steerable solution at very low intensity that we're starting.
+
+[19:06] We're starting trials. We'll have more data next time we present.
+
+[19:10] But it seems very promising compared to the limitations of the other systems.
+
+[19:17] And that it also can be a consumer product or at least use at home eventually.
+
+[19:25] Any other questions? Good.
+
+[19:28] So it's my great honor. Lisa told me I got to do something really cool.
+
+[19:33] It is time for lunch, which is right outside. And please go get it.
+
+[19:37] I'm sure it's really delicious. And thank you so much.
