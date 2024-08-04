@@ -123,69 +123,72 @@ def update_myosotis_html(title, transcription_html_path, myosotis_html_path="Myo
 </head>
 <body>
  <h1 class="title-page">Myosotis</h1>
- <div class="cards">
+ <div class="cardsss">
  </div>
 </body>
 </html>''')
 
     with open(myosotis_html_path, 'r+', encoding='utf-8') as file:
         content = file.read()
-        # Insert the new card at the beginning of the cards section
-        updated_content = content.replace('<div class="cards">', f'<div class="cards">{card_template}')
+        # Insert the new card at the beginning of the cardsss section
+        updated_content = content.replace('<div class="cardsss">', f'<div class="cardsss">{card_template}')
         # Write the updated content back to the file
         file.seek(0)
         file.write(updated_content)
         file.truncate()
 
 if __name__ == "__main__":
-    # Ask the user for the YouTube URL and output path
-    youtube_url = input("Please enter the YouTube URL: ")
+    # Ask the user for the YouTube URLs and output path
+    youtube_urls = input("Please enter the YouTube URLs separated by commas: ").split(',')
     output_path = "."
 
-    # Download and convert YouTube video to MP3
-    audio_file_path, title = download_youtube_mp3(youtube_url, output_path)
-    
-    # Perform transcription
-    timestamped_transcription = transcribe_audio(audio_file_path)
-    
-    # Format the transcription text with timestamps
-    formatted_transcription = format_text(timestamped_transcription)
-    
-    # Define the path for the output text file
-    transcripts_dir = os.path.join(output_path, "text_transcripts")
-    os.makedirs(transcripts_dir, exist_ok=True)
-    output_file_path = os.path.join(transcripts_dir, os.path.splitext(os.path.basename(audio_file_path))[0] + "_transcription.txt")
-    
-    # Save the formatted transcription to a file
-    save_to_file(formatted_transcription, output_file_path)
-    
-    # Save the transcription to a JSON file
-    json_file_path = os.path.join(output_path, "transcriptions.json")
-    transcription_data = {
-        title: {
-            "url": youtube_url,
-            "transcription": formatted_transcription
+    # Process each URL
+    for youtube_url in youtube_urls:
+        youtube_url = youtube_url.strip()
+        
+        # Download and convert YouTube video to MP3
+        audio_file_path, title = download_youtube_mp3(youtube_url, output_path)
+        
+        # Perform transcription
+        timestamped_transcription = transcribe_audio(audio_file_path)
+        
+        # Format the transcription text with timestamps
+        formatted_transcription = format_text(timestamped_transcription)
+        
+        # Define the path for the output text file
+        transcripts_dir = os.path.join(output_path, "text_transcripts")
+        os.makedirs(transcripts_dir, exist_ok=True)
+        output_file_path = os.path.join(transcripts_dir, os.path.splitext(os.path.basename(audio_file_path))[0] + "_transcription.txt")
+        
+        # Save the formatted transcription to a file
+        save_to_file(formatted_transcription, output_file_path)
+        
+        # Save the transcription to a JSON file
+        json_file_path = os.path.join(output_path, "transcriptions.json")
+        transcription_data = {
+            title: {
+                "url": youtube_url,
+                "transcription": formatted_transcription
+            }
         }
-    }
-    save_to_json(transcription_data, json_file_path)
-    
-    # Delete the MP3 file
-    os.remove(audio_file_path)
-    
-    # Print the location of the saved transcription
-    print("Transcription saved to:", output_file_path)
-    print("Transcription also stored in:", json_file_path)
-    
-    # Generate HTML file from text transcription
-    html_file_path = os.path.splitext(output_file_path)[0] + ".html"
-    generate_html_from_txt(output_file_path, html_file_path, youtube_url)
-    
-    # Print the location of the generated HTML file
-    print("HTML file generated at:", html_file_path)
+        save_to_json(transcription_data, json_file_path)
+        
+        # Delete the MP3 file
+        os.remove(audio_file_path)
+        
+        # Print the location of the saved transcription
+        print("Transcription saved to:", output_file_path)
+        print("Transcription also stored in:", json_file_path)
+        
+        # Generate HTML file from text transcription
+        html_file_path = os.path.splitext(output_file_path)[0] + ".html"
+        generate_html_from_txt(output_file_path, html_file_path, youtube_url)
+        
+        # Print the location of the generated HTML file
+        print("HTML file generated at:", html_file_path)
 
-    # Update Myosotis.html with a new card entry
-    update_myosotis_html(title, os.path.relpath(html_file_path, output_path))
+        # Update Myosotis.html with a new card entry
+        update_myosotis_html(title, os.path.relpath(html_file_path, output_path))
 
-    # Print the location of the updated Myosotis.html file
-    print("Myosotis.html updated with a new entry.")
-    
+        # Print the location of the updated Myosotis.html file
+        print("Myosotis.html updated with a new entry.")

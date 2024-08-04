@@ -1,0 +1,1159 @@
+[00:00] Hi everyone, welcome to Flosside's Biotech and Health Extension Seminar series sponsored by
+
+[00:06] 100 Plus Capital. Really happy to have so many of you here. Not surprised given today's guest.
+
+[00:14] Before we hop into today's discussion, I just want to remind people that if you are still interested
+
+[00:20] in joining us for Vision Weekend, which is our annual member gathering, there are still applications
+
+[00:25] open for subsidized attendance. We're going to be in San Francisco. You're going to have the chance
+
+[00:30] to meet lots of people from this biotech and rejuvenation track, but also across different
+
+[00:36] tracks. We're going to be not only in San Francisco, but also at a castle in France,
+
+[00:40] and there'll be some intermingling between the different venues as well. And so if you want to
+
+[00:46] basically meet top folks in this group, but also across different groups and from throughout the
+
+[00:52] year, this is like a really wonderful opportunity to get together in person. Great, I'm going to
+
+[00:57] share more in this chat. There are application-based tickets available, so we have the ability to
+
+[01:02] subsidize a lot of your guys' attendance, and it would be wonderful to see in person.
+
+[01:06] Cool, so for today, we're so happy to actually re-welcome George Church here. So I went, when
+
+[01:14] I discovered Flosside about like 10 years ago, just before when I joined, I went into our archives,
+
+[01:19] and I found, George, you've given a really wonderful presentation to Flosside before,
+
+[01:23] quite a while back, and much of the technology is still really as relevant as when you discussed it
+
+[01:30] back then already. I think apart from that, you really need no further introduction. Everyone here,
+
+[01:35] I think, is well aware of your work, of your countless startups. I don't think I've really
+
+[01:39] met anyone else who spun up so many projects in the biotech and rejuvenation area. I'm going to
+
+[01:45] share much more about you in the chat in case people want to read up the growing list of your
+
+[01:50] endeavors. But for now, I'm super delighted, honored to have you here, and I'm going to give
+
+[01:56] it up to you now, because I know that we're going to struggle at the end of the seminar in time when
+
+[02:01] people want to get their questions in. So thank you so, so much for joining. We're thrilled to
+
+[02:06] have you here, and the stage is yours. Okay, great. Yeah, hopefully there'll be plenty of time for
+
+[02:15] questions and answers, because I'm just going to give a representative a couple of examples,
+
+[02:25] and I think some of you know other things that I do that you can ask about, or about the things
+
+[02:34] I talk about. So I'm going to share my screen. There it is, Foresight. It must be in the right place.
+
+[02:45] Okay, so I work on, I think a number of things relevant to the Foresight Institute, but I must
+
+[02:55] focus partly at the prompting of the organizers that to on gene and cell therapies for age-related,
+
+[03:04] we're essentially reversing age-related and infectious diseases. Full conflict of interest
+
+[03:13] on this website down the lower right, and there you go.
+
+[03:21] So I want to mention, announce in a certain sense of a pre-print. So this is hot off the presses,
+
+[03:30] where we think we have a way of making any organism resistant to all viruses.
+
+[03:37] We've done it for one organism, I think pretty convincing, including just taking random
+
+[03:42] viruses out of the environment that we know nothing about, thousands of them, and it's
+
+[03:49] resistant, and for good reason it's on paper as well. And then that's part of a bigger plan to make
+
+[03:58] enhanced organs that are enhanced in various ways. So not just to deal with the organ shortage,
+
+[04:06] which is killing people, but to make those organs as good as they can be, including germline
+
+[04:12] engineering, but germline engineering of animals, of humus. But in the care of humus.
+
+[04:23] So then all of the above is made possible in multiplex editing, and I'll talk about the
+
+[04:32] dark matter of the genome and how that applies to aging reversal as well. So we are in exponential
+
+[04:41] times, and I think my group has contributed at least as much as any other in both the reading
+
+[04:47] and writing of DNA, which has improved about 20 million fold in cost and a little less than that
+
+[04:54] in quality. And it continues to go exponential, but many years going faster than Moore's law,
+
+[05:03] two to tenfold improvement per year. And this is I think large-sigil multiplexing, that would be a
+
+[05:10] full-dollar different talk. But today instead we'd like to talk about how it is we make decisions
+
+[05:22] for therapeutics or TX for gene therapy, cell therapy, molecular and protein therapies.
+
+[05:29] My lab and our spin-off companies work on all four of those. But in particular, I want to
+
+[05:37] justify gene therapy a little bit. And some of the advantages are on the far left-hand column here.
+
+[05:46] In principle, it can be once in a lifetime rather than taking a pill every day for the
+
+[05:52] rest of your life or taking hundreds of pills, we're saying every day for the rest of your life.
+
+[05:57] This is once and done theory anyway. It is very smart at the delivery system.
+
+[06:05] You know, almost no other form of drugs is capable of chemotaxis, for example.
+
+[06:13] That's something that's really unique to cell therapies.
+
+[06:20] And the mechanism of action that most medical research contributes to is
+
+[06:30] an easy stepping point between that basic research and gene therapy.
+
+[06:39] We typically these days collect information that's formulated in terms of proteins and genes behind
+
+[06:46] them. It's a very low off target. For example, we have a big multi-gene family that are closely
+
+[06:52] related evolutionarily. It's hard to target, like kinases say, hard to target one with a drug,
+
+[06:59] not the others. Well, you can make not only discriminate multi-gene family members but
+
+[07:06] alleles specific meaning, person specific and splice form specific. So it's very
+
+[07:16] easy to achieve that. And finally, it can be low cost and I'll mention that
+
+[07:20] in more detail right here on this slide. So gene therapies aimed at rare diseases,
+
+[07:28] including Joel Zinsma and the new record holder is $2.8 million a dose. Joel Zinsma was for
+
+[07:37] spinal myths or atropine. The new one is for hemoglobinopathies. Those are cost effective,
+
+[07:45] as high as that price tag is for dose. But I, having helped with the exponentials and reading,
+
+[07:54] writing, DNA would like to see the therapeutics go down in cost. And in fact, if you look at
+
+[08:02] the formulation that is very similar to gene therapy, essentially molecular and identical,
+
+[08:09] almost never called that, is the most recent vaccine round was COVID. All five of the top
+
+[08:17] five words was formulated from gene therapy methods, including viral capsids and double
+
+[08:24] stranded DNA payload in three of them and messenger RNA and lipid nanoparticles for the other two.
+
+[08:34] And all of them were inexpensive, the cheapest being about $2 a dose compared to $2.8 million.
+
+[08:41] Okay, so multivirus resistance. So the last slide was kind of playing with viruses, both friends
+
+[08:50] and foes use these virus capsid to produce a vaccine that protects you against another virus,
+
+[09:00] A, against COVID coronavirus. But here is making multivirus resistance, essentially in one's
+
+[09:07] own way. So we've been working on this since around 2004. Here's some of the papers and some
+
+[09:14] of the people that participated in that. But I'm going to jump ahead to what we just did in this
+
+[09:21] preprint in bioarchive. And I'm going to jump ahead to the data that we have here. So here's
+
+[09:29] the data that we have here. So here's the data that we have here. So here's the data that we have
+
+[09:33] here. So here's the data that we have here. So here's the data that we have here. So here's the
+
+[09:39] data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[09:45] So here's the data that we have here. So here's the data that we have here. So here's the data that
+
+[09:50] we have here. So here's the data that we have here. So here's the data that we have here. So here's
+
+[09:54] the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[10:24] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[10:54] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:24] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:26] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:28] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:30] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:32] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:34] So here's the data that we have here. So here's the data that we have here. So here's the data that we have here.
+
+[11:36] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:38] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:40] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:42] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:44] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:46] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:48] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:50] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:52] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:54] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:56] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[11:58] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:00] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:02] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:04] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:06] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:08] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:10] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:12] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:14] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:16] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:18] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:20] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:22] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:24] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:26] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:28] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:30] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:32] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:34] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:36] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:38] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:40] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:42] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:44] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:46] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:48] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:50] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:52] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:54] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:56] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[12:58] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:00] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:02] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:04] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:06] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:08] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:10] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:12] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:14] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:16] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:18] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:20] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:22] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:24] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:26] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:28] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:30] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:32] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:34] So now let's integrate that as one example of ways of making pathogen resistance and various other
+
+[13:36] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:38] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:40] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:42] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:44] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:46] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:48] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:50] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:52] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:54] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:56] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[13:58] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:00] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:02] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:04] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:06] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:08] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:10] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:12] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:14] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:16] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:18] So we've done that in multiple strains of pigs, so it's very reproducible.
+
+[14:20] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:22] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:24] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:26] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:28] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:30] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:32] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:34] So we have small herds, dozens of these pigs providing organs for transplants in pre-clinical,
+
+[14:36] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:38] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:40] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:42] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:44] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:46] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:48] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:50] So we have three clinical efforts, the main one close to us anyway is Jim Martman at MGH surgery,
+
+[14:52] So that's looking very promising for human clinical trials happening soon.
+
+[14:56] So that's looking very promising for human clinical trials happening soon.
+
+[14:58] So that's looking very promising for human clinical trials happening soon.
+
+[15:00] So that's looking very promising for human clinical trials happening soon.
+
+[15:02] So that's looking very promising for human clinical trials happening soon.
+
+[15:04] So that's looking very promising for human clinical trials happening soon.
+
+[15:06] So that's looking very promising for human clinical trials happening soon.
+
+[15:08] So that's looking very promising for human clinical trials happening soon.
+
+[15:10] So that's looking very promising for human clinical trials happening soon.
+
+[15:12] So that's looking very promising for human clinical trials happening soon.
+
+[15:14] So that's looking very promising for human clinical trials happening soon.
+
+[15:16] So that's looking very promising for human clinical trials happening soon.
+
+[15:18] So that's looking very promising for human clinical trials happening soon.
+
+[15:20] It's very difficult to do anyway other than germline engineering,
+
+[15:24] But it is inspired by natural and previous experiments,
+
+[15:30] Mostly in mice, but now transferred to pigs.
+
+[15:34] They are naturally resistant to many human pathogens,
+
+[15:38] Bacterial, fungal, and viral.
+
+[15:44] In addition we have the methods that I mentioned before that we'd like to transfer.
+
+[15:48] There are two methods known for getting cancer and senescence resistance in mice that we would like to.
+
+[15:56] We would not want our organs to succumb to cancer or senescence if we can avoid it.
+
+[16:04] I've already mentioned immunity in the previous slide.
+
+[16:10] We're interested in cryopreservation, dehydration, and damage for a variety of reasons.
+
+[16:18] One of them is that these are related to aging.
+
+[16:24] The other is that they are related to storage of the organs.
+
+[16:30] Here's a couple of organisms that have extreme resistance to cholera and pseudoprime preservation,
+
+[16:38] Including salamander, which goes for over 45 days at minus 55.
+
+[16:44] We'd like to get that working for organs in general via germline engineering.
+
+[16:52] We also have a proof of concept.
+
+[16:54] The virus resistance is done in E. coli, so it's still a ways to go before we have it working in mammals.
+
+[17:02] Nevertheless, this is work that inspires us rather than from our lab.
+
+[17:10] We have 10 to the fourth, 10 to the fifth fold improvement in radiation resistance
+
+[17:16] in this normally non-radiation resistant organism with just four mutations.
+
+[17:22] This is very encouraging for things that we're trying to do in parallel on human cells.
+
+[17:30] One of the things that constitutes genome damage in addition to radiation caused genome damage
+
+[17:42] is jumping genes, or transposable elements.
+
+[17:48] I've already talked about one kind of that, which is the endogenous retrovirus,
+
+[17:54] but even more pervasive example are these long interspersed and short interspersed nuclear elements,
+
+[18:04] or jumping genes, and these lines and signs have been kind of a part of the dark matter of the genome.
+
+[18:14] It made it hard to sequence genomes, much less study them genetically,
+
+[18:18] but we think we have a breakthrough on that that I'll share with you in just a moment.
+
+[18:22] But first, to just document some of the recent articles,
+
+[18:26] by no means a comprehensive review of articles that have shown or indicated
+
+[18:34] that these categories of dark matter, repetitive DNA in the genome,
+
+[18:40] are involved in aging if inflammation is damaging and related degenerative diseases.
+
+[18:52] We're tackling essentially every category of repetitive elements,
+
+[18:58] and have recently increased our target from endogenous retroviruses,
+
+[19:05] which were around 20 to 80 copies per genome, to line elements, which are 24,000 copies per genome,
+
+[19:12] to centromeres and sign elements, which are in the millions per genome.
+
+[19:17] And it seems crazy from our perspective, and just a few years ago,
+
+[19:22] it was hard to do one gene at a time to now be talking about thousands to millions,
+
+[19:31] but I'll show you a little bit more about that.
+
+[19:35] So here's an example where we took human pluripotent stem cells,
+
+[19:39] which are actually from my body, and attack and saturated all of the line elements in that using deaminases,
+
+[19:55] both cytidine C to T and A to G.
+
+[19:59] We far prefer the A to G, it has less off-target, it has less toxicity.
+
+[20:03] I should mention that anything more severe than deamination,
+
+[20:08] where we're just basically changing a nitrogen to an oxygen in a water-mediated reaction,
+
+[20:18] anything more than that, like a nick, even a mere nick, much less a double-strand break,
+
+[20:23] at this level of simultaneous editing is immediately deadly.
+
+[20:28] So we have to get everything right so that we have factors that prevent apoptosis
+
+[20:34] and prevent various kinds of repair that can result in double-strand breaks.
+
+[20:39] We do all of that right.
+
+[20:41] Raphael and Shunting and Corey in particular are carrying this on.
+
+[20:48] We have another paper ready to be submitted that follows up on this NAR paper.
+
+[20:54] And we have essentially all of the active, the ones that aren't completely crusted over in the genome,
+
+[21:03] we can saturate, we can get every one of them with this deamination method.
+
+[21:10] Now applying, putting all that together with what is known about aging,
+
+[21:17] I would maintain that a great deal is known.
+
+[21:22] There's kind of a half empty, half full, but I think we have enough known
+
+[21:26] that we can start turning it into therapies in the same, a lot, so much more is known
+
+[21:33] than how much was known about, say, smallpox when we started doing smallpox vaccines.
+
+[21:38] We didn't know anything about virology or immunology at all.
+
+[21:42] But anyway, we know all of the, there's ten major hallmarks and a set of biochemical pathways
+
+[21:50] that go with each of these mitochondrial, floric restriction, telomeres, things that you've all heard.
+
+[22:00] These are now all targets for drug development and all a few of some,
+
+[22:05] I think, cutting edge things that we're doing.
+
+[22:08] So that ten goalposts are represented in an interconnected set of reactions,
+
+[22:17] which can be layered on top of the cell, in this case,
+
+[22:25] with the extracellular media on the top of the slide,
+
+[22:30] and then a membrane and transmembrane proteins next level down the cytoplasm,
+
+[22:36] the nucleus at the bottom, and mitochondria, endoplasmic,
+
+[22:41] and other organelles on the side here.
+
+[22:43] And each of these has these enzymes, regulatory proteins and RNAs that are well characterized
+
+[22:50] and many of them have our drug targets or are subject to gene therapy.
+
+[22:56] I'm going to pick out three of them that we used in multi-gene therapy
+
+[22:59] because these had the characteristic not of being down here in the genome,
+
+[23:05] we've also done the Yamanaka stem cell factors that you may know about.
+
+[23:10] This is a popular topic because they do literally reverse aging from, say,
+
+[23:17] 80-year-old fibroblasts or blood cells to embryonic.
+
+[23:22] So it's an enormous reversal.
+
+[23:25] But it's hard to deliver.
+
+[23:27] It's possibly hard to keep it in line in the diverse set of tissues it's starting in.
+
+[23:35] But instead, we looked at what was inspired by so-called young blood,
+
+[23:40] where the various factors that have been uncharacterized
+
+[23:45] for most of the years that this has been done.
+
+[23:48] Here we picked three that were likely candidates for that sort of phenomenon,
+
+[23:52] which I'll show you.
+
+[23:53] So these are now indicated with these red, blue, yellow arrows.
+
+[23:59] We have fibrograst, both like group 21, alpha-clotho and TGF-beta receptor.
+
+[24:09] I think the important thing here is these are either soluble or can be made soluble,
+
+[24:14] and we tested them in all possible combinations
+
+[24:16] as it was Venn diagrams about and to see whether any of them interfered with one another,
+
+[24:22] whether they resulted in aging reversal as I said on aging diseases,
+
+[24:29] not just biomarkers like DNA methylation or RNA transcriptome,
+
+[24:34] but actually multiple diseases.
+
+[24:37] And I'll show you an example of taking from the paper in PNAS.
+
+[24:43] Noah Davidson was a post-doctoral fellow in my lab and then became co-founder of Rejuvenate Biome,
+
+[24:50] which is applying this both veterinary and human.
+
+[24:55] It started with mice in this paper, and dogs is in clinical trials now for veterinary products.
+
+[25:02] These people have won a few of all years with their pets,
+
+[25:08] but then it's also prelude to human clinical trials because it's looking very good in animals so far.
+
+[25:15] Anyway, so this first paper addressed four different diseases that are age-related.
+
+[25:23] Almost every disease has some age-related component, even falling down and not getting out,
+
+[25:30] and COVID-19 and the cognitive consequences are all very steeply increased with age.
+
+[25:37] But here, one of the disease models for accelerated aging or starting with pre-age mice
+
+[25:48] is we can accelerate the age-related weight increase to the point of morbid obesity
+
+[25:57] and then restore it with this serious combination of photophotos on the left here,
+
+[26:08] where it doesn't just keep going to the point of muscle wasting and loss in abnormal interrexia
+
+[26:21] or something like that, but it levels off at a normal level.
+
+[26:25] And then diabetes is another one disease model where insulin tolerance tests, etc. can be improved.
+
+[26:35] You can see the same cocktail of drugs is working for both of these and is also working here,
+
+[26:45] not the colors, but the names to the factors for a kidney loss model of unilateral obstruction.
+
+[26:59] And we have another one on heart disease.
+
+[27:02] And Noah Davidson, who was the star of that show, was also involved in a total of three out of those four papers,
+
+[27:10] all of which used AAV, the smallest viral vector for delivery.
+
+[27:16] He was not involved in the cytomegalovirus study, which had one of the biggest viruses for delivery.
+
+[27:24] Even bigger delivery that we do is via cell delivery rather than viral.
+
+[27:29] But in any case, it was basically AAV is about five kilovases, cytomegalovirus about 100 kilovases,
+
+[27:35] and the cells can deliver gigabases.
+
+[27:39] So I mentioned the Yamanaka factors here, OSKM, we use three of them, OS and K.
+
+[27:47] I mentioned the three below, and then telomerase and folistatin were used in this slide.
+
+[27:55] I'll show you the next slide.
+
+[27:58] And now the list of diseases is eight different diseases and keeps growing.
+
+[28:06] Basically, if we can get something that one cocktail of drugs hits all these different pathways,
+
+[28:13] we're probably getting close to the core of aging.
+
+[28:16] And it's easy to get, much easier to get disapproves than something that deals with longevity
+
+[28:24] because our variation in longevity is so great in the population.
+
+[28:28] We have to do a multi-tech-based trial to be convincing, and that's too long and too expensive.
+
+[28:37] So even though we do go to the FDA with reversal-specific age-related diseases,
+
+[28:43] if we get any of them, essentially we have an approved drug that could get all of them.
+
+[28:48] But here's one where we did collect some longevity data.
+
+[28:51] It wasn't the primary goal. It just fell right out.
+
+[28:55] This is, again, this large site of megavirus delivering either telomerase or folistatin genes.
+
+[29:02] And you can see here the wild type mice control on the far left, dying early, whose death,
+
+[29:09] probably early death, observe, not theoretical.
+
+[29:16] And then two different genes, telomerase and folistatin, way far on the right,
+
+[29:24] showing non-overlapping death births and inspired by previous literature.
+
+[29:31] So I know I went through that pretty quickly, but I know there's also many questions to be asked in the Q&A.
+
+[29:41] And since so many people showed up, thank you. I'm going to open it up to that.
+
+[29:45] But just to quickly review, I fear the pre-print where we think we have resistance to all viruses
+
+[29:52] in one cell type, which we are actively now trying to repeat that in pigs and human cells, human stem cells.
+
+[30:04] I described a number of ways we can enhance organs only for pathogens, immunity, prior preservation, cancerous innocence.
+
+[30:14] And then a lot of this has been helped by multiplex editing, which now is at crazy levels
+
+[30:21] of at least 24,000 and we're working on a repeat family that's in the millions,
+
+[30:29] which can also be leveraged for other things.
+
+[30:32] It's, for example, recording of information, which we have done as well.
+
+[30:39] And then finally, this aging reversal, which offers a way of getting it among the most general
+
+[30:47] and possibly cheapest category of therapies.
+
+[30:52] It's cheap because the market size is large, like as it is for pandemics.
+
+[30:57] But this might be even larger market size because everybody is impacted by aging.
+
+[31:04] So we hope to make that accessible to all. So period. Full stop. I'll stop sharing. Thank you.
+
+[31:13] Oh, fantastic. Thank you so, so much. We're not going to do this thing where everyone mutes and claps.
+
+[31:19] We have too little time. I mean, it goes to a lot of questions, but this was a really great.
+
+[31:25] Yeah, well, I feel like you're doing it anyway, but this was really, really great and such a wonderful trajectory
+
+[31:32] through the entire field and then like ending on long jumping. So thanks a lot. That was really, really useful.
+
+[31:37] We already have one hand raised here by Micah, so I'll take you first and then we'll move on to the next.
+
+[31:43] So raise your hand now or say a question in the chat and we'll get you as fast as we can.
+
+[31:49] You briefly mentioned using cell delivery of gene therapies.
+
+[31:54] Can you give like the very short elevator explanation of what that is? I'm familiar with it. It's like Aav viruses, CMV, and you've got the DV dumbbells.
+
+[32:02] I haven't heard of cell delivery though.
+
+[32:05] Ah, right. Well, that's that's because it's not as far along.
+
+[32:11] Although the category of self therapies is often you can think of it as you can do ex vivo gene therapy on say hematopoietic stem cells,
+
+[32:22] reintroduce them into the body and in a purple it they contribute to the entire they go into the body, including chemotaxis.
+
+[32:36] So that's that's one way. Another way says where the cells are there, the delivery package themselves and have
+
+[32:46] a large payload of genomic material is edited or engineered.
+
+[32:52] It also since the viral capsules that we use for gene therapy are made in cells, it is possible, although not yet demonstrated, that you can make them in situ in body in the right place.
+
+[33:08] So you have the combination of the cells that can chemotaxis or otherwise find the correct location plus the viral specificity.
+
+[33:18] That's what I'm trying to do.
+
+[33:24] You just inject into the person more or less.
+
+[33:27] You also have the option of injecting it selectively.
+
+[33:32] So if you want to have both anatomical and bio visible targeting.
+
+[33:38] Yes, but you could also do it systemically and in fact, all the gene therapies that I've talked about so far for aging or systemic delivery through intravenous.
+
+[33:53] Wonderful. You got a thumbs up.
+
+[33:56] Question answered. Thank you. Next one.
+
+[34:03] First, thank you so much, Dr. Church. That was very informative.
+
+[34:07] And I wanted to ask about the question in terms of the gene therapy for intranasal delivery versus injection.
+
+[34:14] Gene therapy for aging, you mentioned briefly in the last slide.
+
+[34:18] What do you think is the main difference and what will be the main barrier for intranasal versus injection for gene therapy delivery?
+
+[34:26] Well, intranasal has the obvious advantage that you can do it at home.
+
+[34:33] It's not what normally people think about, but it's in principle, you could also do an injection.
+
+[34:45] Most, for example, diabetics do intramuscular injections on a daily basis of insulin, typically genetically engineered.
+
+[34:55] But I think that's the main difference.
+
+[35:01] It may be particularly appropriate for respiratory diseases, protection against lung cancer and respiratory illnesses of pathogens.
+
+[35:19] But yeah, I think they're not fundamentally different.
+
+[35:24] Is there any barrier for intranasal delivery, though?
+
+[35:28] Oh, yes. I think there's a number of things that would be challenging to do that way.
+
+[35:33] But since cells can, there are cells that can cross the lung epithelium into the blood.
+
+[35:44] And there are other cells that are capable of getting from the intestine across that difficult barrier into the blood
+
+[35:53] and going to the informal blood to the typical additional crossings like blood-brain barrier.
+
+[35:59] In principle, there are a number of interesting options.
+
+[36:04] But for the time being, I think there are things that are more appropriately delivered by, say, intrathecal injection into the cerebral spinal fluid,
+
+[36:14] for example, is a good way of getting into the brain without necessarily having an engineer cross the blood-brain barrier.
+
+[36:22] But we have plenty that do. They could preferentially even into the nervous system.
+
+[36:29] Awesome. Thank you so much.
+
+[36:32] Wonderful. Next one up, we have Agedness Partners.
+
+[36:36] Thank you. And thanks a lot, George Church, for sharing all your ideas here.
+
+[36:42] I just had a question on one of the slides where you were talking about the four-combination gene therapy.
+
+[36:49] I was just curious, sort of a multi-part question, but I'm curious, are we testing this in humans?
+
+[36:59] And if there's any sort of trade-offs between the delivery mechanisms, like having more than, you know,
+
+[37:08] can you have more than one in this combination? Like if you were doing lipid nanoparticles with an AAV,
+
+[37:15] is there any complications if you're combining multiple therapies?
+
+[37:21] And I was also curious out of that four bunch, if there was one in particular for osteoarthritis,
+
+[37:28] or if it was a synergistic thing between more than one.
+
+[37:34] Right. So we did find one indication, one disease where all three together,
+
+[37:45] so in general, all three together is a good combination.
+
+[37:49] But we found some indication for where we drop one of them out.
+
+[37:54] My guess is that at some point we will add some others in because we really want to get all ten pathways of aging at once,
+
+[38:05] because if you leave one opening, those four will kill you.
+
+[38:10] In fact, it's been estimated that if you got rid of one of them, you might add two years to your life, but we won't get rid of all of them.
+
+[38:19] So we haven't got the final list of genes yet, but those three that Noah Davidson used look particularly promising,
+
+[38:29] and including osteoarthritis.
+
+[38:33] Nice. And is it currently being tested in humans or anywhere?
+
+[38:38] We have not started human clinical trials yet. We've started FDA approved dog trials,
+
+[38:44] which is very close in many ways in size and environment and food and so forth.
+
+[38:51] But as soon as those are completed or nearly completed, we will start the human clinical trials, which could be two years from now.
+
+[39:00] Gotcha. Thanks. Appreciate it.
+
+[39:03] Wonderful. Larry, you're up next.
+
+[39:08] Hi, George. Interesting stuff. I mean, I was curious about your codon change thing.
+
+[39:15] I mean, you know, AG, I think the AG-serine codons, I think they are used in a lot of human proteins.
+
+[39:22] I didn't quite understand how it would work to actually get viral inhibition exclusively.
+
+[39:32] And then the other thing on your your your your adenosine doesn't mutate directly to the guanosine.
+
+[39:39] It goes through inosine and there is an inosine repair mechanism.
+
+[39:43] But you're saying that's deficient in cells or you think adenosine deaminates as a target for aging.
+
+[39:49] I mean, I think it's an interesting thing. I'm just not that familiar with what you want with those things.
+
+[39:56] Right. Two good questions.
+
+[39:59] And so it is true that both the human genome and the bacterial genome that we did these experiments in,
+
+[40:08] you have 20,000 examples of those codons being used in the protein sphere.
+
+[40:20] But what we did is we mutated all of those places so that they're no longer used.
+
+[40:25] We swapped them out into the synonymous codons.
+
+[40:28] There are six different ways, six different codons.
+
+[40:31] We eliminated two of them by mapping them onto the other four.
+
+[40:36] So in those cells, they're only using four of the six codons.
+
+[40:40] So that's null for a while. And then we put in a new tRNA that turns those codons from serine to null to leucine.
+
+[40:48] So we kind of go through a null and a mediate.
+
+[40:51] But yes, the host and the inhibitor anyway from phages.
+
+[40:56] I'm sorry I missed that.
+
+[41:01] Yeah, you're protecting E. coli from phages.
+
+[41:04] That is correct. Yeah, that's correct.
+
+[41:06] That so far has just been done in E. coli, but it's been done by a method that we think is completely general,
+
+[41:11] which is changing the genetic code.
+
+[41:13] And we are partway into doing it in human stem cells.
+
+[41:18] So and then and we will do plants and domesticated animals as well.
+
+[41:25] Anything that's got a serious viral problem of economic significance.
+
+[41:31] But we don't have that yet.
+
+[41:34] Anyway, so to answer your question, we did the genetic engineering.
+
+[41:37] So the host is no longer dependent on those two codons.
+
+[41:43] And your second question was about and adding is is is indeed goes through in a scene on suede guanine.
+
+[41:51] It's a simple that the repair is typically done by replication and the replication of the eye typically takes it to a G.
+
+[42:01] And if it doesn't, then you can do another round of mutagenesis for the same.
+
+[42:09] The MNase. So, but there are no pair mechanism for that to George, right?
+
+[42:15] I mean, the repair and I can see and gets in there and you know, yeah, I.
+
+[42:23] It is not nearly as efficient as the repair mechanism for cytosine.
+
+[42:29] Yeah, and in fact, yeah, it was an aging another aging clock potentially.
+
+[42:37] Then if you take a cell that hasn't replicated in a cell that that that replicates a lot.
+
+[42:43] Yeah, I don't that wasn't part of our plan.
+
+[42:49] We'll take it under advisement.
+
+[42:51] It's it's yeah, the plan was just used.
+
+[42:55] So Tennessee DMA as a as a simple way of doing editing.
+
+[42:59] It's not toxic. It is the least toxic way of doing multiplex editing we've found by far.
+
+[43:05] OK, wonderful.
+
+[43:08] Chris makes it up. We have Crian.
+
+[43:13] Thanks, Alison. Hi, George. George.
+
+[43:16] It's been a while. I have a sort of vague question that could go different ways, but it's this.
+
+[43:24] So if you have this scheme whereby you can, if I understand it correctly,
+
+[43:29] make cells resistant to viral manipulation, how do you route around that?
+
+[43:37] If you want to use viruses to manipulate cells, that's the first thing.
+
+[43:42] And then this related thing is I know another part of your world, you have,
+
+[43:49] at least in the past, done these sort of broad mass sequencing gathers in the sea and all kinds of places and presumably in in our guts, you name it.
+
+[44:02] So what I'm wondering there and this is how it relates is.
+
+[44:07] If you could say something about the genetic diversity of the microbiome that we carry around, including the virome that we carry around.
+
+[44:20] How many viruses are in us and what are they doing?
+
+[44:24] What are they doing? And if you shut off this viral stuff, as you're alluding to.
+
+[44:31] Does this have sort of broader species or ecosystem consequences like are these viruses just
+
+[44:42] working against us or is there something deeper going on? So first question simple, how do you route around?
+
+[44:49] Viral vectors, if you've turned off viral infection.
+
+[44:53] And secondly, what about the broader virome and what's going on there?
+
+[44:58] Well, first one is slightly easier.
+
+[45:01] Both of them are great questions.
+
+[45:04] The if we want to use viruses, as I mentioned, we used our delivery and three out of the top five COVID vaccines.
+
+[45:16] In that case, it's typically a synthetic.
+
+[45:20] We completely get rid of the viral nucleic acid.
+
+[45:23] We're just using the viral capsid.
+
+[45:25] We still some kind of nucleic acid makes that capsid, but it can make it in a completely different cell, a non-recoded cell.
+
+[45:35] Then the payload itself is synthetic and it can be whatever you want.
+
+[45:39] So you can use the new code and would use the new code for that.
+
+[45:43] Whether it's messenger RNA based vaccine or viral DNA based.
+
+[45:50] So that's all synthetic where we can and do handle them.
+
+[45:57] But these are not typically full viruses.
+
+[46:01] These are hybrids of viral capsid proteins on a payload, which is non-viral.
+
+[46:08] And then to the environmental components, we have found some bacteria that are helpful that are in our guts.
+
+[46:17] Not typically pathogens, just the opposite.
+
+[46:20] They're helpful bacteria.
+
+[46:22] So we would want to eliminate those.
+
+[46:24] We have not yet found a viral component.
+
+[46:27] So I'm aware of other than ironically the endogenous retroviruses that we eliminated in pigs.
+
+[46:32] But even there we showed that what we did was we knew that there one gene of the virus is helpful, which was the envelope gene.
+
+[46:39] But its ability to hop around and to cross species was not necessary.
+
+[46:44] So that the envelope gene is involved in making the extra embryonic tissue system involved in the maternal fetal communication in the placental.
+
+[46:56] So we did not eliminate that.
+
+[46:58] We've simply eliminated the polymerase genes required for this hopping around, which is probably detrimental.
+
+[47:05] We'll keep our eyes open for other viruses in the environment that might be helpful.
+
+[47:10] But I think those many of those functions, if they ever are found, could be substituted by either a repoted version of the genes or some other mechanism.
+
+[47:24] Like I said, there's none that we know of yet.
+
+[47:27] But if anybody finds one, I'm all ears.
+
+[47:33] Great.
+
+[47:34] We have a few more questions here next.
+
+[47:37] Let's see one by George, by John Ferber.
+
+[47:40] And then I will take a few like final questions.
+
+[47:44] Hi, George.
+
+[47:45] It's been a while since before the COVID pandemic.
+
+[47:50] Some types of gene therapy only require a few cells or a few types of cells to be altered.
+
+[47:57] I wanted to alter every cell in the body.
+
+[48:02] Is there a technology that would guarantee getting it into every cell, including past the blood brain barrier?
+
+[48:10] Almost.
+
+[48:13] So I left out a few slides that cover that.
+
+[48:17] We have a couple of my companies are working on targeted delivery, in particular, of dino therapeutics.
+
+[48:29] We published a Nature Biotech paper where we showed that we could engineer it and select for various tissue deliveries, including brain delivery.
+
+[48:44] But many others, we could do this simultaneously.
+
+[48:48] We design a library of millions.
+
+[48:50] This is not random, but machine learning based design.
+
+[48:55] And that million then sorts itself out in various tissues in the body.
+
+[48:59] And then we look for which ones are enriched in the different tissues.
+
+[49:03] And we have found that using machine learning, we can up the amount of change that we can tolerate from, you know,
+
+[49:11] with naive non-machine learning based methods, it's hard to get beyond four out of 28 positions.
+
+[49:19] Let's say we take the region of the genome 28 amino acids long.
+
+[49:25] We could get, if we tried to get four out of 28, we're getting, you know, low single digit percent survival.
+
+[49:33] And if we go above that, we get undetectable survival.
+
+[49:36] But now, now with machine learning, we could get up to 28 out of 28 amino acid changes, which is quite high.
+
+[49:44] Well, related to that, I'm very interested in doing something about line one, messing up the genome.
+
+[49:53] And I'm guessing that that's important in every cell in the body and that there's a lot of line ones in every cell.
+
+[50:01] And I'm wondering how we can possibly either fear with delete or somehow prevent damage by line one in most or all cells.
+
+[50:13] Right. So unlike the endogenous retroviruses, the lines are, you know, a very, very distant cousin.
+
+[50:21] There's no known positive effect of lines.
+
+[50:26] And so it looks like there's some negative effects.
+
+[50:29] And we in the same way we can knock out the endogenous retroviruses by hitting the reverse transcriptase gene.
+
+[50:36] We can hit the analogous conserved active site in line elements.
+
+[50:41] And so we're doing that now in animals to see whether they could truly survive multi generations without active line transposition or reverse transcriptase.
+
+[50:55] That's that we don't know yet. It's my guess that that will be in that positive.
+
+[51:00] But we have now the genetic tools to ask that question.
+
+[51:04] Thank you. And the final. Have you published on it?
+
+[51:10] We've published the line elements mutation in human cells. We're just starting the animal experiments.
+
+[51:19] Wonderful. Thanks. In the last five minutes, I would love to get to the questions that we always ask in the session, which are number one, for someone new entering your field.
+
+[51:30] And I mean, your field was so broad. Let's keep it perhaps on the, you know, aging longevity relevant bits of the fields, which is of most interested people in this group, if you may.
+
+[51:40] What would someone be working on if they come into the field?
+
+[51:45] Like what would make your work in that as long as in as much as relates to longevity and aging like much easier?
+
+[51:52] Like what's an undervalued challenge where you're like, hey, if you're new to this area and want to take something on and make my work much easier, this is what you do.
+
+[52:02] Yeah, I think multiplex editing where you can make a large number of edits is very valuable.
+
+[52:08] It's still challenging to say do genome recoding that which requires so much multiplex editing. I think that's a bottleneck.
+
+[52:17] You know, most groups, including most pharmaceutical companies rarely go beyond one or two genes at a time.
+
+[52:24] We're going to get into the tens of thousands. That's that's one thing I think is quite valuable.
+
+[52:31] I think that's
+
+[52:37] using
+
+[52:41] viral delivery is still not solved problem. I said that we had ways we can
+
+[52:46] really get high levels of mutagenesis and deliveries in the target, but it's still this is a far cry from
+
+[52:58] you know, getting delivered to every cell or even every stem cell in the body at 100%. Now, fortunately, you don't need that delivery, but it's something there's quite a bit of a room for food.
+
+[53:10] So multiplex editing and delivery mechanisms.
+
+[53:15] Okay, and then if we say, you know, make much progress on this, could you, you know, kind of like leave us with perhaps like a vision of like what could be possible in a, you know, case where everything goes right in longevity, you know, based on the tools and mechanisms that you're developing in like five to 10 years?
+
+[53:34] Well, I won't abuse the everything goes right card.
+
+[53:40] Try to keep it realistic as but yeah, I think it's quite possible that we could
+
+[53:48] make a low cost gene therapy, you know, dollars a dose that is once and done.
+
+[53:56] That gets a large fraction, let's say 90 plus percent of the key cells not the soil every cell and results in an rejuvenated process that is somewhat similar to what we've observed with the cocktail of young blood saccars and the and the almanac saccars.
+
+[54:19] Some set of results like the analogous to what we've seen, but in a clinical setting, applicable to almost every cell at high efficiency.
+
+[54:31] And that, and that could have them implications for diseases, not just though, but diseases of poverty, because it is effect effects on so many diseases and it was
+
+[54:48] extremely low cost.
+
+[54:52] And then other tools maybe not directly aimed at aging for further impact on diseases, infectious diseases, diseases of poverty. And that would have a positive feedback with the economic significance worldwide.
+
+[55:11] It's a nice existential vision of what's possible here. And then, you know, really finally, this is like a shameless plug moment.
+
+[55:20] You know what is there anything that people can concretely do to really advance your work so usually like if people are currently raising funds for like another startup or if you know they have like a new paper all that you know they want people to read.
+
+[55:33] And this is a moment where is there anything that this group would really appreciate their work could do to advance your individual work.
+
+[55:43] Well, I think it could be a mutual benefit.
+
+[55:47] And I, I kind of shamelessly plugged all the way through this talk I'm not sure we need a separate floor. But yeah, we're a very collaborative group and happy to work with people.
+
+[56:02] And started, you know, started companies which is the way we get it into the real world and out of the really academic by with our
+
+[56:11] to, you know, better ways of doing clinical trials that's something was
+
+[56:18] quite challenging but but but you can see progress all the time is, you know, veterinary trials go about five times faster but the COVID-19 clinical trials set a record of about one year and so the usual 10.
+
+[56:31] So I think there's a lot of potential there as well.
+
+[56:36] It certainly is. Thank you so so much. This was absolutely wonderful. And yeah, you've had a full house.
+
+[56:45] Thank you so much for joining us. It was a pleasure to have you on. I hope it wasn't the last time if you do have, you know, future updates on your work like this group is certainly pretty interesting as you can tell from attendance.
+
+[56:57] Thanks everyone for joining. Just a reminder I put a nomination form near the chat if you want to nominate future presentations. It's here in this chat. Thank you, George.
+
+[57:06] Okay, get on. Thank you. And thanks a lot. Bye everyone.
+
+[57:09] See you next one. Yeah. Bye.
