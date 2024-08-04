@@ -3,6 +3,7 @@ import whisper
 import re
 import os
 import json
+import git
 
 # Function to download and convert YouTube video to MP3
 def download_youtube_mp3(youtube_url, output_path):
@@ -137,6 +138,14 @@ def update_myosotis_html(title, transcription_html_path, myosotis_html_path="Myo
         file.write(updated_content)
         file.truncate()
 
+# Function to commit changes to GitHub using gitpython
+def commit_changes(repo_path, message):
+    repo = git.Repo(repo_path)
+    repo.git.add(all=True)
+    repo.index.commit(message)
+    origin = repo.remote(name='origin')
+    origin.push()
+
 if __name__ == "__main__":
     # Ask the user for the YouTube URLs and output path
     youtube_urls = input("Please enter the YouTube URLs separated by commas: ").split(',')
@@ -192,3 +201,8 @@ if __name__ == "__main__":
 
         # Print the location of the updated Myosotis.html file
         print("Myosotis.html updated with a new entry.")
+
+    # Commit changes to GitHub
+    commit_message = "Updated transcriptions and HTML files"
+    commit_changes(output_path, commit_message)
+    print("Changes committed to GitHub.")
