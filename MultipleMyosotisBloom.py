@@ -79,8 +79,14 @@ def generate_html_from_txt(txt_file_path, html_path, youtube_url):
         formatted_transcription = file.read()
 
     title = os.path.splitext(os.path.basename(txt_file_path))[0]
-    first_timestamp = re.search(r"\[\d{2}:\d{2}\]", formatted_transcription).group(0)
-    formatted_transcription = formatted_transcription.replace(first_timestamp, f'<a href="{youtube_url}">{first_timestamp}</a>', 1)
+    
+    # Find all timestamps and convert them to clickable links
+    timestamps = re.findall(r"\[\d{2}:\d{2}\]", formatted_transcription)
+    for timestamp in timestamps:
+        minutes, seconds = map(int, timestamp[1:-1].split(':'))
+        total_seconds = minutes * 60 + seconds
+        youtube_timestamp_url = f'{youtube_url}&t={total_seconds}s'
+        formatted_transcription = formatted_transcription.replace(timestamp, f'<a href="{youtube_timestamp_url}">{timestamp}</a>')
 
     html_content = f'''<!DOCTYPE html>
 <html lang="en">
@@ -98,6 +104,7 @@ def generate_html_from_txt(txt_file_path, html_path, youtube_url):
 
     with open(html_path, 'w', encoding='utf-8') as file:
         file.write(html_content)
+
 
 # Function to update Myosotis.html with a new card entry
 def update_myosotis_html(title, transcription_html_path, myosotis_html_path="Myosotis.html"):
