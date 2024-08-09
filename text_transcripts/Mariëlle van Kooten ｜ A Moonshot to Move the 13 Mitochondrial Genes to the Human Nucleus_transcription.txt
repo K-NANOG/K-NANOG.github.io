@@ -1,0 +1,243 @@
+[00:00] So I'm gonna do something different. I'm not going to show you any data in this seven minute presentation
+
+[00:06] But for the workshop session, I'll be asking you what data you would need to see in the next seven years
+
+[00:12] For us to give you a gene therapy with 13 different genes in one go
+
+[00:18] So this is an initiative we like to see as a research organization
+
+[00:23] tackling one of the core nodes of aging
+
+[00:26] And it starts right here at your DNA headquarters
+
+[00:29] This is what we usually refer to when we talk about human DNA genes the human genome
+
+[00:35] DNA headquarters what most people don't realize is that we have a second genome in each of our cells
+
+[00:40] It controls what we refer to as the power plant our mitochondria. It's a mitochondrial DNA
+
+[00:45] It's about 400,000 times smaller than the nuclear DNA, but it has several important functions
+
+[00:51] So these two genomes are physically separated it's pretty crazy you have two genomes in two different locations in each of your cells
+
+[01:00] While the nuclear genome is nicely protected in a nucleus with advanced DNA repair systems
+
+[01:05] The mitochondrial DNA is stuck in a mitochondria and mitochondria have pretty archaic if any DNA repair systems
+
+[01:12] also
+
+[01:13] It has been argued although not everyone fully appreciates this to its full extent that mitochondrial deletions are actively selected
+
+[01:20] For because mitochondrial genomes are governed by bacterial population genetics or originating from prokaryotes that at some point
+
+[01:28] Got carried into our cells
+
+[01:30] But most importantly as far as we're concerned is that the nuclear and the mitochondrial genomes need to communicate they together form
+
+[01:39] energy-producing complexes in the mitochondria
+
+[01:41] So without this communication the cell is at loss and healthy mitochondria are central to almost any cellular process that you can think of
+
+[01:49] Cellular health and mitochondria are intertwined and interconnected
+
+[01:54] That also means that if something goes wrong in a communication for instance regarding mutations regarding deletions
+
+[02:01] The cell health goes downhill
+
+[02:04] We're talking about many different aspects one of which I'll highlight
+
+[02:08] Late onset diseases such as Alzheimer's and Parkinson's are carefully intertwined with mitochondria
+
+[02:13] What kind of pushed us over the edge about half a year ago looking at this project and saying okay
+
+[02:19] Should we do this? Yes, or no was a pretty recent discovery where Rodriguez Nuevo at all showed that human oocytes
+
+[02:27] Actually carry some implications in natural evolution, too
+
+[02:31] So nature kind of did two things regarding mitochondria and mitochondrial genomes
+
+[02:36] First of all almost all genes have been moved to the nucleus in the course of human evolution and in the course of evolution
+
+[02:42] Of any species that we sequence to date
+
+[02:45] So more than a thousand of our mitochondrial genes are already in the nucleus
+
+[02:49] We have only 13 left
+
+[02:50] The second thing that nature did in one of the most important cell types that we cannot have aging in the course of our lifespan
+
+[02:56] Human X cells is that nature silenced complex one complex one is the most
+
+[03:02] Reactive oxygen species producing complex in our cells we produce energy
+
+[03:05] We produce Ross and complex one in oocytes is actually silenced so that kind of pushed us over the edge and saying okay
+
+[03:12] This is definitely something we need to look into and further investigate
+
+[03:16] This is what we're going to do or place will place those 13 genes under more robust control
+
+[03:20] No longer physically separated in the nuclear genome
+
+[03:24] So we're consolidating the human genome and this might sound pretty easy
+
+[03:28] I actually hear a lot like it's 13 genes. How hard can it be?
+
+[03:32] We don't call this a moonshot for nothing
+
+[03:35] What we have seen over the past decades is that several teams actually we have one of the team members mark sitting over there
+
+[03:41] He'll tell you that this is not easy several teams try this and we appreciate their efforts and we've learned a lot from what they've done
+
+[03:50] What we do differently is two things for one
+
+[03:52] We have a team that can tackle each of the regulatory levels involved in this problem
+
+[03:57] We have a team that tackles genome biology all the way down to RNA biology all the way down to protein engineering and you need that
+
+[04:04] Interdisciplinary team to tackle all these hurdles
+
+[04:07] But more importantly we now finally have the tech to actually do this
+
+[04:11] You need to do this systematically and at scale you cannot take just one gene and say yeah, maybe that works
+
+[04:16] We'll try this with the other 12 you need to do this systematically at scale and for that
+
+[04:20] We need several technologies that have only recently become available
+
+[04:24] So we're talking about large scale DNA synthesis to try out several different types of mutations and mitochondrial genes
+
+[04:30] We're talking about high throughput quality control to tackle each of those regulatory levels
+
+[04:34] I mentioned we're talking about structure prediction alpha fold for instance
+
+[04:37] Not just to model proteins that we haven't yet completely mapped but also to model newly designed proteins by our own hands
+
+[04:45] And then finally we're talking about protein language models
+
+[04:48] So machine learning driven gene design by which we take sequences from other organisms and say okay, what can they teach us?
+
+[04:55] So all of those different gene designs are put into gigantic gene design libraries that we then employ further
+
+[05:01] What we do with them is build an integrated platform for cellular pathway engineering along three different milestones
+
+[05:08] Milestone one we take synthetic mitochondrial DNA
+
+[05:12] Strangely enough the human mitochondrial DNA has never been synthesized assembled and cloned never been done. It's so small never been done
+
+[05:19] So what we do is we synthesize human mitochondrial DNA different versions plug that into mitochondria and plug those mitochondria back into cells and that way
+
+[05:27] We establish a large platform of 13 different cell lines with knockouts of each of those mitochondrial genes
+
+[05:33] We use that platform milestone to where we take all those gene design libraries that I just mentioned created by the state of the art
+
+[05:40] tech and
+
+[05:40] Plug them into the nucleus and follow through which gene designs work best and finally we take the best working gene designs and put them
+
+[05:48] Into the nucleus, but make sure they don't just work from the nucleus
+
+[05:53] But I also work across genotypes because geographically our mitochondrial DNA is different
+
+[05:58] But also work in a coordinated fashion in different cell types because different cell types have different energy needs
+
+[06:04] Now the question to you is as follows
+
+[06:08] So I've talked about three different milestones and I'm talking about as multi-year projects
+
+[06:12] We're thinking seven to ten years before we can have a vector ready that what we say can actually work in a human body
+
+[06:19] So these milestones are mostly scientific
+
+[06:22] Quite fundamental but there is a lot of exciting spin-off potential and a question to you is what did you hear?
+
+[06:28] Did you hear me say custom mitochondrial genomes?
+
+[06:31] What resonated well with you was that the contemporary mitochondrial biology by which we can finally plug into all of those new tools
+
+[06:37] CRISPR for instance for mitochondrial DNA to because that only works in a nucleus or did you hear me say, okay
+
+[06:43] We can actually integrate novel pathways with multiple genes. It's not just that one or two gene therapy vector
+
+[06:48] It's 13 genes and on so novel gene pathways integrated in a nuclear genome
+
+[06:54] So we'd love to talk more with you and please feel free to ask us any question or email Chris Matiormi at founders at
+
+[07:01] biohouse.bio
+
+[07:18] Yeah, there are many different versions and strangely enough this has been not this hasn't been extensively researched
+
+[07:24] There have been some older studies that also suggest that you can for instance
+
+[07:28] Pretel
+
+[07:29] cancerous mutations from mitochondrial DNA rather than nuclear DNA
+
+[07:33] But there's remarkably little as known is also difficult to sequence mitochondrial DNA is difficult to isolate it
+
+[07:39] There's also a lot of pieces of mitochondrial DNA that get transferred to the nucleus
+
+[07:43] Without having a function a recent study on 66,000 patients in the UK biobank showed that this transfer happens all the time
+
+[07:51] So it's there's some technical difficulties, but also a lack of interest. I would say because the focus has always been on the nuclear genome
+
+[08:08] Yeah, I mean those are two questions I think right so one
+
+[08:11] Why are they still there a lot of hypotheses happy happy to talk about that the other question is what?
+
+[08:17] Background do we need to use and which genes versions do we need to plug in what we actually plan to do is
+
+[08:24] Not just have one donor from whose initial cells we work, but have a panel of donors are spread across geographical regions
+
+[08:31] To indeed take this difference into account. It's a super interesting question from any different perspective. Yeah
+
+[08:38] So you already mentioned that there are multiple
+
+[08:42] Chanks of mitochondrial DNA sitting in the nuclear genome already. Well, you know more about that than I
+
+[08:48] Have you thought of just turning those on?
+
+[08:51] Yeah, unfortunately, none of them are functional or so it appears
+
+[08:55] But yes, there are some really interesting kind of findings that we can definitely use although most people argue this process is random
+
+[09:03] Actually new mites as these pieces are called
+
+[09:06] appear to be or play a large role in cancer too because they of course can insert themselves into
+
+[09:12] Repressors for instance and then do that browse cause cancer
+
+[09:27] No, it's not a V those the the size limits of that are are too restricting for this project
+
+[09:32] So which will be about 10 KB. So we're talking the biggest gene vector that we've seen
+
+[09:37] In this regard so this is happening in five to seven years from now in our estimates
+
+[09:42] And we do think we can rely on gene therapy improving up to that point to what we would now use
+
+[09:48] We already see what is possible
+
+[09:50] But at very low efficiency is large serine recombinases which can insert large pieces of DNA and specific sites into the human genome
+
+[09:56] We work with this in our own lab, too
+
+[09:59] But we do think there needs to be some advancement in that area which we do expect in the next couple years
+
+[10:10] Yes, so it ties a bit into the biomarker
+
+[10:13] Area I would I would say but as I mentioned at the start what we need to hear from you is
+
+[10:20] Why you wouldn't take this gene therapy vector in seven to ten years? So
+
+[10:26] What's wrong and
+
+[10:27] What data would you like to see because we can we're generating data now, right? We're doing this project
+
+[10:33] We're removing this pushing this forward
+
+[10:35] So we need to know from you what would convince you and possibly also the person your neighbor
+
+[10:40] Who's not that interested in longevity, but perhaps is interested in health span. What data would they like to see?
+
+[10:49] So which data convinces you to use yourself
+
+[10:55] for gene therapy clinical trials
