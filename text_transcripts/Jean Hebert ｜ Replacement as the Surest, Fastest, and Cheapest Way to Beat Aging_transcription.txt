@@ -1,0 +1,1133 @@
+[00:00] Hi, Ron, welcome to Farsight's Biotech and Health Extension Group,
+
+[00:03] sponsored by 100 Plus Capital.
+
+[00:05] I'm really excited to have Jean-Auber back with us again.
+
+[00:08] I think it's maybe your third appearance here in one of the seminars.
+
+[00:11] And we've definitely had the luck to have you on for a lot of other workshops.
+
+[00:15] I think we got in touch for the first time a few years ago when you wrote
+
+[00:18] a really amazing book on the replacing paradigm to aging.
+
+[00:22] And yeah, you've since done a lot of research and now also have a really
+
+[00:26] wonderful company underway.
+
+[00:27] And so we thought that it would be really fun to invite you back, given that
+
+[00:30] replacing as now really mentioned, I think in the Amaranth Foundation and their
+
+[00:35] longevity bottleneck assessment in the longevity biotech fellowship roadmap.
+
+[00:39] And so I think it's just popping up a lot as a theme that is pretty undervalued
+
+[00:43] within longevity, but like really promising.
+
+[00:45] And so I'm really excited to have you here as to me, the pioneer who really
+
+[00:49] like first set the whole entire kind of like sub-domain within aging on the map,
+
+[00:53] at least for me.
+
+[00:55] So thanks a lot for joining, John.
+
+[00:56] And you'll be discussing replacement as the surest, fastest and cheapest way to
+
+[00:59] building aging.
+
+[01:00] And I will share a lot more about your bio in the chat, but without further
+
+[01:04] ado, thanks a lot for joining and the stage is yours.
+
+[01:07] Thanks so much, Alison, for having me again.
+
+[01:10] I hope you can hear me well enough.
+
+[01:14] Yeah, no, it's a pleasure to be back.
+
+[01:16] And it's nice to see that replacement is growing in appreciation in the field.
+
+[01:24] I think it's really because it deserves more attention and hope, maybe I'll
+
+[01:29] convince you of that today.
+
+[01:31] The title is a bit provocative, but I think it's totally defensible.
+
+[01:37] I am happy to discuss this.
+
+[01:39] I'll show a few slides and open to this being interactive and stimulating
+
+[01:46] discussion about this.
+
+[01:47] I'm going to be telling you about replacement and why I think it's the
+
+[01:52] surest and fastest and also cheapest way of building aging.
+
+[01:58] So first of all, why even consider a replacement as an approach to life
+
+[02:03] extension?
+
+[02:04] Let's start with an example.
+
+[02:07] I got this from Anar Isnan who posted this recently, but I think it's a pretty
+
+[02:12] illustrative picture.
+
+[02:13] This is the same person decades apart.
+
+[02:16] Some of you may recognize this person, Clint Eastwood, well-known actor and
+
+[02:22] director, but this is what aging does.
+
+[02:25] And what exactly is the difference that we're looking at here between the same
+
+[02:31] person decades apart?
+
+[02:33] And really what it is, is this accumulation of damage that occurs.
+
+[02:39] It's stochastic.
+
+[02:41] It's complex damage.
+
+[02:43] I've listed some of the forms of damage that are accumulated to protein over
+
+[02:47] time here, especially to long-lived percains.
+
+[02:50] These are just classes of damage.
+
+[02:52] So they each break down into different specific types of damage to the
+
+[02:58] percains.
+
+[02:59] So it's very complex.
+
+[03:00] It happens somewhat randomly.
+
+[03:02] This is not programmed.
+
+[03:05] And most importantly, it's non-enzymatic, meaning it's not a biological process.
+
+[03:11] It's really a physical process of the breakdown of long-lived proteins over
+
+[03:18] time.
+
+[03:19] And this is particularly important because approaches like drugs that are
+
+[03:26] targeting biological pathways, aren't going to have much of an impact on the
+
+[03:33] physical process.
+
+[03:35] Also, we pretty much know all the genes in the genome now, and we can say with
+
+[03:41] confidence that there are no genes encoded in our genome that recognize this
+
+[03:47] damage or that encode the machinery that can deal with this damage.
+
+[03:52] So genetic approaches and epigenetic approaches are not really going to have
+
+[03:57] much of an impact.
+
+[03:59] You might say, oh, there are, you know, for these extra cell or long-lived
+
+[04:03] proteins that accumulate this damage, there are things like collagenase.
+
+[04:08] It's known that collagenases stop working on these percains when they
+
+[04:14] accumulate damage.
+
+[04:15] So we're really left with nothing in the cell that can deal with this.
+
+[04:21] And we know that this damage that accumulates around and outside of cells
+
+[04:29] really has a big impact on the behavior of these cells in terms of whether
+
+[04:33] they're behaving like young cells or old cells.
+
+[04:36] So these are called heterochronic transplants, where you can take cells
+
+[04:40] from a young tissue and then transplant them in an old tissue or vice versa.
+
+[04:46] And what matters is that the cells are not going to be affected by the
+
+[04:50] damage, but what matters is, you know, the end tissue that the cells end up in.
+
+[04:55] So young cells in an old tissue behave like old cells, old cells in a young
+
+[05:01] tissue behave like young cells.
+
+[05:03] You know, we can kill ourselves trying to make these cells young again, which
+
+[05:07] I would argue most of the longevity field is still focused on.
+
+[05:11] And that's really not going to have much of an impact unless we deal with all
+
+[05:16] the extra cellular components as well.
+
+[05:19] The only way to do that at this point, or at least the most direct way is to do
+
+[05:27] tissue level or greater replacements, you know, organ level, tissue level,
+
+[05:31] whole replacements.
+
+[05:35] You know, replacements are already used in the clinic.
+
+[05:39] So there's not too much of a hurdle there.
+
+[05:41] They're used to reverse damage caused by trauma, for example, or to cure
+
+[05:47] certain diseases.
+
+[05:49] But of course, they could be used for a lot more if we're thinking about life
+
+[05:54] extension. And so I'll go over, you know, the different types of replacement
+
+[05:59] approaches, both for the body and the brain and the pros and cons.
+
+[06:03] And, you know, then this could potentially stimulate discussions about, you know,
+
+[06:11] some of the I probably missed some of the pros and cons or definitely open
+
+[06:16] to feedback on that.
+
+[06:18] But first, I just wanted to make a sort of a side by side comparison again with
+
+[06:22] much of the focus of the longevity field versus replacement.
+
+[06:27] And so what are the advantages of taking a replacement approach?
+
+[06:31] You know, a lot of us have heard that, oh, we have to understand aging before we
+
+[06:36] can address it. Maybe, but not if you're using replacement where you do, you
+
+[06:41] know, wholesale tissue replacement, all the damage is reversed at once and you
+
+[06:46] don't really have to understand, you know, that thousands of things that are going
+
+[06:50] wrong with aging to be able to reverse that aging biomarkers.
+
+[06:55] A similar idea. You know, you can find limitless, limitless numbers of things
+
+[07:01] that change with aging and call them biomarkers and say, you know, they're more
+
+[07:05] or less important.
+
+[07:07] But again, you don't really need that when you're doing tissue or greater level
+
+[07:11] replacements. Another aspect of the focus of the longevity field is to really get
+
+[07:18] the FDA to approve drugs as anti-aging drugs to get them on board with
+
+[07:24] longevity research.
+
+[07:26] And, you know, that's great.
+
+[07:28] The more people we get on board with longevity research, the more we get
+
+[07:32] government regulatory entities on board with the idea of life extension, the
+
+[07:38] better. But for replacement, we don't actually need that.
+
+[07:42] Replacements are generally approved.
+
+[07:45] We've seen recently in the news, for example, a woman just got, you know, two
+
+[07:51] pig organs transplanted at the same time, you know, kidney and thymus.
+
+[07:56] And previously, other individuals have gotten also a xeno, xeno transplants for
+
+[08:02] other organs.
+
+[08:04] And of course, tissue engineered organs have been used in the clinic.
+
+[08:08] And of course, a lot of donor to recipient organ transplants were in every body
+
+[08:15] part has been transplanted that way in people.
+
+[08:19] So the FDA is very much on board with these replacement strategies already, even
+
+[08:25] though right now they're for disease and trauma.
+
+[08:29] But in general, there's no restrictions there.
+
+[08:33] Also, you know, getting more scientists interested.
+
+[08:36] Again, that's very important.
+
+[08:37] Nothing wrong with that.
+
+[08:39] But in terms of replacement and this regenerative medicine approach, there's a
+
+[08:44] ton of talent out there.
+
+[08:46] It's one of the hottest areas of research in biology.
+
+[08:49] And it's right now there are certainly sufficient talent there.
+
+[08:54] It's just a matter of funding to hire them.
+
+[08:58] The costs of, you know, going about, you know, extending lifespan by targeting all
+
+[09:05] the different pathways involved and trying to modify them are indefinite at this point.
+
+[09:12] This is largely based on work done by the LBF, the recent LBF roadmap, where they
+
+[09:20] went out and talked to a lot of people about, you know, how much it would cost to
+
+[09:24] get to particular milestones and how long it would take.
+
+[09:28] And the cost is indeterminate because the timeline is indeterminate and there
+
+[09:33] would be lots that would need to be addressed.
+
+[09:37] In the case of replacement, you know, the milestones are very well defined for the
+
+[09:42] different approaches, which we'll go over again in a minute.
+
+[09:45] And so you can come up with cost estimates for that, which are, you know,
+
+[09:51] significant rate less.
+
+[09:53] Again, thank you to Leeav, Mark Hamelainen in particular for putting that together.
+
+[10:00] Yeah.
+
+[10:01] And then of course, you know, we don't even know with all these efforts.
+
+[10:04] And I would argue that the probability of success with these efforts is very low.
+
+[10:10] Whereas with replacement, we know if we succeed in doing it, that, you know, if
+
+[10:15] you have an old body and replace it with a young body, you will have reversed aging.
+
+[10:21] It's very high probability of success.
+
+[10:24] Okay.
+
+[10:25] So I don't know if there's any questions yet at this point.
+
+[10:30] No, you're good.
+
+[10:31] Good.
+
+[10:32] All right.
+
+[10:32] So let's start with replacement for the body.
+
+[10:37] And there are several possible options of how we can go about it.
+
+[10:42] In this case, there's biological, two broad categories, biological, non-biological.
+
+[10:48] And then within the biological, you can do full body replacement.
+
+[10:52] You can do all internal organs at once, or you can do more, you know, part by
+
+[10:58] part, organ by organ replacement as well.
+
+[11:01] So those are different approaches and we'll touch upon each of those.
+
+[11:06] Then a non-biological, similarly, you could do potentially, you know, full body
+
+[11:12] or all organs more part by part as well.
+
+[11:16] And, you know, there's efforts going on for all these approaches and, you know,
+
+[11:22] initial early proofs of concept that it can be done.
+
+[11:27] So whole body replacement, you know, it's conceptually the most straightforward.
+
+[11:33] I think it's also technically the most straightforward because it really
+
+[11:36] doesn't involve any new tech, or it doesn't exist, the tech has to be adapted to this.
+
+[11:44] But again, you know, the proof of concepts are there that the
+
+[11:47] technology could work for this.
+
+[11:49] But it would involve taking these primitive cells, germ cells, or other
+
+[11:54] primitive stem cells, and just growing brainless bodies.
+
+[11:59] Obviously we don't, wouldn't want, you know, this to be unethical in any way.
+
+[12:04] And so if there is no brain there and it's just a body, it should be okay to use.
+
+[12:10] And then, you know, he would use that to replace an old person's body with the young
+
+[12:15] bind. So basically you would do a body transplant.
+
+[12:20] So the head, the old head would be on a young bind.
+
+[12:24] The pros for this are everything except the brain is young at once.
+
+[12:30] You know, in one shot, there's potential for immune matching, depending on where
+
+[12:36] these cells come from that you're using to make the body.
+
+[12:40] And as I mentioned, it requires a little new tech, you know, proof of concept in
+
+[12:45] preclinical models has been done for all these steps.
+
+[12:50] The downsides are, you know, the social resistance.
+
+[12:54] People will hear this and go, oh my God, this is crazy.
+
+[12:58] And so I think that's a hurdle that needs to be addressed.
+
+[13:05] And you also need to deal with the severed spinal cord when you do a head or brain
+
+[13:10] transplant, although there to the technology is advanced or quite a bit to
+
+[13:15] either bypass the spinal cord severing, for example, using brain machine
+
+[13:21] interfaces, which are in clinical trials or biologically regrowing those
+
+[13:26] connections where a lot of progress has been made as well.
+
+[13:29] Our room cannot claim success on that yet.
+
+[13:33] And also scaling is our consideration here that is not necessarily the easiest to address.
+
+[13:41] So another approach that is being considered and explored is simply
+
+[13:47] replacing all internal organs at once.
+
+[13:51] It's actually not that complicated a surgery because there are not too many
+
+[13:56] tubes at the top and the bottom of all these organs.
+
+[14:00] So the surgery would appear to be doable, although that has not been tested yet.
+
+[14:06] And, but it is an approach.
+
+[14:08] The advantages in this case, instead of doing like the whole body transplant is
+
+[14:13] that there's no spinal cord severing and there's still possibility for immune
+
+[14:18] matching and also requires little new tech.
+
+[14:22] But here too, you know, the social acceptance of such an approach might
+
+[14:28] require, you know, a fair amount of, you know, convincing that this is great to be
+
+[14:34] saving lives and, and, and no one's getting hurt.
+
+[14:37] And, you know, that this is really the right thing to do.
+
+[14:41] But that is definitely, I think, something that would still need to be addressed.
+
+[14:45] In this case, not all body parts are replaced.
+
+[14:49] It's just the internal organs, which you could argue would likely have benefits on health.
+
+[14:56] But, you know, and I put this in the cons because it's not all body parts.
+
+[15:00] And I would worry though, because, you know, even like the limbs, for example, that are
+
+[15:06] aging over time, put you at risk of death as their blood vessels, you know, get old,
+
+[15:13] you're more likely to get clots, which can result in pulmonary embolisms and kill you,
+
+[15:19] for example.
+
+[15:20] You know, maybe it would extend a maximal lifespan, which would be great.
+
+[15:24] You know, not necessarily.
+
+[15:25] You still have to consider those other body parts.
+
+[15:28] Scaling again here too, is not something that is obvious, although, you know, there are
+
+[15:35] solutions.
+
+[15:36] So the other approach is to do more organ by organ or part by part.
+
+[15:41] And we've seen a lot of evidence of this in a clinic already, as I mentioned, you know,
+
+[15:47] recently, you know, transplants where you basically use normal developmental processes
+
+[15:55] to generate organs of the right size, which is why pinks are used.
+
+[16:00] And then if you can deal with the immune incompatibility, then you can use this for
+
+[16:07] transplantation.
+
+[16:08] So that's an approach that's getting a lot of attention now and is being used in certain
+
+[16:14] cases in clinical trials.
+
+[16:17] With, you know, certain amount of success, those organs are working in humans, but, you
+
+[16:24] know, still ways to go there in terms of reducing the immune rejection risk among other things.
+
+[16:32] And in this particular case with xenotransplantation, one of the downsides is, you know,
+
+[16:36] you're still using animals for this.
+
+[16:39] Although, again, there, there may be a way around it because, you know, in preclinical
+
+[16:46] studies, we do know how to make non-sentient bodies.
+
+[16:50] And so that could be a way of resolving that issue.
+
+[16:54] In any case, there's also other approaches like blastocyst complementation.
+
+[16:59] So in this case, you would be growing human organs in another species like the pig, again,
+
+[17:05] for size compatibility.
+
+[17:07] But in this case, the organs would be made of human cells.
+
+[17:12] And then, of course, there's what, you know, the field has been working on for quite some
+
+[17:17] time with fairly slow progress is tissue engineering.
+
+[17:22] And that's where you basically make de novo organs in the lab that can be used for
+
+[17:28] transplantation.
+
+[17:30] And there's been some success, you know, like the bladder that's already probably a couple
+
+[17:35] of decades ago or at least a decade and a half.
+
+[17:38] And, you know, those are functioning in humans quite well.
+
+[17:42] And so that's a success.
+
+[17:44] But those have been far and few in between.
+
+[17:47] And I think the advantage of these other approaches like the xenotransplantation or growing
+
+[17:54] in human organs in the pig, for example, is that they don't require really other than
+
+[18:02] genetic engineering for the immune compatibility.
+
+[18:04] They don't require tissue engineering because it's really letting nature or the developmental
+
+[18:11] process occur on its own as it normally does.
+
+[18:16] And I think that's a concept that is really going to take over her replacement field over
+
+[18:23] time is just using normal developmental processes to generate the tissues, the organs, the
+
+[18:31] organs that we want for replacement.
+
+[18:34] Because we don't, again, have to understand all the steps or, you know, we don't have to
+
+[18:39] be able to de novo make things from scratch.
+
+[18:43] They will just grow and develop naturally as they normally would, you know, when we were
+
+[18:47] a piece is growing up and becoming kids and growing up into adults.
+
+[18:53] Yeah.
+
+[18:54] In this case, the advantages, again, no spinal cord severing scaling could be easier.
+
+[19:00] Again, depends on which of these approaches you're taking.
+
+[19:05] And in all cases, it's already happening.
+
+[19:08] So, there's early proof of concept that this can work.
+
+[19:12] The downsides, if you're going to do it this way, it means a lot of surgeries, which,
+
+[19:20] you know, again, puts you at greater risk of complications.
+
+[19:24] And it's hard to replace all body parts this way, although conceivable and you could.
+
+[19:30] And the immune mismatching, again, that can be different depending on the approaches here.
+
+[19:36] But, you know, it is a challenge with these using these different parts.
+
+[19:43] All right.
+
+[19:45] So, there's also a non-biological approach to replacement where you can do replace, like,
+
+[19:52] all the organs of the body with synthetic replacements.
+
+[19:56] And, you know, I only know one lab who's doing this, but they seem to be doing quite well.
+
+[20:04] This is, you know, the BrainX from Narzostanzla, but, you know, and so they have this completely
+
+[20:13] synthetic artificial system that replaces the need for all our organs.
+
+[20:19] And, you know, of course, because this is engineered, it could also easily be
+
+[20:23] replaced when it gets old or the parts can be maintained much more like an old car
+
+[20:29] where you can keep it going indefinitely if you change all the parts.
+
+[20:33] So, this is an interesting approach that, you know, I'm keeping an eye on.
+
+[20:38] We should all keep an eye on.
+
+[20:39] The advantages are easy scaling and there's opportunities here for
+
+[20:44] brain machine interfaces to combine that with controlling limbs, for example.
+
+[20:51] I think that's an advantage.
+
+[20:52] I also put it in the disadvantages because brain machine interfaces are required in this case to,
+
+[20:59] you know, be able to interact with the outside world.
+
+[21:02] And so, the state of the art for these brain machine interfaces are getting pretty good
+
+[21:09] for the machine reading your intentions and being able to control limbs, whether they're
+
+[21:16] artificial or your own limbs, if you're paralyzed, for example.
+
+[21:20] So, they're getting pretty good at that, or they are pretty good at that already.
+
+[21:24] But there's very little in the way of sensory input to the brain using machine interfaces.
+
+[21:33] And so, that's an area I think where before this can be useful, that would need to be addressed.
+
+[21:40] And then, you know, potentially, you still have to worry about the unbarricaded parts
+
+[21:45] that are biological that you haven't replaced.
+
+[21:49] But, you know, that could potentially be addressed, again, using synthetic body parts
+
+[21:56] like synthetic limbs, for example, which become very sophisticated and perform, you know,
+
+[22:02] almost as well or maybe in some cases better than our natural limbs, certainly better than
+
+[22:09] our natural limbs as we get old.
+
+[22:12] So, that's also an approach that I think is of interest.
+
+[22:15] And of course, there is a fully artificial heart that's being used now in people.
+
+[22:22] There's also kidney-like bioreactors that are in preclinical state, parts are working pretty well.
+
+[22:30] And other organs potentially also follow suit.
+
+[22:34] So, you can do this also, this replacement with synthetics,
+
+[22:38] either part by part or the whole thing.
+
+[22:43] And, you know, the brain remains biological, maybe other parts of the body would be biological as
+
+[22:49] well if you were doing this in combination with biological replacements.
+
+[22:54] So, there's a bio-machine, you know, the compatibility is not always perfect.
+
+[23:01] And so, there's a risk there.
+
+[23:05] I think the technology can stand to improve a little bit.
+
+[23:08] It's gotten pretty good with blood vessels, which are really important because, you know,
+
+[23:12] if the biological vessel detaches from the synthetic one, it can be pretty disastrous.
+
+[23:18] But I think a lot of progress has been made there.
+
+[23:20] But, you know, overall, again, still some progress to be made.
+
+[23:24] So, that's the body replacement approaches.
+
+[23:28] I'm going to move to the brain, but unless anybody has questions in the meantime.
+
+[23:33] There's no question.
+
+[23:34] There's one, but I think we can move on and then we'll take them back.
+
+[23:37] One by one.
+
+[23:38] Okay.
+
+[23:39] Okay.
+
+[23:39] Great.
+
+[23:41] So, brain tissue replacement.
+
+[23:43] Obviously, we can't replace the whole brain at once.
+
+[23:46] It would be a different person.
+
+[23:48] So, we have to consider how we do this.
+
+[23:50] And the only way would be progressive tissue replacement.
+
+[23:55] And again, in the, you know, in terms of FDA approval in the clinic, this doesn't seem to be
+
+[24:02] a problem using cells or we don't call them tissues yet, but there are combinations of,
+
+[24:09] you know, scaffolds and cells that are being used.
+
+[24:12] So, you call them very primitive tissues that are used in people already.
+
+[24:16] So, you know, there's no roadblock there in terms of getting it to the clinic.
+
+[24:20] Here are some successes in terms of treating Parkinson's and epilepsy with our new cells.
+
+[24:27] These companies like Aspen, Neuroscience, Blue Rock, Neurona.
+
+[24:34] Aspen not yet.
+
+[24:35] They have FDA approval, but everybody knows, anticipates that their cells are going to be
+
+[24:40] as good as Blue Rock's without the need for immune suppression because they're autologous.
+
+[24:47] But these companies have shown safety in the clinic and efficacy of their cells in these brain
+
+[24:54] transplants. And, you know, they're also commercially very viable successes.
+
+[25:00] So, the companies are worth a lot at this point.
+
+[25:03] Again, because it works, their cells work to reverse, you know, these are in the case
+
+[25:08] of Parkinson's, atrial disease. And then, of course, in the case of epilepsy,
+
+[25:13] just their neurological disease. That's just to say that, you know, that there's a path to
+
+[25:20] getting this implemented in the clinic. But there's two reasons why progressive brain tissue
+
+[25:27] replacement makes sense. One is that it appears that we'll be able to add new tissue to the brains
+
+[25:36] and have it functionally integrate with the existing brain. This was shown most nicely,
+
+[25:45] you know, already eight years ago in Germany by Magda Wiener-Gurtz's lab showing that
+
+[25:50] transplanted embryonic precursors differentiate into neurons that integrate remarkably well
+
+[25:57] with the adult neural circuitry. So, very promising result there. And then this was repeated
+
+[26:04] and continues to be repeated by a bunch of different labs, including ours, just showing that,
+
+[26:10] you know, you can get really good integration of new neurons in the brain. Whether you're
+
+[26:16] transplanting the associated cells or organoids, they all seem to do quite well.
+
+[26:24] Yeah, I just have some examples here and they all basically say the same thing,
+
+[26:29] that the neurons integrate really well. However, we're not there yet in terms of those neurons
+
+[26:36] truly being functional because there's things missing. So, these are typically a single neuronal
+
+[26:44] type or at least a single neuronal class, a single class of neurons, for example,
+
+[26:50] excitatory neurons and not inhibitory neurons. And so, we know that without the full complement
+
+[26:57] of neuronal subtypes, that tissue or that graft cannot process information normally.
+
+[27:04] It also lacks structure. So, we know the structure is really important for the wiring within the
+
+[27:10] tissue or in this case, within the graft. And so, the cells are all mixed up, which they are in all
+
+[27:16] these applications, including in the work read down and published. You're not going to get
+
+[27:21] information processing that's useful to the host. We still have work to do. But again, this is,
+
+[27:29] you know, doesn't require development of new technologies. It just requires doing things right.
+
+[27:36] But so, this shows at least in principle that we can add, should be able to add new tissue
+
+[27:42] to the old brain and have it functionally integrate. But important to progressive tissue
+
+[27:47] replacement is not just the addition of new tissue, but the removal of old tissue, which
+
+[27:53] inevitably lead to strokes and other bad things. So, we need to get rid of that tissue.
+
+[27:59] And we already have a proof of concept in the clinic that oral tissue can be removed without
+
+[28:09] loss of its information content or interruption of function or personality or self-identity
+
+[28:17] in cases slow growing benign gliomas that occur in people of any age, but typically more so as
+
+[28:25] you get older. So, even in patients in their 70s, for example, they get these tumors that
+
+[28:30] grow from a pinpoint out and eat away a certain area of the brain or the neoportex in particular.
+
+[28:39] And let's say it eats away at the language center over the course of an extended period of time.
+
+[28:46] Those individuals don't lose the ability to speak because language gets re-encoded in a
+
+[28:51] different part of the neoportex because of the progressive nature of the construction of the
+
+[28:57] tissue and because the person is using language every day. If you have a stroke in the language
+
+[29:03] center, it's a catastrophic event. There's no time for the relocation or the plasticity to occur
+
+[29:10] and you lose language. But these tumors show that you can, you know, lose tissue slowly over time
+
+[29:17] without losing the information content in it, without you even realizing that it's happening.
+
+[29:23] So, this is the other half of the equation. We can add tissue and we can progressively remove
+
+[29:30] tissue without loss of information content. So, great. You know, how might we go about doing this?
+
+[29:37] There are different here too, just like for the body, for the brain, there are different approaches.
+
+[29:43] There's an engineering approach where, again, you're in all cases inspired by the normal
+
+[29:50] developmental process. So, you want to recapitulate that normal developmental process.
+
+[29:56] And this is something that my group is working on, engineering a fetal-like neocortical tissue,
+
+[30:05] which is very well defined after you're in, you know, extensive omics analysis to know what
+
+[30:11] precursor cell types are present there, what are the extracellular signals and scaffolding
+
+[30:17] components that are necessary for those cells to develop into a well-structured, mature tissue
+
+[30:25] that can process information normally. So, we've done this analysis, we can generate all the
+
+[30:31] components. Sorry, this is a bit of a plug for the work we're doing, but it's only a couple of slides.
+
+[30:39] And so, we've actually generated a proto tissue now, you know, has the structure and the precursor
+
+[30:45] cell types that we want, and we've started testing this in animals. Again, still a lot of work to do,
+
+[30:52] but, you know, we think it's possible to engineer this fetal-like tissue to give rise to structured,
+
+[30:59] functional adult tissue. It's not the only approach though, although it does have advantages in terms
+
+[31:06] of surgical implementation, because since we're designing the tissue, we can design the shape
+
+[31:11] and adjust it to each lesion site, for example, and it's much easier to scale than the approaches
+
+[31:20] I'm going to tell you about now. The disadvantage is it's harder to get it right, because compared
+
+[31:27] to the advantages I'm going to show you now as well, and those approaches are basically to use
+
+[31:35] normal development to obtain the same precursor tissue, in this case not engineered, but derived
+
+[31:41] from earlier developmental stages. So, you may have heard of these ex-utero synthetic fetuses
+
+[31:48] that different groups are working on. So, they start with human pluripotent stem cells in culture,
+
+[31:54] which, you know, standard practice now in terms of deriving those from individuals,
+
+[31:59] and then developing them into these sort of early fetuses. And the big advantage here is that those
+
+[32:08] tissues are more likely to be authentic. This is also scalable, which is nice. The disadvantage
+
+[32:16] is the need potentially for synthetic uteri to get to older stages where we can actually collect
+
+[32:25] this fetal-like tissue for our grafts instead of engineering it, for example,
+
+[32:30] and that hasn't been developed yet. Otherwise, you know, it may be hard to get these
+
+[32:38] synthetic fetuses to develop to a stage that's old enough that we could collect tissue without
+
+[32:45] necrosis setting in. You know, people are working on it and they're smart people and hopefully
+
+[32:51] they'll succeed here. Another way is to use interspecies chimeras. There were two papers that
+
+[32:58] just came out this month showing that you could grow, I think there was some rat cells in mice
+
+[33:05] and get, in both cases, it's not complete. So, it's not clean. I think there's ways that you
+
+[33:11] could make this a lot cleaner. But in red here is a rat brain tissue in an otherwise mouse brain.
+
+[33:19] And in another study, they show a similar thing, although the degree of chimeras in a way is worse.
+
+[33:26] I think this could be improved and you could imagine growing human fetal tissue, brain tissue
+
+[33:36] in another species to obtain a source for transplantation and repair.
+
+[33:42] And then you could use human fetal tissue itself. You know, this has been used for quite some time,
+
+[33:49] you know, for Parkinson's, for example, in 1987, 88, and then ever since, human fetal brain tissue
+
+[33:58] has been used to treat Parkinson's in particular. And, you know, one could imagine but using human
+
+[34:05] fetal tissue could be a source or tissue for transplantation. Disadvantage, you know, there is
+
+[34:11] some social opposition to using human fetal tissue, even though at this point, you know, there are not
+
+[34:17] even any functional neurons there. So, it's really not, you know, there's no sentience. And the
+
+[34:23] scaling is also, you know, problematic. But in any case, that's an alternative approach where we know
+
+[34:30] the tissue is truly authentic. So, I think that's pretty much it. For the brain, this is just a
+
+[34:35] cartoon showing how, you know, the addition and removal of all tissue could be implemented.
+
+[34:42] We have ways, although they haven't been adapted to our purposes yet, but we have ways of
+
+[34:48] progressively silencing brain tissue from a pinpoint out that would mimic a artificial
+
+[34:56] glioma because we wouldn't want to use the glioma to silence tissue as an example, I'm sure, of your
+
+[35:02] earlier. But we have ways of doing that. So, you could progressively silence parts of the brain
+
+[35:08] while putting in your fetal tissue in other areas and allowing progressive silencing and tissue
+
+[35:17] development and integration occur coincidentally and repeating this a few times. So, that's a
+
+[35:24] way of doing that. I went over that fast, you know, happy to go over it in more detail.
+
+[35:31] It's very interesting. But the point is, you know, none of this seems, requires new technologies.
+
+[35:41] It's all adaptation of existing technologies. I think it's all achievable and combined with,
+
+[35:49] you know, body part replacements or body replacements, you know, we could beat aging
+
+[35:56] in a reasonable amount of time and with a reasonable budget that isn't crazy. So,
+
+[36:04] anyway, open to feedback and questions, Arcus one.
+
+[36:09] Fantastic. Thank you so very much. That was really interesting. And I love that. I think in your
+
+[36:15] previous talk that you gave it for us, that was mostly really focused on the brain. And now, I
+
+[36:17] think, you know, going through the whole path of the whole body first, I think they did a really
+
+[36:20] great vision out for that. There's a ton of questions already. So, I'm going to keep mine
+
+[36:24] very brief, aka, I'm going to ask them at the end in case we have time. But for now, we have
+
+[36:29] Fiona, why don't you kick us off? All right. Thank you, Alison. And John, thank you so much.
+
+[36:35] This is fascinating as always. My question is about the brain. I think it's very interesting.
+
+[36:42] My question is about the brain replacement, right? Somewhere I read that a brain that doesn't evolve
+
+[36:48] or grow up with a body where it maps how to control, let's say, fingers, limbs, and all that,
+
+[36:56] that if it's placed in another body, it will not know on the lower levels of the brain function
+
+[37:04] what to do and that the organism will die. Also, I understand there are neurons outside the brain
+
+[37:12] in the heart and in the stomach. And, you know, do these have memories that build up over a lifetime?
+
+[37:18] Can you address that? Yeah, I don't. There are certainly no conscious memories there. You know,
+
+[37:25] I like to use quadriplegics as an example. You know, it's they don't after, you know,
+
+[37:32] after their accident, for example, they don't lose certain memories that that would be in the neurons
+
+[37:40] that are in the rest of the body, for example, right? So, they're still the same person,
+
+[37:46] you know, they may be a little bit depressed for a while about their new condition of the
+
+[37:52] paralyzed, but essentially it's the same person and they're not connected to any of the neurons
+
+[37:59] in the rest of their body. So, in their digestive system, their sensory neurons, motor neurons,
+
+[38:06] you know, all the different types of neurons that occur in the body. So, I don't think those
+
+[38:11] neurons really contribute to who we are in terms of our personality or at least not directly who
+
+[38:18] we are in terms of our personality or self-identity. Yeah, the other question was, yeah, the connection,
+
+[38:26] again, yeah, so it's the same thing. You know, you can be disconnected neuronally from your body and
+
+[38:32] your brain doesn't die. And during development, yeah, the process is coincident with body growth
+
+[38:39] and those neurons connecting to the body. But, you know, my understanding of the physiology of
+
+[38:48] the neoporters is that it is super plastic and you can, for example, if you get a new limb,
+
+[38:55] your, that you can somehow communicate with your brain, you can, you incorporate that new limb as
+
+[39:03] yours. So, if there's so much plasticity in the neocortex, it won't know the difference whether,
+
+[39:10] you know, if you get a synthetic limb, you know, because you lost a limb and you get a synthetic
+
+[39:16] limb. If there's some proprioceptive feedback from that artificial limb, your brain, your cortex,
+
+[39:24] will adapt it as if it's your limb. So, I think there's enough plasticity there to, you know,
+
+[39:31] connect with the world normally. All right, thanks. Aaron. Hey, this is nitpicky,
+
+[39:38] but I feel like it's justified. So, the slide that you had for your arguments about what,
+
+[39:43] why the replacement should be done over other things for understanding aging and for biomarkers,
+
+[39:50] if we don't know how maintenance occurs for these replaced portions, at least at the tissue level,
+
+[39:57] then your same argument about a cell being in a bad environment leads it to being an old cell
+
+[40:02] still applies to tissues. So, if we don't understand how maintenance occurs, then tissue level
+
+[40:07] replacement, it might be that you replace the tissue and it fails within months because
+
+[40:12] the maintenance systems were turned off. The logic that you outlined is all correct for whole body
+
+[40:18] replacement if you grow like a whole entirely new body, but for tissue level replacement,
+
+[40:23] which is the title that you used on that slide, I don't think it's correct. So, if you can update
+
+[40:28] that portion, that'd be good. Yeah, I did not say just tissue level or tissue or greater level.
+
+[40:34] I can't remember. Sometimes I use both, but yeah. So, I'm trying to be all inclusive about the
+
+[40:39] different approaches, but yeah, it's a good point, right? That if you have, and certainly if, you
+
+[40:45] know, if you have a single organ, a young organ transplanted in an old person, it's unlikely to
+
+[40:54] do much good, right? Because failure of any other organ is going to kill not only that organ, but
+
+[41:00] the whole person. The effect of the surrounding environment though to cells, I think it's something
+
+[41:07] yeah, you could explore biomarkers, could be useful for that for sure. You know, the evidence
+
+[41:14] even in the brain in humans over time is actually pretty good that the environment doesn't, you know,
+
+[41:24] hurt the new cells in that case that much. And if we're talking about tissue level replacements,
+
+[41:31] it should even be a lot less because the cells in the new tissue will be much more buffered from
+
+[41:37] the rest of the environment because they're surrounded by the young tissue. But in the cases
+
+[41:43] that I'm referring to again from back in the 80s when they were using fetal human brain tissue
+
+[41:50] to treat Parkinson's, they did post-mortem analysis of these, you know, up to two decades later.
+
+[41:57] And even though those were naked cells in a diseased environment, you know, accelerated,
+
+[42:04] degenerative environment, after 16 years they still look pretty good and were still functioning.
+
+[42:13] And then after, you know, over two decades they were starting to show signs of pathology,
+
+[42:20] you know. And again, those are naked cells in the diseased environments
+
+[42:24] and they were still, they still lasted, you know, close to a couple of decades.
+
+[42:29] You know, I think we can be relatively confident that the environment does matter of course,
+
+[42:35] like we mentioned because you do need to replace everything eventually and probably in a recent
+
+[42:42] amount of time. But I think, you know, I think there's pretty good evidence and yes,
+
+[42:48] it could be confirmed with biomarkers that the tissue, young tissue is doing pretty well in an
+
+[42:55] old environment. But we have a collaboration with Radin Vlaya where we started to work at this.
+
+[43:01] And yeah, you know, obviously that's, he works on biomarkers,
+
+[43:05] a big generic biomarkers and so I think it can still be useful. I would still argue that I don't
+
+[43:11] think they're necessary though, but yeah. The next one we have John.
+
+[43:16] Hi John, nice presentation. I particularly like the way you outline the importance of
+
+[43:21] extracellular aging as contrasted with cellular aging. I'd like to suggest a couple of alternative
+
+[43:30] approaches that might run in parallel with your whole body or whatever replacement.
+
+[43:36] One is to genetically engineer fibroblasts and fibroblasts like cells so that they would go
+
+[43:45] through more quickly and replace aging collagen, aging elastin and so forth. Right now they do it,
+
+[43:52] but they take around seven or eight years in most tissues to replace the collagen and if we could
+
+[44:00] speed that up, that could be very therapeutic. The other is drug alternatives to breaking
+
+[44:07] cross-links, glycation cross-links. There's one drug that was developed 25 years ago,
+
+[44:15] Algaebrium or ALT 711 and that works on one kind of principal cross-linked B-alpha diketone.
+
+[44:23] There's another principal cross-linked glucose pain, which so far we don't have a small molecule
+
+[44:28] that can attack that. So I wanted to suggest that we expand your project to include some parallel
+
+[44:36] projects. Yeah, I'll start with the second question first. Yeah, that is a molecular approach.
+
+[44:41] I wouldn't say it's impossible. I just think it's very difficult because of the complexity of the
+
+[44:48] damage. You know, there may be a couple of examples of drugs that can reverse cross-links, but
+
+[44:55] you know, I'd be very surprised if they had no side effects because it's very hard for a drug to
+
+[45:00] distinguish a very similar covalent bond in a bad protein versus a good protein.
+
+[45:11] In the case of alpha diketone, they don't exist inside the cell and they don't have any
+
+[45:19] particular beneficial purpose. So breaking the alpha diketone links could be done without
+
+[45:27] side effects. I've been taking Algaebrium for 24 years now, so I'm pretty sure it's pretty safe.
+
+[45:34] From your initial slide, of course, you showed that another problem is just breaking the elastin
+
+[45:41] and breaking into the strands and that couldn't be fixed by Algaebrium, but it might be fixed if
+
+[45:46] we can get a new kind of fibroblast that will chew up the old extracellular matrix and lay down
+
+[45:56] new extracellular matrix in its wake. Yeah, and to your first point, I think that makes sense if
+
+[46:03] it's something that doesn't exist normally, for sure, but there are so many other modifications
+
+[46:12] that occur over time. Breaks, like you mentioned, but not only breaks, there's aggregates, there's
+
+[46:18] lipid crosslinking, there's carbohydrate crosslinking, protein buslinking,
+
+[46:23] are different types. There's calcification, there's, you know, maybe you can imagine drugs
+
+[46:30] for all of these, but again, because of the stochastic nature, I think it would be very difficult.
+
+[46:37] I agree 100%. I do think that it's important to work on this parallel at
+
+[46:44] along with your project. Sure, sure. The other question with the fibroblast, engineer fibroblast,
+
+[46:52] some collagens turn over pretty, they're like, collagens are a big family, right? They're the
+
+[46:57] most abundant proteins, you know, if you put them all together in our bodies, but there are a lot
+
+[47:02] of different types of collagen. Some of them will turn over relatively fast, some very slowly,
+
+[47:08] and some almost not at all. But in the cases studied, whenever they started accumulating
+
+[47:15] damage, they're no longer turned over by collagenases. So I'm not sure how putting in
+
+[47:22] new fibroblasts is going to help that. They have the same collagenases to all fibroblasts.
+
+[47:27] I believe that the fibroblasts will actually chew up the old collagen, not just secreted
+
+[47:33] collagens. That's my understanding. Yeah, I don't know how aggresive they are. Typically, it's more,
+
+[47:42] you know, immune derived cells that do the bulk of that, people warn their spibrosis. They certainly
+
+[47:49] sound me alarm, fibroblasts become senescent, warns damage. But yeah, there might be something
+
+[47:56] there I'm not familiar with that. There we are. Fibroblasts, you know, PCM.
+
+[48:03] We only have one minute and I really want to make sure that we also get your final words on what it
+
+[48:16] is that you're doing right now, Jean, and how people can help and support you if they're interested
+
+[48:20] in doing so. Because you showed a few slides about the company, but it would be useful to have some
+
+[48:25] kind of clear action items for people to take away with. That would be great.
+
+[48:29] Yeah. Sorry, Micah. I saw you had your hand up. I would have loved to hear your question because
+
+[48:34] you always have good questions. But maybe you can hit me later. Yeah, I think, you know,
+
+[48:41] just being here discussing this is a positive thing. I'm happy to see that.
+
+[48:50] You know, we're looking for people who want to get involved with these replacement approaches.
+
+[48:55] You know, there's a lot of work to be done with progressive tissue replacement in the brains or
+
+[48:59] anybody interested in that, please reach out to me, see if we can work together. That would be great.
+
+[49:06] But yeah, that's it. Thanks for having me. All right. Great. I'm hoping that we hear a lot
+
+[49:12] more as you guys are gradually building out things and please do get in touch with Jean. I think his
+
+[49:17] work is like absolutely fantastic. You've made so much progress in such a short time. I think there's
+
+[49:21] so much to do as you laid out in the different categories. But I really think that you're moving
+
+[49:26] really fast and it would be great if more people can like jump on and support this type of work.
+
+[49:31] Thank you so much. Thanks everyone for your amazing questions. I shared your Twitter here
+
+[49:35] that people can contact you through, but you also shared your email address, I think in the final
+
+[49:38] slide or in the first slide so that people definitely know how to contact you. If you have
+
+[49:42] trouble contacting Jean, contact me to contact Jean. And yeah, I'm really excited for what you
+
+[49:46] guys are building. And I think that could hardly be enough support, I think for this type of stuff
+
+[49:51] right now. We need to move fast. Thanks a lot.
