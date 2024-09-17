@@ -1,0 +1,405 @@
+[00:00] That's why I debated the title of this talk and almost titled it, The Path to Almost Everything.
+
+[00:07] We live in a world made of atoms.
+
+[00:09] The way those atoms are arranged makes an enormous difference.
+
+[00:13] It's the difference between coal and diamond.
+
+[00:15] It's the difference between cancer and healthy tissue.
+
+[00:19] Most fundamental material technology we can develop is a technology that can guide the
+
+[00:24] motion of molecules in a planned, programmable way, to have reactive molecules go together
+
+[00:32] to make larger structures, to make larger structures, to make larger structures with
+
+[00:36] atomistic precision that can do things for us.
+
+[00:39] This is how biology works in a very limited way that emerged on earth through chemical
+
+[00:44] processes and our cells are still full of salt water, much like the composition of the
+
+[00:49] ocean.
+
+[00:50] We can do much better with advanced molecular machinery.
+
+[00:54] I would like to speak to the vision of that, which I think the most important development
+
+[01:00] in this area, as with perhaps with aging, is to understand the vision for people to
+
+[01:05] understand there is something to pursue there.
+
+[01:09] We'll argue that the best way to have a clear vision is to have a clear picture, physical
+
+[01:13] modeling, images, videos of what this technology base can look like.
+
+[01:19] That is a sketch.
+
+[01:22] I would like to emphasize that we're in a different time now than we were five years
+
+[01:26] ago, ten years ago.
+
+[01:27] AI is exploding.
+
+[01:29] I should say deep learning is exploding.
+
+[01:31] It's providing generative models for protein design.
+
+[01:34] As I pointed out in the proceedings of the U.S. National Academy of Sciences in 1981,
+
+[01:38] founding the field of, protein engineering is a path to building molecular machine systems
+
+[01:44] that can build better molecular machine systems, already atomically precise, already things
+
+[01:49] that you can make in macroscopic quantities.
+
+[01:52] There are now generative models for protein design just in the last few years that are
+
+[01:55] revolutionizing that field.
+
+[01:58] Eventually we're going to see generative models for essentially the whole of engineering design
+
+[02:02] and with rapid design, progress will be swift.
+
+[02:04] It's all bottlenecked on design.
+
+[02:08] So the vision, reminder, enormous productive capacity, material abundance, just being able
+
+[02:13] to make a lot of very high quality stuff and do it rapidly and cleanly, scale it.
+
+[02:18] Atomically accurate restoration.
+
+[02:19] It's taking CO2 out of the atmosphere.
+
+[02:21] It's just moving stuff around.
+
+[02:22] Takes three terawatts for ten years or ten terawatts for three years or 30 terawatts
+
+[02:27] for one year and those are all things you could construct and take out the excess CO2.
+
+[02:32] Space settlement and space flight.
+
+[02:33] That's about making spacecraft and things in space, about arranging stuff, high quality
+
+[02:38] stuff, cheap.
+
+[02:40] More complicated stories, how one can pursue and achieve permanent health.
+
+[02:45] The ability to have atomically precise devices that can sense structure, let us understand
+
+[02:52] biology, the ultimate omics, really map things rapidly in full detail.
+
+[02:59] Interventions at that level can change medicine more profoundly than I think we can, more
+
+[03:07] than you can barely imagine it today.
+
+[03:10] So to ground this a little bit in an abstraction, well, excuse me, first some numbers.
+
+[03:16] I have been at Oxford.
+
+[03:18] I was in the offices of the Future of Humanity Institute, which is shared with the Center
+
+[03:23] for Effective Altruism, which is ground zero for the EA movement.
+
+[03:26] So of course I have to do an EA style calculation.
+
+[03:30] All of this is worth at least $100,000 per capita per year for a poor country.
+
+[03:34] And if we add, let's see, a life extension and so on, that's an underestimate.
+
+[03:40] Intervention about 10 to the 10th people, multiply that out, that's 10 to the 15th
+
+[03:44] dollars per year.
+
+[03:45] A one month shift in the period required to develop such a technology is worth 10 to the
+
+[03:50] 14th dollars.
+
+[03:53] There is a $1 million intervention that can make an enormous difference to that of at
+
+[03:56] least one month.
+
+[03:57] I will be outlining that and the next speaker will tell you about the progress we have made.
+
+[04:03] So it's about design.
+
+[04:05] To rationalize this, to understand this, we have already seen a pervasive revolution in
+
+[04:09] the world.
+
+[04:10] One that has brought us, has replaced essentially the whole of information processing, all the
+
+[04:15] analog equipment, et cetera, et cetera, et cetera, with nanoscale digital electronics
+
+[04:20] and gave us, by the way, AI.
+
+[04:22] This technology is deeply analogous.
+
+[04:25] Discrete components moved with great reliability because physics lets you do that.
+
+[04:30] Low error rates across trillions of operations, very fast operations, large arrays of components
+
+[04:35] working together to make intricate patterns.
+
+[04:38] All these are parallels.
+
+[04:40] One dominates information processing and with the scalability that comes from molecular
+
+[04:45] machinery being able to make more machinery, radical scalability, we're in a position to
+
+[04:50] dominate physical production.
+
+[04:52] When you think about machines building components for more machines, please do not think of
+
+[04:56] bugs.
+
+[04:57] Little bugs, little nano bugs.
+
+[04:59] That's not how you do manufacturing with swarms.
+
+[05:01] Little bugs, please.
+
+[05:04] That's a misunderstanding of an idea that was obsolete in 1992, but the media loves
+
+[05:09] it, the science fiction authors love it, and it's in everybody's minds.
+
+[05:13] Okay, so a minor point in this context.
+
+[05:16] It's minor, you can replace semiconductor fabrication with systems that produce enormously
+
+[05:20] better hardware for a fraction of the cost and don't require billions of dollars.
+
+[05:26] Make superior laptops in your home if you wanted, including the chips, yes.
+
+[05:31] Okay, vision.
+
+[05:33] Once upon a time, people thought about moving into space, opening up the space frontier.
+
+[05:38] They had a vision.
+
+[05:39] Early 1990s, excuse me, early, early, early 1950s, the dates, the 1950s, 1952 Collier's
+
+[05:47] magazine, very famous issue, article by von Braun and Willy Ley, was about space flight.
+
+[05:54] This spacecraft there is very different from what people ended up building, but it's about
+
+[05:59] the right mass.
+
+[06:00] It has detailed labels.
+
+[06:02] On the right, you see a space station.
+
+[06:03] It turns out zero gravity is okay for people, so we don't have spinning space stations,
+
+[06:07] but it also has detailed labels, and it has detailed labels because von Braun knew what
+
+[06:12] he was talking about.
+
+[06:13] He led the engineering effort that, in the next decade, built the Saturn V booster that
+
+[06:19] launched Apollo missions to the moon.
+
+[06:21] Okay, so he had a clear vision.
+
+[06:23] He could draw pictures, and people said, oh, cool, space, we can build stuff like this.
+
+[06:27] Go to the moon.
+
+[06:29] What do we have today?
+
+[06:31] Well, complex nanomechanical systems are what's necessary to move things around, put them
+
+[06:35] together.
+
+[06:36] Atomically precise mass fabrication.
+
+[06:38] We have cartoons like this and a handful of atomistic designs and simulations, but basically
+
+[06:44] the picture that we have of this future is this.
+
+[06:49] This is not inspiring.
+
+[06:50] This does not orient people.
+
+[06:53] We need to find ways forward.
+
+[06:55] We already have molecular fabrication with atomic precision and scalable to mass quantities
+
+[07:00] if one wishes through protein engineering.
+
+[07:04] Proteins by the way are material that's about as solid as wood.
+
+[07:07] It's an engineering material.
+
+[07:08] It's not like gelatin or meat or something.
+
+[07:11] We have design capacity, molecular engineering to make complex structures, and again, the
+
+[07:17] generative models coming out of quote unquote AI, meaning deep learning.
+
+[07:22] But what we don't have are clear goals.
+
+[07:24] There is a sketch, an architecture for a 3D molecular printer that can be made by self-assembly,
+
+[07:31] 100 nanometer scale.
+
+[07:32] If you make one, you build 10 to the 12th of them.
+
+[07:35] And beyond that, atomically precise fabrication, but again, no picture.
+
+[07:43] So how do we break design bottlenecks and get those concrete designs and images?
+
+[07:49] Well, we need to build exploratory design tools and user communities.
+
+[07:54] The design tools means physical modeling.
+
+[07:56] It means top down refinement, being able to design machines, refine them to atomistic
+
+[08:01] level, and say something about user communities.
+
+[08:04] In a moment here, we have a gap between science and engineering.
+
+[08:09] Molecular sciences are very well advanced.
+
+[08:11] Most people don't know that you can model molecules as mechanical systems, and the models
+
+[08:14] are really excellent.
+
+[08:15] They're used to model biomolecules and so on.
+
+[08:18] Oh, you can model this stuff?
+
+[08:20] Yeah, we can.
+
+[08:23] Systems engineering.
+
+[08:24] Well, we know how to do that on the macroscopic scale.
+
+[08:26] The principles are the same, not in biology, but in systems away from the mess of biology,
+
+[08:32] molecular machine systems in controlled environments.
+
+[08:35] We know how to do systems engineering that applies in that domain as well.
+
+[08:40] We have biomolecular engineering.
+
+[08:42] There are laboratory scientists and computational chemists who know how to do this stuff.
+
+[08:46] They have motivations.
+
+[08:47] They're companies, science careers, and so they do this.
+
+[08:51] What about nanosystems engineering?
+
+[08:53] What about what would give us a vision, an orientation, a pathway forward?
+
+[08:57] Well, who's going to do the work?
+
+[09:00] You can't make these things, therefore companies won't pay for it.
+
+[09:05] It's not science, it's engineering.
+
+[09:07] So it's engineering of something you can't make.
+
+[09:09] Big gap.
+
+[09:10] On the other hand, it turns out that it's fun to design these things.
+
+[09:14] Certified, many people have done this with rather crude tools.
+
+[09:19] And so we look for visionary amateurs and engaged gamers who eventually mature into
+
+[09:24] professionals and drawn by online communities of competition and cooperation, making cool
+
+[09:30] stuff, and fun and challenges.
+
+[09:34] So our next speaker will be saying more about the molecular systems engineering platform
+
+[09:38] MSEP 1, a shared workspace with visualization manipulation on top of all the infrastructure
+
+[09:45] you need to have a good application for this kind of functionality.
+
+[09:50] Science tools to bring in scientists who will find that this is very good in their workflows.
+
+[09:54] It turns out that the software they have right now is excellent at modeling and for user
+
+[09:59] interfaces and ease of installation and so on.
+
+[10:02] It's crap.
+
+[10:03] This would be much better professionally done.
+
+[10:06] It is.
+
+[10:07] And easy to install and free, open source.
+
+[10:12] In the middle, system level design, atomistic refinement.
+
+[10:16] And on the input funnel side, content driven puzzles is an easy on-ramp, gamified design,
+
+[10:22] tutorials, feeding into people working on design libraries, building up sets of systems,
+
+[10:28] components that are designed that can feed into system level design and also give us
+
+[10:33] lovely videos and vision.
+
+[10:37] So to move forward, we need more tools.
+
+[10:40] We have some basic science tools there.
+
+[10:44] We need more tools for design workflows and management for community building, the online
+
+[10:51] community of people who will be actually doing the advanced design work.
+
+[10:56] And of course, stable financial support.
+
+[11:00] So I suggested this has enormous payoff.
+
+[11:03] In my final slide, I would like to step back and ask, is this actually in that benefit?
+
+[11:08] Many people say, well, no, nanotechnology, disruptive, dangerous, and so on.
+
+[11:14] Well, first, the benefit side.
+
+[11:16] I have a dual mission here.
+
+[11:17] The benefit side, accelerate applications.
+
+[11:20] As I already said, a very simple calculation says, my god, $10 to the 14th for one month
+
+[11:26] acceleration.
+
+[11:27] You get a month acceleration by having design tools now in your future.
+
+[11:33] But what about safety?
+
+[11:35] There I argued that what we need is the ability to see where we're going.
+
+[11:38] People have no clue where we're going.
+
+[11:40] What will 21st century physical technology look like?
+
+[11:44] It's not going to be based on the manufacturing of today.
+
+[11:46] It's going to be based on atomically precise systems that work like nanoscale electronics,
+
+[11:51] Digital, fast, high throughput, novel products, mass production, low cost, changes everything.
+
+[12:00] Medicine, the environment, global poverty, access to space.
+
+[12:06] So we need to understand that, both the dangers and the opportunities, because the opportunities
+
+[12:12] can help us coordinate to solve other problems.
+
+[12:16] And the value of that, accelerating understanding, preparation for consequences, is existential.
+
+[12:23] So because transformative AI is inseparable from transformative nanotechnology, we are
+
+[12:29] going to get this level of AI.
+
+[12:30] It is going to give us this technology very rapidly once it gets to some threshold.
+
+[12:36] This is not optional.
+
+[12:37] Thank you.
