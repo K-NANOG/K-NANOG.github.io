@@ -17,7 +17,7 @@ def extract_wikipedia_text_and_title(url):
     
     # Check if the page exists
     if not page.exists():
-        print("Page does not exist.")
+        print(f"Page '{page_name}' does not exist.")
         return None, None
     
     # Return the title and content of the article, split into paragraphs
@@ -111,15 +111,24 @@ def update_wiki_articles_html(title, article_html_path, wiki_articles_html_path=
         file.write(updated_content)
         file.truncate()
 
-# Example usage
-if __name__ == "__main__":
-    wikipedia_url = input("Enter the Wikipedia URL: ")
-    title, paragraphs = extract_wikipedia_text_and_title(wikipedia_url)
+# Function to handle multiple URLs
+def process_multiple_wikipedia_urls(urls):
+    # Split the input string by commas and strip any extra whitespace
+    url_list = [url.strip() for url in urls.split(",")]
     
-    if title and paragraphs:
-        html_filepath = save_as_html(title, paragraphs)
-        print(f"HTML file '{html_filepath}' has been created successfully.")
+    for url in url_list:
+        title, paragraphs = extract_wikipedia_text_and_title(url)
         
-        # Update WikiArticles.html with a new entry
-        update_wiki_articles_html(title, html_filepath)
-        print("WikiArticles.html updated with a new entry.")
+        if title and paragraphs:
+            # Save article as HTML
+            html_filepath = save_as_html(title, paragraphs)
+            print(f"HTML file '{html_filepath}' has been created successfully.")
+            
+            # Update the WikiArticles.html with a new entry
+            update_wiki_articles_html(title, html_filepath)
+            print(f"WikiArticles.html updated with a new entry for '{title}'.")
+
+# Example usage for multiple URLs
+if __name__ == "__main__":
+    wikipedia_urls = input("Enter the Wikipedia URLs, separated by commas: ")
+    process_multiple_wikipedia_urls(wikipedia_urls)
