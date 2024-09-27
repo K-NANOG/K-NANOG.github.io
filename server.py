@@ -17,6 +17,25 @@ def strip_url_query(url):
         url = url.split('?')[0]
     return url
 
+# Function to automatically commit and push changes to GitHub
+def commit_and_push_to_github(commit_message):
+    try:
+        # Stage all changes
+        subprocess.run(['git', 'add', '.'], check=True)
+        print("Files staged for commit.")
+
+        # Commit the changes with a message
+        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+        print(f"Changes committed with message: {commit_message}")
+
+        # Push the changes to the remote repository (adjust 'origin' and 'main' as needed)
+        subprocess.run(['git', 'push', 'origin', 'main'], check=True)
+        print("Changes pushed to GitHub successfully!")
+        
+    except subprocess.CalledProcessError as e:
+        print(f"Error during Git operations: {e}")
+        return f"Error during Git operations: {e}", 500
+
 @app.route('/process_url', methods=['POST'])
 def process_url():
     url = request.form['url']
@@ -68,7 +87,12 @@ def process_url():
         print(f"Error occurred while running wikiGetter.py: {e}")
         return f"Error running wikiGetter.py: {e}", 500
 
-    return f"URL {url} received, saved, and wikiGetter.py executed successfully!"
+    # Automatically commit and push the changes to GitHub
+    commit_message = f"Processed URL: {url}"
+    commit_result = commit_and_push_to_github(commit_message)
+
+    # Return success message if everything worked
+    return f"URL {url} received, saved, wikiGetter.py executed, and changes pushed to GitHub!"
 
 if __name__ == '__main__':
     app.run(debug=True)
