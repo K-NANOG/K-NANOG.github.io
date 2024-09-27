@@ -111,11 +111,19 @@ def update_wiki_articles_html(title, article_html_path, wiki_articles_html_path=
         file.write(updated_content)
         file.truncate()
 
-# Function to handle multiple URLs
-def process_multiple_wikipedia_urls(urls):
-    # Split the input string by commas and strip any extra whitespace
+# Function to handle multiple URLs from the text file
+def process_multiple_wikipedia_urls_from_file(file_path):
+    # Read the contents of the file and split the URLs by commas
+    if not os.path.exists(file_path):
+        print(f"File '{file_path}' does not exist.")
+        return
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        urls = file.read().strip()
+
+    # Split the URLs by commas and process each
     url_list = [url.strip() for url in urls.split(",")]
-    
+
     for url in url_list:
         title, paragraphs = extract_wikipedia_text_and_title(url)
         
@@ -128,7 +136,7 @@ def process_multiple_wikipedia_urls(urls):
             update_wiki_articles_html(title, html_filepath)
             print(f"WikiArticles.html updated with a new entry for '{title}'.")
 
-# Example usage for multiple URLs
+# Example usage with the text file
 if __name__ == "__main__":
-    wikipedia_urls = input("Enter the Wikipedia URLs, separated by commas: ")
-    process_multiple_wikipedia_urls(wikipedia_urls)
+    file_path = "wikipedia_logs.txt"  # This is the file containing the URLs
+    process_multiple_wikipedia_urls_from_file(file_path)
