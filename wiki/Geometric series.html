@@ -1,0 +1,3342 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Geometric series</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Geometric series</h2>
+                <p>In mathematics, a geometric series is a series in which the ratio of successive adjacent terms is constant. In other words, the sum of consecutive terms of a geometric sequence forms a geometric series. Each term is therefore the geometric mean of its two neighbouring terms, similar to how the terms in an arithmetic series are the arithmetic means of their two neighbouring terms. </p>
+<p>Geometric series have been studied in mathematics from at least the time of Euclid in his work, Elements, which explored geometric proportions. Archimedes further advanced the study through his work on infinite sums, particularly in calculating areas and volumes of geometric shapes (for instance calculating the area inside a parabola). In the early development of modern calculus, they were paradigmatic examples of both convergent series and divergent series and thus came to be crucial references for investigations of convergence, for instance in the ratio test for convergence and in the definitions of rates of convergence. Geometric series have further served as prototypes in the study of mathematical objects such as Taylor series, generating functions, and perturbation theories. </p>
+<p>Geometric series have been applied to model a wide variety of natural phenomena and social phenomena, such as the expansion of the universe where the common ratio between terms is defined by Hubble's constant, the decay of radioactive carbon-14 atoms where the common ratio between terms is defined by the half-life of carbon-14, probabilities of winning in games of chance where the common ratio could be determined by the odds of a roulette wheel, and the economic values of investments where the common ratio could be determined by a combination of inflation rates and interest rates.</p>
+<p>In general, a geometric series is written as </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        .</p>
+<p>        .</p>
+<p>        .</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+...}</p>
+<p>, where </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> is the initial term and </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> is the common ratio between adjacent terms. For example, the series</p>
+<p>            1</p>
+<p>            2</p>
+<p>        +</p>
+<p>            1</p>
+<p>            4</p>
+<p>        +</p>
+<p>            1</p>
+<p>            8</p>
+<p>        +</p>
+<p>            1</p>
+<p>            16</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>    {\displaystyle {\frac {1}{2}}\,+\,{\frac {1}{4}}\,+\,{\frac {1}{8}}\,+\,{\frac {1}{16}}\,+\,\cdots }</p>
+<p>is geometric because each successive term can be obtained by multiplying the previous term by </p>
+<p>        1</p>
+<p>          /</p>
+<p>        2</p>
+<p>    {\displaystyle 1/2}</p>
+<p>. </p>
+<p>Truncated geometric series </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            n</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+\dots +ar^{n}}</p>
+<p> are called "finite geometric series" in certain branches of mathematics, especially in 19th century calculus and in probability and statistics and their applications.</p>
+<p>The standard capital-sigma notation expression for the infinite geometric series is </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>          r</p>
+<p>            k</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+\dots =\sum _{k=0}^{\infty }ar^{k}}</p>
+<p>and the corresponding expression for the finite geometric series is</p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            n</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            n</p>
+<p>        a</p>
+<p>          r</p>
+<p>            k</p>
+<p>        .</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+\dots +ar^{n}=\sum _{k=0}^{n}ar^{k}.}</p>
+<p>Any finite geometric series has the sum </p>
+<p>        a</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>          r</p>
+<p>            n</p>
+<p>            +</p>
+<p>            1</p>
+<p>        )</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>        r</p>
+<p>        )</p>
+<p>    {\displaystyle a(1-r^{n+1})/(1-r)}</p>
+<p>, and when </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle |r|<1}</p>
+<p> the infinite series converges to the limit value </p>
+<p>        a</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>        r</p>
+<p>        )</p>
+<p>    {\displaystyle a/(1-r)}</p>
+<p>. </p>
+<p>Though geometric series are most commonly found and applied with the real or complex numbers for </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>, there are also important results and applications for matrix-valued geometric series, function-valued geometric series, p-adic number geometric series, and, most generally, geometric series of elements of abstract algebraic fields, rings, and semirings.</p>
+<p>Parameters</p>
+<p>The geometric series </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        …</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+\dots }</p>
+<p> is an infinite series derived from a special type of sequence called a geometric progression, which is defined by just two parameters: the initial term </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and the common ratio </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>. Finite geometric series </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            n</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+\dots +ar^{n}}</p>
+<p> have a third parameter, the final term's power </p>
+<p>        n</p>
+<p>        .</p>
+<p>    {\displaystyle n.}</p>
+<p>In applications with units of measurement, the initial term </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> provides the units of the series and the common ratio </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> is a dimensionless quantity.  </p>
+<p>The following table shows several geometric series with various initial terms and common ratios.</p>
+<p>Initial term a</p>
+<p>The geometric series </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        …</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+\dots }</p>
+<p> has the same coefficient </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> in every term. The first term of a geometric series is equal to this coefficient and is the parameter </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> of that geometric series, giving </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> its common interpretation: the "initial term." </p>
+<p>This initial term defines the units of measurement of the series as a whole, if it has any, and in applications it will often be named according to a noun with those units. For instance </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> could be an "initial mass" in a radioactive decay problem, with units of mass of an isotope, an "initial payment" in mathematical finance, with units of some type of currency, or an "initial population" in demography or ecology, with units of a type such as nationality or species.</p>
+<p>In capital-sigma notation, </p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>          r</p>
+<p>            k</p>
+<p>        ,</p>
+<p>    {\displaystyle \sum _{k=0}^{\infty }ar^{k},}</p>
+<p> this term is technically written </p>
+<p>        a</p>
+<p>          r</p>
+<p>            0</p>
+<p>    {\displaystyle ar^{0}}</p>
+<p> instead of the bare </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>. This is equivalent because </p>
+<p>          r</p>
+<p>            0</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle r^{0}=1}</p>
+<p> for any number </p>
+<p>        r</p>
+<p>        .</p>
+<p>    {\displaystyle r.}</p>
+<p>In contrast, a general power series </p>
+<p>          a</p>
+<p>            0</p>
+<p>        +</p>
+<p>          a</p>
+<p>            1</p>
+<p>        r</p>
+<p>        +</p>
+<p>          a</p>
+<p>            2</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>          a</p>
+<p>            3</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        …</p>
+<p>    {\displaystyle a_{0}+a_{1}r+a_{2}r^{2}+a_{3}r^{3}+\dots }</p>
+<p> would have coefficients </p>
+<p>          a</p>
+<p>            k</p>
+<p>    {\displaystyle a_{k}}</p>
+<p> that could vary from term to term. In other words, the geometric series is a special case of the power series. Connections between power series and geometric series are discussed below in the section § Connections to power series.</p>
+<p>Common ratio r</p>
+<p>The parameter </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> is called the common ratio because it is the ratio of any term with the previous term in the series. </p>
+<p>        r</p>
+<p>        =</p>
+<p>              t</p>
+<p>                k</p>
+<p>                +</p>
+<p>                1</p>
+<p>              t</p>
+<p>                k</p>
+<p>        =</p>
+<p>              a</p>
+<p>                r</p>
+<p>                  k</p>
+<p>                  +</p>
+<p>                  1</p>
+<p>              a</p>
+<p>                r</p>
+<p>                  k</p>
+<p>    {\displaystyle r={\frac {t_{k+1}}{t_{k}}}={\frac {ar^{k+1}}{ar^{k}}}}</p>
+<p>where </p>
+<p>          t</p>
+<p>            k</p>
+<p>    {\displaystyle t_{k}}</p>
+<p> represents the </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p>-th-power term of the geometric series.</p>
+<p>The common ratio </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> can be thought of as a multiplier used to calculate each next term in the series from the previous term. It must be a dimensionless quantity. </p>
+<p>When </p>
+<p>        r</p>
+<p>        ></p>
+<p>        1</p>
+<p>    {\displaystyle r>1}</p>
+<p> it is often called a growth rate or rate of expansion and when </p>
+<p>        0</p>
+<p>        <</p>
+<p>        r</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle 0<r<1}</p>
+<p> it is often called a decay rate or shrink rate, where the idea that it is a "rate" comes from interpreting </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p> as a sort of discrete time variable. When an application area has specialized vocabulary for specific types of growth, expansion, shrinkage, and decay, that vocabulary will also often be used to name </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> parameters of geometric series. In economics, for instance, rates of increase and decrease of price levels are called inflation rates and deflation rates, while rates of increase in values of investments include rates of return and interest rates.</p>
+<p>The interpretation of </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p> as a time variable is often exactly correct in applications, such as the examples of amortized analysis of algorithmic complexity and calculating the present value of an annuity in § Applications below. In such applications it is also common to report a "growth rate" </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> in terms of another expression such as </p>
+<p>        (</p>
+<p>        r</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>          /</p>
+<p>        100</p>
+<p>    {\displaystyle (r-1)/100}</p>
+<p>, which is a percentage growth rate, or </p>
+<p>        1</p>
+<p>          /</p>
+<p>          log</p>
+<p>            2</p>
+<p>        ⁡</p>
+<p>        r</p>
+<p>    {\displaystyle 1/\log _{2}r}</p>
+<p>, which is a doubling time, the opposite of a half-life.</p>
+<p>Complex common ratio</p>
+<p>The common ratio </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> can also be a complex number given by </p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>          e</p>
+<p>            i</p>
+<p>            θ</p>
+<p>    {\displaystyle \vert r\vert e^{i\theta }}</p>
+<p>, where </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>    {\displaystyle |r|}</p>
+<p> is the magnitude of the number as a vector in the complex plane, </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p> is the angle or orientation of that vector, </p>
+<p>        e</p>
+<p>    {\displaystyle e}</p>
+<p> is Euler's number, and </p>
+<p>          i</p>
+<p>            2</p>
+<p>        =</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle i^{2}=-1}</p>
+<p>. In this case, the expanded form of the geometric series is</p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>          e</p>
+<p>            i</p>
+<p>            θ</p>
+<p>        +</p>
+<p>        a</p>
+<p>        |</p>
+<p>        r</p>
+<p>          |</p>
+<p>            2</p>
+<p>          e</p>
+<p>            2</p>
+<p>            i</p>
+<p>            θ</p>
+<p>        +</p>
+<p>        a</p>
+<p>        |</p>
+<p>        r</p>
+<p>          |</p>
+<p>            3</p>
+<p>          e</p>
+<p>            3</p>
+<p>            i</p>
+<p>            θ</p>
+<p>        +</p>
+<p>        …</p>
+<p>    {\displaystyle a+a\vert r\vert e^{i\theta }+a\vert r\vert ^{2}e^{2i\theta }+a\vert r\vert ^{3}e^{3i\theta }+\dots }</p>
+<p>An example of how this behaves for </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p> values that increase linearly over time with a constant angular frequency </p>
+<p>          ω</p>
+<p>            0</p>
+<p>    {\displaystyle \omega _{0}}</p>
+<p>, such that </p>
+<p>        θ</p>
+<p>        =</p>
+<p>          ω</p>
+<p>            0</p>
+<p>        t</p>
+<p>        ,</p>
+<p>    {\displaystyle \theta =\omega _{0}t,}</p>
+<p> is shown in the adjacent video. For </p>
+<p>        θ</p>
+<p>        =</p>
+<p>          ω</p>
+<p>            0</p>
+<p>        t</p>
+<p>        ,</p>
+<p>    {\displaystyle \theta =\omega _{0}t,}</p>
+<p> the geometric series becomes </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>          e</p>
+<p>            i</p>
+<p>              ω</p>
+<p>                0</p>
+<p>            t</p>
+<p>        +</p>
+<p>        a</p>
+<p>        |</p>
+<p>        r</p>
+<p>          |</p>
+<p>            2</p>
+<p>          e</p>
+<p>            2</p>
+<p>            i</p>
+<p>              ω</p>
+<p>                0</p>
+<p>            t</p>
+<p>        +</p>
+<p>        a</p>
+<p>        |</p>
+<p>        r</p>
+<p>          |</p>
+<p>            3</p>
+<p>          e</p>
+<p>            3</p>
+<p>            i</p>
+<p>              ω</p>
+<p>                0</p>
+<p>            t</p>
+<p>        +</p>
+<p>        …</p>
+<p>    {\displaystyle a+a\vert r\vert e^{i\omega _{0}t}+a\vert r\vert ^{2}e^{2i\omega _{0}t}+a\vert r\vert ^{3}e^{3i\omega _{0}t}+\dots }</p>
+<p>where the first term is a vector of length </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> that does not change orientation and all the following terms are vectors of proportional lengths rotating in the complex plane at integer multiples of the fundamental angular frequency </p>
+<p>          ω</p>
+<p>            0</p>
+<p>    {\displaystyle \omega _{0}}</p>
+<p>, also known as harmonics of </p>
+<p>          ω</p>
+<p>            0</p>
+<p>    {\displaystyle \omega _{0}}</p>
+<p>. As the video shows, these sums trace a circle. The period of rotation around the circle is </p>
+<p>        2</p>
+<p>        π</p>
+<p>          /</p>
+<p>          ω</p>
+<p>            0</p>
+<p>    {\displaystyle 2\pi /\omega _{0}}</p>
+<p>.</p>
+<p>Sum</p>
+<p>For convenience, in this section, the sum of the geometric series will be denoted by </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> and its partial sums (the sums of the series going up to only the nth power term) will be denoted </p>
+<p>          S</p>
+<p>            n</p>
+<p>        .</p>
+<p>    {\displaystyle S_{n}.}</p>
+<p>Convergence behavior</p>
+<p>The convergence of the infinite sequence of partial sums of the infinite geometric series depends on the magnitude of the common ratio </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> alone:</p>
+<p>If </p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle \vert r\vert <1}</p>
+<p>, the terms of the series approach zero (becoming smaller and smaller in magnitude) and the sequence of partial sums </p>
+<p>          S</p>
+<p>            n</p>
+<p>    {\displaystyle S_{n}}</p>
+<p> converges to a limit value of </p>
+<p>            a</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        ;</p>
+<p>    {\displaystyle {\frac {a}{1-r}};}</p>
+<p> proof is provided below.</p>
+<p>If </p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>        ></p>
+<p>        1</p>
+<p>    {\displaystyle \vert r\vert >1}</p>
+<p>, the terms of the series become larger and larger in magnitude and the partial sums of the terms also get larger and larger in magnitude, so the series diverges.</p>
+<p>If </p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle \vert r\vert =1}</p>
+<p>, the terms of the series become no larger or smaller in magnitude and the sequence of partial sums of the series does not converge. When </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle r=1}</p>
+<p>, all the terms of the series are the same and the </p>
+<p>          |</p>
+<p>          S</p>
+<p>            n</p>
+<p>          |</p>
+<p>    {\displaystyle |S_{n}|}</p>
+<p> grow to infinity. When </p>
+<p>        r</p>
+<p>        =</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle r=-1}</p>
+<p>, the terms take two values </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and </p>
+<p>        −</p>
+<p>        a</p>
+<p>    {\displaystyle -a}</p>
+<p> alternately and therefore the sequence of partial sums of the terms oscillates between the two values </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and 0. Consider, for example, Grandi's series: </p>
+<p>        1</p>
+<p>        −</p>
+<p>        1</p>
+<p>        +</p>
+<p>        1</p>
+<p>        −</p>
+<p>        1</p>
+<p>        +</p>
+<p>        1</p>
+<p>        +</p>
+<p>        .</p>
+<p>        .</p>
+<p>        .</p>
+<p>    {\displaystyle 1-1+1-1+1+...}</p>
+<p>. Partial sums of the terms oscillate between 1 and 0; the sequence of partial sums does not converge. When </p>
+<p>        r</p>
+<p>        =</p>
+<p>        i</p>
+<p>    {\displaystyle r=i}</p>
+<p> and </p>
+<p>        a</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle a=1}</p>
+<p>, the partial sums circulate periodically among the values </p>
+<p>        1</p>
+<p>        ,</p>
+<p>        1</p>
+<p>        +</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        1</p>
+<p>        +</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        …</p>
+<p>    {\displaystyle 1,1+i,i,0,1,1+i,i,0,\ldots }</p>
+<p>, never converging to a limit. Generally when </p>
+<p>        r</p>
+<p>        =</p>
+<p>          e</p>
+<p>            2</p>
+<p>            π</p>
+<p>            i</p>
+<p>              /</p>
+<p>            τ</p>
+<p>    {\displaystyle r=e^{2\pi i/\tau }}</p>
+<p> for any integer </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p> and with any </p>
+<p>        a</p>
+<p>        ≠</p>
+<p>        0</p>
+<p>    {\displaystyle a\neq 0}</p>
+<p>, the partial sums of the series will circulate indefinitely with a period of </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p>, never converging to a limit.</p>
+<p>When the series converges, the rate of convergence gets slower as </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>    {\displaystyle |r|}</p>
+<p> approaches </p>
+<p>        1</p>
+<p>    {\displaystyle 1}</p>
+<p>; see § Rate of convergence. The pattern of convergence also depends on the sign or complex argument of the common ratio. If </p>
+<p>        r</p>
+<p>        ></p>
+<p>        0</p>
+<p>    {\displaystyle r>0}</p>
+<p> and </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle |r|<1}</p>
+<p> then terms all share the same sign and the partial sums of the terms approach their eventual limit monotonically. If </p>
+<p>        r</p>
+<p>        <</p>
+<p>        0</p>
+<p>    {\displaystyle r<0}</p>
+<p> and </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle |r|<1}</p>
+<p>, adjacent terms in the geometric series alternate between positive and negative and the partial sums </p>
+<p>          S</p>
+<p>            n</p>
+<p>    {\displaystyle S_{n}}</p>
+<p> of the terms oscillate above and below their eventual limit </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p>. For complex </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> and </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1</p>
+<p>        ,</p>
+<p>    {\displaystyle |r|<1,}</p>
+<p> the </p>
+<p>          S</p>
+<p>            n</p>
+<p>    {\displaystyle S_{n}}</p>
+<p> converge in a spiraling pattern.</p>
+<p>Derivation of sum formulas</p>
+<p>The partial sum of the first </p>
+<p>        n</p>
+<p>        +</p>
+<p>        1</p>
+<p>    {\displaystyle n+1}</p>
+<p> terms of a geometric series, up to and including the </p>
+<p>          r</p>
+<p>            n</p>
+<p>    {\displaystyle r^{n}}</p>
+<p> term,</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    0</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    1</p>
+<p>                +</p>
+<p>                ⋯</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    k</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    n</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    k</p>
+<p>                ,</p>
+<p>    {\displaystyle {\begin{aligned}S_{n}&=ar^{0}+ar^{1}+\cdots +ar^{n}\\&=\sum _{k=0}^{n}ar^{k},\end{aligned}}}</p>
+<p>is given by the closed form</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                    {</p>
+<p>                          a</p>
+<p>                          (</p>
+<p>                          n</p>
+<p>                          +</p>
+<p>                          1</p>
+<p>                          )</p>
+<p>                          r</p>
+<p>                          =</p>
+<p>                          1</p>
+<p>                          a</p>
+<p>                            (</p>
+<p>                                  1</p>
+<p>                                  −</p>
+<p>                                    r</p>
+<p>                                      n</p>
+<p>                                      +</p>
+<p>                                      1</p>
+<p>                                  1</p>
+<p>                                  −</p>
+<p>                                  r</p>
+<p>                            )</p>
+<p>                            otherwise</p>
+<p>    {\displaystyle {\begin{aligned}S_{n}={\begin{cases}a(n+1)&r=1\\a\left({\frac {1-r^{n+1}}{1-r}}\right)&{\text{otherwise}}\end{cases}}\end{aligned}}}</p>
+<p>where r is the common ratio. The case </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle r=1}</p>
+<p> is just simple addition, a case of an arithmetic series. The formula for the partial sums </p>
+<p>          S</p>
+<p>            n</p>
+<p>    {\displaystyle S_{n}}</p>
+<p> with </p>
+<p>        r</p>
+<p>        ≠</p>
+<p>        1</p>
+<p>    {\displaystyle r\neq 1}</p>
+<p> can be derived as follows:</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    0</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    1</p>
+<p>                +</p>
+<p>                ⋯</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    n</p>
+<p>                ,</p>
+<p>                r</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    1</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    2</p>
+<p>                +</p>
+<p>                ⋯</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                −</p>
+<p>                r</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    0</p>
+<p>                −</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                  (</p>
+<p>                    1</p>
+<p>                    −</p>
+<p>                    r</p>
+<p>                  )</p>
+<p>                =</p>
+<p>                a</p>
+<p>                  (</p>
+<p>                    1</p>
+<p>                    −</p>
+<p>                      r</p>
+<p>                        n</p>
+<p>                        +</p>
+<p>                        1</p>
+<p>                  )</p>
+<p>                ,</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                a</p>
+<p>                  (</p>
+<p>                        1</p>
+<p>                        −</p>
+<p>                          r</p>
+<p>                            n</p>
+<p>                            +</p>
+<p>                            1</p>
+<p>                        1</p>
+<p>                        −</p>
+<p>                        r</p>
+<p>                  )</p>
+<p>                ,</p>
+<p>                   for </p>
+<p>                r</p>
+<p>                ≠</p>
+<p>                1.</p>
+<p>    {\displaystyle {\begin{aligned}S_{n}&=ar^{0}+ar^{1}+\cdots +ar^{n},\\rS_{n}&=ar^{1}+ar^{2}+\cdots +ar^{n+1},\\S_{n}-rS_{n}&=ar^{0}-ar^{n+1},\\S_{n}\left(1-r\right)&=a\left(1-r^{n+1}\right),\\S_{n}&=a\left({\frac {1-r^{n+1}}{1-r}}\right),{\text{ for }}r\neq 1.\end{aligned}}}</p>
+<p>As </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> approaches 1, polynomial division or L'Hospital's rule recovers the case </p>
+<p>          S</p>
+<p>            n</p>
+<p>        =</p>
+<p>        a</p>
+<p>        (</p>
+<p>        n</p>
+<p>        +</p>
+<p>        1</p>
+<p>        )</p>
+<p>    {\displaystyle S_{n}=a(n+1)}</p>
+<p>. As </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> approaches infinity, the absolute value of r must be less than one for this sequence of partial sums to converge to a limit. When it does, the series converges absolutely. The infinite series then becomes</p>
+<p>                S</p>
+<p>                =</p>
+<p>                a</p>
+<p>                +</p>
+<p>                a</p>
+<p>                r</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    2</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    3</p>
+<p>                +</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    4</p>
+<p>                +</p>
+<p>                ⋯</p>
+<p>                =</p>
+<p>                  lim</p>
+<p>                    n</p>
+<p>                    →</p>
+<p>                    ∞</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                =</p>
+<p>                  lim</p>
+<p>                    n</p>
+<p>                    →</p>
+<p>                    ∞</p>
+<p>                      a</p>
+<p>                      (</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                        r</p>
+<p>                          n</p>
+<p>                          +</p>
+<p>                          1</p>
+<p>                      )</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      r</p>
+<p>                =</p>
+<p>                    a</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      r</p>
+<p>                −</p>
+<p>                    a</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      r</p>
+<p>                  lim</p>
+<p>                    n</p>
+<p>                    →</p>
+<p>                    ∞</p>
+<p>                  r</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                =</p>
+<p>                    a</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      r</p>
+<p>                   for </p>
+<p>                  |</p>
+<p>                r</p>
+<p>                  |</p>
+<p>                <</p>
+<p>                1.</p>
+<p>    {\displaystyle {\begin{aligned}S&=a+ar+ar^{2}+ar^{3}+ar^{4}+\cdots \\&=\lim _{n\rightarrow \infty }S_{n}\\&=\lim _{n\rightarrow \infty }{\frac {a(1-r^{n+1})}{1-r}}\\&={\frac {a}{1-r}}-{\frac {a}{1-r}}\lim _{n\rightarrow \infty }r^{n+1}\\&={\frac {a}{1-r}}{\text{ for }}|r|<1.\end{aligned}}}</p>
+<p>The formula holds for real number </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> and for complex number </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>, and it can also be generalized to matrix </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> or p-adic number </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>, but for the latter generalizations and technical conditions for their convergence see § Generalizations beyond real and complex values.</p>
+<p>This convergence result is widely applied to prove the convergence of other series as well, whenever those series's terms can be bounded from above by a suitable geometric series; that proof strategy is the basis for the general ratio test for the convergence of infinite series.</p>
+<p>Rate of convergence</p>
+<p>For any sequence </p>
+<p>          x</p>
+<p>            n</p>
+<p>    {\displaystyle x_{n}}</p>
+<p>, its rate of convergence to a limit value </p>
+<p>          x</p>
+<p>            L</p>
+<p>    {\displaystyle x_{L}}</p>
+<p> is determined by the parameters </p>
+<p>        q</p>
+<p>    {\displaystyle q}</p>
+<p> and </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> such that</p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>              |</p>
+<p>                  x</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                −</p>
+<p>                  x</p>
+<p>                    L</p>
+<p>              |</p>
+<p>                |</p>
+<p>                    x</p>
+<p>                      n</p>
+<p>                  −</p>
+<p>                    x</p>
+<p>                      L</p>
+<p>                |</p>
+<p>                q</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        .</p>
+<p>    {\displaystyle \lim _{n\rightarrow \infty }{\frac {\left|x_{n+1}-x_{L}\right|}{\left|x_{n}-x_{L}\right|^{q}}}=\mu .}</p>
+<p>        q</p>
+<p>    {\displaystyle q}</p>
+<p> is called the order of convergence, while </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is called the rate of convergence, where smaller </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> corresponds to faster convergence: when </p>
+<p>        q</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle q=1}</p>
+<p> the asymptotic number of further decimals of precision of agreement with the limiting value per term of the series is </p>
+<p>        −</p>
+<p>          log</p>
+<p>            10</p>
+<p>        ⁡</p>
+<p>        μ</p>
+<p>        ;</p>
+<p>    {\displaystyle -\log _{10}\mu ;}</p>
+<p> the examples of </p>
+<p>        μ</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        10</p>
+<p>    {\displaystyle \mu =1/10}</p>
+<p> and </p>
+<p>        μ</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        100</p>
+<p>    {\displaystyle \mu =1/100}</p>
+<p> are especially simple to use to confirm that formula and intuition.</p>
+<p>In the case of the sequence of partial sums of the geometric series, the relevant sequence is </p>
+<p>          S</p>
+<p>            n</p>
+<p>    {\displaystyle S_{n}}</p>
+<p> and its limit is </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p>. Therefore, the rate and order are found via</p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>              |</p>
+<p>                  S</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                −</p>
+<p>                S</p>
+<p>              |</p>
+<p>                |</p>
+<p>                    S</p>
+<p>                      n</p>
+<p>                  −</p>
+<p>                  S</p>
+<p>                |</p>
+<p>                q</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        .</p>
+<p>    {\displaystyle \lim _{n\rightarrow \infty }{\frac {\left|S_{n+1}-S\right|}{\left|S_{n}-S\right|^{q}}}=\mu .}</p>
+<p>Using </p>
+<p>          |</p>
+<p>          S</p>
+<p>            n</p>
+<p>        −</p>
+<p>        S</p>
+<p>          |</p>
+<p>        =</p>
+<p>          |</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                1</p>
+<p>                −</p>
+<p>                r</p>
+<p>          |</p>
+<p>    {\displaystyle |S_{n}-S|=\left|{\frac {ar^{n+1}}{1-r}}\right|}</p>
+<p> and setting </p>
+<p>        q</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle q=1}</p>
+<p> gives</p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>              |</p>
+<p>                    a</p>
+<p>                      r</p>
+<p>                        n</p>
+<p>                        +</p>
+<p>                        2</p>
+<p>                    1</p>
+<p>                    −</p>
+<p>                    r</p>
+<p>              |</p>
+<p>                |</p>
+<p>                      a</p>
+<p>                        r</p>
+<p>                          n</p>
+<p>                          +</p>
+<p>                          1</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      r</p>
+<p>                |</p>
+<p>                1</p>
+<p>        =</p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        ,</p>
+<p>    {\displaystyle \lim _{n\rightarrow \infty }{\frac {\left|{\frac {ar^{n+2}}{1-r}}\right|}{\left|{\frac {ar^{n+1}}{1-r}}\right|^{1}}}=|r|=\mu ,}</p>
+<p>so the order of convergence of the geometric series is 1, its rate of convergence is </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>    {\displaystyle |r|}</p>
+<p>, and the number of extra decimals of precision per term in the approach to the limit is </p>
+<p>        −</p>
+<p>          log</p>
+<p>            10</p>
+<p>        ⁡</p>
+<p>        r</p>
+<p>        .</p>
+<p>    {\displaystyle -\log _{10}r.}</p>
+<p>Depending on context, convergence of order one is often called linear convergence, because the number of decimals of precision increase linearly with the number of terms </p>
+<p>        n</p>
+<p>        +</p>
+<p>        1</p>
+<p>        ,</p>
+<p>    {\displaystyle n+1,}</p>
+<p> or called exponential convergence, because the magnitude of the difference from the limit decreases exponentially with </p>
+<p>        n</p>
+<p>        .</p>
+<p>    {\displaystyle n.}</p>
+<p> "Linear convergence" is especially common where the number of digits of accuracy is a natural focus of analysis, as in numerical analysis, and "exponential convergence" is especially common where absolute deviation is a natural focus of analysis, as in common cases in physics, economics, and biology.</p>
+<p>Geometric proofs of convergence</p>
+<p>Alternatively, a geometric interpretation of the convergence for </p>
+<p>        0</p>
+<p>        <</p>
+<p>        r</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle 0<r<1}</p>
+<p> is shown in the adjacent diagram. The area of the white triangle is the series remainder</p>
+<p>        S</p>
+<p>        −</p>
+<p>          S</p>
+<p>            n</p>
+<p>        =</p>
+<p>              a</p>
+<p>                r</p>
+<p>                  n</p>
+<p>                  +</p>
+<p>                  1</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        .</p>
+<p>    {\displaystyle S-S_{n}={\frac {ar^{n+1}}{1-r}}.}</p>
+<p>Each additional term in the partial series reduces the area of that white triangle remainder by the area of the trapezoid representing the added term. The trapezoid shapes get progressively thinner and shorter and closer to the origin, corresponding to the trapezoid areas (i.e., the values of the terms) becoming smaller. As the number of trapezoids approaches infinity, the white triangle remainder will vanish and therefore </p>
+<p>          S</p>
+<p>            n</p>
+<p>    {\displaystyle S_{n}}</p>
+<p> will converge to </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p>. </p>
+<p>In contrast, with </p>
+<p>        r</p>
+<p>        ></p>
+<p>        1</p>
+<p>    {\displaystyle r>1}</p>
+<p> the sequences of triangles and of trapezoids representing the terms of the series would instead get progressively wider and taller and farther from the origin, not converging to the origin as terms and also not converging in sum as a series.</p>
+<p>The next adjacent diagram provides a geometric interpretation of a converging alternating geometric series with </p>
+<p>        −</p>
+<p>        1</p>
+<p>        <</p>
+<p>        r</p>
+<p>        ≤</p>
+<p>        0</p>
+<p>        ,</p>
+<p>    {\displaystyle -1<r\leq 0,}</p>
+<p> where the areas corresponding to the negative terms are shown below the x-axis. When each positive area is paired with its adjacent smaller negative area, the result is a series of non-overlapping trapezoids, separated by gaps. </p>
+<p>To eliminate these gaps, broaden each trapezoid so that it spans the rightmost </p>
+<p>        1</p>
+<p>        −</p>
+<p>          r</p>
+<p>            2</p>
+<p>    {\displaystyle 1-r^{2}}</p>
+<p> of the original triangle area instead of just the rightmost </p>
+<p>        1</p>
+<p>        −</p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        =</p>
+<p>        1</p>
+<p>        +</p>
+<p>        r</p>
+<p>        .</p>
+<p>    {\displaystyle 1-|r|=1+r.}</p>
+<p> At the same time, to ensure the areas of the trapezoids remain consistent during this transformation,  a rescaling is necessary. The required scaling factor </p>
+<p>        λ</p>
+<p>    {\displaystyle \lambda }</p>
+<p> can be derived from the equation:</p>
+<p>        λ</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>          r</p>
+<p>            2</p>
+<p>        )</p>
+<p>        =</p>
+<p>        1</p>
+<p>        +</p>
+<p>        r</p>
+<p>        .</p>
+<p>    {\displaystyle \lambda (1-r^{2})=1+r.}</p>
+<p>Simplifying this gives</p>
+<p>        λ</p>
+<p>        =</p>
+<p>              1</p>
+<p>              +</p>
+<p>              r</p>
+<p>              1</p>
+<p>              −</p>
+<p>                r</p>
+<p>                  2</p>
+<p>        =</p>
+<p>            1</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>    {\displaystyle \lambda ={\frac {1+r}{1-r^{2}}}={\frac {1}{1-r}}}</p>
+<p> where </p>
+<p>        −</p>
+<p>        1</p>
+<p>        <</p>
+<p>        r</p>
+<p>        ≤</p>
+<p>        0.</p>
+<p>    {\displaystyle -1<r\leq 0.}</p>
+<p> Because </p>
+<p>        r</p>
+<p>        <</p>
+<p>        0</p>
+<p>        ,</p>
+<p>    {\displaystyle r<0,}</p>
+<p> this scaling factor decreases the heights of the trapezoids to fill the gaps.</p>
+<p>After the gaps are removed, pairs of terms in the converging alternating geometric series form a new converging geometric series with a common ratio </p>
+<p>          r</p>
+<p>            2</p>
+<p>        ,</p>
+<p>    {\displaystyle r^{2},}</p>
+<p> reflecting the pairing of terms. The rescaled coefficient </p>
+<p>        a</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>        r</p>
+<p>        )</p>
+<p>    {\displaystyle a=1/(1-r)}</p>
+<p> compensates for the gap-filling.</p>
+<p>History</p>
+<p>Zeno of Elea (c.495 – c.430 BC)</p>
+<p>2,500 years ago, Greek mathematicians believed that an infinitely long list of positive numbers must sum to infinity. Therefore, Zeno of Elea created a paradox when he demonstrated that in order to walk from one place to another, one must first walk half the distance there, and then half of the remaining distance, and half of that remaining distance, and so on, covering infinitely many intervals before arriving. In doing so, he partitioned a fixed distance into an infinitely long list of halved remaining distances, each of which has length greater than zero. Zeno's paradox revealed to the Greeks that their assumption about an infinitely long list of positive numbers needing to add up to infinity was incorrect.</p>
+<p>Euclid of Alexandria (c.300 BC)</p>
+<p>Euclid's Elements of Geometry Book IX, Proposition 35, proof (of the proposition in adjacent diagram's caption):</p>
+<p>Let AA', BC, DD', EF be any multitude whatsoever of continuously proportional numbers, beginning from the least AA'. And let BG and FH, each equal to AA', have been subtracted from BC and EF. I say that as GC is to AA', so EH is to AA', BC, DD'.</p>
+<p>For let FK be made equal to BC, and FL to DD'. And since FK is equal to BC, of which FH is equal to BG, the remainder HK is thus equal to the remainder GC. And since as EF is to DD', so DD' to BC, and BC to AA' [Prop. 7.13], and DD' equal to FL, and BC to FK, and AA' to FH, thus as EF is to FL, so LF to FK, and FK to FH. By separation, as EL to LF, so LK to FK, and KH to FH [Props. 7.11, 7.13]. And thus as one of the leading is to one of the following, so (the sum of) all of the leading to (the sum of) all of the following [Prop. 7.12]. Thus, as KH is to FH, so EL, LK, KH to LF, FK, HF. And KH equal to CG, and FH to AA', and LF, FK, HF to DD', BC, AA'. Thus, as CG is to AA', so EH to DD', BC, AA'. Thus, as the excess of the second is to the first, so is the excess of the last is to all those before it. The very thing it was required to show.</p>
+<p>The terseness of Euclid's propositions and proofs may have been a necessity. As is, the Elements of Geometry is over 500 pages of propositions and proofs. Making copies of this popular textbook was labor intensive given that the printing press was not invented until 1440. And the book's popularity lasted a long time: as stated in the cited introduction to an English translation, Elements of Geometry "has the distinction of being the world's oldest continuously used mathematical textbook." So being very terse was being very practical. The proof of Proposition 35 in Book IX could have been even more compact if Euclid could have somehow avoided explicitly equating lengths of specific line segments from different terms in the series. For example, the contemporary notation for geometric series (i.e., a + ar + ar2 + ar3 + ... + arn) does not label specific portions of terms that are equal to each other.</p>
+<p>Also in the cited introduction the editor comments,</p>
+<p>Most of the theorems appearing in the Elements were not discovered by Euclid himself, but were the work of earlier Greek mathematicians such as Pythagoras (and his school), Hippocrates of Chios, Theaetetus of Athens, and Eudoxus of Cnidos. However, Euclid is generally credited with arranging these theorems in a logical manner, so as to demonstrate (admittedly, not always with the rigour demanded by modern mathematics) that they necessarily follow from five simple axioms. Euclid is also credited with devising a number of particularly ingenious proofs of previously discovered theorems (e.g., Theorem 48 in Book 1).</p>
+<p>To help translate the proposition and proof into a form that uses current notation, a couple modifications are in the diagram. First, the four horizontal line lengths representing the values of the first four terms of a geometric series are now labeled a, ar, ar2, ar3 in the diagram's left margin. Second, new labels A' and D' are now on the first and third lines so that all the diagram's line segment names consistently specify the segment's starting point and ending point.</p>
+<p>Here is a phrase by phrase interpretation of the proposition:</p>
+<p>Similarly, here is a sentence by sentence interpretation of the proof:</p>
+<p>Archimedes of Syracuse (c.287 – c.212 BC)</p>
+<p>Archimedes used the sum of a geometric series to compute the area enclosed by a parabola and a straight line. Archimedes' theorem states that the total area under the parabola is 4/3 of the area of the blue triangle. His method was to dissect the area into an infinite number of triangles as shown in the adjacent figure.</p>
+<p>Archimedes determined that each green triangle has 1/8 the area of the blue triangle, each yellow triangle has 1/8 the area of a green triangle, and so forth.</p>
+<p>Assuming that the blue triangle has area 1, the total area is an infinite series</p>
+<p>        1</p>
+<p>        +</p>
+<p>        2</p>
+<p>          (</p>
+<p>              1</p>
+<p>              8</p>
+<p>          )</p>
+<p>        +</p>
+<p>        4</p>
+<p>            (</p>
+<p>                1</p>
+<p>                8</p>
+<p>            )</p>
+<p>            2</p>
+<p>        +</p>
+<p>        8</p>
+<p>            (</p>
+<p>                1</p>
+<p>                8</p>
+<p>            )</p>
+<p>            3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        .</p>
+<p>    {\displaystyle 1+2\left({\frac {1}{8}}\right)+4\left({\frac {1}{8}}\right)^{2}+8\left({\frac {1}{8}}\right)^{3}+\cdots .}</p>
+<p>The first term represents the area of the blue triangle, the second term the areas of the two green triangles, the third term the areas of the four yellow triangles, and so on. Simplifying the fractions gives</p>
+<p>        1</p>
+<p>        +</p>
+<p>            1</p>
+<p>            4</p>
+<p>        +</p>
+<p>            1</p>
+<p>            16</p>
+<p>        +</p>
+<p>            1</p>
+<p>            64</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        .</p>
+<p>    {\displaystyle 1+{\frac {1}{4}}+{\frac {1}{16}}+{\frac {1}{64}}+\cdots .}</p>
+<p>This is a geometric series with common ratio </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        4</p>
+<p>    {\displaystyle r=1/4}</p>
+<p> and its sum is</p>
+<p>            1</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        =</p>
+<p>            1</p>
+<p>              1</p>
+<p>              −</p>
+<p>                  1</p>
+<p>                  4</p>
+<p>        =</p>
+<p>            4</p>
+<p>            3</p>
+<p>        .</p>
+<p>    {\displaystyle {\frac {1}{1-r}}\ ={\frac {1}{1-{\frac {1}{4}}}}={\frac {4}{3}}.}</p>
+<p>This computation is an example of the method of exhaustion, an early version of integration. Using calculus, the same area could be found by a definite integral.</p>
+<p>Nicole Oresme (c.1323 – 1382)</p>
+<p>In addition to his elegantly simple proof of the divergence of the harmonic series, Nicole Oresme proved that the series </p>
+<p>            1</p>
+<p>            2</p>
+<p>        +</p>
+<p>            2</p>
+<p>            4</p>
+<p>        +</p>
+<p>            3</p>
+<p>            8</p>
+<p>        +</p>
+<p>            4</p>
+<p>            16</p>
+<p>        +</p>
+<p>            5</p>
+<p>            32</p>
+<p>        +</p>
+<p>            6</p>
+<p>            64</p>
+<p>        +</p>
+<p>            7</p>
+<p>            128</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        =</p>
+<p>        2.</p>
+<p>    {\displaystyle {\frac {1}{2}}+{\frac {2}{4}}+{\frac {3}{8}}+{\frac {4}{16}}+{\frac {5}{32}}+{\frac {6}{64}}+{\frac {7}{128}}+\dots =2.}</p>
+<p>His diagram for his geometric proof, similar to the adjacent diagram, shows a two dimensional geometric series. </p>
+<p>The first dimension is horizontal, in the bottom row, representing the geometric series with initial value </p>
+<p>        a</p>
+<p>        =</p>
+<p>            1</p>
+<p>            2</p>
+<p>    {\displaystyle a={\frac {1}{2}}}</p>
+<p> and common ratio </p>
+<p>        r</p>
+<p>        =</p>
+<p>            1</p>
+<p>            2</p>
+<p>    {\displaystyle r={\frac {1}{2}}}</p>
+<p>                S</p>
+<p>                =</p>
+<p>                    1</p>
+<p>                    2</p>
+<p>                +</p>
+<p>                    1</p>
+<p>                    4</p>
+<p>                +</p>
+<p>                    1</p>
+<p>                    8</p>
+<p>                +</p>
+<p>                    1</p>
+<p>                    16</p>
+<p>                +</p>
+<p>                    1</p>
+<p>                    32</p>
+<p>                +</p>
+<p>                ⋯</p>
+<p>                =</p>
+<p>                      1</p>
+<p>                      2</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                          1</p>
+<p>                          2</p>
+<p>                =</p>
+<p>                1</p>
+<p>    {\displaystyle {\begin{aligned}S&={\frac {1}{2}}+{\frac {1}{4}}+{\frac {1}{8}}+{\frac {1}{16}}+{\frac {1}{32}}+\dots ={\frac {\frac {1}{2}}{1-{\frac {1}{2}}}}=1\end{aligned}}}</p>
+<p>The second dimension is vertical, where the bottom row is a new initial term </p>
+<p>        a</p>
+<p>        =</p>
+<p>        S</p>
+<p>    {\displaystyle a=S}</p>
+<p> and each subsequent row above it shrinks according to the same common ratio </p>
+<p>        r</p>
+<p>        =</p>
+<p>            1</p>
+<p>            2</p>
+<p>    {\displaystyle r={\frac {1}{2}}}</p>
+<p>, making another geometric series with sum </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>, </p>
+<p>                T</p>
+<p>                =</p>
+<p>                S</p>
+<p>                  (</p>
+<p>                    1</p>
+<p>                    +</p>
+<p>                        1</p>
+<p>                        2</p>
+<p>                    +</p>
+<p>                        1</p>
+<p>                        4</p>
+<p>                    +</p>
+<p>                        1</p>
+<p>                        8</p>
+<p>                    +</p>
+<p>                    …</p>
+<p>                  )</p>
+<p>                =</p>
+<p>                    S</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      r</p>
+<p>                =</p>
+<p>                    1</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                          1</p>
+<p>                          2</p>
+<p>                =</p>
+<p>                2.</p>
+<p>    {\displaystyle {\begin{aligned}T&=S\left(1+{\frac {1}{2}}+{\frac {1}{4}}+{\frac {1}{8}}+\dots \right)\\&={\frac {S}{1-r}}={\frac {1}{1-{\frac {1}{2}}}}=2.\end{aligned}}}</p>
+<p>Although difficult to visualize beyond three dimensions, Oresme's insight generalizes to any dimension </p>
+<p>        d</p>
+<p>    {\displaystyle d}</p>
+<p>. Denoting the sum of the </p>
+<p>        d</p>
+<p>    {\displaystyle d}</p>
+<p>-dimensional series </p>
+<p>        S</p>
+<p>        (</p>
+<p>        d</p>
+<p>        )</p>
+<p>    {\displaystyle S(d)}</p>
+<p>, then using the limit of the </p>
+<p>        (</p>
+<p>        d</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>    {\displaystyle (d-1)}</p>
+<p>-dimensional  geometric series, </p>
+<p>        S</p>
+<p>        (</p>
+<p>        d</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\displaystyle S(d-1),}</p>
+<p> as the initial term of a geometric series with the same common ratio in the next dimension, results in a recursive formula for </p>
+<p>        S</p>
+<p>        (</p>
+<p>        d</p>
+<p>        )</p>
+<p>    {\displaystyle S(d)}</p>
+<p> with the base case </p>
+<p>        S</p>
+<p>        (</p>
+<p>        1</p>
+<p>        )</p>
+<p>    {\displaystyle S(1)}</p>
+<p> given by the usual sum formula with an initial term </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>, so that: </p>
+<p>        S</p>
+<p>        (</p>
+<p>        d</p>
+<p>        )</p>
+<p>        =</p>
+<p>              S</p>
+<p>              (</p>
+<p>              d</p>
+<p>              −</p>
+<p>              1</p>
+<p>              )</p>
+<p>              (</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>              )</p>
+<p>        =</p>
+<p>            a</p>
+<p>              (</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>                )</p>
+<p>                  d</p>
+<p>    {\displaystyle S(d)={\frac {S(d-1)}{(1-r)}}={\frac {a}{(1-r)^{d}}}}</p>
+<p>within the range </p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle \vert r\vert <1}</p>
+<p>, with </p>
+<p>        a</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        2</p>
+<p>    {\displaystyle a=1/2}</p>
+<p> and </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        2</p>
+<p>    {\displaystyle r=1/2}</p>
+<p> in Oresme's particular example. </p>
+<p>Pascal's triangle exhibits the coefficients of these multi-dimensional geometric series, </p>
+<p>                1</p>
+<p>                1</p>
+<p>                1</p>
+<p>                1</p>
+<p>                2</p>
+<p>                1</p>
+<p>                1</p>
+<p>                3</p>
+<p>                3</p>
+<p>                1</p>
+<p>                1</p>
+<p>                4</p>
+<p>                6</p>
+<p>                4</p>
+<p>                1</p>
+<p>    {\displaystyle {\begin{matrix}1\\1\quad 1\\1\quad 2\quad 1\\1\quad 3\quad 3\quad 1\\1\quad 4\quad 6\quad 4\quad 1\end{matrix}}}</p>
+<p>where, as usual, the series converge to these closed forms only when </p>
+<p>        |</p>
+<p>        r</p>
+<p>        |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\displaystyle \vert r\vert <1}</p>
+<p>.</p>
+<p>Examples</p>
+<p>Grandi's series – Infinite series summing alternating 1 and -1 terms: 1 − 1 + 1 − 1 + ⋯</p>
+<p>1 + 2 + 4 + 8 + ⋯ – Infinite series</p>
+<p>1 − 2 + 4 − 8 + ⋯ – infinite seriesPages displaying wikidata descriptions as a fallback</p>
+<p>1/2 + 1/4 + 1/8 + 1/16 + ⋯ – Mathematical infinite series</p>
+<p>1/2 − 1/4 + 1/8 − 1/16 + ⋯ – mathematical infinite seriesPages displaying wikidata descriptions as a fallback</p>
+<p>1/4 + 1/16 + 1/64 + 1/256 + ⋯ – Infinite series equal to 1/3 at its limit</p>
+<p>A geometric series is a unit series, meaning the series sum converges to one, if and only if |r| < 1 and a + r = 1.</p>
+<p>The terms of a geometric series are also the elements of a generalized Fibonacci sequence (a recursively defined sequence with Fn = Fn-1 + Fn-2) when the series's common ratio r satisfies the constraint 1 + r = r2, which is when r equals the golden ratio or its conjugate (i.e., r = (1 ± √5)/2).</p>
+<p>The only geometric series that is a unit series and also has terms of a generalized Fibonacci sequence has the golden ratio as its initial term and the conjugate golden ratio as its common ratio. It is a unit series because a + r = 1 and |r| < 1, it is a generalized Fibonacci sequence because 1 + r = r2, and it is an alternating series because r < 0.</p>
+<p>Repeating decimals and binaries</p>
+<p>Decimal numbers that have repeated patterns that continue forever, for instance </p>
+<p>        0.7777</p>
+<p>        …</p>
+<p>        ,</p>
+<p>    {\displaystyle 0.7777\ldots ,}</p>
+<p>        0.9999</p>
+<p>        …</p>
+<p>        ,</p>
+<p>    {\displaystyle 0.9999\ldots ,}</p>
+<p> or </p>
+<p>        0.123412341234</p>
+<p>        …</p>
+<p>        ,</p>
+<p>    {\displaystyle 0.123412341234\ldots ,}</p>
+<p> can be interpreted as geometric series and thereby converted to expressions of the ratio of two integers. For example, the repeated decimal fraction </p>
+<p>        0.7777</p>
+<p>        …</p>
+<p>    {\displaystyle 0.7777\ldots }</p>
+<p> can be written as the geometric series</p>
+<p>        0.7777</p>
+<p>        …</p>
+<p>        =</p>
+<p>            7</p>
+<p>            10</p>
+<p>        +</p>
+<p>            7</p>
+<p>            10</p>
+<p>            1</p>
+<p>            10</p>
+<p>        +</p>
+<p>            7</p>
+<p>            10</p>
+<p>            1</p>
+<p>              10</p>
+<p>                2</p>
+<p>        +</p>
+<p>            7</p>
+<p>            10</p>
+<p>            1</p>
+<p>              10</p>
+<p>                3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>    {\displaystyle 0.7777\ldots ={\frac {7}{10}}+{\frac {7}{10}}{\frac {1}{10}}+{\frac {7}{10}}{\frac {1}{10^{2}}}+{\frac {7}{10}}{\frac {1}{10^{3}}}+\cdots }</p>
+<p>where the initial term is </p>
+<p>        a</p>
+<p>        =</p>
+<p>        7</p>
+<p>          /</p>
+<p>        10</p>
+<p>    {\displaystyle a=7/10}</p>
+<p> and the common ratio is </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        10</p>
+<p>    {\displaystyle r=1/10}</p>
+<p>. The geometric series formula provides the integer ratio that corresponds to the repeating decimal:</p>
+<p>        0.7777</p>
+<p>        …</p>
+<p>        =</p>
+<p>            a</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        =</p>
+<p>              7</p>
+<p>                /</p>
+<p>              10</p>
+<p>              1</p>
+<p>              −</p>
+<p>              1</p>
+<p>                /</p>
+<p>              10</p>
+<p>        =</p>
+<p>            7</p>
+<p>            9</p>
+<p>        .</p>
+<p>    {\displaystyle 0.7777\ldots ={\frac {a}{1-r}}={\frac {7/10}{1-1/10}}={\frac {7}{9}}.}</p>
+<p>An example that has four digits is the repeating decimal pattern, </p>
+<p>        0.123412341234....</p>
+<p>    {\displaystyle 0.123412341234....}</p>
+<p> This can be written as the geometric series</p>
+<p>        0.123412341234</p>
+<p>        …</p>
+<p>        =</p>
+<p>            1234</p>
+<p>            10000</p>
+<p>        +</p>
+<p>            1234</p>
+<p>            10000</p>
+<p>            1</p>
+<p>            10000</p>
+<p>        +</p>
+<p>            1234</p>
+<p>            10000</p>
+<p>            1</p>
+<p>              10000</p>
+<p>                2</p>
+<p>        +</p>
+<p>            1234</p>
+<p>            10000</p>
+<p>            1</p>
+<p>              10000</p>
+<p>                3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>    {\displaystyle 0.123412341234\ldots ={\frac {1234}{10000}}+{\frac {1234}{10000}}{\frac {1}{10000}}+{\frac {1234}{10000}}{\frac {1}{10000^{2}}}\,+\,{\frac {1234}{10000}}{\frac {1}{10000^{3}}}+\cdots }</p>
+<p>with initial term </p>
+<p>        a</p>
+<p>        =</p>
+<p>        1234</p>
+<p>          /</p>
+<p>        10000</p>
+<p>    {\displaystyle a=1234/10000}</p>
+<p> and common ratio </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        10000.</p>
+<p>    {\displaystyle r=1/10000.}</p>
+<p> The geometric series formula provides an integer ratio that corresponds to the repeating decimal:</p>
+<p>        0.123412341234</p>
+<p>        …</p>
+<p>        =</p>
+<p>            a</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        =</p>
+<p>              1234</p>
+<p>                /</p>
+<p>              10000</p>
+<p>              1</p>
+<p>              −</p>
+<p>              1</p>
+<p>                /</p>
+<p>              10000</p>
+<p>        =</p>
+<p>            1234</p>
+<p>            9999</p>
+<p>        .</p>
+<p>    {\displaystyle 0.123412341234\ldots ={\frac {a}{1-r}}={\frac {1234/10000}{1-1/10000}}={\frac {1234}{9999}}.}</p>
+<p>This approach extends beyond repeating decimals, that is, base ten, to repeating patterns in other bases such as binary, that is, base two. For example, the binary representation of the number </p>
+<p>        0.7777</p>
+<p>          …</p>
+<p>            10</p>
+<p>    {\displaystyle 0.7777\ldots _{10}}</p>
+<p> is </p>
+<p>        0.110001110001110001</p>
+<p>          …</p>
+<p>            2</p>
+<p>    {\displaystyle 0.110001110001110001\ldots _{2}}</p>
+<p> where the binary pattern 110001 repeats indefinitely. That binary representation can be written as a geometric series of binary terms,</p>
+<p>        0.110001110001110001</p>
+<p>          …</p>
+<p>            2</p>
+<p>        =</p>
+<p>              110001</p>
+<p>                2</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>        +</p>
+<p>              110001</p>
+<p>                2</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>            1</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>        +</p>
+<p>              110001</p>
+<p>                2</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>            1</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>                2</p>
+<p>        +</p>
+<p>              110001</p>
+<p>                2</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>            1</p>
+<p>              1000000</p>
+<p>                2</p>
+<p>                3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        ,</p>
+<p>    {\displaystyle 0.110001110001110001\ldots _{2}\;=\;{\frac {110001_{2}}{1000000_{2}}}\,+\,{\frac {110001_{2}}{1000000_{2}}}{\frac {1}{1000000_{2}}}\,+\,{\frac {110001_{2}}{1000000_{2}}}{\frac {1}{1000000_{2}^{2}}}\,+\,{\frac {110001_{2}}{1000000_{2}}}{\frac {1}{1000000_{2}^{3}}}\,+\,\cdots ,}</p>
+<p>where the initial term is </p>
+<p>        a</p>
+<p>        =</p>
+<p>          110001</p>
+<p>            2</p>
+<p>          /</p>
+<p>          1000000</p>
+<p>            2</p>
+<p>    {\displaystyle a=110001_{2}/1000000_{2}}</p>
+<p> expressed in base two </p>
+<p>        =</p>
+<p>          49</p>
+<p>            10</p>
+<p>          /</p>
+<p>          64</p>
+<p>            10</p>
+<p>    {\displaystyle =49_{10}/64_{10}}</p>
+<p> in base ten and the common ratio is </p>
+<p>        r</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>          1000000</p>
+<p>            2</p>
+<p>    {\displaystyle r=1/1000000_{2}}</p>
+<p> in base two </p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>          64</p>
+<p>            10</p>
+<p>    {\displaystyle =1/64_{10}}</p>
+<p> in base ten. Using the geometric series formula as before,</p>
+<p>        0.110001110001110001</p>
+<p>          …</p>
+<p>            2</p>
+<p>        =</p>
+<p>            a</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        =</p>
+<p>                49</p>
+<p>                  10</p>
+<p>                /</p>
+<p>                64</p>
+<p>                  10</p>
+<p>              1</p>
+<p>              −</p>
+<p>              1</p>
+<p>                /</p>
+<p>                64</p>
+<p>                  10</p>
+<p>        =</p>
+<p>              49</p>
+<p>                10</p>
+<p>              63</p>
+<p>                10</p>
+<p>        =</p>
+<p>              7</p>
+<p>                10</p>
+<p>              9</p>
+<p>                10</p>
+<p>        .</p>
+<p>    {\displaystyle 0.110001110001110001\ldots _{2}={\frac {a}{1-r}}={\frac {49_{10}/64_{10}}{1-1/64_{10}}}={\frac {49_{10}}{63_{10}}}={\frac {7_{10}}{9_{10}}}.}</p>
+<p>Applications</p>
+<p>Economics</p>
+<p>In economics, specifically in mathematical finance, geometric series are used to represent the present values of perpetual annuities (sums of money to be paid at regular intervals indefinitely into the future).</p>
+<p>For example, suppose that a payment of $100 will be made to the owner of the perpetual annuity once per year (at the end of the year). In one simple model of the present value of future money, receiving $100 a year from now is worth less than an immediate $100 if one could invest the money now at a favorable interest rate. In particular, in that case, given a positive yearly interest rate </p>
+<p>        I</p>
+<p>    {\displaystyle I}</p>
+<p>, the cost of an investment that produces $100 in the future is just </p>
+<p>        $</p>
+<p>        100</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        +</p>
+<p>        I</p>
+<p>        )</p>
+<p>    {\textstyle \$100/(1+I)}</p>
+<p> today, so the present value of $100 one year in the future is </p>
+<p>        $</p>
+<p>        100</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        +</p>
+<p>        I</p>
+<p>        )</p>
+<p>    {\textstyle \$100/(1+I)}</p>
+<p> today. More complex models of present value might account for the relative purchasing power of money today and in the future or account for changing personal utilities for having money now and in the future.</p>
+<p>Continuing with the simple model and assuming a constant interest rate, a payment of $100 two years in the future would have a present value of </p>
+<p>        $</p>
+<p>        100</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        +</p>
+<p>        I</p>
+<p>          )</p>
+<p>            2</p>
+<p>    {\displaystyle \$100/(1+I)^{2}}</p>
+<p> (squared because two years' worth of interest is lost by not receiving the money right now). Continuing that line of reasoning, the present value of receiving $100 per year in perpetuity would be</p>
+<p>          ∑</p>
+<p>            n</p>
+<p>            =</p>
+<p>            1</p>
+<p>            ∞</p>
+<p>              $</p>
+<p>              100</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>                )</p>
+<p>                  n</p>
+<p>        ,</p>
+<p>    {\displaystyle \sum _{n=1}^{\infty }{\frac {\$100}{(1+I)^{n}}},}</p>
+<p>which is the infinite series:</p>
+<p>              $</p>
+<p>              100</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>              )</p>
+<p>        +</p>
+<p>              $</p>
+<p>              100</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>                )</p>
+<p>                  2</p>
+<p>        +</p>
+<p>              $</p>
+<p>              100</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>                )</p>
+<p>                  3</p>
+<p>        +</p>
+<p>              $</p>
+<p>              100</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>                )</p>
+<p>                  4</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        .</p>
+<p>    {\displaystyle {\frac {\$100}{(1+I)}}\,+\,{\frac {\$100}{(1+I)^{2}}}\,+\,{\frac {\$100}{(1+I)^{3}}}\,+\,{\frac {\$100}{(1+I)^{4}}}\,+\,\cdots .}</p>
+<p>This is a geometric series with common ratio </p>
+<p>        1</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        +</p>
+<p>        I</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle 1/(1+I).}</p>
+<p> The sum is the first term divided by (one minus the common ratio):</p>
+<p>              $</p>
+<p>              100</p>
+<p>                /</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>              )</p>
+<p>              1</p>
+<p>              −</p>
+<p>              1</p>
+<p>                /</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              I</p>
+<p>              )</p>
+<p>        =</p>
+<p>              $</p>
+<p>              100</p>
+<p>            I</p>
+<p>        .</p>
+<p>    {\displaystyle {\frac {\$100/(1+I)}{1-1/(1+I)}}\;=\;{\frac {\$100}{I}}.}</p>
+<p>For example, if the yearly interest rate is 10% </p>
+<p>        (</p>
+<p>        I</p>
+<p>        =</p>
+<p>        0.10</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\textstyle (I=0.10),}</p>
+<p> then the entire annuity has an estimated present value of </p>
+<p>        $</p>
+<p>        100</p>
+<p>          /</p>
+<p>        0.10</p>
+<p>        =</p>
+<p>        $</p>
+<p>        1000.</p>
+<p>    {\textstyle \$100/0.10=\$1000.}</p>
+<p>This sort of calculation is used to compute the APR of a loan (such as a mortgage loan). It can also be used to estimate the present value of expected stock dividends, or the terminal value of a financial asset assuming a stable growth rate. However, the assumption that interest rates are constant is often incorrect and the payments are unlikely to in fact continue forever since the issuer of the perpetual annuity may lose its ability to make continued payments, so the estimates must be used with caution.</p>
+<p>Computer science</p>
+<p>Algorithm analysis:</p>
+<p>Geometric series are used to analyze the time complexity of recursive algorithms (like divide-and-conquer) and in amortized analysis for operations with varying costs, such as dynamic array resizing.</p>
+<p>Data structures:</p>
+<p>Geometric series help in analyzing the space and time complexities of operations in data structures like balanced binary search trees and heaps.</p>
+<p>Computer graphics:</p>
+<p>Geometric series are crucial in rendering algorithms for anti-aliasing, for mipmapping, and for generating fractals, where the scale of detail  varies geometrically.</p>
+<p>Networking and communication:</p>
+<p>Geometric series model retransmission delays in exponential backoff algorithms and are used in data compression and error-correcting codes for efficient communication.</p>
+<p>Probabilistic and randomized algorithms:</p>
+<p>Geometric series are used in analyzing random walks, Markov chains, and geometric distributions, which are essential in probabilistic and randomized algorithms.</p>
+<p>Fractal geometry</p>
+<p>The area inside the Koch snowflake can be described as the union of infinitely many equilateral triangles (see figure).  Each side of the green triangle is exactly 1/3 the size of a side of the large blue triangle, and therefore has exactly 1/9 the area.  Similarly, each yellow triangle has 1/9 the area of a green triangle, and so forth.  Taking the blue triangle as a unit of area, the total area of the snowflake is</p>
+<p>        1</p>
+<p>        +</p>
+<p>        3</p>
+<p>          (</p>
+<p>              1</p>
+<p>              9</p>
+<p>          )</p>
+<p>        +</p>
+<p>        12</p>
+<p>            (</p>
+<p>                1</p>
+<p>                9</p>
+<p>            )</p>
+<p>            2</p>
+<p>        +</p>
+<p>        48</p>
+<p>            (</p>
+<p>                1</p>
+<p>                9</p>
+<p>            )</p>
+<p>            3</p>
+<p>        +</p>
+<p>        ⋯</p>
+<p>        .</p>
+<p>    {\displaystyle 1\,+\,3\left({\frac {1}{9}}\right)\,+\,12\left({\frac {1}{9}}\right)^{2}\,+\,48\left({\frac {1}{9}}\right)^{3}\,+\,\cdots .}</p>
+<p>The first term of this series represents the area of the blue triangle, the second term the total area of the three green triangles, the third term the total area of the twelve yellow triangles, and so forth.  Excluding the initial 1, this series is geometric with constant ratio r = 4/9.  The first term of the geometric series is a = 3(1/9) = 1/3, so the sum is</p>
+<p>        1</p>
+<p>        +</p>
+<p>            a</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        =</p>
+<p>        1</p>
+<p>        +</p>
+<p>              1</p>
+<p>              3</p>
+<p>              1</p>
+<p>              −</p>
+<p>                  4</p>
+<p>                  9</p>
+<p>        =</p>
+<p>            8</p>
+<p>            5</p>
+<p>        .</p>
+<p>    {\displaystyle 1\,+\,{\frac {a}{1-r}}\;=\;1\,+\,{\frac {\frac {1}{3}}{1-{\frac {4}{9}}}}\;=\;{\frac {8}{5}}.}</p>
+<p>Thus the Koch snowflake has 8/5 of the area of the base triangle.</p>
+<p>Trigonometric power series</p>
+<p>The Taylor series expansion of the arctangent function around zero, called the arctangent series, has been an important means for making approximate calculations in astronomy and optics for hundreds of years. It is traditionally called Gregory's series in Europe after the Scottish astronomer and mathematician James Gregory (1638 – 1675) though it is today more commonly attributed to the Keralan astronomer and mathematician Madhava of Sangamagrama (c. 1340 – c. 1425). It can be derived using differentiation, integration, and the sum of a geometric series. </p>
+<p>The derivative of </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>        arctan</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        u</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle f(x)=\arctan(u(x))}</p>
+<p> is known to be </p>
+<p>          f</p>
+<p>          ′</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>                u</p>
+<p>                ′</p>
+<p>              (</p>
+<p>              x</p>
+<p>              )</p>
+<p>              (</p>
+<p>              1</p>
+<p>              +</p>
+<p>              [</p>
+<p>              u</p>
+<p>              (</p>
+<p>              x</p>
+<p>              )</p>
+<p>                ]</p>
+<p>                  2</p>
+<p>              )</p>
+<p>    {\displaystyle f'(x)={\frac {u'(x)}{(1+[u(x)]^{2})}}}</p>
+<p>. This is a standard result derived as follows. Let </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p> and </p>
+<p>        u</p>
+<p>    {\displaystyle u}</p>
+<p> represent </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle f(x)}</p>
+<p> and </p>
+<p>        u</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle u(x)}</p>
+<p>, </p>
+<p>                y</p>
+<p>                =</p>
+<p>                arctan</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                u</p>
+<p>                )</p>
+<p>                ⟹</p>
+<p>                u</p>
+<p>                =</p>
+<p>                tan</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                y</p>
+<p>                )</p>
+<p>                   in the range </p>
+<p>                −</p>
+<p>                π</p>
+<p>                  /</p>
+<p>                2</p>
+<p>                <</p>
+<p>                y</p>
+<p>                <</p>
+<p>                π</p>
+<p>                  /</p>
+<p>                2</p>
+<p>                   and </p>
+<p>                ⟹</p>
+<p>                  u</p>
+<p>                  ′</p>
+<p>                =</p>
+<p>                  sec</p>
+<p>                    2</p>
+<p>                ⁡</p>
+<p>                y</p>
+<p>                ⋅</p>
+<p>                  y</p>
+<p>                  ′</p>
+<p>                   by applying the quotient rule to </p>
+<p>                tan</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                y</p>
+<p>                )</p>
+<p>                =</p>
+<p>                sin</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                y</p>
+<p>                )</p>
+<p>                  /</p>
+<p>                cos</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                y</p>
+<p>                )</p>
+<p>                ,</p>
+<p>                ⟹</p>
+<p>                  y</p>
+<p>                  ′</p>
+<p>                =</p>
+<p>                      u</p>
+<p>                      ′</p>
+<p>                        sec</p>
+<p>                          2</p>
+<p>                      ⁡</p>
+<p>                      y</p>
+<p>                   by dividing both sides by </p>
+<p>                  sec</p>
+<p>                    2</p>
+<p>                ⁡</p>
+<p>                y</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                      u</p>
+<p>                      ′</p>
+<p>                      (</p>
+<p>                      1</p>
+<p>                      +</p>
+<p>                        tan</p>
+<p>                          2</p>
+<p>                      ⁡</p>
+<p>                      y</p>
+<p>                      )</p>
+<p>                   by using the trigonometric identity derived by dividing </p>
+<p>                  sin</p>
+<p>                    2</p>
+<p>                ⁡</p>
+<p>                y</p>
+<p>                +</p>
+<p>                  cos</p>
+<p>                    2</p>
+<p>                ⁡</p>
+<p>                y</p>
+<p>                =</p>
+<p>                1</p>
+<p>                   by </p>
+<p>                  cos</p>
+<p>                    2</p>
+<p>                ⁡</p>
+<p>                y</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                      u</p>
+<p>                      ′</p>
+<p>                      (</p>
+<p>                      1</p>
+<p>                      +</p>
+<p>                        u</p>
+<p>                          2</p>
+<p>                      )</p>
+<p>    {\displaystyle {\begin{aligned}y&=\arctan(u)\\\implies u&=\tan(y)&&\quad {\text{ in the range }}-\pi /2<y<\pi /2{\text{ and }}\\\implies u'&=\sec ^{2}y\cdot y'&&\quad {\text{ by applying the quotient rule to }}\tan(y)=\sin(y)/\cos(y),\\\implies y'&={\frac {u'}{\sec ^{2}y}}&&\quad {\text{ by dividing both sides by }}\sec ^{2}y,\\&={\frac {u'}{(1+\tan ^{2}y)}}&&\quad {\text{ by using the trigonometric identity derived by dividing }}\sin ^{2}y+\cos ^{2}y=1{\text{ by }}\cos ^{2}y,\\&={\frac {u'}{(1+u^{2})}}\end{aligned}}}</p>
+<p>Therefore, letting the arctan function equal the integral</p>
+<p>                arctan</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                x</p>
+<p>                )</p>
+<p>                =</p>
+<p>                ∫</p>
+<p>                      d</p>
+<p>                      x</p>
+<p>                      1</p>
+<p>                      +</p>
+<p>                        x</p>
+<p>                          2</p>
+<p>                  in the range </p>
+<p>                −</p>
+<p>                π</p>
+<p>                  /</p>
+<p>                2</p>
+<p>                <</p>
+<p>                arctan</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                x</p>
+<p>                )</p>
+<p>                <</p>
+<p>                π</p>
+<p>                  /</p>
+<p>                2</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                ∫</p>
+<p>                      d</p>
+<p>                      x</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                      (</p>
+<p>                      −</p>
+<p>                        x</p>
+<p>                          2</p>
+<p>                      )</p>
+<p>                  by writing integrand as closed form of geometric series with </p>
+<p>                r</p>
+<p>                =</p>
+<p>                −</p>
+<p>                  x</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                ∫</p>
+<p>                  (</p>
+<p>                    1</p>
+<p>                    +</p>
+<p>                      (</p>
+<p>                        −</p>
+<p>                          x</p>
+<p>                            2</p>
+<p>                      )</p>
+<p>                    +</p>
+<p>                        (</p>
+<p>                          −</p>
+<p>                            x</p>
+<p>                              2</p>
+<p>                        )</p>
+<p>                        2</p>
+<p>                    +</p>
+<p>                        (</p>
+<p>                          −</p>
+<p>                            x</p>
+<p>                              2</p>
+<p>                        )</p>
+<p>                        3</p>
+<p>                    +</p>
+<p>                    ⋯</p>
+<p>                  )</p>
+<p>                d</p>
+<p>                x</p>
+<p>                  by writing geometric series in expanded form</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                ∫</p>
+<p>                  (</p>
+<p>                    1</p>
+<p>                    −</p>
+<p>                      x</p>
+<p>                        2</p>
+<p>                    +</p>
+<p>                      x</p>
+<p>                        4</p>
+<p>                    −</p>
+<p>                      x</p>
+<p>                        6</p>
+<p>                    +</p>
+<p>                    ⋯</p>
+<p>                  )</p>
+<p>                d</p>
+<p>                x</p>
+<p>                  by calculating the sign and power of each term in integrand</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                x</p>
+<p>                −</p>
+<p>                      x</p>
+<p>                        3</p>
+<p>                    3</p>
+<p>                +</p>
+<p>                      x</p>
+<p>                        5</p>
+<p>                    5</p>
+<p>                −</p>
+<p>                      x</p>
+<p>                        7</p>
+<p>                    7</p>
+<p>                +</p>
+<p>                ⋯</p>
+<p>                  by integrating each term</p>
+<p>                ,</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                      (</p>
+<p>                      −</p>
+<p>                      1</p>
+<p>                        )</p>
+<p>                          n</p>
+<p>                      2</p>
+<p>                      n</p>
+<p>                      +</p>
+<p>                      1</p>
+<p>                  x</p>
+<p>                    2</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                  by writing series in generator form</p>
+<p>                .</p>
+<p>    {\displaystyle {\begin{aligned}\arctan(x)&=\int {\frac {dx}{1+x^{2}}}\quad &&{\text{in the range }}-\pi /2<\arctan(x)<\pi /2,\\&=\int {\frac {dx}{1-(-x^{2})}}\quad &&{\text{by writing integrand as closed form of geometric series with }}r=-x^{2},\\&=\int \left(1+\left(-x^{2}\right)+\left(-x^{2}\right)^{2}+\left(-x^{2}\right)^{3}+\cdots \right)dx\quad &&{\text{by writing geometric series in expanded form}},\\&=\int \left(1-x^{2}+x^{4}-x^{6}+\cdots \right)dx\quad &&{\text{by calculating the sign and power of each term in integrand}},\\&=x-{\frac {x^{3}}{3}}+{\frac {x^{5}}{5}}-{\frac {x^{7}}{7}}+\cdots \quad &&{\text{by integrating each term}},\\&=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{2n+1}}x^{2n+1}\quad &&{\text{by writing series in generator form}}.\end{aligned}}}</p>
+<p>This is the power series expansion of the arctangent function.</p>
+<p>Connections to power series</p>
+<p>Like the geometric series, a power series </p>
+<p>          a</p>
+<p>            0</p>
+<p>        +</p>
+<p>          a</p>
+<p>            1</p>
+<p>        x</p>
+<p>        +</p>
+<p>          a</p>
+<p>            2</p>
+<p>          x</p>
+<p>            2</p>
+<p>        +</p>
+<p>        …</p>
+<p>    {\displaystyle a_{0}+a_{1}x+a_{2}x^{2}+\ldots }</p>
+<p> has one parameter for a common variable raised to successive powers, denoted </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> here, corresponding to the geometric series's r, but it has additional parameters </p>
+<p>          a</p>
+<p>            0</p>
+<p>        ,</p>
+<p>          a</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          a</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>    {\displaystyle a_{0},a_{1},a_{2},\ldots ,}</p>
+<p> one for each term in the series, for the distinct coefficients of each </p>
+<p>          x</p>
+<p>            0</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        …</p>
+<p>    {\displaystyle x^{0},x^{1},x^{2},\ldots }</p>
+<p>, rather than just a single additional parameter </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> for all terms, the common coefficient of </p>
+<p>          r</p>
+<p>            k</p>
+<p>    {\displaystyle r^{k}}</p>
+<p> in each term of a geometric series. </p>
+<p>The geometric series can therefore be considered a class of power series in which the sequence of coefficients satisfies </p>
+<p>          a</p>
+<p>            k</p>
+<p>        =</p>
+<p>        a</p>
+<p>    {\displaystyle a_{k}=a}</p>
+<p> for all </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p> and </p>
+<p>        x</p>
+<p>        =</p>
+<p>        r</p>
+<p>    {\displaystyle x=r}</p>
+<p>. This special class of power series plays an important role in mathematics, for instance for the study of ordinary generating functions in combinatorics and the summation of divergent series in analysis. Many other power series can be written as transformations and combinations of geometric series, making the geometric series formula a convenient tool for calculating formulas for those power series as well.</p>
+<p>As a power series, the geometric series has a radius of convergence of 1. This could be seen as a consequence of the Cauchy–Hadamard theorem and the fact that </p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>            a</p>
+<p>              n</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\textstyle \lim _{n\rightarrow \infty }{\sqrt[{n}]{a}}=1}</p>
+<p> for any </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> or as a consequence of the ratio test for the convergence of infinite series, with </p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>          |</p>
+<p>        a</p>
+<p>          r</p>
+<p>            n</p>
+<p>            +</p>
+<p>            1</p>
+<p>          |</p>
+<p>          /</p>
+<p>          |</p>
+<p>        a</p>
+<p>          r</p>
+<p>            n</p>
+<p>          |</p>
+<p>        =</p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>    {\textstyle \lim _{n\rightarrow \infty }|ar^{n+1}|/|ar^{n}|=|r|}</p>
+<p>  implying convergence only for </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1.</p>
+<p>    {\displaystyle |r|<1.}</p>
+<p> However, both the ratio test and the Cauchy–Hadamard theorem are proven using the geometric series formula as a logically prior result, so such reasoning would be subtly circular.</p>
+<p>Derivations of other power series formulas</p>
+<p>Infinite series formulas</p>
+<p>One can use simple variable substitutions to calculate some useful closed form infinite series formulas. For an infinite series containing only even powers of </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>, for instance,</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>            k</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>        (</p>
+<p>          r</p>
+<p>            2</p>
+<p>          )</p>
+<p>            k</p>
+<p>        =</p>
+<p>            a</p>
+<p>              1</p>
+<p>              −</p>
+<p>                r</p>
+<p>                  2</p>
+<p>    {\displaystyle \sum _{k=0}^{\infty }ar^{2k}=\sum _{k=0}^{\infty }a(r^{2})^{k}={\frac {a}{1-r^{2}}}}</p>
+<p>and for odd powers only,</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>            k</p>
+<p>            +</p>
+<p>            1</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        (</p>
+<p>        a</p>
+<p>        r</p>
+<p>        )</p>
+<p>        (</p>
+<p>          r</p>
+<p>            2</p>
+<p>          )</p>
+<p>            k</p>
+<p>        =</p>
+<p>              a</p>
+<p>              r</p>
+<p>              1</p>
+<p>              −</p>
+<p>                r</p>
+<p>                  2</p>
+<p>        .</p>
+<p>    {\displaystyle \sum _{k=0}^{\infty }ar^{2k+1}=\sum _{k=0}^{\infty }(ar)(r^{2})^{k}={\frac {ar}{1-r^{2}}}.}</p>
+<p>In cases where the sum does not start at k = 0, one can use a shift of the index of summation together with a variable substitution,</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            m</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        (</p>
+<p>        a</p>
+<p>          r</p>
+<p>            m</p>
+<p>        )</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>              a</p>
+<p>                r</p>
+<p>                  m</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        .</p>
+<p>    {\displaystyle \sum _{k=m}^{\infty }ar^{k}=\sum _{k=0}^{\infty }(ar^{m})r^{k}={\frac {ar^{m}}{1-r}}.}</p>
+<p>The formulas given above are strictly valid only for </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1.</p>
+<p>    {\textstyle |r|<1.}</p>
+<p>One can also differentiate to calculate formulas for related sums. For example,</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            1</p>
+<p>            ∞</p>
+<p>        k</p>
+<p>          r</p>
+<p>            k</p>
+<p>            −</p>
+<p>            1</p>
+<p>        =</p>
+<p>            d</p>
+<p>              d</p>
+<p>              r</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>            1</p>
+<p>              (</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>                )</p>
+<p>                  2</p>
+<p>        .</p>
+<p>    {\displaystyle \sum _{k=1}^{\infty }kr^{k-1}={\frac {d}{dr}}\sum _{k=0}^{\infty }r^{k}={\frac {1}{(1-r)^{2}}}.}</p>
+<p>This formula is only strictly valid for </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1</p>
+<p>    {\textstyle |r|<1}</p>
+<p> as well. From similar derivations, it follows that, for </p>
+<p>          |</p>
+<p>        r</p>
+<p>          |</p>
+<p>        <</p>
+<p>        1</p>
+<p>        :</p>
+<p>    {\textstyle |r|<1:}</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        k</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>            r</p>
+<p>                (</p>
+<p>                  1</p>
+<p>                  −</p>
+<p>                  r</p>
+<p>                )</p>
+<p>                2</p>
+<p>        ;</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          k</p>
+<p>            2</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>              r</p>
+<p>                (</p>
+<p>                  1</p>
+<p>                  +</p>
+<p>                  r</p>
+<p>                )</p>
+<p>                (</p>
+<p>                  1</p>
+<p>                  −</p>
+<p>                  r</p>
+<p>                )</p>
+<p>                3</p>
+<p>        ;</p>
+<p>           and </p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          k</p>
+<p>            3</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>              r</p>
+<p>                (</p>
+<p>                  1</p>
+<p>                  +</p>
+<p>                  4</p>
+<p>                  r</p>
+<p>                  +</p>
+<p>                    r</p>
+<p>                      2</p>
+<p>                )</p>
+<p>                (</p>
+<p>                  1</p>
+<p>                  −</p>
+<p>                  r</p>
+<p>                )</p>
+<p>                4</p>
+<p>        .</p>
+<p>    {\displaystyle \sum _{k=0}^{\infty }kr^{k}={\frac {r}{\left(1-r\right)^{2}}};\sum _{k=0}^{\infty }k^{2}r^{k}={\frac {r\left(1+r\right)}{\left(1-r\right)^{3}}};{\text{ and }}\sum _{k=0}^{\infty }k^{3}r^{k}={\frac {r\left(1+4r+r^{2}\right)}{\left(1-r\right)^{4}}}.}</p>
+<p>It is also possible to use complex geometric series to calculate the sums of some trigonometric series using complex exponentials and Euler's formula. For example, consider the proposition</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              k</p>
+<p>              x</p>
+<p>              )</p>
+<p>              r</p>
+<p>                k</p>
+<p>        =</p>
+<p>              r</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              x</p>
+<p>              )</p>
+<p>              1</p>
+<p>              +</p>
+<p>                r</p>
+<p>                  2</p>
+<p>              −</p>
+<p>              2</p>
+<p>              r</p>
+<p>              cos</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              x</p>
+<p>              )</p>
+<p>        .</p>
+<p>    {\displaystyle \sum _{k=0}^{\infty }{\frac {\sin(kx)}{r^{k}}}={\frac {r\sin(x)}{1+r^{2}-2r\cos(x)}}.}</p>
+<p>This can be proven via the fact that</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        k</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>                e</p>
+<p>                  i</p>
+<p>                  k</p>
+<p>                  x</p>
+<p>              −</p>
+<p>                e</p>
+<p>                  −</p>
+<p>                  i</p>
+<p>                  k</p>
+<p>                  x</p>
+<p>              2</p>
+<p>              i</p>
+<p>        .</p>
+<p>    {\displaystyle \sin(kx)={\frac {e^{ikx}-e^{-ikx}}{2i}}.}</p>
+<p>Substituting this into the original series gives</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              k</p>
+<p>              x</p>
+<p>              )</p>
+<p>              r</p>
+<p>                k</p>
+<p>        =</p>
+<p>            1</p>
+<p>              2</p>
+<p>              i</p>
+<p>          [</p>
+<p>              ∑</p>
+<p>                k</p>
+<p>                =</p>
+<p>                0</p>
+<p>                ∞</p>
+<p>                (</p>
+<p>                      e</p>
+<p>                        i</p>
+<p>                        x</p>
+<p>                    r</p>
+<p>                )</p>
+<p>                k</p>
+<p>            −</p>
+<p>              ∑</p>
+<p>                k</p>
+<p>                =</p>
+<p>                0</p>
+<p>                ∞</p>
+<p>                (</p>
+<p>                      e</p>
+<p>                        −</p>
+<p>                        i</p>
+<p>                        x</p>
+<p>                    r</p>
+<p>                )</p>
+<p>                k</p>
+<p>          ]</p>
+<p>        .</p>
+<p>    {\displaystyle \sum _{k=0}^{\infty }{\frac {\sin(kx)}{r^{k}}}={\frac {1}{2i}}\left[\sum _{k=0}^{\infty }\left({\frac {e^{ix}}{r}}\right)^{k}-\sum _{k=0}^{\infty }\left({\frac {e^{-ix}}{r}}\right)^{k}\right].}</p>
+<p>This is the difference of two geometric series with initial terms equal to 1 and common ratios equal to </p>
+<p>          e</p>
+<p>            i</p>
+<p>            x</p>
+<p>          /</p>
+<p>        r</p>
+<p>    {\displaystyle e^{ix}/r}</p>
+<p> and </p>
+<p>          e</p>
+<p>            −</p>
+<p>            i</p>
+<p>            x</p>
+<p>          /</p>
+<p>        r</p>
+<p>    {\displaystyle e^{-ix}/r}</p>
+<p>, and so the proof of the original proposition follows via two straightforward applications of the formula for infinite geometric series and then rearrangement of the result using </p>
+<p>                e</p>
+<p>                  i</p>
+<p>                  x</p>
+<p>              −</p>
+<p>                e</p>
+<p>                  −</p>
+<p>                  i</p>
+<p>                  x</p>
+<p>              2</p>
+<p>              i</p>
+<p>        =</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\textstyle {\frac {e^{ix}-e^{-ix}}{2i}}=\sin(x)}</p>
+<p> and </p>
+<p>                e</p>
+<p>                  i</p>
+<p>                  x</p>
+<p>              +</p>
+<p>                e</p>
+<p>                  −</p>
+<p>                  i</p>
+<p>                  x</p>
+<p>            2</p>
+<p>        =</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\textstyle {\frac {e^{ix}+e^{-ix}}{2}}=\cos(x)}</p>
+<p> to complete the proof.</p>
+<p>Finite series formulas</p>
+<p>Like for the infinite series, one can use variable substitutions and changes of the index of summation to derive other finite power series formulas from the finite geometric series formulas. If one were to begin the sum not from </p>
+<p>        k</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle k=0}</p>
+<p> but from a different value, say ⁠</p>
+<p>        m</p>
+<p>    {\displaystyle m}</p>
+<p>⁠, then</p>
+<p>                  ∑</p>
+<p>                    k</p>
+<p>                    =</p>
+<p>                    m</p>
+<p>                    n</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    k</p>
+<p>                =</p>
+<p>                    {</p>
+<p>                                a</p>
+<p>                                (</p>
+<p>                                  r</p>
+<p>                                    m</p>
+<p>                                −</p>
+<p>                                  r</p>
+<p>                                    n</p>
+<p>                                    +</p>
+<p>                                    1</p>
+<p>                                )</p>
+<p>                                1</p>
+<p>                                −</p>
+<p>                                r</p>
+<p>                            if </p>
+<p>                          r</p>
+<p>                          ≠</p>
+<p>                          1</p>
+<p>                          a</p>
+<p>                          (</p>
+<p>                          n</p>
+<p>                          −</p>
+<p>                          m</p>
+<p>                          +</p>
+<p>                          1</p>
+<p>                          )</p>
+<p>                            if </p>
+<p>                          r</p>
+<p>                          =</p>
+<p>                          1</p>
+<p>    {\displaystyle {\begin{aligned}\sum _{k=m}^{n}ar^{k}&={\begin{cases}{\frac {a(r^{m}-r^{n+1})}{1-r}}&{\text{if }}r\neq 1\\a(n-m+1)&{\text{if }}r=1\end{cases}}\end{aligned}}}</p>
+<p>For a geometric series containing only even powers of </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>,  take </p>
+<p>          r</p>
+<p>            2</p>
+<p>    {\displaystyle r^{2}}</p>
+<p> as the common ratio </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> and use the standard formula to find</p>
+<p>                  ∑</p>
+<p>                    k</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    n</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    2</p>
+<p>                    k</p>
+<p>                =</p>
+<p>                      a</p>
+<p>                      (</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                        r</p>
+<p>                          2</p>
+<p>                          n</p>
+<p>                          +</p>
+<p>                          2</p>
+<p>                      )</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                        r</p>
+<p>                          2</p>
+<p>    {\displaystyle {\begin{aligned}\sum _{k=0}^{n}ar^{2k}&={\frac {a(1-r^{2n+2})}{1-r^{2}}}\end{aligned}}}</p>
+<p>or, equivalently,</p>
+<p>For a series with only odd powers of ⁠</p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>⁠, take </p>
+<p>        a</p>
+<p>        r</p>
+<p>    {\displaystyle ar}</p>
+<p> for </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and </p>
+<p>          r</p>
+<p>            2</p>
+<p>    {\displaystyle r^{2}}</p>
+<p> for </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> in the standard form: </p>
+<p>                  ∑</p>
+<p>                    k</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    n</p>
+<p>                a</p>
+<p>                  r</p>
+<p>                    2</p>
+<p>                    k</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                =</p>
+<p>                      a</p>
+<p>                      r</p>
+<p>                      (</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                        r</p>
+<p>                          2</p>
+<p>                          n</p>
+<p>                          +</p>
+<p>                          2</p>
+<p>                      )</p>
+<p>                      1</p>
+<p>                      −</p>
+<p>                        r</p>
+<p>                          2</p>
+<p>    {\displaystyle {\begin{aligned}\sum _{k=0}^{n}ar^{2k+1}&={\frac {ar(1-r^{2n+2})}{1-r^{2}}}\end{aligned}}}</p>
+<p>Differentiating such formulas with respect to ⁠</p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>⁠ can give the formulas</p>
+<p>          G</p>
+<p>            s</p>
+<p>        (</p>
+<p>        n</p>
+<p>        ,</p>
+<p>        r</p>
+<p>        )</p>
+<p>        :=</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            n</p>
+<p>          k</p>
+<p>            s</p>
+<p>          r</p>
+<p>            k</p>
+<p>        .</p>
+<p>    {\displaystyle G_{s}(n,r):=\sum _{k=0}^{n}k^{s}r^{k}.}</p>
+<p>For example:</p>
+<p>            d</p>
+<p>              d</p>
+<p>              r</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            n</p>
+<p>          r</p>
+<p>            k</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>        k</p>
+<p>          r</p>
+<p>            k</p>
+<p>            −</p>
+<p>            1</p>
+<p>        =</p>
+<p>              1</p>
+<p>              −</p>
+<p>                r</p>
+<p>                  n</p>
+<p>                  +</p>
+<p>                  1</p>
+<p>              (</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>                )</p>
+<p>                  2</p>
+<p>        −</p>
+<p>              (</p>
+<p>              n</p>
+<p>              +</p>
+<p>              1</p>
+<p>              )</p>
+<p>                r</p>
+<p>                  n</p>
+<p>              1</p>
+<p>              −</p>
+<p>              r</p>
+<p>        .</p>
+<p>    {\displaystyle {\frac {d}{dr}}\sum _{k=0}^{n}r^{k}=\sum _{k=1}^{n}kr^{k-1}={\frac {1-r^{n+1}}{(1-r)^{2}}}-{\frac {(n+1)r^{n}}{1-r}}.}</p>
+<p>An exact formula for any of the generalized sums </p>
+<p>          G</p>
+<p>            s</p>
+<p>        (</p>
+<p>        n</p>
+<p>        ,</p>
+<p>        r</p>
+<p>        )</p>
+<p>    {\displaystyle G_{s}(n,r)}</p>
+<p> when </p>
+<p>        s</p>
+<p>        ∈</p>
+<p>          N</p>
+<p>    {\displaystyle s\in \mathbb {N} }</p>
+<p> is</p>
+<p>          G</p>
+<p>            s</p>
+<p>        (</p>
+<p>        n</p>
+<p>        ,</p>
+<p>        r</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            0</p>
+<p>            s</p>
+<p>          {</p>
+<p>              s</p>
+<p>              k</p>
+<p>          }</p>
+<p>          x</p>
+<p>            k</p>
+<p>              d</p>
+<p>                k</p>
+<p>              d</p>
+<p>                x</p>
+<p>                  k</p>
+<p>          [</p>
+<p>                1</p>
+<p>                −</p>
+<p>                  x</p>
+<p>                    n</p>
+<p>                    +</p>
+<p>                    1</p>
+<p>                1</p>
+<p>                −</p>
+<p>                x</p>
+<p>          ]</p>
+<p>    {\displaystyle G_{s}(n,r)=\sum _{k=0}^{s}\left\lbrace {s \atop k}\right\rbrace x^{k}{\frac {d^{k}}{dx^{k}}}\left[{\frac {1-x^{n+1}}{1-x}}\right]}</p>
+<p>where </p>
+<p>          {</p>
+<p>              s</p>
+<p>              k</p>
+<p>          }</p>
+<p>    {\displaystyle \left\lbrace {s \atop k}\right\rbrace }</p>
+<p> denotes a Stirling number of the second kind.</p>
+<p>Generalizations beyond real and complex values</p>
+<p>While geometric series with real and complex number parameters </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> are most common, geometric series of more general terms such as functions, matrices, and p-adic numbers also find application. The mathematical operations used to express a geometric series given its parameters are simply addition and repeated multiplication, and so it is natural, in the context of modern algebra, to define geometric series with parameters from any ring or field. Further generalization to geometric series with parameters from semirings is more unusual, but also has applications, for instance in the study of fixed-point iteration of transformation functions.</p>
+<p>In order to analyze the convergence of these general geometric series, then on top of addition and multiplication, one must also have some metric of distance between partial sums of the series. This can introduce new subtleties into the questions of convergence, such as the distinctions between uniform convergence and pointwise convergence in series of functions, and can lead to strong contrasts with intuitions from the real numbers, such as in the convergence of the series 1 + 2 + 4 + 8 + ... with </p>
+<p>        a</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle a=1}</p>
+<p> and </p>
+<p>        r</p>
+<p>        =</p>
+<p>        2</p>
+<p>    {\displaystyle r=2}</p>
+<p> to </p>
+<p>        a</p>
+<p>          /</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>        r</p>
+<p>        )</p>
+<p>        =</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\textstyle a/(1-r)=-1}</p>
+<p> in the 2-adic numbers using the 2-adic absolute value as a convergence metric. In that case the 2-adic absolute value of the common coefficient is </p>
+<p>          |</p>
+<p>        r</p>
+<p>            |</p>
+<p>            2</p>
+<p>        =</p>
+<p>          |</p>
+<p>        2</p>
+<p>            |</p>
+<p>            2</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>        2</p>
+<p>    {\displaystyle |r|_{2}=|2|_{2}=1/2}</p>
+<p>, and while this is counterintuitive from the perspective of real number absolute value (where </p>
+<p>          |</p>
+<p>        2</p>
+<p>          |</p>
+<p>        =</p>
+<p>        2</p>
+<p>        ,</p>
+<p>    {\displaystyle |2|=2,}</p>
+<p> naturally), it is nonetheless well-justified in the context of p-adic analysis.</p>
+<p>When the multiplication of the parameters is not commutative, as it often is not for matrices or general physical operators, particularly in quantum mechanics, then the standard way of writing the geometric series, </p>
+<p>        a</p>
+<p>        +</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            2</p>
+<p>        +</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>        +</p>
+<p>        .</p>
+<p>        .</p>
+<p>        .</p>
+<p>    {\displaystyle a+ar+ar^{2}+ar^{3}+...}</p>
+<p>, multiplying from the right, may need to be distinguished from the alternative </p>
+<p>        a</p>
+<p>        +</p>
+<p>        r</p>
+<p>        a</p>
+<p>        +</p>
+<p>          r</p>
+<p>            2</p>
+<p>        a</p>
+<p>        +</p>
+<p>          r</p>
+<p>            3</p>
+<p>        a</p>
+<p>        +</p>
+<p>        .</p>
+<p>        .</p>
+<p>        .</p>
+<p>    {\displaystyle a+ra+r^{2}a+r^{3}a+...}</p>
+<p>, multiplying from the left, and also the symmetric </p>
+<p>        a</p>
+<p>        +</p>
+<p>          r</p>
+<p>            1</p>
+<p>              /</p>
+<p>            2</p>
+<p>        a</p>
+<p>          r</p>
+<p>            1</p>
+<p>              /</p>
+<p>            2</p>
+<p>        +</p>
+<p>        r</p>
+<p>        a</p>
+<p>        r</p>
+<p>        +</p>
+<p>          r</p>
+<p>            3</p>
+<p>              /</p>
+<p>            2</p>
+<p>        a</p>
+<p>          r</p>
+<p>            3</p>
+<p>              /</p>
+<p>            2</p>
+<p>        +</p>
+<p>        .</p>
+<p>        .</p>
+<p>        .</p>
+<p>    {\displaystyle a+r^{1/2}ar^{1/2}+rar+r^{3/2}ar^{3/2}+...}</p>
+<p>, multiplying half on each side. These choices may correspond to important alternatives with different strengths and weaknesses in applications, as in the case of ordering the mutual interferences of drift and diffusion differently at infinitesimal temporal scales in Ito integration and Stratonovitch integration in stochastic calculus.</p>
+<p>See also</p>
+<p>0.999... – Alternative decimal expansion of 1</p>
+<p>Arithmetic series – Sequence of equally spaced numbersPages displaying short descriptions of redirect targets</p>
+<p>Arithmetico-geometric sequence – Mathematical sequence satisfying a specific pattern</p>
+<p>Asymptote – Limit of the tangent line at a point that tends to infinity</p>
+<p>Divergent geometric series</p>
+<p>Generalized hypergeometric function – Family of power series in mathematics</p>
+<p>Geometric progression – Mathematical sequence of numbers</p>
+<p>Neumann series – Mathematical series</p>
+<p>Ratio test – Criterion for the convergence of a series</p>
+<p>Root test – Criterion for the convergence of an infinite series</p>
+<p>Series (mathematics) – Infinite sum</p>
+<p>Notes</p>
+<p>References</p>
+<p>External links</p>
+<p>"Geometric progression", Encyclopedia of Mathematics, EMS Press, 2001 [1994]</p>
+<p>Weisstein, Eric W. "Geometric Series". MathWorld.</p>
+<p>Geometric Series at PlanetMath.</p>
+<p>Peppard, Kim. "College Algebra Tutorial on Geometric Sequences and Series". West Texas A&M University.</p>
+<p>Casselman, Bill. "A Geometric Interpretation of the Geometric Series". Archived from the original (Applet) on 2007-09-29.</p>
+<p>"Geometric Series" by Michael Schreiber, Wolfram Demonstrations Project, 2007.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
