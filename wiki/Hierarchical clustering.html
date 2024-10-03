@@ -1,0 +1,452 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hierarchical clustering</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Hierarchical clustering</h2>
+                <p>In data mining and statistics, hierarchical clustering (also called hierarchical cluster analysis or HCA) is a method of cluster analysis that seeks to build a hierarchy of clusters. Strategies for hierarchical clustering generally fall into two categories:</p>
+<p>Agglomerative: This is a "bottom-up" approach: Each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy.</p>
+<p>Divisive: This is a "top-down" approach: All observations start in one cluster, and splits are performed recursively as one moves down the hierarchy.</p>
+<p>In general, the merges and splits are determined in a greedy manner. The results of hierarchical clustering are usually presented in a dendrogram.</p>
+<p>Hierarchical clustering has the distinct advantage that any valid measure of distance can be used. In fact, the observations themselves are not required: all that is used is a matrix of distances. On the other hand, except for the special case of single-linkage distance, none of the algorithms (except exhaustive search in </p>
+<p>            O</p>
+<p>        (</p>
+<p>          2</p>
+<p>            n</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(2^{n})}</p>
+<p>) can be guaranteed to find the optimum solution.</p>
+<p>Complexity</p>
+<p>The standard algorithm for hierarchical agglomerative clustering (HAC) has a time complexity of </p>
+<p>            O</p>
+<p>        (</p>
+<p>          n</p>
+<p>            3</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(n^{3})}</p>
+<p> and requires </p>
+<p>        Ω</p>
+<p>        (</p>
+<p>          n</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\displaystyle \Omega (n^{2})}</p>
+<p> memory, which makes it too slow for even medium data sets. However, for some special cases, optimal efficient agglomerative methods (of complexity </p>
+<p>            O</p>
+<p>        (</p>
+<p>          n</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(n^{2})}</p>
+<p>) are known: SLINK for single-linkage and CLINK for complete-linkage clustering. With a heap, the runtime of the general case can be reduced to </p>
+<p>            O</p>
+<p>        (</p>
+<p>          n</p>
+<p>            2</p>
+<p>        log</p>
+<p>        ⁡</p>
+<p>        n</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(n^{2}\log n)}</p>
+<p>, an improvement on the aforementioned bound of </p>
+<p>            O</p>
+<p>        (</p>
+<p>          n</p>
+<p>            3</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(n^{3})}</p>
+<p>, at the cost of further increasing the memory requirements. In many cases, the memory overheads of this approach are too large to make it practically usable. Methods exist which use quadtrees that demonstrate </p>
+<p>            O</p>
+<p>        (</p>
+<p>          n</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(n^{2})}</p>
+<p> total running time with </p>
+<p>            O</p>
+<p>        (</p>
+<p>        n</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(n)}</p>
+<p> space.</p>
+<p>Divisive clustering with an exhaustive search is </p>
+<p>            O</p>
+<p>        (</p>
+<p>          2</p>
+<p>            n</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {O}}(2^{n})}</p>
+<p>, but it is common to use faster heuristics to choose splits, such as k-means.</p>
+<p>Cluster Linkage</p>
+<p>In order to decide which clusters should be combined (for agglomerative), or where a cluster should be split (for divisive), a measure of dissimilarity between sets of observations is required. In most methods of hierarchical clustering, this is achieved by use of an appropriate distance d, such as the Euclidean distance, between single observations of the data set, and a linkage criterion, which specifies the dissimilarity of sets as a function of the pairwise distances of observations in the sets. The choice of metric as well as linkage can have a major impact on the result of the clustering, where the lower level metric determines which objects are most similar, whereas the linkage criterion influences the shape of the clusters. For example, complete-linkage tends to produce more spherical clusters than single-linkage.</p>
+<p>The linkage criterion determines the distance between sets of observations as a function of the pairwise distances between observations.</p>
+<p>Some commonly used linkage criteria between two sets of observations A and B and a distance d are:</p>
+<p>Some of these can only be recomputed recursively (WPGMA, WPGMC), for many a recursive computation with Lance-Williams-equations is more efficient, while for other (Hausdorff, Medoid) the distances have to be computed with the slower full formula. Other linkage criteria include:</p>
+<p>The probability that candidate clusters spawn from the same distribution function (V-linkage).</p>
+<p>The product of in-degree and out-degree on a k-nearest-neighbour graph (graph degree linkage).</p>
+<p>The increment of some cluster descriptor (i.e., a quantity defined for measuring the quality of a cluster) after merging two clusters.</p>
+<p>Agglomerative clustering example</p>
+<p>For example, suppose this data is to be clustered, and the Euclidean distance is the distance metric.</p>
+<p>The hierarchical clustering dendrogram would be:</p>
+<p>Cutting the tree at a given height will give a partitioning clustering at a selected precision. In this example, cutting after the second row (from the top) of the dendrogram will yield clusters {a} {b c} {d e} {f}. Cutting after the third row will yield clusters {a} {b c} {d e f}, which is a coarser clustering, with a smaller number but larger clusters.</p>
+<p>This method builds the hierarchy from the individual elements by progressively merging clusters. In our example, we have six elements {a} {b} {c} {d} {e} and {f}. The first step is to determine which elements to merge in a cluster. Usually, we want to take the two closest elements, according to the chosen distance.</p>
+<p>Optionally, one can also construct a distance matrix at this stage, where the number in the i-th row j-th column is the distance between the i-th and j-th elements. Then, as clustering progresses, rows and columns are merged as the clusters are merged and the distances updated. This is a common way to implement this type of clustering, and has the benefit of caching distances between clusters. A simple agglomerative clustering algorithm is described in the single-linkage clustering page; it can easily be adapted to different types of linkage (see below).</p>
+<p>Suppose we have merged the two closest elements b and c, we now have the following clusters {a}, {b, c}, {d}, {e} and {f}, and want to merge them further. To do that, we need to take the distance between {a} and {b c}, and therefore define the distance between two clusters.</p>
+<p>Usually the distance between two clusters </p>
+<p>            A</p>
+<p>    {\displaystyle {\mathcal {A}}}</p>
+<p> and </p>
+<p>            B</p>
+<p>    {\displaystyle {\mathcal {B}}}</p>
+<p> is one of the following:</p>
+<p>The maximum distance between elements of each cluster (also called complete-linkage clustering):</p>
+<p>        max</p>
+<p>        {</p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        :</p>
+<p>        x</p>
+<p>        ∈</p>
+<p>            A</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>        }</p>
+<p>        .</p>
+<p>    {\displaystyle \max\{\,d(x,y):x\in {\mathcal {A}},\,y\in {\mathcal {B}}\,\}.}</p>
+<p>The minimum distance between elements of each cluster (also called single-linkage clustering):</p>
+<p>        min</p>
+<p>        {</p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        :</p>
+<p>        x</p>
+<p>        ∈</p>
+<p>            A</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>        }</p>
+<p>        .</p>
+<p>    {\displaystyle \min\{\,d(x,y):x\in {\mathcal {A}},\,y\in {\mathcal {B}}\,\}.}</p>
+<p>The mean distance between elements of each cluster (also called average linkage clustering, used e.g. in UPGMA):</p>
+<p>            1</p>
+<p>                |</p>
+<p>                  A</p>
+<p>                |</p>
+<p>              ⋅</p>
+<p>                |</p>
+<p>                  B</p>
+<p>                |</p>
+<p>          ∑</p>
+<p>            x</p>
+<p>            ∈</p>
+<p>                A</p>
+<p>          ∑</p>
+<p>            y</p>
+<p>            ∈</p>
+<p>                B</p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle {1 \over {|{\mathcal {A}}|\cdot |{\mathcal {B}}|}}\sum _{x\in {\mathcal {A}}}\sum _{y\in {\mathcal {B}}}d(x,y).}</p>
+<p>The sum of all intra-cluster variance.</p>
+<p>The increase in variance for the cluster being merged (Ward's method)</p>
+<p>The probability that candidate clusters spawn from the same distribution function (V-linkage).</p>
+<p>In case of tied minimum distances, a pair is randomly chosen, thus being able to generate several structurally different dendrograms. Alternatively, all tied pairs may be joined at the same time, generating a unique dendrogram.</p>
+<p>One can always decide to stop clustering when there is a sufficiently small number of clusters (number criterion). Some linkages may also guarantee that agglomeration occurs at a greater distance between clusters than the previous agglomeration, and then one can stop clustering when the clusters are too far apart to be merged (distance criterion). However, this is not the case of, e.g., the centroid linkage where the so-called reversals (inversions, departures from ultrametricity) may occur.</p>
+<p>Divisive clustering</p>
+<p>The basic principle of divisive clustering was published as the DIANA (DIvisive ANAlysis clustering) algorithm. Initially, all data is in the same cluster, and the largest cluster is split until every object is separate.</p>
+<p>Because there exist </p>
+<p>        O</p>
+<p>        (</p>
+<p>          2</p>
+<p>            n</p>
+<p>        )</p>
+<p>    {\displaystyle O(2^{n})}</p>
+<p> ways of splitting each cluster, heuristics are needed. DIANA chooses the object with the maximum average dissimilarity and then moves all objects to this cluster that are more similar to the new cluster than to the remainder.</p>
+<p>Informally, DIANA is not so much a process of "dividing" as it is of "hollowing out": each iteration, an existing cluster (e.g. the initial cluster of the entire dataset) is chosen to form a new cluster inside of it. Objects progressively move to this nested cluster, and hollow out the existing cluster. Eventually, all that's left inside a cluster is nested clusters that grew there, without it owning any loose objects by itself.</p>
+<p>Formally, DIANA operates in the following steps:</p>
+<p>Let </p>
+<p>          C</p>
+<p>            0</p>
+<p>        =</p>
+<p>        {</p>
+<p>        1</p>
+<p>        …</p>
+<p>        n</p>
+<p>        }</p>
+<p>    {\displaystyle C_{0}=\{1\dots n\}}</p>
+<p> be the set of all </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> object indices and </p>
+<p>            C</p>
+<p>        =</p>
+<p>        {</p>
+<p>          C</p>
+<p>            0</p>
+<p>        }</p>
+<p>    {\displaystyle {\mathcal {C}}=\{C_{0}\}}</p>
+<p> the set of all formed clusters so far.</p>
+<p>Iterate the following until </p>
+<p>          |</p>
+<p>            C</p>
+<p>          |</p>
+<p>        =</p>
+<p>        n</p>
+<p>    {\displaystyle |{\mathcal {C}}|=n}</p>
+<p>:</p>
+<p>Find the current cluster with 2 or more objects that has the largest diameter: </p>
+<p>          C</p>
+<p>            ∗</p>
+<p>        =</p>
+<p>        arg</p>
+<p>        ⁡</p>
+<p>          max</p>
+<p>            C</p>
+<p>            ∈</p>
+<p>                C</p>
+<p>          max</p>
+<p>              i</p>
+<p>                1</p>
+<p>            ,</p>
+<p>              i</p>
+<p>                2</p>
+<p>            ∈</p>
+<p>            C</p>
+<p>        δ</p>
+<p>        (</p>
+<p>          i</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          i</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\displaystyle C_{*}=\arg \max _{C\in {\mathcal {C}}}\max _{i_{1},i_{2}\in C}\delta (i_{1},i_{2})}</p>
+<p>Find the object in this cluster with the most dissimilarity to the rest of the cluster: </p>
+<p>          i</p>
+<p>            ∗</p>
+<p>        =</p>
+<p>        arg</p>
+<p>        ⁡</p>
+<p>          max</p>
+<p>            i</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                ∗</p>
+<p>            1</p>
+<p>                |</p>
+<p>                C</p>
+<p>                  ∗</p>
+<p>                |</p>
+<p>              −</p>
+<p>              1</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                ∗</p>
+<p>            ∖</p>
+<p>            {</p>
+<p>            i</p>
+<p>            }</p>
+<p>        δ</p>
+<p>        (</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        j</p>
+<p>        )</p>
+<p>    {\displaystyle i^{*}=\arg \max _{i\in C_{*}}{\frac {1}{|C_{*}|-1}}\sum _{j\in C_{*}\setminus \{i\}}\delta (i,j)}</p>
+<p>Pop </p>
+<p>          i</p>
+<p>            ∗</p>
+<p>    {\displaystyle i^{*}}</p>
+<p> from its old cluster </p>
+<p>          C</p>
+<p>            ∗</p>
+<p>    {\displaystyle C_{*}}</p>
+<p> and put it into a new splinter group </p>
+<p>          C</p>
+<p>              new</p>
+<p>        =</p>
+<p>        {</p>
+<p>          i</p>
+<p>            ∗</p>
+<p>        }</p>
+<p>    {\displaystyle C_{\textrm {new}}=\{i^{*}\}}</p>
+<p>.</p>
+<p>As long as </p>
+<p>          C</p>
+<p>            ∗</p>
+<p>    {\displaystyle C_{*}}</p>
+<p> isn't empty, keep migrating objects from </p>
+<p>          C</p>
+<p>            ∗</p>
+<p>    {\displaystyle C_{*}}</p>
+<p> to add them to </p>
+<p>          C</p>
+<p>              new</p>
+<p>    {\displaystyle C_{\textrm {new}}}</p>
+<p>. To choose which objects to migrate, don't just consider dissimilarity to </p>
+<p>          C</p>
+<p>            ∗</p>
+<p>    {\displaystyle C_{*}}</p>
+<p>, but also adjust for dissimilarity to the splinter group: let </p>
+<p>          i</p>
+<p>            ∗</p>
+<p>        =</p>
+<p>        arg</p>
+<p>        ⁡</p>
+<p>          max</p>
+<p>            i</p>
+<p>            ∈</p>
+<p>            C</p>
+<p>        D</p>
+<p>        (</p>
+<p>        i</p>
+<p>        )</p>
+<p>    {\displaystyle i^{*}=\arg \max _{i\in C}D(i)}</p>
+<p> where we define </p>
+<p>        D</p>
+<p>        (</p>
+<p>        i</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>                |</p>
+<p>                C</p>
+<p>                  ∗</p>
+<p>                |</p>
+<p>              −</p>
+<p>              1</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                ∗</p>
+<p>            ∖</p>
+<p>            {</p>
+<p>            i</p>
+<p>            }</p>
+<p>        δ</p>
+<p>        (</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        j</p>
+<p>        )</p>
+<p>        −</p>
+<p>            1</p>
+<p>                |</p>
+<p>                C</p>
+<p>                    new</p>
+<p>                |</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                  new</p>
+<p>        δ</p>
+<p>        (</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        j</p>
+<p>        )</p>
+<p>    {\displaystyle D(i)={\frac {1}{|C_{*}|-1}}\sum _{j\in C_{*}\setminus \{i\}}\delta (i,j)-{\frac {1}{|C_{\textrm {new}}|}}\sum _{j\in C_{\textrm {new}}}\delta (i,j)}</p>
+<p>, then either stop iterating when </p>
+<p>        D</p>
+<p>        (</p>
+<p>          i</p>
+<p>            ∗</p>
+<p>        )</p>
+<p>        <</p>
+<p>        0</p>
+<p>    {\displaystyle D(i^{*})<0}</p>
+<p>, or migrate </p>
+<p>          i</p>
+<p>            ∗</p>
+<p>    {\displaystyle i^{*}}</p>
+<p>.</p>
+<p>Add </p>
+<p>          C</p>
+<p>              new</p>
+<p>    {\displaystyle C_{\textrm {new}}}</p>
+<p> to </p>
+<p>            C</p>
+<p>    {\displaystyle {\mathcal {C}}}</p>
+<p>.</p>
+<p>Intuitively, </p>
+<p>        D</p>
+<p>        (</p>
+<p>        i</p>
+<p>        )</p>
+<p>    {\displaystyle D(i)}</p>
+<p> above measures how strongly an object wants to leave its current cluster, but it is attenuated when the object wouldn't fit in the splinter group either. Such objects will likely start their own splinter group eventually.</p>
+<p>The dendrogram of DIANA can be constructed by letting the splinter group </p>
+<p>          C</p>
+<p>              new</p>
+<p>    {\displaystyle C_{\textrm {new}}}</p>
+<p> be a child of the hollowed-out cluster </p>
+<p>          C</p>
+<p>            ∗</p>
+<p>    {\displaystyle C_{*}}</p>
+<p> each time. This constructs a tree with </p>
+<p>          C</p>
+<p>            0</p>
+<p>    {\displaystyle C_{0}}</p>
+<p> as its root and </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> unique single-object clusters as its leaves.</p>
+<p>Software</p>
+<p>Open source implementations</p>
+<p>ALGLIB implements several hierarchical clustering algorithms (single-link, complete-link, Ward) in C++ and C# with O(n²) memory and O(n³) run time.</p>
+<p>ELKI includes multiple hierarchical clustering algorithms, various linkage strategies and also includes the efficient SLINK, CLINK and Anderberg algorithms, flexible cluster extraction from dendrograms and various other cluster analysis algorithms.</p>
+<p>Julia has an implementation inside the Clustering.jl package.</p>
+<p>Octave, the GNU analog to MATLAB implements hierarchical clustering in function "linkage".</p>
+<p>Orange, a data mining software suite, includes hierarchical clustering with interactive dendrogram visualisation.</p>
+<p>R has built-in functions and packages that provide functions for hierarchical clustering.</p>
+<p>SciPy implements hierarchical clustering in Python, including the efficient SLINK algorithm.</p>
+<p>scikit-learn also implements hierarchical clustering in Python.</p>
+<p>Weka includes hierarchical cluster analysis.</p>
+<p>Commercial implementations</p>
+<p>MATLAB includes hierarchical cluster analysis.</p>
+<p>SAS includes hierarchical cluster analysis in PROC CLUSTER.</p>
+<p>Mathematica includes a Hierarchical Clustering Package.</p>
+<p>NCSS includes hierarchical cluster analysis.</p>
+<p>SPSS includes hierarchical cluster analysis.</p>
+<p>Qlucore Omics Explorer includes hierarchical cluster analysis.</p>
+<p>Stata includes hierarchical cluster analysis.</p>
+<p>CrimeStat includes a nearest neighbor hierarchical cluster algorithm with a graphical output for a Geographic Information System.</p>
+<p>See also</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Kaufman, L.; Rousseeuw, P.J. (1990). Finding Groups in Data: An Introduction to Cluster Analysis (1 ed.). New York: John Wiley. ISBN 0-471-87876-6.</p>
+<p>Hastie, Trevor; Tibshirani, Robert; Friedman, Jerome (2009). "14.3.12 Hierarchical clustering". The Elements of Statistical Learning (2nd ed.). New York: Springer. pp. 520–8. ISBN 978-0-387-84857-0. Archived from the original (PDF) on 2009-11-10. Retrieved 2009-10-20.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
