@@ -1,0 +1,452 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Voronoi diagram</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Voronoi diagram</h2>
+                <p>In mathematics, a Voronoi diagram is a partition of a plane into regions close to each of a given set of objects. It can be classified also as a tessellation. In the simplest case, these objects are just finitely many points in the plane (called seeds, sites, or generators). For each seed there is a corresponding region, called a Voronoi cell, consisting of all points of the plane closer to that seed than to any other. The Voronoi diagram of a set of points is dual to that set's Delaunay triangulation.</p>
+<p>The Voronoi diagram is named after mathematician Georgy Voronoy, and is also called a Voronoi tessellation, a Voronoi decomposition, a Voronoi partition, or a Dirichlet tessellation (after Peter Gustav Lejeune Dirichlet). Voronoi cells are also known as Thiessen polygons, after Alfred H. Thiessen. Voronoi diagrams have practical and theoretical applications in many fields, mainly in science and technology, but also in visual art.</p>
+<p>The simplest case</p>
+<p>In the simplest case, shown in the first picture, we are given a finite set of points </p>
+<p>        {</p>
+<p>          p</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>          p</p>
+<p>            n</p>
+<p>        }</p>
+<p>    {\displaystyle \{p_{1},\dots p_{n}\}}</p>
+<p> in the Euclidean plane. In this case each site </p>
+<p>          p</p>
+<p>            k</p>
+<p>    {\displaystyle p_{k}}</p>
+<p> is one of these given points, and its corresponding Voronoi cell </p>
+<p>          R</p>
+<p>            k</p>
+<p>    {\displaystyle R_{k}}</p>
+<p> consists of every point in the Euclidean plane for which </p>
+<p>          p</p>
+<p>            k</p>
+<p>    {\displaystyle p_{k}}</p>
+<p> is the nearest site: the distance to </p>
+<p>          p</p>
+<p>            k</p>
+<p>    {\displaystyle p_{k}}</p>
+<p> is less than or equal to the minimum distance to any other site </p>
+<p>          p</p>
+<p>            j</p>
+<p>    {\displaystyle p_{j}}</p>
+<p>. For one other site </p>
+<p>          p</p>
+<p>            j</p>
+<p>    {\displaystyle p_{j}}</p>
+<p>, the points that are closer to </p>
+<p>          p</p>
+<p>            k</p>
+<p>    {\displaystyle p_{k}}</p>
+<p> than to </p>
+<p>          p</p>
+<p>            j</p>
+<p>    {\displaystyle p_{j}}</p>
+<p>, or equally distant, form a closed half-space, whose boundary is the perpendicular bisector of line segment </p>
+<p>          p</p>
+<p>            j</p>
+<p>          p</p>
+<p>            k</p>
+<p>    {\displaystyle p_{j}p_{k}}</p>
+<p>. Cell </p>
+<p>          R</p>
+<p>            k</p>
+<p>    {\displaystyle R_{k}}</p>
+<p> is the intersection of all of these </p>
+<p>        n</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle n-1}</p>
+<p> half-spaces, and hence it is a convex polygon. When two cells in the Voronoi diagram share a boundary, it is a line segment, ray, or line, consisting of all the points in the plane that are equidistant to their two nearest sites. The vertices of the diagram, where three or more of these boundaries meet, are the points that have three or more equally distant nearest sites.</p>
+<p>Formal definition</p>
+<p>Let </p>
+<p>        X</p>
+<p>    {\textstyle X}</p>
+<p> be a metric space with distance function </p>
+<p>        d</p>
+<p>    {\textstyle d}</p>
+<p>. Let </p>
+<p>        K</p>
+<p>    {\textstyle K}</p>
+<p> be a set of indices and let </p>
+<p>        (</p>
+<p>          P</p>
+<p>            k</p>
+<p>          )</p>
+<p>            k</p>
+<p>            ∈</p>
+<p>            K</p>
+<p>    {\textstyle (P_{k})_{k\in K}}</p>
+<p> be a tuple (indexed collection) of nonempty subsets (the sites) in the space </p>
+<p>        X</p>
+<p>    {\textstyle X}</p>
+<p>. The Voronoi cell, or Voronoi region,  </p>
+<p>          R</p>
+<p>            k</p>
+<p>    {\textstyle R_{k}}</p>
+<p>, associated with the site </p>
+<p>          P</p>
+<p>            k</p>
+<p>    {\textstyle P_{k}}</p>
+<p> is the set of all points in </p>
+<p>        X</p>
+<p>    {\textstyle X}</p>
+<p> whose distance to </p>
+<p>          P</p>
+<p>            k</p>
+<p>    {\textstyle P_{k}}</p>
+<p> is not greater than their distance to the other sites </p>
+<p>          P</p>
+<p>            j</p>
+<p>    {\textstyle P_{j}}</p>
+<p>, where </p>
+<p>        j</p>
+<p>    {\textstyle j}</p>
+<p> is any index different from </p>
+<p>        k</p>
+<p>    {\textstyle k}</p>
+<p>. In other words, if </p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        inf</p>
+<p>        {</p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        a</p>
+<p>        )</p>
+<p>        ∣</p>
+<p>        a</p>
+<p>        ∈</p>
+<p>        A</p>
+<p>        }</p>
+<p>    {\textstyle d(x,\,A)=\inf\{d(x,\,a)\mid a\in A\}}</p>
+<p> denotes the distance between the point </p>
+<p>        x</p>
+<p>    {\textstyle x}</p>
+<p> and the subset </p>
+<p>        A</p>
+<p>    {\textstyle A}</p>
+<p>, then</p>
+<p>          R</p>
+<p>            k</p>
+<p>        =</p>
+<p>        {</p>
+<p>        x</p>
+<p>        ∈</p>
+<p>        X</p>
+<p>        ∣</p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>          P</p>
+<p>            k</p>
+<p>        )</p>
+<p>        ≤</p>
+<p>        d</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>          P</p>
+<p>            j</p>
+<p>        )</p>
+<p>          for all</p>
+<p>        j</p>
+<p>        ≠</p>
+<p>        k</p>
+<p>        }</p>
+<p>    {\displaystyle R_{k}=\{x\in X\mid d(x,P_{k})\leq d(x,P_{j})\;{\text{for all}}\;j\neq k\}}</p>
+<p>The Voronoi diagram is simply the tuple of cells </p>
+<p>        (</p>
+<p>          R</p>
+<p>            k</p>
+<p>          )</p>
+<p>            k</p>
+<p>            ∈</p>
+<p>            K</p>
+<p>    {\textstyle (R_{k})_{k\in K}}</p>
+<p>. In principle, some of the sites can intersect and even coincide (an application is described below for sites representing shops), but usually they are assumed to be disjoint. In addition, infinitely many sites are allowed in the definition (this setting has applications in geometry of numbers and crystallography), but again, in many cases only finitely many sites are considered.</p>
+<p>In the particular case where the space is a finite-dimensional Euclidean space, each site is a point, there are finitely many points and all of them are different, then the Voronoi cells are convex polytopes and they can be represented in a combinatorial way using their vertices, sides, two-dimensional faces, etc. Sometimes the induced combinatorial structure is referred to as the Voronoi diagram. In general however, the Voronoi cells may not be convex or even connected.</p>
+<p>In the usual Euclidean space,  we can rewrite the formal definition in usual terms. Each Voronoi polygon </p>
+<p>          R</p>
+<p>            k</p>
+<p>    {\textstyle R_{k}}</p>
+<p> is associated with a generator point  </p>
+<p>          P</p>
+<p>            k</p>
+<p>    {\textstyle P_{k}}</p>
+<p>.</p>
+<p>Let </p>
+<p>        X</p>
+<p>    {\textstyle X}</p>
+<p> be the set of all points in the Euclidean space. Let </p>
+<p>          P</p>
+<p>            1</p>
+<p>    {\textstyle P_{1}}</p>
+<p> be a point that generates its Voronoi region  </p>
+<p>          R</p>
+<p>            1</p>
+<p>    {\textstyle R_{1}}</p>
+<p>, </p>
+<p>          P</p>
+<p>            2</p>
+<p>    {\textstyle P_{2}}</p>
+<p> that generates  </p>
+<p>          R</p>
+<p>            2</p>
+<p>    {\textstyle R_{2}}</p>
+<p>, and </p>
+<p>          P</p>
+<p>            3</p>
+<p>    {\textstyle P_{3}}</p>
+<p> that generates  </p>
+<p>          R</p>
+<p>            3</p>
+<p>    {\textstyle R_{3}}</p>
+<p>, and so on.  Then, as expressed by Tran et al, "all locations in the Voronoi polygon are closer to the generator point of that polygon than any other generator point in the Voronoi diagram in Euclidean plane".</p>
+<p>Illustration</p>
+<p>As a simple illustration, consider a group of shops in a city. Suppose we want to estimate the number of customers of a given shop. With all else being equal (price, products, quality of service, etc.), it is reasonable to assume that customers choose their preferred shop simply by distance considerations: they will go to the shop located nearest to them. In this case the Voronoi cell </p>
+<p>          R</p>
+<p>            k</p>
+<p>    {\displaystyle R_{k}}</p>
+<p> of a given shop </p>
+<p>          P</p>
+<p>            k</p>
+<p>    {\displaystyle P_{k}}</p>
+<p> can be used for giving a rough estimate on the number of potential customers going to this shop (which is modeled by a point in our city).</p>
+<p>For most cities, the distance between points can be measured using the familiar</p>
+<p>Euclidean distance:</p>
+<p>          ℓ</p>
+<p>            2</p>
+<p>        =</p>
+<p>        d</p>
+<p>          [</p>
+<p>              (</p>
+<p>                  a</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  a</p>
+<p>                    2</p>
+<p>              )</p>
+<p>            ,</p>
+<p>              (</p>
+<p>                  b</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  b</p>
+<p>                    2</p>
+<p>              )</p>
+<p>          ]</p>
+<p>        =</p>
+<p>                (</p>
+<p>                    a</p>
+<p>                      1</p>
+<p>                  −</p>
+<p>                    b</p>
+<p>                      1</p>
+<p>                )</p>
+<p>                2</p>
+<p>            +</p>
+<p>                (</p>
+<p>                    a</p>
+<p>                      2</p>
+<p>                  −</p>
+<p>                    b</p>
+<p>                      2</p>
+<p>                )</p>
+<p>                2</p>
+<p>    {\displaystyle \ell _{2}=d\left[\left(a_{1},a_{2}\right),\left(b_{1},b_{2}\right)\right]={\sqrt {\left(a_{1}-b_{1}\right)^{2}+\left(a_{2}-b_{2}\right)^{2}}}}</p>
+<p>or the Manhattan distance:</p>
+<p>        d</p>
+<p>          [</p>
+<p>              (</p>
+<p>                  a</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  a</p>
+<p>                    2</p>
+<p>              )</p>
+<p>            ,</p>
+<p>              (</p>
+<p>                  b</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  b</p>
+<p>                    2</p>
+<p>              )</p>
+<p>          ]</p>
+<p>        =</p>
+<p>          |</p>
+<p>              a</p>
+<p>                1</p>
+<p>            −</p>
+<p>              b</p>
+<p>                1</p>
+<p>          |</p>
+<p>        +</p>
+<p>          |</p>
+<p>              a</p>
+<p>                2</p>
+<p>            −</p>
+<p>              b</p>
+<p>                2</p>
+<p>          |</p>
+<p>    {\displaystyle d\left[\left(a_{1},a_{2}\right),\left(b_{1},b_{2}\right)\right]=\left|a_{1}-b_{1}\right|+\left|a_{2}-b_{2}\right|}</p>
+<p>.</p>
+<p>The corresponding Voronoi diagrams look different for different distance metrics.</p>
+<p>Properties</p>
+<p>The dual graph for a Voronoi diagram (in the case of a Euclidean space with point sites) corresponds to the Delaunay triangulation for the same set of points.</p>
+<p>The closest pair of points corresponds to two adjacent cells in the Voronoi diagram.</p>
+<p>Assume the setting is the Euclidean plane and a discrete set of points is given. Then two points of the set are adjacent on the convex hull if and only if their Voronoi cells share an infinitely long side.</p>
+<p>If the space is a normed space and the distance to each site is attained (e.g., when a site is a compact set or a closed ball), then each Voronoi cell can be represented as a union of line segments emanating from the sites. As shown there, this property does not necessarily hold when the distance is not attained.</p>
+<p>Under relatively general conditions (the space is a possibly infinite-dimensional uniformly convex space, there can be infinitely many sites of a general form, etc.) Voronoi cells enjoy a certain stability property: a small change in the shapes of the sites, e.g., a change caused by some translation or distortion, yields a small change in the shape of the Voronoi cells. This is the geometric stability of Voronoi diagrams. As shown there, this property does not hold in general, even if the space is two-dimensional (but non-uniformly convex, and, in particular, non-Euclidean) and the sites are points.</p>
+<p>History and research</p>
+<p>Informal use of Voronoi diagrams can be traced back to Descartes in 1644. Peter Gustav Lejeune Dirichlet used two-dimensional and three-dimensional Voronoi diagrams in his study of quadratic forms in 1850.</p>
+<p>British physician John Snow used a Voronoi-like diagram in 1854 to illustrate how the majority of people who died in the Broad Street cholera outbreak lived closer to the infected Broad Street pump than to any other water pump.</p>
+<p>Voronoi diagrams are named after Georgy Feodosievych Voronoy who defined and studied the general n-dimensional case in 1908. Voronoi diagrams that are used in geophysics and meteorology to analyse spatially distributed data are called Thiessen polygons after American meteorologist Alfred H. Thiessen, who used them to estimate rainfall from scattered measurements in 1911. Other equivalent names for this concept (or particular important cases of it): Voronoi polyhedra, Voronoi polygons, domain(s) of influence, Voronoi decomposition, Voronoi tessellation(s), Dirichlet tessellation(s).</p>
+<p>Examples</p>
+<p>Voronoi tessellations of regular lattices of points in two or three dimensions give rise to many familiar tessellations.</p>
+<p>A 2D lattice gives an irregular honeycomb tessellation, with equal hexagons with point symmetry; in the case of a regular triangular lattice it is regular; in the case of a rectangular lattice the hexagons reduce to rectangles in rows and columns; a square lattice gives the regular tessellation of squares; note that the rectangles and the squares can also be generated by other lattices (for example the lattice defined by the vectors (1,0) and (1/2,1/2) gives squares).</p>
+<p>A simple cubic lattice gives the cubic honeycomb.</p>
+<p>A hexagonal close-packed lattice gives a tessellation of space with trapezo-rhombic dodecahedra.</p>
+<p>A face-centred cubic lattice gives a tessellation of space with rhombic dodecahedra.</p>
+<p>A body-centred cubic lattice gives a tessellation of space with truncated octahedra.</p>
+<p>Parallel planes with regular triangular lattices aligned with each other's centers give the hexagonal prismatic honeycomb.</p>
+<p>Certain body-centered tetragonal lattices give a tessellation of space with rhombo-hexagonal dodecahedra.</p>
+<p>Certain body-centered tetragonal lattices give a tessellation of space with rhombo-hexagonal dodecahedra.</p>
+<p>For the set of points (x, y) with x in a discrete set X and y in a discrete set Y, we get rectangular tiles with the points not necessarily at their centers.</p>
+<p>Higher-order Voronoi diagrams</p>
+<p>Although a normal Voronoi cell is defined as the set of points closest to a single point in S, an nth-order Voronoi cell is defined as the set of points having a particular set of n points in S as its n nearest neighbors. Higher-order Voronoi diagrams also subdivide space.</p>
+<p>Higher-order Voronoi diagrams can be generated recursively.  To generate the nth-order Voronoi diagram from set S, start with the (n − 1)th-order diagram and replace each cell generated by X = {x1, x2, ..., xn−1} with a Voronoi diagram generated on the set S − X.</p>
+<p>Farthest-point Voronoi diagram</p>
+<p>For a set of n points the (n − 1)th-order Voronoi diagram is called a farthest-point Voronoi diagram.</p>
+<p>For a given set of points S = {p1, p2, ..., pn} the farthest-point Voronoi diagram divides the plane into cells in which the same point of P is the farthest point. A point of P has a cell in the farthest-point Voronoi diagram if and only if it is a vertex of the convex hull of P. Let H = {h1, h2, ..., hk} be the convex hull of P; then the farthest-point Voronoi diagram is a subdivision of the plane into k cells, one for each point in H, with the property that a point q lies in the cell corresponding to a site hi if and only if d(q, hi) > d(q, pj) for each pj ∈ S with hi ≠ pj, where d(p, q) is the Euclidean distance between two points p and q.</p>
+<p>The boundaries of the cells in the farthest-point Voronoi diagram have the structure of a topological tree, with infinite rays as its leaves. Every finite tree is isomorphic to the tree formed in this way from a farthest-point Voronoi diagram.</p>
+<p>Generalizations and variations</p>
+<p>As implied by the definition, Voronoi cells can be defined for metrics other than Euclidean, such as the Mahalanobis distance or Manhattan distance. However, in these cases the boundaries of the Voronoi cells may be more complicated than in the Euclidean case, since the equidistant locus for two points may fail to be subspace of codimension 1, even in the two-dimensional case.</p>
+<p>A weighted Voronoi diagram is the one in which the function of a pair of points to define a Voronoi cell is a distance function modified by multiplicative or additive weights assigned to generator points. In contrast to the case of Voronoi cells defined using a distance which is a metric, in this case some of the Voronoi cells may be empty. A power diagram is a type of Voronoi diagram defined from a set of circles using the power distance; it can also be thought of as a weighted Voronoi diagram in which a weight defined from the radius of each circle is added to the squared Euclidean distance from the circle's center.</p>
+<p>The Voronoi diagram of </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> points in </p>
+<p>        d</p>
+<p>    {\displaystyle d}</p>
+<p>-dimensional space can have </p>
+<p>        O</p>
+<p>        (</p>
+<p>          n</p>
+<p>            ⌈</p>
+<p>            d</p>
+<p>              /</p>
+<p>            2</p>
+<p>            ⌉</p>
+<p>        )</p>
+<p>    {\textstyle O(n^{\lceil d/2\rceil })}</p>
+<p> vertices, requiring the same bound for the amount of memory needed to store an explicit description of it. Therefore, Voronoi diagrams are often not feasible for moderate or high dimensions. A more space-efficient alternative is to use approximate Voronoi diagrams.</p>
+<p>Voronoi diagrams are also related to other geometric structures such as the medial axis (which has found applications in image segmentation, optical character recognition, and other computational applications), straight skeleton, and zone diagrams.</p>
+<p>Applications</p>
+<p>Meteorology/Hydrology</p>
+<p>It is used in meteorology and engineering hydrology to find the weights for precipitation data of stations over an area (watershed). The points generating the polygons are the various station that record precipitation data. Perpendicular bisectors are drawn to the line joining any two stations. This results in the formation of polygons around the stations. The area </p>
+<p>        (</p>
+<p>          A</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\displaystyle (A_{i})}</p>
+<p> touching station point is known as influence area of the station. The average precipitation is calculated by the formula </p>
+<p>              P</p>
+<p>              ¯</p>
+<p>        =</p>
+<p>              ∑</p>
+<p>                A</p>
+<p>                  i</p>
+<p>                P</p>
+<p>                  i</p>
+<p>              ∑</p>
+<p>                A</p>
+<p>                  i</p>
+<p>    {\displaystyle {\bar {P}}={\frac {\sum A_{i}P_{i}}{\sum A_{i}}}}</p>
+<p>Humanities and social sciences</p>
+<p>In classical archaeology, specifically art history, the symmetry of statue heads is analyzed to determine the type of statue a severed head may have belonged to. An example of this that made use of Voronoi cells was the identification of the Sabouroff head, which made use of a high-resolution polygon mesh.</p>
+<p>In dialectometry, Voronoi cells are used to indicate a supposed linguistic continuity between survey points.</p>
+<p>In political science, Voronoi diagrams have been used to study multi-dimensional, multi-party competition.</p>
+<p>Natural sciences</p>
+<p>In biology, Voronoi diagrams are used to model a number of different biological structures, including cells and bone microarchitecture. Indeed, Voronoi tessellations work as a geometrical tool to understand the physical constraints that drive the organization of biological tissues.</p>
+<p>In hydrology, Voronoi diagrams are used to calculate the rainfall of an area, based on a series of point measurements. In this usage, they are generally referred to as Thiessen polygons.</p>
+<p>In ecology, Voronoi diagrams are used to study the growth patterns of forests and forest canopies, and may also be helpful in developing predictive models for forest fires.</p>
+<p>In ethology, Voronoi diagrams are used to model domains of danger in the selfish herd theory.</p>
+<p>In computational chemistry, ligand-binding sites are transformed into Voronoi diagrams for machine learning applications (e.g., to classify binding pockets in proteins). In other applications, Voronoi cells defined by the positions of the nuclei in a molecule are used to compute atomic charges. This is done using the Voronoi deformation density method.</p>
+<p>In astrophysics, Voronoi diagrams are used to generate adaptative smoothing zones on images, adding signal fluxes on each one. The main objective of these procedures is to maintain a relatively constant signal-to-noise ratio on all the images.</p>
+<p>In computational fluid dynamics, the Voronoi tessellation of a set of points can be used to define the computational domains used in finite volume methods, e.g. as in the moving-mesh cosmology code AREPO.</p>
+<p>In computational physics, Voronoi diagrams are used to calculate profiles of an object with Shadowgraph and proton radiography in High energy density physics.</p>
+<p>Health</p>
+<p>In medical diagnosis, models of muscle tissue, based on Voronoi diagrams, can be used to detect neuromuscular diseases.</p>
+<p>In epidemiology, Voronoi diagrams can be used to correlate sources of infections in epidemics. One of the early applications of Voronoi diagrams was implemented by John Snow to study the 1854 Broad Street cholera outbreak in Soho, England. He showed the correlation between residential areas on the map of Central London whose residents had been using a specific water pump, and the areas with the most deaths due to the outbreak.</p>
+<p>Engineering</p>
+<p>In polymer physics, Voronoi diagrams can be used to represent free volumes of polymers.</p>
+<p>In materials science, polycrystalline microstructures in metallic alloys are commonly represented using Voronoi tessellations.</p>
+<p>In island growth, the Voronoi diagram is used to estimate the growth rate of individual islands.</p>
+<p>In solid-state physics, the Wigner-Seitz cell is the Voronoi tessellation of a solid, and the Brillouin zone is the Voronoi tessellation of reciprocal (wavenumber) space of crystals which have the symmetry of a space group.</p>
+<p>In aviation, Voronoi diagrams are superimposed on oceanic plotting charts to identify the nearest airfield for in-flight diversion (see ETOPS), as an aircraft progresses through its flight plan.</p>
+<p>In architecture, Voronoi patterns were the basis for the winning entry for the redevelopment of The Arts Centre Gold Coast.</p>
+<p>In urban planning, Voronoi diagrams can be used to evaluate the Freight Loading Zone system.</p>
+<p>In mining, Voronoi polygons are used to estimate the reserves of valuable materials, minerals, or other resources. Exploratory drillholes are used as the set of points in the Voronoi polygons.</p>
+<p>In surface metrology, Voronoi tessellation can be used for surface roughness modeling.</p>
+<p>In robotics, some of the control strategies and path planning algorithms of multi-robot systems are based on the Voronoi partitioning of the environment.</p>
+<p>Mathematics</p>
+<p>A point location data structure can be built on top of the Voronoi diagram in order to answer nearest neighbor queries, where one wants to find the object that is closest to a given query point. Nearest neighbor queries have numerous applications. For example, one might want to find the nearest hospital or the most similar object in a database. A large application is vector quantization, commonly used in data compression.</p>
+<p>In geometry, Voronoi diagrams can be used to find the largest empty circle amid a set of points, and in an enclosing polygon; e.g. to build a new supermarket as far as possible from all the existing ones, lying in a certain city.</p>
+<p>Voronoi diagrams together with farthest-point Voronoi diagrams are used for efficient algorithms to compute the roundness of a set of points. The Voronoi approach is also put to use in the evaluation of circularity/roundness while assessing the dataset from a coordinate-measuring machine.</p>
+<p>Zeroes of iterated derivatives of a rational function on the complex plane accumulate on the edges of the Voronoi diagam of the set of the poles (Pólya's shires theorem).</p>
+<p>Informatics</p>
+<p>In networking, Voronoi diagrams can be used in derivations of the capacity of a wireless network.</p>
+<p>In computer graphics, Voronoi diagrams are used to calculate 3D shattering / fracturing geometry patterns.  It is also used to procedurally generate organic or lava-looking textures.</p>
+<p>In autonomous robot navigation, Voronoi diagrams are used to find clear routes. If the points are obstacles, then the edges of the graph will be the routes furthest from obstacles (and theoretically any collisions).</p>
+<p>In machine learning, Voronoi diagrams are used to do 1-NN classifications.</p>
+<p>In global scene reconstruction, including with random sensor sites and unsteady wake flow, geophysical data, and 3D turbulence data, Voronoi tesselations are used with deep learning.</p>
+<p>In user interface development, Voronoi patterns can be used to compute the best hover state for a given point.</p>
+<p>Civics and planning</p>
+<p>In Melbourne, government school students are always eligible to attend the nearest primary school or high school to where they live, as measured by a straight-line distance. The map of school zones is therefore a Voronoi diagram.</p>
+<p>Bakery</p>
+<p>Ukrainian pastry chef Dinara Kasko uses the mathematical principles of the Voronoi diagram to create silicone molds made with a 3D printer to shape her original cakes.</p>
+<p>Algorithms</p>
+<p>Several efficient algorithms are known for constructing Voronoi diagrams, either directly (as the diagram itself) or indirectly by starting with a Delaunay triangulation and then obtaining its dual.</p>
+<p>Direct algorithms include Fortune's algorithm, an O(n log(n)) algorithm for generating a Voronoi diagram from a set of points in a plane.</p>
+<p>Bowyer–Watson algorithm, an O(n log(n)) to O(n2) algorithm for generating a Delaunay triangulation in any number of dimensions, can be used in an indirect algorithm for the Voronoi diagram. The Jump Flooding Algorithm can generate approximate Voronoi diagrams in constant time and is suited for use on commodity graphics hardware.</p>
+<p>Lloyd's algorithm and its generalization via the Linde–Buzo–Gray algorithm (aka k-means clustering) use the construction of Voronoi diagrams as a subroutine.</p>
+<p>These methods alternate between steps in which one constructs the Voronoi diagram for a set of seed points, and steps in which the seed points are moved to new locations that are more central within their cells. These methods can be used in spaces of arbitrary dimension to iteratively converge towards a specialized form of the Voronoi diagram, called a Centroidal Voronoi tessellation, where the sites have been moved to points that are also the geometric centers of their cells.</p>
+<p>Voronoi in 3D</p>
+<p>Voronoi meshes can also be generated in 3D.</p>
+<p>See also</p>
+<p>Notes</p>
+<p>References</p>
+<p>External links</p>
+<p>Weisstein, Eric W. "Voronoi diagram". MathWorld.</p>
+<p>Voronoi Diagrams in CGAL, the Computational Geometry Algorithms Library</p>
+<p>Demo program for SFTessellation algorithm, which creates Voronoi diagram using a Steppe Fire Model</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
