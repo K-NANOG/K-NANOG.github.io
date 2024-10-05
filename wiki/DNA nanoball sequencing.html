@@ -1,0 +1,70 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DNA nanoball sequencing</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>DNA nanoball sequencing</h2>
+                <p>DNA nanoball sequencing is a high throughput sequencing technology that is used to determine the entire genomic sequence of an organism.  The method uses rolling circle replication to amplify small fragments of genomic DNA into DNA nanoballs.  Fluorescent nucleotides bind to complementary nucleotides and are then polymerized to anchor sequences bound to known sequences on the DNA template.  The base order is determined via the fluorescence of the bound nucleotides This DNA sequencing method allows large numbers of DNA nanoballs to be sequenced per run at lower reagent costs compared to other next generation sequencing platforms.  However, a limitation of this method is that it generates only short sequences of DNA, which presents challenges to mapping its reads to a reference genome. After purchasing Complete Genomics, the Beijing Genomics Institute (BGI) refined DNA nanoball sequencing to sequence nucleotide samples on their own platform.</p>
+<p>Procedure</p>
+<p>DNA Nanoball Sequencing involves isolating DNA that is to be sequenced, shearing it into small 100 – 350 base pair (bp) fragments, ligating adapter sequences to the fragments, and circularizing the fragments.  The circular fragments are copied by rolling circle replication resulting in many single-stranded copies of each fragment. The DNA copies concatenate head to tail in a long strand, and are compacted into a DNA nanoball.  The nanoballs are then adsorbed onto a sequencing flow cell. The color of the fluorescence at each interrogated position is recorded through a high-resolution camera.  Bioinformatics are used to analyze the fluorescence data and make a base call, and for mapping or quantifying the 50bp, 100bp, or 150bp single- or paired-end reads.</p>
+<p>DNA Isolation, fragmentation, and size capture</p>
+<p>Cells are lysed and DNA is extracted from the cell lysate.  The high-molecular-weight DNA, often several megabase pairs long, is fragmented by physical or enzymatic methods to break the DNA double-strands at random intervals.  Bioinformatic mapping of the sequencing reads is most efficient when the sample DNA contains a narrow length range. For small RNA sequencing, selection of the ideal fragment lengths for sequencing is performed by gel electrophoresis; for sequencing of larger fragments, DNA fragments are separated by bead-based size selection.</p>
+<p>Attaching adapter sequences</p>
+<p>Adapter DNA sequences must be attached to the unknown DNA fragment so that DNA segments with known sequences flank the unknown DNA.  In the first round of adapter ligation, right (Ad153_right) and left (Ad153_left) adapters are attached to the right and left flanks of the fragmented DNA, and the DNA is amplified by PCR. A splint oligo then hybridizes to the ends of the fragments which are ligated to form a circle. An exonuclease is added to remove all remaining linear single-stranded and double-stranded DNA products. The result is a completed circular DNA template.</p>
+<p>Rolling circle replication</p>
+<p>Once a single-stranded circular DNA template is created, containing sample DNA that is ligated to two unique adapter sequences has been generated, the full sequence is amplified into a long string of DNA.  This is accomplished by rolling circle replication with the Phi 29 DNA polymerase which binds and replicates the DNA template.  The newly synthesized strand is released from the circular template, resulting in a long single-stranded DNA comprising several head-to-tail copies of the circular template. The resulting nanoparticle self-assembles into a tight ball of DNA approximately 300 nanometers (nm) across. Nanoballs remain separated from each other because they are negatively charged naturally repel each other, reducing any tangling between different single stranded DNA lengths.</p>
+<p>DNA nanoball patterned array</p>
+<p>To obtain DNA sequence, the DNA nanoballs are attached to a patterned array flow cell.  The flow cell is a  silicon wafer coated with silicon dioxide, titanium, hexamethyldisilazane (HMDS), and a photoresist material. The DNA nanoballs are added to the flow cell and selectively bind to the positively-charged aminosilane in a highly ordered pattern, allowing a very high density of DNA nanoballs to be sequenced.</p>
+<p>Imaging</p>
+<p>After each DNA nucleotide incorporation step, the flow cell is imaged to determine which nucleotide base bound to the DNA nanoball.  The fluorophore is excited with a laser that excites specific wavelengths of light.  The emission of  fluorescence from each DNA nanoball is captured on a high resolution CCD camera.  The image is then processed to remove background noise and assess the intensity of each point.  The color of each DNA nanoball corresponds to a base at the interrogative position and a computer records the base position information.</p>
+<p>Sequencing data format</p>
+<p>The data generated from the DNA nanoballs is formatted as standard FASTQ formatted files with contiguous bases (no gaps). These files can be used in any data analysis pipeline that is configured to read single-end or paired-end FASTQ files.</p>
+<p>For example:</p>
+<p>Read 1, from a 100bp paired end run from</p>
+<p> @CL100011513L1C001R013_126365/1</p>
+<p> CTAGGCAACTATAGGTCTCAGTTAAGTCAAATAAAATTCACATCAAATTTTTACTCCCACCATCCCAACACTTTCCTGCCTGGCATATGCCGTGTCTGCC</p>
+<p> +</p>
+<p> FFFFFFFFFFFGFGFFFFFF;FFFFFFFGFGFGFFFFFF;FFFFGFGFGFFEFFFFFEDGFDFF@FCFGFGCFFFFFEFFEGDFDFFFFFGDAFFEFGFF</p>
+<p>Corresponding Read 2:</p>
+<p> @CL100011513L1C001R013_126365/2</p>
+<p> TGTCTACCATATTCTACATTCCACACTCGGTGAGGGAAGGTAGGCACATAAAGCAATGGCAGTACGGTGTAATACATGCTAATGTAGAGTAAGCACTCAG</p>
+<p> +</p>
+<p> 3E9E<ADEBB:D>E?FD<<@EFE>>ECEF5CE:B6E:CEE?6B>B+@??31/FD:0?@:E9<3FE2/A:/8>9CB&=E<7:-+>;29:7+/5D9)?5F/:</p>
+<p>Informatics Tips</p>
+<p>Reference Genome Alignment</p>
+<p>Default parameters for the popular aligners are sufficient.</p>
+<p>Read Names</p>
+<p>In the FASTQ file created by BGI/MGI sequencers using DNA nanoballs on a patterned array flowcell, the read names look like this:</p>
+<p>BGISEQ-500:</p>
+<p>CL100025298L1C002R050_244547</p>
+<p>MGISEQ-2000:</p>
+<p>V100006430L1C001R018613883</p>
+<p>Read names can be parsed to extract three variables describing the physical location of the read on the patterned array: (1) tile/region, (2) x coordinate, and (3) y coordinate. Note that, due to the order of these variables, these read names cannot be natively parsed by Picard MarkDuplicates in order to identify optical duplicates. However, as there are none on this platform, this poses no problem to Picard-based data analysis.</p>
+<p>Duplicates</p>
+<p>Because DNA nanoballs remain confined their spots on the patterned array there are no optical duplicates to contend with during bioinformatics analysis of sequencing reads. It is suggested to run Picard MarkDuplicates as follows:</p>
+<p>java -jar picard.jar MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_dup_metrics.txt READ_NAME_REGEX=null</p>
+<p>A test with Picard-friendly, reformatted read names demonstrates the absence of this class of duplicate read:</p>
+<p>The single read marked as an optical duplicate is most assuredly artefactual. In any case, the effect on the estimated library size is negligible.</p>
+<p>Advantages</p>
+<p>DNA nanoball sequencing technology offers some advantages over other sequencing platforms. One  advantage is the eradication of optical duplicates. DNA nanoballs remain in place on the patterned array and do not interfere with neighboring nanoballs.</p>
+<p>Another advantage of DNA nanoball sequencing include the use of high-fidelity Phi 29 DNA polymerase to ensure accurate amplification of the circular template, several hundred copies of the circular template compacted into a small area resulting in an intense signal, and attachment of the fluorophore to the probe at a long distance from the ligation point results in improved ligation.</p>
+<p>Disadvantages</p>
+<p>The main disadvantage of DNA nanoball sequencing is the short read length of the DNA sequences obtained with this method. Short reads, especially for DNA high in DNA repeats, may map to two or more regions of the reference genome.  A second disadvantage of this method is that multiple rounds of PCR have to be used.  This can introduce PCR bias and possibly amplify contaminants in the template construction phase. However, these disadvantages are common to all short-read sequencing platforms are not specific to DNA nanoballs.</p>
+<p>Applications</p>
+<p>DNA nanoball sequencing has been used in recent studies.  Lee et al. used this technology to find mutations that were present in a lung cancer and compared them to normal lung tissue. They were able to identify over 50,000 single nucleotide variants. Roach et al. used DNA nanoball sequencing to sequence the genomes of a family of four relatives and were able to identify SNPs that may be responsible for a Mendelian disorder, and were able to estimate the inter-generation mutation rate. The Institute for Systems Biology has used this technology to sequence 615 complete human genome samples as part of a survey studying neurodegenerative diseases, and the National Cancer Institute is using DNA nanoball sequencing to sequence 50 tumours and matched normal tissues from pediatric cancers.</p>
+<p>Significance</p>
+<p>Massively parallel next generation sequencing platforms like DNA nanoball sequencing may contribute to the diagnosis and treatment of many genetic diseases. The cost of sequencing an entire human genome has fallen from about one million dollars in 2008, to $4400 in 2010 with the DNA nanoball technology. Sequencing the entire genomes of patients with heritable diseases or cancer, mutations associated with these diseases have been identified, opening up strategies, such as targeted therapeutics for at-risk people and for genetic counseling.  As the price of sequencing an entire human genome approaches the $1000 mark, genomic sequencing of every individual may become feasible as part of normal preventative medicine.</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
