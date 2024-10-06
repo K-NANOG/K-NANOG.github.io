@@ -1,0 +1,160 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Percolation theory</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Percolation theory</h2>
+                <p>In statistical physics and mathematics, percolation theory describes the behavior of a network when nodes or links are added. This is a geometric type of phase transition, since at a critical fraction of addition the network of small, disconnected clusters merge into significantly larger connected, so-called spanning clusters. The applications of percolation theory to materials science and in many other disciplines are discussed here and in the articles Network theory and Percolation (cognitive psychology).</p>
+<p>Introduction</p>
+<p>A representative question (and the source of the name) is as follows. Assume that some liquid is poured on top of some porous material. Will the liquid be able to make its way from hole to hole and reach the bottom? This physical question is modelled mathematically as a three-dimensional network of n × n × n vertices, usually called "sites", in which the edge or "bonds" between each two neighbors may be open (allowing the liquid through) with probability p, or closed with probability 1 – p, and they are assumed to be independent. Therefore, for a given p, what is the probability that an open path (meaning a path, each of whose links is an "open" bond) exists from the top to the bottom? The behavior for large n is of primary interest. This problem, called now bond percolation, was introduced in the mathematics literature by Broadbent & Hammersley (1957), and has been studied intensively by mathematicians and physicists since then.</p>
+<p>In a slightly different mathematical model for obtaining a random graph, a site is "occupied" with probability p or "empty" (in which case its edges are removed) with probability 1 – p; the corresponding problem is called site percolation. The question is the same: for a given p, what is the probability that a path exists between top and bottom? Similarly, one can ask, given a connected graph at what fraction 1 – p of failures the graph will become disconnected (no large component).</p>
+<p>The same questions can be asked for any lattice dimension. As is quite typical, it is actually easier to examine infinite networks than just large ones. In this case the corresponding question is: does an infinite open cluster exist? That is, is there a path of connected points of infinite length "through" the network?  By Kolmogorov's zero–one law, for any given p, the probability that an infinite cluster exists is either zero or one. Since this probability is an increasing function of p (proof via coupling argument), there must be a critical p (denoted by pc) below which the probability is always 0 and above which the probability is always 1. In practice, this criticality is very easy to observe. Even for n as small as 100, the probability of an open path from the top to the bottom increases sharply from very close to zero to very close to one in a short span of values of p.</p>
+<p>History</p>
+<p>The Flory–Stockmayer theory was the first theory investigating percolation processes.</p>
+<p>The history of the percolation model as we know it has its root in the coal industry. Since the industrial revolution, the economical importance of this source of energy fostered many scientific studies to understand its composition and optimize its use. During the 1930s and 1940s, the qualitative analysis by organic chemistry left more and more room to more quantitative studies. </p>
+<p>In this context, the British Coal Utilisation Research Association (BCURA) was created in 1938. It is a research association funded by the coal mines owners. In 1942, Rosalind Franklin, who then recently graduated in chemistry from the university of Cambridge, joined the BCURA. She started research on the density and porosity of coal. During the Second World War, coal was an important strategic resource. It was used as a source of energy, but also was the main constituent of gas masks.</p>
+<p>Coal is a porous medium. To measure its 'real' density, one was to sink it in a liquid or a gas whose molecules are small enough to fill its microscopic pores. While trying to measure the density of coal using several gases (helium, methanol, hexane, benzene), and as she found different values depending on the gas used, Rosalind Franklin showed that the pores of coal are made of microstructures of various lengths that act as a microscopic sieve to discriminate the gases. She also discovered that the size of these structures depends on the temperature of carbonation during the coal production. With this research, she obtained a PhD degree and left the BCURA in 1946.</p>
+<p>In the mid fifties, Simon Broadbent worked in the BCURA as a statistician. Among other interests, he studied the use of coal in gas masks. One question is to understand how a fluid can diffuse in the coal pores, modeled as a random maze of open or closed tunnels. In 1954, during a symposium on Monte Carlo methods, he asks questions to John Hammersley on the use of numerical methods to analyze this model.</p>
+<p>Broadbent and Hammersley introduced in their article of 1957 a mathematical model to model this phenomenon, that is percolation.</p>
+<p>Computation of the critical parameter</p>
+<p>For most infinite lattice graphs, pc cannot be calculated exactly, though in some cases pc there is an exact value. For example:</p>
+<p>for the square lattice ℤ2 in two dimensions, pc = ⁠1/2⁠ for bond percolation, a fact which was an open question for more than 20 years and was finally resolved by Harry Kesten in the early 1980s, see Kesten (1982). For site percolation on the square lattice, the value of pc is not known from analytic derivation but only via simulations of large lattices which provide the estimate pc =  0.59274621 ± 0.00000013.  </p>
+<p>A limit case for lattices in high dimensions is given by the Bethe lattice, whose threshold is at pc = ⁠1/z − 1⁠ for a coordination number z. In other words: for the regular tree of degree </p>
+<p>        z</p>
+<p>    {\displaystyle z}</p>
+<p>, </p>
+<p>          p</p>
+<p>            c</p>
+<p>    {\displaystyle p_{c}}</p>
+<p> is equal to </p>
+<p>        1</p>
+<p>          /</p>
+<p>        (</p>
+<p>        z</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>    {\displaystyle 1/(z-1)}</p>
+<p>.</p>
+<p>For a random tree-like network without degree-degree correlation, it can be shown that such network can have a giant component, and the percolation threshold (transmission probability) is given by </p>
+<p>          p</p>
+<p>            c</p>
+<p>        =</p>
+<p>            1</p>
+<p>                g</p>
+<p>                  1</p>
+<p>                ′</p>
+<p>              (</p>
+<p>              1</p>
+<p>              )</p>
+<p>    {\displaystyle p_{c}={\frac {1}{g_{1}'(1)}}}</p>
+<p>,  where </p>
+<p>          g</p>
+<p>            1</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>    {\displaystyle g_{1}(z)}</p>
+<p> is the generating function corresponding to the excess degree distribution. So, for random Erdős–Rényi networks of average degree </p>
+<p>        ⟨</p>
+<p>        k</p>
+<p>        ⟩</p>
+<p>    {\displaystyle \langle k\rangle }</p>
+<p>, pc = ⁠1/⟨k⟩⁠.</p>
+<p>In networks with low clustering, </p>
+<p>        0</p>
+<p>        <</p>
+<p>        C</p>
+<p>        ≪</p>
+<p>        1</p>
+<p>    {\displaystyle 0<C\ll 1}</p>
+<p>, the critical point gets scaled by </p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>        C</p>
+<p>          )</p>
+<p>            −</p>
+<p>            1</p>
+<p>    {\displaystyle (1-C)^{-1}}</p>
+<p> such that:</p>
+<p>          p</p>
+<p>            c</p>
+<p>        =</p>
+<p>            1</p>
+<p>              1</p>
+<p>              −</p>
+<p>              C</p>
+<p>            1</p>
+<p>                g</p>
+<p>                  1</p>
+<p>                ′</p>
+<p>              (</p>
+<p>              1</p>
+<p>              )</p>
+<p>        .</p>
+<p>    {\displaystyle p_{c}={\frac {1}{1-C}}{\frac {1}{g_{1}'(1)}}.}</p>
+<p>This indicates that for a given degree distribution, the clustering leads to a larger percolation threshold, mainly because for a fixed number of links, the clustering structure reinforces the core of the network with the price of diluting the global connections. For networks with high clustering, strong clustering could induce the core–periphery structure, in which the core and periphery might percolate at different critical points, and the above approximate treatment is not applicable.</p>
+<p>Universality</p>
+<p>The universality principle states that the numerical value of pc is determined by the local structure of the graph, whereas the behavior near the critical threshold, pc, is characterized by universal critical exponents. For example the distribution of the size of clusters at criticality decays as a power law with the same exponent for all 2d lattices. This universality means that for a given dimension, the various critical exponents, the fractal dimension of the clusters at pc is independent of the lattice type and percolation type (e.g., bond or site). However, recently percolation has been performed on a weighted planar stochastic lattice (WPSL) and found that although the dimension of the WPSL coincides with the dimension of the space where it is embedded, its universality class is different from that of all the known planar lattices.</p>
+<p>Phases</p>
+<p>Subcritical and supercritical</p>
+<p>The main fact in the subcritical phase is "exponential decay". That is, when p < pc, the probability that a specific point (for example, the origin) is contained in an open cluster (meaning a maximal connected set of "open" edges of the graph) of size r decays to zero exponentially in r. This was proved for percolation in three and more dimensions by Menshikov (1986) and independently by Aizenman & Barsky (1987). In two dimensions, it formed part of Kesten's proof that pc = ⁠1/2⁠.</p>
+<p>The dual graph of the square lattice ℤ2 is also the square lattice. It follows that, in two dimensions, the supercritical phase is dual to a subcritical percolation process. This provides essentially full information about the supercritical model with d = 2. The main result for the supercritical phase in three and more dimensions is that,  for sufficiently large N, there is almost certainly an infinite open cluster in the two-dimensional slab ℤ2 × [0, N]d − 2. This was proved by Grimmett & Marstrand (1990).</p>
+<p>In two dimensions with p < ⁠1/2⁠, there is with probability one a unique infinite closed cluster (a closed cluster is a maximal connected set of "closed" edges of the graph). Thus the subcritical phase may be described as finite open islands in an infinite closed ocean. When p > ⁠1/2⁠ just the opposite occurs, with finite closed islands in an infinite open ocean. The picture is more complicated when d ≥ 3 since pc < ⁠1/2⁠, and there is coexistence of infinite open and closed clusters for p between pc and 1 − pc.</p>
+<p>Criticality</p>
+<p>Percolation has a singularity at the critical point p = pc and many properties behave as of a power-law with </p>
+<p>        p</p>
+<p>        −</p>
+<p>          p</p>
+<p>            c</p>
+<p>    {\displaystyle p-p_{c}}</p>
+<p>, near </p>
+<p>          p</p>
+<p>            c</p>
+<p>    {\displaystyle p_{c}}</p>
+<p>. Scaling theory predicts the existence of critical exponents, depending on the number d of dimensions, that determine the class of the singularity. When d = 2 these predictions are backed up by arguments from conformal field theory and Schramm–Loewner evolution, and include predicted numerical values for the exponents. Most of these predictions are conjectural except when the number d of dimensions satisfies either d = 2 or d ≥ 6. They include:</p>
+<p>There are no infinite clusters (open or closed)</p>
+<p>The probability that there is an open path from some fixed point (say the origin) to a distance of r decreases polynomially, i.e. is on the order of rα for some α</p>
+<p>α does not depend on the particular lattice chosen, or on other local parameters. It depends only on the dimension d (this is an instance of the universality principle).</p>
+<p>αd decreases from d = 2 until d = 6 and then stays fixed.</p>
+<p>α2 = −⁠5/48⁠</p>
+<p>α6 = −1.</p>
+<p>The shape of a large cluster in two dimensions is conformally invariant.</p>
+<p>See Grimmett (1999). In 11 or more dimensions, these facts are largely proved using a technique known as the lace expansion. It is believed that a version of the lace expansion should be valid for 7 or more dimensions, perhaps with implications also for the threshold case of 6 dimensions.  The connection of percolation to the lace expansion is found in Hara & Slade (1990).</p>
+<p>In two dimensions, the first fact ("no percolation in the critical phase") is proved for many lattices, using duality. Substantial progress has been made on two-dimensional percolation through the conjecture of Oded Schramm that the scaling limit of a large cluster may be described in terms of a Schramm–Loewner evolution. This conjecture was proved by Smirnov (2001) in the special case of site percolation on the triangular lattice.</p>
+<p>Different models</p>
+<p>Directed percolation that models the effect of gravitational forces acting on the liquid was also introduced in Broadbent & Hammersley (1957), and has connections with the contact process.</p>
+<p>The first model studied was Bernoulli percolation. In this model all bonds are independent.  This model is called bond percolation by physicists.</p>
+<p>A generalization was next introduced as the Fortuin–Kasteleyn random cluster model, which has many connections with the Ising model and other Potts models.</p>
+<p>Bernoulli (bond) percolation on complete graphs is an example of a random graph.  The critical probability is p = ⁠1/N⁠, where N is the number of vertices (sites) of the graph.</p>
+<p>Bootstrap percolation removes active cells from clusters when they have too few active neighbors, and looks at the connectivity of the remaining cells.</p>
+<p>First passage percolation.</p>
+<p>Invasion percolation.</p>
+<p>Applications</p>
+<p>In biology, biochemistry, and physical virology</p>
+<p>Percolation theory has been used to successfully predict the fragmentation of biological virus shells (capsids), with the fragmentation threshold of Hepatitis B virus capsid predicted and detected experimentally. When a critical number of subunits has been randomly removed from the nanoscopic shell, it fragments and this fragmentation may be detected using Charge Detection Mass Spectroscopy (CDMS) among other single-particle techniques.  This is a molecular analog to the common board game Jenga, and has relevance to the broader study of virus disassembly.  Interestingly, more stable viral particles (tilings with greater fragmentation thresholds) are found in greater abundance in nature.</p>
+<p>In ecology</p>
+<p>Percolation theory has been applied to studies of how environment fragmentation impacts animal habitats and models of how the plague bacterium Yersinia pestis spreads.</p>
+<p>See also</p>
+<p>References</p>
+<p>Aizenman, Michael; Barsky, David (1987), "Sharpness of the phase transition in percolation models", Communications in Mathematical Physics, 108 (3): 489–526, Bibcode:1987CMaPh.108..489A, doi:10.1007/BF01212322, S2CID 35592821</p>
+<p>Menshikov, Mikhail (1986), "Coincidence of critical points in percolation problems", Soviet Mathematics - Doklady, 33: 856–859</p>
+<p>Further reading</p>
+<p>External links</p>
+<p>PercoVIS: a Mac OS X program to visualize percolation on networks in real time</p>
+<p>Interactive Percolation</p>
+<p>Nanohub online course on Percolation Theory</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
