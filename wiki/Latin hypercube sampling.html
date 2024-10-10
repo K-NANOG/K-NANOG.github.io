@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latin hypercube sampling</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Latin hypercube sampling</h2>
+                <p>Latin hypercube sampling (LHS) is a statistical method for generating a near-random sample of parameter values from a multidimensional distribution. The sampling method is often used to construct computer experiments or for Monte Carlo integration.</p>
+<p>LHS was described by Michael McKay of Los Alamos National Laboratory in 1979. An equivalent technique was independently proposed by Vilnis Eglājs in 1977.   It was further elaborated by Ronald L. Iman and coauthors in 1981. Detailed computer codes and manuals were later published.</p>
+<p>In the context of statistical sampling, a square grid containing sample positions is a Latin square if (and only if) there is only one sample in each row and each column. A Latin hypercube is the generalisation of this concept to an arbitrary number of dimensions, whereby each sample is the only one in each axis-aligned hyperplane containing it.</p>
+<p>When sampling a function of </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> variables, the range of each variable is divided into </p>
+<p>        M</p>
+<p>    {\displaystyle M}</p>
+<p> equally probable intervals. </p>
+<p>        M</p>
+<p>    {\displaystyle M}</p>
+<p> sample points are then placed to satisfy the Latin hypercube requirements; this forces the number of divisions, </p>
+<p>        M</p>
+<p>    {\displaystyle M}</p>
+<p>, to be equal for each variable. This sampling scheme does not require more samples for more dimensions (variables); this independence is one of the main advantages of this sampling scheme. Another advantage is that random samples can be taken one at a time, remembering which samples were taken so far.</p>
+<p>In two dimensions the difference between random sampling, Latin hypercube sampling, and orthogonal sampling can be explained as follows:</p>
+<p>In random sampling new sample points are generated without taking into account the previously generated sample points. One does not necessarily need to know beforehand how many sample points are needed.</p>
+<p>In Latin hypercube sampling one must first decide how many sample points to use and for each sample point remember in which row and column the sample point was taken. Such configuration is similar to having N rooks on a chess board without threatening each other.</p>
+<p>In orthogonal sampling, the sample space is partitioned into equally probable subspaces. All sample points are then chosen simultaneously making sure that the total set of sample points is a Latin hypercube sample and that each subspace is sampled with the same density.</p>
+<p>Thus, orthogonal sampling ensures that the set of random numbers is a very good representative of the real variability, LHS ensures that the set of random numbers is representative of the real variability whereas traditional random sampling (sometimes called brute force) is just a set of random numbers without any guarantees.</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Tang, B. (1993). "Orthogonal Array-Based Latin Hypercubes". Journal of the American Statistical Association. 88 (424): 1392–1397. doi:10.2307/2291282. JSTOR 2291282.</p>
+<p>Owen, A.B. (1992). "Orthogonal arrays for computer experiments, integration and visualization". Statistica Sinica. 2: 439–452.</p>
+<p>Ye, K.Q. (1998). "Orthogonal column Latin hypercubes and their application in computer experiments". Journal of the American Statistical Association. 93 (444): 1430–1439. doi:10.2307/2670057. JSTOR 2670057.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
