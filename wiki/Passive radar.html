@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Passive radar</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Passive radar</h2>
+                <p>Passive radar (also referred to as parasitic radar, passive coherent location, passive surveillance, and passive covert radar) is a class of radar systems that detect and track objects by processing reflections from non-cooperative sources of illumination in the environment, such as commercial broadcast and communications signals.  It is a specific case of bistatic radar – passive bistatic radar (PBR) – which is a broad type also including the exploitation of cooperative and non-cooperative radar transmitters.</p>
+<p>Introduction</p>
+<p>Conventional radar systems comprise a colocated transmitter and receiver, which usually share a common antenna to transmit and receive.  A pulsed signal is transmitted and the time taken for the pulse to travel to the object and back allows the range of the object to be determined.</p>
+<p>In a passive radar system, there is no dedicated transmitter.  Instead, the receiver uses third-party transmitters in the environment and measures the time difference of arrival between the signal arriving directly from the transmitter and the signal arriving via reflection from the object.  This allows the bistatic range of the object to be determined.  In addition to the bistatic range, a passive radar will typically also measure the bistatic Doppler shift of the echo and also its direction of arrival.  These allow the location, heading and speed of the object to be calculated.  In some cases, multiple transmitters and/or receivers can be employed to make several independent measurements of bistatic range, Doppler and bearing and hence significantly improve the final track accuracy.</p>
+<p>The term "passive radar" is sometimes used incorrectly to describe those passive sensors that detect and track aircraft by their RF emissions (such as radar, communications, or transponder emissions).  However, these systems do not exploit reflected energy and hence are more accurately described as Electronic Support Measure or anti-radiation systems.  Well known examples include the Czech TAMARA and VERA systems and the Ukrainian Kolchuga system.</p>
+<p>History</p>
+<p>The concept of passive radar detection using reflected ambient radio signals emanating from a distant transmitter is not new.  The first radar experiments in the United Kingdom in 1935 by Robert Watson-Watt demonstrated the principle of radar by detecting a Handley Page Heyford bomber at a distance of 12  km using the BBC shortwave transmitter at Daventry.</p>
+<p>Early radars were all bistatic because the technology to enable an antenna to be switched from transmit to receive mode had not been developed.  Thus many countries were using bistatic systems in air defence networks during the early 1930s. For example, the British deployed the CHAIN HOME system; the French used a bistatic Continuous Wave (CW) radar in a "fence" (or "barrier") system; the Soviet Union deployed a bistatic CW system called the RUS-1, and the Japanese developed a bistatic CW radar called "Type A".</p>
+<p>The Germans used a passive bistatic system during World War II.  This system, called the Klein Heidelberg Parasit or Heidelberg-Gerät, was deployed at seven sites (Limmen, Oostvoorne, Ostend, Boulogne, Abbeville, Cap d'Antifer and Cherbourg) and operated as bistatic receivers, using the British Chain Home radars as non-cooperative illuminators, to detect aircraft over the southern part of the North Sea.</p>
+<p>Bistatic radar systems gave way to monostatic systems with the development of the duplexer in 1936.  The monostatic systems were much easier to implement since they eliminated the geometric complexities introduced by the separate transmitter and receiver sites.  In addition, aircraft and shipborne applications became possible as smaller components were developed.  In the early 1950s, bistatic systems were considered again when some interesting properties of the scattered radar energy were discovered, indeed the term "bistatic" was first used by Siegel in 1955 in his report describing these properties.</p>
+<p>One of the largest and most complex passive radar systems was the UK's RX12874, or "Winkle". Winkle was deployed in the 1960s in response to the introduction of the carcinotron, a radar jammer that was so powerful it appeared to render long-distance radars useless. Winkle was able to home in on carcinotron broadcasts with the same accuracy as conventional radar, allowing the jammer aircraft to be tracked and attacked at hundreds of miles range. Additionally, by indicating the location of the jammer, other radars in the Linesman/Mediator network could reduce the sensitivity of their receivers when pointed in that direction, thereby reducing the amount of jamming received when pointed near the jammer's location.</p>
+<p>The rise of cheap computing power and digital receiver technology in the 1980s led to a resurgence of interest in passive radar technology.  For the first time, these allowed designers to apply digital signal processing techniques to exploit a variety of broadcast signals and to use cross-correlation techniques to achieve sufficient signal processing gain to detect targets and estimate their bistatic range and Doppler shift.  Classified programmes existed in several nations, but the first announcement of a commercial system was by Lockheed-Martin Mission Systems in 1998, with the commercial launch of the Silent Sentry system, that exploited FM radio and analogue television transmitters.</p>
+<p>Typical illuminators</p>
+<p>Passive radar systems have been developed that exploit the following sources of illumination:</p>
+<p>Analog television signals</p>
+<p>FM radio signals</p>
+<p>Cellular phone base stations</p>
+<p>Digital audio broadcasting</p>
+<p>Digital video broadcasting</p>
+<p>Terrestrial High-definition television transmitters in North America</p>
+<p>GPS satellites (GPS reflectometry).</p>
+<p>Satellite signals have generally been found more difficult for passive radar use, either because the powers are too low or because the orbits of the satellites are such that illumination is too infrequent. However, there have been significant developments in the area over the past years. The possible exception to this is the exploitation of satellite-based radar and satellite radio systems. In 2011, researchers Barott and Butka from Embry-Riddle Aeronautical University announced results claiming success using XM Radio to detect aircraft with a low-cost ground station.</p>
+<p>Principle</p>
+<p>In a conventional radar system, the time of transmission of the pulse and the transmitted waveform is exactly known.  This allows the object range to be easily calculated and for a matched filter to be used to achieve an optimal signal-to-noise ratio in the receiver.  A passive radar does not have this information directly and hence must use a dedicated receiver channel (known as the "reference channel") to monitor each transmitter being exploited, and dynamically sample the transmitted waveform.  A passive radar typically employs the following processing steps:</p>
+<p>Reception of the direct signal from the transmitter(s) and the surveillance region on dedicated low-noise, linear, digital receivers</p>
+<p>Digital beamforming to determine the direction of arrival of signals and spatial rejection of strong in-band interference</p>
+<p>Adaptive filtering to cancel any unwanted direct signal returns in the surveillance channel(s)</p>
+<p>Transmitter-specific signal conditioning</p>
+<p>Cross-correlation of the reference channel with the surveillance channels to determine object bistatic range and Doppler</p>
+<p>Detection using constant false alarm rate (CFAR) scheme</p>
+<p>Association and tracking of object returns in range/Doppler space, known as "line tracking"</p>
+<p>Association and fusion of line tracks from each transmitter to form the final estimate of an object's location, heading and speed.</p>
+<p>These are described in greater detail in the sections below.</p>
+<p>Processing</p>
+<p>Receiver system</p>
+<p>A passive radar system must detect very small target returns in the presence of very strong, continuous interference.  This contrasts with a conventional radar, which listens for echoes during the periods of silence in between each pulse transmission.  As a result, the receiver must have a low noise figure, high dynamic range and high linearity.  Despite this, the received echoes are normally well below the noise floor and the system tends to be externally noise limited (due to reception of the transmitted signal itself, plus reception of other distant in-band transmitters).  Passive radar systems use digital receiver systems which output a digitized, sampled signal.</p>
+<p>Digital beamforming</p>
+<p>Most passive radar systems use simple antenna arrays with several antenna elements and element-level digitisation.  This allows the direction of arrival of echoes to be calculated using standard radar beamforming techniques, such as amplitude monopulse using a series of fixed, overlapping beams or more sophisticated adaptive beamforming.  Alternatively, some research systems have used only a pair of antenna elements and the phase-difference of arrival to calculate the direction of arrival of the echoes (known as phase interferometry and similar in concept to Very Long Baseline Interferometry used in astronomy).</p>
+<p>Signal conditioning</p>
+<p>With some transmitter types, it is necessary to perform some transmitter-specific conditioning of the signal before cross-correlation processing.  This may include high-quality analogue bandpass filtering of the signal, channel equalization to improve the quality of the reference signal, removal of unwanted structures in digital signals to improve the radar ambiguity function or even complete reconstruction of the reference signal from the received digital signal.</p>
+<p>Adaptive filtering</p>
+<p>The principal limitation in detection range for most passive radar systems is the signal-to-interference ratio, due to the large and constant direct signal received from the transmitter.  To remove this, an adaptive filter can be used to remove the direct signal in a process similar to active noise control.  This step is essential to ensure that the range/Doppler sidelobes of the direct signal do not mask the smaller echoes in the subsequent cross-correlation stage.</p>
+<p>In a few specific cases, the direct interference is not a limiting factor, due to the transmitter being beyond the horizon or obscured by terrain (such as with the Manastash Ridge Radar Archived 2002-12-05 at the Wayback Machine), but this is the exception rather than the rule, as the transmitter must normally be within line-of-sight of the receiver to ensure good low-level coverage.</p>
+<p>Cross-correlation processing</p>
+<p>The key processing step in a passive radar is cross-correlation.  This step acts as the matched filter and also provides the estimates of the bistatic range and bistatic Doppler shift of each target echo.  Most analogue and digital broadcast signals are noise-like in nature, and as a consequence, they tend to only correlate with themselves.  This presents a problem with moving targets, as the Doppler shift imposed on the echo means that it will not correlate with the direct signal from the transmitter.  As a result, the cross-correlation processing must implement a bank of matched filters, each matched to a different target Doppler shift.  Efficient implementations of the cross-correlation processing based on the discrete Fourier transform are usually used, in particular for OFDM waveforms.  The signal processing gain is typically equal to the time-bandwidth product, BT, where B is the waveform bandwidth and T is the length of the signal sequence being integrated.  A gain of 50 dB is not uncommon.  Extended integration times are limited by the motion of the target and its smearing in range and Doppler during the integration period.</p>
+<p>Target detection</p>
+<p>Targets are detected on the cross-correlation surface by applying an adaptive threshold and declaring all returns above this surface to be targeted.  A standard cell-averaging constant false alarm rate (CFAR) algorithm is typically used.</p>
+<p>Line tracking</p>
+<p>The line-tracking step refers to the tracking of target returns from individual targets, over time, in the range-Doppler space produced by the cross-correlation processing.  A standard Kalman filter is typically used.  Most false alarms are rejected during this stage of the processing.</p>
+<p>Track association and state estimation</p>
+<p>In a simple bistatic configuration (one transmitter and one receiver) it is possible to determine the location of the target by simply calculating the point of intersection of the bearing with the bistatic-range ellipse.  However, errors in bearing and range tend to make this approach fairly inaccurate.  A better approach is to estimate the target state (location, heading and speed) from the full measurement set of bistatic range, bearing and Doppler using a non-linear filter, such as the extended or unscented Kalman filter.</p>
+<p>When multiple transmitters are used, a target can be potentially detected by every transmitter.  The return from this target will appear at a different bistatic range and Doppler shift with each transmitter and so it is necessary to determine which target returns from one transmitter correspond with those on the other transmitters.  Having associated these returns, the point at which the bistatic range ellipses from each transmitter intersect is the location of the target.  The target can be located much more accurately in this way, than by relying on the intersection of the (inaccurate) bearing measurement with a single range ellipse.  Again the optimum approach is to combine the measurements from each transmitter using a non-linear filter, such as the extended or unscented Kalman filter.</p>
+<p>Narrow band and CW illumination sources</p>
+<p>The above description assumes that the waveform of the transmitter being exploited possesses a usable radar ambiguity function and hence cross-correlation yields a useful result.  Some broadcast signals, such as analogue television, contain a structure in the time domain that yields a highly ambiguous or inaccurate result when cross-correlated.  In this case, the processing described above is ineffective.  If the signal contains a continuous wave (CW) component, however, such as a strong carrier tone, then it is possible to detect and track targets in an alternative way.  Over time, moving targets will impose a changing Doppler shift and direction of arrival on the CW tone that is characteristic of the location, speed and heading of the target.  It is therefore possible to use a non-linear estimator to estimate the state of the target from the time history of the Doppler and bearing measurements.  Work has been published that has demonstrated the feasibility of this approach for tracking aircraft using the vision carrier of analogue television signals.   However, track initiation is slow and difficult, and so the use of narrowband signals is probably best considered as an adjunct to the use of illuminators with better ambiguity surfaces.</p>
+<p>Performance</p>
+<p>Passive radar performance is comparable to conventional short and medium-range radar systems. The detection range can be determined using the standard radar equation, but ensuring proper account of the processing gain and external noise limitations is taken. Furthermore, unlike conventional radar, the detection range is also a function of the deployment geometry, as the distance of the receiver from the transmitter determines the level of external noise against which the targets must be detected. However, as a rule of thumb, it is reasonable to expect a passive radar using FM radio stations to achieve detection ranges of up to 150 km, for high-power analogue TV and US HDTV stations to achieve detection ranges of over 300 km and for lower power digital signals (such as cell phone and DAB or DVB-T) to achieve detection ranges of a few tens of kilometres.</p>
+<p>Passive radar accuracy is a strong function of the deployment geometry and the number of receivers and transmitters being used. Systems using only one transmitter and one receiver will tend to be much less accurate than conventional surveillance radars, whilst multistatic radars are capable of achieving somewhat greater accuracies. Most passive radars are two-dimensional, but height measurements are possible when the deployment is such that there is significant variation in the altitudes of the transmitters, receiver and target, reducing the effects of geometrical dilution of precision (GDOP).</p>
+<p>Advantages and disadvantages</p>
+<p>Advocates of the technology cite the following advantages:</p>
+<p>Lower procurement cost</p>
+<p>Lower costs of operation and maintenance, due to the lack of transmitter and moving parts</p>
+<p>Covert operation, including no need for frequency allocations</p>
+<p>Physically small and hence easily deployed in places where conventional radars cannot be</p>
+<p>Rapid updates, typically once a second</p>
+<p>Difficulty of jamming</p>
+<p>Resilience to anti-radiation missiles.</p>
+<p>Opponents of the technology cite the following disadvantages:</p>
+<p>Immaturity</p>
+<p>Reliance on third-party illuminators</p>
+<p>Complexity of deployment</p>
+<p>1D/2D operation, but possible use 2 different systems for 3D (height + range).</p>
+<p>Commercial and academic systems</p>
+<p>Passive radar systems are currently under development in several commercial organizations.  Of these, the systems that have been publicly announced include:</p>
+<p>Lockheed-Martin Silent Sentry - exploiting FM radio stations </p>
+<p>BAE Systems CELLDAR - exploiting GSM base stations </p>
+<p>Selex ES Aulos passive radar </p>
+<p>Thales Air Systems Homeland Alerter - FM radio-based system</p>
+<p>Hensoldt TwInvis multiband passive radar</p>
+<p>Silentium Defence Maverick-M passive radar for tactical surveillance and MAVERICK-S passive radar for surveillance of air and space. </p>
+<p>ERA VERA-NG Passive Surveillance ESM Tracker </p>
+<p>Daronmont Technologies SECAR-P Passive Radar for Australia</p>
+<p>Several academic passive radar systems exist as well:</p>
+<p>Manastash Ridge Radar</p>
+<p>Alim radar system</p>
+<p>Current research</p>
+<p>Research on passive radar systems is of growing interest throughout the world, with various open-source publications showing active research and development in the United States (including work at the Air Force Research Labs, Lockheed-Martin Mission Systems, Raytheon, University of Washington, Georgia Tech/Georgia Tech Research Institute and the University of Illinois), in the NATO C3 Agency in The Netherlands, in the United Kingdom (at Roke Manor Research, QinetiQ, University of Birmingham, University College London and BAE Systems), France (including the government labs of ONERA), Germany (including the labs at Fraunhofer-FHR), Poland (including Warsaw University of Technology).  There is also active research on this technology in several governments or university laboratories in China, Iran, Russia and South Africa.  The low-cost nature of the system makes the technology particularly attractive to university laboratories and other agencies with limited budgets, as the key requirements are less hardware and more algorithmic sophistication and computational power.</p>
+<p>Much current research is currently focusing on the exploitation of modern digital broadcast signals.  The US HDTV standard is particularly good for passive radar, having an excellent ambiguity function and very high power transmitters.  The DVB-T digital TV standard (and related DAB digital audio standard) used throughout most of the rest of the world is more challenging— transmitter powers are lower, and many networks are set up in a "single frequency network" mode, in which all transmitters are synchronised in time and frequency.  Without careful processing, the net result for passive radar is like multiple repeaters jammers.</p>
+<p>Target imaging</p>
+<p>Researchers at the University of Illinois at Urbana–Champaign and Georgia Institute of Technology, with the support of DARPA and NATO C3 Agency, have shown that it is possible to build a synthetic aperture image of an aircraft target using passive multistatic radar. Using multiple transmitters at different frequencies and locations, a dense data set in Fourier space can be built for a given target. Reconstructing the image of the target can be accomplished through an inverse fast Fourier transform (IFFT). Herman, Moulin, Ehrman and Lanterman have published reports based on simulated data, which suggest that low-frequency passive radars (using FM radio transmissions) could provide target classification in addition to tracking information. These Automatic Target Recognition systems use the power received to estimate the RCS of the target. The RCS estimate at various aspect angles as the target traverses the multistatic system are compared to a library of RCS models of likely targets to determine target classification. In the latest work, Ehrman and Lanterman implemented a coordinated flight model to further refine the RCS estimate.</p>
+<p>Ionospheric Turbulence Studies</p>
+<p>Researchers at the University of Washington operate a distributed passive radar exploiting FM broadcasts to study ionospheric turbulence at altitudes of 100  km and ranges out to 1200  km.  Meyer and Sahr have demonstrated interferometric images of ionospheric turbulence with an angular resolution of 0.1 degrees, while also resolving the full, unaliased Doppler Power Spectrum of the turbulence.</p>
+<p>Space Debris Detection and Tracking</p>
+<p>Silentium Defence has launched the first operational ground passive radar specifically designed to track LEO. The Oculus Observatory is based in  Swan Reach, South Australia with plans to scale the technology globally. Silentium has a range of products that support both tactical and strategic applications ranging from drone detection, maritime surveillance to long-range air and space search. The University of Strathclyde is developing an in-orbit system to detect and track space debris from small fragments to inactive satellites. The work, supported by the UK and European Space Agencies, is a collaboration between the Aerospace Centre of Excellence and the Centre for Signal & Image Processing at the University of Strathclyde. Clemente and Vasile have demonstrated the technical feasibility of the detection of small pieces of debris using a range of existing illuminators and a receiver in Low Earth Orbit.</p>
+<p>See also</p>
+<p>Anti-radiation missile</p>
+<p>Bistatic radar</p>
+<p>Multistatic radar</p>
+<p>GNU Radio Passive Radar Project</p>
+<p>Multilateration</p>
+<p>Radar tracker</p>
+<p>Semi-active radar homing</p>
+<p>P-18 radar</p>
+<p>YLC-2 Radar</p>
+<p>Stealth aircraft</p>
+<p>VERA passive sensor</p>
+<p>Low-frequency radar</p>
+<p>Signals intelligence</p>
+<p>Kolchuga passive sensor</p>
+<p>HEMPAS-CCIAS Radar</p>
+<p>Elta EL/L-8388 ELINT passive radar</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Howland, P.E.: "A Passive Metric Radar Using the Transmitters of Opportunity", Int. Conf.on Radar, Paris, France, May 1994, pp. 251–256</p>
+<p>Howland, P.E.: "Target tracking using television-based bistatic radar", IEE Proc.-Radar, Sonar & Navig., Vol. 146, No. 3, June 1999.</p>
+<p>Howland, P.E., Maksimiuk, D., and Reitsma, G.: "FM radio-based bistatic radar", Radar, Sonar and Navigation, IEE Proceedings, Vol. 152,  Issue 3, 3 June 2005 pp. 107 – 115,  Digital Object Identifier 10.1049/ip-rsn:20045077</p>
+<p>Kulpa K., and Czekała Z.: "Long-Range Performance Increase in Passive PCL Radar", 3rd Multinational Conference on Passive and Covert Radar, 2003 (PCR-2003). University of Washington Applied Physics Laboratory, Seattle, Washington, 21–23 October 2003</p>
+<p>K. Kulpa, Z. Czekala, "Masking Effect and its Removal in PCL Radar," IEE Proc. Radar, Sonar and Navigation, vol. 152, Issue 3, pp. 174 – 178, June 2005</p>
+<p>Nordwall B.D.: "Silent Sentry A New Type of Radar", Aviation Week & Space Technology, no 30, 1998, pp 70–71</p>
+<p>H. D. Griffiths, C. J. Baker, J. Baubert, N. Kitchen, M. Treagust, "Bistatic radar using satellite-borne illuminators of opportunity", Proc. International Conference RADAR 2002, pp. 1–5, October 2002</p>
+<p>M. Malanowski, "Influence of Integration Time on Tracking Performance in PCL Radar", Proc. Photonics Applications in Astronomy, Communications, Industry, and High-Energy Physics Experiments, vol. 6937, 28 December 2007</p>
+<p>External links</p>
+<p>Simple example of passive radar using analogue TV Archived 2006-10-26 at the Wayback Machine</p>
+<p>A recording of the 2004 Watson-Watt Lecture at the UK Institution of Electrical Engineers (IEE) can be seen at the IEE website, which was on the subject of "Passive Covert Radar: Watson-Watt's Daventry Experiment Revisited".  This includes a summary of the work in this field since World War II.</p>
+<p>A recording of a briefing on "The Role of Passive Radar Sensors for Air Traffic Control" at an IEE seminar from June 2006 can be seen here [1].</p>
+<p>A recording of a briefing on "PCL Radar Tracking" at an IEE seminar from June 2006 can be seen here [2].</p>
+<p>Researchers at Embry-Riddle claiming the use of XM-Radio to detect aircraft can be found here [3]</p>
+<p>FM radio passive radar using two ultra-low-cost RTLSDR dongles</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
