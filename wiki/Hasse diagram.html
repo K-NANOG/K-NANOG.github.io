@@ -1,0 +1,92 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hasse diagram</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Hasse diagram</h2>
+                <p>In order theory, a Hasse diagram (; German: [ˈhasə]) is a type of mathematical diagram used to represent a finite partially ordered set, in the form of a drawing of its transitive reduction. Concretely, for a partially ordered set </p>
+<p>        (</p>
+<p>        S</p>
+<p>        ,</p>
+<p>        ≤</p>
+<p>        )</p>
+<p>    {\displaystyle (S,\leq )}</p>
+<p> one represents each element of </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> as a vertex in the plane and draws a line segment or curve that goes upward from one vertex </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> to another vertex </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p> whenever </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p> covers </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> (that is, whenever </p>
+<p>        x</p>
+<p>        ≠</p>
+<p>        y</p>
+<p>    {\displaystyle x\neq y}</p>
+<p>, </p>
+<p>        x</p>
+<p>        ≤</p>
+<p>        y</p>
+<p>    {\displaystyle x\leq y}</p>
+<p> and there is no </p>
+<p>        z</p>
+<p>    {\displaystyle z}</p>
+<p> distinct from </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> and </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p> with </p>
+<p>        x</p>
+<p>        ≤</p>
+<p>        z</p>
+<p>        ≤</p>
+<p>        y</p>
+<p>    {\displaystyle x\leq z\leq y}</p>
+<p>). These curves may cross each other but must not touch any vertices other than their endpoints. Such a diagram, with labeled vertices, uniquely determines its partial order.</p>
+<p>Hasse diagrams are named after Helmut Hasse (1898–1979); according to Garrett Birkhoff, they are so called because of the effective use Hasse made of them. However, Hasse was not the first to use these diagrams. One example that predates Hasse can be found in an 1895 work by Henri Gustave Vogt. Although Hasse diagrams were originally devised as a technique for making drawings of partially ordered sets by hand, they have more recently been created automatically using graph drawing techniques.</p>
+<p>In some sources, the phrase "Hasse diagram" has a different meaning: the directed acyclic graph obtained from the covering relation of a partially ordered set, independently of any drawing of that graph.</p>
+<p>Diagram design</p>
+<p>Although Hasse diagrams are simple, as well as intuitive, tools for dealing with finite posets, it turns out to be rather difficult to draw "good" diagrams. The reason is that, in general, there are many different possible ways to draw a Hasse diagram for a given poset. The simple technique of just starting with the minimal elements of an order and then drawing greater elements incrementally often produces quite poor results: symmetries and internal structure of the order are easily lost.</p>
+<p>The following example demonstrates the issue. Consider the power set of a 4-element set ordered by inclusion </p>
+<p>        ⊆</p>
+<p>    {\displaystyle \subseteq }</p>
+<p>. Below are four different Hasse diagrams for this partial order. Each subset has a node labelled with a binary encoding that shows whether a certain element is in the subset (1) or not (0):</p>
+<p>The first diagram makes clear that the power set is a graded poset. The second diagram has the same graded structure, but by making some edges longer than others, it emphasizes that the 4-dimensional cube is a combinatorial union of two 3-dimensional cubes, and that a tetrahedron (abstract 3-polytope) likewise merges two triangles (abstract 2-polytopes).  The third diagram shows some of the internal symmetry of the structure. In the fourth diagram the vertices are arranged in a 4×4 grid.</p>
+<p>Upward planarity</p>
+<p>If a partial order can be drawn as a Hasse diagram in which no two edges cross, its covering graph is said to be upward planar. A number of results on upward planarity and on crossing-free Hasse diagram construction are known:</p>
+<p>If the partial order to be drawn is a lattice, then it can be drawn without crossings if and only if it has order dimension at most two. In this case, a non-crossing drawing may be found by deriving Cartesian coordinates for the elements from their positions in the two linear orders realizing the order dimension, and then rotating the drawing counterclockwise by a 45-degree angle.</p>
+<p>If the partial order has at most one minimal element, or it has at most one maximal element, then it may be tested in linear time whether it has a non-crossing Hasse diagram.</p>
+<p>It is NP-complete to determine whether a partial order with multiple sources and sinks can be drawn as a crossing-free Hasse diagram. However, finding a crossing-free Hasse diagram is fixed-parameter tractable when parametrized by the number of articulation points and triconnected components of the transitive reduction of the partial order.</p>
+<p>If the y-coordinates of the elements of a partial order are specified, then a crossing-free Hasse diagram respecting those coordinate assignments can be found in linear time, if such a diagram exists. In particular, if the input poset is a graded poset, it is possible to determine in linear time whether there is a crossing-free Hasse diagram in which the height of each vertex is proportional to its rank.</p>
+<p>Use in UML notation</p>
+<p>In software engineering / Object-oriented design, the classes of a software system and the inheritance relation between these classes is often depicted using a class diagram, a form of Hasse diagram in which the edges connecting classes are drawn as solid line segments with an open triangle at the superclass end.</p>
+<p>Notes</p>
+<p>References</p>
+<p>External links</p>
+<p> Related media at Wikimedia Commons:</p>
+<p>Hasse diagram (Gallery)</p>
+<p>Hasse diagrams (Category)</p>
+<p>Weisstein, Eric W., "Hasse Diagram", MathWorld</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
