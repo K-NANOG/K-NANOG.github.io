@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitness landscape</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Fitness landscape</h2>
+                <p>In evolutionary biology, fitness landscapes or adaptive landscapes  (types of evolutionary landscapes) are used to visualize the relationship between genotypes and reproductive success. It is assumed that every genotype has a well-defined replication rate (often referred to as fitness). This fitness is the "height" of the landscape. Genotypes which are similar are said to be "close" to each other, while those that are very different are "far" from each other. The set of all possible genotypes, their degree of similarity, and their related fitness values is then called a fitness landscape. The idea of a fitness landscape is a metaphor to help explain flawed forms in evolution by natural selection, including exploits and glitches in animals like their reactions to supernormal stimuli.</p>
+<p>The idea of studying evolution by visualizing the distribution of fitness values as a kind of landscape was first introduced by Sewall Wright in 1932.</p>
+<p>In evolutionary optimization problems, fitness landscapes are evaluations of a fitness function for all candidate solutions (see below).</p>
+<p>In biology</p>
+<p>In all fitness landscapes, height represents and is a visual metaphor for fitness. There are three distinct ways of characterizing the other dimensions, though in each case distance represents and is a metaphor for degree of dissimilarity.</p>
+<p>Fitness landscapes are often conceived of as ranges of mountains. There exist local peaks (points from which all paths are downhill, i.e. to lower fitness) and valleys (regions from which many paths lead uphill). A fitness landscape with many local peaks surrounded by deep valleys is called rugged. If all genotypes have the same replication rate, on the other hand, a fitness landscape is said to be flat. An evolving population typically climbs uphill in the fitness landscape, by a series of small genetic changes, until – in the infinite time limit – a local optimum is reached.</p>
+<p>Note that a local optimum cannot always be found even in evolutionary time: if the local optimum can be found in a reasonable amount of time then the fitness landscape is called "easy" and if the time required is exponential then the fitness landscape is called "hard". Hard landscapes are characterized by the maze-like property by which an allele that was once beneficial becomes deleterious, forcing evolution to backtrack. However, the presence of the maze-like property in biophysically inspired fitness landscapes may not be sufficient to generate a hard landscape.</p>
+<p>Genotype to fitness landscapes</p>
+<p>Wright visualized a genotype space as a hypercube. No continuous genotype "dimension" is defined. Instead, a network of genotypes are connected via mutational paths.</p>
+<p>Stuart Kauffman's NK model falls into this category of fitness landscape. Newer network analysis techniques such as selection-weighted attraction graphing (SWAG) also use a dimensionless genotype space.</p>
+<p>Allele frequency to fitness landscapes</p>
+<p>Wright's mathematical work described fitness as a function of allele frequencies. Here, each dimension describes an allele frequency at a different gene, and goes between 0 and 1.</p>
+<p>Phenotype to fitness landscapes</p>
+<p>In the third kind of fitness landscape, each dimension represents a different phenotypic trait. Under the assumptions of quantitative genetics, these phenotypic dimensions can be mapped onto genotypes. See the visualizations below for examples of phenotype to fitness landscapes.</p>
+<p>In evolutionary optimization</p>
+<p>Apart from the field of evolutionary biology, the concept of a fitness landscape has also gained importance in evolutionary optimization methods such as genetic algorithms or evolution strategies. In evolutionary optimization, one tries to solve real-world problems (e.g., engineering or logistics problems) by imitating the dynamics of biological evolution. For example, a delivery truck with a number of destination addresses can take a large variety of different routes, but only very few will result in a short driving time.</p>
+<p>In order to use many common forms of evolutionary optimization, one has to define for every possible solution s to the problem of interest (i.e., every possible route in the case of the delivery truck) how 'good' it is. This is done by introducing a scalar-valued function f(s) (scalar valued means that f(s) is a simple number, such as 0.3, while s can be a more complicated object, for example a list of destination addresses in the case of the delivery truck), which is called the fitness function.</p>
+<p>A high f(s) implies that s is a good solution. In the case of the delivery truck, f(s) could be the number of deliveries per hour on route s. The best, or at least a very good, solution is then found in the following way: initially, a population of random solutions is created. Then, the solutions are mutated and selected for those with higher fitness, until a satisfying solution has been found.</p>
+<p>Evolutionary optimization techniques are particularly useful in situations in which it is easy to determine the quality of a single solution, but hard to go through all possible solutions one by one (it is easy to determine the driving time for a particular route of the delivery truck, but it is almost impossible to check all possible routes once the number of destinations grows to more than a handful).</p>
+<p>Even in cases where a fitness function is hard to define, the concept of a fitness landscape can be useful. For example, if fitness evaluation is by stochastic sampling, then sampling is from a (usually unknown) distribution at each point; nevertheless is can be useful to reason about the landscape formed by the expected fitness at each point. If fitness changes with time (dynamic optimisation) or with other species in the environment (co-evolution), it can still be useful to reason about the trajectories of the instantaneous fitness landscape. However, in some cases (for example, preference-based interactive evolutionary computation) the relevance is more limited, because there is no guarantee that human preferences are consistent with a single fitness assignment.</p>
+<p>The concept of a scalar valued fitness function f(s) also corresponds to the concept of a potential or energy function in physics. The two concepts only differ in that physicists traditionally think in terms of minimizing the potential function, while biologists prefer the notion that fitness is being maximized. Therefore, taking the inverse of a potential function turns it into a fitness function, and vice versa.</p>
+<p>Caveats and limitations</p>
+<p>Several important caveats exist. Since the human mind struggles to think in greater than three dimensions, 3D topologies can mislead when discussing highly multi-dimensional fitness landscapes. In particular it is not clear whether peaks in natural biological fitness landscapes are ever truly separated by fitness valleys in such multidimensional landscapes, or whether they are connected by vastly long neutral ridges. Additionally, the fitness landscape is not static in time but dependent on the changing environment and evolution of other genes. It is hence more of a seascape, further affecting how separated adaptive peaks can actually be. Additionally, it is relevant to take into account that a landscape is in general not an absolute but a relative function. Finally, since it is common to use function as a proxy for fitness when discussing enzymes, any promiscuous activities exist as overlapping landscapes that together will determine the ultimate fitness of the organism, implying a gap between different coexisting relative landscapes.</p>
+<p>With these limitations in mind, fitness landscapes can still be an instructive way of thinking about evolution. It is fundamentally possible to measure (even if not to visualise) some of the parameters of landscape ruggedness and of peak number, height, separation, and clustering. Simplified 3D landscapes can then be used relative to each other to visually represent the relevant features. Additionally, fitness landscapes of small subsets of evolutionary pathways may be experimentally constructed and visualized, potentially revealing features such as fitness peaks and valleys. Fitness landscapes of evolutionary pathways indicate the probable evolutionary steps and endpoints among sets of individual mutations.</p>
+<p>See also</p>
+<p>Viral quasispecies</p>
+<p>References</p>
+<p>External links</p>
+<p>Examples of visualized fitness landscapes</p>
+<p>Video: Using fitness landscapes to visualize evolution in action </p>
+<p>BEACON Blog—Evolution 101: Fitness Landscapes</p>
+<p>Pleiotropy Blog—an interesting discussion of Sergey Gavrilets's contributions</p>
+<p>Pup Fish Evolution—UC Davis</p>
+<p>Evolution 101—Shifting Balance Theory (Figure at bottom of page)</p>
+<p>Superimposing evolutionary trajectories onto fitness landscapes in virtual reality</p>
+<p>Further reading</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
