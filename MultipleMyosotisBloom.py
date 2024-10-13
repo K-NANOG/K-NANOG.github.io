@@ -3,7 +3,6 @@ import whisper
 import re
 import os
 import json
-import torch  # For specifying GPU usage
 
 # Function to download and convert YouTube video to MP3
 def download_youtube_mp3(youtube_url, output_path):
@@ -25,9 +24,8 @@ def download_youtube_mp3(youtube_url, output_path):
 
 # Function to transcribe audio using Whisper
 def transcribe_audio(file_path):
-    # Load the Whisper model on GPU if available
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = whisper.load_model("medium", device=device)
+    # Load the Whisper model
+    model = whisper.load_model("medium")
     
     # Transcribe the audio file with English as the default language
     result = model.transcribe(file_path, language="en")
@@ -105,6 +103,7 @@ def generate_html_from_txt(txt_file_path, html_path, youtube_url):
 
     with open(html_path, 'w', encoding='utf-8') as file:
         file.write(html_content)
+
 
 # Function to update Myosotis.html with a new card entry
 def update_myosotis_html(title, transcription_html_path, myosotis_html_path="Myosotis.html"):
