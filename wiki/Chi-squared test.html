@@ -1,0 +1,218 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chi-squared test</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Chi-squared test</h2>
+                <p>A chi-squared test (also chi-square or χ2 test) is a statistical hypothesis test used in the analysis of contingency tables when the sample sizes are large. In simpler terms, this test is primarily used to examine whether two categorical variables (two dimensions of the contingency table) are independent in influencing the test statistic (values within the table). The test is valid when the test statistic is chi-squared distributed under the null hypothesis, specifically Pearson's chi-squared test and variants thereof. Pearson's chi-squared test is used to determine whether there is a statistically significant difference between the expected frequencies and the observed frequencies in one or more categories of a contingency table. For contingency tables with smaller sample sizes, a Fisher's exact test is used instead. </p>
+<p>In the standard applications of this test, the observations are classified into mutually exclusive classes. If the null hypothesis that there are no differences between the classes in the population is true, the test statistic computed from the observations follows a χ2 frequency distribution. The purpose of the test is to evaluate how likely the observed frequencies would be assuming the null hypothesis is true.</p>
+<p>Test statistics that follow a χ2 distribution occur when the observations are independent. There are also χ2 tests for testing the null hypothesis of independence of a pair of random variables based on observations of the pairs.</p>
+<p>Chi-squared tests often refers to tests for which the distribution of the test statistic approaches the χ2 distribution asymptotically, meaning that the sampling distribution (if the null hypothesis is true) of the test statistic approximates a chi-squared distribution more and more closely as sample sizes increase.</p>
+<p>History</p>
+<p>In the 19th century, statistical analytical methods were mainly applied in biological data analysis and it was customary for researchers to assume that observations followed a normal distribution, such as Sir George Airy and Mansfield Merriman, whose works were criticized by Karl Pearson in his 1900 paper.</p>
+<p>At the end of the 19th century, Pearson noticed the existence of significant skewness within some biological observations. In order to model the observations regardless of being normal or skewed, Pearson, in a series of articles published from 1893 to 1916, devised the Pearson distribution, a family of continuous probability distributions, which includes the normal distribution and many skewed distributions, and proposed a method of statistical analysis consisting of using the Pearson distribution to model the observation and performing a test of goodness of fit to determine how well the model really fits to the observations.</p>
+<p>Pearson's chi-squared test</p>
+<p>In 1900, Pearson published a paper on the χ2 test which is considered to be one of the foundations of modern statistics. In this paper, Pearson investigated a test of goodness of fit.</p>
+<p>Suppose that n observations in a random sample from a population are classified into k mutually exclusive classes with respective observed numbers of observations xi (for i = 1,2,…,k), and a null hypothesis gives the probability pi that an observation falls into the ith class. So we have the expected numbers mi = npi for all i, where</p>
+<p>                  ∑</p>
+<p>                    i</p>
+<p>                    =</p>
+<p>                    1</p>
+<p>                    k</p>
+<p>                    p</p>
+<p>                      i</p>
+<p>                =</p>
+<p>                1</p>
+<p>                  ∑</p>
+<p>                    i</p>
+<p>                    =</p>
+<p>                    1</p>
+<p>                    k</p>
+<p>                    m</p>
+<p>                      i</p>
+<p>                =</p>
+<p>                n</p>
+<p>                  ∑</p>
+<p>                    i</p>
+<p>                    =</p>
+<p>                    1</p>
+<p>                    k</p>
+<p>                    p</p>
+<p>                      i</p>
+<p>                =</p>
+<p>                n</p>
+<p>    {\displaystyle {\begin{aligned}&\sum _{i=1}^{k}{p_{i}}=1\\[8pt]&\sum _{i=1}^{k}{m_{i}}=n\sum _{i=1}^{k}{p_{i}}=n\end{aligned}}}</p>
+<p>Pearson proposed that, under the circumstance of the null hypothesis being correct, as n → ∞ the limiting distribution of the quantity given below is the χ2 distribution.</p>
+<p>          X</p>
+<p>            2</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            k</p>
+<p>              (</p>
+<p>                x</p>
+<p>                  i</p>
+<p>              −</p>
+<p>                m</p>
+<p>                  i</p>
+<p>                )</p>
+<p>                  2</p>
+<p>              m</p>
+<p>                i</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            k</p>
+<p>                x</p>
+<p>                  i</p>
+<p>                  2</p>
+<p>                m</p>
+<p>                  i</p>
+<p>          −</p>
+<p>          n</p>
+<p>    {\displaystyle X^{2}=\sum _{i=1}^{k}{\frac {(x_{i}-m_{i})^{2}}{m_{i}}}=\sum _{i=1}^{k}{{\frac {x_{i}^{2}}{m_{i}}}-n}}</p>
+<p>Pearson dealt first with the case in which the expected numbers mi are large enough known numbers in all cells assuming every observation xi may be taken as normally distributed, and reached the result that, in the limit as n becomes large, X2 follows the χ2 distribution with k − 1 degrees of freedom.</p>
+<p>However, Pearson next considered the case in which the expected numbers depended on the parameters that had to be estimated from the sample, and suggested that, with the notation of mi being the true expected numbers and m′i being the estimated expected numbers, the difference</p>
+<p>          X</p>
+<p>            2</p>
+<p>        −</p>
+<p>              X</p>
+<p>              ′</p>
+<p>            2</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            k</p>
+<p>              x</p>
+<p>                i</p>
+<p>                2</p>
+<p>              m</p>
+<p>                i</p>
+<p>        −</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            k</p>
+<p>              x</p>
+<p>                i</p>
+<p>                2</p>
+<p>              m</p>
+<p>                i</p>
+<p>              ′</p>
+<p>    {\displaystyle X^{2}-{X'}^{2}=\sum _{i=1}^{k}{\frac {x_{i}^{2}}{m_{i}}}-\sum _{i=1}^{k}{\frac {x_{i}^{2}}{m'_{i}}}}</p>
+<p>will usually be positive and small enough to be omitted. In a conclusion, Pearson argued that if we regarded X′2 as also distributed as χ2 distribution with k − 1 degrees of freedom, the error in this approximation would not affect practical decisions. This conclusion caused some controversy in practical applications and was not settled for 20 years until Fisher's 1922 and 1924 papers.</p>
+<p>Other examples of chi-squared tests</p>
+<p>One test statistic that follows a chi-squared distribution exactly is the test that the variance of a normally distributed population has a given value based on a sample variance. Such tests are uncommon in practice because the true variance of the population is usually unknown. However, there are several statistical tests where the chi-squared distribution is approximately valid:</p>
+<p>Fisher's exact test</p>
+<p>For an exact test used in place of the 2 × 2 chi-squared test for independence, see Fisher's exact test.</p>
+<p>Binomial test</p>
+<p>For an exact test used in place of the 2 × 1 chi-squared test for goodness of fit, see binomial test.</p>
+<p>Other chi-squared tests</p>
+<p>Cochran–Mantel–Haenszel chi-squared test.</p>
+<p>McNemar's test, used in certain 2 × 2 tables with pairing</p>
+<p>Tukey's test of additivity</p>
+<p>The portmanteau test in time-series analysis, testing for the presence of autocorrelation</p>
+<p>Likelihood-ratio tests in general statistical modelling, for testing whether there is evidence of the need to move from a simple model to a more complicated one (where the simple model is nested within the complicated one).</p>
+<p>Yates's correction for continuity</p>
+<p>Using the chi-squared distribution to interpret Pearson's chi-squared statistic requires one to assume that the discrete probability of observed binomial frequencies in the table can be approximated by the continuous chi-squared distribution. This assumption is not quite correct and introduces some error.</p>
+<p>To reduce the error in approximation, Frank Yates suggested a correction for continuity that adjusts the formula for Pearson's chi-squared test by subtracting 0.5 from the absolute difference between each observed value and its expected value in a 2 × 2 contingency table. This reduces the chi-squared value obtained and thus increases its p-value.</p>
+<p>Chi-squared test for variance in a normal population</p>
+<p>If a sample of size n is taken from a population having a normal distribution, then there is a result (see distribution of the sample variance) which allows a test to be made of whether the variance of the population has a pre-determined value. For example, a manufacturing process might have been in stable condition for a long period, allowing a value for the variance to be determined essentially without error. Suppose that a variant of the process is being tested, giving rise to a small sample of n product items whose variation is to be tested. The test statistic T in this instance could be set to be the sum of squares about the sample mean, divided by the nominal value for the variance (i.e. the value to be tested as holding). Then T has a chi-squared distribution with n − 1 degrees of freedom. For example, if the sample size is 21, the acceptance region for T with a significance level of 5% is between 9.59 and 34.17.</p>
+<p>Example chi-squared test for categorical data</p>
+<p>Suppose there is a city of 1,000,000 residents with four neighborhoods: A, B, C, and D. A random sample of 650 residents of the city is taken and their occupation is recorded as "white collar", "blue collar", or "no collar". The null hypothesis is that each person's neighborhood of residence is independent of the person's occupational classification. The data are tabulated as:</p>
+<p>Let us take the sample living in neighborhood A, 150, to estimate what proportion of the whole 1,000,000 live in neighborhood A. Similarly we take ⁠349/650⁠ to estimate what proportion of the 1,000,000 are white-collar workers. By the assumption of independence under the hypothesis we should "expect" the number of white-collar workers in neighborhood A to be</p>
+<p>        150</p>
+<p>        ×</p>
+<p>            349</p>
+<p>            650</p>
+<p>        ≈</p>
+<p>        80.54</p>
+<p>    {\displaystyle 150\times {\frac {349}{650}}\approx 80.54}</p>
+<p>Then in that "cell" of the table, we have</p>
+<p>                (</p>
+<p>                    observed</p>
+<p>                  −</p>
+<p>                    expected</p>
+<p>                )</p>
+<p>                2</p>
+<p>            expected</p>
+<p>        =</p>
+<p>                (</p>
+<p>                  90</p>
+<p>                  −</p>
+<p>                  80.54</p>
+<p>                )</p>
+<p>                2</p>
+<p>            80.54</p>
+<p>        ≈</p>
+<p>        1.11</p>
+<p>    {\displaystyle {\frac {\left({\text{observed}}-{\text{expected}}\right)^{2}}{\text{expected}}}={\frac {\left(90-80.54\right)^{2}}{80.54}}\approx 1.11}</p>
+<p>The sum of these quantities over all of the cells is the test statistic; in this case, </p>
+<p>        ≈</p>
+<p>        24.57</p>
+<p>    {\displaystyle \approx 24.57}</p>
+<p>. Under the null hypothesis, this sum has approximately a chi-squared distribution whose number of degrees of freedom is</p>
+<p>        (</p>
+<p>          number of rows</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>        (</p>
+<p>          number of columns</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>        3</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>        (</p>
+<p>        4</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>        =</p>
+<p>        6</p>
+<p>    {\displaystyle ({\text{number of rows}}-1)({\text{number of columns}}-1)=(3-1)(4-1)=6}</p>
+<p>If the test statistic is improbably large according to that chi-squared distribution, then one rejects the null hypothesis of independence. Here we have a chi-squared value of 24.57, which is quite large, and therefore we have some evidence to reject the null hypothesis(H0). This means each person's neighbourhood of residence is correlated to the person's occupational classification. </p>
+<p>A related issue is a test of homogeneity. Suppose that instead of giving every resident of each of the four neighborhoods an equal chance of inclusion in the sample, we decide in advance how many residents of each neighborhood to include. Then each resident has the same chance of being chosen as do all residents of the same neighborhood, but residents of different neighborhoods would have different probabilities of being chosen if the four sample sizes are not proportional to the populations of the four neighborhoods. In such a case, we would be testing "homogeneity" rather than "independence". The question is whether the proportions of blue-collar, white-collar, and no-collar workers in the four neighborhoods are the same. However, the test is done in the same way.</p>
+<p>Applications</p>
+<p>In cryptanalysis, the chi-squared test is used to compare the distribution of plaintext and (possibly) decrypted ciphertext. The lowest value of the test means that the decryption was successful with high probability. This method can be generalized for solving modern cryptographic problems.</p>
+<p>In bioinformatics, the chi-squared test is used to compare the distribution of certain properties of genes (e.g., genomic content, mutation rate, interaction network clustering, etc.) belonging to different categories (e.g., disease genes, essential genes, genes on a certain chromosome etc.).</p>
+<p>See also</p>
+<p>Chi-squared test nomogram</p>
+<p>GEH statistic</p>
+<p>G-test</p>
+<p>Minimum chi-square estimation</p>
+<p>Nonparametric statistics</p>
+<p>Wald test</p>
+<p>Wilson score interval</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Weisstein, Eric W. "Chi-Squared Test". MathWorld.</p>
+<p>Corder, G. W.; Foreman, D. I. (2014). Nonparametric Statistics: A Step-by-Step Approach. New York: Wiley. ISBN 978-1118840313.</p>
+<p>Greenwood, Cindy; Nikulin, M. S. (1996). A guide to chi-squared testing. New York: Wiley. ISBN 0-471-55779-X.</p>
+<p>Nikulin, M. S. (1973). Chi-squared test for normality. Proceedings of the International Vilnius Conference on Probability Theory and Mathematical Statistics. Vol. 2. pp. 119–122.</p>
+<p>Bagdonavicius, Vilijandas B.; Nikulin, Mikhail S. (2011). "Chi-squared goodness-of-fit test for right censored data". International Journal of Applied Mathematics & Statistics. 24: 30–50. MR 2800388.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
