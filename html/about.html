@@ -39,6 +39,21 @@
   .grey-dot {
     color: #949494;
   }
+
+  .bio-link::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23d3d3d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .bio-link:hover::after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>');
+  }
 </style>
 
 <body>
@@ -72,33 +87,27 @@
   </div>
   <div class="flex-container">
     <div class="flex-item">
-        <p class="bio-text" style="margin-top: 10px;">
-            Hey, I'm Kenan, an undergraduate student at Paris-Saclay university
-            majoring in biology and computer science.<br><br> I'm fascinated by synthetic biology,
-            artificial intelligence, aging biology and more; here is a
+      <p class="bio-text" style="margin-top: 10px;">
+        Hey, I'm Kenan, an undergraduate student at Paris-Saclay university
+        majoring in biology and computer science.<br><br> I'm fascinated by synthetic biology, artificial intelligence, aging biology and more; here is a general
 
-            <a href="/pages/cartography-of-my-interest.html" class="bio-link" style="--hover-color: cyan;">general cartography</a> of my
-            interests.<br /><br>
-            I have a galaxy of influences but can be described as an
-            <a href="https://en.wikipedia.org/wiki/Extropianism" class="bio-link" style="--hover-color: royalblue;">extropianist</a> &
-            <a href="https://en.wikipedia.org/wiki/Existentialism" class="bio-link" style="--hover-color: blueviolet;">existentialist</a>.<br><br>
-            Furthermore <a href="/pages/ArtGallery/index.html" class="bio-link" style="--hover-color: deeppink;">art deeply moves me</a>, as it is often at the root of my every actions.<br><br>
-            I constantly seek beauty and improve myself in the process, 
-            always striving to make the best of the <a href="/pages/time.html" class="bio-link" style="--hover-color:limegreen;">time I have</a>.<br><br>
-            But other than that I'm a pretty chill guy, I'd be happy to discover anything interesting, so feel free to <a href="mailto:kenan.oggad@proton.me" class="bio-link" style="--hover-color: rgb(255, 183, 0);">reach out!</a><br><br>
-            (My recent readings are also available on 
-            <a href="https://curius.app/zhi-zhang2" class="bio-link" style="--hover-color: yellow;">my Curius</a> or <a href="https://oggad.com/WikiArticles.html" class="bio-link" style="--hover-color: rgb(73, 102, 248);">on Myosotis</a>.)
-        </p>
+        <a href="/pages/cartography-of-my-interest.html" class="bio-link" style="--hover-color: cyan;">cartography of my
+          interests.</a><br /><br>
+        I have a galaxy of influences but can be described as an
+        <a href="https://en.wikipedia.org/wiki/Extropianism" class="bio-link" style="--hover-color: royalblue;">extropianist</a> &
+        <a href="https://en.wikipedia.org/wiki/Existentialism" class="bio-link" style="--hover-color: blueviolet;">existentialist</a>.<br><br>
+        Furthermore <a href="/pages/ArtGallery/index.html" class="bio-link" style="--hover-color: deeppink;">art deeply moves me,</a> as it is often at the root of my every actions.<br><br>
+        I constantly seek beauty and improve myself in the process, 
+        always striving to make the best of the <a href="/pages/time.html" class="bio-link" style="--hover-color:limegreen;">time I have.</a><br><br>
+        But other than that I'm a pretty chill guy, I'd be happy to discover anything interesting, so feel free to <a href="mailto:kenan.oggad@proton.me" class="bio-link" style="--hover-color: rgb(255, 183, 0);">reach out!</a><br><br>
+        (My recent readings are also available on 
+        <a href="https://curius.app/zhi-zhang2" class="bio-link" style="--hover-color: yellow;">my Curius</a> or <a href="https://oggad.com/WikiArticles.html" class="bio-link" style="--hover-color: rgb(73, 102, 248);">on Myosotis.</a>)
+      </p>
     </div>
     <div class="flex-item">
-        <img src="/img/png.png" class="centered-img" />
+      <img src="/img/png.png" class="centered-img" />
     </div>
-</div>
-
-
-
-
-
+  </div>
 </body>
 <script>
   const text = document.getElementById("text");
