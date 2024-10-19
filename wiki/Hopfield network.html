@@ -1,0 +1,1274 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hopfield network</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Hopfield network</h2>
+                <p>A Hopfield network (or associative memory) is a form of recurrent neural network, or a spin glass system, that can serve as a content-addressable memory. The Hopfield network, named for John Hopfield, consists of a single layer of neurons, where each neuron is connected to every other neuron except itself. These connections are bidirectional and symmetric, meaning the weight of the connection from neuron i to neuron j is the same as the weight from neuron j to neuron i. Patterns are associatively recalled by fixing certain inputs, and dynamically evolve the network to minimize an energy function, towards local energy minimum states that correspond to stored patterns. Patterns are associatively learned (or "stored") by a Hebbian learning algorithm.</p>
+<p>One of the key features of Hopfield networks is their ability to recover complete patterns from partial or noisy inputs, making them robust in the face of incomplete or corrupted data. Their connection to statistical mechanics, recurrent networks, and human cognitive psychology has led to their application in various fields, including physics, psychology, neuroscience, and machine learning theory and practice.</p>
+<p>History</p>
+<p>One origin of associative memory is human cognitive psychology, specifically the associative memory. Frank Rosenblatt studied "close-loop cross-coupled perceptrons", which are 3-layered perceptron networks whose middle layer contains recurrent connections that change by a Hebbian learning rule.: 73–75 : Chapter 19, 21  </p>
+<p>Another model of associative memory is where the output does not loop back to the input. (Taylor, 1956) proposed such a model trained by Hebbian learning. Karl Steinbuch, who wanted to understand learning, and inspired by watching his children learn, published the Lernmatrix in 1961. It was translated to English in 1963. Similar research was done with the correlogram of (D. J. Willshaw et al., 1969). In (Teuvo Kohonen, 1974) an associative memory was trained by gradient descent.</p>
+<p>Another origin of associative memory was statistical mechanics. The Ising model was published in 1920s as a model of magnetism, however it studied the thermal equilibrium, which does not change with time. Roy J. Glauber in 1963 studied the Ising model evolving in time, as a process towards thermal equilibrium (Glauber dynamics), adding in the component of time.</p>
+<p>The second component to be added was adaptation to stimulus. Described independently by Kaoru Nakano in 1971 and Shun'ichi Amari in 1972, they proposed to modify the weights of an Ising model by Hebbian learning rule as a model of associative memory. The same idea was published by William A. Little in 1974, who was acknowledged by Hopfield in his 1982 paper.</p>
+<p>See Carpenter (1989) and Cowan (1990) for a technical description of some of these early works in associative memory.</p>
+<p>The Sherrington–Kirkpatrick model of spin glass, published in 1975, is the Hopfield network with random initialization. Sherrington and Kirkpatrick found that it is highly likely for the energy function of the SK model to have many local minima. In the 1982 paper, Hopfield applied this recently developed theory to study the Hopfield network with binary activation functions. In a 1984 paper he extended this to continuous activation functions. It became a standard model for the study of neural networks through statistical mechanics.</p>
+<p>A major advance in memory storage capacity was developed by Dimitry Krotov and Hopfield in 2016 through a change in network dynamics and energy function. This idea was further extended by Demircigil and collaborators in 2017. The continuous dynamics of large memory capacity models was developed in a series of papers between 2016 and 2020. Large memory storage capacity Hopfield Networks are now called Dense Associative Memories or modern Hopfield networks.</p>
+<p>In 2024, John J. Hopfield and Geoffrey E. Hinton were awarded the physics Nobel prize for their foundational contributions to machine learning, such as the Hopfield network.</p>
+<p>Structure</p>
+<p>The units in Hopfield nets are binary threshold units, i.e. the units only take on two different values for their states, and the value is determined by whether or not the unit's input exceeds its threshold </p>
+<p>          U</p>
+<p>            i</p>
+<p>    {\displaystyle U_{i}}</p>
+<p>. Discrete Hopfield nets describe relationships between binary (firing or not-firing) neurons </p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        j</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        N</p>
+<p>    {\displaystyle 1,2,\ldots ,i,j,\ldots ,N}</p>
+<p>.  At a certain time, the state of the neural net is described by a vector </p>
+<p>        V</p>
+<p>    {\displaystyle V}</p>
+<p>, which records which neurons are firing in a binary word of </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> bits.</p>
+<p>The interactions </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle w_{ij}}</p>
+<p> between neurons have units that usually take on values of 1 or −1, and this convention will be used throughout this article. However, other literature might use units that take values of 0 and 1.  These interactions are "learned" via Hebb's law of association, such that, for a certain state  </p>
+<p>          V</p>
+<p>            s</p>
+<p>    {\displaystyle V^{s}}</p>
+<p> and distinct nodes </p>
+<p>        i</p>
+<p>        ,</p>
+<p>        j</p>
+<p>    {\displaystyle i,j}</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        =</p>
+<p>          V</p>
+<p>            i</p>
+<p>            s</p>
+<p>          V</p>
+<p>            j</p>
+<p>            s</p>
+<p>    {\displaystyle w_{ij}=V_{i}^{s}V_{j}^{s}}</p>
+<p>but </p>
+<p>          w</p>
+<p>            i</p>
+<p>            i</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle w_{ii}=0}</p>
+<p>.</p>
+<p>(Note that the Hebbian learning rule takes the form </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        =</p>
+<p>        (</p>
+<p>        2</p>
+<p>          V</p>
+<p>            i</p>
+<p>            s</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>        (</p>
+<p>        2</p>
+<p>          V</p>
+<p>            j</p>
+<p>            s</p>
+<p>        −</p>
+<p>        1</p>
+<p>        )</p>
+<p>    {\displaystyle w_{ij}=(2V_{i}^{s}-1)(2V_{j}^{s}-1)}</p>
+<p> when the units assume values in </p>
+<p>        {</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        1</p>
+<p>        }</p>
+<p>    {\displaystyle \{0,1\}}</p>
+<p>.)</p>
+<p>Once the network is trained, </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle w_{ij}}</p>
+<p> no longer evolve.  If a new state of neurons </p>
+<p>          V</p>
+<p>              s</p>
+<p>              ′</p>
+<p>    {\displaystyle V^{s'}}</p>
+<p> is introduced to the neural network, the net acts on neurons such that</p>
+<p>          V</p>
+<p>            i</p>
+<p>              s</p>
+<p>              ′</p>
+<p>        →</p>
+<p>        1</p>
+<p>    {\displaystyle V_{i}^{s'}\rightarrow 1}</p>
+<p> if </p>
+<p>          ∑</p>
+<p>            j</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>          V</p>
+<p>            j</p>
+<p>              s</p>
+<p>              ′</p>
+<p>        ></p>
+<p>          U</p>
+<p>            i</p>
+<p>    {\displaystyle \sum _{j}w_{ij}V_{j}^{s'}>U_{i}}</p>
+<p>          V</p>
+<p>            i</p>
+<p>              s</p>
+<p>              ′</p>
+<p>        →</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle V_{i}^{s'}\rightarrow -1}</p>
+<p> if </p>
+<p>          ∑</p>
+<p>            j</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>          V</p>
+<p>            j</p>
+<p>              s</p>
+<p>              ′</p>
+<p>        <</p>
+<p>          U</p>
+<p>            i</p>
+<p>    {\displaystyle \sum _{j}w_{ij}V_{j}^{s'}<U_{i}}</p>
+<p>where </p>
+<p>          U</p>
+<p>            i</p>
+<p>    {\displaystyle U_{i}}</p>
+<p> is the threshold value of the i'th neuron (often taken to be 0). In this way, Hopfield networks have the ability to "remember" states stored in the interaction matrix, because if a new state </p>
+<p>          V</p>
+<p>              s</p>
+<p>              ′</p>
+<p>    {\displaystyle V^{s'}}</p>
+<p> is subjected to the interaction matrix, each neuron will change until it matches the original state </p>
+<p>          V</p>
+<p>            s</p>
+<p>    {\displaystyle V^{s}}</p>
+<p> (see the Updates section below).</p>
+<p>The connections in a Hopfield net typically have the following restrictions:</p>
+<p>          w</p>
+<p>            i</p>
+<p>            i</p>
+<p>        =</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        ∀</p>
+<p>        i</p>
+<p>    {\displaystyle w_{ii}=0,\forall i}</p>
+<p> (no unit has a connection with itself)</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        =</p>
+<p>          w</p>
+<p>            j</p>
+<p>            i</p>
+<p>        ,</p>
+<p>        ∀</p>
+<p>        i</p>
+<p>        ,</p>
+<p>        j</p>
+<p>    {\displaystyle w_{ij}=w_{ji},\forall i,j}</p>
+<p> (connections are symmetric)</p>
+<p>The constraint that weights are symmetric guarantees that the energy function decreases monotonically while following the activation rules. A network with asymmetric weights may exhibit some periodic or chaotic behaviour; however, Hopfield found that this behavior is confined to relatively small parts of the phase space and does not impair the network's ability to act as a content-addressable associative memory system.</p>
+<p>Hopfield also modeled neural nets for continuous values, in which the electric output of each neuron is not binary but some value between 0 and 1.  He found that this type of network was also able to store and reproduce memorized states.</p>
+<p>Notice that every pair of units i and j in a Hopfield network has a connection that is described by the connectivity weight </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle w_{ij}}</p>
+<p>. In this sense, the Hopfield network can be formally described as a complete undirected graph </p>
+<p>        G</p>
+<p>        =</p>
+<p>        ⟨</p>
+<p>        V</p>
+<p>        ,</p>
+<p>        f</p>
+<p>        ⟩</p>
+<p>    {\displaystyle G=\langle V,f\rangle }</p>
+<p>, where </p>
+<p>        V</p>
+<p>    {\displaystyle V}</p>
+<p> is a set of McCulloch–Pitts neurons and </p>
+<p>        f</p>
+<p>        :</p>
+<p>          V</p>
+<p>            2</p>
+<p>        →</p>
+<p>          R</p>
+<p>    {\displaystyle f:V^{2}\rightarrow \mathbb {R} }</p>
+<p> is a function that links pairs of units to a real value, the connectivity weight.</p>
+<p>Updating</p>
+<p>Updating one unit (node in the graph simulating the artificial neuron) in the Hopfield network is performed using the following rule:</p>
+<p>          s</p>
+<p>            i</p>
+<p>        ←</p>
+<p>          {</p>
+<p>                  +</p>
+<p>                  1</p>
+<p>                    if </p>
+<p>                    ∑</p>
+<p>                      j</p>
+<p>                      w</p>
+<p>                        i</p>
+<p>                        j</p>
+<p>                      s</p>
+<p>                        j</p>
+<p>                  ≥</p>
+<p>                    θ</p>
+<p>                      i</p>
+<p>                  ,</p>
+<p>                  −</p>
+<p>                  1</p>
+<p>                    otherwise.</p>
+<p>    {\displaystyle s_{i}\leftarrow \left\{{\begin{array}{ll}+1&{\text{if }}\sum _{j}{w_{ij}s_{j}}\geq \theta _{i},\\-1&{\text{otherwise.}}\end{array}}\right.}</p>
+<p>where:</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle w_{ij}}</p>
+<p> is the strength of the connection weight from unit j to unit i (the weight of the connection).</p>
+<p>          s</p>
+<p>            i</p>
+<p>    {\displaystyle s_{i}}</p>
+<p> is the state of unit i.</p>
+<p>          θ</p>
+<p>            i</p>
+<p>    {\displaystyle \theta _{i}}</p>
+<p> is the threshold of unit i.</p>
+<p>Updates in the Hopfield network can be performed in two different ways:</p>
+<p>Asynchronous: Only one unit is updated at a time. This unit can be picked at random, or a pre-defined order can be imposed from the very beginning.</p>
+<p>Synchronous: All units are updated at the same time. This requires a central clock to the system in order to maintain synchronization. This method is viewed by some as less realistic, based on an absence of observed global clock influencing analogous biological or physical systems of interest.</p>
+<p>Neurons "attract or repel each other" in state space</p>
+<p>The weight between two units has a powerful impact upon the values of the neurons. Consider the connection weight </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle w_{ij}}</p>
+<p> between two neurons i and j. If </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        ></p>
+<p>        0</p>
+<p>    {\displaystyle w_{ij}>0}</p>
+<p>, the updating rule implies that:</p>
+<p>when </p>
+<p>          s</p>
+<p>            j</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle s_{j}=1}</p>
+<p>, the contribution of j in the weighted sum is positive. Thus, </p>
+<p>          s</p>
+<p>            i</p>
+<p>    {\displaystyle s_{i}}</p>
+<p> is pulled by j towards its value </p>
+<p>          s</p>
+<p>            i</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle s_{i}=1}</p>
+<p>when </p>
+<p>          s</p>
+<p>            j</p>
+<p>        =</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle s_{j}=-1}</p>
+<p>, the contribution of j in the weighted sum is negative. Then again, </p>
+<p>          s</p>
+<p>            i</p>
+<p>    {\displaystyle s_{i}}</p>
+<p> is pushed by j towards its value </p>
+<p>          s</p>
+<p>            i</p>
+<p>        =</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle s_{i}=-1}</p>
+<p>Thus, the values of neurons i and j will converge if the weight between them is positive. Similarly, they will diverge if the weight is negative.</p>
+<p>Convergence properties of discrete and continuous Hopfield networks</p>
+<p>Bruck in his paper in 1990  studied discrete Hopfield networks and proved a generalized convergence theorem that is based on the connection between the network's dynamics and cuts in the associated graph. This generalization covered both asynchronous as well as synchronous dynamics and presented elementary proofs based on greedy algorithms for max-cut in graphs. A subsequent paper further investigated the behavior of any neuron in both discrete-time and continuous-time Hopfield networks when the corresponding energy function is minimized during an optimization process.  Bruck showed that neuron j changes its state if and only if it further decreases the following biased pseudo-cut.  The discrete Hopfield network minimizes the following biased pseudo-cut for the synaptic weight matrix of the Hopfield net.</p>
+<p>          J</p>
+<p>            p</p>
+<p>            s</p>
+<p>            e</p>
+<p>            u</p>
+<p>            d</p>
+<p>            o</p>
+<p>            −</p>
+<p>            c</p>
+<p>            u</p>
+<p>            t</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                1</p>
+<p>            (</p>
+<p>            k</p>
+<p>            )</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                2</p>
+<p>            (</p>
+<p>            k</p>
+<p>            )</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        +</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ∈</p>
+<p>              C</p>
+<p>                1</p>
+<p>            (</p>
+<p>            k</p>
+<p>            )</p>
+<p>            θ</p>
+<p>              j</p>
+<p>    {\displaystyle J_{pseudo-cut}(k)=\sum _{i\in C_{1}(k)}\sum _{j\in C_{2}(k)}w_{ij}+\sum _{j\in C_{1}(k)}{\theta _{j}}}</p>
+<p>where </p>
+<p>          C</p>
+<p>            1</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>    {\displaystyle C_{1}(k)}</p>
+<p> and </p>
+<p>          C</p>
+<p>            2</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>    {\displaystyle C_{2}(k)}</p>
+<p> represents the set of neurons which are −1 and +1, respectively, at time </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p>.  For further details, see the recent paper.</p>
+<p>The discrete-time Hopfield Network always minimizes exactly the following pseudo-cut</p>
+<p>        U</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        (</p>
+<p>          s</p>
+<p>            i</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>        −</p>
+<p>          s</p>
+<p>            j</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>          )</p>
+<p>            2</p>
+<p>        +</p>
+<p>        2</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          θ</p>
+<p>            j</p>
+<p>          s</p>
+<p>            j</p>
+<p>        (</p>
+<p>        k</p>
+<p>        )</p>
+<p>    {\displaystyle U(k)=\sum _{i=1}^{N}\sum _{j=1}^{N}w_{ij}(s_{i}(k)-s_{j}(k))^{2}+2\sum _{j=1}^{N}\theta _{j}s_{j}(k)}</p>
+<p>The continuous-time Hopfield network always minimizes an upper bound to the following weighted cut</p>
+<p>        V</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        (</p>
+<p>        f</p>
+<p>        (</p>
+<p>          s</p>
+<p>            i</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        )</p>
+<p>        −</p>
+<p>        f</p>
+<p>        (</p>
+<p>          s</p>
+<p>            j</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          )</p>
+<p>            2</p>
+<p>        +</p>
+<p>        2</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          θ</p>
+<p>            j</p>
+<p>        f</p>
+<p>        (</p>
+<p>          s</p>
+<p>            j</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle V(t)=\sum _{i=1}^{N}\sum _{j=1}^{N}w_{ij}(f(s_{i}(t))-f(s_{j}(t))^{2}+2\sum _{j=1}^{N}\theta _{j}f(s_{j}(t))}</p>
+<p>where </p>
+<p>        f</p>
+<p>        (</p>
+<p>        ⋅</p>
+<p>        )</p>
+<p>    {\displaystyle f(\cdot )}</p>
+<p> is a zero-centered sigmoid function.</p>
+<p>The complex Hopfield network, on the other hand, generally tends to minimize the so-called shadow-cut of the complex weight matrix of the net.</p>
+<p>Energy</p>
+<p>Hopfield nets have a scalar value associated with each state of the network, referred to as the "energy", E, of the network, where:</p>
+<p>        E</p>
+<p>        =</p>
+<p>        −</p>
+<p>            1</p>
+<p>            2</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            ,</p>
+<p>            j</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>          s</p>
+<p>            i</p>
+<p>          s</p>
+<p>            j</p>
+<p>        −</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>          θ</p>
+<p>            i</p>
+<p>          s</p>
+<p>            i</p>
+<p>    {\displaystyle E=-{\frac {1}{2}}\sum _{i,j}w_{ij}s_{i}s_{j}-\sum _{i}\theta _{i}s_{i}}</p>
+<p>This quantity is called "energy" because it either decreases or stays the same upon network units being updated. Furthermore, under repeated updating the network will eventually converge to a state which is a local minimum in the energy function (which is considered to be a Lyapunov function). Thus, if a state is a local minimum in the energy function it is a stable state for the network. Note that this energy function belongs to a general class of models in physics under the name of Ising models; these in turn are a special case of Markov networks, since the associated probability measure, the Gibbs measure, has the Markov property.</p>
+<p>Hopfield network in optimization</p>
+<p>Hopfield and Tank presented the Hopfield network application in solving the classical traveling-salesman problem in 1985. Since then, the Hopfield network has been widely used for optimization. The idea of using the Hopfield network in optimization problems is straightforward: If a constrained/unconstrained cost function can be written in the form of the Hopfield energy function E, then there exists a Hopfield network whose equilibrium points represent solutions to the constrained/unconstrained optimization problem.  Minimizing the Hopfield energy function both minimizes the objective function and satisfies the constraints also as the constraints are "embedded" into the synaptic weights of the network. Although including the optimization constraints into the synaptic weights in the best possible way is a challenging task, many difficult optimization problems with constraints in different disciplines have been converted to the Hopfield energy function: Associative memory systems, Analog-to-Digital conversion, job-shop scheduling problem, quadratic assignment and other related NP-complete problems, channel allocation problem in wireless networks, mobile ad-hoc network routing problem, image restoration, system identification, combinatorial optimization, etc, just to name a few. However, while it is possible to convert hard optimization problems to Hopfield energy functions, it does not guarantee convergence to a solution (even in exponential time).</p>
+<p>Initialization and running</p>
+<p>Initialization of the Hopfield networks is done by setting the values of the units to the desired start pattern. Repeated updates are then performed until the network converges to an attractor pattern.  Convergence is generally assured, as Hopfield proved that the attractors of this nonlinear dynamical system are stable, not periodic or chaotic as in some other systems.  Therefore, in the context of Hopfield networks, an attractor pattern is a final stable state, a pattern that cannot change any value within it under updating.</p>
+<p>Training</p>
+<p>Training a Hopfield net involves lowering the energy of states that the net should "remember". This allows the net to serve as a content addressable memory system, that is to say, the network will converge to a "remembered" state if it is given only part of the state. The net can be used to recover from a distorted input to the trained state that is most similar to that input. This is called associative memory because it recovers memories on the basis of similarity. For example, if we train a Hopfield net with five units so that the state (1, −1, 1, −1, 1) is an energy minimum, and we give the network the state (1, −1, −1, −1, 1) it will converge to (1, −1, 1, −1, 1). Thus, the network is properly trained when the energy of states which the network should remember are local minima. Note that, in contrast to Perceptron training, the thresholds of the neurons are never updated.</p>
+<p>Learning rules</p>
+<p>There are various different learning rules that can be used to store information in the memory of the Hopfield network. It is desirable for a learning rule to have both of the following two properties:</p>
+<p>Local: A learning rule is local if each weight is updated using information available to neurons on either side of the connection that is associated with that particular weight.</p>
+<p>Incremental: New patterns can be learned without using information from the old patterns that have been also used for training. That is, when a new pattern is used for training, the new values for the weights only depend on the old values and on the new pattern.</p>
+<p>These properties are desirable, since a learning rule satisfying them is more biologically plausible. For example, since the human brain is always learning new concepts, one can reason that human learning is incremental. A learning system that was not incremental would generally be trained only once, with a huge batch of training data.</p>
+<p>Hebbian learning rule for Hopfield networks</p>
+<p>Hebbian theory was introduced by Donald Hebb in 1949 in order to explain "associative learning", in which simultaneous activation of neuron cells leads to pronounced increases in synaptic strength between those cells. It is often summarized as "Neurons that fire together wire together. Neurons that fire out of sync fail to link".</p>
+<p>The Hebbian rule is both local and incremental. For the Hopfield networks, it is implemented in the following manner when learning </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p>binary patterns:</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>        =</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ∑</p>
+<p>            μ</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>            μ</p>
+<p>          ϵ</p>
+<p>            j</p>
+<p>            μ</p>
+<p>    {\displaystyle w_{ij}={\frac {1}{n}}\sum _{\mu =1}^{n}\epsilon _{i}^{\mu }\epsilon _{j}^{\mu }}</p>
+<p>where </p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>            μ</p>
+<p>    {\displaystyle \epsilon _{i}^{\mu }}</p>
+<p> represents bit i from pattern </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>.</p>
+<p>If the bits corresponding to neurons i and j are equal in pattern </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>, then the product  </p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>            μ</p>
+<p>          ϵ</p>
+<p>            j</p>
+<p>            μ</p>
+<p>    {\displaystyle \epsilon _{i}^{\mu }\epsilon _{j}^{\mu }}</p>
+<p> will be positive. This would, in turn, have a positive effect on the weight </p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle w_{ij}}</p>
+<p> and the values of i and j will tend to become equal. The opposite happens if the bits corresponding to neurons i and j are different.</p>
+<p>Storkey learning rule</p>
+<p>This rule was introduced by Amos Storkey in 1997 and is both local and incremental. Storkey also showed that a Hopfield network trained using this rule has a greater capacity than a corresponding network trained using the Hebbian rule. The weight matrix of an attractor neural network is said to follow the Storkey learning rule if it obeys:</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>            ν</p>
+<p>        =</p>
+<p>          w</p>
+<p>            i</p>
+<p>            j</p>
+<p>            ν</p>
+<p>            −</p>
+<p>            1</p>
+<p>        +</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>            ν</p>
+<p>          ϵ</p>
+<p>            j</p>
+<p>            ν</p>
+<p>        −</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>            ν</p>
+<p>          h</p>
+<p>            j</p>
+<p>            i</p>
+<p>            ν</p>
+<p>        −</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ϵ</p>
+<p>            j</p>
+<p>            ν</p>
+<p>          h</p>
+<p>            i</p>
+<p>            j</p>
+<p>            ν</p>
+<p>    {\displaystyle w_{ij}^{\nu }=w_{ij}^{\nu -1}+{\frac {1}{n}}\epsilon _{i}^{\nu }\epsilon _{j}^{\nu }-{\frac {1}{n}}\epsilon _{i}^{\nu }h_{ji}^{\nu }-{\frac {1}{n}}\epsilon _{j}^{\nu }h_{ij}^{\nu }}</p>
+<p>where </p>
+<p>          h</p>
+<p>            i</p>
+<p>            j</p>
+<p>            ν</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            1</p>
+<p>            :</p>
+<p>            i</p>
+<p>            ≠</p>
+<p>            k</p>
+<p>            ≠</p>
+<p>            j</p>
+<p>            n</p>
+<p>          w</p>
+<p>            i</p>
+<p>            k</p>
+<p>            ν</p>
+<p>            −</p>
+<p>            1</p>
+<p>          ϵ</p>
+<p>            k</p>
+<p>            ν</p>
+<p>    {\displaystyle h_{ij}^{\nu }=\sum _{k=1~:~i\neq k\neq j}^{n}w_{ik}^{\nu -1}\epsilon _{k}^{\nu }}</p>
+<p> is a form of local field at neuron i.</p>
+<p>This learning rule is local, since the synapses take into account only neurons at their sides. The rule makes use of more information from the patterns and weights than the generalized Hebbian rule, due to the effect of the local field.</p>
+<p>Spurious patterns</p>
+<p>Patterns that the network uses for training (called retrieval states) become attractors of the system. Repeated updates would eventually lead to convergence to one of the retrieval states. However, sometimes the network will converge to spurious patterns (different from the training patterns). In fact, the number of spurious patterns can be exponential in the number of stored patterns, even if the stored patterns are orthogonal. The energy in these spurious patterns is also a local minimum. For each stored pattern x, the negation -x is also a spurious pattern.</p>
+<p>A spurious state can also be a linear combination of an odd number of retrieval states. For example, when using 3 patterns </p>
+<p>          μ</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          μ</p>
+<p>            2</p>
+<p>        ,</p>
+<p>          μ</p>
+<p>            3</p>
+<p>    {\displaystyle \mu _{1},\mu _{2},\mu _{3}}</p>
+<p>, one can get the following spurious state:</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>              m</p>
+<p>              i</p>
+<p>              x</p>
+<p>        =</p>
+<p>        ±</p>
+<p>        sgn</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        ±</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>              μ</p>
+<p>                1</p>
+<p>        ±</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>              μ</p>
+<p>                2</p>
+<p>        ±</p>
+<p>          ϵ</p>
+<p>            i</p>
+<p>              μ</p>
+<p>                3</p>
+<p>        )</p>
+<p>    {\displaystyle \epsilon _{i}^{\rm {mix}}=\pm \operatorname {sgn}(\pm \epsilon _{i}^{\mu _{1}}\pm \epsilon _{i}^{\mu _{2}}\pm \epsilon _{i}^{\mu _{3}})}</p>
+<p>Spurious patterns that have an even number of states cannot exist, since they might sum up to zero</p>
+<p>Capacity</p>
+<p>The Network capacity of the Hopfield network model is determined by neuron amounts and connections within a given network. Therefore, the number of memories that are able to be stored is dependent on neurons and connections. Furthermore, it was shown that the recall accuracy between vectors and nodes was 0.138 (approximately 138 vectors can be recalled from storage for every 1000 nodes) (Hertz et al., 1991). Therefore, it is evident that many mistakes will occur if one tries to store a large number of vectors. When the Hopfield model does not recall the right pattern, it is possible that an intrusion has taken place, since semantically related items tend to confuse the individual, and recollection of the wrong pattern occurs. Therefore, the Hopfield network model is shown to confuse one stored item with that of another upon retrieval. Perfect recalls and high capacity, >0.14, can be loaded in the network by Storkey learning method; ETAM, ETAM experiments also in. Ulterior models inspired by the Hopfield network were later devised to raise the storage limit and reduce the retrieval error rate, with some being capable of one-shot learning.</p>
+<p>The storage capacity can be given as </p>
+<p>        C</p>
+<p>        ≅</p>
+<p>            n</p>
+<p>              2</p>
+<p>                log</p>
+<p>                  2</p>
+<p>              ⁡</p>
+<p>              n</p>
+<p>    {\displaystyle C\cong {\frac {n}{2\log _{2}n}}}</p>
+<p> where </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> is the number of neurons in the net.</p>
+<p>Human memory</p>
+<p>The Hopfield network is a model for human associative learning and recall. It accounts for associative memory through the incorporation of memory vectors. Memory vectors can be slightly used, and this would spark the retrieval of the most similar vector in the network. However, we will find out that due to this process, intrusions can occur. In associative memory for the Hopfield network, there are two types of operations: auto-association and hetero-association. The first being when a vector is associated with itself, and the latter being when two different vectors are associated in storage. Furthermore, both types of operations are possible to store within a single memory matrix, but only if that given representation matrix is not one or the other of the operations, but rather the combination (auto-associative and hetero-associative) of the two.</p>
+<p>Hopfield's network model utilizes the same learning rule as Hebb's (1949) learning rule, which characterised learning as being a result of the strengthening of the weights in cases of neuronal activity.</p>
+<p>Rizzuto and Kahana (2001) were able to show that the neural network model can account for repetition on recall accuracy by incorporating a probabilistic-learning algorithm. During the retrieval process, no learning occurs. As a result, the weights of the network remain fixed, showing that the model is able to switch from a learning stage to a recall stage. By adding contextual drift they were able to show the rapid forgetting that occurs in a Hopfield model during a cued-recall task. The entire network contributes to the change in the activation of any single node.</p>
+<p>McCulloch and Pitts' (1943) dynamical rule, which describes the behavior of neurons, does so in a way that shows how the activations of multiple neurons map onto the activation of a new neuron's firing rate, and how the weights of the neurons strengthen the synaptic connections between the new activated neuron (and those that activated it). Hopfield would use McCulloch–Pitts's dynamical rule in order to show how retrieval is possible in the Hopfield network. However, Hopfield would do so in a repetitious fashion. Hopfield would use a nonlinear activation function, instead of using a linear function. This would therefore create the Hopfield dynamical rule and with this, Hopfield was able to show that with the nonlinear activation function, the dynamical rule will always modify the values of the state vector in the direction of one of the stored patterns.</p>
+<p>Dense associative memory or modern Hopfield network</p>
+<p>Hopfield networks are recurrent neural networks with dynamical trajectories converging to fixed point attractor states and described by an energy function. The state of each model neuron </p>
+<p>        i</p>
+<p>    {\textstyle i}</p>
+<p> is defined by a time-dependent variable </p>
+<p>          V</p>
+<p>            i</p>
+<p>    {\displaystyle V_{i}}</p>
+<p>, which can be chosen to be either discrete or continuous. A complete model describes the mathematics of how the future state of activity of each neuron depends on the known present or previous activity of all the neurons.</p>
+<p>In the original Hopfield model of associative memory, the variables were binary, and the dynamics were described by a one-at-a-time update of the state of the neurons. An energy function quadratic in the </p>
+<p>          V</p>
+<p>            i</p>
+<p>    {\displaystyle V_{i}}</p>
+<p> was defined, and the dynamics consisted of changing the activity of each single neuron </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p> only if doing so would lower the total energy of the system. This same idea was extended to the case of </p>
+<p>          V</p>
+<p>            i</p>
+<p>    {\displaystyle V_{i}}</p>
+<p> being a continuous variable representing the output of neuron </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>, and </p>
+<p>          V</p>
+<p>            i</p>
+<p>    {\displaystyle V_{i}}</p>
+<p> being a monotonic function of an input current. The dynamics became expressed as a set of first-order differential equations for which the "energy" of the system always decreased.  The energy in the continuous case has one term which is quadratic in the </p>
+<p>          V</p>
+<p>            i</p>
+<p>    {\displaystyle V_{i}}</p>
+<p> (as in the binary model), and a second term which depends on the gain function (neuron's activation function). While having many desirable properties of associative memory, both of these classical systems suffer from a small memory storage capacity, which scales linearly with the number of input features. In contrast, by increasing the number of parameters in the model so that there are not just pair-wise but also higher-order interactions between the neurons, one can increase the memory storage capacity.</p>
+<p>Dense Associative Memories (also known as the modern Hopfield networks) are generalizations of the classical Hopfield Networks that break the linear scaling relationship between the number of input features and the number of stored memories. This is achieved by introducing stronger non-linearities (either in the energy function or neurons' activation functions) leading to super-linear (even an exponential) memory storage capacity as a function of the number of feature neurons, in effect increasing the order of interactions between the neurons. The network still requires a sufficient number of hidden neurons.</p>
+<p>The key theoretical idea behind dense associative memory networks is to use an energy function and an update rule that is more sharply peaked around the stored memories in the space of neuron's configurations compared to the classical model, as demonstrated when the higher-order interactions and subsequent energy landscapes are explicitly modelled.</p>
+<p>Discrete variables</p>
+<p>A simple example of the modern Hopfield network can be written in terms of binary variables </p>
+<p>          V</p>
+<p>            i</p>
+<p>    {\displaystyle V_{i}}</p>
+<p> that represent the active </p>
+<p>          V</p>
+<p>            i</p>
+<p>        =</p>
+<p>        +</p>
+<p>        1</p>
+<p>    {\displaystyle V_{i}=+1}</p>
+<p> and inactive </p>
+<p>          V</p>
+<p>            i</p>
+<p>        =</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle V_{i}=-1}</p>
+<p> state of the model neuron </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>.</p>
+<p>        E</p>
+<p>        =</p>
+<p>        −</p>
+<p>          ∑</p>
+<p>            μ</p>
+<p>            =</p>
+<p>            1</p>
+<p>              N</p>
+<p>                mem</p>
+<p>        F</p>
+<p>            (</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>              N</p>
+<p>                f</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            i</p>
+<p>          V</p>
+<p>            i</p>
+<p>            )</p>
+<p>    {\displaystyle E=-\sum \limits _{\mu =1}^{N_{\text{mem}}}F{\Big (}\sum \limits _{i=1}^{N_{f}}\xi _{\mu i}V_{i}{\Big )}}</p>
+<p>In this formula the weights </p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            i</p>
+<p>    {\textstyle \xi _{\mu i}}</p>
+<p> represent the matrix of memory vectors (index </p>
+<p>        μ</p>
+<p>        =</p>
+<p>        1...</p>
+<p>          N</p>
+<p>            mem</p>
+<p>    {\displaystyle \mu =1...N_{\text{mem}}}</p>
+<p> enumerates different memories, and index </p>
+<p>        i</p>
+<p>        =</p>
+<p>        1...</p>
+<p>          N</p>
+<p>            f</p>
+<p>    {\displaystyle i=1...N_{f}}</p>
+<p> enumerates the content of each memory corresponding to the </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>-th feature neuron), and the function </p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle F(x)}</p>
+<p> is a rapidly growing non-linear function. The update rule for individual neurons (in the asynchronous case) can be written in the following form </p>
+<p>          V</p>
+<p>            i</p>
+<p>            (</p>
+<p>            t</p>
+<p>            +</p>
+<p>            1</p>
+<p>            )</p>
+<p>        =</p>
+<p>        S</p>
+<p>        i</p>
+<p>        g</p>
+<p>        n</p>
+<p>            [</p>
+<p>          ∑</p>
+<p>            μ</p>
+<p>            =</p>
+<p>            1</p>
+<p>              N</p>
+<p>                mem</p>
+<p>            (</p>
+<p>        F</p>
+<p>            (</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            i</p>
+<p>        +</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ≠</p>
+<p>            i</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            j</p>
+<p>          V</p>
+<p>            j</p>
+<p>            (</p>
+<p>            t</p>
+<p>            )</p>
+<p>            )</p>
+<p>        −</p>
+<p>        F</p>
+<p>            (</p>
+<p>        −</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            i</p>
+<p>        +</p>
+<p>          ∑</p>
+<p>            j</p>
+<p>            ≠</p>
+<p>            i</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            j</p>
+<p>          V</p>
+<p>            j</p>
+<p>            (</p>
+<p>            t</p>
+<p>            )</p>
+<p>            )</p>
+<p>            )</p>
+<p>            ]</p>
+<p>    {\displaystyle V_{i}^{(t+1)}=Sign{\bigg [}\sum \limits _{\mu =1}^{N_{\text{mem}}}{\bigg (}F{\Big (}\xi _{\mu i}+\sum \limits _{j\neq i}\xi _{\mu j}V_{j}^{(t)}{\Big )}-F{\Big (}-\xi _{\mu i}+\sum \limits _{j\neq i}\xi _{\mu j}V_{j}^{(t)}{\Big )}{\bigg )}{\bigg ]}}</p>
+<p>which states that in order to calculate the updated state of the </p>
+<p>        i</p>
+<p>    {\textstyle i}</p>
+<p>-th neuron the network compares two energies: the energy of the network with the </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>-th neuron in the ON state and the energy of the network with the </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>-th neuron in the OFF state, given the states of the remaining neuron. The updated state of the </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>-th neuron selects the state that has the lowest of the two energies.</p>
+<p>In the limiting case when the non-linear energy function is quadratic </p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>          x</p>
+<p>            2</p>
+<p>    {\displaystyle F(x)=x^{2}}</p>
+<p> these equations reduce to the familiar energy function and the update rule for the classical binary Hopfield Network.</p>
+<p>The memory storage capacity of these networks can be calculated for random binary patterns. For the power energy function </p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>          x</p>
+<p>            n</p>
+<p>    {\displaystyle F(x)=x^{n}}</p>
+<p> the maximal number of memories that can be stored and retrieved from this network without errors is given by</p>
+<p>          N</p>
+<p>            mem</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>        ≈</p>
+<p>            1</p>
+<p>              2</p>
+<p>              (</p>
+<p>              2</p>
+<p>              n</p>
+<p>              −</p>
+<p>              3</p>
+<p>              )</p>
+<p>              !</p>
+<p>              !</p>
+<p>              N</p>
+<p>                f</p>
+<p>                n</p>
+<p>                −</p>
+<p>                1</p>
+<p>              ln</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>                N</p>
+<p>                  f</p>
+<p>              )</p>
+<p>    {\displaystyle N_{\text{mem}}^{max}\approx {\frac {1}{2(2n-3)!!}}{\frac {N_{f}^{n-1}}{\ln(N_{f})}}}</p>
+<p>For an exponential energy function </p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>          e</p>
+<p>            x</p>
+<p>    {\textstyle F(x)=e^{x}}</p>
+<p> the memory storage capacity is exponential in the number of feature neurons</p>
+<p>          N</p>
+<p>            mem</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>        ≈</p>
+<p>          2</p>
+<p>              N</p>
+<p>                f</p>
+<p>              /</p>
+<p>            2</p>
+<p>    {\displaystyle N_{\text{mem}}^{max}\approx 2^{N_{f}/2}}</p>
+<p>Continuous variables</p>
+<p>Modern Hopfield networks or dense associative memories can be best understood in continuous variables and continuous time. Consider the network architecture, shown in Fig.1, and the equations for neuron's states evolutionwhere the currents of the feature neurons are denoted by </p>
+<p>          x</p>
+<p>            i</p>
+<p>    {\textstyle x_{i}}</p>
+<p>, and the currents of the memory neurons are denoted by </p>
+<p>          h</p>
+<p>            μ</p>
+<p>    {\displaystyle h_{\mu }}</p>
+<p> (</p>
+<p>        h</p>
+<p>    {\displaystyle h}</p>
+<p> stands for hidden neurons). There are no synaptic connections among the feature neurons or the memory neurons. A matrix </p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            i</p>
+<p>    {\displaystyle \xi _{\mu i}}</p>
+<p> denotes the strength of synapses from a feature neuron </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p> to the memory neuron </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>. The synapses are assumed to be symmetric, so that the same value characterizes a different physical synapse from the memory neuron </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> to the feature neuron </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>. The outputs of the memory neurons and the feature neurons are denoted by </p>
+<p>          f</p>
+<p>            μ</p>
+<p>    {\displaystyle f_{\mu }}</p>
+<p> and </p>
+<p>          g</p>
+<p>            i</p>
+<p>    {\displaystyle g_{i}}</p>
+<p>, which are non-linear functions of the corresponding currents. In general these outputs can depend on the currents of all the neurons in that layer so that </p>
+<p>          f</p>
+<p>            μ</p>
+<p>        =</p>
+<p>        f</p>
+<p>        (</p>
+<p>        {</p>
+<p>          h</p>
+<p>            μ</p>
+<p>        }</p>
+<p>        )</p>
+<p>    {\displaystyle f_{\mu }=f(\{h_{\mu }\})}</p>
+<p> and </p>
+<p>          g</p>
+<p>            i</p>
+<p>        =</p>
+<p>        g</p>
+<p>        (</p>
+<p>        {</p>
+<p>          x</p>
+<p>            i</p>
+<p>        }</p>
+<p>        )</p>
+<p>    {\textstyle g_{i}=g(\{x_{i}\})}</p>
+<p>. It is convenient to define these activation functions as derivatives of the Lagrangian functions for the two groups of neuronsThis way the specific form of the equations for neuron's states is completely defined once the Lagrangian functions are specified. Finally, the time constants for the two groups of neurons are denoted by </p>
+<p>          τ</p>
+<p>            f</p>
+<p>    {\displaystyle \tau _{f}}</p>
+<p> and </p>
+<p>          τ</p>
+<p>            h</p>
+<p>    {\displaystyle \tau _{h}}</p>
+<p>, </p>
+<p>          I</p>
+<p>            i</p>
+<p>    {\displaystyle I_{i}}</p>
+<p> is the input current to the network that can be driven by the presented data.  </p>
+<p>General systems of non-linear differential equations can have many complicated behaviors that can depend on the choice of the non-linearities and the initial conditions. For Hopfield Networks, however, this is not the case - the dynamical trajectories always converge to a fixed point attractor state. This property is achieved because these equations are specifically engineered so that they have an underlying energy function The terms grouped into square brackets represent a Legendre transform of the Lagrangian function with respect to the states of the neurons. If the Hessian matrices of the Lagrangian functions are positive semi-definite, the energy function is guaranteed to decrease on the dynamical trajectory  This property makes it possible to prove that the system of dynamical equations describing temporal evolution of neurons' activities will eventually reach a fixed point attractor state.</p>
+<p>In certain situations one can assume that the dynamics of hidden neurons equilibrates at a much faster time scale compared to the feature neurons, </p>
+<p>          τ</p>
+<p>            h</p>
+<p>        ≪</p>
+<p>          τ</p>
+<p>            f</p>
+<p>    {\textstyle \tau _{h}\ll \tau _{f}}</p>
+<p>. In this case the steady state solution of the second equation in the system (1) can be used to express the currents of the hidden units through the outputs of the feature neurons. This makes it possible to reduce the general theory (1) to an effective theory for feature neurons only. The resulting effective update rules and the energies for various common choices of the Lagrangian functions are shown in Fig.2. In the case of log-sum-exponential Lagrangian function the update rule (if applied once) for the states of the feature neurons is the attention mechanism commonly used in many modern AI systems (see Ref. for the derivation of this result from the continuous time formulation).</p>
+<p>Relationship to classical Hopfield network with continuous variables</p>
+<p>Classical formulation of continuous Hopfield Networks can be understood as a special limiting case of the modern Hopfield networks with one hidden layer. Continuous Hopfield Networks for neurons with graded response are typically described by the dynamical equations  and the energy function  where </p>
+<p>          V</p>
+<p>            i</p>
+<p>        =</p>
+<p>        g</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\textstyle V_{i}=g(x_{i})}</p>
+<p>, and </p>
+<p>          g</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>    {\displaystyle g^{-1}(z)}</p>
+<p> is the inverse of the activation function </p>
+<p>        g</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle g(x)}</p>
+<p>. This model is a special limit of the class of models that is called models A, with the following choice of the Lagrangian functions  that, according to the definition (2), leads to the activation functions  If we integrate out the hidden neurons the system of equations (1) reduces to the equations on the feature neurons (5) with </p>
+<p>          T</p>
+<p>            i</p>
+<p>            j</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            μ</p>
+<p>            =</p>
+<p>            1</p>
+<p>              N</p>
+<p>                h</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            i</p>
+<p>          ξ</p>
+<p>            μ</p>
+<p>            j</p>
+<p>    {\displaystyle T_{ij}=\sum \limits _{\mu =1}^{N_{h}}\xi _{\mu i}\xi _{\mu j}}</p>
+<p>, and the general expression for the energy (3) reduces to the effective energy  While the first two terms in equation (6) are the same as those in equation (9), the third terms look superficially different. In equation (9) it is a Legendre transform of the Lagrangian for the feature neurons, while in (6) the third term is an integral of the inverse activation function. Nevertheless, these two expressions are in fact equivalent, since the derivatives of a function and its Legendre transform are inverse functions of each other. The easiest way to see that these two terms are equal explicitly is to differentiate each one with respect to </p>
+<p>          x</p>
+<p>            i</p>
+<p>    {\displaystyle x_{i}}</p>
+<p>. The results of these differentiations for both expressions are equal to </p>
+<p>          x</p>
+<p>            i</p>
+<p>        g</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>          )</p>
+<p>          ′</p>
+<p>    {\displaystyle x_{i}g(x_{i})'}</p>
+<p>. Thus, the two expressions are equal up to an additive constant. This completes the proof that the classical Hopfield Network with continuous states is a special limiting case of the modern Hopfield network (1) with energy (3).</p>
+<p>General formulation of the modern Hopfield network</p>
+<p>Biological neural networks have a large degree of heterogeneity in terms of different cell types. This section describes a mathematical model of a fully connected modern Hopfield network assuming the extreme degree of heterogeneity: every single neuron is different. Specifically, an energy function and the corresponding dynamical equations are described assuming that each neuron has its own activation function and kinetic time scale.  The network is assumed to be fully connected, so that every neuron is connected to every other neuron using a symmetric matrix of weights </p>
+<p>          W</p>
+<p>            I</p>
+<p>            J</p>
+<p>    {\displaystyle W_{IJ}}</p>
+<p>, indices </p>
+<p>        I</p>
+<p>    {\displaystyle I}</p>
+<p> and </p>
+<p>        J</p>
+<p>    {\displaystyle J}</p>
+<p> enumerate different neurons in the network, see Fig.3. The easiest way to mathematically formulate this problem is to define the architecture through a Lagrangian function </p>
+<p>        L</p>
+<p>        (</p>
+<p>        {</p>
+<p>          x</p>
+<p>            I</p>
+<p>        }</p>
+<p>        )</p>
+<p>    {\displaystyle L(\{x_{I}\})}</p>
+<p> that depends on the activities of all the neurons in the network. The activation function for each neuron is defined as a partial derivative of the Lagrangian  with respect to that neuron's activity  From the biological perspective one can think about </p>
+<p>          g</p>
+<p>            I</p>
+<p>    {\displaystyle g_{I}}</p>
+<p> as an axonal output of the neuron </p>
+<p>        I</p>
+<p>    {\displaystyle I}</p>
+<p>. In the simplest case, when the Lagrangian is additive for different neurons, this definition results in the activation that is a non-linear function of that neuron's activity. For non-additive Lagrangians this activation function can depend on the activities of a group of neurons. For instance, it can contain contrastive (softmax) or divisive normalization. The dynamical equations describing temporal evolution of a given neuron are given by  This equation belongs to the class of models called firing rate models in neuroscience. Each neuron </p>
+<p>        I</p>
+<p>    {\displaystyle I}</p>
+<p> collects the axonal outputs </p>
+<p>          g</p>
+<p>            J</p>
+<p>    {\displaystyle g_{J}}</p>
+<p> from all the neurons, weights them with the synaptic coefficients </p>
+<p>          W</p>
+<p>            I</p>
+<p>            J</p>
+<p>    {\displaystyle W_{IJ}}</p>
+<p> and produces its own time-dependent activity </p>
+<p>          x</p>
+<p>            I</p>
+<p>    {\displaystyle x_{I}}</p>
+<p>. The temporal evolution has a time constant </p>
+<p>          τ</p>
+<p>            I</p>
+<p>    {\displaystyle \tau _{I}}</p>
+<p>, which in general can be different for every neuron. This network has a global energy function  where the first two terms represent the Legendre transform of the Lagrangian function with respect to the neurons' currents </p>
+<p>          x</p>
+<p>            I</p>
+<p>    {\displaystyle x_{I}}</p>
+<p>. The temporal derivative of this energy function can be computed on the dynamical trajectories leading to (see   for details)  The last inequality sign holds provided that the matrix </p>
+<p>          M</p>
+<p>            I</p>
+<p>            K</p>
+<p>    {\displaystyle M_{IK}}</p>
+<p> (or its symmetric part) is positive semi-definite. If, in addition to this, the energy function is bounded from below the non-linear dynamical equations are guaranteed to converge to a fixed point attractor state. The advantage of formulating this network in terms of the Lagrangian functions is that it makes it possible to easily experiment with different choices of the activation functions and different architectural arrangements of neurons. For all those flexible choices the conditions of convergence are determined by the properties of the matrix </p>
+<p>          M</p>
+<p>            I</p>
+<p>            J</p>
+<p>    {\displaystyle M_{IJ}}</p>
+<p> and the existence of the lower bound on the energy function.</p>
+<p>Hierarchical associative memory network</p>
+<p>The neurons can be organized in layers so that every neuron in a given layer has the same activation function and the same dynamic time scale. If we assume that there are no horizontal connections between the neurons within the layer (lateral connections) and there are no skip-layer connections, the general fully connected network (11), (12) reduces to the architecture shown in Fig.4. It has </p>
+<p>          N</p>
+<p>            layer</p>
+<p>    {\displaystyle N_{\text{layer}}}</p>
+<p> layers of recurrently connected neurons with the states described by continuous variables </p>
+<p>          x</p>
+<p>            i</p>
+<p>            A</p>
+<p>    {\displaystyle x_{i}^{A}}</p>
+<p> and the activation functions </p>
+<p>          g</p>
+<p>            i</p>
+<p>            A</p>
+<p>    {\displaystyle g_{i}^{A}}</p>
+<p>, index </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> enumerates the layers of the network, and index </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p> enumerates individual neurons in that layer. The activation functions can depend on the activities of all the neurons in the layer. Every layer can have a different number of neurons </p>
+<p>          N</p>
+<p>            A</p>
+<p>    {\displaystyle N_{A}}</p>
+<p>. These neurons are recurrently connected with the neurons in the preceding and the subsequent layers. The matrices of weights that connect neurons in layers </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> and </p>
+<p>        B</p>
+<p>    {\displaystyle B}</p>
+<p> are denoted by </p>
+<p>          ξ</p>
+<p>            i</p>
+<p>            j</p>
+<p>            (</p>
+<p>            A</p>
+<p>            ,</p>
+<p>            B</p>
+<p>            )</p>
+<p>    {\displaystyle \xi _{ij}^{(A,B)}}</p>
+<p> (the order of the upper indices for weights is the same as the order of the lower indices, in the example above this means that the index </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p> enumerates neurons in the layer </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p>, and index </p>
+<p>        j</p>
+<p>    {\displaystyle j}</p>
+<p> enumerates neurons in the layer </p>
+<p>        B</p>
+<p>    {\displaystyle B}</p>
+<p>). The feedforward weights and the feedback weights are equal. The dynamical equations for the neurons' states can be written as  with boundary conditions  The main difference between these equations and those from the conventional feedforward networks is the presence of the second term, which is responsible for the feedback from higher layers. These top-down signals help neurons in lower layers to decide on their response to the presented stimuli. Following the general recipe it is convenient to introduce a Lagrangian function </p>
+<p>          L</p>
+<p>            A</p>
+<p>        (</p>
+<p>        {</p>
+<p>          x</p>
+<p>            i</p>
+<p>            A</p>
+<p>        }</p>
+<p>        )</p>
+<p>    {\displaystyle L^{A}(\{x_{i}^{A}\})}</p>
+<p> for the </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p>-th hidden layer, which depends on the activities of all the neurons in that layer. The activation functions in that layer can be defined as partial derivatives of the Lagrangian  With these definitions the energy (Lyapunov) function is given by  If the Lagrangian functions, or equivalently the activation functions, are chosen in such a way that the Hessians for each layer are positive semi-definite and the overall energy is bounded from below, this system is guaranteed to converge to a fixed point attractor state. The temporal derivative of this energy function is given by  Thus, the hierarchical layered network is indeed an attractor network with the global energy function. This network is described by a hierarchical set of synaptic weights that can be learned for each specific problem.</p>
+<p>See also</p>
+<p>Associative memory (disambiguation)</p>
+<p>Autoassociative memory</p>
+<p>Boltzmann machine – like a Hopfield net but uses annealed Gibbs sampling instead of gradient descent</p>
+<p>Dynamical systems model of cognition</p>
+<p>Ising model</p>
+<p>Hebbian theory</p>
+<p>References</p>
+<p>External links</p>
+<p>Rojas, Raul (12 July 1996). "13. The Hopfield model" (PDF). Neural Networks – A Systematic Introduction. Springer. ISBN 978-3-540-60505-8.</p>
+<p>Hopfield Network Javascript</p>
+<p>The Travelling Salesman Problem Archived 2015-05-30 at the Wayback Machine – Hopfield Neural Network JAVA Applet</p>
+<p>Hopfield, John (2007). "Hopfield network". Scholarpedia. 2 (5): 1977. Bibcode:2007SchpJ...2.1977H. doi:10.4249/scholarpedia.1977.</p>
+<p>"Don't Forget About Associative Memories". The Gradient. November 7, 2020. Retrieved September 27, 2024.</p>
+<p>Fletcher, Tristan. "Hopfield Network Learning Using Deterministic Latent Variables" (PDF) (Tutorial). Archived from the original (PDF) on 2011-10-05.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
