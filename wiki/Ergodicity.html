@@ -1,0 +1,2294 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ergodicity</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Ergodicity</h2>
+                <p>In mathematics, ergodicity expresses the idea that a point of a moving system, either a dynamical system or a stochastic process, will eventually visit all parts of the space that the system moves in, in a uniform and random sense. This implies that the average behavior of the system can be deduced from the trajectory of a "typical" point. Equivalently, a sufficiently large collection of random samples from a process can represent the average statistical properties of the entire process. Ergodicity is a property of the system; it is a statement that the system cannot be reduced or factored into smaller components. Ergodic theory is the study of systems possessing ergodicity.</p>
+<p>Ergodic systems occur in a broad range of systems in physics and in geometry. This can be roughly understood to be due to a common phenomenon: the motion of particles, that is, geodesics on a hyperbolic manifold are divergent; when that manifold is compact, that is, of finite size, those orbits return to the same general area, eventually filling the entire space.</p>
+<p>Ergodic systems capture the common-sense, every-day notions of randomness, such that smoke might come to fill all of a smoke-filled room, or that a block of metal might eventually come to have the same temperature throughout, or that flips of a fair coin may come up heads and tails half the time. A stronger concept than ergodicity is that of mixing, which aims to mathematically describe the common-sense notions of mixing, such as mixing drinks or mixing cooking ingredients.</p>
+<p>The proper mathematical formulation of ergodicity is founded on the formal definitions of measure theory and dynamical systems, and rather specifically on the notion of a measure-preserving dynamical system. The origins of ergodicity lie in statistical physics, where Ludwig Boltzmann formulated the ergodic hypothesis.</p>
+<p>Informal explanation</p>
+<p>Ergodicity occurs in broad settings in physics and mathematics. All of these settings are unified by a common mathematical description, that of the measure-preserving dynamical system. Equivalently, ergodicity can be understood in terms of stochastic processes. They are one and the same, despite using dramatically different notation and language.</p>
+<p>Measure-preserving dynamical systems</p>
+<p>The mathematical definition of ergodicity aims to capture ordinary every-day ideas about randomness. This includes ideas about systems that move in such a way as to (eventually) fill up all of space, such as diffusion and Brownian motion, as well as common-sense notions of mixing, such as mixing paints, drinks, cooking ingredients, industrial process mixing, smoke in a smoke-filled room, the dust in Saturn's rings and so on.  To provide a solid mathematical footing, descriptions of ergodic systems begin with the definition of a measure-preserving dynamical system. This is written as </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>            A</p>
+<p>        ,</p>
+<p>        μ</p>
+<p>        ,</p>
+<p>        T</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle (X,{\mathcal {A}},\mu ,T).}</p>
+<p>The set </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> is understood to be the total space to be filled: the mixing bowl, the smoke-filled room, etc. The measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is understood to define the natural volume of the space </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> and of its subspaces.  The collection of subspaces is denoted by </p>
+<p>            A</p>
+<p>    {\displaystyle {\mathcal {A}}}</p>
+<p>, and the size of any given subset </p>
+<p>        A</p>
+<p>        ⊂</p>
+<p>        X</p>
+<p>    {\displaystyle A\subset X}</p>
+<p> is </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle \mu (A)}</p>
+<p>; the size is its volume.  Naively, one could imagine </p>
+<p>            A</p>
+<p>    {\displaystyle {\mathcal {A}}}</p>
+<p> to be the power set of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>; this doesn't quite work, as not all subsets of a space have a volume (famously, the Banach–Tarski paradox). Thus, conventionally, </p>
+<p>            A</p>
+<p>    {\displaystyle {\mathcal {A}}}</p>
+<p> consists of the measurable subsets—the subsets that do have a volume. It is always taken to be a Borel set—the collection of subsets that can be constructed by taking intersections, unions and set complements of open sets; these can always be taken to be measurable.</p>
+<p>The time evolution of the system is described by a map </p>
+<p>        T</p>
+<p>        :</p>
+<p>        X</p>
+<p>        →</p>
+<p>        X</p>
+<p>    {\displaystyle T:X\to X}</p>
+<p>. Given some subset </p>
+<p>        A</p>
+<p>        ⊂</p>
+<p>        X</p>
+<p>    {\displaystyle A\subset X}</p>
+<p>, its map </p>
+<p>        T</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle T(A)}</p>
+<p> will in general be a deformed version of </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> – it is squashed or stretched, folded or cut into pieces. Mathematical examples include the baker's map and the horseshoe map, both inspired by bread-making. The set </p>
+<p>        T</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle T(A)}</p>
+<p> must have the same volume as </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p>; the squashing/stretching does not alter the volume of the space, only its distribution. Such a system is "measure-preserving" (area-preserving, volume-preserving).</p>
+<p>A formal difficulty arises when one tries to reconcile the volume of sets with the need to preserve their size under a map. The problem arises because, in general, several different points in the domain of a function can map to the same point in its range; that is, there may be </p>
+<p>        x</p>
+<p>        ≠</p>
+<p>        y</p>
+<p>    {\displaystyle x\neq y}</p>
+<p> with </p>
+<p>        T</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>        T</p>
+<p>        (</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle T(x)=T(y)}</p>
+<p>. Worse, a single point </p>
+<p>        x</p>
+<p>        ∈</p>
+<p>        X</p>
+<p>    {\displaystyle x\in X}</p>
+<p> has no size. These difficulties can be avoided by working with the inverse map </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>        :</p>
+<p>            A</p>
+<p>        →</p>
+<p>            A</p>
+<p>    {\displaystyle T^{-1}:{\mathcal {A}}\to {\mathcal {A}}}</p>
+<p>; it will map any given subset </p>
+<p>        A</p>
+<p>        ⊂</p>
+<p>        X</p>
+<p>    {\displaystyle A\subset X}</p>
+<p> to the parts that were assembled to make it: these parts are </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        ∈</p>
+<p>            A</p>
+<p>    {\displaystyle T^{-1}(A)\in {\mathcal {A}}}</p>
+<p>. It has the important property of not losing track of where things came from.  More strongly, it has the important property that any (measure-preserving) map </p>
+<p>            A</p>
+<p>        →</p>
+<p>            A</p>
+<p>    {\displaystyle {\mathcal {A}}\to {\mathcal {A}}}</p>
+<p> is the inverse of some map </p>
+<p>        X</p>
+<p>        →</p>
+<p>        X</p>
+<p>    {\displaystyle X\to X}</p>
+<p>. The proper definition of a volume-preserving map is one for which </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        μ</p>
+<p>              (</p>
+<p>                  T</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                (</p>
+<p>                A</p>
+<p>                )</p>
+<p>              )</p>
+<p>    {\displaystyle \mu (A)=\mu {\mathord {\left(T^{-1}(A)\right)}}}</p>
+<p> because </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle T^{-1}(A)}</p>
+<p> describes all the pieces-parts that </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> came from.</p>
+<p>One is now interested in studying the time evolution of the system. If a set </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            A</p>
+<p>    {\displaystyle A\in {\mathcal {A}}}</p>
+<p> eventually comes to fill all of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> over a long period of time (that is, if </p>
+<p>          T</p>
+<p>            n</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle T^{n}(A)}</p>
+<p> approaches all of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> for large </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p>), the system is said to be ergodic. If every set </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> behaves in this way, the system is a conservative system, placed in contrast to a dissipative system, where some subsets </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> wander away, never to be returned to. An example would be water running downhill: once it's run down, it will never come back up again. The lake that forms at the bottom of this river can, however, become well-mixed. The ergodic decomposition theorem states that every ergodic system can be split into two parts: the conservative part, and the dissipative part.</p>
+<p>Mixing is a stronger statement than ergodicity. Mixing asks for this ergodic property to hold between any two sets </p>
+<p>        A</p>
+<p>        ,</p>
+<p>        B</p>
+<p>    {\displaystyle A,B}</p>
+<p>, and not just between some set </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> and </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>. That is, given any two sets </p>
+<p>        A</p>
+<p>        ,</p>
+<p>        B</p>
+<p>        ∈</p>
+<p>            A</p>
+<p>    {\displaystyle A,B\in {\mathcal {A}}}</p>
+<p>, a system is said to be (topologically) mixing if there is an integer </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> such that, for all </p>
+<p>        A</p>
+<p>        ,</p>
+<p>        B</p>
+<p>    {\displaystyle A,B}</p>
+<p> and </p>
+<p>        n</p>
+<p>        ></p>
+<p>        N</p>
+<p>    {\displaystyle n>N}</p>
+<p>, one has that </p>
+<p>          T</p>
+<p>            n</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        ∩</p>
+<p>        B</p>
+<p>        ≠</p>
+<p>        ∅</p>
+<p>    {\displaystyle T^{n}(A)\cap B\neq \varnothing }</p>
+<p>.  Here, </p>
+<p>        ∩</p>
+<p>    {\displaystyle \cap }</p>
+<p> denotes set intersection and </p>
+<p>        ∅</p>
+<p>    {\displaystyle \varnothing }</p>
+<p> is the empty set.  Other notions of mixing include strong and weak mixing, which describe the notion that the mixed substances intermingle everywhere, in equal proportion. This can be non-trivial, as practical experience of trying to mix sticky, gooey substances shows.</p>
+<p>Ergodic processes</p>
+<p>The above discussion appeals to a physical sense of a volume. The volume does not have to literally be some portion of 3D space; it can be some abstract volume. This is generally the case in statistical systems, where the volume (the measure) is given by the probability. The total volume corresponds to probability one. This correspondence works because the axioms of probability theory are identical to those of measure theory; these are the Kolmogorov axioms.</p>
+<p>The idea of a volume can be very abstract. Consider, for example, the set of all possible coin-flips: the set of infinite sequences of heads and tails. Assigning the volume of 1 to this space, it is clear that half of all such sequences start with heads, and half start with tails. One can slice up this volume in other ways: one can say "I don't care about the first </p>
+<p>        n</p>
+<p>        −</p>
+<p>        1</p>
+<p>    {\displaystyle n-1}</p>
+<p> coin-flips; but I want the </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p>'th of them to be heads, and then I don't care about what comes after that". This can be written as the set </p>
+<p>        (</p>
+<p>        ∗</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        ,</p>
+<p>        ∗</p>
+<p>        ,</p>
+<p>        h</p>
+<p>        ,</p>
+<p>        ∗</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>    {\displaystyle (*,\cdots ,*,h,*,\cdots )}</p>
+<p> where </p>
+<p>        ∗</p>
+<p>    {\displaystyle *}</p>
+<p> is "don't care" and </p>
+<p>        h</p>
+<p>    {\displaystyle h}</p>
+<p> is "heads". The volume of this space is again one-half.</p>
+<p>The above is enough to build up a measure-preserving dynamical system, in its entirety. The sets of </p>
+<p>        h</p>
+<p>    {\displaystyle h}</p>
+<p> or </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> occurring in the  </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p>'th place are called cylinder sets. The set of all possible intersections, unions and complements of the cylinder sets then form the Borel set </p>
+<p>            A</p>
+<p>    {\displaystyle {\mathcal {A}}}</p>
+<p> defined above. In formal terms, the cylinder sets form the base for a topology on the space </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> of all possible infinite-length coin-flips. The measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> has all of the common-sense properties one might hope for: the measure of a cylinder set with </p>
+<p>        h</p>
+<p>    {\displaystyle h}</p>
+<p> in the </p>
+<p>        m</p>
+<p>    {\displaystyle m}</p>
+<p>'th position, and </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> in the </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p>'th position is obviously 1/4, and so on. These common-sense properties persist for set-complement and set-union: everything except for </p>
+<p>        h</p>
+<p>    {\displaystyle h}</p>
+<p> and </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> in locations </p>
+<p>        m</p>
+<p>    {\displaystyle m}</p>
+<p> and </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p> obviously has the volume of 3/4. All together, these form the axioms of a sigma-additive measure; measure-preserving dynamical systems always use sigma-additive measures. For coin flips, this measure is called the Bernoulli measure.</p>
+<p>For the coin-flip process, the time-evolution operator </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is the shift operator that says "throw away the first coin-flip, and keep the rest". Formally, if </p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>    {\displaystyle (x_{1},x_{2},\cdots )}</p>
+<p> is a sequence of coin-flips, then </p>
+<p>        T</p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            3</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>    {\displaystyle T(x_{1},x_{2},\cdots )=(x_{2},x_{3},\cdots )}</p>
+<p>. The measure is obviously shift-invariant: as long as we are talking about some set </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            A</p>
+<p>    {\displaystyle A\in {\mathcal {A}}}</p>
+<p> where the first coin-flip </p>
+<p>          x</p>
+<p>            1</p>
+<p>        =</p>
+<p>        ∗</p>
+<p>    {\displaystyle x_{1}=*}</p>
+<p> is the "don't care" value, then the volume </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle \mu (A)}</p>
+<p> does not change: </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        T</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle \mu (A)=\mu (T(A))}</p>
+<p>. In order to avoid talking about the first coin-flip, it is easier to define </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>    {\displaystyle T^{-1}}</p>
+<p> as inserting a "don't care" value into the first position: </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>        ∗</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>    {\displaystyle T^{-1}(x_{1},x_{2},\cdots )=(*,x_{1},x_{2},\cdots )}</p>
+<p>.  With this definition, one obviously has that </p>
+<p>        μ</p>
+<p>              (</p>
+<p>                  T</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                (</p>
+<p>                A</p>
+<p>                )</p>
+<p>              )</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle \mu {\mathord {\left(T^{-1}(A)\right)}}=\mu (A)}</p>
+<p> with no constraints on </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p>. This is again an example of why </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>    {\displaystyle T^{-1}}</p>
+<p> is used in the formal definitions.</p>
+<p>The above development takes a random process, the Bernoulli process, and converts it to a measure-preserving dynamical system </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>            A</p>
+<p>        ,</p>
+<p>        μ</p>
+<p>        ,</p>
+<p>        T</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle (X,{\mathcal {A}},\mu ,T).}</p>
+<p> The same conversion (equivalence, isomorphism) can be applied to any stochastic process. Thus, an informal definition of ergodicity is that a sequence is ergodic if it visits all of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>; such sequences are "typical" for the process. Another is that its statistical properties can be deduced from a single, sufficiently long, random sample of the process (thus uniformly sampling all of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>), or that any collection of random samples from a process must represent the average statistical properties of the entire process (that is, samples drawn uniformly from </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> are representative of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> as a whole.) In the present example, a sequence of coin flips, where half are heads, and half are tails, is a "typical" sequence.</p>
+<p>There are several important points to be made about the Bernoulli process. If one writes 0 for tails and 1 for heads, one gets the set of all infinite strings of binary digits. These correspond to the base-two expansion of real numbers. Explicitly, given a sequence </p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>    {\displaystyle (x_{1},x_{2},\cdots )}</p>
+<p>, the corresponding real number is</p>
+<p>        y</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            n</p>
+<p>            =</p>
+<p>            1</p>
+<p>            ∞</p>
+<p>              x</p>
+<p>                n</p>
+<p>              2</p>
+<p>                n</p>
+<p>    {\displaystyle y=\sum _{n=1}^{\infty }{\frac {x_{n}}{2^{n}}}}</p>
+<p>The statement that the Bernoulli process is ergodic is equivalent to the statement that the real numbers are uniformly distributed.  The set of all such strings can be written in a variety of ways: </p>
+<p>        {</p>
+<p>        h</p>
+<p>        ,</p>
+<p>        t</p>
+<p>          }</p>
+<p>            ∞</p>
+<p>        =</p>
+<p>        {</p>
+<p>        h</p>
+<p>        ,</p>
+<p>        t</p>
+<p>          }</p>
+<p>            ω</p>
+<p>        =</p>
+<p>        {</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        1</p>
+<p>          }</p>
+<p>            ω</p>
+<p>        =</p>
+<p>          2</p>
+<p>            ω</p>
+<p>        =</p>
+<p>          2</p>
+<p>              N</p>
+<p>        .</p>
+<p>    {\displaystyle \{h,t\}^{\infty }=\{h,t\}^{\omega }=\{0,1\}^{\omega }=2^{\omega }=2^{\mathbb {N} }.}</p>
+<p> This set is the Cantor set, sometimes called the Cantor space to avoid confusion with the Cantor function</p>
+<p>        C</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            n</p>
+<p>            =</p>
+<p>            1</p>
+<p>            ∞</p>
+<p>              x</p>
+<p>                n</p>
+<p>              3</p>
+<p>                n</p>
+<p>    {\displaystyle C(x)=\sum _{n=1}^{\infty }{\frac {x_{n}}{3^{n}}}}</p>
+<p>In the end, these are all "the same thing".</p>
+<p>The Cantor set plays key roles in many branches of mathematics. In recreational mathematics, it underpins the period-doubling fractals; in analysis, it appears in a vast variety of theorems. A key one for stochastic processes is the Wold decomposition, which states that any stationary process can be decomposed into a pair of uncorrelated processes, one deterministic, and the other being a moving average process.</p>
+<p>The Ornstein isomorphism theorem states that every stationary stochastic process is equivalent to a Bernoulli scheme (a Bernoulli process with an N-sided (and possibly unfair) gaming die).  Other results include that every non-dissipative ergodic system is equivalent to the Markov odometer, sometimes called an "adding machine" because it looks like elementary-school addition, that is, taking a base-N digit sequence, adding one, and propagating the carry bits. The proof of equivalence is very abstract; understanding the result is not: by adding one at each time step, every possible state of the odometer is visited, until it rolls over, and starts again. Likewise, ergodic systems visit each state, uniformly, moving on to the next, until they have all been visited.</p>
+<p>Systems that generate (infinite) sequences of N letters are studied by means of symbolic dynamics. Important special cases include subshifts of finite type and sofic systems.</p>
+<p>History and etymology</p>
+<p>The term ergodic is commonly thought to derive from the Greek words ἔργον (ergon: "work") and ὁδός (hodos: "path", "way"), as chosen by Ludwig Boltzmann while he was working on a problem in statistical mechanics. At the same time it is also claimed to be a derivation of ergomonode, coined by Boltzmann in a relatively obscure paper from 1884. The etymology appears to be contested in other ways as well.</p>
+<p>The idea of ergodicity was born in the field of thermodynamics, where it was necessary to relate the individual states of gas molecules to the temperature of a gas as a whole and its time evolution thereof. In order to do this, it was necessary to state what exactly it means for gases to mix well together, so that thermodynamic equilibrium could be defined with mathematical rigor. Once the theory was well developed in physics, it was rapidly formalized and extended, so that ergodic theory has long been an independent area of mathematics in itself. As part of that progression, more than one slightly different definition of ergodicity and multitudes of interpretations of the concept in different fields coexist.</p>
+<p>For example, in classical physics the term implies that a system satisfies the ergodic hypothesis of thermodynamics, the relevant state space being position and momentum space.</p>
+<p>In dynamical systems theory the state space is usually taken to be a more general phase space. On the other hand in coding theory the state space is often discrete in both time and state, with less concomitant structure. In all those fields the ideas of time average and ensemble average can also carry extra baggage as well—as is the case with the many possible thermodynamically relevant partition functions used to define ensemble averages in physics, back again. As such the measure theoretic formalization of the concept also serves as a unifying discipline. In 1913 Michel Plancherel proved the strict impossibility of ergodicity for a purely mechanical system.</p>
+<p>Ergodicity in physics and geometry</p>
+<p>A review of ergodicity in physics, and in geometry follows. In all cases, the notion of ergodicity is exactly the same as that for dynamical systems; there is no difference, except for outlook, notation, style of thinking and the journals where results are published.</p>
+<p>Physical systems can be split into three categories: classical mechanics, which describes machines with a finite number of moving parts, quantum mechanics, which describes the structure of atoms, and statistical mechanics, which describes gases, liquids, solids; this includes condensed matter physics. These presented below.</p>
+<p>In statistical mechanics</p>
+<p>This section reviews ergodicity in statistical mechanics. The above abstract definition of a volume is required as the appropriate setting for definitions of ergodicity in physics. Consider a container of liquid, or gas, or plasma, or other collection of atoms or particles. Each and every particle </p>
+<p>          x</p>
+<p>            i</p>
+<p>    {\displaystyle x_{i}}</p>
+<p> has a 3D position, and a 3D velocity, and is thus described by six numbers: a point in six-dimensional space </p>
+<p>            R</p>
+<p>            6</p>
+<p>        .</p>
+<p>    {\displaystyle \mathbb {R} ^{6}.}</p>
+<p>  If there are </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> of these particles in the system, a complete description requires </p>
+<p>        6</p>
+<p>        N</p>
+<p>    {\displaystyle 6N}</p>
+<p> numbers. Any one system is just a single point in </p>
+<p>            R</p>
+<p>            6</p>
+<p>            N</p>
+<p>        .</p>
+<p>    {\displaystyle \mathbb {R} ^{6N}.}</p>
+<p> The physical system is not all of </p>
+<p>            R</p>
+<p>            6</p>
+<p>            N</p>
+<p>    {\displaystyle \mathbb {R} ^{6N}}</p>
+<p>, of course; if it's a box of width, height and length </p>
+<p>        W</p>
+<p>        ×</p>
+<p>        H</p>
+<p>        ×</p>
+<p>        L</p>
+<p>    {\displaystyle W\times H\times L}</p>
+<p> then a point is in </p>
+<p>            (</p>
+<p>              W</p>
+<p>              ×</p>
+<p>              H</p>
+<p>              ×</p>
+<p>              L</p>
+<p>              ×</p>
+<p>                  R</p>
+<p>                  3</p>
+<p>            )</p>
+<p>            N</p>
+<p>        .</p>
+<p>    {\displaystyle \left(W\times H\times L\times \mathbb {R} ^{3}\right)^{N}.}</p>
+<p> Nor can velocities be infinite: they are scaled by some probability measure, for example the Boltzmann–Gibbs measure for a gas.  Nonetheless, for </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> close to the Avogadro number, this is obviously a very large space. This space is called the canonical ensemble.</p>
+<p>A physical system is said to be ergodic if any representative point of the system eventually comes to visit the entire volume of the system. For the above example, this implies that any given atom not only visits every part of the box </p>
+<p>        W</p>
+<p>        ×</p>
+<p>        H</p>
+<p>        ×</p>
+<p>        L</p>
+<p>    {\displaystyle W\times H\times L}</p>
+<p> with uniform probability, but it does so with every possible velocity, with probability given by the Boltzmann distribution for that velocity (so, uniform with respect to that measure).  The ergodic hypothesis states that physical systems actually are ergodic. Multiple time scales are at work: gases and liquids appear to be ergodic over short time scales. Ergodicity in a solid can be viewed in terms of the vibrational modes or phonons, as obviously the atoms in a solid do not exchange locations. Glasses present a challenge to the ergodic hypothesis; time scales are assumed to be in the millions of years, but results are contentious. Spin glasses present particular difficulties.</p>
+<p>Formal mathematical proofs of ergodicity in statistical physics are hard to come by; most high-dimensional many-body systems are assumed to be ergodic, without mathematical proof. Exceptions include the dynamical billiards, which model billiard ball-type collisions of atoms in an ideal gas or plasma. The first hard-sphere ergodicity theorem was for Sinai's billiards, which considers two balls, one of them taken as being stationary, at the origin. As the second ball collides, it moves away; applying periodic boundary conditions, it then returns to collide again. By appeal to homogeneity, this return of the "second" ball can instead be taken to be "just some other atom" that has come into range, and is moving to collide with the atom at the origin (which can be taken to be just "any other atom".) This is one of the few formal proofs that exist; there are no equivalent statements e.g. for atoms in a liquid, interacting via van der Waals forces, even if it would be common sense to believe that such systems are ergodic (and mixing).  More precise physical arguments can be made, though.</p>
+<p>Simple dynamical systems</p>
+<p>The formal study of ergodicity can be approached by examining fairly simple dynamical systems. Some of the primary ones are listed here.</p>
+<p>The irrational rotation of a circle is ergodic: the orbit of a point is such that eventually, every other point in the circle is visited. Such rotations are a special case of the interval exchange map. The beta expansions of a number are ergodic: beta expansions of a real number are done not in base-N, but in base-</p>
+<p>        β</p>
+<p>    {\displaystyle \beta }</p>
+<p> for some </p>
+<p>        β</p>
+<p>        .</p>
+<p>    {\displaystyle \beta .}</p>
+<p> The reflected version of the beta expansion is tent map; there are a variety of other ergodic maps of the unit interval. Moving to two dimensions, the arithmetic billiards with irrational angles are ergodic. One can also take a flat rectangle, squash it, cut it and reassemble it; this is the previously-mentioned baker's map. Its points can be described by the set of bi-infinite strings in two letters, that is, extending to both the left and right; as such, it looks like two copies of the Bernoulli process.  If one deforms sideways during the squashing, one obtains Arnold's cat map. In most ways, the cat map is prototypical of any other similar transformation.</p>
+<p>In classical mechanics and geometry</p>
+<p>Ergodicity is a widespread phenomenon in the study of symplectic manifolds and Riemannian manifolds. Symplectic manifolds provide the generalized setting for classical mechanics, where the motion of a mechanical system is described by a geodesic. Riemannian manifolds are a special case: the cotangent bundle of a Riemannian manifold is always a symplectic manifold. In particular, the geodesics on a Riemannian manifold are given by the solution of the Hamilton–Jacobi equations.</p>
+<p>The geodesic flow of a flat torus following any irrational direction is ergodic; informally this means that when drawing a straight line in a square starting at any point, and with an irrational angle with respect to the sides, if every time one meets a side one starts over on the opposite side with the same angle, the line will eventually meet every subset of positive measure. More generally on any flat surface there are many ergodic directions for the geodesic flow.</p>
+<p>For non-flat surfaces, one has that the geodesic flow of any negatively curved compact Riemann surface is ergodic. A surface is "compact" in the sense that it has finite surface area.  The geodesic flow is a generalization of the idea of moving in a "straight line" on a curved surface: such straight lines are geodesics. One of the earliest cases studied is Hadamard's billiards, which describes geodesics on the Bolza surface, topologically equivalent to a donut with two holes. Ergodicity can be demonstrated informally, if one has a sharpie and some reasonable example of a two-holed donut: starting anywhere, in any direction, one attempts to draw a straight line; rulers are useful for this. It doesn't take all that long to discover that one is not coming back to the starting point. (Of course, crooked drawing can also account for this; that's why we have proofs.)</p>
+<p>These results extend to higher dimensions. The geodesic flow for negatively curved compact Riemannian manifolds is ergodic. A classic example for this is the Anosov flow, which is the horocycle flow on a hyperbolic manifold. This can be seen to be a kind of Hopf fibration. Such flows commonly occur in classical mechanics, which is the study in physics of finite-dimensional moving machinery, e.g. the double pendulum and so-forth. Classical mechanics is constructed on symplectic manifolds. The flows on such systems can be deconstructed into stable and unstable manifolds; as a general rule, when this is possible, chaotic motion results. That this is generic can be seen by noting that the cotangent bundle of a Riemannian manifold is (always) a symplectic manifold; the geodesic flow is given by a solution to the Hamilton–Jacobi equations for this manifold. In terms of the canonical coordinates </p>
+<p>        (</p>
+<p>        q</p>
+<p>        ,</p>
+<p>        p</p>
+<p>        )</p>
+<p>    {\displaystyle (q,p)}</p>
+<p> on the cotangent manifold, the Hamiltonian or energy is given by </p>
+<p>        H</p>
+<p>        =</p>
+<p>              1</p>
+<p>              2</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            j</p>
+<p>          g</p>
+<p>            i</p>
+<p>            j</p>
+<p>        (</p>
+<p>        q</p>
+<p>        )</p>
+<p>          p</p>
+<p>            i</p>
+<p>          p</p>
+<p>            j</p>
+<p>    {\displaystyle H={\tfrac {1}{2}}\sum _{ij}g^{ij}(q)p_{i}p_{j}}</p>
+<p>with </p>
+<p>          g</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle g^{ij}}</p>
+<p> the (inverse of the) metric tensor and </p>
+<p>          p</p>
+<p>            i</p>
+<p>    {\displaystyle p_{i}}</p>
+<p> the momentum. The resemblance to the kinetic energy </p>
+<p>        E</p>
+<p>        =</p>
+<p>              1</p>
+<p>              2</p>
+<p>        m</p>
+<p>          v</p>
+<p>            2</p>
+<p>    {\displaystyle E={\tfrac {1}{2}}mv^{2}}</p>
+<p> of a point particle is hardly accidental; this is the whole point of calling such things "energy".  In this sense, chaotic behavior with ergodic orbits is a more-or-less generic phenomenon in large tracts of geometry.  </p>
+<p>Ergodicity results have been provided in translation surfaces, hyperbolic groups and systolic geometry. Techniques include the study of ergodic flows, the Hopf decomposition, and the Ambrose–Kakutani–Krengel–Kubo theorem. An important class of systems are the Axiom A systems. </p>
+<p>A number of both classification and "anti-classification" results have been obtained. The Ornstein isomorphism theorem applies here as well; again, it states that most of these systems are isomorphic to some Bernoulli scheme. This rather neatly ties these systems back into the definition of ergodicity given for a stochastic process, in the previous section. The anti-classification results state that there are more than a countably infinite number of inequivalent ergodic measure-preserving dynamical systems. This is perhaps not entirely a surprise, as one can use points in the Cantor set to construct similar-but-different systems. See measure-preserving dynamical system for a brief survey of some of the anti-classification results.</p>
+<p>In wave mechanics</p>
+<p>All of the previous sections considered ergodicty either from the point of view of a measurable dynamical system, or from the dual notion of tracking the motion of individual particle trajectories. A closely related concept occurs in (non-linear) wave mechanics. There, the resonant interaction allows for the mixing of normal modes, often (but not always) leading to the eventual thermalization of the system. One of the earliest systems to be rigorously studied in this context is the Fermi–Pasta–Ulam–Tsingou problem, a string of weakly coupled oscillators.</p>
+<p>A resonant interaction is possible whenever the dispersion relations for the wave media allow three or more normal modes to sum in such a way as to conserve both the total momentum and the total energy. This allows energy concentrated in one mode to bleed into other modes, eventually distributing that energy uniformly across all interacting modes.</p>
+<p>Resonant interactions between waves helps provide insight into the distinction between high-dimensional chaos (that is, turbulence) and thermalization. When normal modes can be combined so that energy and momentum are exactly conserved, then the theory of resonant interactions applies, and energy spreads into all of the interacting modes. When the dispersion relations only allow an approximate balance, turbulence or chaotic motion results. The turbulent modes can then transfer energy into modes that do mix, eventually leading to thermalization, but not before a preceding interval of chaotic motion.</p>
+<p>In quantum mechanics</p>
+<p>As to quantum mechanics, there is no universal quantum definition of ergodocity or even chaos (see quantum chaos). However, there is a quantum ergodicity theorem stating that the expectation value of an operator converges to the corresponding microcanonical classical average in the semiclassical limit </p>
+<p>        ℏ</p>
+<p>        →</p>
+<p>        0</p>
+<p>    {\displaystyle \hbar \rightarrow 0}</p>
+<p>. Nevertheless, the theorem does not imply that all eigenstates of the Hamiltionian whose classical counterpart is chaotic are features and random. For example, the quantum ergodicity theorem do not exclude the existence of non-ergodic states such as quantum scars. In addition to the conventional scarring, there are two other types of quantum scarring, which further illustrate the weak-ergodicity breaking in quantum chaotic systems: perturbation-induced and many-body quantum scars.</p>
+<p>Definition for discrete-time systems</p>
+<p>Ergodic measures provide one of the cornerstones with which ergodicity is generally discussed. A formal definition follows.</p>
+<p>Invariant measure</p>
+<p>Let </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>            B</p>
+<p>        )</p>
+<p>    {\displaystyle (X,{\mathcal {B}})}</p>
+<p> be a measurable space. If </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is a measurable function from </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> to itself and </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> a probability measure on </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>            B</p>
+<p>        )</p>
+<p>    {\displaystyle (X,{\mathcal {B}})}</p>
+<p>, then a measure-preserving dynamical system is defined as a dynamical system for which </p>
+<p>        μ</p>
+<p>              (</p>
+<p>                  T</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                (</p>
+<p>                A</p>
+<p>                )</p>
+<p>              )</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>    {\displaystyle \mu {\mathord {\left(T^{-1}(A)\right)}}=\mu (A)}</p>
+<p> for all </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>    {\displaystyle A\in {\mathcal {B}}}</p>
+<p>. Such a </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is said to preserve </p>
+<p>        μ</p>
+<p>        ;</p>
+<p>    {\displaystyle \mu ;}</p>
+<p> equivalently, that </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>-invariant.</p>
+<p>Ergodic measure</p>
+<p>A measurable function </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is said to be </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>-ergodic or that </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is an ergodic measure for </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> if </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> preserves </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> and the following condition holds:</p>
+<p>For any </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>    {\displaystyle A\in {\mathcal {B}}}</p>
+<p> such that </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        A</p>
+<p>    {\displaystyle T^{-1}(A)=A}</p>
+<p> either </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle \mu (A)=0}</p>
+<p> or </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle \mu (A)=1}</p>
+<p>.</p>
+<p>In other words, there are no </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>-invariant subsets up to measure 0 (with respect to </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>). </p>
+<p>Some authors relax the requirement that </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> preserves </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> to the requirement that </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is a non-singular transformation with respect to </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>, meaning that if </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> is a subset so that </p>
+<p>          T</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        N</p>
+<p>        )</p>
+<p>    {\displaystyle T^{-1}(N)}</p>
+<p> has zero measure, then so does </p>
+<p>        T</p>
+<p>        (</p>
+<p>        N</p>
+<p>        )</p>
+<p>    {\displaystyle T(N)}</p>
+<p>.</p>
+<p>Examples</p>
+<p>The simplest example is when </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> is a finite set and </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> the counting measure. Then a self-map of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> preserves </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> if and only if it is a bijection, and it is ergodic if and only if </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> has only one orbit (that is, for every </p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        ∈</p>
+<p>        X</p>
+<p>    {\displaystyle x,y\in X}</p>
+<p> there exists </p>
+<p>        k</p>
+<p>        ∈</p>
+<p>          N</p>
+<p>    {\displaystyle k\in \mathbb {N} }</p>
+<p> such that </p>
+<p>        y</p>
+<p>        =</p>
+<p>          T</p>
+<p>            k</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle y=T^{k}(x)}</p>
+<p>). For example, if </p>
+<p>        X</p>
+<p>        =</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        n</p>
+<p>        }</p>
+<p>    {\displaystyle X=\{1,2,\ldots ,n\}}</p>
+<p> then the cycle </p>
+<p>        (</p>
+<p>        1</p>
+<p>        2</p>
+<p>        ⋯</p>
+<p>        n</p>
+<p>        )</p>
+<p>    {\displaystyle (1\,2\,\cdots \,n)}</p>
+<p> is ergodic, but the permutation </p>
+<p>        (</p>
+<p>        1</p>
+<p>        2</p>
+<p>        )</p>
+<p>        (</p>
+<p>        3</p>
+<p>        4</p>
+<p>        ⋯</p>
+<p>        n</p>
+<p>        )</p>
+<p>    {\displaystyle (1\,2)(3\,4\,\cdots \,n)}</p>
+<p> is not (it has the two invariant subsets </p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>    {\displaystyle \{1,2\}}</p>
+<p> and </p>
+<p>        {</p>
+<p>        3</p>
+<p>        ,</p>
+<p>        4</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        n</p>
+<p>        }</p>
+<p>    {\displaystyle \{3,4,\ldots ,n\}}</p>
+<p>).</p>
+<p>Equivalent formulations</p>
+<p>The definition given above admits the following immediate reformulations: </p>
+<p>for every </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>    {\displaystyle A\in {\mathcal {B}}}</p>
+<p> with </p>
+<p>        μ</p>
+<p>              (</p>
+<p>                  T</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                (</p>
+<p>                A</p>
+<p>                )</p>
+<p>                △</p>
+<p>                A</p>
+<p>              )</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle \mu {\mathord {\left(T^{-1}(A)\bigtriangleup A\right)}}=0}</p>
+<p> we have </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle \mu (A)=0}</p>
+<p> or </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle \mu (A)=1\,}</p>
+<p> (where </p>
+<p>        △</p>
+<p>    {\displaystyle \bigtriangleup }</p>
+<p> denotes the symmetric difference);</p>
+<p>for every </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>    {\displaystyle A\in {\mathcal {B}}}</p>
+<p> with positive measure we have </p>
+<p>        μ</p>
+<p>              (</p>
+<p>                  ⋃</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    1</p>
+<p>                    ∞</p>
+<p>                  T</p>
+<p>                    −</p>
+<p>                    n</p>
+<p>                (</p>
+<p>                A</p>
+<p>                )</p>
+<p>              )</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\textstyle \mu {\mathord {\left(\bigcup _{n=1}^{\infty }T^{-n}(A)\right)}}=1}</p>
+<p>;</p>
+<p>for every two sets </p>
+<p>        A</p>
+<p>        ,</p>
+<p>        B</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>    {\displaystyle A,B\in {\mathcal {B}}}</p>
+<p> of positive measure, there exists </p>
+<p>        n</p>
+<p>        ></p>
+<p>        0</p>
+<p>    {\displaystyle n>0}</p>
+<p> such that </p>
+<p>        μ</p>
+<p>              (</p>
+<p>                  (</p>
+<p>                      T</p>
+<p>                        −</p>
+<p>                        n</p>
+<p>                    (</p>
+<p>                    A</p>
+<p>                    )</p>
+<p>                  )</p>
+<p>                ∩</p>
+<p>                B</p>
+<p>              )</p>
+<p>        ></p>
+<p>        0</p>
+<p>    {\displaystyle \mu {\mathord {\left(\left(T^{-n}(A)\right)\cap B\right)}}>0}</p>
+<p>;</p>
+<p>Every measurable function </p>
+<p>        f</p>
+<p>        :</p>
+<p>        X</p>
+<p>        →</p>
+<p>          R</p>
+<p>    {\displaystyle f:X\to \mathbb {R} }</p>
+<p> with </p>
+<p>        f</p>
+<p>        ∘</p>
+<p>        T</p>
+<p>        =</p>
+<p>        f</p>
+<p>    {\displaystyle f\circ T=f}</p>
+<p> is constant on a subset of full measure.</p>
+<p>Importantly for applications, the condition in the last characterisation can be restricted to square-integrable functions only:</p>
+<p>If </p>
+<p>        f</p>
+<p>        ∈</p>
+<p>          L</p>
+<p>            2</p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>        μ</p>
+<p>        )</p>
+<p>    {\displaystyle f\in L^{2}(X,\mu )}</p>
+<p> and </p>
+<p>        f</p>
+<p>        ∘</p>
+<p>        T</p>
+<p>        =</p>
+<p>        f</p>
+<p>    {\displaystyle f\circ T=f}</p>
+<p> then </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> is constant almost everywhere.</p>
+<p>Further examples</p>
+<p>Bernoulli shifts and subshifts</p>
+<p>Let </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> be a finite set and </p>
+<p>        X</p>
+<p>        =</p>
+<p>          S</p>
+<p>              Z</p>
+<p>    {\displaystyle X=S^{\mathbb {Z} }}</p>
+<p> with </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> the product measure (each factor </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> being endowed with its counting measure). Then the shift operator </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> defined by </p>
+<p>        T</p>
+<p>          (</p>
+<p>            (</p>
+<p>              s</p>
+<p>                k</p>
+<p>              )</p>
+<p>                k</p>
+<p>                ∈</p>
+<p>                  Z</p>
+<p>            )</p>
+<p>          )</p>
+<p>        =</p>
+<p>        (</p>
+<p>          s</p>
+<p>            k</p>
+<p>            +</p>
+<p>            1</p>
+<p>          )</p>
+<p>            k</p>
+<p>            ∈</p>
+<p>              Z</p>
+<p>    {\displaystyle T\left((s_{k})_{k\in \mathbb {Z} })\right)=(s_{k+1})_{k\in \mathbb {Z} }}</p>
+<p> is </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>-ergodic.</p>
+<p>There are many more ergodic measures for the shift map </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> on </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>. Periodic sequences give finitely supported measures. More interestingly, there are infinitely-supported ones which are subshifts of finite type.</p>
+<p>Irrational rotations</p>
+<p>Let </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> be the unit circle </p>
+<p>        {</p>
+<p>        z</p>
+<p>        ∈</p>
+<p>          C</p>
+<p>        ,</p>
+<p>          |</p>
+<p>        z</p>
+<p>          |</p>
+<p>        =</p>
+<p>        1</p>
+<p>        }</p>
+<p>    {\displaystyle \{z\in \mathbb {C} ,\,|z|=1\}}</p>
+<p>, with its Lebesgue measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>. For any </p>
+<p>        θ</p>
+<p>        ∈</p>
+<p>          R</p>
+<p>    {\displaystyle \theta \in \mathbb {R} }</p>
+<p> the rotation of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> of angle </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p> is given by </p>
+<p>          T</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>        =</p>
+<p>          e</p>
+<p>            2</p>
+<p>            i</p>
+<p>            π</p>
+<p>            θ</p>
+<p>        z</p>
+<p>    {\displaystyle T_{\theta }(z)=e^{2i\pi \theta }z}</p>
+<p>. If </p>
+<p>        θ</p>
+<p>        ∈</p>
+<p>          Q</p>
+<p>    {\displaystyle \theta \in \mathbb {Q} }</p>
+<p> then </p>
+<p>          T</p>
+<p>            θ</p>
+<p>    {\displaystyle T_{\theta }}</p>
+<p> is not ergodic for the Lebesgue measure as it has infinitely many finite orbits. On the other hand, if </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p> is irrational then </p>
+<p>          T</p>
+<p>            θ</p>
+<p>    {\displaystyle T_{\theta }}</p>
+<p> is ergodic.</p>
+<p>Arnold's cat map</p>
+<p>Let </p>
+<p>        X</p>
+<p>        =</p>
+<p>            R</p>
+<p>            2</p>
+<p>          /</p>
+<p>            Z</p>
+<p>            2</p>
+<p>    {\displaystyle X=\mathbb {R} ^{2}/\mathbb {Z} ^{2}}</p>
+<p> be the 2-torus. Then any element </p>
+<p>        g</p>
+<p>        ∈</p>
+<p>            S</p>
+<p>            L</p>
+<p>            2</p>
+<p>        (</p>
+<p>          Z</p>
+<p>        )</p>
+<p>    {\displaystyle g\in \mathrm {SL} _{2}(\mathbb {Z} )}</p>
+<p> defines a self-map of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> since </p>
+<p>        g</p>
+<p>          (</p>
+<p>              Z</p>
+<p>              2</p>
+<p>          )</p>
+<p>        =</p>
+<p>            Z</p>
+<p>            2</p>
+<p>    {\displaystyle g\left(\mathbb {Z} ^{2}\right)=\mathbb {Z} ^{2}}</p>
+<p>. When </p>
+<p>        g</p>
+<p>        =</p>
+<p>          (</p>
+<p>                  2</p>
+<p>                  1</p>
+<p>                  1</p>
+<p>                  1</p>
+<p>          )</p>
+<p>    {\textstyle g=\left({\begin{array}{cc}2&1\\1&1\end{array}}\right)}</p>
+<p> one obtains the so-called Arnold's cat map, which is ergodic for the Lebesgue measure on the torus.</p>
+<p>Ergodic theorems</p>
+<p>If </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is a probability measure on a space </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> which is ergodic for a transformation </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> the pointwise ergodic theorem of G. Birkhoff states that for every measurable functions </p>
+<p>        f</p>
+<p>        :</p>
+<p>        X</p>
+<p>        →</p>
+<p>          R</p>
+<p>    {\displaystyle f:X\to \mathbb {R} }</p>
+<p> and for </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>-almost every point </p>
+<p>        x</p>
+<p>        ∈</p>
+<p>        X</p>
+<p>    {\displaystyle x\in X}</p>
+<p> the time average on the orbit of </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> converges to the space average of </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p>. Formally this means that </p>
+<p>          lim</p>
+<p>            k</p>
+<p>            →</p>
+<p>            +</p>
+<p>            ∞</p>
+<p>          (</p>
+<p>                1</p>
+<p>                  k</p>
+<p>                  +</p>
+<p>                  1</p>
+<p>              ∑</p>
+<p>                i</p>
+<p>                =</p>
+<p>                0</p>
+<p>                k</p>
+<p>            f</p>
+<p>              (</p>
+<p>                  T</p>
+<p>                    i</p>
+<p>                (</p>
+<p>                x</p>
+<p>                )</p>
+<p>              )</p>
+<p>          )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            X</p>
+<p>        f</p>
+<p>        d</p>
+<p>        μ</p>
+<p>        .</p>
+<p>    {\displaystyle \lim _{k\to +\infty }\left({\frac {1}{k+1}}\sum _{i=0}^{k}f\left(T^{i}(x)\right)\right)=\int _{X}fd\mu .}</p>
+<p>The mean ergodic theorem of J. von Neumann is a similar, weaker statement about averaged translates of square-integrable functions.</p>
+<p>Related properties</p>
+<p>Dense orbits</p>
+<p>An immediate consequence of the definition of ergodicity is that on a topological space </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>, and if </p>
+<p>            B</p>
+<p>    {\displaystyle {\mathcal {B}}}</p>
+<p> is the σ-algebra of Borel sets, if </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>-ergodic then </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>-almost every orbit of </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is dense in the support of </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>.</p>
+<p>This is not an equivalence since for a transformation which is not uniquely ergodic, but for which there is an ergodic measure with full support </p>
+<p>          μ</p>
+<p>            0</p>
+<p>    {\displaystyle \mu _{0}}</p>
+<p>, for any other ergodic measure </p>
+<p>          μ</p>
+<p>            1</p>
+<p>    {\displaystyle \mu _{1}}</p>
+<p> the measure </p>
+<p>            1</p>
+<p>            2</p>
+<p>        (</p>
+<p>          μ</p>
+<p>            0</p>
+<p>        +</p>
+<p>          μ</p>
+<p>            1</p>
+<p>        )</p>
+<p>    {\textstyle {\frac {1}{2}}(\mu _{0}+\mu _{1})}</p>
+<p> is not ergodic for </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> but its orbits are dense in the support. Explicit examples can be constructed with shift-invariant measures.</p>
+<p>Mixing</p>
+<p>A transformation </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> of a probability measure space </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>        μ</p>
+<p>        )</p>
+<p>    {\displaystyle (X,\mu )}</p>
+<p> is said to be mixing for the measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> if for any measurable sets </p>
+<p>        A</p>
+<p>        ,</p>
+<p>        B</p>
+<p>        ⊂</p>
+<p>        X</p>
+<p>    {\displaystyle A,B\subset X}</p>
+<p> the following holds: </p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            +</p>
+<p>            ∞</p>
+<p>        μ</p>
+<p>          (</p>
+<p>              T</p>
+<p>                −</p>
+<p>                n</p>
+<p>            A</p>
+<p>            ∩</p>
+<p>            B</p>
+<p>          )</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        B</p>
+<p>        )</p>
+<p>    {\displaystyle \lim _{n\to +\infty }\mu \left(T^{-n}A\cap B\right)=\mu (A)\mu (B)}</p>
+<p>It is immediate that a mixing transformation is also ergodic (taking </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> to be a </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>-stable subset and </p>
+<p>        B</p>
+<p>    {\displaystyle B}</p>
+<p> its complement). The converse is not true, for example a rotation with irrational angle on the circle (which is ergodic per the examples above) is not mixing (for a sufficiently small interval its successive images will not intersect itself most of the time). Bernoulli shifts are mixing, and so is Arnold's cat map.</p>
+<p>This notion of mixing is sometimes called strong mixing, as opposed to weak mixing which means that </p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            +</p>
+<p>            ∞</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ∑</p>
+<p>            k</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>          |</p>
+<p>            μ</p>
+<p>            (</p>
+<p>              T</p>
+<p>                −</p>
+<p>                n</p>
+<p>            A</p>
+<p>            ∩</p>
+<p>            B</p>
+<p>            )</p>
+<p>            −</p>
+<p>            μ</p>
+<p>            (</p>
+<p>            A</p>
+<p>            )</p>
+<p>            μ</p>
+<p>            (</p>
+<p>            B</p>
+<p>            )</p>
+<p>          |</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle \lim _{n\to +\infty }{\frac {1}{n}}\sum _{k=1}^{n}\left|\mu (T^{-n}A\cap B)-\mu (A)\mu (B)\right|=0}</p>
+<p>Proper ergodicity</p>
+<p>The transformation </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is said to be properly ergodic if it does not have an orbit of full measure. In the discrete case this means that the measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is not supported on a finite orbit of </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>.</p>
+<p>Definition for continuous-time dynamical systems</p>
+<p>The definition is essentially the same for continuous-time dynamical systems as for a single transformation. Let </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>            B</p>
+<p>        )</p>
+<p>    {\displaystyle (X,{\mathcal {B}})}</p>
+<p> be a measurable space and for each </p>
+<p>        t</p>
+<p>        ∈</p>
+<p>            R</p>
+<p>            +</p>
+<p>    {\displaystyle t\in \mathbb {R} _{+}}</p>
+<p>, then such a system is given by a family </p>
+<p>          T</p>
+<p>            t</p>
+<p>    {\displaystyle T_{t}}</p>
+<p> of measurable functions from </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> to itself, so that for any </p>
+<p>        t</p>
+<p>        ,</p>
+<p>        s</p>
+<p>        ∈</p>
+<p>            R</p>
+<p>            +</p>
+<p>    {\displaystyle t,s\in \mathbb {R} _{+}}</p>
+<p> the relation </p>
+<p>          T</p>
+<p>            s</p>
+<p>            +</p>
+<p>            t</p>
+<p>        =</p>
+<p>          T</p>
+<p>            s</p>
+<p>        ∘</p>
+<p>          T</p>
+<p>            t</p>
+<p>    {\displaystyle T_{s+t}=T_{s}\circ T_{t}}</p>
+<p> holds (usually it is also asked that the orbit map from </p>
+<p>            R</p>
+<p>            +</p>
+<p>        ×</p>
+<p>        X</p>
+<p>        →</p>
+<p>        X</p>
+<p>    {\displaystyle \mathbb {R} _{+}\times X\to X}</p>
+<p> is also measurable). If </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is a probability measure on </p>
+<p>        (</p>
+<p>        X</p>
+<p>        ,</p>
+<p>            B</p>
+<p>        )</p>
+<p>    {\displaystyle (X,{\mathcal {B}})}</p>
+<p> then we say that </p>
+<p>          T</p>
+<p>            t</p>
+<p>    {\displaystyle T_{t}}</p>
+<p> is </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p>-ergodic or </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> is an ergodic measure for </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> if each </p>
+<p>          T</p>
+<p>            t</p>
+<p>    {\displaystyle T_{t}}</p>
+<p> preserves </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> and the following condition holds:</p>
+<p>For any </p>
+<p>        A</p>
+<p>        ∈</p>
+<p>            B</p>
+<p>    {\displaystyle A\in {\mathcal {B}}}</p>
+<p>, if for all </p>
+<p>        t</p>
+<p>        ∈</p>
+<p>            R</p>
+<p>            +</p>
+<p>    {\displaystyle t\in \mathbb {R} _{+}}</p>
+<p> we have </p>
+<p>          T</p>
+<p>            t</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        ⊂</p>
+<p>        A</p>
+<p>    {\displaystyle T_{t}^{-1}(A)\subset A}</p>
+<p> then either </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle \mu (A)=0}</p>
+<p> or </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle \mu (A)=1}</p>
+<p>.</p>
+<p>Examples</p>
+<p>As in the discrete case the simplest example is that of a transitive action, for instance the action on the circle given by </p>
+<p>          T</p>
+<p>            t</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>        =</p>
+<p>          e</p>
+<p>            2</p>
+<p>            i</p>
+<p>            π</p>
+<p>            t</p>
+<p>        z</p>
+<p>    {\displaystyle T_{t}(z)=e^{2i\pi t}z}</p>
+<p> is ergodic for Lebesgue measure.</p>
+<p>An example with infinitely many orbits is given by the flow along an irrational slope on the torus: let </p>
+<p>        X</p>
+<p>        =</p>
+<p>            S</p>
+<p>            1</p>
+<p>        ×</p>
+<p>            S</p>
+<p>            1</p>
+<p>    {\displaystyle X=\mathbb {S} ^{1}\times \mathbb {S} ^{1}}</p>
+<p> and </p>
+<p>        α</p>
+<p>        ∈</p>
+<p>          R</p>
+<p>    {\displaystyle \alpha \in \mathbb {R} }</p>
+<p>. Let </p>
+<p>          T</p>
+<p>            t</p>
+<p>        (</p>
+<p>          z</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          z</p>
+<p>            2</p>
+<p>        )</p>
+<p>        =</p>
+<p>          (</p>
+<p>              e</p>
+<p>                2</p>
+<p>                i</p>
+<p>                π</p>
+<p>                t</p>
+<p>              z</p>
+<p>                1</p>
+<p>            ,</p>
+<p>              e</p>
+<p>                2</p>
+<p>                α</p>
+<p>                i</p>
+<p>                π</p>
+<p>                t</p>
+<p>              z</p>
+<p>                2</p>
+<p>          )</p>
+<p>    {\displaystyle T_{t}(z_{1},z_{2})=\left(e^{2i\pi t}z_{1},e^{2\alpha i\pi t}z_{2}\right)}</p>
+<p>; then if </p>
+<p>        α</p>
+<p>        ∉</p>
+<p>          Q</p>
+<p>    {\displaystyle \alpha \not \in \mathbb {Q} }</p>
+<p> this is ergodic for the Lebesgue measure.</p>
+<p>Ergodic flows</p>
+<p>Further examples of ergodic flows are:</p>
+<p>Billiards in convex Euclidean domains;</p>
+<p>the geodesic flow of a negatively curved Riemannian manifold of finite volume is ergodic (for the normalised volume measure);</p>
+<p>the horocycle flow on a hyperbolic manifold of finite volume is ergodic (for the normalised volume measure)</p>
+<p>Ergodicity in compact metric spaces</p>
+<p>If </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> is a compact metric space it is naturally endowed with the σ-algebra of Borel sets. The additional structure coming from the topology then allows a much more detailed theory for ergodic transformations and measures on </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p>.</p>
+<p>Functional analysis interpretation</p>
+<p>A very powerful alternate definition of ergodic measures can be given using the theory of Banach spaces. Radon measures on </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> form a Banach space of which the set </p>
+<p>            P</p>
+<p>        (</p>
+<p>        X</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {P}}(X)}</p>
+<p> of probability measures on </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> is a convex subset. Given a continuous transformation </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> of </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> the subset </p>
+<p>            P</p>
+<p>        (</p>
+<p>        X</p>
+<p>          )</p>
+<p>            T</p>
+<p>    {\displaystyle {\mathcal {P}}(X)^{T}}</p>
+<p> of </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>-invariant measures is a closed convex subset, and a measure is ergodic for </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> if and only if it is an extreme point of this convex.</p>
+<p>Existence of ergodic measures</p>
+<p>In the setting above it follows from the Banach-Alaoglu theorem that there always exists extremal points in </p>
+<p>            P</p>
+<p>        (</p>
+<p>        X</p>
+<p>          )</p>
+<p>            T</p>
+<p>    {\displaystyle {\mathcal {P}}(X)^{T}}</p>
+<p>. Hence a transformation of a compact metric space always admits ergodic measures.</p>
+<p>Ergodic decomposition</p>
+<p>In general an invariant measure need not be ergodic, but as a consequence of Choquet theory it can always be expressed as the barycenter of a probability measure on the set of ergodic measures. This is referred to as the ergodic decomposition of the measure.</p>
+<p>Example</p>
+<p>In the case of </p>
+<p>        X</p>
+<p>        =</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        n</p>
+<p>        }</p>
+<p>    {\displaystyle X=\{1,\ldots ,n\}}</p>
+<p> and </p>
+<p>        T</p>
+<p>        =</p>
+<p>        (</p>
+<p>        1</p>
+<p>        2</p>
+<p>        )</p>
+<p>        (</p>
+<p>        3</p>
+<p>        4</p>
+<p>        ⋯</p>
+<p>        n</p>
+<p>        )</p>
+<p>    {\displaystyle T=(1\,2)(3\,4\,\cdots \,n)}</p>
+<p> the counting measure is not ergodic. The ergodic measures for </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> are the uniform measures </p>
+<p>          μ</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          μ</p>
+<p>            2</p>
+<p>    {\displaystyle \mu _{1},\mu _{2}}</p>
+<p> supported on the subsets </p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>    {\displaystyle \{1,2\}}</p>
+<p> and </p>
+<p>        {</p>
+<p>        3</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        n</p>
+<p>        }</p>
+<p>    {\displaystyle \{3,\ldots ,n\}}</p>
+<p> and every </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>-invariant probability measure can be written in the form </p>
+<p>        t</p>
+<p>          μ</p>
+<p>            1</p>
+<p>        +</p>
+<p>        (</p>
+<p>        1</p>
+<p>        −</p>
+<p>        t</p>
+<p>        )</p>
+<p>          μ</p>
+<p>            2</p>
+<p>    {\displaystyle t\mu _{1}+(1-t)\mu _{2}}</p>
+<p> for some </p>
+<p>        t</p>
+<p>        ∈</p>
+<p>        [</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        1</p>
+<p>        ]</p>
+<p>    {\displaystyle t\in [0,1]}</p>
+<p>. In particular </p>
+<p>            2</p>
+<p>            n</p>
+<p>          μ</p>
+<p>            1</p>
+<p>        +</p>
+<p>              n</p>
+<p>              −</p>
+<p>              2</p>
+<p>            n</p>
+<p>          μ</p>
+<p>            2</p>
+<p>    {\textstyle {\frac {2}{n}}\mu _{1}+{\frac {n-2}{n}}\mu _{2}}</p>
+<p> is the ergodic decomposition of the counting measure.</p>
+<p>Continuous systems</p>
+<p>Everything in this section transfers verbatim to continuous actions of </p>
+<p>          R</p>
+<p>    {\displaystyle \mathbb {R} }</p>
+<p> or </p>
+<p>            R</p>
+<p>            +</p>
+<p>    {\displaystyle \mathbb {R} _{+}}</p>
+<p> on compact metric spaces.</p>
+<p>Unique ergodicity</p>
+<p>The transformation </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is said to be uniquely ergodic if there is a unique Borel probability measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> on </p>
+<p>        X</p>
+<p>    {\displaystyle X}</p>
+<p> which is ergodic for </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>.</p>
+<p>In the examples considered above, irrational rotations of the circle are uniquely ergodic; shift maps are not.</p>
+<p>Probabilistic interpretation: ergodic processes</p>
+<p>If </p>
+<p>            (</p>
+<p>              X</p>
+<p>                n</p>
+<p>            )</p>
+<p>            n</p>
+<p>            ≥</p>
+<p>            1</p>
+<p>    {\displaystyle \left(X_{n}\right)_{n\geq 1}}</p>
+<p> is a discrete-time stochastic process on a space </p>
+<p>        Ω</p>
+<p>    {\displaystyle \Omega }</p>
+<p>, it is said to be ergodic if the joint distribution of the variables on </p>
+<p>          Ω</p>
+<p>              N</p>
+<p>    {\displaystyle \Omega ^{\mathbb {N} }}</p>
+<p> is invariant under the shift map </p>
+<p>            (</p>
+<p>              x</p>
+<p>                n</p>
+<p>            )</p>
+<p>            n</p>
+<p>            ≥</p>
+<p>            1</p>
+<p>        ↦</p>
+<p>            (</p>
+<p>              x</p>
+<p>                n</p>
+<p>                +</p>
+<p>                1</p>
+<p>            )</p>
+<p>            n</p>
+<p>            ≥</p>
+<p>            1</p>
+<p>    {\displaystyle \left(x_{n}\right)_{n\geq 1}\mapsto \left(x_{n+1}\right)_{n\geq 1}}</p>
+<p>. This is a particular case of the notions discussed above.</p>
+<p>The simplest case is that of an independent and identically distributed process which corresponds to the shift map described above. Another important case is that of a Markov chain which is discussed in detail below.</p>
+<p>A similar interpretation holds for continuous-time stochastic processes though the construction of the measurable structure of the action is more complicated.</p>
+<p>Ergodicity of Markov chains</p>
+<p>The dynamical system associated with a Markov chain</p>
+<p>Let </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> be a finite set. A Markov chain on </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> is defined by a matrix </p>
+<p>        P</p>
+<p>        ∈</p>
+<p>        [</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        1</p>
+<p>          ]</p>
+<p>            S</p>
+<p>            ×</p>
+<p>            S</p>
+<p>    {\displaystyle P\in [0,1]^{S\times S}}</p>
+<p>, where </p>
+<p>        P</p>
+<p>        (</p>
+<p>          s</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          s</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\displaystyle P(s_{1},s_{2})}</p>
+<p> is the transition probability from </p>
+<p>          s</p>
+<p>            1</p>
+<p>    {\displaystyle s_{1}}</p>
+<p> to </p>
+<p>          s</p>
+<p>            2</p>
+<p>    {\displaystyle s_{2}}</p>
+<p>, so for every </p>
+<p>        s</p>
+<p>        ∈</p>
+<p>        S</p>
+<p>    {\displaystyle s\in S}</p>
+<p> we have </p>
+<p>          ∑</p>
+<p>              s</p>
+<p>              ′</p>
+<p>            ∈</p>
+<p>            S</p>
+<p>        P</p>
+<p>        (</p>
+<p>        s</p>
+<p>        ,</p>
+<p>          s</p>
+<p>          ′</p>
+<p>        )</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\textstyle \sum _{s'\in S}P(s,s')=1}</p>
+<p>. A stationary measure for </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p> is a probability measure </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p> on </p>
+<p>        S</p>
+<p>    {\displaystyle S}</p>
+<p> such that </p>
+<p>        ν</p>
+<p>        P</p>
+<p>        =</p>
+<p>        ν</p>
+<p>    {\displaystyle \nu P=\nu }</p>
+<p> ; that is </p>
+<p>          ∑</p>
+<p>              s</p>
+<p>              ′</p>
+<p>            ∈</p>
+<p>            S</p>
+<p>        ν</p>
+<p>        (</p>
+<p>          s</p>
+<p>          ′</p>
+<p>        )</p>
+<p>        P</p>
+<p>        (</p>
+<p>          s</p>
+<p>          ′</p>
+<p>        ,</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>        ν</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>    {\textstyle \sum _{s'\in S}\nu (s')P(s',s)=\nu (s)}</p>
+<p> for all </p>
+<p>        s</p>
+<p>        ∈</p>
+<p>        S</p>
+<p>    {\displaystyle s\in S}</p>
+<p>.</p>
+<p>Using this data we can define a probability measure </p>
+<p>          μ</p>
+<p>            ν</p>
+<p>    {\displaystyle \mu _{\nu }}</p>
+<p> on the set </p>
+<p>        X</p>
+<p>        =</p>
+<p>          S</p>
+<p>              Z</p>
+<p>    {\displaystyle X=S^{\mathbb {Z} }}</p>
+<p> with its product σ-algebra by giving the measures of the cylinders as follows:</p>
+<p>          μ</p>
+<p>            ν</p>
+<p>        (</p>
+<p>        ⋯</p>
+<p>        ×</p>
+<p>        S</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        (</p>
+<p>          s</p>
+<p>            n</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          s</p>
+<p>            m</p>
+<p>        )</p>
+<p>        }</p>
+<p>        ×</p>
+<p>        S</p>
+<p>        ×</p>
+<p>        ⋯</p>
+<p>        )</p>
+<p>        =</p>
+<p>        ν</p>
+<p>        (</p>
+<p>          s</p>
+<p>            n</p>
+<p>        )</p>
+<p>        P</p>
+<p>        (</p>
+<p>          s</p>
+<p>            n</p>
+<p>        ,</p>
+<p>          s</p>
+<p>            n</p>
+<p>            +</p>
+<p>            1</p>
+<p>        )</p>
+<p>        ⋯</p>
+<p>        P</p>
+<p>        (</p>
+<p>          s</p>
+<p>            m</p>
+<p>            −</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          s</p>
+<p>            m</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle \mu _{\nu }(\cdots \times S\times \{(s_{n},\ldots ,s_{m})\}\times S\times \cdots )=\nu (s_{n})P(s_{n},s_{n+1})\cdots P(s_{m-1},s_{m}).}</p>
+<p>Stationarity of </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p> then means that the measure </p>
+<p>          μ</p>
+<p>            ν</p>
+<p>    {\displaystyle \mu _{\nu }}</p>
+<p> is invariant under the shift map </p>
+<p>        T</p>
+<p>          (</p>
+<p>                (</p>
+<p>                  s</p>
+<p>                    k</p>
+<p>                )</p>
+<p>                k</p>
+<p>                ∈</p>
+<p>                  Z</p>
+<p>            )</p>
+<p>          )</p>
+<p>        =</p>
+<p>            (</p>
+<p>              s</p>
+<p>                k</p>
+<p>                +</p>
+<p>                1</p>
+<p>            )</p>
+<p>            k</p>
+<p>            ∈</p>
+<p>              Z</p>
+<p>    {\displaystyle T\left(\left(s_{k}\right)_{k\in \mathbb {Z} })\right)=\left(s_{k+1}\right)_{k\in \mathbb {Z} }}</p>
+<p>.</p>
+<p>Criterion for ergodicity</p>
+<p>The measure </p>
+<p>          μ</p>
+<p>            ν</p>
+<p>    {\displaystyle \mu _{\nu }}</p>
+<p> is always ergodic for the shift map if the associated Markov chain is irreducible (any state can be reached with positive probability from any other state in a finite number of steps).</p>
+<p>The hypotheses above imply that there is a unique stationary measure for the Markov chain. In terms of the matrix </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p> a sufficient condition for this is that 1 be a simple eigenvalue of the matrix </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p> and all other eigenvalues of </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p> (in </p>
+<p>          C</p>
+<p>    {\displaystyle \mathbb {C} }</p>
+<p>) are of modulus <1.</p>
+<p>Note that in probability theory the Markov chain is called ergodic if in addition each state is aperiodic (the times where the return probability is positive are not multiples of a single integer >1). This is not necessary for the invariant measure to be ergodic; hence the notions of "ergodicity" for a Markov chain and the associated shift-invariant measure are different (the one for the chain is strictly stronger).</p>
+<p>Moreover the criterion is an "if and only if" if all communicating classes in the chain are recurrent and we consider all stationary measures.</p>
+<p>Examples</p>
+<p>Counting measure</p>
+<p>If </p>
+<p>        P</p>
+<p>        (</p>
+<p>        s</p>
+<p>        ,</p>
+<p>          s</p>
+<p>          ′</p>
+<p>        )</p>
+<p>        =</p>
+<p>        1</p>
+<p>          /</p>
+<p>          |</p>
+<p>        S</p>
+<p>          |</p>
+<p>    {\displaystyle P(s,s')=1/|S|}</p>
+<p> for all </p>
+<p>        s</p>
+<p>        ,</p>
+<p>          s</p>
+<p>          ′</p>
+<p>        ∈</p>
+<p>        S</p>
+<p>    {\displaystyle s,s'\in S}</p>
+<p> then the stationary measure is the counting measure, the measure </p>
+<p>          μ</p>
+<p>            P</p>
+<p>    {\displaystyle \mu _{P}}</p>
+<p> is the product of counting measures. The Markov chain is ergodic, so the shift example from above is a special case of the criterion.</p>
+<p>Non-ergodic Markov chains</p>
+<p>Markov chains with recurring communicating classes which are not irreducible are not ergodic, and this can be seen immediately as follows. If </p>
+<p>          S</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          S</p>
+<p>            2</p>
+<p>        ⊊</p>
+<p>        S</p>
+<p>    {\displaystyle S_{1},S_{2}\subsetneq S}</p>
+<p> are two distinct recurrent communicating classes there are nonzero stationary measures </p>
+<p>          ν</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          ν</p>
+<p>            2</p>
+<p>    {\displaystyle \nu _{1},\nu _{2}}</p>
+<p> supported on </p>
+<p>          S</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          S</p>
+<p>            2</p>
+<p>    {\displaystyle S_{1},S_{2}}</p>
+<p> respectively and the subsets </p>
+<p>          S</p>
+<p>            1</p>
+<p>              Z</p>
+<p>    {\displaystyle S_{1}^{\mathbb {Z} }}</p>
+<p> and </p>
+<p>          S</p>
+<p>            2</p>
+<p>              Z</p>
+<p>    {\displaystyle S_{2}^{\mathbb {Z} }}</p>
+<p> are both shift-invariant and of measure 1/2 for the invariant probability measure </p>
+<p>            1</p>
+<p>            2</p>
+<p>        (</p>
+<p>          ν</p>
+<p>            1</p>
+<p>        +</p>
+<p>          ν</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\textstyle {\frac {1}{2}}(\nu _{1}+\nu _{2})}</p>
+<p>. A very simple example of that is the chain on </p>
+<p>        S</p>
+<p>        =</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>    {\displaystyle S=\{1,2\}}</p>
+<p> given by the matrix </p>
+<p>          (</p>
+<p>                  1</p>
+<p>                  0</p>
+<p>                  0</p>
+<p>                  1</p>
+<p>          )</p>
+<p>    {\textstyle \left({\begin{array}{cc}1&0\\0&1\end{array}}\right)}</p>
+<p> (both states are stationary).</p>
+<p>A periodic chain</p>
+<p>The Markov chain on </p>
+<p>        S</p>
+<p>        =</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>    {\displaystyle S=\{1,2\}}</p>
+<p> given by the matrix </p>
+<p>          (</p>
+<p>                  0</p>
+<p>                  1</p>
+<p>                  1</p>
+<p>                  0</p>
+<p>          )</p>
+<p>    {\textstyle \left({\begin{array}{cc}0&1\\1&0\end{array}}\right)}</p>
+<p> is irreducible but periodic. Thus it is not ergodic in the sense of Markov chain though the associated measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> on </p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>          }</p>
+<p>              Z</p>
+<p>    {\displaystyle \{1,2\}^{\mathbb {Z} }}</p>
+<p> is ergodic for the shift map. However the shift is not mixing for this measure, as for the sets </p>
+<p>        A</p>
+<p>        =</p>
+<p>        ⋯</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>        ×</p>
+<p>        1</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>        ×</p>
+<p>        1</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>        ⋯</p>
+<p>    {\displaystyle A=\cdots \times \{1,2\}\times 1\times \{1,2\}\times 1\times \{1,2\}\cdots }</p>
+<p>and </p>
+<p>        B</p>
+<p>        =</p>
+<p>        ⋯</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>        ×</p>
+<p>        2</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>        ×</p>
+<p>        2</p>
+<p>        ×</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        2</p>
+<p>        }</p>
+<p>        ⋯</p>
+<p>    {\displaystyle B=\cdots \times \{1,2\}\times 2\times \{1,2\}\times 2\times \{1,2\}\cdots }</p>
+<p>we have </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        A</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>            2</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        B</p>
+<p>        )</p>
+<p>    {\textstyle \mu (A)={\frac {1}{2}}=\mu (B)}</p>
+<p> but </p>
+<p>        μ</p>
+<p>          (</p>
+<p>              T</p>
+<p>                −</p>
+<p>                n</p>
+<p>            A</p>
+<p>            ∩</p>
+<p>            B</p>
+<p>          )</p>
+<p>        =</p>
+<p>            {</p>
+<p>                      1</p>
+<p>                      2</p>
+<p>                     if </p>
+<p>                  n</p>
+<p>                     is odd</p>
+<p>                  0</p>
+<p>                     if </p>
+<p>                  n</p>
+<p>                     is even.</p>
+<p>    {\displaystyle \mu \left(T^{-n}A\cap B\right)={\begin{cases}{\frac {1}{2}}{\text{ if }}n{\text{ is odd}}\\0{\text{ if }}n{\text{ is even.}}\end{cases}}}</p>
+<p>Generalisations</p>
+<p>The definition of ergodicity also makes sense for group actions. The classical theory (for invertible transformations) corresponds to actions of </p>
+<p>          Z</p>
+<p>    {\displaystyle \mathbb {Z} }</p>
+<p> or </p>
+<p>          R</p>
+<p>    {\displaystyle \mathbb {R} }</p>
+<p>.</p>
+<p>For non-abelian groups there might not be invariant measures even on compact metric spaces. However the definition of ergodicity carries over unchanged if one replaces invariant measures by quasi-invariant measures.</p>
+<p>Important examples are the action of a semisimple Lie group (or a lattice therein) on its Furstenberg boundary.</p>
+<p>A measurable equivalence relation it is said to be ergodic if all saturated subsets are either null or conull.</p>
+<p>Notes</p>
+<p>References</p>
+<p>Walters, Peter (1982). An Introduction to Ergodic Theory. Springer. ISBN 0-387-95152-0.</p>
+<p>Brin, Michael; Garrett, Stuck (2002). Introduction to Dynamical Systems. Cambridge University Press. ISBN 0-521-80841-3.</p>
+<p>External links</p>
+<p>Karma Dajani and Sjoerd Dirksin, "A Simple Introduction to Ergodic Theory"</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
