@@ -1,0 +1,91 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Setpoint (control system)</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Setpoint (control system)</h2>
+                <p>In cybernetics and control theory, a setpoint (SP; also set point) is the desired or target value for an essential variable, or process value (PV) of a control system, which may differ from the actual measured value of the variable.  Departure of such a variable from its setpoint is one basis for error-controlled regulation using negative feedback for automatic control. A setpoint can be any physical quantity or parameter that a control system seeks to regulate, such as temperature, pressure, flow rate, position, speed, or any other measurable attribute.</p>
+<p>In the context of PID controller, the setpoint represents the reference or goal for the controlled process variable. It serves as the benchmark against which the actual process variable (PV) is continuously compared. The PID controller calculates an error signal by taking the difference between the setpoint and the current value of the process variable. Mathematically, this error is expressed as:</p>
+<p>        e</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>        S</p>
+<p>        P</p>
+<p>        −</p>
+<p>        P</p>
+<p>        V</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\displaystyle e(t)=SP-PV(t),}</p>
+<p>where </p>
+<p>        e</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle e(t)}</p>
+<p> is the error at a given time </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>, </p>
+<p>        S</p>
+<p>        P</p>
+<p>    {\displaystyle SP}</p>
+<p> is the setpoint, </p>
+<p>        P</p>
+<p>        V</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle PV(t)}</p>
+<p> is the process variable at time </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>.</p>
+<p>The PID controller uses this error signal to determine how to adjust the control output to bring the process variable as close as possible to the setpoint while maintaining stability and minimizing overshoot.</p>
+<p>Examples</p>
+<p>Cruise control</p>
+<p>The </p>
+<p>        S</p>
+<p>        P</p>
+<p>        −</p>
+<p>        P</p>
+<p>        V</p>
+<p>    {\displaystyle SP-PV}</p>
+<p> error can be used to return a system to its norm. An everyday example is the cruise control on a road vehicle; where external influences such as gradients cause speed changes (PV), and the driver also alters the desired set speed (SP). The automatic control algorithm restores the actual speed to the desired speed in the optimum way, without delay or overshoot, by altering the power output of the vehicle's engine.  In this way the </p>
+<p>        S</p>
+<p>        P</p>
+<p>        −</p>
+<p>        P</p>
+<p>        V</p>
+<p>    {\displaystyle SP-PV}</p>
+<p> error is used to control the PV so that it equals the SP. A widespread of </p>
+<p>        S</p>
+<p>        P</p>
+<p>        −</p>
+<p>        P</p>
+<p>        V</p>
+<p>    {\displaystyle SP-PV}</p>
+<p> error is classically used in the PID controller.</p>
+<p>Industrial applications</p>
+<p>Special consideration must be given for engineering applications. In industrial systems, physical or process restraints may limit the determined set point. For example, a reactor which operates more efficiently at higher temperatures may be rated to withstand 500°C. However, for safety reasons, the set point for the reactor temperature control loop would be well below this limit, even if this means the reactor is running less efficiently.</p>
+<p>See also</p>
+<p>Process control</p>
+<p>Proportional–integral–derivative controller</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
