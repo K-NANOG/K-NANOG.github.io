@@ -1,0 +1,461 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lyapunov exponent</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Lyapunov exponent</h2>
+                <p>In mathematics, the Lyapunov exponent or Lyapunov characteristic exponent of a dynamical system is a quantity that characterizes the rate of separation of infinitesimally close trajectories. Quantitatively, two trajectories in phase space with initial separation vector </p>
+<p>        δ</p>
+<p>            Z</p>
+<p>            0</p>
+<p>    {\displaystyle \delta \mathbf {Z} _{0}}</p>
+<p> diverge (provided that the divergence can be treated within the linearized approximation) at a rate given by</p>
+<p>          |</p>
+<p>        δ</p>
+<p>          Z</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          |</p>
+<p>        ≈</p>
+<p>          e</p>
+<p>            λ</p>
+<p>            t</p>
+<p>          |</p>
+<p>        δ</p>
+<p>            Z</p>
+<p>            0</p>
+<p>          |</p>
+<p>    {\displaystyle |\delta \mathbf {Z} (t)|\approx e^{\lambda t}|\delta \mathbf {Z} _{0}|}</p>
+<p>where </p>
+<p>        λ</p>
+<p>    {\displaystyle \lambda }</p>
+<p> is the Lyapunov exponent.</p>
+<p>The rate of separation can be different for different orientations of initial separation vector. Thus, there is a spectrum of Lyapunov exponents—equal in number to the dimensionality of the phase space. It is common to refer to the largest one as the maximal Lyapunov exponent (MLE), because it determines a notion of predictability for a dynamical system. A positive MLE is usually taken as an indication that the system is chaotic (provided some other conditions are met, e.g., phase space compactness). Note that an arbitrary initial separation vector will typically contain some component in the direction associated with the MLE, and because of the exponential growth rate, the effect of the other exponents will be obliterated over time.</p>
+<p>The exponent is named after Aleksandr Lyapunov.</p>
+<p>Definition of the maximal Lyapunov exponent</p>
+<p>The maximal Lyapunov exponent can be defined as follows:</p>
+<p>        λ</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            t</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>          lim</p>
+<p>              |</p>
+<p>            δ</p>
+<p>                Z</p>
+<p>                0</p>
+<p>              |</p>
+<p>            →</p>
+<p>            0</p>
+<p>            1</p>
+<p>            t</p>
+<p>        ln</p>
+<p>        ⁡</p>
+<p>                |</p>
+<p>              δ</p>
+<p>                Z</p>
+<p>              (</p>
+<p>              t</p>
+<p>              )</p>
+<p>                |</p>
+<p>                |</p>
+<p>              δ</p>
+<p>                  Z</p>
+<p>                  0</p>
+<p>                |</p>
+<p>    {\displaystyle \lambda =\lim _{t\to \infty }\lim _{|\delta \mathbf {Z} _{0}|\to 0}{\frac {1}{t}}\ln {\frac {|\delta \mathbf {Z} (t)|}{|\delta \mathbf {Z} _{0}|}}}</p>
+<p>The limit </p>
+<p>          |</p>
+<p>        δ</p>
+<p>            Z</p>
+<p>            0</p>
+<p>          |</p>
+<p>        →</p>
+<p>        0</p>
+<p>    {\displaystyle |\delta \mathbf {Z} _{0}|\to 0}</p>
+<p> ensures the validity of the linear approximation</p>
+<p>at any time.</p>
+<p>For discrete time system (maps or fixed point iterations) </p>
+<p>          x</p>
+<p>            n</p>
+<p>            +</p>
+<p>            1</p>
+<p>        =</p>
+<p>        f</p>
+<p>        (</p>
+<p>          x</p>
+<p>            n</p>
+<p>        )</p>
+<p>    {\displaystyle x_{n+1}=f(x_{n})}</p>
+<p>, for an orbit starting with </p>
+<p>          x</p>
+<p>            0</p>
+<p>    {\displaystyle x_{0}}</p>
+<p> this translates into:</p>
+<p>        λ</p>
+<p>        (</p>
+<p>          x</p>
+<p>            0</p>
+<p>        )</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            n</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>            1</p>
+<p>            n</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            0</p>
+<p>            n</p>
+<p>            −</p>
+<p>            1</p>
+<p>        ln</p>
+<p>        ⁡</p>
+<p>          |</p>
+<p>          f</p>
+<p>          ′</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>          |</p>
+<p>    {\displaystyle \lambda (x_{0})=\lim _{n\to \infty }{\frac {1}{n}}\sum _{i=0}^{n-1}\ln |f'(x_{i})|}</p>
+<p>Definition of the Lyapunov spectrum</p>
+<p>For a dynamical system with evolution equation </p>
+<p>                x</p>
+<p>                ˙</p>
+<p>            i</p>
+<p>        =</p>
+<p>          f</p>
+<p>            i</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle {\dot {x}}_{i}=f_{i}(x)}</p>
+<p> in an n–dimensional phase space, the spectrum of Lyapunov exponents</p>
+<p>        {</p>
+<p>          λ</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          λ</p>
+<p>            2</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          λ</p>
+<p>            n</p>
+<p>        }</p>
+<p>        ,</p>
+<p>    {\displaystyle \{\lambda _{1},\lambda _{2},\ldots ,\lambda _{n}\}\,,}</p>
+<p>in general, depends on the starting point </p>
+<p>          x</p>
+<p>            0</p>
+<p>    {\displaystyle x_{0}}</p>
+<p>. However, we will usually be interested in the attractor (or attractors) of a dynamical system, and there will normally be one set of exponents associated with each attractor. The choice of starting point may determine which attractor the system ends up on, if there is more than one. (For Hamiltonian systems, which do not have attractors, this is not a concern.) The Lyapunov exponents describe the behavior of vectors in the tangent space of the phase space and are defined from the Jacobian matrix</p>
+<p>          J</p>
+<p>            i</p>
+<p>            j</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>                  d</p>
+<p>                    f</p>
+<p>                      i</p>
+<p>                  (</p>
+<p>                  x</p>
+<p>                  )</p>
+<p>                  d</p>
+<p>                    x</p>
+<p>                      j</p>
+<p>            |</p>
+<p>            x</p>
+<p>            (</p>
+<p>            t</p>
+<p>            )</p>
+<p>    {\displaystyle J_{ij}(t)=\left.{\frac {df_{i}(x)}{dx_{j}}}\right|_{x(t)}}</p>
+<p>this Jacobian defines the evolution of the tangent vectors, given by the matrix </p>
+<p>        Y</p>
+<p>    {\displaystyle Y}</p>
+<p>, via the equation</p>
+<p>              Y</p>
+<p>              ˙</p>
+<p>        =</p>
+<p>        J</p>
+<p>        Y</p>
+<p>    {\displaystyle {\dot {Y}}=JY}</p>
+<p>with the initial condition </p>
+<p>          Y</p>
+<p>            i</p>
+<p>            j</p>
+<p>        (</p>
+<p>        0</p>
+<p>        )</p>
+<p>        =</p>
+<p>          δ</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle Y_{ij}(0)=\delta _{ij}}</p>
+<p>. The matrix </p>
+<p>        Y</p>
+<p>    {\displaystyle Y}</p>
+<p> describes how a small change at the point </p>
+<p>        x</p>
+<p>        (</p>
+<p>        0</p>
+<p>        )</p>
+<p>    {\displaystyle x(0)}</p>
+<p> propagates to the final point </p>
+<p>        x</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle x(t)}</p>
+<p>. The limit</p>
+<p>        Λ</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            t</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>            1</p>
+<p>              2</p>
+<p>              t</p>
+<p>        log</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        Y</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          Y</p>
+<p>            T</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle \Lambda =\lim _{t\rightarrow \infty }{\frac {1}{2t}}\log(Y(t)Y^{T}(t))}</p>
+<p>defines a matrix </p>
+<p>        Λ</p>
+<p>    {\displaystyle \Lambda }</p>
+<p> (the conditions for the existence of the limit are given by the Oseledets theorem). The Lyapunov exponents </p>
+<p>          λ</p>
+<p>            i</p>
+<p>    {\displaystyle \lambda _{i}}</p>
+<p> are defined by the eigenvalues of </p>
+<p>        Λ</p>
+<p>    {\displaystyle \Lambda }</p>
+<p>.</p>
+<p>The set of Lyapunov exponents will be the same for almost all starting points of an ergodic component of the dynamical system.</p>
+<p>Lyapunov exponent for time-varying linearization</p>
+<p>To introduce Lyapunov exponent consider a fundamental matrix </p>
+<p>        X</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle X(t)}</p>
+<p> (e.g., for linearization along a stationary solution </p>
+<p>          x</p>
+<p>            0</p>
+<p>    {\displaystyle x_{0}}</p>
+<p> in a continuous system), the fundamental matrix is </p>
+<p>        exp</p>
+<p>        ⁡</p>
+<p>          (</p>
+<p>                      d</p>
+<p>                        f</p>
+<p>                          t</p>
+<p>                      (</p>
+<p>                      x</p>
+<p>                      )</p>
+<p>                      d</p>
+<p>                      x</p>
+<p>                |</p>
+<p>                  x</p>
+<p>                    0</p>
+<p>            t</p>
+<p>          )</p>
+<p>    {\displaystyle \exp \left(\left.{\frac {df^{t}(x)}{dx}}\right|_{x_{0}}t\right)}</p>
+<p> consisting of the linearly-independent solutions of  the first-order approximation of the system. The singular values </p>
+<p>        {</p>
+<p>          α</p>
+<p>            j</p>
+<p>            (</p>
+<p>        X</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>            )</p>
+<p>          }</p>
+<p>            1</p>
+<p>            n</p>
+<p>    {\displaystyle \{\alpha _{j}{\big (}X(t){\big )}\}_{1}^{n}}</p>
+<p> of the matrix </p>
+<p>        X</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle X(t)}</p>
+<p> are the square roots of the eigenvalues of the matrix </p>
+<p>        X</p>
+<p>        (</p>
+<p>        t</p>
+<p>          )</p>
+<p>            ∗</p>
+<p>        X</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle X(t)^{*}X(t)}</p>
+<p>.</p>
+<p>The largest Lyapunov exponent </p>
+<p>          λ</p>
+<p>              m</p>
+<p>              a</p>
+<p>              x</p>
+<p>    {\displaystyle \lambda _{\mathrm {max} }}</p>
+<p> is as follows</p>
+<p>          λ</p>
+<p>              m</p>
+<p>              a</p>
+<p>              x</p>
+<p>        =</p>
+<p>          max</p>
+<p>            j</p>
+<p>          lim sup</p>
+<p>            t</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>            1</p>
+<p>            t</p>
+<p>        ln</p>
+<p>        ⁡</p>
+<p>          α</p>
+<p>            j</p>
+<p>            (</p>
+<p>        X</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>            )</p>
+<p>        .</p>
+<p>    {\displaystyle \lambda _{\mathrm {max} }=\max \limits _{j}\limsup _{t\rightarrow \infty }{\frac {1}{t}}\ln \alpha _{j}{\big (}X(t){\big )}.}</p>
+<p>Lyapunov proved that if the system of the first approximation is regular (e.g., all systems with constant and periodic coefficients are regular) and its largest Lyapunov exponent is negative, then the solution of the original system is asymptotically Lyapunov stable.</p>
+<p>Later, it was stated by O. Perron that the requirement of regularity of the first approximation is substantial.</p>
+<p>Perron effects of largest Lyapunov exponent sign inversion</p>
+<p>In 1930 O. Perron constructed an example of a second-order system, where the first approximation has negative Lyapunov exponents along a zero solution of the original system but, at the same time, this zero solution of the original nonlinear system is Lyapunov unstable. Furthermore, in a certain neighborhood of this zero solution almost all solutions of original system have positive Lyapunov exponents. Also, it is possible to construct a reverse example in which the first approximation has positive Lyapunov exponents along a zero solution of the original system but, at the same time, this zero solution of original nonlinear system</p>
+<p>is Lyapunov stable.</p>
+<p>The effect of sign inversion of Lyapunov exponents of solutions of the original system and the system of first approximation with the same initial data was subsequently</p>
+<p>called the Perron effect.</p>
+<p>Perron's counterexample shows that a negative largest Lyapunov exponent does not, in general, indicate stability, and that</p>
+<p>a positive largest Lyapunov exponent does not, in general, indicate chaos.</p>
+<p>Therefore, time-varying linearization requires additional justification.</p>
+<p>Basic properties</p>
+<p>If the system is conservative (i.e., there is no dissipation), a volume element of the phase space will stay the same along a trajectory. Thus the sum of all Lyapunov exponents must be zero. If the system is dissipative, the sum of Lyapunov exponents is negative.</p>
+<p>If the system is a flow and the trajectory does not converge to a single point, one exponent is always zero—the Lyapunov exponent corresponding to the eigenvalue of </p>
+<p>        L</p>
+<p>    {\displaystyle L}</p>
+<p> with an eigenvector in the direction of the flow.</p>
+<p>Significance of the Lyapunov spectrum</p>
+<p>The Lyapunov spectrum can be used to give an estimate of the rate of entropy production,</p>
+<p>of the fractal dimension, and of the Hausdorff dimension of the considered dynamical system. In particular from the knowledge of the Lyapunov spectrum it is possible to obtain the so-called Lyapunov dimension (or Kaplan–Yorke dimension) </p>
+<p>          D</p>
+<p>            K</p>
+<p>            Y</p>
+<p>    {\displaystyle D_{KY}}</p>
+<p>, which is defined as follows:</p>
+<p>          D</p>
+<p>            K</p>
+<p>            Y</p>
+<p>        =</p>
+<p>        k</p>
+<p>        +</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            k</p>
+<p>              λ</p>
+<p>                i</p>
+<p>                |</p>
+<p>                λ</p>
+<p>                  k</p>
+<p>                  +</p>
+<p>                  1</p>
+<p>                |</p>
+<p>    {\displaystyle D_{KY}=k+\sum _{i=1}^{k}{\frac {\lambda _{i}}{|\lambda _{k+1}|}}}</p>
+<p>where </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p> is the maximum integer such that the sum of the </p>
+<p>        k</p>
+<p>    {\displaystyle k}</p>
+<p> largest exponents is still non-negative. </p>
+<p>          D</p>
+<p>            K</p>
+<p>            Y</p>
+<p>    {\displaystyle D_{KY}}</p>
+<p> represents an upper bound for the information dimension of the system. Moreover, the sum of all the positive Lyapunov exponents gives an estimate of the Kolmogorov–Sinai entropy accordingly to Pesin's theorem.</p>
+<p>Along with widely used numerical methods for estimating and computing the Lyapunov dimension there is an effective analytical approach, which is based on the direct Lyapunov method with special Lyapunov-like functions.</p>
+<p>The Lyapunov exponents of bounded trajectory and the Lyapunov dimension of attractor are invariant under diffeomorphism of the phase space.</p>
+<p>The multiplicative inverse of the largest Lyapunov exponent is sometimes referred in literature as Lyapunov time, and defines the characteristic e-folding time. For chaotic orbits, the Lyapunov time will be finite, whereas for regular orbits it will be infinite.</p>
+<p>Numerical calculation</p>
+<p>Generally the calculation of Lyapunov exponents, as defined above, cannot be carried out analytically, and in most cases one must resort to numerical techniques. An early example, which also constituted the first demonstration of the exponential divergence of chaotic trajectories, was carried out by R. H. Miller in 1964. Currently, the most commonly used numerical procedure estimates the </p>
+<p>        L</p>
+<p>    {\displaystyle L}</p>
+<p> matrix based on averaging several finite time approximations of the limit defining </p>
+<p>        L</p>
+<p>    {\displaystyle L}</p>
+<p>.</p>
+<p>One of the most used and effective numerical techniques to calculate the Lyapunov spectrum for a smooth dynamical system relies on periodic Gram–Schmidt orthonormalization of the Lyapunov vectors to avoid a misalignment of all the vectors along the direction of maximal expansion. The Lyapunov spectrum of various models are described. Source codes for nonlinear systems such as the Hénon map, the Lorenz equations, a delay differential equation and so on are introduced.</p>
+<p>For the calculation of Lyapunov exponents from limited experimental data, various methods have been proposed. However, there are many difficulties with applying these methods and such problems should be approached with care.  The main difficulty is that the data does not fully explore the phase space, rather it is confined to the attractor which has very limited (if any) extension along certain directions.  These thinner or more singular directions within the data set are the ones associated with the more negative exponents.  The use of nonlinear mappings to model the evolution of small displacements from the attractor has been shown to dramatically improve the ability to recover the Lyapunov spectrum, provided the data has a very low level of noise.  The singular nature of the data and its connection to the more negative exponents has also been explored.</p>
+<p>Local Lyapunov exponent</p>
+<p>Whereas the (global) Lyapunov exponent gives a measure for the total predictability of a system, it is sometimes of interest to estimate the local predictability around a point x0 in phase space. This may be done through the eigenvalues of the Jacobian matrix J0(x0).  These eigenvalues are also called local Lyapunov exponents. Local exponents are not invariant under a nonlinear change of coordinates.</p>
+<p>Conditional Lyapunov exponent</p>
+<p>This term is normally used regarding synchronization of chaos, in which there are two systems that are coupled, usually in a unidirectional manner so that there is a drive (or master) system and a response (or slave) system.  The conditional exponents are those of the response system with the drive system treated as simply the source of a (chaotic) drive signal.  Synchronization occurs when all of the conditional exponents are negative.</p>
+<p>See also</p>
+<p>Chaos Theory</p>
+<p>Chaotic mixing for an alternative derivation</p>
+<p>Eden's conjecture on the Lyapunov dimension</p>
+<p>Floquet theory</p>
+<p>Liouville's theorem (Hamiltonian)</p>
+<p>Lyapunov dimension</p>
+<p>Lyapunov time</p>
+<p>Recurrence quantification analysis</p>
+<p>Oseledets theorem</p>
+<p>Butterfly effect</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Kuznetsov, Nikolay; Reitmann, Volker (2020). Attractor Dimension Estimates for Dynamical Systems: Theory and Computation. Cham: Springer.</p>
+<p>M.-F. Danca & N.V. Kuznetsov (2018). "Matlab Code for Lyapunov Exponents of Fractional-Order Systems". International Journal of Bifurcation and Chaos. 25 (5): 1850067–1851392. arXiv:1804.01143. Bibcode:2018IJBC...2850067D. doi:10.1142/S0218127418500670.</p>
+<p>Cvitanović P., Artuso  R., Mainieri R., Tanner G.  and  Vattay G.Chaos: Classical and Quantum Niels Bohr Institute, Copenhagen 2005 – textbook about chaos available under Free Documentation License</p>
+<p>Freddy Christiansen & Hans Henrik Rugh (1997). "Computing Lyapunov spectra with continuous Gram–Schmidt orthonormalization". Nonlinearity. 10 (5): 1063–1072. arXiv:chao-dyn/9611014. Bibcode:1997Nonli..10.1063C. doi:10.1088/0951-7715/10/5/004. S2CID 122976405. Archived from the original on 2006-04-25.</p>
+<p>Salman Habib & Robert D. Ryne (1995). "Symplectic Calculation of Lyapunov Exponents". Physical Review Letters. 74 (1): 70–73. arXiv:chao-dyn/9406010. Bibcode:1995PhRvL..74...70H. doi:10.1103/PhysRevLett.74.70. PMID 10057701. S2CID 19203665.</p>
+<p>Govindan Rangarajan; Salman Habib & Robert D. Ryne (1998). "Lyapunov Exponents without Rescaling and Reorthogonalization". Physical Review Letters. 80 (17): 3747–3750. arXiv:chao-dyn/9803017. Bibcode:1998PhRvL..80.3747R. doi:10.1103/PhysRevLett.80.3747. S2CID 14483592.</p>
+<p>X. Zeng; R. Eykholt & R. A. Pielke (1991). "Estimating the Lyapunov-exponent spectrum from short time series of low precision". Physical Review Letters. 66 (25): 3229–3232. Bibcode:1991PhRvL..66.3229Z. doi:10.1103/PhysRevLett.66.3229. PMID 10043734.</p>
+<p>E Aurell; G Boffetta; A Crisanti; G Paladin; A Vulpiani (1997). "Predictability in the large: an extension of the concept of Lyapunov exponent". J. Phys. A: Math. Gen. 30 (1): 1–26. arXiv:chao-dyn/9606014. Bibcode:1997JPhA...30....1A. doi:10.1088/0305-4470/30/1/003. S2CID 54697488.</p>
+<p>F Ginelli; P Poggi; A Turchi; H Chaté; R Livi; A Politi (2007). "Characterizing Dynamics with Covariant Lyapunov Vectors" (PDF). Physical Review Letters. 99 (13): 130601. arXiv:0706.0510. Bibcode:2007PhRvL..99m0601G. doi:10.1103/PhysRevLett.99.130601. hdl:2158/253565. PMID 17930570. S2CID 21992110. Archived from the original (PDF) on 2008-10-31.</p>
+<p>Software</p>
+<p>[1] R. Hegger, H. Kantz, and T. Schreiber, Nonlinear Time Series Analysis, TISEAN 3.0.1 (March 2007).</p>
+<p>[2] Scientio's ChaosKit product calculates Lyapunov exponents amongst other Chaotic measures. Access is provided online via a web service and Silverlight demo.</p>
+<p>[3] Archived 2022-06-28 at the Wayback Machine Dr. Ronald Joe Record's mathematical recreations software laboratory includes an X11 graphical client, lyap, for graphically exploring the Lyapunov exponents of a forced logistic map and other maps of the unit interval. The contents and manual pages of the mathrec software laboratory are also available.</p>
+<p>[4] Software on this page was developed specifically for the efficient and accurate calculation of the full spectrum of exponents.  This includes LyapOde for cases where the equations of motion are known and also Lyap for cases involving experimental time series data.  LyapOde, which includes source code written in "C", can also calculate the conditional Lyapunov exponents for coupled identical systems.  It is intended to allow the user to provide their own set of model equations or to use one of the ones included.  There are no inherent limitations on the number of variables, parameters etc.  Lyap which includes source code written in Fortran, can also calculate the Lyapunov direction vectors and can characterize the singularity of the attractor, which is the main reason for difficulties in calculating the more negative exponents from time series data.  In both cases there is extensive documentation and sample input files.  The software can be compiled for running on Windows, Mac, or Linux/Unix systems.  The software runs in a text window and has no graphics capabilities, but can generate output files that could easily be plotted with a program like excel.</p>
+<p>External links</p>
+<p>Perron effects of Lyapunov exponent sign inversions</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
