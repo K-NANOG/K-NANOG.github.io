@@ -1,0 +1,1634 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Type theory</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Type theory</h2>
+                <p>In mathematics and theoretical computer science, a type theory is the formal presentation of a specific type system. Type theory is the academic study of type systems. </p>
+<p>Some type theories serve as alternatives to set theory as a foundation of mathematics. Two influential type theories that have been proposed as foundations are: </p>
+<p>Typed λ-calculus of Alonzo Church</p>
+<p>Intuitionistic type theory of Per Martin-Löf</p>
+<p>Most computerized proof-writing systems use a type theory for their foundation. A common one is Thierry Coquand's Calculus of Inductive Constructions.</p>
+<p>History</p>
+<p>Type theory was created to avoid a paradox in a mathematical equation based on naive set theory and formal logic. Russell's paradox (first described in Gottlob Frege's The Foundations of Arithmetic) is that, without proper axioms, it is possible to define the set of all sets that are not members of themselves; this set both contains itself and does not contain itself. Between 1902 and 1908, Bertrand Russell proposed various solutions to this problem.</p>
+<p>By 1908, Russell arrived at a ramified theory of types together with an axiom of reducibility, both of which appeared in Whitehead and Russell's Principia Mathematica published in 1910, 1912, and 1913. This system avoided contradictions suggested in Russell's paradox by creating a hierarchy of types and then assigning each concrete mathematical entity to a specific type. Entities of a given type were built exclusively of subtypes of that type, thus preventing an entity from being defined using itself. This resolution of Russell's paradox is similar to approaches taken in other formal systems, such as Zermelo-Fraenkel set theory.</p>
+<p>Type theory is particularly popular in conjunction with Alonzo Church's lambda calculus. One notable early example of type theory is Church's simply typed lambda calculus. Church's theory of types helped the formal system avoid the Kleene–Rosser paradox that afflicted the original untyped lambda calculus. Church demonstrated that it could serve as a foundation of mathematics and it was referred to as a higher-order logic.</p>
+<p>In the modern literature, "type theory" refers to a typed system based around lambda calculus. One influential system is Per Martin-Löf's intuitionistic type theory, which was proposed as a foundation for constructive mathematics. Another is Thierry Coquand's calculus of constructions, which is used as the foundation by Coq, Lean, and other computer proof assistants. Type theory is an active area of research, one direction being the development of homotopy type theory.</p>
+<p>Applications</p>
+<p>Mathematical foundations</p>
+<p>The first computer proof assistant, called Automath, used type theory to encode mathematics on a computer. Martin-Löf specifically developed intuitionistic type theory to encode all mathematics to serve as a new foundation for mathematics. There is ongoing research into mathematical foundations using homotopy type theory.</p>
+<p>Mathematicians working in category theory already had difficulty working with the widely accepted foundation of Zermelo–Fraenkel set theory. This led to proposals such as Lawvere's Elementary Theory of the Category of Sets (ETCS). Homotopy type theory continues in this line using type theory. Researchers are exploring connections between dependent types (especially the identity type) and algebraic topology (specifically homotopy).</p>
+<p>Proof assistants</p>
+<p>Much of the current research into type theory is driven by proof checkers, interactive proof assistants, and automated theorem provers. Most of these systems use a type theory as the mathematical foundation for encoding proofs, which is not surprising, given the close connection between type theory and programming languages:</p>
+<p>LF is used by Twelf, often to define other type theories;</p>
+<p>many type theories which fall under higher-order logic are used by the HOL family of provers and PVS;</p>
+<p>computational type theory is used by NuPRL;</p>
+<p>calculus of constructions and its derivatives are used by Coq, Matita, and Lean;</p>
+<p>UTT (Luo's Unified Theory of dependent Types) is used by Agda which is both a programming language and proof assistant</p>
+<p>Many type theories are supported by LEGO and Isabelle. Isabelle also supports foundations besides type theories, such as ZFC. Mizar is an example of a proof system that only supports set theory.</p>
+<p>Programming languages</p>
+<p>Any static program analysis, such as the type checking algorithms in the semantic analysis phase of compiler, has a connection to type theory. A prime example is Agda, a programming language which uses UTT (Luo's Unified Theory of dependent Types) for its type system.</p>
+<p>The programming language ML was developed for manipulating type theories (see LCF) and its own type system was heavily influenced by them.</p>
+<p>Linguistics</p>
+<p>Type theory is also widely used in formal theories of semantics of natural languages, especially Montague grammar and its descendants. In particular, categorial grammars and pregroup grammars extensively use type constructors to define the types (noun, verb, etc.) of words.</p>
+<p>The most common construction takes the basic types </p>
+<p>        e</p>
+<p>    {\displaystyle e}</p>
+<p> and </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> for individuals and truth-values, respectively, and defines the set of types recursively as follows:</p>
+<p>if </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and </p>
+<p>        b</p>
+<p>    {\displaystyle b}</p>
+<p> are types, then so is </p>
+<p>        ⟨</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        ⟩</p>
+<p>    {\displaystyle \langle a,b\rangle }</p>
+<p>;</p>
+<p>nothing except the basic types, and what can be constructed from them by means of the previous clause are types.</p>
+<p>A complex type </p>
+<p>        ⟨</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        ⟩</p>
+<p>    {\displaystyle \langle a,b\rangle }</p>
+<p> is the type of functions from entities of type </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> to entities of type </p>
+<p>        b</p>
+<p>    {\displaystyle b}</p>
+<p>. Thus one has types like </p>
+<p>        ⟨</p>
+<p>        e</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        ⟩</p>
+<p>    {\displaystyle \langle e,t\rangle }</p>
+<p> which are interpreted as elements of the set of functions from entities to truth-values, i.e. indicator functions of sets of entities. An expression of type </p>
+<p>        ⟨</p>
+<p>        ⟨</p>
+<p>        e</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        ⟩</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        ⟩</p>
+<p>    {\displaystyle \langle \langle e,t\rangle ,t\rangle }</p>
+<p> is a function from sets of entities to truth-values, i.e. a (indicator function of a) set of sets. This latter type is standardly taken to be the type of natural language quantifiers, like  everybody or nobody (Montague 1973, Barwise and Cooper 1981).</p>
+<p>Type theory with records is a formal semantics representation framework, using records to express type theory types. It has been used in natural language processing, principally computational semantics and dialogue systems.</p>
+<p>Social sciences</p>
+<p>Gregory Bateson introduced a theory of logical types into the social sciences; his notions of double bind and logical levels are based on Russell's theory of types.</p>
+<p>Type theory as a logic</p>
+<p>A type theory is a mathematical logic, which is to say it is a collection of rules of inference that result in judgments. Most logics have judgments asserting "The proposition </p>
+<p>        φ</p>
+<p>    {\displaystyle \varphi }</p>
+<p> is true", or "The formula </p>
+<p>        φ</p>
+<p>    {\displaystyle \varphi }</p>
+<p> is a well-formed formula". A type theory has judgments that define types and assign them to a collection of formal objects, known as terms. A term and its type are often written together as </p>
+<p>          t</p>
+<p>          e</p>
+<p>          r</p>
+<p>          m</p>
+<p>        :</p>
+<p>            t</p>
+<p>            y</p>
+<p>            p</p>
+<p>            e</p>
+<p>    {\displaystyle \mathrm {term} :{\mathsf {type}}}</p>
+<p>.</p>
+<p>Terms</p>
+<p>A term in logic is recursively defined as a constant symbol, variable, or a function application, where a term is applied to another term. Constant symbols could include the natural number </p>
+<p>        0</p>
+<p>    {\displaystyle 0}</p>
+<p>, the Boolean value </p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>    {\displaystyle \mathrm {true} }</p>
+<p>, and functions such as the successor function </p>
+<p>          S</p>
+<p>    {\displaystyle \mathrm {S} }</p>
+<p> and conditional operator </p>
+<p>          i</p>
+<p>          f</p>
+<p>    {\displaystyle \mathrm {if} }</p>
+<p>. Thus some terms could be </p>
+<p>        0</p>
+<p>    {\displaystyle 0}</p>
+<p>, </p>
+<p>        (</p>
+<p>          S</p>
+<p>        0</p>
+<p>        )</p>
+<p>    {\displaystyle (\mathrm {S} \,0)}</p>
+<p>, </p>
+<p>        (</p>
+<p>          S</p>
+<p>        (</p>
+<p>          S</p>
+<p>        0</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle (\mathrm {S} \,(\mathrm {S} \,0))}</p>
+<p>, and </p>
+<p>        (</p>
+<p>          i</p>
+<p>          f</p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>        0</p>
+<p>        (</p>
+<p>          S</p>
+<p>        0</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle (\mathrm {if} \,\mathrm {true} \,0\,(\mathrm {S} \,0))}</p>
+<p>.</p>
+<p>Judgments</p>
+<p>Most type theories have 4 judgments:</p>
+<p>"</p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is a type"</p>
+<p>"</p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> is a term of type </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p>"</p>
+<p>"Type </p>
+<p>          T</p>
+<p>            1</p>
+<p>    {\displaystyle T_{1}}</p>
+<p> is equal to type </p>
+<p>          T</p>
+<p>            2</p>
+<p>    {\displaystyle T_{2}}</p>
+<p>"</p>
+<p>"Terms </p>
+<p>          t</p>
+<p>            1</p>
+<p>    {\displaystyle t_{1}}</p>
+<p> and </p>
+<p>          t</p>
+<p>            2</p>
+<p>    {\displaystyle t_{2}}</p>
+<p> both of type </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> are equal"</p>
+<p>Judgments may follow from assumptions. For example, one might say "assuming </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> is a term of type </p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>    {\displaystyle {\mathsf {bool}}}</p>
+<p> and </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p> is a term of type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p>, it follows that </p>
+<p>        (</p>
+<p>          i</p>
+<p>          f</p>
+<p>        x</p>
+<p>        y</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle (\mathrm {if} \,x\,y\,y)}</p>
+<p> is a term of type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p>". Such judgments are formally written with the turnstile symbol </p>
+<p>        ⊢</p>
+<p>    {\displaystyle \vdash }</p>
+<p>.</p>
+<p>        x</p>
+<p>        :</p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        ⊢</p>
+<p>        (</p>
+<p>            if</p>
+<p>        x</p>
+<p>        y</p>
+<p>        y</p>
+<p>        )</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle x:{\mathsf {bool}},y:{\mathsf {nat}}\vdash ({\textrm {if}}\,x\,y\,y):{\mathsf {nat}}}</p>
+<p>If there are no assumptions, there will be nothing to the left of the turnstile.</p>
+<p>        ⊢</p>
+<p>          S</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle \vdash \mathrm {S} :{\mathsf {nat}}\to {\mathsf {nat}}}</p>
+<p>The list of assumptions on the left is the context of the judgment. Capital greek letters, such as </p>
+<p>        Γ</p>
+<p>    {\displaystyle \Gamma }</p>
+<p> and </p>
+<p>        Δ</p>
+<p>    {\displaystyle \Delta }</p>
+<p>, are common choices to represent some or all of the assumptions. The 4 different judgments are thus usually written as follows.</p>
+<p>Some textbooks use a triple equal sign </p>
+<p>        ≡</p>
+<p>    {\displaystyle \equiv }</p>
+<p> to stress that this is judgmental equality and thus an extrinsic notion of equality. The judgments enforce that every term has a type. The type will restrict which rules can be applied to a term.</p>
+<p>Rules of Inference</p>
+<p>A type theory's inference rules say what judgments can be made, based on the existence of other judgments. Rules are expressed as a Gentzen-style deduction using a horizontal line, with the required input judgments above the line and the resulting judgment below the line. For example, the following inference rule states a substitution rule for judgmental equality.</p>
+<p>                Γ</p>
+<p>                ⊢</p>
+<p>                t</p>
+<p>                :</p>
+<p>                  T</p>
+<p>                    1</p>
+<p>                Δ</p>
+<p>                ⊢</p>
+<p>                  T</p>
+<p>                    1</p>
+<p>                =</p>
+<p>                  T</p>
+<p>                    2</p>
+<p>                Γ</p>
+<p>                ,</p>
+<p>                Δ</p>
+<p>                ⊢</p>
+<p>                t</p>
+<p>                :</p>
+<p>                  T</p>
+<p>                    2</p>
+<p>    {\displaystyle {\begin{array}{c}\Gamma \vdash t:T_{1}\qquad \Delta \vdash T_{1}=T_{2}\\\hline \Gamma ,\Delta \vdash t:T_{2}\end{array}}}</p>
+<p>The rules are syntactic and work by rewriting. The metavariables </p>
+<p>        Γ</p>
+<p>    {\displaystyle \Gamma }</p>
+<p>, </p>
+<p>        Δ</p>
+<p>    {\displaystyle \Delta }</p>
+<p>, </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>, </p>
+<p>          T</p>
+<p>            1</p>
+<p>    {\displaystyle T_{1}}</p>
+<p>, and </p>
+<p>          T</p>
+<p>            2</p>
+<p>    {\displaystyle T_{2}}</p>
+<p> may actually consist of complex terms and types that contain many function applications, not just single symbols.</p>
+<p>To generate a particular judgment in type theory, there must be a rule to generate it, as well as rules to generate all of that rule's required inputs, and so on. The applied rules form a proof tree, where the top-most rules need no assumptions. One example of a rule that does not require any inputs is one that states the type of a constant term. For example, to assert that there is a term </p>
+<p>        0</p>
+<p>    {\displaystyle 0}</p>
+<p> of type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p>, one would write the following.</p>
+<p>                  ⊢</p>
+<p>                  0</p>
+<p>                  :</p>
+<p>                  n</p>
+<p>                  a</p>
+<p>                  t</p>
+<p>    {\displaystyle {\begin{array}{c}\hline \vdash 0:nat\\\end{array}}}</p>
+<p>Type inhabitation</p>
+<p>Generally, the desired conclusion of a proof in type theory is one of type inhabitation. The decision problem of type inhabitation (abbreviated by </p>
+<p>        ∃</p>
+<p>        t</p>
+<p>        .</p>
+<p>        Γ</p>
+<p>        ⊢</p>
+<p>        t</p>
+<p>        :</p>
+<p>        τ</p>
+<p>        ?</p>
+<p>    {\displaystyle \exists t.\Gamma \vdash t:\tau ?}</p>
+<p>) is: </p>
+<p>Given a context </p>
+<p>        Γ</p>
+<p>    {\displaystyle \Gamma }</p>
+<p> and a type </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p>, decide whether there exists a term </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> that can be assigned the type </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p> in the type environment </p>
+<p>        Γ</p>
+<p>    {\displaystyle \Gamma }</p>
+<p>.</p>
+<p>Girard's paradox shows that type inhabitation is strongly related to the consistency of a type system with Curry–Howard correspondence. To be sound, such a system must have uninhabited types.</p>
+<p>A type theory usually has several rules, including ones to:</p>
+<p>create a judgment (known as a context in this case)</p>
+<p>add an assumption to the context (context weakening)</p>
+<p>rearrange the assumptions</p>
+<p>use an assumption to create a variable</p>
+<p>define reflexivity, symmetry and transitivity for judgmental equality</p>
+<p>define substitution for application of lambda terms</p>
+<p>list all the interactions of equality, such as substitution</p>
+<p>define a hierarchy of type universes</p>
+<p>assert the existence of new types</p>
+<p>Also, for each "by rule" type, there are 4 different kinds of rules</p>
+<p>"type formation" rules say how to create the type</p>
+<p>"term introduction" rules define the canonical terms and constructor functions, like "pair" and "S".</p>
+<p>"term elimination" rules define the other functions like "first", "second", and "R".</p>
+<p>"computation" rules specify how computation is performed with the type-specific functions.</p>
+<p>For examples of rules, an interested reader may follow Appendix A.2 of the Homotopy Type Theory book,  or read Martin-Löf's Intuitionistic Type Theory.</p>
+<p>Connections to foundations</p>
+<p>The logical framework of a type theory bears a resemblance to intuitionistic, or constructive, logic. Formally, type theory is often cited as an implementation of the Brouwer–Heyting–Kolmogorov interpretation of intuitionistic logic. Additionally, connections can be made to category theory and computer programs.</p>
+<p>Intuitionistic logic</p>
+<p>When used as a foundation, certain types are interpreted to be propositions (statements that can be proven), and terms inhabiting the type are interpreted to be proofs of that proposition. When some types are interpreted as propositions, there is a set of common types that can be used to connect them to make a Boolean algebra out of types. However, the logic is not classical logic but intuitionistic logic, which is to say it does not have the law of excluded middle nor double negation.</p>
+<p>Under this intuitionistic interpretation, there are common types that act as the logical operators:</p>
+<p>Because the law of excluded middle does not hold, there is no term of type </p>
+<p>        Π</p>
+<p>        a</p>
+<p>        .</p>
+<p>        A</p>
+<p>        +</p>
+<p>        (</p>
+<p>        A</p>
+<p>        →</p>
+<p>        ⊥</p>
+<p>        )</p>
+<p>    {\displaystyle \Pi a.A+(A\to \bot )}</p>
+<p>. Likewise, double negation does not hold, so there is no term of type </p>
+<p>        Π</p>
+<p>        A</p>
+<p>        .</p>
+<p>        (</p>
+<p>        (</p>
+<p>        A</p>
+<p>        →</p>
+<p>        ⊥</p>
+<p>        )</p>
+<p>        →</p>
+<p>        ⊥</p>
+<p>        )</p>
+<p>        →</p>
+<p>        A</p>
+<p>    {\displaystyle \Pi A.((A\to \bot )\to \bot )\to A}</p>
+<p>.</p>
+<p>It is possible to include the law of excluded middle and double negation into a type theory, by rule or assumption. However, terms may not compute down to canonical terms and it will interfere with the ability to determine if two terms are judgementally equal to each other.</p>
+<p>Constructive mathematics</p>
+<p>Per Martin-Löf proposed his intuitionistic type theory as a foundation for constructive mathematics. Constructive mathematics requires when proving "there exists an </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> with property </p>
+<p>        P</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle P(x)}</p>
+<p>", one must construct a particular </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> and a proof that it has property </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p>. In type theory, existence is accomplished using the dependent product type, and its proof requires a term of that type.</p>
+<p>An example of a non-constructive proof is proof by contradiction. The first step is assuming that </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> does not exist and refuting it by contradiction. The conclusion from that step is "it is not the case that </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> does not exist". The last step is, by double negation, concluding that </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> exists. Constructive mathematics does not allow the last step of removing the double negation to conclude that </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> exists.</p>
+<p>Most of the type theories proposed as foundations are constructive, and this includes most of the ones used by proof assistants. It is possible to add non-constructive features to a type theory, by rule or assumption. These include operators on continuations such as call with current continuation. However, these operators tend to break desirable properties such as canonicity and parametricity.</p>
+<p>Curry-Howard correspondence</p>
+<p>The Curry–Howard correspondence is the observed similarity between logics and programming languages. The implication in logic, "A </p>
+<p>        →</p>
+<p>    {\displaystyle \to }</p>
+<p> B" resembles a function from type "A" to type "B". For a variety of logics, the rules are similar to expressions in a programming language's types. The similarity goes farther, as applications of the rules resemble programs in the programming languages. Thus, the correspondence is often summarized as "proofs as programs".</p>
+<p>The opposition of terms and types can also be viewed as one of implementation and specification. By program synthesis, (the computational counterpart of) type inhabitation can be used to construct (all or parts of) programs from the specification given in the form of type information.</p>
+<p>Type inference</p>
+<p>Many programs that work with type theory (e.g., interactive theorem provers) also do type inferencing. It lets them select the rules that the user intends, with fewer actions by the user.</p>
+<p>Research areas</p>
+<p>Category theory</p>
+<p>Main article: Category theory</p>
+<p>Although the initial motivation for category theory was far removed from foundationalism, the two fields turned out to have deep connections. As John Lane Bell writes: "In fact categories can themselves be viewed as type theories of a certain kind; this fact alone indicates that type theory is much more closely related to category theory than it is to set theory." In brief, a category can be viewed as a type theory by regarding its objects as types (or sorts), i.e. "Roughly speaking, a category may be thought of as a type theory shorn of its syntax." A number of significant results follow in this way:</p>
+<p>cartesian closed categories correspond to the typed λ-calculus (Lambek, 1970);</p>
+<p>C-monoids (categories with products and exponentials and one non-terminal object) correspond to the untyped λ-calculus (observed independently by Lambek and Dana Scott around 1980);</p>
+<p>locally cartesian closed categories correspond to Martin-Löf type theories (Seely, 1984).</p>
+<p>The interplay, known as categorical logic, has been a subject of active research since then; see the monograph of Jacobs (1999) for instance.</p>
+<p>Homotopy type theory</p>
+<p>Homotopy type theory attempts to combine type theory and category theory. It focuses on equalities, especially equalities between types. Homotopy type theory differs from intuitionistic type theory mostly by its handling of the equality type. In 2016, cubical type theory was proposed, which is a homotopy type theory with normalization.</p>
+<p>Definitions</p>
+<p>Terms and types</p>
+<p>Atomic terms</p>
+<p>The most basic types are called atoms, and a term whose type is an atom is known as an atomic term. Common atomic terms included in type theories are natural numbers, often notated with the type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p>, Boolean logic values (</p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>    {\displaystyle \mathrm {true} }</p>
+<p>/</p>
+<p>          f</p>
+<p>          a</p>
+<p>          l</p>
+<p>          s</p>
+<p>          e</p>
+<p>    {\displaystyle \mathrm {false} }</p>
+<p>), notated with the type </p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>    {\displaystyle {\mathsf {bool}}}</p>
+<p>, and formal variables, whose type may vary. For example, the following may be atomic terms.</p>
+<p>        42</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle 42:{\mathsf {nat}}}</p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>        :</p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>    {\displaystyle \mathrm {true} :{\mathsf {bool}}}</p>
+<p>        x</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle x:{\mathsf {nat}}}</p>
+<p>        y</p>
+<p>        :</p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>    {\displaystyle y:{\mathsf {bool}}}</p>
+<p>Function terms</p>
+<p>In addition to atomic terms, most modern type theories also allow for functions. Function types introduce an arrow symbol, and are defined inductively: If </p>
+<p>        σ</p>
+<p>    {\displaystyle \sigma }</p>
+<p> and </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p> are types, then the notation </p>
+<p>        σ</p>
+<p>        →</p>
+<p>        τ</p>
+<p>    {\displaystyle \sigma \to \tau }</p>
+<p> is the type of a function which takes a parameter of type </p>
+<p>        σ</p>
+<p>    {\displaystyle \sigma }</p>
+<p> and returns a term of type </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p>. Types of this form are known as simple types.</p>
+<p>Some terms may be declared directly as having a simple type, such as the following term, </p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>    {\displaystyle \mathrm {add} }</p>
+<p>, which takes in two natural numbers in sequence and returns one natural number.</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>        (</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {add} :{\mathsf {nat}}\to ({\mathsf {nat}}\to {\mathsf {nat}})}</p>
+<p>Strictly speaking, a simple type only allows for one input and one output, so a more faithful reading of the above type is that </p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>    {\displaystyle \mathrm {add} }</p>
+<p> is a function which takes in a natural number and returns a function of the form </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}\to {\mathsf {nat}}}</p>
+<p>. The parentheses clarify that </p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>    {\displaystyle \mathrm {add} }</p>
+<p> does not have the type </p>
+<p>        (</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        )</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle ({\mathsf {nat}}\to {\mathsf {nat}})\to {\mathsf {nat}}}</p>
+<p>, which would be a function which takes in a function of natural numbers and returns a natural number. The convention is that the arrow is right associative, so the parentheses may be dropped from </p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>    {\displaystyle \mathrm {add} }</p>
+<p>'s type.</p>
+<p>Lambda terms</p>
+<p>New function terms may be constructed using lambda expressions, and are called lambda terms. These terms are also defined inductively: a lambda term has the form </p>
+<p>        (</p>
+<p>        λ</p>
+<p>        v</p>
+<p>        .</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle (\lambda v.t)}</p>
+<p>, where </p>
+<p>        v</p>
+<p>    {\displaystyle v}</p>
+<p> is a formal variable and </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> is a term, and its type is notated </p>
+<p>        σ</p>
+<p>        →</p>
+<p>        τ</p>
+<p>    {\displaystyle \sigma \to \tau }</p>
+<p>, where </p>
+<p>        σ</p>
+<p>    {\displaystyle \sigma }</p>
+<p> is the type of </p>
+<p>        v</p>
+<p>    {\displaystyle v}</p>
+<p>, and </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p> is the type of </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>. The following lambda term represents a function which doubles an input natural number.</p>
+<p>        (</p>
+<p>        λ</p>
+<p>        x</p>
+<p>        .</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        x</p>
+<p>        x</p>
+<p>        )</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle (\lambda x.\mathrm {add} \,x\,x):{\mathsf {nat}}\to {\mathsf {nat}}}</p>
+<p>The variable is </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> and (implicit from the lambda term's type) must have type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p>. The term </p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        x</p>
+<p>        x</p>
+<p>    {\displaystyle \mathrm {add} \,x\,x}</p>
+<p> has type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p>, which is seen by applying the function application inference rule twice. Thus, the lambda term has type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}\to {\mathsf {nat}}}</p>
+<p>, which means it is a function taking a natural number as an argument and returning a natural number.</p>
+<p>A lambda term is often referred to as an anonymous function because it lacks a name. The concept of anonymous functions appears in many programming languages.</p>
+<p>Inference Rules</p>
+<p>Function application</p>
+<p>The power of type theories is in specifying how terms may be combined by way of inference rules. Type theories which have functions also have the inference rule of function application: if </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> is a term of type </p>
+<p>        σ</p>
+<p>        →</p>
+<p>        τ</p>
+<p>    {\displaystyle \sigma \to \tau }</p>
+<p>, and </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p> is a term of type </p>
+<p>        σ</p>
+<p>    {\displaystyle \sigma }</p>
+<p>, then the application of </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> to </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p>, often written </p>
+<p>        (</p>
+<p>        t</p>
+<p>        s</p>
+<p>        )</p>
+<p>    {\displaystyle (t\,s)}</p>
+<p>, has type </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p>. For example, if one knows the type notations </p>
+<p>        0</p>
+<p>        :</p>
+<p>            nat</p>
+<p>    {\displaystyle 0:{\textsf {nat}}}</p>
+<p>, </p>
+<p>        1</p>
+<p>        :</p>
+<p>            nat</p>
+<p>    {\displaystyle 1:{\textsf {nat}}}</p>
+<p>, and </p>
+<p>        2</p>
+<p>        :</p>
+<p>            nat</p>
+<p>    {\displaystyle 2:{\textsf {nat}}}</p>
+<p>, then the following type notations can be deduced from function application.</p>
+<p>        (</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        1</p>
+<p>        )</p>
+<p>        :</p>
+<p>            nat</p>
+<p>        →</p>
+<p>            nat</p>
+<p>    {\displaystyle (\mathrm {add} \,1):{\textsf {nat}}\to {\textsf {nat}}}</p>
+<p>        (</p>
+<p>        (</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        2</p>
+<p>        )</p>
+<p>        0</p>
+<p>        )</p>
+<p>        :</p>
+<p>            nat</p>
+<p>    {\displaystyle ((\mathrm {add} \,2)\,0):{\textsf {nat}}}</p>
+<p>        (</p>
+<p>        (</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        1</p>
+<p>        )</p>
+<p>        (</p>
+<p>        (</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        2</p>
+<p>        )</p>
+<p>        0</p>
+<p>        )</p>
+<p>        )</p>
+<p>        :</p>
+<p>            nat</p>
+<p>    {\displaystyle ((\mathrm {add} \,1)((\mathrm {add} \,2)\,0)):{\textsf {nat}}}</p>
+<p>Parentheses indicate the order of operations; however, by convention, function application is left associative, so parentheses can be dropped where appropriate. In the case of the three examples above, all parentheses could be omitted from the first two, and the third may simplified to </p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        1</p>
+<p>        (</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        2</p>
+<p>        0</p>
+<p>        )</p>
+<p>        :</p>
+<p>            nat</p>
+<p>    {\displaystyle \mathrm {add} \,1\,(\mathrm {add} \,2\,0):{\textsf {nat}}}</p>
+<p>.</p>
+<p>Reductions</p>
+<p>Type theories that allow for lambda terms also include inference rules known as </p>
+<p>        β</p>
+<p>    {\displaystyle \beta }</p>
+<p>-reduction and </p>
+<p>        η</p>
+<p>    {\displaystyle \eta }</p>
+<p>-reduction. They generalize the notion of function application to lambda terms. Symbolically, they are written</p>
+<p>        (</p>
+<p>        λ</p>
+<p>        v</p>
+<p>        .</p>
+<p>        t</p>
+<p>        )</p>
+<p>        s</p>
+<p>        →</p>
+<p>        t</p>
+<p>        [</p>
+<p>        v</p>
+<p>        :</p>
+<p>        =</p>
+<p>        s</p>
+<p>        ]</p>
+<p>    {\displaystyle (\lambda v.t)\,s\rightarrow t[v\colon =s]}</p>
+<p> (</p>
+<p>        β</p>
+<p>    {\displaystyle \beta }</p>
+<p>-reduction).</p>
+<p>        (</p>
+<p>        λ</p>
+<p>        v</p>
+<p>        .</p>
+<p>        t</p>
+<p>        v</p>
+<p>        )</p>
+<p>        →</p>
+<p>        t</p>
+<p>    {\displaystyle (\lambda v.t\,v)\rightarrow t}</p>
+<p>, if </p>
+<p>        v</p>
+<p>    {\displaystyle v}</p>
+<p> is not a free variable in </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> (</p>
+<p>        η</p>
+<p>    {\displaystyle \eta }</p>
+<p>-reduction).</p>
+<p>The first reduction describes how to evaluate a lambda term: if a lambda expression </p>
+<p>        (</p>
+<p>        λ</p>
+<p>        v</p>
+<p>        .</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle (\lambda v.t)}</p>
+<p> is applied to a term </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p>, one replaces every occurrence of </p>
+<p>        v</p>
+<p>    {\displaystyle v}</p>
+<p> in </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> with </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p>. The second reduction makes explicit the relationship between lambda expressions and function types: if </p>
+<p>        (</p>
+<p>        λ</p>
+<p>        v</p>
+<p>        .</p>
+<p>        t</p>
+<p>        v</p>
+<p>        )</p>
+<p>    {\displaystyle (\lambda v.t\,v)}</p>
+<p> is a lambda term, then it must be that </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> is a function term because it is being applied to </p>
+<p>        v</p>
+<p>    {\displaystyle v}</p>
+<p>. Therefore, the lambda expression is equivalent to just </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>, as both take in one argument and apply </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> to it.</p>
+<p>For example, the following term may be </p>
+<p>        β</p>
+<p>    {\displaystyle \beta }</p>
+<p>-reduced.</p>
+<p>        (</p>
+<p>        λ</p>
+<p>        x</p>
+<p>        .</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        x</p>
+<p>        x</p>
+<p>        )</p>
+<p>        2</p>
+<p>        →</p>
+<p>          a</p>
+<p>          d</p>
+<p>          d</p>
+<p>        2</p>
+<p>        2</p>
+<p>    {\displaystyle (\lambda x.\mathrm {add} \,x\,x)\,2\rightarrow \mathrm {add} \,2\,2}</p>
+<p>In type theories that also establish notions of equality for types and terms, there are corresponding inference rules of </p>
+<p>        β</p>
+<p>    {\displaystyle \beta }</p>
+<p>-equality and </p>
+<p>        η</p>
+<p>    {\displaystyle \eta }</p>
+<p>-equality.</p>
+<p>Common terms and types</p>
+<p>Empty type</p>
+<p>The empty type has no terms. The type is usually written </p>
+<p>        ⊥</p>
+<p>    {\displaystyle \bot }</p>
+<p> or </p>
+<p>          0</p>
+<p>    {\displaystyle \mathbb {0} }</p>
+<p>. One use for the empty type is proofs of type inhabitation. If for a type </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>, it is consistent to derive a function of type </p>
+<p>        a</p>
+<p>        →</p>
+<p>        ⊥</p>
+<p>    {\displaystyle a\to \bot }</p>
+<p>, then </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> is uninhabited, which is to say it has no terms.</p>
+<p>Unit type</p>
+<p>The unit type has exactly 1 canonical term. The type is written </p>
+<p>        ⊤</p>
+<p>    {\displaystyle \top }</p>
+<p> or </p>
+<p>          1</p>
+<p>    {\displaystyle \mathbb {1} }</p>
+<p> and the single canonical term is written </p>
+<p>        ∗</p>
+<p>    {\displaystyle \ast }</p>
+<p>. The unit type is also used in proofs of type inhabitation. If for a type </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>, it is consistent to derive a function of type </p>
+<p>        ⊤</p>
+<p>        →</p>
+<p>        a</p>
+<p>    {\displaystyle \top \to a}</p>
+<p>, then </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> is inhabited, which is to say it must have one or more terms.</p>
+<p>Boolean type</p>
+<p>The Boolean type has exactly 2 canonical terms. The type is usually written </p>
+<p>            bool</p>
+<p>    {\displaystyle {\textsf {bool}}}</p>
+<p> or </p>
+<p>          B</p>
+<p>    {\displaystyle \mathbb {B} }</p>
+<p> or </p>
+<p>          2</p>
+<p>    {\displaystyle \mathbb {2} }</p>
+<p>. The canonical terms are usually </p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>    {\displaystyle \mathrm {true} }</p>
+<p> and </p>
+<p>          f</p>
+<p>          a</p>
+<p>          l</p>
+<p>          s</p>
+<p>          e</p>
+<p>    {\displaystyle \mathrm {false} }</p>
+<p>.</p>
+<p>Natural numbers</p>
+<p>Natural numbers are usually implemented in the style of Peano Arithmetic. There is a canonical term </p>
+<p>        0</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle 0:{\mathsf {nat}}}</p>
+<p> for zero. Canonical values larger than zero use iterated applications of a successor function </p>
+<p>          S</p>
+<p>        :</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>        →</p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle \mathrm {S} :{\mathsf {nat}}\to {\mathsf {nat}}}</p>
+<p>.</p>
+<p>Dependent typing</p>
+<p>Some type theories allow for types of complex terms, such as functions or lists, to depend on the types of its arguments. For example, a type theory could have the dependent type </p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>        a</p>
+<p>    {\displaystyle {\mathsf {list}}\,a}</p>
+<p>, which should correspond to lists of terms, where each term must have type </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>. In this case, </p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {list}}}</p>
+<p> has the type </p>
+<p>        U</p>
+<p>        →</p>
+<p>        U</p>
+<p>    {\displaystyle U\to U}</p>
+<p>, where </p>
+<p>        U</p>
+<p>    {\displaystyle U}</p>
+<p> denotes the universe of all types in the theory. </p>
+<p>Some theories also permit types to be dependent on terms instead of types. For example, a theory could have the type </p>
+<p>            v</p>
+<p>            e</p>
+<p>            c</p>
+<p>            t</p>
+<p>            o</p>
+<p>            r</p>
+<p>        n</p>
+<p>    {\displaystyle {\mathsf {vector}}\,n}</p>
+<p>, where </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> is a term of type </p>
+<p>            n</p>
+<p>            a</p>
+<p>            t</p>
+<p>    {\displaystyle {\mathsf {nat}}}</p>
+<p> encoding the length of the vector. This allows for greater specificity and type safety: functions with vector length restrictions or length matching requirements, such as the dot product, can encode this requirement as part of the type. </p>
+<p>There are foundational issues that can arise from dependent types if a theory is not careful about what dependencies are allowed, such as Girard's Paradox. The logician Henk Barendegt introduced the lambda cube as a framework for studying various restrictions and levels of dependent typing.</p>
+<p>Product type</p>
+<p>The product type depends on two types, and its terms are commonly written as ordered pairs </p>
+<p>        (</p>
+<p>        s</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle (s,t)}</p>
+<p> or with the symbol </p>
+<p>        ×</p>
+<p>    {\displaystyle \times }</p>
+<p>. The pair </p>
+<p>        (</p>
+<p>        s</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle (s,t)}</p>
+<p> has the product type </p>
+<p>        σ</p>
+<p>        ×</p>
+<p>        τ</p>
+<p>    {\displaystyle \sigma \times \tau }</p>
+<p>, where </p>
+<p>        σ</p>
+<p>    {\displaystyle \sigma }</p>
+<p> is the type of </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p> and </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p> is the type of </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>. The product type is usually defined with eliminator functions </p>
+<p>          f</p>
+<p>          i</p>
+<p>          r</p>
+<p>          s</p>
+<p>          t</p>
+<p>        :</p>
+<p>        (</p>
+<p>        Π</p>
+<p>        σ</p>
+<p>        τ</p>
+<p>        .</p>
+<p>        σ</p>
+<p>        ×</p>
+<p>        τ</p>
+<p>        →</p>
+<p>        σ</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {first} :(\Pi \,\sigma \,\tau .\sigma \times \tau \to \sigma )}</p>
+<p> and </p>
+<p>          s</p>
+<p>          e</p>
+<p>          c</p>
+<p>          o</p>
+<p>          n</p>
+<p>          d</p>
+<p>        :</p>
+<p>        (</p>
+<p>        Π</p>
+<p>        σ</p>
+<p>        τ</p>
+<p>        .</p>
+<p>        σ</p>
+<p>        ×</p>
+<p>        τ</p>
+<p>        →</p>
+<p>        τ</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {second} :(\Pi \,\sigma \,\tau .\sigma \times \tau \to \tau )}</p>
+<p>.</p>
+<p>          f</p>
+<p>          i</p>
+<p>          r</p>
+<p>          s</p>
+<p>          t</p>
+<p>        (</p>
+<p>        s</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {first} \,(s,t)}</p>
+<p> returns </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p>, and</p>
+<p>          s</p>
+<p>          e</p>
+<p>          c</p>
+<p>          o</p>
+<p>          n</p>
+<p>          d</p>
+<p>        (</p>
+<p>        s</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {second} \,(s,t)}</p>
+<p> returns </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>.</p>
+<p>Besides ordered pairs, this type is used for the concepts of logical conjunction and intersection.</p>
+<p>Sum type</p>
+<p>The sum type depends on two types, and it is commonly written with the symbol </p>
+<p>        +</p>
+<p>    {\displaystyle +}</p>
+<p> or </p>
+<p>        ⊔</p>
+<p>    {\displaystyle \sqcup }</p>
+<p>. In programming languages, sum types may be referred to as tagged unions. The type </p>
+<p>        σ</p>
+<p>        ⊔</p>
+<p>        τ</p>
+<p>    {\displaystyle \sigma \sqcup \tau }</p>
+<p> is usually defined with constructors </p>
+<p>          l</p>
+<p>          e</p>
+<p>          f</p>
+<p>          t</p>
+<p>        :</p>
+<p>        σ</p>
+<p>        →</p>
+<p>        (</p>
+<p>        σ</p>
+<p>        ⊔</p>
+<p>        τ</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {left} :\sigma \to (\sigma \sqcup \tau )}</p>
+<p> and </p>
+<p>          r</p>
+<p>          i</p>
+<p>          g</p>
+<p>          h</p>
+<p>          t</p>
+<p>        :</p>
+<p>        τ</p>
+<p>        →</p>
+<p>        (</p>
+<p>        σ</p>
+<p>        ⊔</p>
+<p>        τ</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {right} :\tau \to (\sigma \sqcup \tau )}</p>
+<p>, which are injective, and an eliminator function </p>
+<p>          m</p>
+<p>          a</p>
+<p>          t</p>
+<p>          c</p>
+<p>          h</p>
+<p>        :</p>
+<p>        (</p>
+<p>        Π</p>
+<p>        ρ</p>
+<p>        .</p>
+<p>        (</p>
+<p>        σ</p>
+<p>        →</p>
+<p>        ρ</p>
+<p>        )</p>
+<p>        →</p>
+<p>        (</p>
+<p>        τ</p>
+<p>        →</p>
+<p>        ρ</p>
+<p>        )</p>
+<p>        →</p>
+<p>        (</p>
+<p>        σ</p>
+<p>        ⊔</p>
+<p>        τ</p>
+<p>        )</p>
+<p>        →</p>
+<p>        ρ</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {match} :(\Pi \,\rho .(\sigma \to \rho )\to (\tau \to \rho )\to (\sigma \sqcup \tau )\to \rho )}</p>
+<p> such that</p>
+<p>          m</p>
+<p>          a</p>
+<p>          t</p>
+<p>          c</p>
+<p>          h</p>
+<p>        f</p>
+<p>        g</p>
+<p>        (</p>
+<p>          l</p>
+<p>          e</p>
+<p>          f</p>
+<p>          t</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {match} \,f\,g\,(\mathrm {left} \,x)}</p>
+<p> returns </p>
+<p>        f</p>
+<p>        x</p>
+<p>    {\displaystyle f\,x}</p>
+<p>, and</p>
+<p>          m</p>
+<p>          a</p>
+<p>          t</p>
+<p>          c</p>
+<p>          h</p>
+<p>        f</p>
+<p>        g</p>
+<p>        (</p>
+<p>          r</p>
+<p>          i</p>
+<p>          g</p>
+<p>          h</p>
+<p>          t</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {match} \,f\,g\,(\mathrm {right} \,y)}</p>
+<p> returns </p>
+<p>        g</p>
+<p>        y</p>
+<p>    {\displaystyle g\,y}</p>
+<p>.</p>
+<p>The sum type is used for the concepts of logical disjunction and union.</p>
+<p>Dependent products and sums</p>
+<p>Two common type dependencies, dependent product and dependent sum types, allow for the theory to encode BHK intuitionistic logic by acting as equivalents to universal and existential quantification; this is formalized by Curry–Howard Correspondence.  As they also connect to products and sums in set theory, they are often written with the symbols </p>
+<p>        Π</p>
+<p>    {\displaystyle \Pi }</p>
+<p> and </p>
+<p>        Σ</p>
+<p>    {\displaystyle \Sigma }</p>
+<p>, respectively. Dependent product and sum types commonly appear in function types and are frequently incorporated in programming languages.</p>
+<p>For example, consider a function </p>
+<p>          a</p>
+<p>          p</p>
+<p>          p</p>
+<p>          e</p>
+<p>          n</p>
+<p>          d</p>
+<p>    {\displaystyle \mathrm {append} }</p>
+<p>, which takes in a </p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>        a</p>
+<p>    {\displaystyle {\mathsf {list}}\,a}</p>
+<p> and a term of type </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>, and returns the list with the element at the end. The type annotation of such a function would be </p>
+<p>          a</p>
+<p>          p</p>
+<p>          p</p>
+<p>          e</p>
+<p>          n</p>
+<p>          d</p>
+<p>        :</p>
+<p>        (</p>
+<p>        Π</p>
+<p>        a</p>
+<p>        .</p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>        a</p>
+<p>        →</p>
+<p>        a</p>
+<p>        →</p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>        a</p>
+<p>        )</p>
+<p>    {\displaystyle \mathrm {append} :(\Pi \,a.{\mathsf {list}}\,a\to a\to {\mathsf {list}}\,a)}</p>
+<p>, which can be read as "for any type </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>, pass in a </p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>        a</p>
+<p>    {\displaystyle {\mathsf {list}}\,a}</p>
+<p> and an </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p>, and return a </p>
+<p>            l</p>
+<p>            i</p>
+<p>            s</p>
+<p>            t</p>
+<p>        a</p>
+<p>    {\displaystyle {\mathsf {list}}\,a}</p>
+<p>".</p>
+<p>Sum types are seen in dependent pairs, where the second type depends on the value of the first term. This arises naturally in computer science where functions may return different types of outputs based on the input. For example, the Boolean type is usually defined with an eliminator function </p>
+<p>          i</p>
+<p>          f</p>
+<p>    {\displaystyle \mathrm {if} }</p>
+<p>, which takes three arguments and behaves as follows.</p>
+<p>          i</p>
+<p>          f</p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>        x</p>
+<p>        y</p>
+<p>    {\displaystyle \mathrm {if} \,\mathrm {true} \,x\,y}</p>
+<p> returns </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p>, and</p>
+<p>          i</p>
+<p>          f</p>
+<p>          f</p>
+<p>          a</p>
+<p>          l</p>
+<p>          s</p>
+<p>          e</p>
+<p>        x</p>
+<p>        y</p>
+<p>    {\displaystyle \mathrm {if} \,\mathrm {false} \,x\,y}</p>
+<p> returns </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p>.</p>
+<p>The return type of this function depends on its </p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>    {\displaystyle {\mathsf {bool}}}</p>
+<p> input. If the type theory allows for dependent types, then it is possible to define a function </p>
+<p>          T</p>
+<p>          F</p>
+<p>        :</p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>        →</p>
+<p>        U</p>
+<p>        →</p>
+<p>        U</p>
+<p>        →</p>
+<p>        U</p>
+<p>    {\displaystyle \mathrm {TF} \colon {\mathsf {bool}}\to U\to U\to U}</p>
+<p> such that</p>
+<p>          T</p>
+<p>          F</p>
+<p>          t</p>
+<p>          r</p>
+<p>          u</p>
+<p>          e</p>
+<p>        σ</p>
+<p>        τ</p>
+<p>    {\displaystyle \mathrm {TF} \,\mathrm {true} \,\sigma \,\tau }</p>
+<p> returns </p>
+<p>        σ</p>
+<p>    {\displaystyle \sigma }</p>
+<p>, and</p>
+<p>          T</p>
+<p>          F</p>
+<p>          f</p>
+<p>          a</p>
+<p>          l</p>
+<p>          s</p>
+<p>          e</p>
+<p>        σ</p>
+<p>        τ</p>
+<p>    {\displaystyle \mathrm {TF} \,\mathrm {false} \,\sigma \,\tau }</p>
+<p> returns </p>
+<p>        τ</p>
+<p>    {\displaystyle \tau }</p>
+<p>.</p>
+<p>The type of </p>
+<p>          i</p>
+<p>          f</p>
+<p>    {\displaystyle \mathrm {if} }</p>
+<p> may then be written as </p>
+<p>        (</p>
+<p>        Π</p>
+<p>        σ</p>
+<p>        τ</p>
+<p>        .</p>
+<p>            b</p>
+<p>            o</p>
+<p>            o</p>
+<p>            l</p>
+<p>        →</p>
+<p>        σ</p>
+<p>        →</p>
+<p>        τ</p>
+<p>        →</p>
+<p>        (</p>
+<p>        Σ</p>
+<p>        x</p>
+<p>        :</p>
+<p>            bool</p>
+<p>        .</p>
+<p>          T</p>
+<p>          F</p>
+<p>        x</p>
+<p>        σ</p>
+<p>        τ</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle (\Pi \,\sigma \,\tau .{\mathsf {bool}}\to \sigma \to \tau \to (\Sigma \,x:{\textsf {bool}}.\mathrm {TF} \,x\,\sigma \,\tau ))}</p>
+<p>.</p>
+<p>Identity type</p>
+<p>Following the notion of Curry-Howard Correspondence, the identity type is a type introduced to mirror propositional equivalence, as opposed to the judgmental (syntactic) equivalence that type theory already provides.</p>
+<p>An identity type requires two terms of the same type and is written with the symbol </p>
+<p>        =</p>
+<p>    {\displaystyle =}</p>
+<p>. For example, if </p>
+<p>        x</p>
+<p>        +</p>
+<p>        1</p>
+<p>    {\displaystyle x+1}</p>
+<p> and </p>
+<p>        1</p>
+<p>        +</p>
+<p>        x</p>
+<p>    {\displaystyle 1+x}</p>
+<p> are terms, then </p>
+<p>        x</p>
+<p>        +</p>
+<p>        1</p>
+<p>        =</p>
+<p>        1</p>
+<p>        +</p>
+<p>        x</p>
+<p>    {\displaystyle x+1=1+x}</p>
+<p> is a possible type. Canonical terms are created with a reflexivity function, </p>
+<p>          r</p>
+<p>          e</p>
+<p>          f</p>
+<p>          l</p>
+<p>    {\displaystyle \mathrm {refl} }</p>
+<p>. For a term </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>, the call </p>
+<p>          r</p>
+<p>          e</p>
+<p>          f</p>
+<p>          l</p>
+<p>        t</p>
+<p>    {\displaystyle \mathrm {refl} \,t}</p>
+<p> returns the canonical term inhabiting the type </p>
+<p>        t</p>
+<p>        =</p>
+<p>        t</p>
+<p>    {\displaystyle t=t}</p>
+<p>.</p>
+<p>The complexities of equality in type theory make it an active research topic; homotopy type theory is a notable area of research that mainly deals with equality in type theory.</p>
+<p>Inductive types</p>
+<p>Inductive types are a general template for creating a large variety of types. In fact, all the types described above and more can be defined using the rules of inductive types. Two methods of generating inductive types are induction-recursion and induction-induction. A method that only uses lambda terms is Scott encoding.</p>
+<p>Some proof assistants, such as Coq and Lean, are based on the calculus for inductive constructions, which is a calculus of constructions with inductive types.</p>
+<p>Differences from set theory</p>
+<p>The most commonly accepted foundation for mathematics is first-order logic with the language and axioms of Zermelo–Fraenkel set theory with the axiom of choice, abbreviated ZFC. Type theories having sufficient expressibility may also act as a foundation of mathematics. There are a number of differences between these two approaches.</p>
+<p>Set theory has both rules and axioms, while type theories only have rules. Type theories, in general, do not have axioms and are defined by their rules of inference.</p>
+<p>Classical set theory and logic have the law of excluded middle. When a type theory encodes the concepts of "and" and "or" as types, it leads to intuitionistic logic, and does not necessarily have the law of excluded middle.</p>
+<p>In set theory, an element is not restricted to one set. The element can appear in subsets and unions with other sets. In type theory, terms (generally) belong to only one type. Where a subset would be used, type theory can use a predicate function or use a dependently-typed product type, where each element </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> is paired with a proof that the subset's property holds for </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p>. Where a union would be used, type theory uses the sum type, which contains new canonical terms.</p>
+<p>Type theory has a built-in notion of computation. Thus, "1+1" and "2" are different terms in type theory, but they compute to the same value. Moreover, functions are defined computationally as lambda terms. In set theory, "1+1=2" means that "1+1" is just another way to refer the value "2". Type theory's computation does require a complicated concept of equality.</p>
+<p>Set theory encodes numbers as sets. Type theory can encode numbers as functions using Church encoding, or more naturally as inductive types, and the construction closely resembles Peano's axioms.</p>
+<p>In type theory, proofs are types whereas in set theory, proofs are part of the underlying first-order logic.</p>
+<p>Proponents of type theory will also point out its connection to constructive mathematics through the BHK interpretation, its connection to logic by the Curry–Howard isomorphism, and its connections to Category theory.</p>
+<p>Properties of type theories</p>
+<p>Terms usually belong to a single type. However, there are set theories that define "subtyping".</p>
+<p>Computation takes place by repeated application of rules. Many types of theories are strongly normalizing, which means that any order of applying the rules will always end in the same result. However, some are not. In a normalizing type theory, the one-directional computation rules are called "reduction rules", and applying the rules "reduces" the term. If a rule is not one-directional, it is called a "conversion rule".</p>
+<p>Some combinations of types are equivalent to other combinations of types. When functions are considered "exponentiation", the combinations of types can be written similarly to algebraic identities. Thus, </p>
+<p>            0</p>
+<p>        +</p>
+<p>        A</p>
+<p>        ≅</p>
+<p>        A</p>
+<p>    {\displaystyle {\mathbb {0} }+A\cong A}</p>
+<p>, </p>
+<p>            1</p>
+<p>        ×</p>
+<p>        A</p>
+<p>        ≅</p>
+<p>        A</p>
+<p>    {\displaystyle {\mathbb {1} }\times A\cong A}</p>
+<p>, </p>
+<p>            1</p>
+<p>        +</p>
+<p>            1</p>
+<p>        ≅</p>
+<p>            2</p>
+<p>    {\displaystyle {\mathbb {1} }+{\mathbb {1} }\cong {\mathbb {2} }}</p>
+<p>, </p>
+<p>          A</p>
+<p>            B</p>
+<p>            +</p>
+<p>            C</p>
+<p>        ≅</p>
+<p>          A</p>
+<p>            B</p>
+<p>        ×</p>
+<p>          A</p>
+<p>            C</p>
+<p>    {\displaystyle A^{B+C}\cong A^{B}\times A^{C}}</p>
+<p>, </p>
+<p>          A</p>
+<p>            B</p>
+<p>            ×</p>
+<p>            C</p>
+<p>        ≅</p>
+<p>        (</p>
+<p>          A</p>
+<p>            B</p>
+<p>          )</p>
+<p>            C</p>
+<p>    {\displaystyle A^{B\times C}\cong (A^{B})^{C}}</p>
+<p>.</p>
+<p>Axioms</p>
+<p>Most type theories do not have axioms. This is because a type theory is defined by its rules of inference. This is a source of confusion for people familiar with Set Theory, where a theory is defined by both the rules of inference for a logic (such as first-order logic) and axioms about sets.</p>
+<p>Sometimes, a type theory will add a few axioms. An axiom is a judgment that is accepted without a derivation using the rules of inference. They are often added to ensure properties that cannot be added cleanly through the rules.</p>
+<p>Axioms can cause problems if they introduce terms without a way to compute on those terms. That is, axioms can interfere with the normalizing property of the type theory.</p>
+<p>Some commonly encountered axioms are:</p>
+<p>"Axiom K" ensures "uniqueness of identity proofs". That is, that every term of an identity type is equal to reflexivity.</p>
+<p>"Univalence Axiom" holds that equivalence of types is equality of types. The research into this property led to cubical type theory, where the property holds without needing an axiom.</p>
+<p>"Law of Excluded Middle" is often added to satisfy users who want classical logic, instead of intuitionistic logic.</p>
+<p>The Axiom of Choice does not need to be added to type theory, because in most type theories it can be derived from the rules of inference. This is because of the constructive nature of type theory, where proving that a value exists requires a method to compute the value. The Axiom of Choice is less powerful in type theory than most set theories, because type theory's functions must be computable and, being syntax-driven, the number of terms in a type must be countable. (See Axiom of choice § In constructive mathematics.)</p>
+<p>List of type theories</p>
+<p>Major</p>
+<p>Simply typed lambda calculus which is a higher-order logic</p>
+<p>intuitionistic type theory</p>
+<p>system F</p>
+<p>LF is often used to define other type theories</p>
+<p>calculus of constructions and its derivatives</p>
+<p>Minor</p>
+<p>Automath</p>
+<p>ST type theory</p>
+<p>UTT (Luo's Unified Theory of dependent Types)</p>
+<p>some forms of combinatory logic</p>
+<p>others defined in the lambda cube (also known as pure type systems)</p>
+<p>others under the name typed lambda calculus</p>
+<p>Active research</p>
+<p>Homotopy type theory explores equality of types</p>
+<p>Cubical Type Theory is an implementation of homotopy type theory</p>
+<p>See also</p>
+<p>Class (set theory)</p>
+<p>Logic</p>
+<p>Type–token distinction</p>
+<p>Further reading</p>
+<p>Notes</p>
+<p>References</p>
+<p>External links</p>
+<p>Introductory material</p>
+<p>Type Theory at nLab, which has articles on many topics.</p>
+<p>Intuitionistic Type Theory article at the Stanford Encyclopedia of Philosophy</p>
+<p>Lambda Calculi with Types book by Henk Barendregt</p>
+<p>Calculus of Constructions / Typed Lambda Calculus textbook style paper by Helmut Brandl</p>
+<p>Intuitionistic Type Theory notes by Per Martin-Löf</p>
+<p>Programming in Martin-Löf's Type Theory book</p>
+<p>Homotopy Type Theory book, which proposed homotopy type theory as a mathematical foundation.</p>
+<p>Advanced material</p>
+<p>Robert L. Constable (ed.). "Computational type theory". Scholarpedia.</p>
+<p>The TYPES Forum — moderated e-mail forum focusing on type theory in computer science, operating since 1987.</p>
+<p>The Nuprl Book: "Introduction to Type Theory."</p>
+<p>Types Project lecture notes of summer schools 2005–2008</p>
+<p>The 2005 summer school has introductory lectures</p>
+<p>Oregon Programming Languages Summer School, many lectures and some notes.</p>
+<p>Summer 2013 lectures including Robert Harper's talks on YouTube</p>
+<p>Summer 2015 Types, Logic, Semantics, and Verification</p>
+<p>Andrej Bauer's blog</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
