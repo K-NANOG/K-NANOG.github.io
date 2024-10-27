@@ -1,0 +1,462 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leiden algorithm</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Leiden algorithm</h2>
+                <p>The Leiden algorithm is a community detection algorithm developed by Traag et al </p>
+<p> at Leiden University. It was developed as a modification of the </p>
+<p>Louvain method to address the issues with disconnected communities.</p>
+<p>Graph components</p>
+<p>Before defining the Leiden algorithm, it will be helpful to define some of the components of a graph.</p>
+<p>Vertices and edges</p>
+<p>A graph is composed of vertices (nodes) and edges. Each edge is connected to two vertices, and each vertex may be connected to zero or more edges. Edges are typically represented by straight lines, while nodes are represented by circles or points. In set notation, let </p>
+<p>        V</p>
+<p>    {\displaystyle V}</p>
+<p> be the set of vertices, and </p>
+<p>        E</p>
+<p>    {\displaystyle E}</p>
+<p> be the set of edges:</p>
+<p>                V</p>
+<p>                :=</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                …</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    n</p>
+<p>                }</p>
+<p>                E</p>
+<p>                :=</p>
+<p>                {</p>
+<p>                  e</p>
+<p>                    i</p>
+<p>                    j</p>
+<p>                ,</p>
+<p>                  e</p>
+<p>                    i</p>
+<p>                    k</p>
+<p>                ,</p>
+<p>                …</p>
+<p>                ,</p>
+<p>                  e</p>
+<p>                    k</p>
+<p>                    l</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}V&:=\{v_{1},v_{2},\dots ,v_{n}\}\\E&:=\{e_{ij},e_{ik},\dots ,e_{kl}\}\end{aligned}}}</p>
+<p>where </p>
+<p>          e</p>
+<p>            i</p>
+<p>            j</p>
+<p>    {\displaystyle e_{ij}}</p>
+<p> is the directed edge from vertex </p>
+<p>          v</p>
+<p>            i</p>
+<p>    {\displaystyle v_{i}}</p>
+<p> to vertex </p>
+<p>          v</p>
+<p>            j</p>
+<p>    {\displaystyle v_{j}}</p>
+<p>. We can also write this as an ordered pair:</p>
+<p>                  e</p>
+<p>                    i</p>
+<p>                    j</p>
+<p>                :=</p>
+<p>                (</p>
+<p>                  v</p>
+<p>                    i</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    j</p>
+<p>                )</p>
+<p>    {\displaystyle {\begin{aligned}e_{ij}&:=(v_{i},v_{j})\end{aligned}}}</p>
+<p>Community</p>
+<p>A community is a unique set of nodes:</p>
+<p>                  C</p>
+<p>                    i</p>
+<p>                ⊆</p>
+<p>                V</p>
+<p>                  C</p>
+<p>                    i</p>
+<p>                ⋂</p>
+<p>                  C</p>
+<p>                    j</p>
+<p>                =</p>
+<p>                ∅</p>
+<p>                ∀</p>
+<p>                i</p>
+<p>                ≠</p>
+<p>                j</p>
+<p>    {\displaystyle {\begin{aligned}C_{i}&\subseteq V\\C_{i}&\bigcap C_{j}=\emptyset ~\forall ~i\neq j\end{aligned}}}</p>
+<p>and the union of all communities must be the total set of vertices:</p>
+<p>                V</p>
+<p>                =</p>
+<p>                  ⋃</p>
+<p>                    i</p>
+<p>                    =</p>
+<p>                    1</p>
+<p>                  C</p>
+<p>                    i</p>
+<p>    {\displaystyle {\begin{aligned}V&=\bigcup _{i=1}C_{i}\end{aligned}}}</p>
+<p>Partition</p>
+<p>A partition is the set of all communities:</p>
+<p>                    P</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                …</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    n</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}{\mathcal {P}}&=\{C_{1},C_{2},\dots ,C_{n}\}\end{aligned}}}</p>
+<p>Quality</p>
+<p>Similar to modularity, the quality function is used to assess how well the communities have been allocated. The Leiden algorithm uses the Constant Potts Model (CPM):</p>
+<p>                    H</p>
+<p>                (</p>
+<p>                G</p>
+<p>                ,</p>
+<p>                    P</p>
+<p>                )</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    C</p>
+<p>                    ∈</p>
+<p>                        P</p>
+<p>                  |</p>
+<p>                E</p>
+<p>                (</p>
+<p>                C</p>
+<p>                ,</p>
+<p>                C</p>
+<p>                )</p>
+<p>                  |</p>
+<p>                −</p>
+<p>                γ</p>
+<p>                      (</p>
+<p>                          |</p>
+<p>                          |</p>
+<p>                        C</p>
+<p>                          |</p>
+<p>                          |</p>
+<p>                      2</p>
+<p>                      )</p>
+<p>    {\displaystyle {\begin{aligned}{\mathcal {H}}(G,{\mathcal {P}})&=\sum _{C\in {\mathcal {P}}}|E(C,C)|-\gamma {\binom {||C||}{2}}\end{aligned}}}</p>
+<p>Algorithm</p>
+<p>The Leiden algorithm is similar to that of the Louvain method, with some important modifications.</p>
+<p>Step 1: First, each node in the network is assigned to its own community.</p>
+<p>Step 2: Next, we decide which communities to move the nodes into and update the partition </p>
+<p>            P</p>
+<p>    {\displaystyle {\mathcal {P}}}</p>
+<p>.</p>
+<p>queue = V(G) # create a queue from the nodes</p>
+<p>while queue != empty:</p>
+<p>  node = queue.next() # get the next node</p>
+<p>  delta_H = 0</p>
+<p>  for C in communities: # compute the change in quality for each community</p>
+<p>    if delta_H(node, C) > delta_H:</p>
+<p>      delta_H = delta_H(node, C)</p>
+<p>      community = C</p>
+<p>  if delta_H > 0:</p>
+<p>    move node to community</p>
+<p>    outside_nodes = { node_i | (node, node_i) are edges and node_i is not in community } # find the nodes which are connected to the node but not in the community</p>
+<p>    queue.add(outside_nodes not already in queue)</p>
+<p>Step 3: Assign each node in the graph to its own community in a new partition called </p>
+<p>              P</p>
+<p>            refined</p>
+<p>    {\displaystyle {\mathcal {P}}_{\text{refined}}}</p>
+<p>.</p>
+<p>Step 4: The goal of this step is to separate poorly-connected communities:</p>
+<p>for C in communities of P:</p>
+<p>  # find the nodes in the community which have lots of edges within the community</p>
+<p>  well_connected_nodes = { node | node is in C, |E(node, C\node)| >= gamma ||node||(||C|| - ||node||) }</p>
+<p>  for node in well_connected_nodes:</p>
+<p>    if node is singleton under P_refined:</p>
+<p>      well_connected_communities = { C_i | C_i is in P_refined, C_i is a subset of C, |E(C_i, C\C_i)| >= gamma*||C_i||(||C|| - ||C_i||)</p>
+<p>      for C_i in well_connected_communities:</p>
+<p>        compute probability P(C_i) # 0 if assignment of node to C_i decreases quality of P_refined, greater weights for greater quality increases</p>
+<p>      assign node to C_i by sampling P(C_i) distribution</p>
+<p>Step 5: Use the refined partition </p>
+<p>              P</p>
+<p>            refined</p>
+<p>    {\displaystyle {\mathcal {P}}_{\text{refined}}}</p>
+<p> to aggregate the graph. Each community in </p>
+<p>              P</p>
+<p>            refined</p>
+<p>    {\displaystyle {\mathcal {P}}_{\text{refined}}}</p>
+<p> becomes a node in the new graph </p>
+<p>          G</p>
+<p>            agg</p>
+<p>    {\displaystyle G_{\text{agg}}}</p>
+<p>.</p>
+<p>Example: Suppose that we have:</p>
+<p>                V</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    3</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    4</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    5</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    6</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    7</p>
+<p>                }</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    3</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    4</p>
+<p>                }</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    5</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    6</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    7</p>
+<p>                }</p>
+<p>                    P</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                }</p>
+<p>                      P</p>
+<p>                    refined</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                    a</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                    b</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}V&=\{v_{1},v_{2},v_{3},v_{4},v_{5},v_{6},v_{7}\}\\C_{1}&=\{v_{1},v_{2},v_{3},v_{4}\}\\C_{2}&=\{v_{5},v_{6},v_{7}\}\\{\mathcal {P}}&=\{C_{1},C_{2}\}\\{\mathcal {P}}_{\text{refined}}&=\{C_{1a},C_{1b},C_{2}\}\end{aligned}}}</p>
+<p>Then our new set of nodes will be:</p>
+<p>                  V</p>
+<p>                    a</p>
+<p>                    g</p>
+<p>                    g</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                    a</p>
+<p>                ↦</p>
+<p>                  w</p>
+<p>                    1</p>
+<p>                    a</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                    b</p>
+<p>                ↦</p>
+<p>                  w</p>
+<p>                    1</p>
+<p>                    b</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                ↦</p>
+<p>                  w</p>
+<p>                    2</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}V_{agg}&=\{C_{1a}\mapsto w_{1a},C_{1b}\mapsto w_{1b},C_{2}\mapsto w_{2}\}\end{aligned}}}</p>
+<p>Step 6: Update the partition </p>
+<p>            P</p>
+<p>    {\displaystyle {\mathcal {P}}}</p>
+<p> using the aggregated graph. We keep the communities from partition </p>
+<p>            P</p>
+<p>    {\displaystyle {\mathcal {P}}}</p>
+<p>, but the communities can be separated into multiple nodes from the refined partition </p>
+<p>              P</p>
+<p>            refined</p>
+<p>    {\displaystyle {\mathcal {P}}_{\text{refined}}}</p>
+<p>:</p>
+<p>                    P</p>
+<p>                =</p>
+<p>                {</p>
+<p>                {</p>
+<p>                v</p>
+<p>                  |</p>
+<p>                v</p>
+<p>                ⊆</p>
+<p>                C</p>
+<p>                ,</p>
+<p>                v</p>
+<p>                ∈</p>
+<p>                V</p>
+<p>                (</p>
+<p>                  G</p>
+<p>                    agg</p>
+<p>                )</p>
+<p>                }</p>
+<p>                  |</p>
+<p>                C</p>
+<p>                ∈</p>
+<p>                    P</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}{\mathcal {P}}&=\{\{v~|~v\subseteq C,v\in V(G_{\text{agg}})\}~|~C\in {\mathcal {P}}\}\end{aligned}}}</p>
+<p>Example: Suppose that </p>
+<p>        C</p>
+<p>    {\displaystyle C}</p>
+<p> is a poorly-connected community from the partition </p>
+<p>            P</p>
+<p>    {\displaystyle {\mathcal {P}}}</p>
+<p>:</p>
+<p>                C</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    3</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    4</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    5</p>
+<p>                }</p>
+<p>                    P</p>
+<p>                =</p>
+<p>                {</p>
+<p>                C</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}C&=\{v_{1},v_{2},v_{3},v_{4},v_{5}\}\\{\mathcal {P}}&=\{C\}\end{aligned}}}</p>
+<p>Then suppose during the refinement step, it was separated into two communities, </p>
+<p>          C</p>
+<p>            1</p>
+<p>    {\displaystyle C_{1}}</p>
+<p> and </p>
+<p>          C</p>
+<p>            2</p>
+<p>    {\displaystyle C_{2}}</p>
+<p>:</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    2</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    3</p>
+<p>                }</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  v</p>
+<p>                    4</p>
+<p>                ,</p>
+<p>                  v</p>
+<p>                    5</p>
+<p>                }</p>
+<p>                      P</p>
+<p>                    refined</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}C_{1}&=\{v_{1},v_{2},v_{3}\}\\C_{2}&=\{v_{4},v_{5}\}\\{\mathcal {P}}_{\text{refined}}&=\{C_{1},C_{2}\}\end{aligned}}}</p>
+<p>When we aggregate the graph, the new nodes will be:</p>
+<p>                V</p>
+<p>                (</p>
+<p>                  G</p>
+<p>                    agg</p>
+<p>                )</p>
+<p>                =</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}V(G_{\text{agg}})&=\{C_{1},C_{2}\}\end{aligned}}}</p>
+<p>but we will keep the old partition:</p>
+<p>                    P</p>
+<p>                =</p>
+<p>                {</p>
+<p>                {</p>
+<p>                  C</p>
+<p>                    1</p>
+<p>                ,</p>
+<p>                  C</p>
+<p>                    2</p>
+<p>                }</p>
+<p>                }</p>
+<p>    {\displaystyle {\begin{aligned}{\mathcal {P}}&=\{\{C_{1},C_{2}\}\}\end{aligned}}}</p>
+<p>Step 7: Repeat Steps 2 - 6 until each community consists of only one node.</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
