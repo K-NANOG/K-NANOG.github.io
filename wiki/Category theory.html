@@ -1,0 +1,411 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Category theory</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Category theory</h2>
+                <p>Category theory is a general theory of mathematical structures and their relations. It was introduced by Samuel Eilenberg and Saunders Mac Lane in the middle of the 20th century in their foundational work on algebraic topology. Category theory is used in almost all areas of mathematics. In particular, many constructions of new mathematical objects from previous ones that appear similarly in several contexts are conveniently expressed and unified in terms of categories. Examples include quotient spaces, direct products, completion, and duality.</p>
+<p>Many areas of computer science also rely on category theory, such as functional programming and semantics.</p>
+<p>A category is formed by two sorts of objects: the objects of the category, and the morphisms, which relate two objects called the source and the target of the morphism. Metaphorically, a morphism is an arrow that maps its source to its target. Morphisms can be composed if the target of the first morphism equals the source of the second one. Morphism composition has similar properties as function composition (associativity and existence of an identity morphism for each object). Morphisms are often some sort of functions, but this is not always the case. For example, a monoid may be viewed as a category with a single object, whose morphisms are the elements of the monoid.</p>
+<p>The second fundamental concept of category theory is the concept of a functor, which plays the role of a morphism between two categories </p>
+<p>              C</p>
+<p>            1</p>
+<p>    {\displaystyle {\mathcal {C}}_{1}}</p>
+<p> and </p>
+<p>              C</p>
+<p>            2</p>
+<p>    {\displaystyle {\mathcal {C}}_{2}}</p>
+<p>: it maps objects of </p>
+<p>              C</p>
+<p>            1</p>
+<p>    {\displaystyle {\mathcal {C}}_{1}}</p>
+<p> to objects of </p>
+<p>              C</p>
+<p>            2</p>
+<p>    {\displaystyle {\mathcal {C}}_{2}}</p>
+<p> and morphisms of </p>
+<p>              C</p>
+<p>            1</p>
+<p>    {\displaystyle {\mathcal {C}}_{1}}</p>
+<p> to morphisms of </p>
+<p>              C</p>
+<p>            2</p>
+<p>    {\displaystyle {\mathcal {C}}_{2}}</p>
+<p> in such a way that sources are mapped to sources, and targets are mapped to targets (or, in the case of a contravariant functor, sources are mapped to targets and vice-versa). A third fundamental concept is a natural transformation that may be viewed as a morphism of functors.</p>
+<p>Categories, objects, and morphisms</p>
+<p>Categories</p>
+<p>A category </p>
+<p>            C</p>
+<p>    {\displaystyle {\mathcal {C}}}</p>
+<p> consists of the following three mathematical entities:</p>
+<p>A class </p>
+<p>          ob</p>
+<p>        (</p>
+<p>            C</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{ob}}({\mathcal {C}})}</p>
+<p>, whose elements are called objects;</p>
+<p>A class </p>
+<p>          hom</p>
+<p>        (</p>
+<p>            C</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{hom}}({\mathcal {C}})}</p>
+<p>, whose elements are called morphisms or maps or arrows. Each morphism </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> has a source object  </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> and target object </p>
+<p>        b</p>
+<p>    {\displaystyle b}</p>
+<p>.</p>
+<p>The expression </p>
+<p>        f</p>
+<p>        :</p>
+<p>        a</p>
+<p>        ↦</p>
+<p>        b</p>
+<p>    {\displaystyle f:a\mapsto b}</p>
+<p>, would be verbally stated as "</p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> is a morphism from a to b".</p>
+<p>The expression </p>
+<p>          hom</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{hom}}(a,b)}</p>
+<p> – alternatively expressed as </p>
+<p>            hom</p>
+<p>              C</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{hom}}_{\mathcal {C}}(a,b)}</p>
+<p>, </p>
+<p>          mor</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{mor}}(a,b)}</p>
+<p>, or </p>
+<p>            C</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {C}}(a,b)}</p>
+<p> – denotes the hom-class of all morphisms from </p>
+<p>        a</p>
+<p>    {\displaystyle a}</p>
+<p> to </p>
+<p>        b</p>
+<p>    {\displaystyle b}</p>
+<p>.</p>
+<p>A binary operation </p>
+<p>        ∘</p>
+<p>    {\displaystyle \circ }</p>
+<p>, called composition of morphisms, such that</p>
+<p>for any three objects a, b, and c, we have</p>
+<p>        ∘</p>
+<p>        :</p>
+<p>          hom</p>
+<p>        (</p>
+<p>        b</p>
+<p>        ,</p>
+<p>        c</p>
+<p>        )</p>
+<p>        ×</p>
+<p>          hom</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        b</p>
+<p>        )</p>
+<p>        ↦</p>
+<p>          hom</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ,</p>
+<p>        c</p>
+<p>        )</p>
+<p>    {\displaystyle \circ :{\text{hom}}(b,c)\times {\text{hom}}(a,b)\mapsto {\text{hom}}(a,c)}</p>
+<p>The composition of </p>
+<p>        f</p>
+<p>        :</p>
+<p>        a</p>
+<p>        ↦</p>
+<p>        b</p>
+<p>    {\displaystyle f:a\mapsto b}</p>
+<p> and </p>
+<p>        g</p>
+<p>        :</p>
+<p>        b</p>
+<p>        ↦</p>
+<p>        c</p>
+<p>    {\displaystyle g:b\mapsto c}</p>
+<p> is written as </p>
+<p>        g</p>
+<p>        ∘</p>
+<p>        f</p>
+<p>    {\displaystyle g\circ f}</p>
+<p> or </p>
+<p>        g</p>
+<p>        f</p>
+<p>    {\displaystyle gf}</p>
+<p>, governed by two axioms:</p>
+<p>1. Associativity: If </p>
+<p>        f</p>
+<p>        :</p>
+<p>        a</p>
+<p>        ↦</p>
+<p>        b</p>
+<p>    {\displaystyle f:a\mapsto b}</p>
+<p>, </p>
+<p>        g</p>
+<p>        :</p>
+<p>        b</p>
+<p>        ↦</p>
+<p>        c</p>
+<p>    {\displaystyle g:b\mapsto c}</p>
+<p>, and </p>
+<p>        h</p>
+<p>        :</p>
+<p>        c</p>
+<p>        ↦</p>
+<p>        d</p>
+<p>    {\displaystyle h:c\mapsto d}</p>
+<p> then</p>
+<p>        h</p>
+<p>        ∘</p>
+<p>        (</p>
+<p>        g</p>
+<p>        ∘</p>
+<p>        f</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>        h</p>
+<p>        ∘</p>
+<p>        g</p>
+<p>        )</p>
+<p>        ∘</p>
+<p>        f</p>
+<p>    {\displaystyle h\circ (g\circ f)=(h\circ g)\circ f}</p>
+<p>2. Identity: For every object x, there exists a morphism </p>
+<p>          1</p>
+<p>            x</p>
+<p>        :</p>
+<p>        x</p>
+<p>        ↦</p>
+<p>        x</p>
+<p>    {\displaystyle 1_{x}:x\mapsto x}</p>
+<p> (also denoted as </p>
+<p>            id</p>
+<p>            x</p>
+<p>    {\displaystyle {\text{id}}_{x}}</p>
+<p>) called the identity morphism for x, such that for every morphism </p>
+<p>        f</p>
+<p>        :</p>
+<p>        a</p>
+<p>        ↦</p>
+<p>        b</p>
+<p>    {\displaystyle f:a\mapsto b}</p>
+<p>, we have</p>
+<p>          1</p>
+<p>            b</p>
+<p>        ∘</p>
+<p>        f</p>
+<p>        =</p>
+<p>        f</p>
+<p>        =</p>
+<p>        f</p>
+<p>        ∘</p>
+<p>          1</p>
+<p>            a</p>
+<p>    {\displaystyle 1_{b}\circ f=f=f\circ 1_{a}}</p>
+<p>From the axioms, it can be proved that there is exactly one identity morphism for every object.</p>
+<p>Examples</p>
+<p>The category Set</p>
+<p>As the class of objects </p>
+<p>          ob</p>
+<p>        (</p>
+<p>          Set</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{ob}}({\text{Set}})}</p>
+<p>, we choose the class of all sets.</p>
+<p>As the class of morphisms </p>
+<p>          hom</p>
+<p>        (</p>
+<p>          Set</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{hom}}({\text{Set}})}</p>
+<p>, we choose the class of all functions. Therefore, for two objects A and B, i.e. sets, we have </p>
+<p>          hom</p>
+<p>        (</p>
+<p>        A</p>
+<p>        ,</p>
+<p>        B</p>
+<p>        )</p>
+<p>    {\displaystyle {\text{hom}}(A,B)}</p>
+<p> to be the class of all functions ⁠</p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p>⁠ such that ⁠</p>
+<p>        f</p>
+<p>        :</p>
+<p>        A</p>
+<p>        ↦</p>
+<p>        B</p>
+<p>    {\displaystyle f:A\mapsto B}</p>
+<p>⁠.</p>
+<p>The composition of morphisms ⁠</p>
+<p>        ∘</p>
+<p>    {\displaystyle \circ }</p>
+<p>⁠ is simply the usual function composition, i.e. for two morphisms ⁠</p>
+<p>        f</p>
+<p>        :</p>
+<p>        A</p>
+<p>        ↦</p>
+<p>        B</p>
+<p>    {\displaystyle f:A\mapsto B}</p>
+<p>⁠ and ⁠</p>
+<p>        g</p>
+<p>        :</p>
+<p>        B</p>
+<p>        ↦</p>
+<p>        C</p>
+<p>    {\displaystyle g:B\mapsto C}</p>
+<p>⁠, we have ⁠</p>
+<p>        g</p>
+<p>        ∘</p>
+<p>        f</p>
+<p>        :</p>
+<p>        A</p>
+<p>        ↦</p>
+<p>        C</p>
+<p>    {\displaystyle g\circ f:A\mapsto C}</p>
+<p>⁠, </p>
+<p>        (</p>
+<p>        g</p>
+<p>        ∘</p>
+<p>        f</p>
+<p>        )</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>        g</p>
+<p>        (</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle (g\circ f)(x)=g(f(x))}</p>
+<p>, which is obviously associative. Furthermore, for every object A we have the identity morphism </p>
+<p>            id</p>
+<p>            A</p>
+<p>    {\displaystyle {\text{id}}_{A}}</p>
+<p> to be the identity map </p>
+<p>            id</p>
+<p>            A</p>
+<p>        :</p>
+<p>        A</p>
+<p>        ↦</p>
+<p>        A</p>
+<p>    {\displaystyle {\text{id}}_{A}:A\mapsto A}</p>
+<p>, </p>
+<p>            id</p>
+<p>            A</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>        x</p>
+<p>    {\displaystyle {\text{id}}_{A}(x)=x}</p>
+<p> on A</p>
+<p>Morphisms</p>
+<p>Relations among morphisms (such as fg = h) are often depicted using commutative diagrams, with "points" (corners) representing objects and "arrows" representing morphisms.</p>
+<p>Morphisms can have any of the following properties. A morphism f : a → b is a:</p>
+<p>monomorphism (or monic) if f ∘ g1 = f ∘ g2 implies g1 = g2 for all morphisms g1, g2 : x → a.</p>
+<p>epimorphism (or epic) if g1 ∘ f = g2 ∘ f implies g1 = g2 for all morphisms g1, g2 : b → x.</p>
+<p>bimorphism if f is both epic and monic.</p>
+<p>isomorphism if there exists a morphism g : b → a such that f ∘ g = 1b and g ∘ f = 1a.</p>
+<p>endomorphism if a = b. end(a) denotes the class of endomorphisms of a.</p>
+<p>automorphism if f is both an endomorphism and an isomorphism. aut(a) denotes the class of automorphisms of a.</p>
+<p>section if a right inverse of f exists, i.e. if there exists a morphism g : b → a with f ∘ g = 1b.</p>
+<p>retraction if a left inverse of f exists, i.e. if there exists a morphism g : b → a with g ∘ f = 1a.</p>
+<p>Every retraction is an epimorphism, and every section is a monomorphism. Furthermore, the following three statements are equivalent:</p>
+<p>f is a monomorphism and a retraction;</p>
+<p>f is an epimorphism and a section;</p>
+<p>f is an isomorphism.</p>
+<p>Functors</p>
+<p>Functors are structure-preserving maps between categories. They can be thought of as morphisms in the category of all (small) categories.</p>
+<p>A (covariant) functor F from a category C to a category D, written F : C → D, consists of:</p>
+<p>for each object x in C, an object F(x) in D; and</p>
+<p>for each morphism f : x → y in C, a morphism F(f) : F(x) → F(y) in D,</p>
+<p>such that the following two properties hold:</p>
+<p>For every object x in C, F(1x) = 1F(x);</p>
+<p>For all morphisms f : x → y and g : y → z, F(g ∘ f) = F(g) ∘ F(f).</p>
+<p>A contravariant functor F: C → D is like a covariant functor, except that it "turns morphisms around" ("reverses all the arrows"). More specifically, every morphism f : x → y in C must be assigned to a morphism  F(f) : F(y) → F(x) in D. In other words, a contravariant functor acts as a covariant functor from the opposite category Cop to D.</p>
+<p>Natural transformations</p>
+<p>A natural transformation is a relation between two functors. Functors often describe "natural constructions" and natural transformations then describe "natural homomorphisms" between two such constructions. Sometimes two quite different constructions yield "the same" result; this is expressed by a natural isomorphism between the two functors.</p>
+<p>If F and G are (covariant) functors between the categories C and D, then a natural transformation η from F to G associates to every object X in C a morphism ηX : F(X) → G(X) in D such that for every morphism f : X → Y in C, we have ηY ∘ F(f) = G(f) ∘ ηX; this means that the following diagram is commutative:</p>
+<p>The two functors F and G are called naturally isomorphic if there exists a natural transformation from F to G such that ηX is an isomorphism for every object X in C.</p>
+<p>Other concepts</p>
+<p>Universal constructions, limits, and colimits</p>
+<p>Using the language of category theory, many areas of mathematical study can be categorized. Categories include sets, groups and topologies.</p>
+<p>Each category is distinguished by properties that all its objects have in common, such as the empty set or the product of two topologies, yet in the definition of a category, objects are considered atomic, i.e., we do not know whether an object A is a set, a topology, or any other abstract concept. Hence, the challenge is to define special objects without referring to the internal structure of those objects. To define the empty set without referring to elements, or the product topology without referring to open sets, one can characterize these objects in terms of their relations to other objects, as given by the morphisms of the respective categories. Thus, the task is to find universal properties that uniquely determine the objects of interest.</p>
+<p>Numerous important constructions can be described in a purely categorical way if the category limit can be developed and dualized to yield the notion of a colimit.</p>
+<p>Equivalent categories</p>
+<p>It is a natural question to ask: under which conditions can two categories be considered essentially the same, in the sense that theorems about one category can readily be transformed into theorems about the other category? The major tool one employs to describe such a situation is called equivalence of categories, which is given by appropriate functors between two categories. Categorical equivalence has found numerous applications in mathematics.</p>
+<p>Further concepts and results</p>
+<p>The definitions of categories and functors provide only the very basics of categorical algebra; additional important topics are listed below. Although there are strong interrelations between all of these topics, the given order can be considered as a guideline for further reading.</p>
+<p>The functor category DC has as objects the functors from C to D and as morphisms the natural transformations of such functors. The Yoneda lemma is one of the most famous basic results of category theory; it describes representable functors in functor categories.</p>
+<p>Duality: Every statement, theorem, or definition in category theory has a dual which is essentially obtained by "reversing all the arrows". If one statement is true in a category C then its dual is true in the dual category Cop. This duality, which is transparent at the level of category theory, is often obscured in applications and can lead to surprising relationships.</p>
+<p>Adjoint functors: A functor can be left (or right) adjoint to another functor that maps in the opposite direction. Such a pair of adjoint functors typically arises from a construction defined by a universal property; this can be seen as a more abstract and powerful view on universal properties.</p>
+<p>Higher-dimensional categories</p>
+<p>Many of the above concepts, especially equivalence of categories, adjoint functor pairs, and functor categories, can be situated into the context of higher-dimensional categories. Briefly, if we consider a morphism between two objects as a "process taking us from one object to another", then higher-dimensional categories allow us to profitably generalize this by considering "higher-dimensional processes".</p>
+<p>For example, a (strict) 2-category is a category together with "morphisms between morphisms", i.e., processes which allow us to transform one morphism into another. We can then "compose" these "bimorphisms" both horizontally and vertically, and we require a 2-dimensional "exchange law" to hold, relating the two composition laws. In this context, the standard example is Cat, the 2-category of all (small) categories, and in this example, bimorphisms of morphisms are simply natural transformations of morphisms in the usual sense. Another basic example is to consider a 2-category with a single object; these are essentially monoidal categories. Bicategories are a weaker notion of 2-dimensional categories in which the composition of morphisms is not strictly associative, but only associative "up to" an isomorphism.</p>
+<p>This process can be extended for all natural numbers n, and these are called n-categories. There is even a notion of ω-category corresponding to the ordinal number ω.</p>
+<p>Higher-dimensional categories are part of the broader mathematical field of higher-dimensional algebra, a concept introduced by Ronald Brown.  For a conversational introduction to these ideas, see John Baez, 'A Tale of n-categories' (1996).</p>
+<p>Historical notes</p>
+<p>It should be observed first that the whole concept of a  category is essentially an auxiliary one; our basic concepts are essentially those of a functor and of a natural transformation [...]</p>
+<p>Whilst specific examples of functors and natural transformations had been given by Samuel Eilenberg and Saunders Mac Lane in a 1942 paper on group theory, these concepts were introduced in a more general sense, together with the additional notion of categories, in a 1945 paper by the same authors (who  discussed applications of category theory to the field of algebraic topology). Their work was an important part of the transition from intuitive and geometric homology to homological algebra, Eilenberg and Mac Lane later writing that their goal was to understand natural transformations, which first required the definition of functors, then categories.</p>
+<p>Stanislaw Ulam, and some writing on his behalf, have claimed that related ideas were current in the late 1930s in Poland. Eilenberg was Polish, and studied mathematics in Poland in the 1930s. Category theory is also, in some sense, a continuation of the work of Emmy Noether (one of Mac Lane's teachers) in formalizing abstract processes; Noether realized that understanding a type of mathematical structure requires understanding the processes that preserve that structure (homomorphisms). Eilenberg and Mac Lane introduced categories for understanding and formalizing the processes (functors) that relate topological structures to  algebraic structures (topological invariants) that characterize them.</p>
+<p>Category theory was originally introduced for the need of homological algebra, and widely extended for the need of modern algebraic geometry (scheme theory). Category theory may be viewed as an extension of universal algebra, as the latter studies algebraic structures, and the former applies to any kind of mathematical structure and studies also the relationships between structures of different nature. For this reason, it is used throughout mathematics. Applications to mathematical logic and semantics (categorical abstract machine) came later.</p>
+<p>Certain categories called topoi (singular topos) can even serve as an alternative to axiomatic set theory as a foundation of mathematics. A topos can also be considered as a specific type of category with two additional topos axioms. These foundational applications of category theory have been worked out in fair detail as a basis for, and justification of, constructive mathematics. Topos theory is a form of abstract sheaf theory, with geometric origins, and leads to ideas such as pointless topology.</p>
+<p>Categorical logic is now a well-defined field based on type theory for intuitionistic logics, with applications in functional programming and domain theory, where a cartesian closed category is taken as a non-syntactic description of a lambda calculus. At the very least, category theoretic language clarifies what exactly these related areas have in common (in some abstract sense).</p>
+<p>Category theory has been applied in other fields as well, see applied category theory. For example, John Baez has shown a link between Feynman diagrams in physics and monoidal categories. Another application of category theory, more specifically topos theory, has been made in mathematical music theory, see for example the book The Topos of Music, Geometric Logic of Concepts, Theory, and Performance by Guerino Mazzola.</p>
+<p>More recent efforts to introduce undergraduates to categories as a foundation for mathematics include those of William Lawvere and Rosebrugh (2003) and Lawvere and Stephen Schanuel (1997) and Mirroslav Yotov (2012).</p>
+<p>See also</p>
+<p>Notes</p>
+<p>References</p>
+<p>Citations</p>
+<p>Sources</p>
+<p>Further reading</p>
+<p>== External links ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
