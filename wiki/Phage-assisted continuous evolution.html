@@ -1,0 +1,38 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Phage-assisted continuous evolution</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Phage-assisted continuous evolution</h2>
+                <p>Phage-assisted continuous evolution (PACE) is a phage-based technique for the automated directed evolution of proteins. It relies on relating the desired activity of a target protein with the fitness of an infectious bacteriophage which carries the protein's corresponding gene. Proteins with greater desired activity hence confer greater infectivity to their carrier phage. More infectious phage propagate more effectively, selecting for advantageous mutations. Genetic variation is generated using error-prone polymerases on the phage vectors, and over time the protein accumulates beneficial mutations. This technique is notable for performing hundreds of rounds of selection with minimal human intervention.</p>
+<p>Principle</p>
+<p>The central component of PACE is a fixed-volume vessel known as the “lagoon”. The lagoon contains M13 bacteriophage vectors carrying the gene of interest (known as the selection plasmid, or SP), as well as host E. coli cells that allow the phage to replicate. The lagoon is constantly diluted via the addition and draining of liquid media containing E. coli cells. The liquid flow rate is set such that the dilution rate is faster than the rate of E. coli reproduction but slower than the rate of phage reproduction. Hence, a fresh supply of E. coli cells is constantly present in the lagoon, but phage can only be retained via sufficiently fast replication.</p>
+<p>Phage replication requires E. coli infection, which, for M13 phage, relies on protein III (pIII). When using PACE, the phage vectors lack the gene to produce pIII. Instead, the production of pIII is tied with the activity of the protein of interest via a mechanism that varies per use case, oftentimes involves an extra plasmid containing the pIII-expressing gene III (gIII) known as the accessory plasmid, or AP. Notably, production of infectious phage scales with the production of pIII. Hence, the better the activity of the protein, the higher the rate of pIII production, and the more infectious phage are generated for that particular gene.</p>
+<p>Using error-prone polymerases (encoded on the mutagenesis plasmid, or MP), genetic variation is introduced into the protein gene portion of the phage vectors. Due to the selective pressures applied by the constant draining of the lagoon, only phages that can replicate fast enough can be retained in the lagoon, so over time beneficial mutations accumulate in phage replicating in the lagoon. In this manner, rounds of evolution are continuously performed, allowing hundreds of rounds to elapse with little human intervention.</p>
+<p>Applications</p>
+<p>Polymerase promoter specificity</p>
+<p>In the initial paper pioneering this technique, T7 RNA polymerases were evolved to recognize different promoters, such as the T3 or SP6 promoters. This was done by making the target promoter the sole promoter for gIII. Hence, mutant polymerases with greater specificity for the desired promoter caused greater pIII production. This resulted in polymerases with ~3-4 orders of magnitude greater activity for the target promoter than the original T3 promoter.</p>
+<p>While this original PACE system only performed positive selection, a variant was developed that allowed for negative selection as well. This is done by linking undesired activity to the production of non-functional pIII, which decreases the amount of infectious phage made.</p>
+<p>Protease substrate specificity</p>
+<p>Proteases have been evolved to cut different peptides using PACE. In these systems, the desired protease cut site is used to link a T7 RNA polymerase and a T7 lysozyme. The T7 lysozyme prevents the T7 polymerase from transcribing gIII. When the peptide linker is cleaved, the T7 polymerase is activated, allowing for the transcription of the pIII gene. This method was used to create a TEV protease with a significantly different peptide substrate.</p>
+<p>Orthogonal Aminoacyl-tRNA Synthetases</p>
+<p>Using PACE, aminoacyl-tRNA synthetases (aaRSs) were evolved for noncanonical amino acids as well. Activity of an aaRS is linked to pIII production by the addition of a TAG stop codon in the middle of gIII. Synthetases that aminoacylate the TAG codon's suppressor tRNA prevents stop codon activity, allowing for production of functional pIII. Using this system, aaRSs were evolved that utilize non-canonical amino acids p-nitro-phenyalanine, iodophenylalanine, and Boc-lysine.</p>
+<p>Protein-Protein Interactions</p>
+<p>Protein-protein interactions have been evolved using PACE as well. Under this scheme, the target protein is fused with a DNA binding protein, which binds to a target sequence placed upstream of the gIII promoter. The protein undergoing evolution is fused with an RNA polymerase. The better the protein-protein interaction, the more transcription of pIII occurs, allowing the evolution of the protein-protein interaction under PACE conditions. This method was used to evolve Bacillus thuringiensis endotoxin variants that can overcome insect toxin resistance.</p>
+<p>Base Editors</p>
+<p>PACE was used to evolve APOBEC1 for greater soluble expression. APOBEC1 is a cytidine deaminase that has found use in base editors to catalyze the single nucleotide edit C-->T. In E. coli, APOBEC1 usually falls out of solution into the insoluble fraction. To evolve APOBEC1 for better soluble expression, the N-terminus of a T7 polymerase was fused to APOBEC1, with the remaining portion of the polymerase separately expressed. The T7 polymerase can only function when the N-terminus portion can bind to the rest of the polymerase. Since APOBEC1 must be properly folded for the N-terminus portion to be exposed properly, T7 polymerase activity is correlated to APOBEC1 folding. As follows, pIII transcription and production is linked with APOBEC1 soluble expression via the T7 polymerase. Using this approach, the soluble expression of APOBEC1 was increased by 4 fold with no change in function.</p>
+<p>PACE was also used to create a more catalytically active deoxyadenosine deaminase. Deoxyadenosine deaminase is used in base editors to perform the single nucleotide edit A-->T.  This was done by placing adenosine-containing stop codons in the gene for T7 polymerase. If the base editor is able to correct the error, functional T7 polymerase is produced, allowing production of pIII. Using this system, they evolved a deoxyadenosine deaminase with 590 fold activity compared to wild type.</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
