@@ -1,0 +1,35 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Polymorphic code</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Polymorphic code</h2>
+                <p>In computing, polymorphic code is code that uses a polymorphic engine to mutate while keeping the original algorithm intact - that is, the code changes itself every time it runs, but the function of the code (its semantics) stays the same. For example, the simple math expressions 3+1 and 6-2 both achieve the same result, yet run with different machine code in a CPU. This technique is sometimes used by computer viruses, shellcodes and computer worms to hide their presence.</p>
+<p>Encryption is the most common method to hide code. With encryption, the main body of the code (also called its payload) is encrypted and will appear meaningless. For the code to function as before, a decryption function is added to the code. When the code is executed, this function reads the payload and decrypts it before executing it in turn.</p>
+<p>Encryption alone is not polymorphism. To gain polymorphic behavior, the encryptor/decryptor pair is mutated with each copy of the code. This allows different versions of some code which all function the same.</p>
+<p>Malicious code</p>
+<p>Most anti-virus software and intrusion detection systems (IDS) attempt to locate malicious code by searching through computer files and data packets sent over a computer network. If the security software finds patterns that correspond to known computer viruses or worms, it takes appropriate steps to neutralize the threat. Polymorphic algorithms make it difficult for such software to recognize the offending code because it constantly mutates.</p>
+<p>Malicious programmers have sought to protect their encrypted code from this virus-scanning strategy by rewriting the unencrypted decryption engine (and the resulting encrypted payload) each time the virus or worm is propagated. Anti-virus software uses sophisticated pattern analysis to find underlying patterns within the different mutations of the decryption engine, in hopes of reliably detecting such malware.</p>
+<p>Emulation may be used to defeat polymorphic obfuscation by letting the malware demangle itself in a virtual environment before utilizing other methods, such as traditional signature scanning. Such a virtual environment is sometimes called a sandbox. Polymorphism does not protect the virus against such emulation if the decrypted payload remains the same regardless of variation in the decryption algorithm. Metamorphic code techniques may be used to complicate detection further, as the virus may execute without ever having identifiable code blocks in memory that remains constant from infection to infection.</p>
+<p>The first known polymorphic virus was written by Mark Washburn. The virus, called 1260, was written in 1990. A better-known polymorphic virus was created in 1992 by the hacker Dark Avenger as a means of avoiding pattern recognition from antivirus software. A common and very virulent polymorphic virus is the file infecter Virut.</p>
+<p>See also</p>
+<p>Metamorphic code</p>
+<p>Self-modifying code</p>
+<p>Alphanumeric shellcode</p>
+<p>Shellcode</p>
+<p>Obfuscated code</p>
+<p>Oligomorphic code</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
