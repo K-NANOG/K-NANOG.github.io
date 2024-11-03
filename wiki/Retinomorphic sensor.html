@@ -1,0 +1,762 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Retinomorphic sensor</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Retinomorphic sensor</h2>
+                <p>Retinomorphic sensors are a type of event-driven optical sensor which produce a signal in response to changes in light intensity, rather than to light intensity itself. This is in contrast to conventional optical sensors such as charge coupled device (CCD) or complementary metal oxide semiconductor (CMOS) based sensors, which output a signal that increases with increasing light intensity. Because they respond to movement only, retinomorphic sensors are hoped to enable faster tracking of moving objects than conventional image sensors, and have potential applications in autonomous vehicles, robotics, and neuromorphic engineering.</p>
+<p>Naming and history</p>
+<p>The first so-called artificial retina were reported in the late 1980's by Carver Mead and his doctoral students Misha Mahowald, and Tobias Delbrück.  These silicon-based sensors were based on small circuits involving differential amplifiers, capacitors, and resistors. The sensors produced a spike and subsequent decay in output voltage in response to a step-change in illumination intensity. This response is analogous to that of animal retinal cells, which in the 1920's were observed to fire more frequently when the intensity of light was changed than when it was constant. The name silicon retina has hence been used to describe these sensors.    </p>
+<p>The term retinomorphic was first used in a conference paper by Lex Akers in 1990. The term received wider use by Stanford Professor of Engineering Kwabena Boahen, and has since been applied to a wide range of event-driven sensing strategies. The word is analogous to neuromorphic, which is applied to hardware elements (such as processors) designed to replicate the way the brain processes information.</p>
+<p>Operating principles</p>
+<p>There are several retinomorphic sensor designs which yield a similar response. The first designs employed a differential amplifier which compared the input signal from of a conventional sensor (e.g. a phototransistor) to a filtered version of the output, resulting in a gradual decay if the input was constant. Since the 1980's these sensors have evolved into much more complex and robust circuits.</p>
+<p>A more compact design of retinomorphic sensor consists of just a photosensitive capacitor and a resistor in series. The output voltage of these retinomorphic sensors, </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>    {\displaystyle V_{out}}</p>
+<p>, is defined as voltage dropped across the resistor. The photosensitive capacitor is designed to have a capacitance which is a function of incident light intensity. If a constant voltage </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle V_{in}}</p>
+<p>, is applied across this RC circuit it will act as a passive high-pass filter and all voltage will be dropped across the capacitor (i.e. </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle V_{out}=0}</p>
+<p>). After a sufficient amount of time, the plates of the capacitor will be fully charged with a charge </p>
+<p>        Q</p>
+<p>        =</p>
+<p>        ±</p>
+<p>          C</p>
+<p>            d</p>
+<p>            a</p>
+<p>            r</p>
+<p>            k</p>
+<p>        (</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        −</p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        )</p>
+<p>    {\displaystyle Q=\pm C_{dark}(V_{in}-V_{out})}</p>
+<p> on each plate, where </p>
+<p>          C</p>
+<p>            d</p>
+<p>            a</p>
+<p>            r</p>
+<p>            k</p>
+<p>    {\displaystyle C_{dark}}</p>
+<p> is the capacitance in the dark. Since </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle V_{out}=0}</p>
+<p> under constant illumination, this can be simplified to </p>
+<p>        Q</p>
+<p>        =</p>
+<p>        ±</p>
+<p>          C</p>
+<p>            d</p>
+<p>            a</p>
+<p>            r</p>
+<p>            k</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle Q=\pm C_{dark}V_{in}}</p>
+<p>.</p>
+<p>If light is then applied to the capacitor it will change capacitance to a new value: </p>
+<p>          C</p>
+<p>            l</p>
+<p>            i</p>
+<p>            g</p>
+<p>            h</p>
+<p>            t</p>
+<p>    {\displaystyle C_{light}}</p>
+<p>. The charge that the plates can accommodate will therefore change to </p>
+<p>        Q</p>
+<p>        =</p>
+<p>        ±</p>
+<p>          C</p>
+<p>            l</p>
+<p>            i</p>
+<p>            g</p>
+<p>            h</p>
+<p>            t</p>
+<p>        (</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        −</p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        )</p>
+<p>    {\displaystyle Q=\pm C_{light}(V_{in}-V_{out})}</p>
+<p>, leaving a surplus / deficit of charge on each plate. The excess charge will be forced to leave the plates, flowing either to ground or the input voltage terminal. The rate of charge flow is determined by the resistance of the resistor </p>
+<p>        R</p>
+<p>    {\displaystyle R}</p>
+<p>, and the capacitance of the capacitor. This charge flow will lead to a non-zero voltage being dropped across the resistor and hence a non-zero </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>    {\displaystyle V_{out}}</p>
+<p>. After the charge stops flowing the system returns to steady-state, all the voltage is once again dropped across the capacitor, and </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle V_{out}=0}</p>
+<p> again.For a capacitor to change its capacitance under illumination, the dielectric constant of the insulator between the plates, or the effective dimensions of the capacitor, must be illumination-dependent. The effective dimensions can be changed by using a bilayer material between the plates, consisting of an insulator and a semiconductor. Under appropriate illumination conditions the semiconductor will increase its conductivity when exposed to light, emulating the process of moving the plates of the capacitor closer together, and therefore increasing capacitance. For this to be possible, the semiconductor must have a low electrical conductivity in the dark, and have an appropriate band gap to enable charge generation under illumination. The device must also allow optical access to the semiconductor, through a transparent plate (e.g. using a transparent conducting oxide).</p>
+<p>Applications</p>
+<p>Conventional cameras capture every part of an image, regardless of whether it is relevant to the task. Because every pixel is measured, conventional image sensors are only able to sample the visual field at relatively low frame rates, typically 30 - 240 frames per second. Even in professional high speed cameras used for motion picture, the frame rate is limited to a few 10's of thousands of frames per second for a full resolution image. This limitation could represent a performance bottleneck in the identification of high speed moving objects. This is particularly critical in applications where rapid identification of movement is critical, such as in autonomous vehicles. </p>
+<p>By contrast, retinomorphic sensors identify movement by design. This means that they do not have a frame rate and instead are event-driven, responding only when needed. For this reason, retinomorphic sensors are hoped to enable identification of moving objects much more quickly than conventional real-time image analysis strategies. Retinomorphic sensors are therefore hoped to have applications in autonomous vehicles, robotics, and neuromorphic engineering.</p>
+<p>Theory</p>
+<p>Retinomorphic sensor operation can be quantified using similar techniques to simple RC circuits, the only difference being that capacitance is not constant as a function of time in a retinomorphic sensor. If the input voltage is defined as </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle V_{in}}</p>
+<p>, the voltage dropped across the resistor as </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>    {\displaystyle V_{out}}</p>
+<p>, and the voltage dropped across the capacitor as </p>
+<p>          V</p>
+<p>            C</p>
+<p>    {\displaystyle V_{C}}</p>
+<p>, we can use Kirchhoff's Voltage Law to state:</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>    {\displaystyle V_{in}=V_{C}+V_{out}}</p>
+<p>Defining the current flowing through the resistor as </p>
+<p>        I</p>
+<p>    {\displaystyle I}</p>
+<p>, we can use Ohm's Law to write:</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>        I</p>
+<p>        R</p>
+<p>    {\displaystyle V_{in}=V_{C}+IR}</p>
+<p>From the definition of current, we can then write this in terms of charge, </p>
+<p>        Q</p>
+<p>    {\displaystyle Q}</p>
+<p>, flowing off the bottom plate:</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>        R</p>
+<p>              d</p>
+<p>              Q</p>
+<p>              d</p>
+<p>              t</p>
+<p>    {\displaystyle V_{in}=V_{C}+R{\frac {dQ}{dt}}}</p>
+<p>where </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> is time. Charge on the capacitor plates is defined by the product of capacitance, </p>
+<p>        C</p>
+<p>    {\displaystyle C}</p>
+<p>, and the voltage across the capacitor, </p>
+<p>          V</p>
+<p>            C</p>
+<p>    {\displaystyle V_{C}}</p>
+<p>, we can hence say:  </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>        R</p>
+<p>            d</p>
+<p>              d</p>
+<p>              t</p>
+<p>        (</p>
+<p>        C</p>
+<p>          V</p>
+<p>            C</p>
+<p>        )</p>
+<p>    {\displaystyle V_{in}=V_{C}+R{\frac {d}{dt}}(CV_{C})}</p>
+<p>Because capacitance in retinomorphic sensors is a function of time, </p>
+<p>        C</p>
+<p>    {\displaystyle C}</p>
+<p> cannot be taken out of the derivative as a constant. Using the product rule, we get the following general equation of retinomorphic sensor response: </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>        R</p>
+<p>            [</p>
+<p>        C</p>
+<p>              d</p>
+<p>                V</p>
+<p>                  C</p>
+<p>              d</p>
+<p>              t</p>
+<p>        +</p>
+<p>          V</p>
+<p>            C</p>
+<p>              d</p>
+<p>              C</p>
+<p>              d</p>
+<p>              t</p>
+<p>            ]</p>
+<p>    {\displaystyle V_{in}=V_{C}+R{\bigg [}C{\frac {dV_{C}}{dt}}+V_{C}{\frac {dC}{dt}}{\bigg ]}}</p>
+<p>or, in terms of the output voltage: </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        =</p>
+<p>        R</p>
+<p>            [</p>
+<p>        C</p>
+<p>              d</p>
+<p>                V</p>
+<p>                  C</p>
+<p>              d</p>
+<p>              t</p>
+<p>        +</p>
+<p>          V</p>
+<p>            C</p>
+<p>              d</p>
+<p>              C</p>
+<p>              d</p>
+<p>              t</p>
+<p>            ]</p>
+<p>    {\displaystyle V_{out}=R{\bigg [}C{\frac {dV_{C}}{dt}}+V_{C}{\frac {dC}{dt}}{\bigg ]}}</p>
+<p>Response to a step-change in intensity</p>
+<p>While the equation above is valid for any form of </p>
+<p>        C</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle C(t)}</p>
+<p>, it cannot be solved analytically unless the input form of the optical stimulus is known. The simplest form of optical stimulus would be a step function going from zero to some finite optical power density </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p> at a time </p>
+<p>        t</p>
+<p>        =</p>
+<p>          t</p>
+<p>            0</p>
+<p>    {\displaystyle t=t_{0}}</p>
+<p>. While real-world applications of retinomorphic sensors are unlikely to be accurately described by such events, it is a useful way to understand and benchmark the performance of retinomorphic sensors. In particular, we are primarily concerned with the maximum height of the </p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>    {\displaystyle V_{out}}</p>
+<p> immediately after the light has been turned on. </p>
+<p>In this case the capacitance could be described by:</p>
+<p>        C</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>            {</p>
+<p>                    C</p>
+<p>                      d</p>
+<p>                      a</p>
+<p>                      r</p>
+<p>                      k</p>
+<p>                  ,</p>
+<p>                    for </p>
+<p>                  t</p>
+<p>                  <</p>
+<p>                    t</p>
+<p>                      0</p>
+<p>                    C</p>
+<p>                      l</p>
+<p>                      i</p>
+<p>                      g</p>
+<p>                      h</p>
+<p>                      t</p>
+<p>                  ,</p>
+<p>                    for </p>
+<p>                  t</p>
+<p>                  ≥</p>
+<p>                    t</p>
+<p>                      0</p>
+<p>    {\displaystyle C(t)={\begin{cases}C_{dark},&{\text{for }}t<t_{0}\\C_{light},&{\text{for }}t\geq t_{0}\end{cases}}}</p>
+<p>The capacitance under illumination will depend on </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p>. Semiconductors are known to have a conductance, </p>
+<p>        G</p>
+<p>    {\displaystyle G}</p>
+<p>, which increases with a power-law dependence on incident optical power density: </p>
+<p>        G</p>
+<p>        ∝</p>
+<p>          P</p>
+<p>            γ</p>
+<p>    {\displaystyle G\propto P^{\gamma }}</p>
+<p>, where </p>
+<p>        γ</p>
+<p>    {\displaystyle \gamma }</p>
+<p> is a dimensionless exponent. Since </p>
+<p>        G</p>
+<p>    {\displaystyle G}</p>
+<p> is linearly proportional to charge density, and capacitance is linearly proportional to charges on the plates for a given voltage, the capacitance of a retinomorphic sensor also has a power-law dependence on </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p>. The capacitance as a function of time in response to a step function, can therefore be written as: </p>
+<p>        C</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>            {</p>
+<p>                    C</p>
+<p>                      d</p>
+<p>                      a</p>
+<p>                      r</p>
+<p>                      k</p>
+<p>                  ,</p>
+<p>                    for </p>
+<p>                  t</p>
+<p>                  <</p>
+<p>                    t</p>
+<p>                      0</p>
+<p>                    C</p>
+<p>                      d</p>
+<p>                      a</p>
+<p>                      r</p>
+<p>                      k</p>
+<p>                  +</p>
+<p>                    α</p>
+<p>                      0</p>
+<p>                    P</p>
+<p>                      γ</p>
+<p>                  ,</p>
+<p>                    for </p>
+<p>                  t</p>
+<p>                  ≥</p>
+<p>                    t</p>
+<p>                      0</p>
+<p>    {\displaystyle C(t)={\begin{cases}C_{dark},&{\text{for }}t<t_{0}\\C_{dark}+\alpha _{0}P^{\gamma },&{\text{for }}t\geq t_{0}\end{cases}}}</p>
+<p>where </p>
+<p>          α</p>
+<p>            0</p>
+<p>    {\displaystyle \alpha _{0}}</p>
+<p> is the capacitance prefactor. For a step function we can re-write our differential equation for </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle V_{in}}</p>
+<p> as a difference equation: </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>        R</p>
+<p>            [</p>
+<p>        C</p>
+<p>              Δ</p>
+<p>                V</p>
+<p>                  C</p>
+<p>              Δ</p>
+<p>              t</p>
+<p>        +</p>
+<p>          V</p>
+<p>            C</p>
+<p>              Δ</p>
+<p>              C</p>
+<p>              Δ</p>
+<p>              t</p>
+<p>            ]</p>
+<p>    {\displaystyle V_{in}=V_{C}+R{\bigg [}C{\frac {\Delta V_{C}}{\Delta t}}+V_{C}{\frac {\Delta C}{\Delta t}}{\bigg ]}}</p>
+<p>where </p>
+<p>        Δ</p>
+<p>          V</p>
+<p>            C</p>
+<p>    {\displaystyle \Delta V_{C}}</p>
+<p> is the change in voltage dropped across the capacitor as a result of turning on the light, </p>
+<p>        Δ</p>
+<p>        C</p>
+<p>    {\displaystyle \Delta C}</p>
+<p> is the change in capacitance as a result of turning on the light, and </p>
+<p>        Δ</p>
+<p>        t</p>
+<p>    {\displaystyle \Delta t}</p>
+<p> is the time taken for the light to turn on. The variables </p>
+<p>          V</p>
+<p>            C</p>
+<p>    {\displaystyle V_{C}}</p>
+<p> and </p>
+<p>        C</p>
+<p>    {\displaystyle C}</p>
+<p> are defined as the voltage dropped across the capacitor and the capacitance, respectively, immediately after the light has been turned on. I.e. </p>
+<p>          V</p>
+<p>            C</p>
+<p>    {\displaystyle V_{C}}</p>
+<p> is henceforth shorthand for </p>
+<p>          V</p>
+<p>            C</p>
+<p>        (</p>
+<p>          t</p>
+<p>            0</p>
+<p>        )</p>
+<p>    {\displaystyle V_{C}(t_{0})}</p>
+<p>, and </p>
+<p>        C</p>
+<p>    {\displaystyle C}</p>
+<p> is henceforth shorthand for </p>
+<p>        C</p>
+<p>        (</p>
+<p>          t</p>
+<p>            0</p>
+<p>        )</p>
+<p>    {\displaystyle C(t_{0})}</p>
+<p>. Assuming the sensor has been held in the dark for sufficiently long before the light is turned on, the change in </p>
+<p>          V</p>
+<p>            C</p>
+<p>    {\displaystyle V_{C}}</p>
+<p> can hence be written as:  </p>
+<p>        Δ</p>
+<p>          V</p>
+<p>            C</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        −</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle \Delta V_{C}=V_{C}-V_{in}}</p>
+<p>Similarly, the change in </p>
+<p>        C</p>
+<p>    {\displaystyle C}</p>
+<p> can be written as </p>
+<p>        Δ</p>
+<p>        C</p>
+<p>        =</p>
+<p>          α</p>
+<p>            0</p>
+<p>          P</p>
+<p>            γ</p>
+<p>    {\displaystyle \Delta C=\alpha _{0}P^{\gamma }}</p>
+<p>Putting these into the difference equation for </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle V_{in}}</p>
+<p>:</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>        R</p>
+<p>            [</p>
+<p>        C</p>
+<p>                V</p>
+<p>                  C</p>
+<p>              −</p>
+<p>                V</p>
+<p>                  i</p>
+<p>                  n</p>
+<p>              Δ</p>
+<p>              t</p>
+<p>        +</p>
+<p>          V</p>
+<p>            C</p>
+<p>                α</p>
+<p>                  0</p>
+<p>                P</p>
+<p>                  γ</p>
+<p>              Δ</p>
+<p>              t</p>
+<p>            ]</p>
+<p>    {\displaystyle V_{in}=V_{C}+R{\bigg [}C{\frac {V_{C}-V_{in}}{\Delta t}}+V_{C}{\frac {\alpha _{0}P^{\gamma }}{\Delta t}}{\bigg ]}}</p>
+<p>Multiplying this out:</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        Δ</p>
+<p>        t</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        Δ</p>
+<p>        t</p>
+<p>        +</p>
+<p>        R</p>
+<p>            [</p>
+<p>        C</p>
+<p>        (</p>
+<p>          V</p>
+<p>            C</p>
+<p>        −</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        )</p>
+<p>        +</p>
+<p>          V</p>
+<p>            C</p>
+<p>          α</p>
+<p>            0</p>
+<p>          P</p>
+<p>            γ</p>
+<p>            ]</p>
+<p>    {\displaystyle V_{in}\Delta t=V_{C}\Delta t+R{\bigg [}C(V_{C}-V_{in})+V_{C}\alpha _{0}P^{\gamma }{\bigg ]}}</p>
+<p>Since we are assuming the light turns on very quickly we can approximate </p>
+<p>        Δ</p>
+<p>        t</p>
+<p>        ≈</p>
+<p>        0</p>
+<p>    {\displaystyle \Delta t\approx 0}</p>
+<p>. This leads to the following:</p>
+<p>          V</p>
+<p>            C</p>
+<p>        =</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>                C</p>
+<p>                  d</p>
+<p>                  a</p>
+<p>                  r</p>
+<p>                  k</p>
+<p>              +</p>
+<p>                α</p>
+<p>                  0</p>
+<p>                P</p>
+<p>                  γ</p>
+<p>                C</p>
+<p>                  d</p>
+<p>                  a</p>
+<p>                  r</p>
+<p>                  k</p>
+<p>              +</p>
+<p>              2</p>
+<p>                α</p>
+<p>                  0</p>
+<p>                P</p>
+<p>                  γ</p>
+<p>    {\displaystyle V_{C}=V_{in}{\frac {C_{dark}+\alpha _{0}P^{\gamma }}{C_{dark}+2\alpha _{0}P^{\gamma }}}}</p>
+<p>Using the relationship </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>        =</p>
+<p>          V</p>
+<p>            C</p>
+<p>        +</p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>    {\displaystyle V_{in}=V_{C}+V_{out}}</p>
+<p>, this can then be written in terms of the output voltage:</p>
+<p>          V</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>        =</p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>                α</p>
+<p>                  0</p>
+<p>                P</p>
+<p>                  γ</p>
+<p>                C</p>
+<p>                  d</p>
+<p>                  a</p>
+<p>                  r</p>
+<p>                  k</p>
+<p>              +</p>
+<p>              2</p>
+<p>                α</p>
+<p>                  0</p>
+<p>                P</p>
+<p>                  γ</p>
+<p>    {\displaystyle V_{max}=V_{in}{\frac {\alpha _{0}P^{\gamma }}{C_{dark}+2\alpha _{0}P^{\gamma }}}}</p>
+<p>Where we have defined the peak height as </p>
+<p>          V</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>        =</p>
+<p>          V</p>
+<p>            o</p>
+<p>            u</p>
+<p>            t</p>
+<p>        (</p>
+<p>          t</p>
+<p>            0</p>
+<p>        )</p>
+<p>    {\displaystyle V_{max}=V_{out}(t_{0})}</p>
+<p>, since he peak occurs immediately after the light has been turned on.</p>
+<p>The retinomorphic figure of merit, </p>
+<p>        Λ</p>
+<p>    {\displaystyle \Lambda }</p>
+<p>, is defined as the ratio of the capacitance prefactor and the capacitance of the retinomorphic sensor in the dark:</p>
+<p>        Λ</p>
+<p>        =</p>
+<p>              α</p>
+<p>                0</p>
+<p>              C</p>
+<p>                d</p>
+<p>                a</p>
+<p>                r</p>
+<p>                k</p>
+<p>    {\displaystyle \Lambda ={\frac {\alpha _{0}}{C_{dark}}}}</p>
+<p>With this parameter, the inverse ratio of peak height to input voltage can be written as follows:</p>
+<p>              V</p>
+<p>                i</p>
+<p>                n</p>
+<p>              V</p>
+<p>                m</p>
+<p>                a</p>
+<p>                x</p>
+<p>        =</p>
+<p>        2</p>
+<p>        +</p>
+<p>            1</p>
+<p>              Λ</p>
+<p>                P</p>
+<p>                  γ</p>
+<p>    {\displaystyle {\frac {V_{in}}{V_{max}}}=2+{\frac {1}{\Lambda P^{\gamma }}}}</p>
+<p>The value of </p>
+<p>        γ</p>
+<p>    {\displaystyle \gamma }</p>
+<p> will depend on the nature of recombination in the semiconductor, but if band-to-band recombination dominates and the charge density of electrons and holes are equal, </p>
+<p>        γ</p>
+<p>        =</p>
+<p>        0.5</p>
+<p>    {\displaystyle \gamma =0.5}</p>
+<p>. For systems where this is approximately true the following simplification to the above equation an be made:</p>
+<p>              V</p>
+<p>                i</p>
+<p>                n</p>
+<p>              V</p>
+<p>                m</p>
+<p>                a</p>
+<p>                x</p>
+<p>        =</p>
+<p>        2</p>
+<p>        +</p>
+<p>            1</p>
+<p>              Λ</p>
+<p>                P</p>
+<p>                  1</p>
+<p>                    /</p>
+<p>                  2</p>
+<p>    {\displaystyle {\frac {V_{in}}{V_{max}}}=2+{\frac {1}{\Lambda P^{1/2}}}}</p>
+<p>This equation provides a simple method for evaluating the retinomorphic figure of merit from experimental data. This can be carried out by measuring the peak height, </p>
+<p>          V</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>    {\displaystyle V_{max}}</p>
+<p>, of a retinomorphic sensor in response to a step change in light intensity from 0 to </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p>, for a range of values </p>
+<p>        P</p>
+<p>    {\displaystyle P}</p>
+<p>. Plotting </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>          /</p>
+<p>          V</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>    {\displaystyle V_{in}/V_{max}}</p>
+<p> as a function of </p>
+<p>          P</p>
+<p>            −</p>
+<p>            1</p>
+<p>              /</p>
+<p>            2</p>
+<p>    {\displaystyle P^{-1/2}}</p>
+<p> should yield a straight line with a gradient of </p>
+<p>        1</p>
+<p>          /</p>
+<p>        Λ</p>
+<p>    {\displaystyle 1/\Lambda }</p>
+<p>. This approach assumes that </p>
+<p>          V</p>
+<p>            m</p>
+<p>            a</p>
+<p>            x</p>
+<p>    {\displaystyle V_{max}}</p>
+<p> is linearly proportional to </p>
+<p>          V</p>
+<p>            i</p>
+<p>            n</p>
+<p>    {\displaystyle V_{in}}</p>
+<p>.</p>
+<p>See also</p>
+<p>Active-pixel sensor</p>
+<p>Charge coupled device</p>
+<p>Event camera</p>
+<p>Neuromorphic engineering</p>
+<p>Optical sensor</p>
+<p>Photodiode</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
