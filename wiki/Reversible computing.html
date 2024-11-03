@@ -1,0 +1,79 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reversible computing</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Reversible computing</h2>
+                <p>Reversible computing is any model of computation where the computational process, to some extent, is time-reversible. In a model of computation that uses deterministic transitions from one state of the abstract machine to another, a necessary condition for reversibility is that the relation of the mapping from states to their successors must be one-to-one. Reversible computing is a form of unconventional computing.</p>
+<p>Due to the unitarity of quantum mechanics, quantum circuits are reversible, as long as they do not "collapse" the quantum states on which they operate.</p>
+<p>Reversibility</p>
+<p>There are two major, closely related types of reversibility that are of particular interest for this purpose: physical reversibility and logical reversibility.</p>
+<p>A process is said to be physically reversible if it results in no increase in physical entropy; it is isentropic. There is a style of circuit design ideally exhibiting this property that is referred to as charge recovery logic, adiabatic circuits, or adiabatic computing (see Adiabatic process). Although in practice no nonstationary physical process can be exactly physically reversible or isentropic, there is no known limit to the closeness with which we can approach perfect reversibility, in systems that are sufficiently well isolated from interactions with unknown external environments, when the laws of physics describing the system's evolution are precisely known.</p>
+<p>A motivation for the study of technologies aimed at implementing reversible computing is that they offer what is predicted to be the only potential way to improve the computational energy efficiency (i.e., useful operations performed per unit energy dissipated) of computers beyond the fundamental von Neumann–Landauer limit of kT ln(2) energy dissipated per irreversible bit operation. Although the Landauer limit was millions of times below the energy consumption of computers in the 2000s and thousands of times less in the 2010s, proponents of reversible computing argue that this can be attributed largely to architectural overheads which effectively magnify the impact of Landauer's limit in practical circuit designs, so that it may prove difficult for practical technology to progress very far beyond current levels of energy efficiency if reversible computing principles are not used.</p>
+<p>Relation to thermodynamics</p>
+<p>As was first argued by Rolf Landauer while working at IBM, in order for a computational process to be physically reversible, it must also be logically reversible. Landauer's principle is the observation that the oblivious erasure of n bits of known information must always incur a cost of nkT ln(2) in thermodynamic entropy. A discrete, deterministic computational process is said to be logically reversible if the transition function that maps old computational states to new ones is a one-to-one function; i.e. the output logical states uniquely determine the input logical states of the computational operation.</p>
+<p>For computational processes that are nondeterministic (in the sense of being probabilistic or random), the relation between old and new states is not a single-valued function, and the requirement needed to obtain physical reversibility becomes a slightly weaker condition, namely that the size of a given ensemble of possible initial computational states does not decrease, on average, as the computation proceeds forwards.</p>
+<p>Physical reversibility</p>
+<p>Landauer's principle (and indeed, the second law of thermodynamics) can also be understood to be a direct logical consequence of the underlying reversibility of physics, as is reflected in the general Hamiltonian formulation of mechanics, and in the unitary time-evolution operator of quantum mechanics more specifically.</p>
+<p>The implementation of reversible computing thus amounts to learning how to characterize and control the physical dynamics of mechanisms to carry out desired computational operations so precisely that the experiment accumulates a negligible total amount of uncertainty regarding the complete physical state of the mechanism, per each logic operation that is performed. In other words, precisely track the state of the active energy that is involved in carrying out computational operations within the machine, and design the machine so that the majority of this energy is recovered in an organized form that can be reused for subsequent operations, rather than being permitted to dissipate into the form of heat.</p>
+<p>Although achieving this goal presents a significant challenge for the design, manufacturing, and characterization of ultra-precise new physical mechanisms for computing, there is at present no fundamental reason to think that this goal cannot eventually be accomplished, allowing someday to build computers that generate much less than 1 bit's worth of physical entropy (and dissipate much less than kT ln 2 energy to heat) for each useful logical operation that they carry out internally.</p>
+<p>Today, the field has a substantial body of academic literature. A wide variety of reversible device concepts, logic gates, electronic circuits, processor architectures, programming languages, and application algorithms have been designed and analyzed by physicists, electrical engineers, and computer scientists.</p>
+<p>This field of research awaits the detailed development of a high-quality, cost-effective, nearly reversible logic device technology, one that includes highly energy-efficient clocking and synchronization mechanisms, or avoids the need for these through asynchronous design. This sort of solid engineering progress will be needed before the large body of theoretical research on reversible computing can find practical application in enabling real computer technology to circumvent the various near-term barriers to its energy efficiency, including the von Neumann–Landauer bound. This may only be circumvented by the use of logically reversible computing, due to the second law of thermodynamics.</p>
+<p>Logical reversibility</p>
+<p>For a computational operation to be logically reversible means that the output (or final state) of the operation can be computed from the input (or initial state), and vice versa. Reversible functions are bijective. This means that reversible gates (and circuits, i.e. compositions of multiple gates) generally have the same number of input bits as output bits (assuming that all input bits are consumed by the operation, and that all input/output states are possible).</p>
+<p>An inverter (NOT) gate is logically reversible because it can be undone. The NOT gate may however not be physically reversible, depending on its implementation.</p>
+<p>The exclusive or (XOR) gate is irreversible because its two inputs cannot be unambiguously reconstructed from its single output, or alternatively, because information erasure is not reversible. However, a reversible version of the XOR gate—the controlled NOT gate (CNOT)—can be defined by preserving one of the inputs as a 2nd output. The three-input variant of the CNOT gate is called the Toffoli gate. It preserves two of its inputs a,b and replaces the third c by </p>
+<p>        c</p>
+<p>        ⊕</p>
+<p>        (</p>
+<p>        a</p>
+<p>        ⋅</p>
+<p>        b</p>
+<p>        )</p>
+<p>    {\displaystyle c\oplus (a\cdot b)}</p>
+<p>. With </p>
+<p>        c</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\displaystyle c=0}</p>
+<p>, this gives the AND function, and with </p>
+<p>        a</p>
+<p>        ⋅</p>
+<p>        b</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle a\cdot b=1}</p>
+<p> this gives the NOT function. Because AND and NOT together is a functionally complete set, the Toffoli gate is universal and can implement any Boolean function (if given enough initialized ancilla bits).</p>
+<p>Similarly, in the Turing machine model of computation, a reversible Turing machine is one whose transition function is invertible, so that each machine state has at most one predecessor.</p>
+<p>Yves Lecerf proposed a reversible Turing machine in a 1963 paper, but apparently unaware of Landauer's principle, did not pursue the subject further, devoting most of the rest of his career to ethnolinguistics. In 1973 Charles H. Bennett, at IBM Research, showed that a universal Turing machine could be made both logically and thermodynamically reversible, and therefore able in principle to perform an arbitrarily large number of computation steps per unit of physical energy dissipated, if operated sufficiently slowly. Thermodynamically reversible computers could perform useful computations at useful speed, while dissipating considerably less than kT of energy per logical step. In 1982 Edward Fredkin and Tommaso Toffoli proposed the Billiard ball computer, a mechanism using classical hard spheres to do reversible computations at finite speed with zero dissipation, but requiring perfect initial alignment of the balls' trajectories, and Bennett's review compared these "Brownian" and "ballistic" paradigms for reversible computation. Aside from the motivation of energy-efficient computation, reversible logic gates offered practical improvements of bit-manipulation transforms in cryptography and computer graphics. Since the 1980s, reversible circuits have attracted interest as components of quantum algorithms, and more recently in photonic and nano-computing technologies where some switching devices offer no signal gain.</p>
+<p>Surveys of reversible circuits, their construction and optimization, as well as recent research challenges, are available.</p>
+<p>See also</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Frank, Michael P. (2017). "The Future of Computing Depends on Making It Reversible"" (web) / "Throwing Computing Into Reverse" (print). IEEE Spectrum. 54 (9): 32–37. doi:10.1109/MSPEC.2017.8012237.</p>
+<p>Denning, Peter; Lewis, Ted (2017). "Computers That Can Run Backwards". American Scientist. 105 (5): 270. doi:10.1511/2017.105.5.270. hdl:10945/59278. S2CID 125446656.</p>
+<p>Glück, Robert; Yokoyama, Tetsuo (2023). "Reversible computing from a programming language perspective". Theoretical Computer Science. 953: 113429. doi:10.1016/j.tcs.2022.06.010.</p>
+<p>Lange, Klaus-Jörn; McKenzie, Pierre; Tapp, Alain (April 2000). "Reversible Space Equals Deterministic Space". Journal of Computer and System Sciences. 60 (2): 354–367. doi:10.1006/jcss.1999.1672.</p>
+<p>Perumalla K. S. (2014), Introduction to Reversible Computing, CRC Press.</p>
+<p>Vitányi, Paul (2005). "Time, space, and energy in reversible computing". Proceedings of the 2nd conference on Computing frontiers – CF '05. pp. 435–444. doi:10.1145/1062261.1062335. ISBN 1595930191. S2CID 5252384.</p>
+<p>External links</p>
+<p>Introductory article on reversible computing</p>
+<p>First International Workshop on reversible computing</p>
+<p>Publications of Michael P. Frank: Sandia (2015-), FSU (2004-'15), UF (1999-2004), MIT 1996-'99).</p>
+<p>Internet Archive backup of the "Reversible computing community Wiki" that was administered by Frank</p>
+<p>Reversible Computation workshop/conference series</p>
+<p>CCC Workshop on Physics & Engineering Issues in Adiabatic/Reversible Classical Computing</p>
+<p>Open-source toolkit for reversible circuit design</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
