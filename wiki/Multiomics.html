@@ -1,0 +1,74 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multiomics</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Multiomics</h2>
+                <p>Multiomics, multi-omics,  integrative omics, "panomics"  or "pan-omics" is a biological analysis approach in which the data sets are multiple "omes", such as the genome, proteome, transcriptome, epigenome, metabolome, and microbiome (i.e., a meta-genome and/or meta-transcriptome, depending upon how it is sequenced); in other words, the use of multiple omics technologies to study life in a concerted way. By combining these "omes", scientists can analyze complex biological big data to find novel associations between biological entities, pinpoint relevant biomarkers and build elaborate markers of disease and physiology. In doing so, multiomics integrates diverse omics data to find a coherently matching geno-pheno-envirotype relationship or association. The OmicTools service lists more than 99 softwares related to multiomic data analysis, as well as more than 99 databases on the topic.</p>
+<p>Systems biology approaches are often based upon the use of panomic analysis data. The American Society of Clinical Oncology (ASCO) defines panomics as referring to "the interaction of all biological</p>
+<p>functions within a cell and with other body functions, combining data collected by targeted tests ... and global assays (such as genome sequencing) with other patient-specific information."</p>
+<p>Single-cell multiomics</p>
+<p>A branch of the field of multiomics is the analysis of multilevel single-cell data, called single-cell multiomics.  This approach gives us an unprecedent resolution to look at multilevel transitions in health and disease at the single cell level. An advantage in relation to bulk analysis is to mitigate confounding factors derived from cell to cell variation, allowing the uncovering of heterogeneous tissue architectures.</p>
+<p>Methods for parallel single-cell genomic and transcriptomic analysis can be based on simultaneous amplification or physical separation of RNA and genomic DNA. They allow insights that cannot be gathered solely from transcriptomic analysis, as RNA data do not contain non-coding genomic regions and information regarding copy-number variation, for example. An extension of this methodology is the integration of single-cell transcriptomes to single-cell methylomes, combining single-cell bisulfite sequencing to single cell RNA-Seq.  Other techniques to query the epigenome, as single-cell ATAC-Seq  and single-cell Hi-C also exist.</p>
+<p>A different, but related, challenge is the integration of proteomic and transcriptomic data.  One approach to perform such measurement is to physically separate single-cell lysates in two, processing half for RNA, and half for proteins. The protein content of lysates can be measured by proximity extension assays (PEA), for example, which use DNA-barcoded antibodies.  A different approach uses a combination of heavy-metal RNA probes and protein antibodies to adapt mass cytometry for multiomic analysis.</p>
+<p>Related to Single-cell multiomics is the field of Spatial Omics which assays tissues through omics readouts that preserve the relative spatial orientation of the cells in the tissue. The number of Spatial Omics methods published still lags behind the number of methods published for Single-Cell multiomics, but the numbers are catching up (Single-cell and Spatial methods).</p>
+<p>Multiomics and machine learning</p>
+<p>In parallel to the advances in high-throughput biology, machine learning applications to biomedical data analysis are flourishing.  The integration of multi-omics data analysis and machine learning has led to the discovery of new biomarkers. For example, one of the methods of the mixOmics project implements a method based on sparse Partial Least Squares regression for selection of features (putative biomarkers). A unified and flexible statistical framewok for heterogeneous data integration called "Regularized Generalized Canonical Correlation Analysis" (RGCCA ) enables identifying such putative biomarkers. This framework is implemented and made freely avalaible within the RGCCA R package .</p>
+<p>Multiomics in health and disease</p>
+<p>Multiomics currently holds a promise to fill gaps in the understanding of human health and disease, and many researchers are working on ways to generate and analyze disease-related data. The applications range from understanding host-pathogen interactions and infectious diseases, cancer, to understanding better chronic and complex non-communicable diseases and improving personalized medicine.</p>
+<p>Integrated Human Microbiome Project</p>
+<p>The second phase of the $170 million Human Microbiome Project was focused on integrating patient data to different omic datasets, considering host genetics, clinical information and microbiome composition. The phase one focused on characterization of communities in different body sites. Phase 2 focused in the integration of multiomic data from host & microbiome to human diseases. Specifically, the project used multiomics to improve the understanding of the interplay of gut and nasal microbiomes with type 2 diabetes, gut microbiomes and inflammatory bowel disease and vaginal microbiomes and pre-term birth.</p>
+<p>Systems Immunology</p>
+<p>The complexity of interactions in the human immune system has prompted the generation of a wealth of immunology-related multi-scale omic data.  Multi-omic data analysis has been employed to gather novel insights about the immune response to infectious diseases, such as pediatric chikungunya, as well as noncommunicable autoimmune diseases. Integrative omics has also been employed strongly to understand effectiveness and side effects of vaccines, a field called systems vaccinology.  For example, multiomics was essential to uncover the association of changes in plasma metabolites and immune system transcriptome on response to vaccination against herpes zoster.</p>
+<p>List of softwares for multi-omic analysis</p>
+<p>The Bioconductor project curates a variety of R packages aimed at integrating omic data:</p>
+<p>omicade4, for multiple co-inertia analysis of multi omic datasets</p>
+<p>MultiAssayExperiment, offering a bioconductor interface for overlapping samples</p>
+<p>IMAS, a package focused on using multi omic data for evaluating alternative splicing</p>
+<p>bioCancer, a package for visualization of multiomic cancer data</p>
+<p>mixOmics, a suite of multivariate methods for data integration</p>
+<p>MultiDataSet, a package for encapsulating multiple data sets</p>
+<p>The RGCCA package implements a versatile framework for data integration. This package is freely available on the Comprehensive R Archive Network (CRAN).</p>
+<p>The OmicTools  database further highlights R packages and othertools for multi omic data analysis:</p>
+<p>PaintOmics, a web resource for visualization of multi-omics datasets</p>
+<p>SIGMA, a Java program focused on integrated analysis of cancer datasets</p>
+<p>iOmicsPASS, a tool in C++ for multiomic-based phenotype prediction</p>
+<p>Grimon, an R graphical interface for visualization of multiomic data</p>
+<p>Omics Pipe, a framework in Python for reproducibly automating multiomic data analysis</p>
+<p>Multiomic Databases</p>
+<p>A major limitation of classical omic studies is the isolation of only one level of biological complexity. For example, transcriptomic studies may provide information at the transcript level, but many different entities contribute to the biological state of the sample (genomic variants, post-translational modifications, metabolic products, interacting organisms, among others). With the advent of high-throughput biology, it is becoming increasingly affordable to make multiple measurements, allowing transdomain (e.g. RNA and protein levels) correlations and inferences. These correlations aid the construction or more complete biological networks, filling gaps in our knowledge.</p>
+<p>Integration of data, however, is not an easy task. To facilitate the process, groups have curated database and pipelines to systematically explore multiomic data:</p>
+<p>Multi-Omics Profiling Expression Database (MOPED), integrating diverse animal models,</p>
+<p>The Pancreatic Expression Database, integrating data related to pancreatic tissue,</p>
+<p>LinkedOmics, connecting data from TCGA cancer datasets,</p>
+<p>OASIS, a web-based resource for general cancer studies,</p>
+<p>BCIP, a platform for breast cancer studies,</p>
+<p>C/VDdb, connecting data from several cardiovascular disease studies,</p>
+<p>ZikaVR, a multiomic resource for Zika virus data</p>
+<p>Ecomics, a normalized multi-omic database for Escherichia coli data,</p>
+<p>GourdBase, integrating data from studies with gourd,</p>
+<p>MODEM, a database for multilevel maize data,</p>
+<p>SoyKB,  a database for multilevel soybean data,</p>
+<p>ProteomicsDB, a multi-omics and multi-organism resource for life science research</p>
+<p>See also</p>
+<p>DisGeNET</p>
+<p>Pangenomics</p>
+<p>Hologenomics</p>
+<p>Omics</p>
+<p>List of omics topics in biology</p>
+<p>Systems Biology</p>
+<p>Network Medicine</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
