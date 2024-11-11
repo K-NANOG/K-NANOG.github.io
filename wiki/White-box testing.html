@@ -1,0 +1,67 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>White-box testing</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>White-box testing</h2>
+                <p>White-box testing (also known as clear box testing, glass box testing, transparent box testing, and structural testing) is a method of software testing that tests internal structures or workings of an application, as opposed to its functionality (i.e. black-box testing). In white-box testing, an internal perspective of the system is used to design test cases. The tester chooses inputs to exercise paths through the code and determine the expected outputs. This is analogous to testing nodes in a circuit, e.g. in-circuit testing (ICT).</p>
+<p>White-box testing can be applied at the unit, integration and system levels of the software testing process. Although traditional testers tended to think of white-box testing as being done at the unit level, it is used for integration and system testing more frequently today. It can test paths within a unit, paths between units during integration, and between subsystems during a system–level test. Though this method of test design can uncover many errors or problems, it has the potential to miss unimplemented parts of the specification or missing requirements. Where white-box testing is design-driven, that is, driven exclusively by agreed specifications of how each component of software is required to behave (as in DO-178C and ISO 26262 processes), white-box test techniques can accomplish assessment for unimplemented or missing requirements.</p>
+<p>White-box test design techniques include the following code coverage criteria:</p>
+<p>Control flow testing</p>
+<p>Data flow testing</p>
+<p>Branch testing</p>
+<p>Statement coverage</p>
+<p>Decision coverage</p>
+<p>Modified condition/decision coverage</p>
+<p>Prime path testing</p>
+<p>Path testing</p>
+<p>Overview</p>
+<p>White-box testing is a method of testing the application at the level of the source code. These test cases are derived through the use of the design techniques mentioned above: control flow testing, data flow testing, branch testing, path testing, statement coverage and decision coverage as well as modified condition/decision coverage. White-box testing is the use of these techniques as guidelines to create an error-free environment by examining all code.  These white-box testing techniques are the building blocks of white-box testing, whose essence is the careful testing of the application at the source code level to reduce hidden errors later on. These different techniques exercise every visible path of the source code to minimize errors and create an error-free environment. The whole point of white-box testing is the ability to know which line of the code is being executed and being able to identify what the correct output should be.</p>
+<p>Levels</p>
+<p>Unit testing. White-box testing is done during unit testing to ensure that the code is working as intended, before integration happens with previously tested code. White-box testing during unit testing potentially catches many defects early on and aids in addressing defects that happen later on after the code is integrated with the rest of the application and therefore reduces the impacts of errors later in development.</p>
+<p>Integration testing. White-box testing at this level is written to test the interactions of interfaces with each other. The unit level testing made sure that each code was tested and working accordingly in an isolated environment and integration examines the correctness of the behaviour in an open environment through the use of white-box testing for any interactions of interfaces that are known to the programmer.</p>
+<p>Regression testing.  White-box testing during regression testing is the use of recycled white-box test cases at the unit and integration testing levels.</p>
+<p>Basic procedure</p>
+<p>White-box testing's basic procedures require the tester to have an in-depth knowledge of the source code being tested. The programmer must have a deep understanding of the application to know what kinds of test cases to create so that every visible path is exercised for testing. Once the source code is understood then it can be analyzed for test cases to be created. The following are the three basic steps that white-box testing takes in order to create test cases:</p>
+<p>Input involves different types of requirements, functional specifications, detailed designing of documents, proper source code and security specifications. This is the preparation stage of white-box testing to lay out all of the basic information.</p>
+<p>Processing involves performing risk analysis to guide whole testing process, proper test plan, execute test cases and communicate results. This is the phase of building test cases to make sure they thoroughly test the application the given results are recorded accordingly.</p>
+<p>Output involves preparing final report that encompasses all of the above preparations and results.</p>
+<p>Advantages</p>
+<p>Side effects of having the knowledge of the source code is beneficial to thorough testing.</p>
+<p>Optimization of code becomes easy as inconspicuous bottlenecks are exposed.</p>
+<p>Gives the programmer introspection because developers carefully describe any new implementation.</p>
+<p>Provides traceability of tests from the source, thereby allowing future changes to the source to be easily captured in the newly added or modified tests.</p>
+<p>Easy to automate.</p>
+<p>Provides clear, engineering-based rules for when to stop testing.</p>
+<p>Disadvantages</p>
+<p>White-box tests are written to test the details of a specific implementation. This means that the tests will fail when the implementation changes as the test is tightly coupled to the implementation. Additional work has to be done to update the tests so they match the implementation again when it is changed. On the other hand with black-box testing, tests are independent of the implementation, and so they will still run successfully if the implementation changes but the output or side-effects of the implementation do not.</p>
+<p>The code under test could be rewritten to implement the same functionality in a different way that invalidates the assumptions baked into the test. This could result in tests that fail unnecessarily or, in the worst case, tests that now give false positives and mask errors in the code. The white-box test never was written such that it tests the intended behavior of the code under test, but instead only such that the specific implementation does what it does.</p>
+<p>White-box testing brings complexity to testing because the tester must have knowledge of the program, or the test team needs to have at least one very good programmer who can understand the program at the code level. White-box testing requires a programmer with a high level of knowledge due to the complexity of the level of testing that needs to be done.</p>
+<p>On some occasions, it is not realistic to be able to test every single existing condition of the application and some conditions will be untested.</p>
+<p>The tests focus on the software as it exists, and missing functionality may not be discovered.</p>
+<p>Modern view</p>
+<p>A more modern view is that the dichotomy between white-box testing and black-box testing has blurred and is becoming less relevant. Whereas "white-box" originally meant using the source code, and black-box meant using requirements, tests are now derived from many documents at various levels of abstraction. The real point is that tests are usually designed from an abstract structure such as the input space, a graph, or logical predicates, and the question is what level of abstraction we derive that abstract structure from. That can be the source code, requirements, input space descriptions, or one of dozens of types of design models. Therefore, the "white-box / black-box" distinction is less important and the terms are less relevant.</p>
+<p>Hacking</p>
+<p>In penetration testing, white-box testing refers to a method where a white hat hacker has full knowledge of the system being attacked. The goal of a white-box penetration test is to simulate a malicious insider who has knowledge of and possibly basic credentials for the target system. For such a penetration test, administrative credentials are typically provided in order to analyse how or which attacks can impact high-privileged accounts. Source code can be made available to be used as a reference for the tester. When the code is a target of its own, this is not (only) a penetration test but a source code security audit (or security review).</p>
+<p>See also</p>
+<p>Black-box testing</p>
+<p>Gray-box testing</p>
+<p>White-box cryptography</p>
+<p>References</p>
+<p>External links</p>
+<p>BCS SIGIST (British Computer Society Specialist Interest Group in Software Testing): http://www.testingstandards.co.uk/Component%20Testing.pdf  Standard for Software Component Testing], Working Draft 3.4, 27. April 2001.</p>
+<p>http://agile.csc.ncsu.edu/SEMaterials/WhiteBox.pdf  has more information on control flow testing and data flow testing.</p>
+<p>http://research.microsoft.com/en-us/projects/pex/ Pex – Automated white-box testing for .NET</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
