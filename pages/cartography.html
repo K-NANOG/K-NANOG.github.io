@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartography</title>
+    <link rel="stylesheet" href="/css/vercelled.css">
+    <link rel="icon" href="/img/jellyfish.svg">
+  <style>
+
+    .accordion {
+      width: 80%;
+      max-width: 800px;
+      margin-top: 20px;
+      border: 1px solid #949494;
+
+      overflow: hidden;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #444;
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-header {
+      width: 100%;
+      color: #fff;
+      text-align: left;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+      position: relative; 
+      overflow: visible;
+      box-sizing: border-box;
+    }
+
+    .accordion-header:hover {
+      background: #333;
+    }
+
+    .icon {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: auto;
+      position: relative; 
+      z-index: 1;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 15px;
+      background: #111;
+      color: #fff;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .accordion-content.open {
+      max-height: 200px;
+      padding: 15px;
+    }
+
+    .accordion-content ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .accordion-content li {
+      color: #ccc; /* Slightly dimmed white */
+    }
+
+    .accordion-content a {
+      color: #00bcd4; /* Cyan links */
+      text-decoration: underline;
+    }
+
+    .accordion-content a:hover {
+      text-decoration: none;
+      color: #80deea; /* Lighter cyan on hover */
+    }
+  </style>
+</head>
+<body>
+  <header class="header" style="position: sticky; z-index: 9999; top: 0; background: rgba(0, 0, 0, 0.2); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px) saturate(130%); -webkit-backdrop-filter: blur(5px) saturate(130%);">
+    <div class="logo">
+      <a href="/index.html">Kenan.⌬ggad</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="li-elem" href="/html/about.html">About</a></li>
+        <li><a class="li-elem" href="/img/CV.pdf">Resume</a></li>
+        <li><a class="li-elem" href="/html/projects.html">Projects</a></li>
+        <li><a class="li-elem" href="/index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container" style="display: flex; justify-content: center; align-items: center; padding-top: 120px;">
+    <div class="accordion">
+      <section class="accordion-item">
+        <header class="accordion-header" aria-expanded="false" aria-controls="biotech-content">
+          Biotechnology
+          <span class="icon">+</span>
+        </header>
+        <div class="accordion-content" id="biotech-content">
+          <ul>
+            <li>Synthetic Biology</li>
+            <li>Aging Biology</li>
+            <li>Bioengineering</li>
+            <li>Multiomics</li>
+          </ul>
+        </div>
+      </section>
+      <section class="accordion-item">
+        <header class="accordion-header" aria-expanded="false" aria-controls="cs-content">
+          Computer Science
+          <span class="icon">+</span>
+        </header>
+        <div class="accordion-content" id="cs-content">
+          <ul>
+            <li>Machine Learning</li>
+            <li>Bioinformatics</li>
+            <li>Cybernetics / Automation</li>
+            <li>Evolutionary Robotics</li>
+          </ul>
+        </div>
+      </section>
+      <section class="accordion-item">
+        <header class="accordion-header" aria-expanded="false" aria-controls="nano-content">
+          Nanotechnology
+          <span class="icon">+</span>
+        </header>
+        <div class="accordion-content" id="nano-content">
+          <ul>
+            <li>Nanomedicine</li>
+            <li>Nanorobotics</li>
+            <li>Nanobiotechnology</li>
+            <li>Supramolecular Chemistry</li>
+          </ul>
+        </div>
+      </section>
+      <section class="accordion-item">
+        <header class="accordion-header" aria-expanded="false" aria-controls="neuro-content">
+          Neurotechnology
+          <span class="icon">+</span>
+        </header>
+        <div class="accordion-content" id="neuro-content">
+          <ul>
+            <li>Computational Neuroscience</li>
+            <li>Brain-Machine Interfaces</li>
+            <li>Neuroaesthetics / Neuroplasticity</li>
+            <li>Whole Brain Emulation</li>
+          </ul>
+        </div>
+      </section>
+      <section class="accordion-item">
+        <header class="accordion-header" aria-expanded="false" aria-controls="inter-content">
+          Interdisciplinary
+          <span class="icon">+</span>
+        </header>
+        <div class="accordion-content" id="inter-content">
+          <ul>
+            <li>"Artificial Evolution"</li>
+            <li>Life Extension</li>
+            <li>Regenerative Medicine</li>
+            <li>Mathematical Modeling</li>
+          </ul>
+        </div>
+      </section>
+      <section class="accordion-item">
+        <header class="accordion-header" aria-expanded="false" aria-controls="ortho-content">
+          Orthogonal
+          <span class="icon">+</span>
+        </header>
+        <div class="accordion-content" id="ortho-content">
+          <p>Formerly interested in:</p>
+          <ul>
+            <li>Gauge Theories (QCD/QED)</li>
+            <li>Neutrino Physics</li>
+            <li>Cosmology</li>
+            <li>Algebraic Topology</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach((header) => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+        // Collapse all
+        document.querySelectorAll('.accordion-header').forEach((h) => {
+          h.setAttribute('aria-expanded', 'false');
+          h.querySelector('.icon').textContent = '+';
+          h.nextElementSibling.classList.remove('open');
+        });
+
+        // Expand the clicked item if it was not already expanded
+        if (!isExpanded) {
+          header.setAttribute('aria-expanded', 'true');
+          header.querySelector('.icon').textContent = '-';
+          content.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
