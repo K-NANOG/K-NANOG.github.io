@@ -1,0 +1,2825 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Laplace transform</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Laplace transform</h2>
+                <p>In mathematics, the Laplace transform, named after Pierre-Simon Laplace (), is an integral transform that converts a function of a real variable (usually </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p>, in the time domain) to a function of a complex variable </p>
+<p>        s</p>
+<p>    {\displaystyle s}</p>
+<p> (in the complex-valued frequency domain, also known as s-domain, or s-plane).</p>
+<p>The transform is useful for converting differentiation and integration in the time domain into much easier multiplication and division in the Laplace domain (analogous to how logarithms are useful for simplifying multiplication and division into addition and subtraction). This gives the transform many applications in science and engineering, mostly as a tool for solving linear differential equations and dynamical systems by simplifying ordinary differential equations and integral equations into algebraic polynomial equations, and by simplifying convolution into multiplication. Once solved, the inverse Laplace transform reverts to the original domain.</p>
+<p>The Laplace transform is defined (for suitable functions </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p>) by the integral</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        }</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>        ,</p>
+<p>    {\displaystyle {\mathcal {L}}\{f\}(s)=\int _{0}^{\infty }f(t)e^{-st}\,dt,}</p>
+<p>where s is a complex number. It is related to many other transforms, most notably the Fourier transform and the Mellin transform.  Formally, the Laplace transform is converted into a Fourier transform by the substitution </p>
+<p>        s</p>
+<p>        =</p>
+<p>        i</p>
+<p>        ω</p>
+<p>    {\displaystyle s=i\omega }</p>
+<p> where </p>
+<p>        ω</p>
+<p>    {\displaystyle \omega }</p>
+<p> is real. However, unlike the Fourier transform, which gives the decomposition of a function into its components in each frequency, the Laplace transform of a function with suitable decay is an analytic function, and so has a convergent power series, the coefficients of which give the decomposition of a function into its moments. Also unlike the Fourier transform, when regarded in this way as an analytic function, the techniques of complex analysis, and especially contour integrals, can be used for calculations.</p>
+<p>History</p>
+<p>The Laplace transform is named after mathematician and astronomer Pierre-Simon, Marquis de Laplace, who used a similar transform in his work on probability theory. Laplace wrote extensively about the use of generating functions  (1814), and the integral form of the Laplace transform evolved naturally as a result.</p>
+<p>Laplace's use of generating functions was similar to what is now known as the z-transform, and he gave little attention to the continuous variable case which was discussed by Niels Henrik Abel. </p>
+<p>From 1744, Leonhard Euler investigated integrals of the form</p>
+<p>        z</p>
+<p>        =</p>
+<p>        ∫</p>
+<p>        X</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>          e</p>
+<p>            a</p>
+<p>            x</p>
+<p>        d</p>
+<p>        x</p>
+<p>           and </p>
+<p>        z</p>
+<p>        =</p>
+<p>        ∫</p>
+<p>        X</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>          x</p>
+<p>            A</p>
+<p>        d</p>
+<p>        x</p>
+<p>    {\displaystyle z=\int X(x)e^{ax}\,dx\quad {\text{ and }}\quad z=\int X(x)x^{A}\,dx}</p>
+<p>as solutions of differential equations, introducing in particular the gamma function. Joseph-Louis Lagrange was an admirer of Euler and, in his work on integrating probability density functions, investigated expressions of the form</p>
+<p>        ∫</p>
+<p>        X</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            a</p>
+<p>            x</p>
+<p>          a</p>
+<p>            x</p>
+<p>        d</p>
+<p>        x</p>
+<p>        ,</p>
+<p>    {\displaystyle \int X(x)e^{-ax}a^{x}\,dx,}</p>
+<p>which resembles a Laplace transform.</p>
+<p>These types of integrals seem first to have attracted Laplace's attention in 1782, where he was following in the spirit of Euler in using the integrals themselves as solutions of equations. However, in 1785, Laplace took the critical step forward when, rather than simply looking for a solution in the form of an integral, he started to apply the transforms in the sense that was later to become popular. He used an integral of the form</p>
+<p>        ∫</p>
+<p>          x</p>
+<p>            s</p>
+<p>        φ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        d</p>
+<p>        x</p>
+<p>        ,</p>
+<p>    {\displaystyle \int x^{s}\varphi (x)\,dx,}</p>
+<p>akin to a Mellin transform, to transform the whole of a difference equation, in order to look for solutions of the transformed equation. He then went on to apply the Laplace transform in the same way and started to derive some of its properties, beginning to appreciate its potential power.</p>
+<p>Laplace also recognised that Joseph Fourier's method of Fourier series for solving the diffusion equation could only apply to a limited region of space, because those solutions were periodic. In 1809, Laplace applied his transform to find solutions that diffused indefinitely in space.  In 1821, Cauchy developed an operational calculus for the Laplace transform that could be used to study linear differential equations in much the same way the transform is now used in basic engineering.  This method was popularized, and perhaps rediscovered, by Oliver Heaviside around the turn of the century.</p>
+<p>Bernhard Riemann used the Laplace transform in his 1859 paper On the Number of Primes Less Than a Given Magnitude, in which he also developed the inversion theorem.  Riemann used the Laplace transform to develop the functional equation of the Riemann zeta function, and this method is still used to related the modular transformation law of the Jacobi theta function, which is simple to prove via Poisson summation, to the functional equation.  </p>
+<p>Hjalmar Mellin was among the first to study the Laplace transform, rigorously in the Karl Weierstrass school of analysis, and apply it to the study of differential equations and special functions, at the turn of the 20th century.  At around the same time, Heaviside was busy with his operational calculus.  Thomas Joannes Stieltjes considered a generalization of the Laplace transform connected to his work on moments.  Other contributors in this time period included Mathias Lerch, Oliver Heaviside, and Thomas Bromwich.</p>
+<p>In 1934, Raymond Paley and Norbert Wiener published the important work Fourier transforms in the complex domain, about what is now called the Laplace transform (see below).   Also during the 30s, the Laplace transform was instrumental in G H Hardy and John Edensor Littlewood's study of tauberian theorems, and this application was later expounded on by Widder (1941), who developed other aspects of the theory such as a new method for inversion.  Edward Charles Titchmarsh wrote the influential Introduction to the theory of the Fourier integral (1937).</p>
+<p>The current widespread use of the transform (mainly in engineering) came about during and soon after World War II, replacing the earlier Heaviside operational calculus. The advantages of the Laplace transform had been emphasized by Gustav Doetsch, to whom the name Laplace transform is apparently due.</p>
+<p>Formal definition</p>
+<p>The Laplace transform of a function f(t), defined for all real numbers t ≥ 0, is the function F(s), which is a unilateral transform defined by</p>
+<p>where s is a complex frequency-domain parameter</p>
+<p>        s</p>
+<p>        =</p>
+<p>        σ</p>
+<p>        +</p>
+<p>        i</p>
+<p>        ω</p>
+<p>    {\displaystyle s=\sigma +i\omega }</p>
+<p>with real numbers σ and ω.</p>
+<p>An alternate notation for the Laplace transform is </p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        }</p>
+<p>    {\displaystyle {\mathcal {L}}\{f\}}</p>
+<p> instead of F.</p>
+<p>The meaning of the integral depends on types of functions of interest. A necessary condition for existence of the integral is that f must be locally integrable on [0, ∞). For locally integrable functions that decay at infinity or are of exponential type (</p>
+<p>          |</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          |</p>
+<p>        ≤</p>
+<p>        A</p>
+<p>          e</p>
+<p>            B</p>
+<p>              |</p>
+<p>            t</p>
+<p>              |</p>
+<p>    {\displaystyle |f(t)|\leq Ae^{B|t|}}</p>
+<p>), the integral can be understood to be a (proper) Lebesgue integral. However, for many applications it is necessary to regard it as a conditionally convergent improper integral at ∞. Still more generally, the integral can be understood in a weak sense, and this is dealt with below.</p>
+<p>One can define the Laplace transform of a finite Borel measure μ by the Lebesgue integral</p>
+<p>            L</p>
+<p>        {</p>
+<p>        μ</p>
+<p>        }</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            [</p>
+<p>            0</p>
+<p>            ,</p>
+<p>            ∞</p>
+<p>            )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle {\mathcal {L}}\{\mu \}(s)=\int _{[0,\infty )}e^{-st}\,d\mu (t).}</p>
+<p>An important special case is where μ is a probability measure, for example, the Dirac delta function. In operational calculus, the Laplace transform of a measure is often treated as though the measure came from a probability density function f. In that case, to avoid potential confusion, one often writes</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        }</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>              0</p>
+<p>                −</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>        ,</p>
+<p>    {\displaystyle {\mathcal {L}}\{f\}(s)=\int _{0^{-}}^{\infty }f(t)e^{-st}\,dt,}</p>
+<p>where the lower limit of 0− is shorthand notation for</p>
+<p>          lim</p>
+<p>            ε</p>
+<p>            →</p>
+<p>              0</p>
+<p>                +</p>
+<p>          ∫</p>
+<p>            −</p>
+<p>            ε</p>
+<p>            ∞</p>
+<p>        .</p>
+<p>    {\displaystyle \lim _{\varepsilon \to 0^{+}}\int _{-\varepsilon }^{\infty }.}</p>
+<p>This limit emphasizes that any point mass located at 0 is entirely captured by the Laplace transform. Although with the Lebesgue integral, it is not necessary to take such a limit, it does appear more naturally in connection with the Laplace–Stieltjes transform.</p>
+<p>Bilateral Laplace transform</p>
+<p>When one says "the Laplace transform" without qualification, the unilateral or one-sided transform is usually intended. The Laplace transform can be alternatively defined as the bilateral Laplace transform, or two-sided Laplace transform, by extending the limits of integration to be the entire real axis. If that is done, the common unilateral transform simply becomes a special case of the bilateral transform, where the definition of the function being transformed is multiplied by the Heaviside step function.</p>
+<p>The bilateral Laplace transform F(s) is defined as follows:</p>
+<p>An alternate notation for the bilateral Laplace transform is </p>
+<p>            B</p>
+<p>        {</p>
+<p>        f</p>
+<p>        }</p>
+<p>    {\displaystyle {\mathcal {B}}\{f\}}</p>
+<p>, instead of F.</p>
+<p>Inverse Laplace transform</p>
+<p>Two integrable functions have the same Laplace transform only if they differ on a set of Lebesgue measure zero. This means that, on the range of the transform, there is an inverse transform. In fact, besides integrable functions, the Laplace transform is a one-to-one mapping from one function space into another in many other function spaces as well, although there is usually no easy characterization of the range.</p>
+<p>Typical function spaces in which this is true include the spaces of bounded continuous functions, the space L∞(0, ∞), or more generally tempered distributions on (0, ∞). The Laplace transform is also defined and injective for suitable spaces of tempered distributions.</p>
+<p>In these cases, the image of the Laplace transform lives in a space of analytic functions in the region of convergence.  The inverse Laplace transform is given by the following complex integral, which is known by various names (the Bromwich integral, the Fourier–Mellin integral, and Mellin's inverse formula):</p>
+<p>where γ is a real number so that the contour path of integration is in the region of convergence of F(s). In most applications, the contour can be closed, allowing the use of the residue theorem. An alternative formula for the inverse Laplace transform is given by Post's inversion formula. The limit here is interpreted in the weak-* topology.</p>
+<p>In practice, it is typically more convenient to decompose a Laplace transform into known transforms of functions obtained from a table and construct the inverse by inspection.</p>
+<p>Probability theory</p>
+<p>In pure and applied probability, the Laplace transform is defined as an expected value. If X is a random variable with probability density function f, then the Laplace transform of f is given by the expectation</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        }</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>        E</p>
+<p>        ⁡</p>
+<p>          [</p>
+<p>            e</p>
+<p>              −</p>
+<p>              s</p>
+<p>              X</p>
+<p>          ]</p>
+<p>        ,</p>
+<p>    {\displaystyle {\mathcal {L}}\{f\}(s)=\operatorname {E} \left[e^{-sX}\right],}</p>
+<p>where </p>
+<p>        E</p>
+<p>        ⁡</p>
+<p>        [</p>
+<p>        r</p>
+<p>        ]</p>
+<p>    {\displaystyle \operatorname {E} [r]}</p>
+<p> is the expectation of random variable </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>.</p>
+<p>By convention, this is referred to as the Laplace transform of the random variable X itself. Here, replacing s by −t gives the moment generating function of X. The Laplace transform has applications throughout probability theory, including first passage times of stochastic processes such as Markov chains, and renewal theory.</p>
+<p>Of particular use is the ability to recover the cumulative distribution function of a continuous random variable X by means of the Laplace transform as follows:</p>
+<p>          F</p>
+<p>            X</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>          {</p>
+<p>                1</p>
+<p>                s</p>
+<p>            E</p>
+<p>            ⁡</p>
+<p>              [</p>
+<p>                e</p>
+<p>                  −</p>
+<p>                  s</p>
+<p>                  X</p>
+<p>              ]</p>
+<p>          }</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>          {</p>
+<p>                1</p>
+<p>                s</p>
+<p>                L</p>
+<p>            {</p>
+<p>            f</p>
+<p>            }</p>
+<p>            (</p>
+<p>            s</p>
+<p>            )</p>
+<p>          }</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle F_{X}(x)={\mathcal {L}}^{-1}\left\{{\frac {1}{s}}\operatorname {E} \left[e^{-sX}\right]\right\}(x)={\mathcal {L}}^{-1}\left\{{\frac {1}{s}}{\mathcal {L}}\{f\}(s)\right\}(x).}</p>
+<p>Algebraic construction</p>
+<p>The Laplace transform can be alternatively defined in a purely algebraic manner by applying a field of fractions construction to the convolution ring of functions on the positive half-line. The resulting space of abstract operators is exactly equivalent to Laplace space, but in this construction the forward and reverse transforms never need to be explicitly defined (avoiding the related difficulties with proving convergence).</p>
+<p>Region of convergence</p>
+<p>If f is a locally integrable function (or more generally a Borel measure locally of bounded variation), then the Laplace transform F(s) of f converges provided that the limit</p>
+<p>          lim</p>
+<p>            R</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            R</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle \lim _{R\to \infty }\int _{0}^{R}f(t)e^{-st}\,dt}</p>
+<p>exists.</p>
+<p>The Laplace transform converges absolutely if the integral</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          |</p>
+<p>            f</p>
+<p>            (</p>
+<p>            t</p>
+<p>            )</p>
+<p>              e</p>
+<p>                −</p>
+<p>                s</p>
+<p>                t</p>
+<p>          |</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle \int _{0}^{\infty }\left|f(t)e^{-st}\right|\,dt}</p>
+<p>exists as a proper Lebesgue integral. The Laplace transform is usually understood as conditionally convergent, meaning that it converges in the former but not in the latter sense.</p>
+<p>The set of values for which F(s) converges absolutely is either of the form Re(s) > a or Re(s) ≥ a, where a is an extended real constant with −∞ ≤ a ≤ ∞ (a consequence of the dominated convergence theorem). The constant a is known as the abscissa of absolute convergence, and depends on the growth behavior of f(t). Analogously, the two-sided transform converges absolutely in a strip of the form  a < Re(s) < b, and possibly including the lines Re(s) = a or Re(s) = b. The subset of values of s for which the Laplace transform converges absolutely is called the region of absolute convergence, or the domain of absolute convergence.  In the two-sided case, it is sometimes called the strip of absolute convergence. The Laplace transform is analytic in the region of absolute convergence: this is a consequence of Fubini's theorem and Morera's theorem.</p>
+<p>Similarly, the set of values for which F(s) converges (conditionally or absolutely) is known as the region of conditional convergence, or simply the region of convergence (ROC). If the Laplace transform converges (conditionally) at s = s0, then it automatically converges for all s with Re(s) > Re(s0). Therefore, the region of convergence is a half-plane of the form Re(s) > a, possibly including some points of the boundary line Re(s) = a.</p>
+<p>In the region of convergence Re(s) > Re(s0), the Laplace transform of f can be expressed by integrating by parts as the integral</p>
+<p>        F</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>        s</p>
+<p>        −</p>
+<p>          s</p>
+<p>            0</p>
+<p>        )</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          e</p>
+<p>            −</p>
+<p>            (</p>
+<p>            s</p>
+<p>            −</p>
+<p>              s</p>
+<p>                0</p>
+<p>            )</p>
+<p>            t</p>
+<p>        β</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        d</p>
+<p>        t</p>
+<p>        ,</p>
+<p>        β</p>
+<p>        (</p>
+<p>        u</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            u</p>
+<p>          e</p>
+<p>            −</p>
+<p>              s</p>
+<p>                0</p>
+<p>            t</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        d</p>
+<p>        t</p>
+<p>        .</p>
+<p>    {\displaystyle F(s)=(s-s_{0})\int _{0}^{\infty }e^{-(s-s_{0})t}\beta (t)\,dt,\quad \beta (u)=\int _{0}^{u}e^{-s_{0}t}f(t)\,dt.}</p>
+<p>That is, F(s) can effectively be expressed, in the region of convergence, as the absolutely convergent Laplace transform of some other function.  In particular, it is analytic.</p>
+<p>There are several Paley–Wiener theorems concerning the relationship between the decay properties of f, and the properties of the Laplace transform within the region of convergence.</p>
+<p>In engineering applications, a function corresponding to a linear time-invariant (LTI) system is stable if every bounded input produces a bounded output. This is equivalent to the absolute convergence of the Laplace transform of the impulse response function in the region Re(s) ≥ 0. As a result, LTI systems are stable, provided that the poles of the Laplace transform of the impulse response function have negative real part.</p>
+<p>This ROC is used in knowing about the causality and stability of a system.</p>
+<p>Properties and theorems</p>
+<p>The Laplace transform's key property is that it converts differentiation and integration in the time domain into multiplication and division by s in the Laplace domain. Thus, the Laplace variable s is also known as operator variable in the Laplace domain: either the derivative operator or (for s−1) the integration operator.</p>
+<p>Given the functions f(t) and g(t), and their respective Laplace transforms F(s) and G(s),</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                =</p>
+<p>                      L</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                {</p>
+<p>                F</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                }</p>
+<p>                ,</p>
+<p>                g</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                =</p>
+<p>                      L</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                {</p>
+<p>                G</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                }</p>
+<p>                ,</p>
+<p>    {\displaystyle {\begin{aligned}f(t)&={\mathcal {L}}^{-1}\{F(s)\},\\g(t)&={\mathcal {L}}^{-1}\{G(s)\},\end{aligned}}}</p>
+<p>the following table is a list of properties of unilateral Laplace transform:</p>
+<p>Initial value theorem</p>
+<p>        f</p>
+<p>        (</p>
+<p>          0</p>
+<p>            +</p>
+<p>        )</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            s</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>          s</p>
+<p>          F</p>
+<p>          (</p>
+<p>          s</p>
+<p>          )</p>
+<p>        .</p>
+<p>    {\displaystyle f(0^{+})=\lim _{s\to \infty }{sF(s)}.}</p>
+<p>Final value theorem</p>
+<p>        f</p>
+<p>        (</p>
+<p>        ∞</p>
+<p>        )</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            s</p>
+<p>            →</p>
+<p>            0</p>
+<p>          s</p>
+<p>          F</p>
+<p>          (</p>
+<p>          s</p>
+<p>          )</p>
+<p>    {\displaystyle f(\infty )=\lim _{s\to 0}{sF(s)}}</p>
+<p>, if all poles of </p>
+<p>        s</p>
+<p>        F</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>    {\displaystyle sF(s)}</p>
+<p> are in the left half-plane.</p>
+<p>The final value theorem is useful because it gives the long-term behaviour without having to perform partial fraction decompositions (or other difficult algebra). If F(s) has a pole in the right-hand plane or poles on the imaginary axis (e.g., if </p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>          e</p>
+<p>            t</p>
+<p>    {\displaystyle f(t)=e^{t}}</p>
+<p> or </p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle f(t)=\sin(t)}</p>
+<p>), then the behaviour of this formula is undefined.</p>
+<p>Relation to power series</p>
+<p>The Laplace transform can be viewed as a continuous analogue of a power series. If  a(n) is a discrete function of a positive integer n, then the power series associated to a(n) is the series</p>
+<p>          ∑</p>
+<p>            n</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        a</p>
+<p>        (</p>
+<p>        n</p>
+<p>        )</p>
+<p>          x</p>
+<p>            n</p>
+<p>    {\displaystyle \sum _{n=0}^{\infty }a(n)x^{n}}</p>
+<p>where x is a real variable (see Z-transform). Replacing summation over n with integration over  t, a continuous version of the power series becomes</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          x</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle \int _{0}^{\infty }f(t)x^{t}\,dt}</p>
+<p>where the discrete function a(n) is replaced by the continuous one f(t).</p>
+<p>Changing the base of the power from x to e gives</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>            (</p>
+<p>              e</p>
+<p>                ln</p>
+<p>                ⁡</p>
+<p>                  x</p>
+<p>            )</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle \int _{0}^{\infty }f(t)\left(e^{\ln {x}}\right)^{t}\,dt}</p>
+<p>For this to converge for, say, all bounded functions f, it is necessary to require that ln x < 0. Making the substitution −s = ln x gives just the Laplace transform:</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle \int _{0}^{\infty }f(t)e^{-st}\,dt}</p>
+<p>In other words, the Laplace transform is a continuous analog of a power series, in which the discrete parameter n is replaced by the continuous parameter t, and x is replaced by e−s.</p>
+<p>Relation to moments</p>
+<p>The quantities</p>
+<p>          μ</p>
+<p>            n</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          t</p>
+<p>            n</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle \mu _{n}=\int _{0}^{\infty }t^{n}f(t)\,dt}</p>
+<p>are the moments of the function f.  If the first n moments of f converge absolutely, then by repeated differentiation under the integral, </p>
+<p>        (</p>
+<p>        −</p>
+<p>        1</p>
+<p>          )</p>
+<p>            n</p>
+<p>        (</p>
+<p>            L</p>
+<p>        f</p>
+<p>          )</p>
+<p>            (</p>
+<p>            n</p>
+<p>            )</p>
+<p>        (</p>
+<p>        0</p>
+<p>        )</p>
+<p>        =</p>
+<p>          μ</p>
+<p>            n</p>
+<p>        .</p>
+<p>    {\displaystyle (-1)^{n}({\mathcal {L}}f)^{(n)}(0)=\mu _{n}.}</p>
+<p>This is of special significance in probability theory, where the moments of a random variable X are given by the expectation values </p>
+<p>          μ</p>
+<p>            n</p>
+<p>        =</p>
+<p>        E</p>
+<p>        ⁡</p>
+<p>        [</p>
+<p>          X</p>
+<p>            n</p>
+<p>        ]</p>
+<p>    {\displaystyle \mu _{n}=\operatorname {E} [X^{n}]}</p>
+<p>.  Then, the relation holds</p>
+<p>          μ</p>
+<p>            n</p>
+<p>        =</p>
+<p>        (</p>
+<p>        −</p>
+<p>        1</p>
+<p>          )</p>
+<p>            n</p>
+<p>              d</p>
+<p>                n</p>
+<p>              d</p>
+<p>                s</p>
+<p>                  n</p>
+<p>        E</p>
+<p>        ⁡</p>
+<p>          [</p>
+<p>            e</p>
+<p>              −</p>
+<p>              s</p>
+<p>              X</p>
+<p>          ]</p>
+<p>        (</p>
+<p>        0</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle \mu _{n}=(-1)^{n}{\frac {d^{n}}{ds^{n}}}\operatorname {E} \left[e^{-sX}\right](0).}</p>
+<p>Transform of a function's derivative</p>
+<p>It is often convenient to use the differentiation property of the Laplace transform to find the transform of a function's derivative. This can be derived from the basic expression for a Laplace transform as follows:</p>
+<p>                    L</p>
+<p>                  {</p>
+<p>                    f</p>
+<p>                    (</p>
+<p>                    t</p>
+<p>                    )</p>
+<p>                  }</p>
+<p>                =</p>
+<p>                  ∫</p>
+<p>                      0</p>
+<p>                        −</p>
+<p>                    ∞</p>
+<p>                  e</p>
+<p>                    −</p>
+<p>                    s</p>
+<p>                    t</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                d</p>
+<p>                t</p>
+<p>                =</p>
+<p>                    [</p>
+<p>                          f</p>
+<p>                          (</p>
+<p>                          t</p>
+<p>                          )</p>
+<p>                            e</p>
+<p>                              −</p>
+<p>                              s</p>
+<p>                              t</p>
+<p>                          −</p>
+<p>                          s</p>
+<p>                    ]</p>
+<p>                      0</p>
+<p>                        −</p>
+<p>                    ∞</p>
+<p>                −</p>
+<p>                  ∫</p>
+<p>                      0</p>
+<p>                        −</p>
+<p>                    ∞</p>
+<p>                      e</p>
+<p>                        −</p>
+<p>                        s</p>
+<p>                        t</p>
+<p>                      −</p>
+<p>                      s</p>
+<p>                  f</p>
+<p>                  ′</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                d</p>
+<p>                t</p>
+<p>                  (by parts)</p>
+<p>                =</p>
+<p>                  [</p>
+<p>                    −</p>
+<p>                          f</p>
+<p>                          (</p>
+<p>                            0</p>
+<p>                              −</p>
+<p>                          )</p>
+<p>                          −</p>
+<p>                          s</p>
+<p>                  ]</p>
+<p>                +</p>
+<p>                    1</p>
+<p>                    s</p>
+<p>                    L</p>
+<p>                  {</p>
+<p>                      f</p>
+<p>                      ′</p>
+<p>                    (</p>
+<p>                    t</p>
+<p>                    )</p>
+<p>                  }</p>
+<p>                ,</p>
+<p>    {\displaystyle {\begin{aligned}{\mathcal {L}}\left\{f(t)\right\}&=\int _{0^{-}}^{\infty }e^{-st}f(t)\,dt\\[6pt]&=\left[{\frac {f(t)e^{-st}}{-s}}\right]_{0^{-}}^{\infty }-\int _{0^{-}}^{\infty }{\frac {e^{-st}}{-s}}f'(t)\,dt\quad {\text{(by parts)}}\\[6pt]&=\left[-{\frac {f(0^{-})}{-s}}\right]+{\frac {1}{s}}{\mathcal {L}}\left\{f'(t)\right\},\end{aligned}}}</p>
+<p>yielding</p>
+<p>            L</p>
+<p>        {</p>
+<p>          f</p>
+<p>          ′</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        =</p>
+<p>        s</p>
+<p>        ⋅</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        −</p>
+<p>        f</p>
+<p>        (</p>
+<p>          0</p>
+<p>            −</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\displaystyle {\mathcal {L}}\{f'(t)\}=s\cdot {\mathcal {L}}\{f(t)\}-f(0^{-}),}</p>
+<p>and in the bilateral case,</p>
+<p>            L</p>
+<p>        {</p>
+<p>          f</p>
+<p>          ′</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        =</p>
+<p>        s</p>
+<p>          ∫</p>
+<p>            −</p>
+<p>            ∞</p>
+<p>            ∞</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        d</p>
+<p>        t</p>
+<p>        =</p>
+<p>        s</p>
+<p>        ⋅</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        .</p>
+<p>    {\displaystyle {\mathcal {L}}\{f'(t)\}=s\int _{-\infty }^{\infty }e^{-st}f(t)\,dt=s\cdot {\mathcal {L}}\{f(t)\}.}</p>
+<p>The general result</p>
+<p>            L</p>
+<p>          {</p>
+<p>              f</p>
+<p>                (</p>
+<p>                n</p>
+<p>                )</p>
+<p>            (</p>
+<p>            t</p>
+<p>            )</p>
+<p>          }</p>
+<p>        =</p>
+<p>          s</p>
+<p>            n</p>
+<p>        ⋅</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        −</p>
+<p>          s</p>
+<p>            n</p>
+<p>            −</p>
+<p>            1</p>
+<p>        f</p>
+<p>        (</p>
+<p>          0</p>
+<p>            −</p>
+<p>        )</p>
+<p>        −</p>
+<p>        ⋯</p>
+<p>        −</p>
+<p>          f</p>
+<p>            (</p>
+<p>            n</p>
+<p>            −</p>
+<p>            1</p>
+<p>            )</p>
+<p>        (</p>
+<p>          0</p>
+<p>            −</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\displaystyle {\mathcal {L}}\left\{f^{(n)}(t)\right\}=s^{n}\cdot {\mathcal {L}}\{f(t)\}-s^{n-1}f(0^{-})-\cdots -f^{(n-1)}(0^{-}),}</p>
+<p>where </p>
+<p>          f</p>
+<p>            (</p>
+<p>            n</p>
+<p>            )</p>
+<p>    {\displaystyle f^{(n)}}</p>
+<p> denotes the nth derivative of f, can then be established with an inductive argument.</p>
+<p>Evaluating integrals over the positive real axis</p>
+<p>A useful property of the Laplace transform is the following:</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        g</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        d</p>
+<p>        x</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        (</p>
+<p>            L</p>
+<p>        f</p>
+<p>        )</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        ⋅</p>
+<p>        (</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>        g</p>
+<p>        )</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        d</p>
+<p>        s</p>
+<p>    {\displaystyle \int _{0}^{\infty }f(x)g(x)\,dx=\int _{0}^{\infty }({\mathcal {L}}f)(s)\cdot ({\mathcal {L}}^{-1}g)(s)\,ds}</p>
+<p>under suitable assumptions on the behaviour of </p>
+<p>        f</p>
+<p>        ,</p>
+<p>        g</p>
+<p>    {\displaystyle f,g}</p>
+<p> in a right neighbourhood of </p>
+<p>        0</p>
+<p>    {\displaystyle 0}</p>
+<p> and on the decay rate of </p>
+<p>        f</p>
+<p>        ,</p>
+<p>        g</p>
+<p>    {\displaystyle f,g}</p>
+<p> in a left neighbourhood of </p>
+<p>        ∞</p>
+<p>    {\displaystyle \infty }</p>
+<p>. The above formula is a variation of integration by parts, with the operators </p>
+<p>            d</p>
+<p>              d</p>
+<p>              x</p>
+<p>    {\displaystyle {\frac {d}{dx}}}</p>
+<p> and </p>
+<p>        ∫</p>
+<p>        d</p>
+<p>        x</p>
+<p>    {\displaystyle \int \,dx}</p>
+<p> being replaced by </p>
+<p>            L</p>
+<p>    {\displaystyle {\mathcal {L}}}</p>
+<p> and </p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>    {\displaystyle {\mathcal {L}}^{-1}}</p>
+<p>. Let us prove the equivalent formulation:</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        (</p>
+<p>            L</p>
+<p>        f</p>
+<p>        )</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        g</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        d</p>
+<p>        x</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        (</p>
+<p>            L</p>
+<p>        g</p>
+<p>        )</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        d</p>
+<p>        s</p>
+<p>        .</p>
+<p>    {\displaystyle \int _{0}^{\infty }({\mathcal {L}}f)(x)g(x)\,dx=\int _{0}^{\infty }f(s)({\mathcal {L}}g)(s)\,ds.}</p>
+<p>By plugging in </p>
+<p>        (</p>
+<p>            L</p>
+<p>        f</p>
+<p>        )</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            x</p>
+<p>        d</p>
+<p>        s</p>
+<p>    {\displaystyle ({\mathcal {L}}f)(x)=\int _{0}^{\infty }f(s)e^{-sx}\,ds}</p>
+<p> the left-hand side turns into:</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        g</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            x</p>
+<p>        d</p>
+<p>        s</p>
+<p>        d</p>
+<p>        x</p>
+<p>        ,</p>
+<p>    {\displaystyle \int _{0}^{\infty }\int _{0}^{\infty }f(s)g(x)e^{-sx}\,ds\,dx,}</p>
+<p>but assuming Fubini's theorem holds, by reversing the order of integration we get the wanted right-hand side.</p>
+<p>This method can be used to compute integrals that would otherwise be difficult to compute using elementary methods of real calculus. For example,</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              x</p>
+<p>            x</p>
+<p>        d</p>
+<p>        x</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>            L</p>
+<p>        (</p>
+<p>        1</p>
+<p>        )</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        x</p>
+<p>        d</p>
+<p>        x</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        1</p>
+<p>        ⋅</p>
+<p>            L</p>
+<p>        (</p>
+<p>        sin</p>
+<p>        )</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        d</p>
+<p>        x</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>              d</p>
+<p>              x</p>
+<p>                x</p>
+<p>                  2</p>
+<p>              +</p>
+<p>              1</p>
+<p>        =</p>
+<p>            π</p>
+<p>            2</p>
+<p>        .</p>
+<p>    {\displaystyle \int _{0}^{\infty }{\frac {\sin x}{x}}dx=\int _{0}^{\infty }{\mathcal {L}}(1)(x)\sin xdx=\int _{0}^{\infty }1\cdot {\mathcal {L}}(\sin )(x)dx=\int _{0}^{\infty }{\frac {dx}{x^{2}+1}}={\frac {\pi }{2}}.}</p>
+<p>Relationship to other transforms</p>
+<p>Laplace–Stieltjes transform</p>
+<p>The (unilateral) Laplace–Stieltjes transform of a function g : ℝ → ℝ is defined by the Lebesgue–Stieltjes integral</p>
+<p>        {</p>
+<p>              L</p>
+<p>            ∗</p>
+<p>        g</p>
+<p>        }</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        g</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle \{{\mathcal {L}}^{*}g\}(s)=\int _{0}^{\infty }e^{-st}\,d\,g(t)~.}</p>
+<p>The function g is assumed to be of bounded variation.  If g is the antiderivative of f:</p>
+<p>        g</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            x</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        d</p>
+<p>        t</p>
+<p>    {\displaystyle g(x)=\int _{0}^{x}f(t)\,d\,t}</p>
+<p>then the Laplace–Stieltjes transform of g and the Laplace transform of f coincide. In general, the Laplace–Stieltjes transform is the Laplace transform of the Stieltjes measure associated to g. So in practice, the only distinction between the two transforms is that the Laplace transform is thought of as operating on the density function of the measure, whereas the Laplace–Stieltjes transform is thought of as operating on its cumulative distribution function.</p>
+<p>Fourier transform</p>
+<p>Let </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> be a complex-valued Lebesgue integrable function supported on </p>
+<p>        [</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        ∞</p>
+<p>        )</p>
+<p>    {\displaystyle [0,\infty )}</p>
+<p>, and let </p>
+<p>        F</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            L</p>
+<p>        f</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>    {\displaystyle F(s)={\mathcal {L}}f(s)}</p>
+<p> be its Laplace transform.  Then, within the region of convergence, we have</p>
+<p>        F</p>
+<p>        (</p>
+<p>        σ</p>
+<p>        +</p>
+<p>        i</p>
+<p>        τ</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            σ</p>
+<p>            t</p>
+<p>          e</p>
+<p>            −</p>
+<p>            i</p>
+<p>            τ</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>        ,</p>
+<p>    {\displaystyle F(\sigma +i\tau )=\int _{0}^{\infty }f(t)e^{-\sigma t}e^{-i\tau t}\,dt,}</p>
+<p>which is the Fourier transform of the function </p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            σ</p>
+<p>            t</p>
+<p>    {\displaystyle f(t)e^{-\sigma t}}</p>
+<p>.</p>
+<p>Indeed, the Fourier transform is a special case (under certain conditions) of the bilateral Laplace transform. The main difference is that the Fourier transform of a function is a complex function of a real variable (frequency), the Laplace transform of a function is a complex function of a complex variable. The Laplace transform is usually restricted to transformation of functions of t with t ≥ 0. A consequence of this restriction is that the Laplace transform of a function is a holomorphic function of the variable s. Unlike the Fourier transform, the Laplace transform of a distribution is generally a well-behaved function. Techniques of complex variables can also be used to directly study Laplace transforms. As a holomorphic function, the Laplace transform has a power series representation. This power series expresses a function as a linear superposition of moments of the function. This perspective has applications in probability theory.</p>
+<p>Formally, the Fourier transform is equivalent to evaluating the bilateral Laplace transform with imaginary argument s = iω  when the condition explained below is fulfilled,</p>
+<p>                      f</p>
+<p>                      ^</p>
+<p>                (</p>
+<p>                ω</p>
+<p>                )</p>
+<p>                =</p>
+<p>                    F</p>
+<p>                {</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                }</p>
+<p>                =</p>
+<p>                    L</p>
+<p>                {</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                }</p>
+<p>                    |</p>
+<p>                    s</p>
+<p>                    =</p>
+<p>                    i</p>
+<p>                    ω</p>
+<p>                =</p>
+<p>                F</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                    |</p>
+<p>                    s</p>
+<p>                    =</p>
+<p>                    i</p>
+<p>                    ω</p>
+<p>                =</p>
+<p>                  ∫</p>
+<p>                    −</p>
+<p>                    ∞</p>
+<p>                    ∞</p>
+<p>                  e</p>
+<p>                    −</p>
+<p>                    i</p>
+<p>                    ω</p>
+<p>                    t</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                d</p>
+<p>                t</p>
+<p>                .</p>
+<p>    {\displaystyle {\begin{aligned}{\hat {f}}(\omega )&={\mathcal {F}}\{f(t)\}\\[4pt]&={\mathcal {L}}\{f(t)\}|_{s=i\omega }=F(s)|_{s=i\omega }\\[4pt]&=\int _{-\infty }^{\infty }e^{-i\omega t}f(t)\,dt~.\end{aligned}}}</p>
+<p>This convention of the Fourier transform (</p>
+<p>                f</p>
+<p>                ^</p>
+<p>            3</p>
+<p>        (</p>
+<p>        ω</p>
+<p>        )</p>
+<p>    {\displaystyle {\hat {f}}_{3}(\omega )}</p>
+<p> in Fourier transform § Other conventions) requires a factor of ⁠1/2π⁠ on the inverse Fourier transform. This relationship between the Laplace and Fourier transforms is often used to determine the frequency spectrum of a signal or dynamical system.</p>
+<p>The above relation is valid as stated if and only if the region of convergence (ROC) of F(s) contains the imaginary axis, σ = 0.</p>
+<p>For example, the function f(t) = cos(ω0t) has a Laplace transform F(s) =  s/(s2 + ω02) whose ROC is Re(s) > 0. As s = iω0 is a pole of  F(s), substituting s = iω in F(s) does not yield the Fourier transform of f(t)u(t), which contains terms proportional to the Dirac delta functions δ(ω ± ω0).</p>
+<p>However, a relation of the form</p>
+<p>          lim</p>
+<p>            σ</p>
+<p>            →</p>
+<p>              0</p>
+<p>                +</p>
+<p>        F</p>
+<p>        (</p>
+<p>        σ</p>
+<p>        +</p>
+<p>        i</p>
+<p>        ω</p>
+<p>        )</p>
+<p>        =</p>
+<p>              f</p>
+<p>              ^</p>
+<p>        (</p>
+<p>        ω</p>
+<p>        )</p>
+<p>    {\displaystyle \lim _{\sigma \to 0^{+}}F(\sigma +i\omega )={\hat {f}}(\omega )}</p>
+<p>holds under much weaker conditions. For instance, this holds for the above example provided that the limit is understood as a weak limit of measures (see vague topology). General conditions relating the limit of the Laplace transform of a function on the boundary to the Fourier transform take the form of Paley–Wiener theorems.</p>
+<p>Mellin transform</p>
+<p>The Mellin transform and its inverse are related to the two-sided Laplace transform by a simple change of variables.</p>
+<p>If in the Mellin transform</p>
+<p>        G</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            M</p>
+<p>        {</p>
+<p>        g</p>
+<p>        (</p>
+<p>        θ</p>
+<p>        )</p>
+<p>        }</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          θ</p>
+<p>            s</p>
+<p>        g</p>
+<p>        (</p>
+<p>        θ</p>
+<p>        )</p>
+<p>              d</p>
+<p>              θ</p>
+<p>            θ</p>
+<p>    {\displaystyle G(s)={\mathcal {M}}\{g(\theta )\}=\int _{0}^{\infty }\theta ^{s}g(\theta )\,{\frac {d\theta }{\theta }}}</p>
+<p>we set θ = e−t we get a two-sided Laplace transform.</p>
+<p>Z-transform</p>
+<p>The unilateral or one-sided Z-transform is simply the Laplace transform of an ideally sampled signal with the substitution of</p>
+<p>        z</p>
+<p>                =</p>
+<p>                  d</p>
+<p>                  e</p>
+<p>                  f</p>
+<p>          e</p>
+<p>            s</p>
+<p>            T</p>
+<p>        ,</p>
+<p>    {\displaystyle z{\stackrel {\mathrm {def} }{{}={}}}e^{sT},}</p>
+<p>where T = 1/fs is the sampling interval (in units of time e.g., seconds) and  fs is the sampling rate (in samples per second or hertz).</p>
+<p>Let</p>
+<p>          Δ</p>
+<p>            T</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>                =</p>
+<p>                  d</p>
+<p>                  e</p>
+<p>                  f</p>
+<p>          ∑</p>
+<p>            n</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        δ</p>
+<p>        (</p>
+<p>        t</p>
+<p>        −</p>
+<p>        n</p>
+<p>        T</p>
+<p>        )</p>
+<p>    {\displaystyle \Delta _{T}(t)\ {\stackrel {\mathrm {def} }{=}}\ \sum _{n=0}^{\infty }\delta (t-nT)}</p>
+<p>be a sampling impulse train (also called a Dirac comb) and</p>
+<p>                  x</p>
+<p>                    q</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                        =</p>
+<p>                          d</p>
+<p>                          e</p>
+<p>                          f</p>
+<p>                x</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                  Δ</p>
+<p>                    T</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                =</p>
+<p>                x</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                δ</p>
+<p>                (</p>
+<p>                t</p>
+<p>                −</p>
+<p>                n</p>
+<p>                T</p>
+<p>                )</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                x</p>
+<p>                (</p>
+<p>                n</p>
+<p>                T</p>
+<p>                )</p>
+<p>                δ</p>
+<p>                (</p>
+<p>                t</p>
+<p>                −</p>
+<p>                n</p>
+<p>                T</p>
+<p>                )</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                x</p>
+<p>                [</p>
+<p>                n</p>
+<p>                ]</p>
+<p>                δ</p>
+<p>                (</p>
+<p>                t</p>
+<p>                −</p>
+<p>                n</p>
+<p>                T</p>
+<p>                )</p>
+<p>    {\displaystyle {\begin{aligned}x_{q}(t)&{\stackrel {\mathrm {def} }{{}={}}}x(t)\Delta _{T}(t)=x(t)\sum _{n=0}^{\infty }\delta (t-nT)\\&=\sum _{n=0}^{\infty }x(nT)\delta (t-nT)=\sum _{n=0}^{\infty }x[n]\delta (t-nT)\end{aligned}}}</p>
+<p>be the sampled representation of the continuous-time x(t)</p>
+<p>        x</p>
+<p>        [</p>
+<p>        n</p>
+<p>        ]</p>
+<p>                =</p>
+<p>                  d</p>
+<p>                  e</p>
+<p>                  f</p>
+<p>        x</p>
+<p>        (</p>
+<p>        n</p>
+<p>        T</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle x[n]{\stackrel {\mathrm {def} }{{}={}}}x(nT)~.}</p>
+<p>The Laplace transform of the sampled signal xq(t)  is</p>
+<p>                  X</p>
+<p>                    q</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                =</p>
+<p>                  ∫</p>
+<p>                      0</p>
+<p>                        −</p>
+<p>                    ∞</p>
+<p>                  x</p>
+<p>                    q</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                  e</p>
+<p>                    −</p>
+<p>                    s</p>
+<p>                    t</p>
+<p>                d</p>
+<p>                t</p>
+<p>                =</p>
+<p>                  ∫</p>
+<p>                      0</p>
+<p>                        −</p>
+<p>                    ∞</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                x</p>
+<p>                [</p>
+<p>                n</p>
+<p>                ]</p>
+<p>                δ</p>
+<p>                (</p>
+<p>                t</p>
+<p>                −</p>
+<p>                n</p>
+<p>                T</p>
+<p>                )</p>
+<p>                  e</p>
+<p>                    −</p>
+<p>                    s</p>
+<p>                    t</p>
+<p>                d</p>
+<p>                t</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                x</p>
+<p>                [</p>
+<p>                n</p>
+<p>                ]</p>
+<p>                  ∫</p>
+<p>                      0</p>
+<p>                        −</p>
+<p>                    ∞</p>
+<p>                δ</p>
+<p>                (</p>
+<p>                t</p>
+<p>                −</p>
+<p>                n</p>
+<p>                T</p>
+<p>                )</p>
+<p>                  e</p>
+<p>                    −</p>
+<p>                    s</p>
+<p>                    t</p>
+<p>                d</p>
+<p>                t</p>
+<p>                =</p>
+<p>                  ∑</p>
+<p>                    n</p>
+<p>                    =</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                x</p>
+<p>                [</p>
+<p>                n</p>
+<p>                ]</p>
+<p>                  e</p>
+<p>                    −</p>
+<p>                    n</p>
+<p>                    s</p>
+<p>                    T</p>
+<p>                .</p>
+<p>    {\displaystyle {\begin{aligned}X_{q}(s)&=\int _{0^{-}}^{\infty }x_{q}(t)e^{-st}\,dt\\&=\int _{0^{-}}^{\infty }\sum _{n=0}^{\infty }x[n]\delta (t-nT)e^{-st}\,dt\\&=\sum _{n=0}^{\infty }x[n]\int _{0^{-}}^{\infty }\delta (t-nT)e^{-st}\,dt\\&=\sum _{n=0}^{\infty }x[n]e^{-nsT}~.\end{aligned}}}</p>
+<p>This is the precise definition of the unilateral Z-transform of the discrete function x[n]</p>
+<p>        X</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            n</p>
+<p>            =</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        x</p>
+<p>        [</p>
+<p>        n</p>
+<p>        ]</p>
+<p>          z</p>
+<p>            −</p>
+<p>            n</p>
+<p>    {\displaystyle X(z)=\sum _{n=0}^{\infty }x[n]z^{-n}}</p>
+<p>with the substitution of z → esT.</p>
+<p>Comparing the last two equations, we find the relationship between the unilateral Z-transform and the Laplace transform of the sampled signal,</p>
+<p>          X</p>
+<p>            q</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>        X</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>              |</p>
+<p>            z</p>
+<p>            =</p>
+<p>              e</p>
+<p>                s</p>
+<p>                T</p>
+<p>        .</p>
+<p>    {\displaystyle X_{q}(s)=X(z){\Big |}_{z=e^{sT}}.}</p>
+<p>The similarity between the Z- and Laplace transforms is expanded upon in the theory of time scale calculus.</p>
+<p>Borel transform</p>
+<p>The integral form of the Borel transform</p>
+<p>        F</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            z</p>
+<p>        d</p>
+<p>        z</p>
+<p>    {\displaystyle F(s)=\int _{0}^{\infty }f(z)e^{-sz}\,dz}</p>
+<p>is a special case of the Laplace transform for f an entire function of exponential type, meaning that</p>
+<p>          |</p>
+<p>        f</p>
+<p>        (</p>
+<p>        z</p>
+<p>        )</p>
+<p>          |</p>
+<p>        ≤</p>
+<p>        A</p>
+<p>          e</p>
+<p>            B</p>
+<p>              |</p>
+<p>            z</p>
+<p>              |</p>
+<p>    {\displaystyle |f(z)|\leq Ae^{B|z|}}</p>
+<p>for some constants A and B.  The generalized Borel transform allows a different weighting function to be used, rather than the exponential function, to transform functions not of exponential type. Nachbin's theorem gives necessary and sufficient conditions for the Borel transform to be well defined.</p>
+<p>Fundamental relationships</p>
+<p>Since an ordinary Laplace transform can be written as a special case of a two-sided transform, and since the two-sided transform can be written as the sum of two one-sided transforms, the theory of the Laplace-, Fourier-, Mellin-, and Z-transforms are at bottom the same subject. However, a different point of view and different characteristic problems are associated with each of these four major integral transforms.</p>
+<p>Table of selected Laplace transforms</p>
+<p>The following table provides Laplace transforms for many common functions of a single variable. For definitions and explanations, see the Explanatory Notes at the end of the table.</p>
+<p>Because the Laplace transform is a linear operator,</p>
+<p>The Laplace transform of a sum is the sum of Laplace transforms of each term.</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        +</p>
+<p>        g</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        =</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        +</p>
+<p>            L</p>
+<p>        {</p>
+<p>        g</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>    {\displaystyle {\mathcal {L}}\{f(t)+g(t)\}={\mathcal {L}}\{f(t)\}+{\mathcal {L}}\{g(t)\}}</p>
+<p>The Laplace transform of a multiple of a function is that multiple times the Laplace transformation of that function.</p>
+<p>            L</p>
+<p>        {</p>
+<p>        a</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>        =</p>
+<p>        a</p>
+<p>            L</p>
+<p>        {</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        }</p>
+<p>    {\displaystyle {\mathcal {L}}\{af(t)\}=a{\mathcal {L}}\{f(t)\}}</p>
+<p>Using this linearity, and various trigonometric, hyperbolic, and complex number (etc.) properties and/or identities, some Laplace transforms can be obtained from others more quickly than by using the definition directly.</p>
+<p>The unilateral Laplace transform takes as input a function whose time domain is the non-negative reals, which is why all of the time domain functions in the table below are multiples of the Heaviside step function, u(t).</p>
+<p>The entries of the table that involve a time delay τ are required to be causal (meaning that τ > 0).  A causal system is a system where the impulse response h(t) is zero for all time t prior to t = 0. In general, the region of convergence for causal systems is not the same as that of anticausal systems.</p>
+<p>s-domain equivalent circuits and impedances</p>
+<p>The Laplace transform is often used in circuit analysis, and simple conversions to the s-domain of circuit elements can be made. Circuit elements can be transformed into impedances, very similar to phasor impedances.</p>
+<p>Here is a summary of equivalents:</p>
+<p>Note that the resistor is exactly the same in the time domain and the s-domain. The sources are put in if there are initial conditions on the circuit elements. For example, if a capacitor has an initial voltage across it, or if the inductor has an initial current through it, the sources inserted in the s-domain account for that.</p>
+<p>The equivalents for current and voltage sources are simply derived from the transformations in the table above.</p>
+<p>Examples and applications</p>
+<p>The Laplace transform is used frequently in engineering and physics; the output of a linear time-invariant system can be calculated by convolving its unit impulse response with the input signal. Performing this calculation in Laplace space turns the convolution into a multiplication; the latter being easier to solve because of its algebraic form. For more information, see control theory. The Laplace transform is invertible on a large class of functions.  Given a simple mathematical or functional description of an input or output to a system, the Laplace transform provides an alternative functional description that often simplifies the process of analyzing the behavior of the system, or in synthesizing a new system based on a set of specifications.</p>
+<p>The Laplace transform can also be used to solve differential equations and is used extensively in mechanical engineering and electrical engineering.  The Laplace transform reduces a linear differential equation to an algebraic equation, which can then be solved by the formal rules of algebra.  The original differential equation can then be solved by applying the inverse Laplace transform. English electrical engineer Oliver Heaviside first proposed a similar scheme, although without using the Laplace transform; and the resulting operational calculus is credited as the Heaviside calculus.</p>
+<p>Evaluating improper integrals</p>
+<p>Let </p>
+<p>            L</p>
+<p>          {</p>
+<p>            f</p>
+<p>            (</p>
+<p>            t</p>
+<p>            )</p>
+<p>          }</p>
+<p>        =</p>
+<p>        F</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>    {\displaystyle {\mathcal {L}}\left\{f(t)\right\}=F(s)}</p>
+<p>. Then (see the table above)</p>
+<p>          ∂</p>
+<p>            s</p>
+<p>            L</p>
+<p>          {</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>              t</p>
+<p>          }</p>
+<p>        =</p>
+<p>          ∂</p>
+<p>            s</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>              f</p>
+<p>              (</p>
+<p>              t</p>
+<p>              )</p>
+<p>            t</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>        =</p>
+<p>        −</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>        =</p>
+<p>        −</p>
+<p>        F</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>    {\displaystyle \partial _{s}{\mathcal {L}}\left\{{\frac {f(t)}{t}}\right\}=\partial _{s}\int _{0}^{\infty }{\frac {f(t)}{t}}e^{-st}\,dt=-\int _{0}^{\infty }f(t)e^{-st}dt=-F(s)}</p>
+<p>From which one gets:</p>
+<p>            L</p>
+<p>          {</p>
+<p>                f</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>              t</p>
+<p>          }</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            s</p>
+<p>            ∞</p>
+<p>        F</p>
+<p>        (</p>
+<p>        p</p>
+<p>        )</p>
+<p>        d</p>
+<p>        p</p>
+<p>        .</p>
+<p>    {\displaystyle {\mathcal {L}}\left\{{\frac {f(t)}{t}}\right\}=\int _{s}^{\infty }F(p)\,dp.}</p>
+<p>In the limit </p>
+<p>        s</p>
+<p>        →</p>
+<p>        0</p>
+<p>    {\displaystyle s\rightarrow 0}</p>
+<p>, one gets</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>              f</p>
+<p>              (</p>
+<p>              t</p>
+<p>              )</p>
+<p>            t</p>
+<p>        d</p>
+<p>        t</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        F</p>
+<p>        (</p>
+<p>        p</p>
+<p>        )</p>
+<p>        d</p>
+<p>        p</p>
+<p>        ,</p>
+<p>    {\displaystyle \int _{0}^{\infty }{\frac {f(t)}{t}}\,dt=\int _{0}^{\infty }F(p)\,dp,}</p>
+<p>provided that the interchange of limits can be justified. This is often possible as a consequence of the final value theorem. Even when the interchange cannot be justified the calculation can be suggestive. For example, with a ≠ 0 ≠ b, proceeding formally one has</p>
+<p>                  ∫</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                      cos</p>
+<p>                      ⁡</p>
+<p>                      (</p>
+<p>                      a</p>
+<p>                      t</p>
+<p>                      )</p>
+<p>                      −</p>
+<p>                      cos</p>
+<p>                      ⁡</p>
+<p>                      (</p>
+<p>                      b</p>
+<p>                      t</p>
+<p>                      )</p>
+<p>                    t</p>
+<p>                d</p>
+<p>                t</p>
+<p>                =</p>
+<p>                  ∫</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                  (</p>
+<p>                        p</p>
+<p>                            p</p>
+<p>                              2</p>
+<p>                          +</p>
+<p>                            a</p>
+<p>                              2</p>
+<p>                    −</p>
+<p>                        p</p>
+<p>                            p</p>
+<p>                              2</p>
+<p>                          +</p>
+<p>                            b</p>
+<p>                              2</p>
+<p>                  )</p>
+<p>                d</p>
+<p>                p</p>
+<p>                =</p>
+<p>                    [</p>
+<p>                          1</p>
+<p>                          2</p>
+<p>                      ln</p>
+<p>                      ⁡</p>
+<p>                              p</p>
+<p>                                2</p>
+<p>                            +</p>
+<p>                              a</p>
+<p>                                2</p>
+<p>                              p</p>
+<p>                                2</p>
+<p>                            +</p>
+<p>                              b</p>
+<p>                                2</p>
+<p>                    ]</p>
+<p>                    0</p>
+<p>                    ∞</p>
+<p>                =</p>
+<p>                    1</p>
+<p>                    2</p>
+<p>                ln</p>
+<p>                ⁡</p>
+<p>                      b</p>
+<p>                        2</p>
+<p>                      a</p>
+<p>                        2</p>
+<p>                =</p>
+<p>                ln</p>
+<p>                ⁡</p>
+<p>                  |</p>
+<p>                      b</p>
+<p>                      a</p>
+<p>                  |</p>
+<p>                .</p>
+<p>    {\displaystyle {\begin{aligned}\int _{0}^{\infty }{\frac {\cos(at)-\cos(bt)}{t}}\,dt&=\int _{0}^{\infty }\left({\frac {p}{p^{2}+a^{2}}}-{\frac {p}{p^{2}+b^{2}}}\right)\,dp\\[6pt]&=\left[{\frac {1}{2}}\ln {\frac {p^{2}+a^{2}}{p^{2}+b^{2}}}\right]_{0}^{\infty }={\frac {1}{2}}\ln {\frac {b^{2}}{a^{2}}}=\ln \left|{\frac {b}{a}}\right|.\end{aligned}}}</p>
+<p>The validity of this identity can be proved by other means. It is an example of a Frullani integral.</p>
+<p>Another example is Dirichlet integral.</p>
+<p>Complex impedance of a capacitor</p>
+<p>In the theory of electrical circuits, the current flow in a capacitor is proportional to the capacitance and rate of change in the electrical potential (with equations as for the SI unit system). Symbolically, this is expressed by the differential equation</p>
+<p>        i</p>
+<p>        =</p>
+<p>        C</p>
+<p>              d</p>
+<p>              v</p>
+<p>              d</p>
+<p>              t</p>
+<p>        ,</p>
+<p>    {\displaystyle i=C{dv \over dt},}</p>
+<p>where C is the capacitance of the capacitor, i = i(t) is the electric current through the capacitor as a function of time, and v = v(t) is the voltage across the terminals of the capacitor, also as a function of time.</p>
+<p>Taking the Laplace transform of this equation, we obtain</p>
+<p>        I</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>        C</p>
+<p>        (</p>
+<p>        s</p>
+<p>        V</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        −</p>
+<p>          V</p>
+<p>            0</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\displaystyle I(s)=C(sV(s)-V_{0}),}</p>
+<p>where</p>
+<p>                I</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                =</p>
+<p>                    L</p>
+<p>                {</p>
+<p>                i</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                }</p>
+<p>                ,</p>
+<p>                V</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                =</p>
+<p>                    L</p>
+<p>                {</p>
+<p>                v</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                }</p>
+<p>                ,</p>
+<p>    {\displaystyle {\begin{aligned}I(s)&={\mathcal {L}}\{i(t)\},\\V(s)&={\mathcal {L}}\{v(t)\},\end{aligned}}}</p>
+<p>and</p>
+<p>          V</p>
+<p>            0</p>
+<p>        =</p>
+<p>        v</p>
+<p>        (</p>
+<p>        0</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle V_{0}=v(0).}</p>
+<p>Solving for V(s) we have</p>
+<p>        V</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>              I</p>
+<p>              (</p>
+<p>              s</p>
+<p>              )</p>
+<p>              s</p>
+<p>              C</p>
+<p>        +</p>
+<p>              V</p>
+<p>                0</p>
+<p>            s</p>
+<p>        .</p>
+<p>    {\displaystyle V(s)={I(s) \over sC}+{V_{0} \over s}.}</p>
+<p>The definition of the complex impedance Z (in ohms) is the ratio of the complex voltage V divided by the complex current I while holding the initial state V0 at zero:</p>
+<p>        Z</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>                  V</p>
+<p>                  (</p>
+<p>                  s</p>
+<p>                  )</p>
+<p>                  I</p>
+<p>                  (</p>
+<p>                  s</p>
+<p>                  )</p>
+<p>            |</p>
+<p>              V</p>
+<p>                0</p>
+<p>            =</p>
+<p>            0</p>
+<p>        .</p>
+<p>    {\displaystyle Z(s)=\left.{V(s) \over I(s)}\right|_{V_{0}=0}.}</p>
+<p>Using this definition and the previous equation, we find:</p>
+<p>        Z</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              s</p>
+<p>              C</p>
+<p>        ,</p>
+<p>    {\displaystyle Z(s)={\frac {1}{sC}},}</p>
+<p>which is the correct expression for the complex impedance of a capacitor. In addition, the Laplace transform has large applications in control theory.</p>
+<p>Impulse response</p>
+<p>Consider a linear time-invariant system with transfer function</p>
+<p>        H</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              α</p>
+<p>              )</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>              )</p>
+<p>        .</p>
+<p>    {\displaystyle H(s)={\frac {1}{(s+\alpha )(s+\beta )}}.}</p>
+<p>The impulse response is simply the inverse Laplace transform of this transfer function:</p>
+<p>        h</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>        {</p>
+<p>        H</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        }</p>
+<p>        .</p>
+<p>    {\displaystyle h(t)={\mathcal {L}}^{-1}\{H(s)\}.}</p>
+<p>Partial fraction expansion</p>
+<p>To evaluate this inverse transform, we begin by expanding H(s) using the method of partial fraction expansion,</p>
+<p>            1</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              α</p>
+<p>              )</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>              )</p>
+<p>        =</p>
+<p>            P</p>
+<p>              s</p>
+<p>              +</p>
+<p>              α</p>
+<p>        +</p>
+<p>            R</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>        .</p>
+<p>    {\displaystyle {\frac {1}{(s+\alpha )(s+\beta )}}={P \over s+\alpha }+{R \over s+\beta }.}</p>
+<p>The unknown constants P and R are the residues located at the corresponding poles of the transfer function. Each residue represents the relative contribution of that singularity to the transfer function's overall shape.</p>
+<p>By the residue theorem, the inverse Laplace transform depends only upon the poles and their residues. To find the residue P, we multiply both sides of the equation by s + α to get</p>
+<p>            1</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>        =</p>
+<p>        P</p>
+<p>        +</p>
+<p>              R</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              α</p>
+<p>              )</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>        .</p>
+<p>    {\displaystyle {\frac {1}{s+\beta }}=P+{R(s+\alpha ) \over s+\beta }.}</p>
+<p>Then by letting s = −α, the contribution from R vanishes and all that is left is</p>
+<p>        P</p>
+<p>        =</p>
+<p>                1</p>
+<p>                  s</p>
+<p>                  +</p>
+<p>                  β</p>
+<p>            |</p>
+<p>            s</p>
+<p>            =</p>
+<p>            −</p>
+<p>            α</p>
+<p>        =</p>
+<p>            1</p>
+<p>              β</p>
+<p>              −</p>
+<p>              α</p>
+<p>        .</p>
+<p>    {\displaystyle P=\left.{1 \over s+\beta }\right|_{s=-\alpha }={1 \over \beta -\alpha }.}</p>
+<p>Similarly, the residue R is given by</p>
+<p>        R</p>
+<p>        =</p>
+<p>                1</p>
+<p>                  s</p>
+<p>                  +</p>
+<p>                  α</p>
+<p>            |</p>
+<p>            s</p>
+<p>            =</p>
+<p>            −</p>
+<p>            β</p>
+<p>        =</p>
+<p>            1</p>
+<p>              α</p>
+<p>              −</p>
+<p>              β</p>
+<p>        .</p>
+<p>    {\displaystyle R=\left.{1 \over s+\alpha }\right|_{s=-\beta }={1 \over \alpha -\beta }.}</p>
+<p>Note that</p>
+<p>        R</p>
+<p>        =</p>
+<p>              −</p>
+<p>              1</p>
+<p>              β</p>
+<p>              −</p>
+<p>              α</p>
+<p>        =</p>
+<p>        −</p>
+<p>        P</p>
+<p>    {\displaystyle R={-1 \over \beta -\alpha }=-P}</p>
+<p>and so the substitution of R and P into the expanded expression for H(s) gives</p>
+<p>        H</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          (</p>
+<p>              1</p>
+<p>                β</p>
+<p>                −</p>
+<p>                α</p>
+<p>          )</p>
+<p>        ⋅</p>
+<p>          (</p>
+<p>                1</p>
+<p>                  s</p>
+<p>                  +</p>
+<p>                  α</p>
+<p>            −</p>
+<p>                1</p>
+<p>                  s</p>
+<p>                  +</p>
+<p>                  β</p>
+<p>          )</p>
+<p>        .</p>
+<p>    {\displaystyle H(s)=\left({\frac {1}{\beta -\alpha }}\right)\cdot \left({1 \over s+\alpha }-{1 \over s+\beta }\right).}</p>
+<p>Finally, using the linearity property and the known transform for exponential decay (see Item #3 in the Table of Laplace Transforms, above), we can take the inverse Laplace transform of H(s) to obtain</p>
+<p>        h</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>        {</p>
+<p>        H</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        }</p>
+<p>        =</p>
+<p>            1</p>
+<p>              β</p>
+<p>              −</p>
+<p>              α</p>
+<p>          (</p>
+<p>              e</p>
+<p>                −</p>
+<p>                α</p>
+<p>                t</p>
+<p>            −</p>
+<p>              e</p>
+<p>                −</p>
+<p>                β</p>
+<p>                t</p>
+<p>          )</p>
+<p>        ,</p>
+<p>    {\displaystyle h(t)={\mathcal {L}}^{-1}\{H(s)\}={\frac {1}{\beta -\alpha }}\left(e^{-\alpha t}-e^{-\beta t}\right),}</p>
+<p>which is the impulse response of the system.</p>
+<p>Convolution</p>
+<p>The same result can be achieved using the convolution property as if the system is a series of filters with transfer functions 1/(s + α) and 1/(s + β). That is, the inverse of</p>
+<p>        H</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              α</p>
+<p>              )</p>
+<p>              (</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>              )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              s</p>
+<p>              +</p>
+<p>              α</p>
+<p>        ⋅</p>
+<p>            1</p>
+<p>              s</p>
+<p>              +</p>
+<p>              β</p>
+<p>    {\displaystyle H(s)={\frac {1}{(s+\alpha )(s+\beta )}}={\frac {1}{s+\alpha }}\cdot {\frac {1}{s+\beta }}}</p>
+<p>is</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>          {</p>
+<p>              1</p>
+<p>                s</p>
+<p>                +</p>
+<p>                α</p>
+<p>          }</p>
+<p>        ∗</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>          {</p>
+<p>              1</p>
+<p>                s</p>
+<p>                +</p>
+<p>                β</p>
+<p>          }</p>
+<p>        =</p>
+<p>          e</p>
+<p>            −</p>
+<p>            α</p>
+<p>            t</p>
+<p>        ∗</p>
+<p>          e</p>
+<p>            −</p>
+<p>            β</p>
+<p>            t</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            t</p>
+<p>          e</p>
+<p>            −</p>
+<p>            α</p>
+<p>            x</p>
+<p>          e</p>
+<p>            −</p>
+<p>            β</p>
+<p>            (</p>
+<p>            t</p>
+<p>            −</p>
+<p>            x</p>
+<p>            )</p>
+<p>        d</p>
+<p>        x</p>
+<p>        =</p>
+<p>                e</p>
+<p>                  −</p>
+<p>                  α</p>
+<p>                  t</p>
+<p>              −</p>
+<p>                e</p>
+<p>                  −</p>
+<p>                  β</p>
+<p>                  t</p>
+<p>              β</p>
+<p>              −</p>
+<p>              α</p>
+<p>        .</p>
+<p>    {\displaystyle {\mathcal {L}}^{-1}\!\left\{{\frac {1}{s+\alpha }}\right\}*{\mathcal {L}}^{-1}\!\left\{{\frac {1}{s+\beta }}\right\}=e^{-\alpha t}*e^{-\beta t}=\int _{0}^{t}e^{-\alpha x}e^{-\beta (t-x)}\,dx={\frac {e^{-\alpha t}-e^{-\beta t}}{\beta -\alpha }}.}</p>
+<p>Phase delay</p>
+<p>Starting with the Laplace transform,</p>
+<p>        X</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>              s</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              φ</p>
+<p>              )</p>
+<p>              +</p>
+<p>              ω</p>
+<p>              cos</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              φ</p>
+<p>              )</p>
+<p>                s</p>
+<p>                  2</p>
+<p>              +</p>
+<p>                ω</p>
+<p>                  2</p>
+<p>    {\displaystyle X(s)={\frac {s\sin(\varphi )+\omega \cos(\varphi )}{s^{2}+\omega ^{2}}}}</p>
+<p>we find the inverse by first rearranging terms in the fraction:</p>
+<p>                X</p>
+<p>                (</p>
+<p>                s</p>
+<p>                )</p>
+<p>                =</p>
+<p>                      s</p>
+<p>                      sin</p>
+<p>                      ⁡</p>
+<p>                      (</p>
+<p>                      φ</p>
+<p>                      )</p>
+<p>                        s</p>
+<p>                          2</p>
+<p>                      +</p>
+<p>                        ω</p>
+<p>                          2</p>
+<p>                +</p>
+<p>                      ω</p>
+<p>                      cos</p>
+<p>                      ⁡</p>
+<p>                      (</p>
+<p>                      φ</p>
+<p>                      )</p>
+<p>                        s</p>
+<p>                          2</p>
+<p>                      +</p>
+<p>                        ω</p>
+<p>                          2</p>
+<p>                =</p>
+<p>                sin</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                φ</p>
+<p>                )</p>
+<p>                  (</p>
+<p>                      s</p>
+<p>                          s</p>
+<p>                            2</p>
+<p>                        +</p>
+<p>                          ω</p>
+<p>                            2</p>
+<p>                  )</p>
+<p>                +</p>
+<p>                cos</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                φ</p>
+<p>                )</p>
+<p>                  (</p>
+<p>                      ω</p>
+<p>                          s</p>
+<p>                            2</p>
+<p>                        +</p>
+<p>                          ω</p>
+<p>                            2</p>
+<p>                  )</p>
+<p>                .</p>
+<p>    {\displaystyle {\begin{aligned}X(s)&={\frac {s\sin(\varphi )}{s^{2}+\omega ^{2}}}+{\frac {\omega \cos(\varphi )}{s^{2}+\omega ^{2}}}\\&=\sin(\varphi )\left({\frac {s}{s^{2}+\omega ^{2}}}\right)+\cos(\varphi )\left({\frac {\omega }{s^{2}+\omega ^{2}}}\right).\end{aligned}}}</p>
+<p>We are now able to take the inverse Laplace transform of our terms:</p>
+<p>                x</p>
+<p>                (</p>
+<p>                t</p>
+<p>                )</p>
+<p>                =</p>
+<p>                sin</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                φ</p>
+<p>                )</p>
+<p>                      L</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                  {</p>
+<p>                      s</p>
+<p>                          s</p>
+<p>                            2</p>
+<p>                        +</p>
+<p>                          ω</p>
+<p>                            2</p>
+<p>                  }</p>
+<p>                +</p>
+<p>                cos</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                φ</p>
+<p>                )</p>
+<p>                      L</p>
+<p>                    −</p>
+<p>                    1</p>
+<p>                  {</p>
+<p>                      ω</p>
+<p>                          s</p>
+<p>                            2</p>
+<p>                        +</p>
+<p>                          ω</p>
+<p>                            2</p>
+<p>                  }</p>
+<p>                =</p>
+<p>                sin</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                φ</p>
+<p>                )</p>
+<p>                cos</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                ω</p>
+<p>                t</p>
+<p>                )</p>
+<p>                +</p>
+<p>                cos</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                φ</p>
+<p>                )</p>
+<p>                sin</p>
+<p>                ⁡</p>
+<p>                (</p>
+<p>                ω</p>
+<p>                t</p>
+<p>                )</p>
+<p>                .</p>
+<p>    {\displaystyle {\begin{aligned}x(t)&=\sin(\varphi ){\mathcal {L}}^{-1}\left\{{\frac {s}{s^{2}+\omega ^{2}}}\right\}+\cos(\varphi ){\mathcal {L}}^{-1}\left\{{\frac {\omega }{s^{2}+\omega ^{2}}}\right\}\\&=\sin(\varphi )\cos(\omega t)+\cos(\varphi )\sin(\omega t).\end{aligned}}}</p>
+<p>This is just the sine of the sum of the arguments, yielding:</p>
+<p>        x</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        (</p>
+<p>        ω</p>
+<p>        t</p>
+<p>        +</p>
+<p>        φ</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle x(t)=\sin(\omega t+\varphi ).}</p>
+<p>We can apply similar logic to find that</p>
+<p>              L</p>
+<p>            −</p>
+<p>            1</p>
+<p>          {</p>
+<p>                s</p>
+<p>                cos</p>
+<p>                ⁡</p>
+<p>                φ</p>
+<p>                −</p>
+<p>                ω</p>
+<p>                sin</p>
+<p>                ⁡</p>
+<p>                φ</p>
+<p>                  s</p>
+<p>                    2</p>
+<p>                +</p>
+<p>                  ω</p>
+<p>                    2</p>
+<p>          }</p>
+<p>        =</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>          (</p>
+<p>          ω</p>
+<p>          t</p>
+<p>          +</p>
+<p>          φ</p>
+<p>          )</p>
+<p>        .</p>
+<p>    {\displaystyle {\mathcal {L}}^{-1}\left\{{\frac {s\cos \varphi -\omega \sin \varphi }{s^{2}+\omega ^{2}}}\right\}=\cos {(\omega t+\varphi )}.}</p>
+<p>Statistical mechanics</p>
+<p>In statistical mechanics, the Laplace transform of the density of states </p>
+<p>        g</p>
+<p>        (</p>
+<p>        E</p>
+<p>        )</p>
+<p>    {\displaystyle g(E)}</p>
+<p> defines the partition function. That is, the canonical partition function </p>
+<p>        Z</p>
+<p>        (</p>
+<p>        β</p>
+<p>        )</p>
+<p>    {\displaystyle Z(\beta )}</p>
+<p> is given by</p>
+<p>        Z</p>
+<p>        (</p>
+<p>        β</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          e</p>
+<p>            −</p>
+<p>            β</p>
+<p>            E</p>
+<p>        g</p>
+<p>        (</p>
+<p>        E</p>
+<p>        )</p>
+<p>        d</p>
+<p>        E</p>
+<p>    {\displaystyle Z(\beta )=\int _{0}^{\infty }e^{-\beta E}g(E)\,dE}</p>
+<p>and the inverse is given by</p>
+<p>        g</p>
+<p>        (</p>
+<p>        E</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              2</p>
+<p>              π</p>
+<p>              i</p>
+<p>          ∫</p>
+<p>              β</p>
+<p>                0</p>
+<p>            −</p>
+<p>            i</p>
+<p>            ∞</p>
+<p>              β</p>
+<p>                0</p>
+<p>            +</p>
+<p>            i</p>
+<p>            ∞</p>
+<p>          e</p>
+<p>            β</p>
+<p>            E</p>
+<p>        Z</p>
+<p>        (</p>
+<p>        β</p>
+<p>        )</p>
+<p>        d</p>
+<p>        β</p>
+<p>    {\displaystyle g(E)={\frac {1}{2\pi i}}\int _{\beta _{0}-i\infty }^{\beta _{0}+i\infty }e^{\beta E}Z(\beta )\,d\beta }</p>
+<p>Spatial (not time) structure from astronomical spectrum</p>
+<p>The wide and general applicability of the Laplace transform and its inverse is illustrated by an application in astronomy which provides some information on the spatial distribution of matter of an astronomical source of radiofrequency thermal radiation too distant to resolve as more than a point, given its flux density spectrum, rather than relating the time domain with the spectrum (frequency domain).</p>
+<p>Assuming certain properties of the object, e.g. spherical shape and constant temperature, calculations based on carrying out an inverse Laplace transformation on the spectrum of the object can produce the only possible model of the distribution of matter in it (density as a function of distance from the center) consistent with the spectrum. When independent information on the structure of an object is available, the inverse Laplace transform method has been found to be in good agreement.</p>
+<p>Birth and death processes</p>
+<p>Consider a random walk, with steps </p>
+<p>        {</p>
+<p>        +</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        −</p>
+<p>        1</p>
+<p>        }</p>
+<p>    {\displaystyle \{+1,-1\}}</p>
+<p> occurring with probabilities </p>
+<p>        p</p>
+<p>        ,</p>
+<p>        q</p>
+<p>        =</p>
+<p>        1</p>
+<p>        −</p>
+<p>        p</p>
+<p>    {\displaystyle p,q=1-p}</p>
+<p>. Suppose also that the time step is an Poisson process, with parameter </p>
+<p>        λ</p>
+<p>    {\displaystyle \lambda }</p>
+<p>.  Then the probability of the walk being at the lattice point </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> at time </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> is</p>
+<p>          P</p>
+<p>            n</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            t</p>
+<p>        λ</p>
+<p>          e</p>
+<p>            −</p>
+<p>            λ</p>
+<p>            (</p>
+<p>            t</p>
+<p>            −</p>
+<p>            s</p>
+<p>            )</p>
+<p>        (</p>
+<p>        p</p>
+<p>          P</p>
+<p>            n</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        +</p>
+<p>        q</p>
+<p>          P</p>
+<p>            n</p>
+<p>            +</p>
+<p>            1</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        )</p>
+<p>        d</p>
+<p>        s</p>
+<p>        (</p>
+<p>        +</p>
+<p>          e</p>
+<p>            −</p>
+<p>            λ</p>
+<p>            t</p>
+<p>          when</p>
+<p>        n</p>
+<p>        =</p>
+<p>        0</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle P_{n}(t)=\int _{0}^{t}\lambda e^{-\lambda (t-s)}(pP_{n-1}(s)+qP_{n+1}(s))\,ds\quad (+e^{-\lambda t}\quad {\text{when}}\ n=0).}</p>
+<p>This leads to a system of integral equations (or equivalently a system of differential equations).  However, because it is a system of convolution equations, the Laplace transform converts it into a system of linear equations for</p>
+<p>          π</p>
+<p>            n</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            L</p>
+<p>        (</p>
+<p>          P</p>
+<p>            n</p>
+<p>        )</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        ,</p>
+<p>    {\displaystyle \pi _{n}(s)={\mathcal {L}}(P_{n})(s),}</p>
+<p>namely:</p>
+<p>          π</p>
+<p>            n</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>            λ</p>
+<p>              λ</p>
+<p>              +</p>
+<p>              s</p>
+<p>        (</p>
+<p>        p</p>
+<p>          π</p>
+<p>            n</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        +</p>
+<p>        q</p>
+<p>          π</p>
+<p>            n</p>
+<p>            +</p>
+<p>            1</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        )</p>
+<p>        (</p>
+<p>        +</p>
+<p>            1</p>
+<p>              λ</p>
+<p>              +</p>
+<p>              s</p>
+<p>          when</p>
+<p>        n</p>
+<p>        =</p>
+<p>        0</p>
+<p>        )</p>
+<p>    {\displaystyle \pi _{n}(s)={\frac {\lambda }{\lambda +s}}(p\pi _{n-1}(s)+q\pi _{n+1}(s))\quad (+{\frac {1}{\lambda +s}}\quad {\text{when}}\ n=0)}</p>
+<p>which may now be solved by standard methods.</p>
+<p>Tauberian theory</p>
+<p>The Laplace transform of the measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> on </p>
+<p>        [</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        ∞</p>
+<p>        )</p>
+<p>    {\displaystyle [0,\infty )}</p>
+<p> is given by</p>
+<p>            L</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>          e</p>
+<p>            −</p>
+<p>            s</p>
+<p>            t</p>
+<p>        d</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle {\mathcal {L}}\mu (s)=\int _{0}^{\infty }e^{-st}d\mu (t).}</p>
+<p>It is intuitively clear that, for small </p>
+<p>        s</p>
+<p>        ></p>
+<p>        0</p>
+<p>    {\displaystyle s>0}</p>
+<p>, the exponentially decaying integrand will become more sensitive to the concentration of the measure </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> on larger subsets of the domain.  To make this more precise, introduce the distribution function:</p>
+<p>        M</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        [</p>
+<p>        0</p>
+<p>        ,</p>
+<p>        t</p>
+<p>        )</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle M(t)=\mu ([0,t)).}</p>
+<p>Formally, we expect a limit of the following kind:</p>
+<p>          lim</p>
+<p>            s</p>
+<p>            →</p>
+<p>              0</p>
+<p>                +</p>
+<p>            L</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            t</p>
+<p>            →</p>
+<p>            ∞</p>
+<p>        M</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle \lim _{s\to 0^{+}}{\mathcal {L}}\mu (s)=\lim _{t\to \infty }M(t).}</p>
+<p>Tauberian theorems are theorems relating the asymptotics of the Laplace transform, as </p>
+<p>        s</p>
+<p>        →</p>
+<p>          0</p>
+<p>            +</p>
+<p>    {\displaystyle s\to 0^{+}}</p>
+<p>, to those of the distribution of </p>
+<p>        μ</p>
+<p>    {\displaystyle \mu }</p>
+<p> as </p>
+<p>        t</p>
+<p>        →</p>
+<p>        ∞</p>
+<p>    {\displaystyle t\to \infty }</p>
+<p>.  They are thus of importance in asymptotic formulae of probability and statistics, where often the spectral side has asymptotics that are simpler to infer.</p>
+<p>Two tauberian theorems of note are the Hardy–Littlewood tauberian theorem and the Wiener tauberian theorem.  The Wiener theorem generalizes the Ikehara tauberian theorem, which is the following statement:</p>
+<p>Let A(x) be a non-negative, monotonic nondecreasing function of x, defined for 0 ≤ x < ∞. Suppose that</p>
+<p>        f</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            ∞</p>
+<p>        A</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>          e</p>
+<p>            −</p>
+<p>            x</p>
+<p>            s</p>
+<p>        d</p>
+<p>        x</p>
+<p>    {\displaystyle f(s)=\int _{0}^{\infty }A(x)e^{-xs}\,dx}</p>
+<p>converges for ℜ(s) > 1 to the function ƒ(s) and that, for some non-negative number c,</p>
+<p>        f</p>
+<p>        (</p>
+<p>        s</p>
+<p>        )</p>
+<p>        −</p>
+<p>            c</p>
+<p>              s</p>
+<p>              −</p>
+<p>              1</p>
+<p>    {\displaystyle f(s)-{\frac {c}{s-1}}}</p>
+<p>has an extension as a continuous function for ℜ(s) ≥ 1.</p>
+<p>Then the limit as x goes to infinity of e−x A(x) is equal to c.</p>
+<p>This statement can be applied in particular to the logarithmic derivative of Riemann zeta function, and thus provides an extremely short way to prove the prime number theorem.</p>
+<p>See also</p>
+<p>Notes</p>
+<p>References</p>
+<p>Modern</p>
+<p>Bracewell, Ronald N. (1978), The Fourier Transform and its Applications (2nd ed.), McGraw-Hill Kogakusha, ISBN 978-0-07-007013-4</p>
+<p>Bracewell, R. N. (2000), The Fourier Transform and Its Applications (3rd ed.), Boston: McGraw-Hill, ISBN 978-0-07-116043-8</p>
+<p>Feller, William (1971), An introduction to probability theory and its applications. Vol. II., Second edition, New York: John Wiley & Sons, MR 0270403</p>
+<p>Korn, G. A.; Korn, T. M. (1967), Mathematical Handbook for Scientists and Engineers (2nd ed.), McGraw-Hill Companies, ISBN 978-0-07-035370-1</p>
+<p>Widder, David Vernon (1941), The Laplace Transform, Princeton Mathematical Series, v. 6, Princeton University Press, MR 0005923</p>
+<p>Williams, J. (1973), Laplace Transforms, Problem Solvers, George Allen & Unwin, ISBN 978-0-04-512021-5</p>
+<p>Takacs, J. (1953), "Fourier amplitudok meghatarozasa operatorszamitassal", Magyar Hiradastechnika (in Hungarian), IV (7–8): 93–96</p>
+<p>Historical</p>
+<p>Euler, L. (1744), "De constructione aequationum" [The Construction of Equations], Opera Omnia, 1st series (in Latin), 22: 150–161</p>
+<p>Euler, L. (1753), "Methodus aequationes differentiales" [A Method for Solving Differential Equations], Opera Omnia, 1st series (in Latin), 22: 181–213</p>
+<p>Euler, L. (1992) [1769], "Institutiones calculi integralis, Volume 2" [Institutions of Integral Calculus], Opera Omnia, 1st series (in Latin), 12, Basel: Birkhäuser, ISBN 978-3764314743, Chapters 3–5</p>
+<p>Euler, Leonhard (1769), Institutiones calculi integralis [Institutions of Integral Calculus] (in Latin), vol. II, Paris: Petropoli, ch. 3–5, pp. 57–153</p>
+<p>Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1</p>
+<p>Lagrange, J. L. (1773), Mémoire sur l'utilité de la méthode, Œuvres de Lagrange, vol. 2, pp. 171–234</p>
+<p>Further reading</p>
+<p>Arendt, Wolfgang; Batty, Charles J.K.; Hieber, Matthias; Neubrander, Frank (2002), Vector-Valued Laplace Transforms and Cauchy Problems, Birkhäuser Basel, ISBN 978-3-7643-6549-3.</p>
+<p>Davies, Brian (2002), Integral transforms and their applications (Third ed.), New York: Springer, ISBN 978-0-387-95314-4</p>
+<p>Deakin, M. A. B. (1981), "The development of the Laplace transform", Archive for History of Exact Sciences, 25 (4): 343–390, doi:10.1007/BF01395660, S2CID 117913073</p>
+<p>Deakin, M. A. B. (1982), "The development of the Laplace transform", Archive for History of Exact Sciences, 26 (4): 351–381, doi:10.1007/BF00418754, S2CID 123071842</p>
+<p>Doetsch, Gustav (1974), Introduction to the Theory and Application of the Laplace Transformation, Springer, ISBN 978-0-387-06407-9</p>
+<p>Mathews, Jon; Walker, Robert L. (1970), Mathematical methods of physics (2nd ed.), New York: W. A. Benjamin, ISBN 0-8053-7002-1</p>
+<p>Polyanin, A. D.; Manzhirov, A. V. (1998), Handbook of Integral Equations, Boca Raton: CRC Press, ISBN 978-0-8493-2876-3</p>
+<p>Schwartz, Laurent (1952), "Transformation de Laplace des distributions", Comm. Sém. Math. Univ. Lund [Medd. Lunds Univ. Mat. Sem.] (in French), 1952: 196–206, MR 0052555</p>
+<p>Schwartz, Laurent (2008) [1966], Mathematics for the Physical Sciences, Dover Books on Mathematics, New York: Dover Publications, pp. 215–241, ISBN 978-0-486-46662-0 - See Chapter VI. The Laplace transform.</p>
+<p>Siebert, William McC. (1986), Circuits, Signals, and Systems, Cambridge, Massachusetts: MIT Press, ISBN 978-0-262-19229-3</p>
+<p>Widder, David Vernon (1945), "What is the Laplace transform?", The American Mathematical Monthly, 52 (8): 419–425, doi:10.2307/2305640, ISSN 0002-9890, JSTOR 2305640, MR 0013447</p>
+<p>J.A.C.Weidman and Bengt Fornberg: "Fully numerical Laplace transform methods", Numerical Algorithms, vol.92 (2023), pp. 985–1006. https://doi.org/10.1007/s11075-022-01368-x .</p>
+<p>External links</p>
+<p>"Laplace transform", Encyclopedia of Mathematics, EMS Press, 2001 [1994]</p>
+<p>Online Computation of the transform or inverse transform, wims.unice.fr</p>
+<p>Tables of Integral Transforms at EqWorld: The World of Mathematical Equations.</p>
+<p>Weisstein, Eric W. "Laplace Transform". MathWorld.</p>
+<p>Good explanations of the initial and final value theorems Archived 2009-01-08 at the Wayback Machine</p>
+<p>Laplace Transforms at MathPages</p>
+<p>Computational Knowledge Engine allows to easily calculate Laplace Transforms and its inverse Transform.</p>
+<p>Laplace Calculator to calculate Laplace Transforms online easily.</p>
+<p>Code to visualize Laplace Transforms and many example videos.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
