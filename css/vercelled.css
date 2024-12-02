@@ -1,0 +1,324 @@
+@font-face {
+  font-family: 'FOT-Rodin Pro L';
+  src: url('/font/FOT-Rodin\ Pro\ L.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'FOT-Rodin Pro M';
+  src: url('/font/FOT-Rodin\ Pro\ M.otf') format('opentype');
+}
+
+body {
+  font-family: 'FOT-Rodin Pro L', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+.header {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #949494;
+  box-sizing: border-box;
+}
+
+.header a {
+  color: #707070;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+}
+
+.header a:hover {
+  color: #fff;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.1rem;
+  }
+
+  nav li {
+    margin-bottom: 0.5rem; 
+    margin-right: 0rem;
+  }
+
+  nav li:last-child {
+    margin-bottom: 0; 
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-left: 12.5rem;
+  margin-right: 12.5rem;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .title-page #text {
+    font-size: 5rem;
+  }
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  border: 2px solid rgb(86, 86, 86);
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: white;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  -webkit-object-fit: cover;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.text {
+  align-items: center;
+  text-align: center;
+  font-size: large;
+  height: 180px;
+  width: 250px;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.text .impose {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.text .description {
+  font-size: medium;
+  margin-bottom: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+
+.hero-heading {
+  font-family: 'FOT-Rodin Pro L', serif;
+  color: #ffffff;
+  font-weight: lighter;
+  font-size: 10rem;
+  letter-spacing: -0.07em;
+  line-height: 1.168;
+  text-align: center;
+  margin-top: 8rem;
+  width: 34.08rem;
+  margin-bottom: 0px; /*!!!!*/
+}
+
+@media screen and (max-width: 768px) {
+  .hero-heading {
+    font-size: 6rem;
+    width: 20rem;
+    margin-top: 6rem !important;
+  }
+  .titlehook .hero-description {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .hero-heading {
+    margin-top: 1rem;
+  }
+}
+
+
+.hero-heading-life {
+  font-family: serif;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeIn 4s forwards; 
+  animation-delay: 1s;
+}
+
+.hero-heading-science {
+  opacity: 0;
+  animation: fadeIn 4s forwards; 
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; 
+  }
+}
+
+.hero-description {
+  color: #777;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding-top: 2em; /*!!!!*/
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px); 
+  animation: slideUp 2s ease-in-out forwards; 
+  animation-delay: 2.5s; 
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #222F5B;
+}
+
+.underoverline {
+  text-decoration:#222F5B underline;
+  text-decoration-thickness: 3px;
+}
+
+.titlehook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videobg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.title-page {
+  color: #ffffff;
+  font-size: 6rem;
+  font-weight: lighter;
+  letter-spacing: -0.06em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+::selection {
+  background: #222F5B;
+}
+
+.grid {
+  display: grid;
+  place-items: center;
+}
+
+.bio-text {
+  color: white;
+  font-family: 'FOT-Rodin Pro L';
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.bio-link {
+  text-decoration: underline;
+  color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+.bio-link:hover {
+  color: var(--hover-color);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+
+.flex-item {
+  width: 40rem;
+  margin-bottom: 1rem; 
+}
+
+.centered-img {
+  display: block;
+  margin: 0 auto; 
+  max-width: 100%; 
+}
+
+@media screen and (max-width: 768px) {
+  .flex-item {
+      width: 100%;
+      margin-bottom: 0; 
+  }
+  .bio-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .bio-link {
+    text-decoration: #364b8f underline;
+    text-decoration-thickness: 2px;
+  }
+}
+
+.li-elem {
+  font-family: 'FOT-Rodin Pro M';
+}
+
+a.no-underline {
+  text-decoration: none;
+}
