@@ -98,8 +98,8 @@ nav li {
   width: 250px;
   height: 250px;
   margin: 10px;
-  border: 1px solid rgb(86, 86, 86);
-  border-radius: 20px;
+  border: 2px solid rgb(86, 86, 86);
+  border-radius: 10px;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -128,23 +128,27 @@ nav li {
   height: 180px;
   width: 250px;
   color: #fff;
-  font-family: 'FOT-Rodin Pro L', Arial, sans-serif;
   line-height: 1.4;
 }
 
-.impose {
+.text .impose {
   margin-bottom: 5px;
   margin-top: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-.description {
-  color: darkgrey;
-  font-size: small;
+.text .description {
+  /*color: #cccccc;*/
+  font-size: medium;
   margin-bottom: 0px;
-  margin-top: 0px;
+  /*margin-top: 0px;*/
   margin-right: 5px;
   margin-left: 5px;
+  /*line-height: 1.6;*/
 }
+
 
 .hero-heading {
   font-family: 'FOT-Rodin Pro L', serif;
