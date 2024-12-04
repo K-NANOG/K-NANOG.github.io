@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Non-monotonic logic</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Non-monotonic logic</h2>
+                <p>A non-monotonic logic is a formal logic whose conclusion relation is not monotonic. In other words, non-monotonic logics are devised to capture and represent defeasible inferences, i.e., a kind of inference in which reasoners draw tentative conclusions, enabling reasoners to retract their conclusion(s) based on further evidence.</p>
+<p>Most studied formal logics have a monotonic entailment relation, meaning that adding a formula to the hypotheses never produces a pruning of its set of conclusions. Intuitively, monotonicity indicates that learning a new piece of knowledge cannot reduce the set of what is known. Monotonic logics cannot handle various reasoning tasks such as reasoning by default (conclusions may be derived only because of lack of evidence of the contrary), abductive reasoning (conclusions are only deduced as most likely explanations), some important approaches  to reasoning about knowledge (the ignorance of a conclusion must be retracted when the conclusion becomes known), and similarly, belief revision (new  knowledge may contradict old beliefs).</p>
+<p>Abductive reasoning</p>
+<p>Abductive reasoning is the process of deriving a sufficient explanation of the known facts. An abductive logic should not be monotonic because the likely explanations are not necessarily correct. For example, the likely explanation for seeing wet grass is that it rained; however, this explanation has to be retracted when learning that the real cause of the grass being wet was a sprinkler. Since the old explanation (it rained) is retracted because of the addition of a piece of knowledge (a sprinkler was active), any logic that models explanations is non-monotonic.</p>
+<p>Reasoning about knowledge</p>
+<p>If a logic includes formulae that mean that something is not known, this logic should not be monotonic. Indeed, learning something that was previously not known leads to the removal of the formula specifying that this piece of knowledge is not known. This second change (a removal caused by an addition) violates the condition of monotonicity. A logic for reasoning about knowledge is the autoepistemic logic.</p>
+<p>Belief revision</p>
+<p>Belief revision is the process of changing beliefs to accommodate a new belief that might be inconsistent with the old ones. In the assumption that the new belief is correct, some of the old ones have to be retracted in order to maintain consistency. This retraction in response to an addition of a new belief makes any logic for belief revision non-monotonic. The belief revision approach is alternative to paraconsistent logics, which tolerate inconsistency rather than attempting to remove it.</p>
+<p>Proof-theoretic versus model-theoretic formalizations of non-monotonic logics</p>
+<p>Proof-theoretic formalization of a non-monotonic logic begins with adoption of certain non-monotonic rules of inference, and then prescribes contexts in which these non-monotonic rules may be applied in admissible deductions. This typically is accomplished by means of fixed-point equations that relate the sets of premises and the sets of their non-monotonic conclusions. Default logic and autoepistemic logic are the most common examples of non-monotonic logics that have been formalized that way.</p>
+<p>Model-theoretic formalization of a non-monotonic logic begins with restriction of the semantics of a suitable monotonic logic to some special models, for instance, to minimal models, and then derives a set of non-monotonic rules of inference, possibly with some restrictions on which contexts these rules may be applied in, so that the resulting deductive system is sound and complete with respect to the restricted semantics. Unlike some proof-theoretic formalizations that suffered from well-known paradoxes and were often hard to evaluate with respect of their consistency with the intuitions they were supposed to capture, model-theoretic formalizations were paradox-free and left little, if any, room for confusion about what non-monotonic patterns of reasoning they covered. Examples of proof-theoretic formalizations of non-monotonic reasoning, which revealed some undesirable or paradoxical properties or did not capture the desired intuitive comprehensions, that have been successfully (consistent with respective intuitive comprehensions and with no paradoxical properties, that is) formalized by model-theoretic means include first-order circumscription, closed-world assumption, and autoepistemic logic.</p>
+<p>See also</p>
+<p>Logic programming</p>
+<p>Negation as failure</p>
+<p>Stable model semantics</p>
+<p>Rational consequence relation</p>
+<p>Notes</p>
+<p>References</p>
+<p>Bidoit, N.; Hull, R. (1989). "Minimalism, justification and non-monotonicity in deductive databases". Journal of Computer and System Sciences. 38 (2): 290–325. doi:10.1016/0022-0000(89)90004-4.</p>
+<p>Brewka, G. (1991). Nonmonotonic Reasoning: Logical Foundations of Commonsense. Cambridge University Press. ISBN 978-0-521-38394-3.</p>
+<p>Brewka, G.; Dix, J.; Konolige, K. (1997). Nonmonotonic Reasoning — An Overview. CSLI Lecture Notes. Vol. 73. Stanford: CSLI publications. ISBN 9781881526834.</p>
+<p>Cadoli, M.; Schaerf, M. (1993). "A survey of complexity results for non-monotonic logics". Journal of Logic Programming. 17 (2–4): 127–60. doi:10.1016/0743-1066(93)90029-G.</p>
+<p>Donini, F.M.; Lenzerini, M.; Nardi, D.; Pirri, F.; Schaerf, M. (1990). "Nonmonotonic reasoning". Artificial Intelligence Review. 4 (3): 163–210. doi:10.1007/BF00140676. S2CID 23575942.</p>
+<p>Gabbay, D.M. (1985). "Theoretical foundations for non-monotonic reasoning in expert systems". In Apt, K.R. (ed.). Logics and Models of Concurrent Systems. Vol. 13. NATO ASI Series, Series F: Computer and Systems Sciences: Springer. pp. 439–457. doi:10.1007/978-3-642-82453-1_15. ISBN 978-3-642-82453-1.</p>
+<p>Ginsberg, M.L., ed. (1987). Readings in Nonmonotonic Reasoning. Morgan Kaufmann. ISBN 978-0-934613-45-3.</p>
+<p>Horty, J.F. (2001). "Nonmonotonic Logic". In Goble, Lou (ed.). The Blackwell Guide to Philosophical Logic. Wiley. ISBN 978-0-631-20692-7.</p>
+<p>Łukaszewicz, W. (1990). Non-Monotonic Reasoning. Ellis-Horwood. ISBN 978-0-13-624446-2.</p>
+<p>Lundberg, C.G. (2000). "Made sense and remembered sense: Sensemaking through abduction" (PDF). Journal of Economic Psychology. 21 (6): 691–709. doi:10.1016/S0167-4870(00)00027-1. S2CID 11723465. Archived from the original (PDF) on 2017-09-07.</p>
+<p>Makinson, D. (2005). Bridges from Classical to Nonmonotonic Logic. College Publications. ISBN 9781904987000.</p>
+<p>Marek, W.; Truszczynski, M. (1993). Nonmonotonic Logics: Context-Dependent Reasoning. Springer. ISBN 978-3-662-02906-0.</p>
+<p>Abdallah, A. Nait (1995). The Logic of Partial Information. Springer. ISBN 978-3-642-78160-5.</p>
+<p>Suchenek, Marek A. (1993). "First-order syntactic characterizations of minimal entailment, domain-minimal entailment, and Herbrand entailment". Journal of Automated Reasoning. 10 (2). Kluwer Academic Publishers / Springer: 237–263. doi:10.1007/BF00881837.</p>
+<p>External links</p>
+<p>Antonelli, G. Aldo. "Non-monotonic logic". In Zalta, Edward N. (ed.). Stanford Encyclopedia of Philosophy.</p>
+<p>Non-monotonic logic at PhilPapers</p>
+<p>Non-monotonic logic at the Indiana Philosophy Ontology Project</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
