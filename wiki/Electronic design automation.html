@@ -1,0 +1,100 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Electronic design automation</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Electronic design automation</h2>
+                <p>Electronic design automation (EDA), also referred to as electronic computer-aided design (ECAD), is a category of software tools for designing electronic systems such as integrated circuits and printed circuit boards. The tools work together in a design flow that chip designers use to design and analyze entire semiconductor chips. Since a modern semiconductor chip can have billions of components, EDA tools are essential for their design; this article in particular describes EDA specifically with respect to integrated circuits (ICs).</p>
+<p>History</p>
+<p>Early days</p>
+<p>The earliest electronic design automation is attributed to IBM with the documentation of its 700 series computers in the 1950s.</p>
+<p>Prior to the development of EDA, integrated circuits were designed by hand and manually laid out. Some advanced shops used geometric software to generate tapes for a Gerber photoplotter, responsible for generating a monochromatic exposure image, but even those copied digital recordings of mechanically drawn components. The process was fundamentally graphic, with the translation from electronics to graphics done manually; the best-known company from this era was Calma, whose GDSII format is still in use today. By the mid-1970s, developers started to automate circuit design in addition to drafting and the first placement and routing tools were developed; as this occurred, the proceedings of the Design Automation Conference catalogued the large majority of the developments of the time.</p>
+<p>The next era began following the publication of "Introduction to VLSI Systems" by Carver Mead and Lynn Conway in 1980; considered the standard textbook for chip design. The result was an increase in the complexity of the chips that could be designed, with improved access to design verification tools that used logic simulation. The chips were easier to lay out and more likely to function correctly, since their designs could be simulated more thoroughly prior to construction. Although the languages and tools have evolved, this general approach of specifying the desired behavior in a textual programming language and letting the tools derive the detailed physical design remains the basis of digital IC design today.</p>
+<p>The earliest EDA tools were produced academically. One of the most famous was the "Berkeley VLSI Tools Tarball", a set of UNIX utilities used to design early VLSI systems. Widely used were the Espresso heuristic logic minimizer, responsible for circuit complexity reductions and Magic, a computer-aided design platform. Another crucial development was the formation of MOSIS, a consortium of universities and fabricators that developed an inexpensive way to train student chip designers by producing real integrated circuits. The basic concept was to use reliable, low-cost, relatively low-technology IC processes and pack a large number of projects per wafer, with several copies of chips from each project remaining preserved. Cooperating fabricators either donated the processed wafers or sold them at cost, as they saw the program as helpful to their own long-term growth.</p>
+<p>Commercial birth</p>
+<p>1981 marked the beginning of EDA as an industry. For many years, the larger electronic companies, such as Hewlett-Packard, Tektronix and Intel, had pursued EDA internally, with managers and developers beginning to spin out of these companies to concentrate on EDA as a business. Daisy Systems, Mentor Graphics and Valid Logic Systems were all founded around this time and collectively referred to as DMV. In 1981, the U.S. Department of Defense additionally began funding of VHDL as a hardware description language. Within a few years, there were many companies specializing in EDA, each with a slightly different emphasis.</p>
+<p>The first trade show for EDA was held at the Design Automation Conference in 1984 and in 1986, Verilog, another popular high-level design language, was first introduced as a hardware description language by Gateway Design Automation. Simulators quickly followed these introductions, permitting direct simulation of chip designs and executable specifications. Within several years, back-ends were developed to perform logic synthesis.</p>
+<p>Modern day</p>
+<p>Current digital flows are extremely modular, with front ends producing standardized design descriptions that compile into invocations of units similar to cells without regard to their individual technology. Cells implement logic or other electronic functions via the utilisation of a particular integrated circuit technology. Fabricators generally provide libraries of components for their production processes, with simulation models that fit standard simulation tools.</p>
+<p>Most analog circuits are still designed in a manual fashion, requiring specialist knowledge that is unique to analog design (such as matching concepts). Hence, analog EDA tools are far less modular, since many more functions are required, they interact more strongly and the components are, in general, less ideal.</p>
+<p>EDA for electronics has rapidly increased in importance with the continuous scaling of semiconductor technology. Some users are foundry operators, who operate the semiconductor fabrication facilities ("fabs") and additional individuals responsible for utilising the technology design-service companies who use EDA software to evaluate an incoming design for manufacturing readiness. EDA tools are also used for programming design functionality into FPGAs or field-programmable gate arrays, customisable integrated circuit designs.</p>
+<p>Software focuses</p>
+<p>Design</p>
+<p>Design flow primarily remains characterised via several primary components; these include:</p>
+<p>High-level synthesis (additionally known as behavioral synthesis or algorithmic synthesis) – The high-level design description (e.g. in C/C++) is converted into RTL or the register transfer level, responsible for representing circuitry via the utilisation of interactions between registers.</p>
+<p>Logic synthesis – The translation of RTL design description (e.g. written in Verilog or VHDL) into a discrete netlist or representation of logic gates.</p>
+<p>Schematic capture – For standard cell digital, analog, RF-like Capture CIS in Orcad by Cadence and ISIS in Proteus.</p>
+<p>Layout – usually schematic-driven layout, like Layout in Orcad by Cadence, ARES in Proteus</p>
+<p>Simulation</p>
+<p>Transistor simulation – low-level transistor-simulation of a schematic/layout's behavior, accurate at device-level.</p>
+<p>Logic simulation – digital-simulation of an RTL or gate-netlist's digital (Boolean 0/1) behavior, accurate at Boolean-level.</p>
+<p>Behavioral simulation – high-level simulation of a design's architectural operation, accurate at cycle-level or interface-level.</p>
+<p>Hardware emulation – Use of special purpose hardware to emulate the logic of a proposed design. Can sometimes be plugged into a system in place of a yet-to-be-built chip; this is called in-circuit emulation.</p>
+<p>Technology CAD simulate and analyze the underlying process technology. Electrical properties of devices are derived directly from device physics</p>
+<p>Analysis and verification</p>
+<p>Functional verification: ensures logic design matches specifications and executes tasks correctly. Includes dynamic functional verification via simulation, emulation, and prototypes.</p>
+<p>RTL Linting for adherence to coding rules such as syntax, semantics, and style.</p>
+<p>Clock domain crossing verification (CDC check): similar to linting, but these checks/tools specialize in detecting and reporting potential issues like data loss, meta-stability due to use of multiple clock domains in the design.</p>
+<p>Formal verification, also model checking: attempts to prove, by mathematical methods, that the system has certain desired properties, and that some undesired effects (such as deadlock) cannot occur.</p>
+<p>Equivalence checking: algorithmic comparison between a chip's RTL-description and synthesized gate-netlist, to ensure functional equivalence at the logical level.</p>
+<p>Static timing analysis: analysis of the timing of a circuit in an input-independent manner, hence finding a worst case over all possible inputs.</p>
+<p>Layout extraction: starting with a proposed layout, compute the (approximate) electrical characteristics of every wire and device.  Often used in conjunction with static timing analysis above to estimate the performance of the completed chip.</p>
+<p>Electromagnetic field solvers, or just field solvers, solve Maxwell's equations directly for cases of interest in IC and PCB design. They are known for being slower but more accurate than the layout extraction above.</p>
+<p>Physical verification, PV: checking if a design is physically manufacturable, and that the resulting chips will not have any function-preventing physical defects, and will meet original specifications.</p>
+<p>Manufacturing preparation</p>
+<p>Mask data preparation or MDP - The generation of actual lithography photomasks, utilised to physically manufacture the chip.</p>
+<p>Chip finishing which includes custom designations and structures to improve manufacturability of the layout. Examples of the latter are a seal ring and filler structures.</p>
+<p>Producing a reticle layout with test patterns and alignment marks.</p>
+<p>Layout-to-mask preparation that enhances layout data with graphics operations, such as resolution enhancement techniques (RET) – methods for increasing the quality of the final photomask. This also includes optical proximity correction  (OPC) or inverse lithography technology (ILT)  – the up-front compensation for diffraction and interference effects occurring later when chip is manufactured using this mask.</p>
+<p>Mask generation – The generation of flat mask image from hierarchical design.</p>
+<p>Automatic test pattern generation or ATPG – The generation of pattern data systematically to exercise as many logic-gates and other components as possible.</p>
+<p>Built-in self-test or BIST – The installation of self-contained test-controllers to automatically test a logic or memory structure in the design</p>
+<p>Functional safety</p>
+<p>Functional safety analysis, systematic computation of failure in time (FIT) rates and diagnostic coverage metrics for designs in order to meet the compliance requirements for the desired safety integrity levels.</p>
+<p>Functional safety synthesis, add reliability enhancements to structured elements (modules, RAMs, ROMs, register files, FIFOs) to improve fault detection / fault tolerance. This includes (not limited to) addition of error detection and / or correction codes (Hamming), redundant logic for fault detection and fault tolerance (duplicate / triplicate) and protocol checks (interface parity, address alignment, beat count)</p>
+<p>Functional safety verification, running of a fault campaign, including insertion of faults into the design and verification that the safety mechanism reacts in an appropriate manner for the faults that are deemed covered.</p>
+<p>Companies</p>
+<p>Current</p>
+<p>Market capitalization and company name as of March 2023:</p>
+<p>$57.87 billion – Synopsys</p>
+<p>$56.68 billion – Cadence Design Systems</p>
+<p>$24.98 billion – Ansys</p>
+<p>AU$4.88 billion – Altium</p>
+<p>¥77.25 billion – Zuken</p>
+<p>Defunct</p>
+<p>Market capitalization and company name as of December 2011:</p>
+<p>$2.33 billion – Mentor Graphics; Siemens acquired Mentor in 2017 and renamed as Siemens EDA in 2021</p>
+<p>$507 million – Magma Design Automation; Synopsys acquired Magma in February 2012</p>
+<p>NT$6.44 billion – SpringSoft; Synopsys acquired SpringSoft in August 2012</p>
+<p>Acquisitions</p>
+<p>Many EDA companies acquire small companies with software or other technology that can be adapted to their core business. Most of the market leaders are amalgamations of many smaller companies and this trend is helped by the tendency of software companies to design tools as accessories that fit naturally into a larger vendor's suite of programs on digital circuitry; many new tools incorporate analog design and mixed systems. This is happening due to a trend to place entire electronic systems on a single chip.</p>
+<p>Technical conferences</p>
+<p>Design Automation Conference</p>
+<p>International Conference on Computer-Aided Design</p>
+<p>Design Automation and Test in Europe</p>
+<p>Asia and South Pacific Design Automation Conference</p>
+<p>Symposia on VLSI Technology and Circuits</p>
+<p>See also</p>
+<p>Computer-aided design (CAD)</p>
+<p>Circuit design</p>
+<p>EDA database</p>
+<p>Foundations and Trends in Electronic Design Automation</p>
+<p>Signoff (electronic design automation)</p>
+<p>Comparison of EDA software</p>
+<p>Platform-based design</p>
+<p>Silicon compiler</p>
+<p>References</p>
+<p>Notes</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
