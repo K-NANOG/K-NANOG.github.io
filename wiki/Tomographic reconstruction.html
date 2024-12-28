@@ -1,0 +1,605 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tomographic reconstruction</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Tomographic reconstruction</h2>
+                <p>Tomographic reconstruction is a type of multidimensional inverse problem where the challenge is to yield an estimate of a specific system from a finite number of projections. The mathematical basis for tomographic imaging was laid down by Johann Radon. A notable example of applications is the reconstruction of computed tomography (CT) where cross-sectional images of patients are obtained in non-invasive manner. Recent developments have seen the Radon transform and its inverse used for tasks related to realistic object insertion required for testing and evaluating computed tomography use in airport security.</p>
+<p>This article applies in general to reconstruction methods for all kinds of tomography, but some of the terms and physical descriptions refer directly to the reconstruction of X-ray computed tomography.</p>
+<p>Introducing formula</p>
+<p>The projection of an object, resulting from the tomographic measurement process at a given angle </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p>, is made up of a set of line integrals (see Fig. 1). A set of many such projections under different angles organized in 2D is called a sinogram (see Fig. 3). In X-ray CT, the line integral represents the total attenuation of the beam of X-rays as it travels in a straight line through the object. As mentioned above, the resulting image is a 2D (or 3D) model of the attenuation coefficient. That is, we wish to find the image </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle \mu (x,y)}</p>
+<p>. The simplest and easiest way to visualise the method of scanning is the system of parallel projection, as used in the first scanners. For this discussion we consider the data to be collected as a series of parallel rays, at position </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>, across a projection at angle </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p>. This is repeated for various angles. Attenuation occurs exponentially in tissue:</p>
+<p>        I</p>
+<p>        =</p>
+<p>          I</p>
+<p>            0</p>
+<p>        exp</p>
+<p>        ⁡</p>
+<p>          (</p>
+<p>            −</p>
+<p>            ∫</p>
+<p>            μ</p>
+<p>            (</p>
+<p>            x</p>
+<p>            ,</p>
+<p>            y</p>
+<p>            )</p>
+<p>            d</p>
+<p>            s</p>
+<p>          )</p>
+<p>    {\displaystyle I=I_{0}\exp \left({-\int \mu (x,y)\,ds}\right)}</p>
+<p>where </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle \mu (x,y)}</p>
+<p> is the attenuation coefficient as a function of position. Therefore, generally the total attenuation </p>
+<p>        p</p>
+<p>    {\displaystyle p}</p>
+<p> of a ray at position </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p>, on the projection at angle </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p>, is given by the line integral:</p>
+<p>          p</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        r</p>
+<p>        )</p>
+<p>        =</p>
+<p>        ln</p>
+<p>        ⁡</p>
+<p>          (</p>
+<p>              I</p>
+<p>                I</p>
+<p>                  0</p>
+<p>          )</p>
+<p>        =</p>
+<p>        −</p>
+<p>        ∫</p>
+<p>        μ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        d</p>
+<p>        s</p>
+<p>    {\displaystyle p_{\theta }(r)=\ln \left({\frac {I}{I_{0}}}\right)=-\int \mu (x,y)\,ds}</p>
+<p>Using the coordinate system of Figure 1, the value of </p>
+<p>        r</p>
+<p>    {\displaystyle r}</p>
+<p> onto which the point </p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle (x,y)}</p>
+<p> will be projected at angle </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p> is given by:</p>
+<p>        x</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        +</p>
+<p>        y</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        =</p>
+<p>        r</p>
+<p>    {\displaystyle x\cos \theta +y\sin \theta =r\ }</p>
+<p>So the equation above can be rewritten as</p>
+<p>          p</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        r</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            −</p>
+<p>            ∞</p>
+<p>            ∞</p>
+<p>          ∫</p>
+<p>            −</p>
+<p>            ∞</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        δ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        +</p>
+<p>        y</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        −</p>
+<p>        r</p>
+<p>        )</p>
+<p>        d</p>
+<p>        x</p>
+<p>        d</p>
+<p>        y</p>
+<p>    {\displaystyle p_{\theta }(r)=\int _{-\infty }^{\infty }\int _{-\infty }^{\infty }f(x,y)\delta (x\cos \theta +y\sin \theta -r)\,dx\,dy}</p>
+<p>where </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)}</p>
+<p> represents </p>
+<p>        μ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle \mu (x,y)}</p>
+<p> and </p>
+<p>        δ</p>
+<p>        (</p>
+<p>        )</p>
+<p>    {\displaystyle \delta ()}</p>
+<p> is the Dirac delta function. This function is known as the Radon transform (or sinogram) of the 2D object.</p>
+<p>The Fourier Transform of the projection can be written as</p>
+<p>          P</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        ω</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∫</p>
+<p>            −</p>
+<p>            ∞</p>
+<p>            ∞</p>
+<p>          ∫</p>
+<p>            −</p>
+<p>            ∞</p>
+<p>            ∞</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        exp</p>
+<p>        ⁡</p>
+<p>        [</p>
+<p>        −</p>
+<p>        j</p>
+<p>        ω</p>
+<p>        (</p>
+<p>        x</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        +</p>
+<p>        y</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        )</p>
+<p>        ]</p>
+<p>        d</p>
+<p>        x</p>
+<p>        d</p>
+<p>        y</p>
+<p>        =</p>
+<p>        F</p>
+<p>        (</p>
+<p>          Ω</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          Ω</p>
+<p>            2</p>
+<p>        )</p>
+<p>    {\displaystyle P_{\theta }(\omega )=\int _{-\infty }^{\infty }\int _{-\infty }^{\infty }f(x,y)\exp[-j\omega (x\cos \theta +y\sin \theta )]\,dx\,dy=F(\Omega _{1},\Omega _{2})}</p>
+<p> where </p>
+<p>          Ω</p>
+<p>            1</p>
+<p>        =</p>
+<p>        ω</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        ,</p>
+<p>          Ω</p>
+<p>            2</p>
+<p>        =</p>
+<p>        ω</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>    {\displaystyle \Omega _{1}=\omega \cos \theta ,\Omega _{2}=\omega \sin \theta }</p>
+<p>          P</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        ω</p>
+<p>        )</p>
+<p>    {\displaystyle P_{\theta }(\omega )}</p>
+<p> represents a slice of the 2D Fourier transform of </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)}</p>
+<p> at angle </p>
+<p>        θ</p>
+<p>    {\displaystyle \theta }</p>
+<p>. Using the inverse Fourier transform, the inverse Radon transform formula can be easily derived.</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              2</p>
+<p>              π</p>
+<p>          ∫</p>
+<p>            0</p>
+<p>            π</p>
+<p>          g</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        +</p>
+<p>        y</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        )</p>
+<p>        d</p>
+<p>        θ</p>
+<p>    {\displaystyle f(x,y)={\frac {1}{2\pi }}\int \limits _{0}^{\pi }g_{\theta }(x\cos \theta +y\sin \theta )d\theta }</p>
+<p>where </p>
+<p>          g</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        +</p>
+<p>        y</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>        θ</p>
+<p>        )</p>
+<p>    {\displaystyle g_{\theta }(x\cos \theta +y\sin \theta )}</p>
+<p> is the derivative of the Hilbert transform of </p>
+<p>          p</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        r</p>
+<p>        )</p>
+<p>    {\displaystyle p_{\theta }(r)}</p>
+<p>In theory, the inverse Radon transformation would yield the original image. The projection-slice theorem tells us that if we had an infinite number of one-dimensional projections of an object taken at an infinite number of angles, we could perfectly reconstruct the original object, </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)}</p>
+<p>. However, there will only be a finite number of projections available in practice.</p>
+<p>Assuming </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)}</p>
+<p> has effective diameter </p>
+<p>        d</p>
+<p>    {\displaystyle d}</p>
+<p> and desired resolution is </p>
+<p>          R</p>
+<p>            s</p>
+<p>    {\displaystyle R_{s}}</p>
+<p>, a rule of thumb for the number of projections needed for reconstruction is </p>
+<p>        N</p>
+<p>        ></p>
+<p>        π</p>
+<p>        d</p>
+<p>          /</p>
+<p>          R</p>
+<p>            s</p>
+<p>    {\displaystyle N>\pi d/R_{s}}</p>
+<p>Reconstruction algorithms</p>
+<p>Practical reconstruction algorithms have been developed to implement the process of reconstruction of a three-dimensional object from its projections. These algorithms are designed largely based on the mathematics of the X-ray transform, statistical knowledge of the data acquisition process and geometry of the data imaging system.</p>
+<p>Fourier-domain reconstruction algorithm</p>
+<p>Reconstruction can be made using interpolation. Assume </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> projections of </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)}</p>
+<p> are generated at equally spaced angles, each sampled at the same rate. The discrete Fourier transform (DFT) on each projection yields sampling in the frequency domain. Combining all the frequency-sampled projections generates a polar raster in the frequency domain. The polar raster is sparse, so interpolation is used to fill the unknown DFT points, and reconstruction can be done through the inverse discrete Fourier transform. Reconstruction performance may improve by designing methods to change the sparsity of the polar raster, facilitating the effectiveness of interpolation.</p>
+<p>For instance, a concentric square raster in the frequency domain can be obtained by changing the angle between each projection as follow:</p>
+<p>          θ</p>
+<p>          ′</p>
+<p>        =</p>
+<p>              R</p>
+<p>                0</p>
+<p>              max</p>
+<p>              {</p>
+<p>                |</p>
+<p>              cos</p>
+<p>              ⁡</p>
+<p>              θ</p>
+<p>                |</p>
+<p>              ,</p>
+<p>                |</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              θ</p>
+<p>                |</p>
+<p>              }</p>
+<p>    {\displaystyle \theta '={\frac {R_{0}}{\max\{|\cos \theta |,|\sin \theta |\}}}}</p>
+<p>where </p>
+<p>          R</p>
+<p>            0</p>
+<p>    {\displaystyle R_{0}}</p>
+<p> is highest frequency to be evaluated.</p>
+<p>The concentric square raster improves computational efficiency by allowing all the interpolation positions to be on rectangular DFT lattice. Furthermore, it reduces the interpolation error. Yet, the Fourier-Transform algorithm has a disadvantage of producing inherently noisy output.</p>
+<p>Back projection algorithm</p>
+<p>In practice of tomographic image reconstruction, often a stabilized and discretized version of the inverse Radon transform is used, known as the filtered back projection algorithm.</p>
+<p>With a sampled discrete system, the inverse Radon transform is</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        =</p>
+<p>            1</p>
+<p>              2</p>
+<p>              π</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            0</p>
+<p>            N</p>
+<p>            −</p>
+<p>            1</p>
+<p>        Δ</p>
+<p>          θ</p>
+<p>            i</p>
+<p>          g</p>
+<p>              θ</p>
+<p>                i</p>
+<p>        (</p>
+<p>        x</p>
+<p>        cos</p>
+<p>        ⁡</p>
+<p>          θ</p>
+<p>            i</p>
+<p>        +</p>
+<p>        y</p>
+<p>        sin</p>
+<p>        ⁡</p>
+<p>          θ</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)={\frac {1}{2\pi }}\sum _{i=0}^{N-1}\Delta \theta _{i}g_{\theta _{i}}(x\cos \theta _{i}+y\sin \theta _{i})}</p>
+<p>          g</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        =</p>
+<p>          p</p>
+<p>            θ</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>        ⋅</p>
+<p>        k</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle g_{\theta }(t)=p_{\theta }(t)\cdot k(t)}</p>
+<p>where </p>
+<p>        Δ</p>
+<p>        θ</p>
+<p>    {\displaystyle \Delta \theta }</p>
+<p> is the angular spacing between the projections and </p>
+<p>        k</p>
+<p>        (</p>
+<p>        t</p>
+<p>        )</p>
+<p>    {\displaystyle k(t)}</p>
+<p> is a Radon kernel with frequency response </p>
+<p>          |</p>
+<p>        ω</p>
+<p>          |</p>
+<p>    {\displaystyle |\omega |}</p>
+<p>.</p>
+<p>The name back-projection comes from the fact that a one-dimensional projection needs to be filtered by a one-dimensional Radon kernel (back-projected) in order to obtain a two-dimensional signal. The filter used does not contain DC gain, so adding DC bias may be desirable. Reconstruction using back-projection allows better resolution than interpolation method described above. However, it induces greater noise because the filter is prone to amplify high-frequency content.</p>
+<p>Iterative reconstruction algorithm</p>
+<p>The iterative algorithm is computationally intensive but it allows the inclusion of a priori information about the system </p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>    {\displaystyle f(x,y)}</p>
+<p>.</p>
+<p>Let </p>
+<p>        N</p>
+<p>    {\displaystyle N}</p>
+<p> be the number of projections and </p>
+<p>          D</p>
+<p>            i</p>
+<p>    {\displaystyle D_{i}}</p>
+<p> be the distortion operator for the </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p>th projection taken at an angle </p>
+<p>          θ</p>
+<p>            i</p>
+<p>    {\displaystyle \theta _{i}}</p>
+<p>. </p>
+<p>        {</p>
+<p>          λ</p>
+<p>            i</p>
+<p>        }</p>
+<p>    {\displaystyle \{\lambda _{i}\}}</p>
+<p> are a set of parameters to optimize the conversion of iterations.</p>
+<p>          f</p>
+<p>            0</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        =</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          λ</p>
+<p>            i</p>
+<p>          p</p>
+<p>              θ</p>
+<p>                i</p>
+<p>        (</p>
+<p>        r</p>
+<p>        )</p>
+<p>    {\displaystyle f_{0}(x,y)=\sum _{i=1}^{N}\lambda _{i}p_{\theta _{i}}(r)}</p>
+<p>          f</p>
+<p>            k</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        =</p>
+<p>          f</p>
+<p>            k</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        +</p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            N</p>
+<p>          λ</p>
+<p>            i</p>
+<p>        [</p>
+<p>          p</p>
+<p>              θ</p>
+<p>                i</p>
+<p>        (</p>
+<p>        r</p>
+<p>        )</p>
+<p>        −</p>
+<p>          D</p>
+<p>            i</p>
+<p>          f</p>
+<p>            k</p>
+<p>            −</p>
+<p>            1</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        y</p>
+<p>        )</p>
+<p>        ]</p>
+<p>    {\displaystyle f_{k}(x,y)=f_{k-1}(x,y)+\sum _{i=1}^{N}\lambda _{i}[p_{\theta _{i}}(r)-D_{i}f_{k-1}(x,y)]}</p>
+<p>An alternative family of recursive tomographic reconstruction algorithms are the algebraic reconstruction techniques and iterative sparse asymptotic minimum variance.</p>
+<p>Fan-beam reconstruction</p>
+<p>Use of a noncollimated fan beam is common since a collimated beam of radiation is difficult to obtain. Fan beams will generate series of line integrals, not parallel to each other, as projections. The fan-beam system requires a 360-degree range of angles, which imposes mechanical constraints, but it allows faster signal acquisition time, which may be advantageous in certain settings such as in the field of medicine. Back projection follows a similar two-step procedure that yields reconstruction by computing weighted sum back-projections obtained from filtered projections.</p>
+<p>Deep learning reconstruction</p>
+<p>Deep learning methods are widely applied to image reconstruction nowadays and have achieved impressive results in various image reconstruction tasks, including low-dose denoising, sparse-view reconstruction, limited angle tomography and metal artifact reduction. An excellent overview can be found in the special issue  of IEEE Transaction on Medical Imaging. One group of deep learning reconstruction algorithms apply post-processing neural networks to achieve image-to-image reconstruction, where input images are reconstructed by conventional reconstruction methods. Artifact reduction using the U-Net in limited angle tomography is such an example application. However, incorrect structures may occur in an image reconstructed by such a completely data-driven method, as displayed in the figure. Therefore, integration of known operators into the architecture design of neural networks appears beneficial, as described in the concept of precision learning. For example, direct image reconstruction from projection data can be learnt from the framework of filtered back-projection. Another example is to build neural networks by unrolling iterative reconstruction algorithms. Except for precision learning, using conventional reconstruction methods with deep learning reconstruction prior  is also an alternative approach to improve the image quality of deep learning reconstruction.</p>
+<p>Tomographic reconstruction software</p>
+<p>Tomographic systems have significant variability in their applications and geometries (locations of sources and detectors). This variability creates the need for very specific, tailored implementations of the processing and reconstruction algorithms. Thus, most CT manufacturers provide their own custom proprietary software. This is done not only to protect intellectual property, but may also be enforced by a government regulatory agency. Regardless, there are a number of general purpose tomographic reconstruction software packages that have been developed over the last couple decades, both commercial and open-source.</p>
+<p>Most of the commercial software packages that are available for purchase focus on processing data for benchtop cone-beam CT systems. A few of these software packages include Volume Graphics, InstaRecon, iTomography, Livermore Tomography Tools (LTT), and Cone Beam Software Tools (CST).</p>
+<p>Some noteworthy examples of open-source reconstruction software include: Reconstruction Toolkit (RTK),  CONRAD, TomoPy, the ASTRA toolbox, PYRO-NN, ODL, TIGRE, and LEAP.</p>
+<p>Gallery</p>
+<p>Shown in the gallery is the complete process for a simple object tomography and the following tomographic reconstruction based on ART.</p>
+<p>See also</p>
+<p>Operation of computed tomography#Tomographic reconstruction</p>
+<p>Cone beam reconstruction</p>
+<p>Industrial computed tomography</p>
+<p>Industrial Tomography Systems plc</p>
+<p>References</p>
+<p>Further reading</p>
+<p>Avinash Kak & Malcolm Slaney (1988), Principles of Computerized Tomographic Imaging, IEEE Press, ISBN 0-87942-198-3.</p>
+<p>Bruyant, P.P. "Analytic and iterative reconstruction algorithms in SPECT" Journal of Nuclear Medicine 43(10):1343-1358, 2002</p>
+<p>External links</p>
+<p>Slaney, A. C. Kak and Malcolm. "Principles of Computerized Tomographic Imaging". Slaney.org. Retrieved 7 September 2018.</p>
+<p>Insight ToolKit; open-source tomographic support software</p>
+<p>"TomoPy — TomoPy 1.1.3 documentation". Tomopy.readthedocs.org. Retrieved 7 September 2018.</p>
+<p>ASTRA (All Scales Tomographic Reconstruction Antwerp) toolbox; very flexible, fast open-source software for computed tomographic reconstruction</p>
+<p>NiftyRec; comprehensive open-source tomographic reconstruction software; Matlab and Python scriptable</p>
+<p>Open-source tomographic reconstruction and visualization tool</p>
+<p>"ITS plc - Electrical Process Tomography For Industrial Visualization". Itoms.com. Retrieved 7 September 2018.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
