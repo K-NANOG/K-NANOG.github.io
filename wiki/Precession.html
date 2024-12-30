@@ -1,0 +1,229 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Precession</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Precession</h2>
+                <p>Precession is a change in the orientation of the rotational axis of a rotating body. In an appropriate reference frame it can be defined as a change in the first Euler angle, whereas the third Euler angle defines the rotation itself. In other words, if the axis of rotation of a body is itself rotating about a second axis, that body is said to be precessing about the second axis. A motion in which the second Euler angle changes is called nutation. In physics, there are two types of precession: torque-free and torque-induced.</p>
+<p>In astronomy, precession refers to any of several slow changes in an astronomical body's rotational or orbital parameters. An important example is the steady change in the orientation of the axis of rotation of the Earth, known as the precession of the equinoxes.</p>
+<p>Torque-free or torque neglected</p>
+<p>Torque-free precession implies that no external moment (torque) is applied to the body. In torque-free precession, the angular momentum is a constant, but the angular velocity vector changes orientation with time. What makes this possible is a time-varying moment of inertia, or more precisely, a time-varying inertia matrix. The inertia matrix is composed of the moments of inertia of a body calculated with respect to separate coordinate axes (e.g. x, y, z). If an object is asymmetric about its principal axis of rotation, the moment of inertia with respect to each coordinate direction will change with time, while preserving angular momentum. The result is that the component of the angular velocities of the body about each axis will vary inversely with each axis' moment of inertia.</p>
+<p>The torque-free precession rate of an object with an axis of symmetry, such as a disk, spinning about an axis not aligned with that axis of symmetry can be calculated as follows:</p>
+<p>            ω</p>
+<p>              p</p>
+<p>        =</p>
+<p>                  I</p>
+<p>                    s</p>
+<p>                  ω</p>
+<p>                    s</p>
+<p>                  I</p>
+<p>                    p</p>
+<p>              cos</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>                α</p>
+<p>              )</p>
+<p>    {\displaystyle {\boldsymbol {\omega }}_{\mathrm {p} }={\frac {{\boldsymbol {I}}_{\mathrm {s} }{\boldsymbol {\omega }}_{\mathrm {s} }}{{\boldsymbol {I}}_{\mathrm {p} }\cos({\boldsymbol {\alpha }})}}}</p>
+<p>where ωp is the precession rate, ωs is the spin rate about the axis of symmetry, Is is the moment of inertia about the axis of symmetry, Ip is moment of inertia about either of the other two equal perpendicular principal axes, and α is the angle between the moment of inertia direction and the symmetry axis.</p>
+<p>When an object is not perfectly rigid, inelastic dissipation will tend to damp torque-free precession, and the rotation axis will align itself with one of the inertia axes of the body.</p>
+<p>For a generic solid object without any axis of symmetry, the evolution of the object's orientation, represented (for example) by a rotation matrix R that transforms internal to external coordinates, may be numerically simulated. Given the object's fixed internal moment of inertia tensor I0 and fixed external angular momentum L, the instantaneous angular velocity is</p>
+<p>          ω</p>
+<p>          (</p>
+<p>            R</p>
+<p>          )</p>
+<p>        =</p>
+<p>          R</p>
+<p>            I</p>
+<p>            0</p>
+<p>            −</p>
+<p>            1</p>
+<p>            R</p>
+<p>            T</p>
+<p>          L</p>
+<p>    {\displaystyle {\boldsymbol {\omega }}\left({\boldsymbol {R}}\right)={\boldsymbol {R}}{\boldsymbol {I}}_{0}^{-1}{\boldsymbol {R}}^{T}{\boldsymbol {L}}}</p>
+<p>Precession occurs by repeatedly recalculating ω and applying a small rotation vector ω dt for the short time dt; e.g.:</p>
+<p>            R</p>
+<p>            new</p>
+<p>        =</p>
+<p>        exp</p>
+<p>        ⁡</p>
+<p>          (</p>
+<p>                [</p>
+<p>                    ω</p>
+<p>                    (</p>
+<p>                        R</p>
+<p>                        old</p>
+<p>                    )</p>
+<p>                ]</p>
+<p>                ×</p>
+<p>            d</p>
+<p>            t</p>
+<p>          )</p>
+<p>            R</p>
+<p>            old</p>
+<p>    {\displaystyle {\boldsymbol {R}}_{\text{new}}=\exp \left(\left[{\boldsymbol {\omega }}\left({\boldsymbol {R}}_{\text{old}}\right)\right]_{\times }dt\right){\boldsymbol {R}}_{\text{old}}}</p>
+<p>for the skew-symmetric matrix [ω]×. The errors induced by finite time steps tend to increase the rotational kinetic energy:</p>
+<p>        E</p>
+<p>          (</p>
+<p>            R</p>
+<p>          )</p>
+<p>        =</p>
+<p>          ω</p>
+<p>          (</p>
+<p>            R</p>
+<p>          )</p>
+<p>        ⋅</p>
+<p>            L</p>
+<p>            2</p>
+<p>    {\displaystyle E\left({\boldsymbol {R}}\right)={\boldsymbol {\omega }}\left({\boldsymbol {R}}\right)\cdot {\frac {\boldsymbol {L}}{2}}}</p>
+<p>this unphysical tendency can be counteracted by repeatedly applying a small rotation vector v perpendicular to both ω and L, noting that</p>
+<p>        E</p>
+<p>          (</p>
+<p>            exp</p>
+<p>            ⁡</p>
+<p>              (</p>
+<p>                  [</p>
+<p>                    v</p>
+<p>                  ]</p>
+<p>                  ×</p>
+<p>              )</p>
+<p>              R</p>
+<p>          )</p>
+<p>        ≈</p>
+<p>        E</p>
+<p>          (</p>
+<p>            R</p>
+<p>          )</p>
+<p>        +</p>
+<p>          (</p>
+<p>              ω</p>
+<p>              (</p>
+<p>                R</p>
+<p>              )</p>
+<p>            ×</p>
+<p>              L</p>
+<p>          )</p>
+<p>        ⋅</p>
+<p>          v</p>
+<p>    {\displaystyle E\left(\exp \left(\left[{\boldsymbol {v}}\right]_{\times }\right){\boldsymbol {R}}\right)\approx E\left({\boldsymbol {R}}\right)+\left({\boldsymbol {\omega }}\left({\boldsymbol {R}}\right)\times {\boldsymbol {L}}\right)\cdot {\boldsymbol {v}}}</p>
+<p>Torque-induced</p>
+<p>Torque-induced precession (gyroscopic precession) is the phenomenon in which the axis of a spinning object (e.g., a gyroscope) describes a cone in space when an external torque is applied to it. The phenomenon is commonly seen in a spinning toy top, but all rotating objects can undergo precession. If the speed of the rotation and the magnitude of the external torque are constant, the spin axis will move at right angles to the direction that would intuitively result from the external torque. In the case of a toy top, its weight is acting downwards from its center of mass and the normal force (reaction) of the ground is pushing up on it at the point of contact with the support. These two opposite forces produce a torque which causes the top to precess.</p>
+<p>The device depicted on the right is gimbal mounted. From inside to outside there are three axes of rotation: the hub of the wheel, the gimbal axis, and the vertical pivot.</p>
+<p>To distinguish between the two horizontal axes, rotation around the wheel hub will be called spinning, and rotation around the gimbal axis will be called pitching.  Rotation around the vertical pivot axis is called rotation.</p>
+<p>First, imagine that the entire device is rotating around the (vertical) pivot axis. Then, spinning of the wheel (around the wheelhub) is added. Imagine the gimbal axis to be locked, so that the wheel cannot pitch. The gimbal axis has sensors, that measure whether there is a torque around the gimbal axis.</p>
+<p>In the picture, a section of the wheel has been named dm1. At the depicted moment in time, section dm1 is at the perimeter of the rotating motion around the (vertical) pivot axis. Section dm1, therefore, has a lot of angular rotating velocity with respect to the rotation around the pivot axis, and as dm1 is forced closer to the pivot axis of the rotation (by the wheel spinning further), because of the Coriolis effect, with respect to the vertical pivot axis, dm1 tends to move in the direction of the top-left arrow in the diagram (shown at 45°) in the direction of rotation around the pivot axis.  Section dm2 of the wheel is moving away from the pivot axis, and so a force (again, a Coriolis force) acts in the same direction as in the case of dm1. Note that both arrows point in the same direction.</p>
+<p>The same reasoning applies for the bottom half of the wheel, but there the arrows point in the opposite direction to that of the top arrows. Combined over the entire wheel, there is a torque around the gimbal axis when some spinning is added to rotation around a vertical axis.</p>
+<p>It is important to note that the torque around the gimbal axis arises without any delay; the response is instantaneous.</p>
+<p>In the discussion above, the setup was kept unchanging by preventing pitching around the gimbal axis. In the case of a spinning toy top, when the spinning top starts tilting, gravity exerts a torque. However, instead of rolling over, the spinning top just pitches a little. This pitching motion reorients the spinning top with respect to the torque that is being exerted. The result is that the torque exerted by gravity – via the pitching motion – elicits gyroscopic precession (which in turn yields a counter torque against the gravity torque) rather than causing the spinning top to fall to its side.</p>
+<p>Precession or gyroscopic considerations have an effect on bicycle performance at high speed. Precession is also the mechanism behind gyrocompasses.</p>
+<p>Classical (Newtonian)</p>
+<p>Precession is the change of angular velocity and angular momentum produced by a torque. The general equation that relates the torque to the rate of change of angular momentum is:</p>
+<p>          τ</p>
+<p>        =</p>
+<p>                d</p>
+<p>                L</p>
+<p>                d</p>
+<p>              t</p>
+<p>    {\displaystyle {\boldsymbol {\tau }}={\frac {\mathrm {d} \mathbf {L} }{\mathrm {d} t}}}</p>
+<p>where </p>
+<p>          τ</p>
+<p>    {\displaystyle {\boldsymbol {\tau }}}</p>
+<p> and </p>
+<p>          L</p>
+<p>    {\displaystyle \mathbf {L} }</p>
+<p> are the torque and angular momentum vectors respectively.</p>
+<p>Due to the way the torque vectors are defined, it is a vector that is perpendicular to the plane of the forces that create it. Thus it may be seen that the angular momentum vector will change perpendicular to those forces. Depending on how the forces are created, they will often rotate with the angular momentum vector, and then circular precession is created.</p>
+<p>Under these circumstances the angular velocity of precession is given by: </p>
+<p>            ω</p>
+<p>              p</p>
+<p>        =</p>
+<p>              m</p>
+<p>              g</p>
+<p>              r</p>
+<p>                I</p>
+<p>                    s</p>
+<p>                  ω</p>
+<p>                    s</p>
+<p>        =</p>
+<p>            τ</p>
+<p>                I</p>
+<p>                    s</p>
+<p>                  ω</p>
+<p>                    s</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              θ</p>
+<p>              )</p>
+<p>    {\displaystyle {\boldsymbol {\omega }}_{\mathrm {p} }={\frac {\ mgr}{I_{\mathrm {s} }{\boldsymbol {\omega }}_{\mathrm {s} }}}={\frac {\tau }{I_{\mathrm {s} }{\boldsymbol {\omega }}_{\mathrm {s} }\sin(\theta )}}}</p>
+<p>where Is is the moment of inertia, ωs is the angular velocity of spin about the spin axis, m is the mass, g is the acceleration due to gravity, θ is the angle between the spin axis and the axis of precession and r is the distance between the center of mass and the pivot.  The torque vector originates at the center of mass. Using ω = ⁠2π/T⁠, we find that the period of precession is given by:</p>
+<p>          T</p>
+<p>              p</p>
+<p>        =</p>
+<p>              4</p>
+<p>                π</p>
+<p>                  2</p>
+<p>                I</p>
+<p>                    s</p>
+<p>              m</p>
+<p>              g</p>
+<p>              r</p>
+<p>                T</p>
+<p>                    s</p>
+<p>        =</p>
+<p>              4</p>
+<p>                π</p>
+<p>                  2</p>
+<p>                I</p>
+<p>                    s</p>
+<p>              sin</p>
+<p>              ⁡</p>
+<p>              (</p>
+<p>              θ</p>
+<p>              )</p>
+<p>              τ</p>
+<p>                T</p>
+<p>                    s</p>
+<p>    {\displaystyle T_{\mathrm {p} }={\frac {4\pi ^{2}I_{\mathrm {s} }}{\ mgrT_{\mathrm {s} }}}={\frac {4\pi ^{2}I_{\mathrm {s} }\sin(\theta )}{\ \tau T_{\mathrm {s} }}}}</p>
+<p>Where Is is the moment of inertia, Ts is the period of spin about the spin axis, and τ is the torque. In general, the problem is more complicated than this, however.</p>
+<p>Relativistic (Einsteinian)</p>
+<p>The special and general theories of relativity give three types of corrections to the Newtonian precession, of a gyroscope near a large mass such as Earth, described above. They are:</p>
+<p>Thomas precession, a special-relativistic correction accounting for an object (such as a gyroscope) being accelerated along a curved path.</p>
+<p>de Sitter precession, a general-relativistic correction accounting for the Schwarzschild metric of curved space near a large non-rotating mass.</p>
+<p>Lense–Thirring precession, a general-relativistic correction accounting for the frame dragging by the Kerr metric of curved space near a large rotating mass.</p>
+<p>The Schwarzschild geodesics (sometimes Schwarzschild precession) is used in the prediction of the anomalous perihelion precession of the planets, most notably for the accurate prediction of the apsidal precession of Mercury</p>
+<p>Astronomy</p>
+<p>In astronomy, precession refers to any of several gravity-induced, slow and continuous changes in an astronomical body's rotational axis or orbital path. Precession of the equinoxes, perihelion precession, changes in the tilt of Earth's axis to its orbit, and the eccentricity of its orbit over tens of thousands of years are all important parts of the astronomical theory of ice ages. (See Milankovitch cycles.)</p>
+<p>Axial precession (precession of the equinoxes)</p>
+<p>Axial precession is the movement of the rotational axis of an astronomical body, whereby the axis slowly traces out a cone. In the case of Earth, this type of precession is also known as the precession of the equinoxes, lunisolar precession, or precession of the equator. Earth goes through one such complete precessional cycle in a period of approximately 26,000 years or 1° every 72 years, during which the positions of stars will slowly change in both equatorial coordinates and ecliptic longitude. Over this cycle, Earth's north axial pole moves from where it is now, within 1° of Polaris, in a circle around the ecliptic pole, with an angular radius of about 23.5°.</p>
+<p>The ancient Greek astronomer Hipparchus (c. 190–120 BC) is generally accepted to be the earliest known astronomer to recognize and assess the precession of the equinoxes at about 1° per century (which is not far from the actual value for antiquity, 1.38°), although there is some minor dispute about whether he was. In ancient China, the Jin-dynasty scholar-official Yu Xi (fl. 307–345 AD) made a similar discovery centuries later, noting that the position of the Sun during the winter solstice had drifted roughly one degree over the course of fifty years relative to the position of the stars. The precession of Earth's axis was later explained by Newtonian physics. Being an oblate spheroid, Earth has a non-spherical shape, bulging outward at the equator. The gravitational tidal forces of the Moon and Sun apply torque to the equator, attempting to pull the equatorial bulge into the plane of the ecliptic, but instead causing it to precess. The torque exerted by the planets, particularly Jupiter, also plays a role.</p>
+<p>Apsidal precession</p>
+<p>The orbits of planets around the Sun do not really follow an identical ellipse each time, but actually trace out a flower-petal shape because the major axis of each planet's elliptical orbit also precesses within its orbital plane, partly in response to perturbations in the form of the changing gravitational forces exerted by other planets. This is called perihelion precession or apsidal precession.</p>
+<p>In the adjunct image, Earth's apsidal precession is illustrated. As the Earth travels around the Sun, its elliptical orbit rotates gradually over time. The eccentricity of its ellipse and the precession rate of its orbit are exaggerated for visualization. Most orbits in the Solar System have a much smaller eccentricity and precess at a much slower rate, making them nearly circular and nearly stationary.</p>
+<p>Discrepancies between the observed perihelion precession rate of the planet Mercury and that predicted by classical mechanics were prominent among the forms of experimental evidence leading to the acceptance of Einstein's Theory of Relativity (in particular, his General Theory of Relativity), which accurately predicted the anomalies. Deviating from Newton's law, Einstein's theory of gravitation predicts an extra term of ⁠A/r4⁠, which accurately gives the observed excess turning rate of 43 arcseconds every 100 years.</p>
+<p>Nodal precession</p>
+<p>Orbital nodes also precess over time.</p>
+<p>See also</p>
+<p>Larmor precession</p>
+<p>Nutation</p>
+<p>Polar motion</p>
+<p>Precession (mechanical)</p>
+<p>Precession as a form of parallel transport</p>
+<p>References</p>
+<p>External links</p>
+<p> Media related to Precession at Wikimedia Commons</p>
+<p>Explanation and derivation of formula for precession of a top</p>
+<p>Precession and the Milankovich theory From Stargazers to Starships</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
