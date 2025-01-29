@@ -1,0 +1,995 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Robust statistics</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Robust statistics</h2>
+                <p>Robust statistics are statistics that maintain their properties even if the underlying distributional assumptions are incorrect. Robust statistical methods have been developed for many common problems, such as estimating location, scale, and regression parameters. One motivation is to produce statistical methods that are not unduly affected by outliers. Another motivation is to provide methods with good performance when there are small departures from a parametric distribution. For example, robust methods work well for mixtures of two normal distributions with different standard deviations; under this model, non-robust methods like a t-test work poorly.</p>
+<p>Introduction</p>
+<p>Robust statistics seek to provide methods that emulate popular statistical methods, but are not unduly affected by outliers or other small departures from model assumptions. In statistics, classical estimation methods rely heavily on assumptions that are often not met in practice. In particular, it is often assumed that the data errors are normally distributed, at least approximately, or that the central limit theorem can be relied on to produce normally distributed estimates. Unfortunately, when there are outliers in the data, classical estimators often have very poor performance, when judged using the breakdown point and the influence function described below.</p>
+<p>The practical effect of problems seen in the influence function can be studied empirically by examining the sampling distribution of proposed estimators under a mixture model, where one mixes in a small amount (1–5% is often sufficient) of contamination. For instance, one may use a mixture of 95% a normal distribution, and 5% a normal distribution with the same mean but significantly higher standard deviation (representing outliers).</p>
+<p>Robust parametric statistics can proceed in two ways:</p>
+<p>by designing estimators so that a pre-selected behaviour of the influence function is achieved</p>
+<p>by replacing estimators that are optimal under the assumption of a normal distribution with estimators that are optimal for, or at least derived for, other distributions; for example, using the t-distribution with low degrees of freedom (high kurtosis) or with a mixture of two or more distributions.</p>
+<p>Robust estimates have been studied for the following problems:</p>
+<p>estimating location parameters</p>
+<p>estimating scale parameters</p>
+<p>estimating regression coefficients</p>
+<p>estimation of model-states in models expressed in state-space form, for which the standard method is equivalent to a Kalman filter.</p>
+<p>Definition</p>
+<p>There are various definitions of a "robust statistic". Strictly speaking, a robust statistic is resistant to errors in the results, produced by deviations from assumptions (e.g., of normality). This means that if the assumptions are only approximately met, the robust estimator will still have a reasonable efficiency, and reasonably small bias, as well as being asymptotically unbiased, meaning having a bias tending towards 0 as the sample size tends towards infinity.</p>
+<p>Usually, the most important case is distributional robustness - robustness to breaking of the assumptions about the underlying distribution of the data. Classical statistical procedures are typically sensitive to "longtailedness" (e.g., when the distribution of the data has longer tails than the assumed normal distribution). This implies that they will be strongly affected by the presence of outliers in the data, and the estimates they produce may be heavily distorted if there are extreme outliers in the data, compared to what they would be if the outliers were not included in the data.</p>
+<p>By contrast, more robust estimators that are not so sensitive to distributional distortions such as longtailedness are also resistant to the presence of outliers. Thus, in the context of robust statistics, distributionally robust and outlier-resistant are effectively synonymous.  For one perspective on research in robust statistics up to 2000, see Portnoy & He (2000).</p>
+<p>Some experts prefer the term resistant statistics for distributional robustness, and reserve 'robustness' for non-distributional robustness, e.g., robustness to violation of assumptions about the probability model or estimator, but this is a minority usage. Plain 'robustness' to mean 'distributional robustness' is common.</p>
+<p>When considering how robust an estimator is to the presence of outliers, it is useful to test what happens when an extreme outlier is added to the dataset, and to test what happens when an extreme outlier replaces one of the existing data points, and then to consider the effect of multiple additions or replacements.</p>
+<p>Examples</p>
+<p>The mean is not a robust measure of central tendency. If the dataset is, e.g., the values {2,3,5,6,9}, then if we add another datapoint with value -1000 or +1000 to the data, the resulting mean will be very different from the mean of the original data. Similarly, if we replace one of the values with a datapoint of value -1000 or +1000 then the resulting mean will be very different from the mean of the original data.</p>
+<p>The median is a robust measure of central tendency. Taking the same dataset {2,3,5,6,9}, if we add another datapoint with value -1000 or +1000 then the median will change slightly, but it will still be similar to the median of the original data. If we replace one of the values with a data point of value -1000 or +1000 then the resulting median will still be similar to the median of the original data.</p>
+<p>Described in terms of breakdown points, the median has a breakdown point of 50%, meaning that half the points must be outliers before the median can be moved outside the range of the non-outliers, while the mean has a breakdown point of 0, as a single large observation can throw it off.</p>
+<p>The median absolute deviation and interquartile range are robust measures of statistical dispersion, while the standard deviation and range are not.</p>
+<p>Trimmed estimators and Winsorised estimators are general methods to make statistics more robust. L-estimators are a general class of simple statistics, often robust, while M-estimators are a general class of robust statistics, and are now the preferred solution, though they can be quite involved to calculate.</p>
+<p>Speed-of-light data</p>
+<p>Gelman et al. in Bayesian Data Analysis (2004) consider a data set relating to speed-of-light measurements made by Simon Newcomb. The data sets for that book can be found via the Classic data sets page, and the book's website contains more information on the data.</p>
+<p>Although the bulk of the data looks to be more or less normally distributed, there are two obvious outliers. These outliers have a large effect on the mean, dragging it towards them, and away from the center of the bulk of the data. Thus, if the mean is intended as a measure of the location of the center of the data, it is, in a sense, biased when outliers are present.</p>
+<p>Also, the distribution of the mean is known to be asymptotically normal due to the central limit theorem. However, outliers can make the distribution of the mean non-normal, even for fairly large data sets. Besides this non-normality, the mean is also inefficient in the presence of outliers and less variable measures of location are available.</p>
+<p>Estimation of location</p>
+<p>The plot below shows a density plot of the speed-of-light data, together with a rug plot (panel (a)). Also shown is a normal Q–Q plot (panel (b)). The outliers are visible in these plots.</p>
+<p>Panels (c) and (d) of the plot show the bootstrap distribution of the mean (c) and the 10% trimmed mean (d). The trimmed mean is a simple, robust estimator of location that deletes a certain percentage of observations (10% here) from each end of the data, then computes the mean in the usual way. The analysis was performed in R and 10,000 bootstrap samples were used for each of the raw and trimmed means.</p>
+<p>The distribution of the mean is clearly much wider than that of the 10% trimmed mean (the plots are on the same scale). Also whereas the distribution of the trimmed mean appears to be close to normal, the distribution of the raw mean is quite skewed to the left. So, in this sample of 66 observations, only 2 outliers cause the central limit theorem to be inapplicable.</p>
+<p>Robust statistical methods, of which the trimmed mean is a simple example, seek to outperform classical statistical methods in the presence of outliers, or, more generally, when underlying parametric assumptions are not quite correct.</p>
+<p>Whilst the trimmed mean performs well relative to the mean in this example, better robust estimates are available. In fact, the mean, median and trimmed mean are all special cases of M-estimators. Details appear in the sections below.</p>
+<p>Estimation of scale</p>
+<p>The outliers in the speed-of-light data have more than just an adverse effect on the mean; the usual estimate of scale is the standard deviation, and this quantity is even more badly affected by outliers because the squares of the deviations from the mean go into the calculation, so the outliers' effects are exacerbated.</p>
+<p>The plots below show the bootstrap distributions of the standard deviation, the median absolute deviation (MAD) and the Rousseeuw–Croux (Qn) estimator of scale. The plots are based on 10,000 bootstrap samples for each estimator, with some Gaussian noise added to the resampled data (smoothed bootstrap). Panel (a) shows the distribution of the standard deviation, (b) of the MAD and (c) of Qn.</p>
+<p>The distribution of standard deviation is erratic and wide, a result of the outliers. The MAD is better behaved, and Qn is a little bit more efficient than MAD. This simple example demonstrates that when outliers are present, the standard deviation cannot be recommended as an estimate of scale.</p>
+<p>Manual screening for outliers</p>
+<p>Traditionally, statisticians would manually screen data for outliers, and remove them, usually checking the source of the data to see whether the outliers were erroneously recorded. Indeed, in the speed-of-light example above, it is easy to see and remove the two outliers prior to proceeding with any further analysis. However, in modern times, data sets often consist of large numbers of variables being measured on large numbers of experimental units. Therefore, manual screening for outliers is often impractical.</p>
+<p>Outliers can often interact in such a way that they mask each other. As a simple example, consider  a small univariate data set containing one modest and one large outlier. The estimated standard deviation will be grossly inflated by the large outlier. The result is that the modest outlier looks relatively normal. As soon as the large outlier is removed, the estimated standard deviation shrinks, and the modest outlier now looks unusual.</p>
+<p>This problem of masking gets worse as the complexity of the data increases. For example, in regression problems, diagnostic plots are used to identify outliers. However, it is common that once a few outliers have been removed, others become visible. The problem is even worse in higher dimensions.</p>
+<p>Robust methods provide automatic ways of detecting, downweighting (or removing), and flagging outliers, largely removing the need for manual screening.   Care must be taken; initial data showing the ozone hole first appearing over Antarctica were rejected as outliers by non-human screening.</p>
+<p>Variety of applications</p>
+<p>Although this article deals with general principles for univariate statistical methods, robust methods also exist for regression problems, generalized linear models, and parameter estimation of various distributions.</p>
+<p>Measures of robustness</p>
+<p>The basic tools used to describe and measure robustness are the breakdown point, the influence function and the sensitivity curve.</p>
+<p>Breakdown point</p>
+<p>Intuitively, the breakdown point of an estimator is the proportion of incorrect observations (e.g. arbitrarily large observations) an estimator can handle before giving an incorrect (e.g., arbitrarily large) result. Usually, the asymptotic (infinite sample) limit is quoted as the breakdown point, although the finite-sample breakdown point may be more useful. For example, given </p>
+<p>        n</p>
+<p>    {\displaystyle n}</p>
+<p> independent random variables </p>
+<p>        (</p>
+<p>          X</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          X</p>
+<p>            n</p>
+<p>        )</p>
+<p>    {\displaystyle (X_{1},\dots ,X_{n})}</p>
+<p> and the corresponding realizations </p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            n</p>
+<p>    {\displaystyle x_{1},\dots ,x_{n}}</p>
+<p>, we can use </p>
+<p>              X</p>
+<p>                n</p>
+<p>            ¯</p>
+<p>        :=</p>
+<p>                X</p>
+<p>                  1</p>
+<p>              +</p>
+<p>              ⋯</p>
+<p>              +</p>
+<p>                X</p>
+<p>                  n</p>
+<p>            n</p>
+<p>    {\displaystyle {\overline {X_{n}}}:={\frac {X_{1}+\cdots +X_{n}}{n}}}</p>
+<p> to estimate the mean. Such an estimator has a breakdown point of 0 (or finite-sample breakdown point of </p>
+<p>        1</p>
+<p>          /</p>
+<p>        n</p>
+<p>    {\displaystyle 1/n}</p>
+<p>) because we can make </p>
+<p>            x</p>
+<p>            ¯</p>
+<p>    {\displaystyle {\overline {x}}}</p>
+<p> arbitrarily large just by changing any of </p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            n</p>
+<p>    {\displaystyle x_{1},\dots ,x_{n}}</p>
+<p>.</p>
+<p>The higher the breakdown point of an estimator, the more robust it is. Intuitively, we can understand that a breakdown point cannot exceed 50% because if more than half of the observations are contaminated, it is not possible to distinguish between the underlying distribution and the contaminating distribution Rousseeuw & Leroy (1987). Therefore, the maximum breakdown point is 0.5 and there are estimators which achieve such a breakdown point. For example, the median has a breakdown point of 0.5. The X% trimmed mean has a breakdown point of X%, for the chosen level of X. Huber (1981) and Maronna et al. (2019) contain more details. The level and the power breakdown points of tests are investigated in He, Simpson & Portnoy (1990).</p>
+<p>Statistics with high breakdown points are sometimes called resistant statistics.</p>
+<p>Example: speed-of-light data</p>
+<p>In the speed-of-light example, removing the two lowest observations causes the mean to change from 26.2 to 27.75, a change of 1.55. The estimate of scale produced by the Qn method is 6.3. We can divide this by the square root of the sample size to get a robust standard error, and we find this quantity to be 0.78. Thus, the change in the mean resulting from removing two outliers is approximately twice the robust standard error.</p>
+<p>The 10% trimmed mean for the speed-of-light data is 27.43. Removing the two lowest observations and recomputing gives 27.67. The trimmed mean is less affected by the outliers and has a higher breakdown point.</p>
+<p>If we replace the lowest observation, −44, by −1000, the mean becomes 11.73, whereas the 10% trimmed mean is still 27.43. In many areas of applied statistics, it is common for data to be log-transformed to make them near symmetrical. Very small values become large negative when log-transformed, and zeroes become negatively infinite. Therefore, this example is of practical interest.</p>
+<p>Empirical influence function</p>
+<p>The empirical influence function is a measure of the dependence of the estimator on the value of any one of the points in the sample. It is a model-free measure in the sense that it simply relies on calculating the estimator again with a different sample. On the right is Tukey's biweight function, which, as we will later see, is an example of what a "good" (in a sense defined later on) empirical influence function should look like.</p>
+<p>In mathematical terms, an influence function is defined as a vector in the space of the estimator, which is in turn defined for a sample which is a subset of the population:</p>
+<p>        (</p>
+<p>        Ω</p>
+<p>        ,</p>
+<p>            A</p>
+<p>        ,</p>
+<p>        P</p>
+<p>        )</p>
+<p>    {\displaystyle (\Omega ,{\mathcal {A}},P)}</p>
+<p> is a probability space,</p>
+<p>        (</p>
+<p>            X</p>
+<p>        ,</p>
+<p>        Σ</p>
+<p>        )</p>
+<p>    {\displaystyle ({\mathcal {X}},\Sigma )}</p>
+<p> is a measurable space (state space),</p>
+<p>        Θ</p>
+<p>    {\displaystyle \Theta }</p>
+<p> is a parameter space of dimension </p>
+<p>        p</p>
+<p>        ∈</p>
+<p>            N</p>
+<p>            ∗</p>
+<p>    {\displaystyle p\in \mathbb {N} ^{*}}</p>
+<p>,</p>
+<p>        (</p>
+<p>        Γ</p>
+<p>        ,</p>
+<p>        S</p>
+<p>        )</p>
+<p>    {\displaystyle (\Gamma ,S)}</p>
+<p> is a measurable space,</p>
+<p>For example,</p>
+<p>        (</p>
+<p>        Ω</p>
+<p>        ,</p>
+<p>            A</p>
+<p>        ,</p>
+<p>        P</p>
+<p>        )</p>
+<p>    {\displaystyle (\Omega ,{\mathcal {A}},P)}</p>
+<p> is any probability space,</p>
+<p>        (</p>
+<p>            X</p>
+<p>        ,</p>
+<p>        Σ</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>          R</p>
+<p>        ,</p>
+<p>            B</p>
+<p>        )</p>
+<p>    {\displaystyle ({\mathcal {X}},\Sigma )=(\mathbb {R} ,{\mathcal {B}})}</p>
+<p>,</p>
+<p>        Θ</p>
+<p>        =</p>
+<p>          R</p>
+<p>        ×</p>
+<p>            R</p>
+<p>            +</p>
+<p>    {\displaystyle \Theta =\mathbb {R} \times \mathbb {R} ^{+}}</p>
+<p>        (</p>
+<p>        Γ</p>
+<p>        ,</p>
+<p>        S</p>
+<p>        )</p>
+<p>        =</p>
+<p>        (</p>
+<p>          R</p>
+<p>        ,</p>
+<p>            B</p>
+<p>        )</p>
+<p>    {\displaystyle (\Gamma ,S)=(\mathbb {R} ,{\mathcal {B}})}</p>
+<p>,</p>
+<p>The empirical influence function is defined as follows.</p>
+<p>Let </p>
+<p>        n</p>
+<p>        ∈</p>
+<p>            N</p>
+<p>            ∗</p>
+<p>    {\displaystyle n\in \mathbb {N} ^{*}}</p>
+<p> and </p>
+<p>          X</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          X</p>
+<p>            n</p>
+<p>        :</p>
+<p>        (</p>
+<p>        Ω</p>
+<p>        ,</p>
+<p>            A</p>
+<p>        )</p>
+<p>        →</p>
+<p>        (</p>
+<p>            X</p>
+<p>        ,</p>
+<p>        Σ</p>
+<p>        )</p>
+<p>    {\displaystyle X_{1},\dots ,X_{n}:(\Omega ,{\mathcal {A}})\rightarrow ({\mathcal {X}},\Sigma )}</p>
+<p> are i.i.d. and </p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            n</p>
+<p>        )</p>
+<p>    {\displaystyle (x_{1},\dots ,x_{n})}</p>
+<p> is a sample from these variables. </p>
+<p>          T</p>
+<p>            n</p>
+<p>        :</p>
+<p>        (</p>
+<p>              X</p>
+<p>            n</p>
+<p>        ,</p>
+<p>          Σ</p>
+<p>            n</p>
+<p>        )</p>
+<p>        →</p>
+<p>        (</p>
+<p>        Γ</p>
+<p>        ,</p>
+<p>        S</p>
+<p>        )</p>
+<p>    {\displaystyle T_{n}:({\mathcal {X}}^{n},\Sigma ^{n})\rightarrow (\Gamma ,S)}</p>
+<p> is an estimator. Let </p>
+<p>        i</p>
+<p>        ∈</p>
+<p>        {</p>
+<p>        1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>        n</p>
+<p>        }</p>
+<p>    {\displaystyle i\in \{1,\dots ,n\}}</p>
+<p>. The empirical influence function </p>
+<p>        E</p>
+<p>        I</p>
+<p>          F</p>
+<p>            i</p>
+<p>    {\displaystyle EIF_{i}}</p>
+<p> at observation </p>
+<p>        i</p>
+<p>    {\displaystyle i}</p>
+<p> is defined by:</p>
+<p>        E</p>
+<p>        I</p>
+<p>          F</p>
+<p>            i</p>
+<p>        :</p>
+<p>        x</p>
+<p>        ∈</p>
+<p>            X</p>
+<p>        ↦</p>
+<p>        n</p>
+<p>        ⋅</p>
+<p>        (</p>
+<p>          T</p>
+<p>            n</p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            i</p>
+<p>            −</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        x</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            i</p>
+<p>            +</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            n</p>
+<p>        )</p>
+<p>        −</p>
+<p>          T</p>
+<p>            n</p>
+<p>        (</p>
+<p>          x</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            i</p>
+<p>            −</p>
+<p>            1</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            i</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            i</p>
+<p>            +</p>
+<p>            1</p>
+<p>        ,</p>
+<p>        …</p>
+<p>        ,</p>
+<p>          x</p>
+<p>            n</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle EIF_{i}:x\in {\mathcal {X}}\mapsto n\cdot (T_{n}(x_{1},\dots ,x_{i-1},x,x_{i+1},\dots ,x_{n})-T_{n}(x_{1},\dots ,x_{i-1},x_{i},x_{i+1},\dots ,x_{n}))}</p>
+<p>What this means is that we are replacing the i-th value in the sample by an arbitrary value and looking at the output of the estimator. Alternatively, the EIF is defined as the effect, scaled by n+1 instead of n, on the estimator of adding the point </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> to the sample.</p>
+<p>Influence function and sensitivity curve</p>
+<p>Instead of relying solely on the data, we could use the distribution of the random variables. The approach is quite different from that of the previous paragraph. What we are now trying to do is to see what happens to an estimator when we change the distribution of the data slightly: it assumes a distribution, and measures sensitivity to change in this distribution. By contrast, the empirical influence assumes a sample set, and measures sensitivity to change in the samples.</p>
+<p>Let </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> be a convex subset of the set of all finite signed measures on </p>
+<p>        Σ</p>
+<p>    {\displaystyle \Sigma }</p>
+<p>. We want to estimate the parameter </p>
+<p>        θ</p>
+<p>        ∈</p>
+<p>        Θ</p>
+<p>    {\displaystyle \theta \in \Theta }</p>
+<p> of a distribution </p>
+<p>        F</p>
+<p>    {\displaystyle F}</p>
+<p> in </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p>. Let the functional </p>
+<p>        T</p>
+<p>        :</p>
+<p>        A</p>
+<p>        →</p>
+<p>        Γ</p>
+<p>    {\displaystyle T:A\rightarrow \Gamma }</p>
+<p> be the asymptotic value of some estimator sequence </p>
+<p>        (</p>
+<p>          T</p>
+<p>            n</p>
+<p>          )</p>
+<p>            n</p>
+<p>            ∈</p>
+<p>              N</p>
+<p>    {\displaystyle (T_{n})_{n\in \mathbb {N} }}</p>
+<p>. We will suppose that this functional is Fisher consistent, i.e. </p>
+<p>        ∀</p>
+<p>        θ</p>
+<p>        ∈</p>
+<p>        Θ</p>
+<p>        ,</p>
+<p>        T</p>
+<p>        (</p>
+<p>          F</p>
+<p>            θ</p>
+<p>        )</p>
+<p>        =</p>
+<p>        θ</p>
+<p>    {\displaystyle \forall \theta \in \Theta ,T(F_{\theta })=\theta }</p>
+<p>. This means that at the model </p>
+<p>        F</p>
+<p>    {\displaystyle F}</p>
+<p>, the estimator sequence asymptotically measures the correct quantity.</p>
+<p>Let </p>
+<p>        G</p>
+<p>    {\displaystyle G}</p>
+<p> be some distribution in </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p>. What happens when the data doesn't follow the model </p>
+<p>        F</p>
+<p>    {\displaystyle F}</p>
+<p> exactly but another, slightly different, "going towards" </p>
+<p>        G</p>
+<p>    {\displaystyle G}</p>
+<p>?</p>
+<p>We're looking at:</p>
+<p>        d</p>
+<p>          T</p>
+<p>            G</p>
+<p>            −</p>
+<p>            F</p>
+<p>        (</p>
+<p>        F</p>
+<p>        )</p>
+<p>        =</p>
+<p>          lim</p>
+<p>            t</p>
+<p>            →</p>
+<p>              0</p>
+<p>                +</p>
+<p>              T</p>
+<p>              (</p>
+<p>              t</p>
+<p>              G</p>
+<p>              +</p>
+<p>              (</p>
+<p>              1</p>
+<p>              −</p>
+<p>              t</p>
+<p>              )</p>
+<p>              F</p>
+<p>              )</p>
+<p>              −</p>
+<p>              T</p>
+<p>              (</p>
+<p>              F</p>
+<p>              )</p>
+<p>            t</p>
+<p>    {\displaystyle dT_{G-F}(F)=\lim _{t\rightarrow 0^{+}}{\frac {T(tG+(1-t)F)-T(F)}{t}}}</p>
+<p>,</p>
+<p>which is the one-sided Gateaux derivative of </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> at </p>
+<p>        F</p>
+<p>    {\displaystyle F}</p>
+<p>, in the direction of </p>
+<p>        G</p>
+<p>        −</p>
+<p>        F</p>
+<p>    {\displaystyle G-F}</p>
+<p>.</p>
+<p>Let </p>
+<p>        x</p>
+<p>        ∈</p>
+<p>            X</p>
+<p>    {\displaystyle x\in {\mathcal {X}}}</p>
+<p>. </p>
+<p>          Δ</p>
+<p>            x</p>
+<p>    {\displaystyle \Delta _{x}}</p>
+<p> is the probability measure which gives mass 1 to </p>
+<p>        {</p>
+<p>        x</p>
+<p>        }</p>
+<p>    {\displaystyle \{x\}}</p>
+<p>. We choose </p>
+<p>        G</p>
+<p>        =</p>
+<p>          Δ</p>
+<p>            x</p>
+<p>    {\displaystyle G=\Delta _{x}}</p>
+<p>. The influence function is then defined by:</p>
+<p>        I</p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ;</p>
+<p>        T</p>
+<p>        ;</p>
+<p>        F</p>
+<p>        )</p>
+<p>        :=</p>
+<p>          lim</p>
+<p>            t</p>
+<p>            →</p>
+<p>              0</p>
+<p>                +</p>
+<p>              T</p>
+<p>              (</p>
+<p>              t</p>
+<p>                Δ</p>
+<p>                  x</p>
+<p>              +</p>
+<p>              (</p>
+<p>              1</p>
+<p>              −</p>
+<p>              t</p>
+<p>              )</p>
+<p>              F</p>
+<p>              )</p>
+<p>              −</p>
+<p>              T</p>
+<p>              (</p>
+<p>              F</p>
+<p>              )</p>
+<p>            t</p>
+<p>        .</p>
+<p>    {\displaystyle IF(x;T;F):=\lim _{t\rightarrow 0^{+}}{\frac {T(t\Delta _{x}+(1-t)F)-T(F)}{t}}.}</p>
+<p>It describes the effect of an infinitesimal contamination at the point </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> on the estimate we are seeking, standardized by the mass </p>
+<p>        t</p>
+<p>    {\displaystyle t}</p>
+<p> of the contamination (the asymptotic bias caused by contamination in the observations). For a robust estimator, we want a bounded influence function, that is, one which does not go to infinity as x becomes arbitrarily large.</p>
+<p>The empirical influence function uses the empirical distribution function </p>
+<p>              F</p>
+<p>              ^</p>
+<p>    {\displaystyle {\hat {F}}}</p>
+<p> instead of the distribution function </p>
+<p>        F</p>
+<p>    {\displaystyle F}</p>
+<p>, making use of the drop-in principle.</p>
+<p>Desirable properties</p>
+<p>Properties of an influence function that bestow it with desirable performance are:</p>
+<p>Finite rejection point </p>
+<p>          ρ</p>
+<p>            ∗</p>
+<p>    {\displaystyle \rho ^{*}}</p>
+<p>,</p>
+<p>Small gross-error sensitivity </p>
+<p>          γ</p>
+<p>            ∗</p>
+<p>    {\displaystyle \gamma ^{*}}</p>
+<p>,</p>
+<p>Small local-shift sensitivity </p>
+<p>          λ</p>
+<p>            ∗</p>
+<p>    {\displaystyle \lambda ^{*}}</p>
+<p>.</p>
+<p>Rejection point</p>
+<p>ρ</p>
+<p>            ∗</p>
+<p>        :=</p>
+<p>          inf</p>
+<p>            r</p>
+<p>            ></p>
+<p>            0</p>
+<p>        {</p>
+<p>        r</p>
+<p>        :</p>
+<p>        I</p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ;</p>
+<p>        T</p>
+<p>        ;</p>
+<p>        F</p>
+<p>        )</p>
+<p>        =</p>
+<p>        0</p>
+<p>        ,</p>
+<p>          |</p>
+<p>        x</p>
+<p>          |</p>
+<p>        ></p>
+<p>        r</p>
+<p>        }</p>
+<p>    {\displaystyle \rho ^{*}:=\inf _{r>0}\{r:IF(x;T;F)=0,|x|>r\}}</p>
+<p>Gross-error sensitivity</p>
+<p>γ</p>
+<p>            ∗</p>
+<p>        (</p>
+<p>        T</p>
+<p>        ;</p>
+<p>        F</p>
+<p>        )</p>
+<p>        :=</p>
+<p>          sup</p>
+<p>            x</p>
+<p>            ∈</p>
+<p>                X</p>
+<p>          |</p>
+<p>        I</p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ;</p>
+<p>        T</p>
+<p>        ;</p>
+<p>        F</p>
+<p>        )</p>
+<p>          |</p>
+<p>    {\displaystyle \gamma ^{*}(T;F):=\sup _{x\in {\mathcal {X}}}|IF(x;T;F)|}</p>
+<p>Local-shift sensitivity</p>
+<p>λ</p>
+<p>            ∗</p>
+<p>        (</p>
+<p>        T</p>
+<p>        ;</p>
+<p>        F</p>
+<p>        )</p>
+<p>        :=</p>
+<p>          sup</p>
+<p>                (</p>
+<p>                x</p>
+<p>                ,</p>
+<p>                y</p>
+<p>                )</p>
+<p>                ∈</p>
+<p>                      X</p>
+<p>                    2</p>
+<p>                x</p>
+<p>                ≠</p>
+<p>                y</p>
+<p>          ‖</p>
+<p>                I</p>
+<p>                F</p>
+<p>                (</p>
+<p>                y</p>
+<p>                ;</p>
+<p>                T</p>
+<p>                ;</p>
+<p>                F</p>
+<p>                )</p>
+<p>                −</p>
+<p>                I</p>
+<p>                F</p>
+<p>                (</p>
+<p>                x</p>
+<p>                ;</p>
+<p>                T</p>
+<p>                ;</p>
+<p>                F</p>
+<p>                )</p>
+<p>                y</p>
+<p>                −</p>
+<p>                x</p>
+<p>          ‖</p>
+<p>    {\displaystyle \lambda ^{*}(T;F):=\sup _{(x,y)\in {\mathcal {X}}^{2} \atop x\neq y}\left\|{\frac {IF(y;T;F)-IF(x;T;F)}{y-x}}\right\|}</p>
+<p>This value, which looks a lot like a Lipschitz constant, represents the effect of shifting an observation slightly from </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p> to a neighbouring point </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p>, i.e., add an observation at </p>
+<p>        y</p>
+<p>    {\displaystyle y}</p>
+<p> and remove one at </p>
+<p>        x</p>
+<p>    {\displaystyle x}</p>
+<p>.</p>
+<p>M-estimators</p>
+<p>(The mathematical context of this paragraph is given in the section on empirical influence functions.)</p>
+<p>Historically, several approaches to robust estimation were proposed, including R-estimators and L-estimators. However, M-estimators now appear to dominate the field as a result of their generality, their potential for high breakdown points and comparatively high efficiency. See Huber (1981).</p>
+<p>M-estimators are not inherently robust. However, they can be designed to achieve favourable properties, including robustness. M-estimator are a generalization of maximum likelihood estimators (MLEs) which is determined by maximizing </p>
+<p>          ∏</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>        f</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\textstyle \prod _{i=1}^{n}f(x_{i})}</p>
+<p> or, equivalently, minimizing </p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>        −</p>
+<p>        log</p>
+<p>        ⁡</p>
+<p>        f</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\textstyle \sum _{i=1}^{n}-\log f(x_{i})}</p>
+<p>. In 1964, Huber proposed to generalize this to the minimization of </p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>        ρ</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\textstyle \sum _{i=1}^{n}\rho (x_{i})}</p>
+<p>, where </p>
+<p>        ρ</p>
+<p>    {\displaystyle \rho }</p>
+<p> is some function. MLE are therefore a special case of M-estimators (hence the name: "Maximum likelihood type" estimators).</p>
+<p>Minimizing </p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>        ρ</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>    {\textstyle \sum _{i=1}^{n}\rho (x_{i})}</p>
+<p> can often be done by differentiating </p>
+<p>        ρ</p>
+<p>    {\displaystyle \rho }</p>
+<p> and solving </p>
+<p>          ∑</p>
+<p>            i</p>
+<p>            =</p>
+<p>            1</p>
+<p>            n</p>
+<p>        ψ</p>
+<p>        (</p>
+<p>          x</p>
+<p>            i</p>
+<p>        )</p>
+<p>        =</p>
+<p>        0</p>
+<p>    {\textstyle \sum _{i=1}^{n}\psi (x_{i})=0}</p>
+<p>, where </p>
+<p>        ψ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>              d</p>
+<p>              ρ</p>
+<p>              (</p>
+<p>              x</p>
+<p>              )</p>
+<p>              d</p>
+<p>              x</p>
+<p>    {\textstyle \psi (x)={\frac {d\rho (x)}{dx}}}</p>
+<p> (if </p>
+<p>        ρ</p>
+<p>    {\displaystyle \rho }</p>
+<p> has a derivative).</p>
+<p>Several choices of </p>
+<p>        ρ</p>
+<p>    {\displaystyle \rho }</p>
+<p> and </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p> have been proposed. The two figures below show four </p>
+<p>        ρ</p>
+<p>    {\displaystyle \rho }</p>
+<p> functions and their corresponding </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p> functions.</p>
+<p>For squared errors, </p>
+<p>        ρ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle \rho (x)}</p>
+<p> increases at an accelerating rate, whilst for absolute errors, it increases at a constant rate. When Winsorizing is used, a mixture of these two effects is introduced: for small values of x, </p>
+<p>        ρ</p>
+<p>    {\displaystyle \rho }</p>
+<p> increases at the squared rate, but once the chosen threshold is reached (1.5 in this example), the rate of increase becomes constant.  This Winsorised estimator is also known as the Huber loss function.</p>
+<p>Tukey's biweight (also known as bisquare) function behaves in a similar way to the squared error function at first, but for larger errors, the function tapers off.</p>
+<p>Properties of M-estimators</p>
+<p>M-estimators do not necessarily relate to a probability density function. Therefore, off-the-shelf approaches to inference that arise from likelihood theory can not, in general, be used.</p>
+<p>It can be shown that M-estimators are asymptotically normally distributed so that as long as their standard errors can be computed, an approximate approach to inference is available.</p>
+<p>Since M-estimators are normal only asymptotically, for small sample sizes it might be appropriate to use an alternative approach to inference, such as the bootstrap. However, M-estimates are not necessarily unique (i.e., there might be more than one solution that satisfies the equations). Also, it is possible that any particular bootstrap sample can contain more outliers than the estimator's breakdown point. Therefore, some care is needed when designing bootstrap schemes.</p>
+<p>Of course, as we saw with the speed-of-light example, the mean is only normally distributed asymptotically and when outliers are present the approximation can be very poor even for quite large samples. However, classical statistical tests, including those based on the mean, are typically bounded above by the nominal size of the test. The same is not true of M-estimators and the type I error rate can be substantially above the nominal level.</p>
+<p>These considerations do not "invalidate" M-estimation in any way. They merely make clear that some care is needed in their use, as is true of any other method of estimation.</p>
+<p>Influence function of an M-estimator</p>
+<p>It can be shown that the influence function of an M-estimator </p>
+<p>        T</p>
+<p>    {\displaystyle T}</p>
+<p> is proportional to </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p>, which means we can derive the properties of such an estimator (such as its rejection point, gross-error sensitivity or local-shift sensitivity) when we know its </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p> function.</p>
+<p>        I</p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ;</p>
+<p>        T</p>
+<p>        ,</p>
+<p>        F</p>
+<p>        )</p>
+<p>        =</p>
+<p>          M</p>
+<p>            −</p>
+<p>            1</p>
+<p>        ψ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        ,</p>
+<p>        T</p>
+<p>        (</p>
+<p>        F</p>
+<p>        )</p>
+<p>        )</p>
+<p>    {\displaystyle IF(x;T,F)=M^{-1}\psi (x,T(F))}</p>
+<p>with the </p>
+<p>        p</p>
+<p>        ×</p>
+<p>        p</p>
+<p>    {\displaystyle p\times p}</p>
+<p> given by:</p>
+<p>        M</p>
+<p>        =</p>
+<p>        −</p>
+<p>          ∫</p>
+<p>              X</p>
+<p>            (</p>
+<p>                  ∂</p>
+<p>                  ψ</p>
+<p>                  (</p>
+<p>                  x</p>
+<p>                  ,</p>
+<p>                  θ</p>
+<p>                  )</p>
+<p>                  ∂</p>
+<p>                  θ</p>
+<p>            )</p>
+<p>            T</p>
+<p>            (</p>
+<p>            F</p>
+<p>            )</p>
+<p>        d</p>
+<p>        F</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        .</p>
+<p>    {\displaystyle M=-\int _{\mathcal {X}}\left({\frac {\partial \psi (x,\theta )}{\partial \theta }}\right)_{T(F)}\,dF(x).}</p>
+<p>Choice of ψ and ρ</p>
+<p>In many practical situations, the choice of the </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p> function is not critical to gaining a good robust estimate, and many choices will give similar results that offer great improvements, in terms of efficiency and bias, over classical estimates in the presence of outliers.</p>
+<p>Theoretically, </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p> functions are to be preferred, and Tukey's biweight (also known as bisquare) function is a popular choice. recommend the biweight function with efficiency at the normal set to 85%.</p>
+<p>Robust parametric approaches</p>
+<p>M-estimators do not necessarily relate to a density function and so are not fully parametric. Fully parametric approaches to robust modeling and inference, both Bayesian and likelihood approaches, usually deal with heavy-tailed distributions such as Student's t-distribution.</p>
+<p>For the t-distribution with </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p> degrees of freedom, it can be shown that</p>
+<p>        ψ</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>        =</p>
+<p>            x</p>
+<p>                x</p>
+<p>                  2</p>
+<p>              +</p>
+<p>              ν</p>
+<p>        .</p>
+<p>    {\displaystyle \psi (x)={\frac {x}{x^{2}+\nu }}.}</p>
+<p>For </p>
+<p>        ν</p>
+<p>        =</p>
+<p>        1</p>
+<p>    {\displaystyle \nu =1}</p>
+<p>, the t-distribution is equivalent to the Cauchy distribution. The degrees of freedom is sometimes known as the kurtosis parameter. It is the parameter that controls how heavy the tails are. In principle, </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p> can be estimated from the data in the same way as any other parameter. In practice, it is common for there to be multiple local maxima when </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p> is allowed to vary. As such, it is common to fix </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p> at a value around 4 or 6. The figure below displays the </p>
+<p>        ψ</p>
+<p>    {\displaystyle \psi }</p>
+<p>-function for 4 different values of </p>
+<p>        ν</p>
+<p>    {\displaystyle \nu }</p>
+<p>.</p>
+<p>Example: speed-of-light data</p>
+<p>For the speed-of-light data, allowing the kurtosis parameter to vary and maximizing the likelihood, we get</p>
+<p>              μ</p>
+<p>              ^</p>
+<p>        =</p>
+<p>        27.40</p>
+<p>        ,</p>
+<p>              σ</p>
+<p>              ^</p>
+<p>        =</p>
+<p>        3.81</p>
+<p>        ,</p>
+<p>              ν</p>
+<p>              ^</p>
+<p>        =</p>
+<p>        2.13.</p>
+<p>    {\displaystyle {\hat {\mu }}=27.40,\quad {\hat {\sigma }}=3.81,\quad {\hat {\nu }}=2.13.}</p>
+<p>Fixing </p>
+<p>        ν</p>
+<p>        =</p>
+<p>        4</p>
+<p>    {\displaystyle \nu =4}</p>
+<p> and maximizing the likelihood gives</p>
+<p>              μ</p>
+<p>              ^</p>
+<p>        =</p>
+<p>        27.49</p>
+<p>        ,</p>
+<p>              σ</p>
+<p>              ^</p>
+<p>        =</p>
+<p>        4.51.</p>
+<p>    {\displaystyle {\hat {\mu }}=27.49,\quad {\hat {\sigma }}=4.51.}</p>
+<p>Related concepts</p>
+<p>A pivotal quantity is a function of data, whose underlying population distribution is a member of a parametric family, that is not dependent on the values of the parameters. An ancillary statistic is such a function that is also a statistic, meaning that it is computed in terms of the data alone. Such functions are robust to parameters in the sense that they are independent of the values of the parameters, but not robust to the model in the sense that they assume an underlying model (parametric family), and in fact, such functions are often very sensitive to violations of the model assumptions. Thus test statistics, frequently constructed in terms of these to not be sensitive to assumptions about parameters, are still very sensitive to model assumptions.</p>
+<p>Replacing outliers and missing values</p>
+<p>Replacing missing data is called imputation. If there are relatively few missing points, there are some models which can be used to estimate values to complete the series, such as replacing missing values with the mean or median of the data. Simple linear regression can also be used to estimate missing values. In addition, outliers can sometimes be accommodated in the data through the use of trimmed means, other scale estimators apart from standard deviation (e.g., MAD) and Winsorization. In calculations of a trimmed mean, a fixed percentage of data is dropped from each end of an ordered data, thus eliminating the outliers. The mean is then calculated using the remaining data. Winsorizing involves accommodating an outlier by replacing it with the next highest or next smallest value as appropriate.</p>
+<p>However, using these types of models to predict missing values or outliers in a long time series is difficult and often unreliable, particularly if the number of values to be in-filled is relatively high in comparison with total record length. The accuracy of the estimate depends on how good and representative the model is and how long the period of missing values extends. When dynamic evolution is assumed in a series, the missing data point problem becomes an exercise in multivariate analysis (rather than the univariate approach of most traditional methods of estimating missing values and outliers). In such cases, a multivariate model will be more representative than a univariate one for predicting missing values. The Kohonen self organising map (KSOM) offers a simple and robust multivariate model for data analysis, thus providing good possibilities to estimate missing values, taking into account their relationship or correlation with other pertinent variables in the data record.</p>
+<p>Standard Kalman filters are not robust to outliers. To this end Ting, Theodorou & Schaal (2007) have recently shown that a modification of Masreliez's theorem can deal with outliers.</p>
+<p>One common approach to handle outliers in data analysis is to perform outlier detection first, followed by an efficient estimation method (e.g., the least squares). While this approach is often useful, one must keep in mind two challenges. First, an outlier detection method that relies on a non-robust initial fit can suffer from the effect of masking, that is, a group of outliers can mask each other and escape detection. Second, if a high breakdown initial fit is used for outlier detection, the follow-up analysis might inherit some of the inefficiencies of the initial estimator.</p>
+<p>Use in machine learning</p>
+<p>Although influence functions have a long history in statistics, they were not widely used in machine learning due to several challenges. One of the primary obstacles is that traditional influence functions rely on expensive second-order derivative computations and assume model differentiability and convexity. These assumptions are limiting, especially in modern machine learning, where models are often non-differentiable, non-convex, and operate in high-dimensional spaces.</p>
+<p>Koh & Liang (2017) addressed these challenges by introducing methods to efficiently approximate influence functions using second-order optimization techniques, such as those developed by Pearlmutter (1994), Martens (2010), and Agarwal, Bullins & Hazan (2017). Their approach remains effective even when the assumptions of differentiability and convexity degrade, enabling influence functions to be used in the context of non-convex deep learning models.</p>
+<p>They demonstrated that influence functions are a powerful and versatile tool that can be applied to a variety of tasks in machine learning, including:</p>
+<p>Understanding Model Behavior: Influence functions help identify which training points are most “responsible” for a given prediction, offering insights into how models generalize from training data.</p>
+<p>Debugging Models: Influence functions can assist in identifying domain mismatches—when the training data distribution does not match the test data distribution—which can cause models with high training accuracy to perform poorly on test data, as shown by Ben-David et al. (2010). By revealing which training examples contribute most to errors, developers can address these mismatches.</p>
+<p>Dataset Error Detection: Noisy or corrupted labels are common in real-world data, especially when crowdsourced or adversarially attacked. Influence functions allow human experts to prioritize reviewing only the most impactful examples in the training set, facilitating efficient error detection and correction.</p>
+<p>Adversarial Attacks: Models that rely heavily on a small number of influential training points are vulnerable to adversarial perturbations. These perturbed inputs can significantly alter predictions and pose security risks in machine learning systems where attackers have access to the training data (See adversarial machine learning).</p>
+<p>Koh and Liang’s contributions have opened the door for influence functions to be used in various applications across machine learning, from interpretability to security, marking a significant advance in their applicability.</p>
+<p>See also</p>
+<p>Robust confidence intervals</p>
+<p>Robust regression</p>
+<p>Unit-weighted regression</p>
+<p>Notes</p>
+<p>References</p>
+<p>Farcomeni, A.; Greco, L. (2013), Robust methods for data reduction, Boca Raton, FL: Chapman & Hall/CRC Press, ISBN 978-1-4665-9062-5.</p>
+<p>Hampel, Frank R.; Ronchetti, Elvezio M.; Rousseeuw, Peter J.; Stahel, Werner A. (1986), Robust statistics, Wiley Series in Probability and Mathematical Statistics: Probability and Mathematical Statistics, New York: John Wiley & Sons, Inc., ISBN 0-471-82921-8, MR 0829458. Republished in paperback, 2005.</p>
+<p>Harvey, A. C.; Fernandes, C. (October 1989), "Time Series Models for Count or Qualitative Observations", Journal of Business & Economic Statistics, 7 (4), Taylor & Francis: 407–417, doi:10.1080/07350015.1989.10509750, JSTOR 1391639</p>
+<p>He, Xuming; Portnoy, Stephen (1992), "Reweighted LS estimators converge at the same rate as the initial estimator", Annals of Statistics, 20 (4): 2161–2167, doi:10.1214/aos/1176348910, MR 1193333.</p>
+<p>He, Xuming; Simpson, Douglas G.; Portnoy, Stephen L. (1990), "Breakdown robustness of tests", Journal of the American Statistical Association, 85 (410): 446–452, doi:10.2307/2289782, JSTOR 2289782, MR 1141746.</p>
+<p>Hettmansperger, T. P.; McKean, J. W. (1998), Robust nonparametric statistical methods, Kendall's Library of Statistics, vol. 5, New York: John Wiley & Sons, Inc., ISBN 0-340-54937-8, MR 1604954. 2nd ed., CRC Press, 2011.</p>
+<p>Huber, Peter J. (1981), Robust statistics, New York: John Wiley & Sons, Inc., ISBN 0-471-41805-6, MR 0606374. Republished in paperback, 2004. 2nd ed., Wiley, 2009.</p>
+<p>MacDonald, Iain L.; Zucchini, Walter (1997), Hidden Markov and Other Models for Discrete-Valued Time Series, Taylor & Francis, ISBN 9780412558504</p>
+<p>Maronna, Ricardo A.; Martin, R. Douglas; Yohai, Victor J.; Salibián-Barrera, Matías (2019) [2006], Robust statistics: Theory and methods (with R), Wiley Series in Probability and Statistics (2nd ed.), Chichester: John Wiley & Sons, Ltd., doi:10.1002/9781119214656, ISBN 978-1-119-21468-7.</p>
+<p>McBean, Edward A.; Rovers, Frank (1998), Statistical procedures for analysis of environmental monitoring data and assessment, Prentice-Hall.</p>
+<p>Portnoy, Stephen; He, Xuming (2000), "A robust journey in the new millennium", Journal of the American Statistical Association, 95 (452): 1331–1335, doi:10.2307/2669782, JSTOR 2669782, MR 1825288.</p>
+<p>Press, William H.; Teukolsky, Saul A.; Vetterling, William T.; Flannery, Brian P. (2007), "Section 15.7. Robust Estimation", Numerical Recipes: The Art of Scientific Computing (3rd ed.), Cambridge University Press, ISBN 978-0-521-88068-8, MR 2371990.</p>
+<p>Rosen, C.; Lennox, J.A. (October 2001), "Multivariate and multiscale monitoring of wastewater treatment operation", Water Research, 35 (14): 3402–3410, Bibcode:2001WatRe..35.3402R, doi:10.1016/s0043-1354(01)00069-0, PMID 11547861.</p>
+<p>Rousseeuw, Peter J.; Croux, Christophe (1993), "Alternatives to the median absolute deviation", Journal of the American Statistical Association, 88 (424): 1273–1283, doi:10.2307/2291267, JSTOR 2291267, MR 1245360.</p>
+<p>Rousseeuw, Peter J.; Leroy, Annick M. (1987), Robust Regression and Outlier Detection, Wiley Series in Probability and Mathematical Statistics: Applied Probability and Statistics, New York: John Wiley & Sons, Inc., doi:10.1002/0471725382, ISBN 0-471-85233-3, MR 0914792. Republished in paperback, 2003.</p>
+<p>Rousseeuw, Peter J.; Hubert, Mia (2011), "Robust statistics for outlier detection", Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, 1 (1): 73–79, doi:10.1002/widm.2, S2CID 17448982. Preprint</p>
+<p>Rustum, Rabee; Adeloye, Adebayo J. (September 2007), "Replacing outliers and missing values from activated sludge data using Kohonen self-organizing map", Journal of Environmental Engineering, 133 (9): 909–916, doi:10.1061/(asce)0733-9372(2007)133:9(909).</p>
+<p>Stigler, Stephen M. (2010), "The changing history of robustness", The American Statistician, 64 (4): 277–281, doi:10.1198/tast.2010.10159, MR 2758558, S2CID 10728417.</p>
+<p>Ting, Jo-anne; Theodorou, Evangelos; Schaal, Stefan (2007), "A Kalman filter for robust outlier detection", International Conference on Intelligent Robots and Systems – IROS, pp. 1514–1519.</p>
+<p>von Mises, R. (1947), "On the asymptotic distribution of differentiable statistical functions", Annals of Mathematical Statistics, 18 (3): 309–348, doi:10.1214/aoms/1177730385, MR 0022330.</p>
+<p>Wilcox, Rand (2012), Introduction to robust estimation and hypothesis testing, Statistical Modeling and Decision Science (3rd ed.), Amsterdam: Elsevier/Academic Press, pp. 1–22, doi:10.1016/B978-0-12-386983-8.00001-9, ISBN 978-0-12-386983-8, MR 3286430.</p>
+<p>Koh, Pang Wei; Liang, Percy (2017). Understanding black-box predictions via influence functions. International Conference on Machine Learning. PMLR.</p>
+<p>Pearlmutter, Barak A. (1994), "Fast Exact Multiplication by the Hessian", Neural Computation, 6 (1): 147–160, doi:10.1162/neco.1994.6.1.147, ISSN 0899-7667</p>
+<p>Martens, James (2010). Deep learning via Hessian-free optimization. International Conference on Machine Learning. Haifa, Israel: PMLR. pp. 735–742. ISBN 9781605589077.</p>
+<p>Agarwal, Naman; Bullins, Brian; Hazan, Elad (2017), "Second-order stochastic optimization for machine learning in linear time", Journal of Machine Learning Research, 18 (116): 1–40, arXiv:1602.03943</p>
+<p>Ben-David, Shai; Blitzer, John; Crammer, Koby; Kulesza, Alex; Pereira, Fernando; Vaughan, Jennifer Wortman (2010), "A theory of learning from different domains", Machine Learning, 79 (1): 151–175, doi:10.1007/s10994-009-5152-4, ISSN 1573-0565</p>
+<p>External links</p>
+<p>Brian Ripley's robust statistics course notes.</p>
+<p>Nick Fieller's course notes on Statistical Modelling and Computation contain material on robust regression.</p>
+<p>David Olive's site contains course notes on robust statistics and some data sets.</p>
+<p>Online experiments using R and JSXGraph</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
