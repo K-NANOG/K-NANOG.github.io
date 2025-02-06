@@ -1,0 +1,84 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Design Patterns</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Design Patterns</h2>
+                <p>Design Patterns: Elements of Reusable Object-Oriented Software (1994) is a software engineering book describing software design patterns. The book was written by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, with a foreword by Grady Booch. The book is divided into two parts, with the first two chapters exploring the capabilities and pitfalls of object-oriented programming, and the remaining chapters describing 23 classic software design patterns. The book includes examples in C++ and Smalltalk.</p>
+<p>It has been influential to the field of software engineering and is regarded as an important source for object-oriented design theory and practice. More than 500,000 copies have been sold in English and in 13 other languages. The authors are often referred to as the Gang of Four (GoF).</p>
+<p>Development and publication history</p>
+<p>The book started at a birds-of-a-feather session at the 1990 OOPSLA meeting, "Towards an Architecture Handbook", where Erich Gamma and Richard Helm met and discovered their common interest. They were later joined by Ralph Johnson and John Vlissides. The book was originally published on 21 October 1994, with a 1995 copyright, and was made available to the public at the 1994 OOPSLA meeting.</p>
+<p>Introduction</p>
+<p>Chapter 1 is a discussion of object-oriented design techniques, based on the authors' experience, which they believe would lead to good object-oriented software design, including:</p>
+<p>"Program to an interface, not an implementation." (Gang of Four 1995:18)</p>
+<p>Composition over inheritance: "Favor 'object composition' over 'class inheritance'." (Gang of Four 1995:20)</p>
+<p>The authors claim the following as advantages of interfaces over implementation:</p>
+<p>clients remain unaware of the specific types of objects they use, as long as the object adheres to the interface</p>
+<p>clients remain unaware of the classes that implement these objects; clients only know about the abstract class(es) defining the interface</p>
+<p>Use of an interface also leads to dynamic binding and polymorphism, which are central features of object-oriented programming.</p>
+<p>The authors refer to inheritance as white-box reuse, with white-box referring to visibility, because the internals of parent classes are often visible to subclasses. In contrast, the authors refer to object composition (in which objects with well-defined interfaces are used dynamically at runtime by objects obtaining references to other objects) as black-box reuse because no internal details of composed objects need be visible in the code using them.</p>
+<p>The authors discuss the tension between inheritance and encapsulation at length and state that in their experience, designers overuse inheritance (Gang of Four 1995:20). The danger is stated as follows:</p>
+<p>"Because inheritance exposes a subclass to details of its parent's implementation, it's often said that 'inheritance breaks encapsulation'". (Gang of Four 1995:19)</p>
+<p>They warn that the implementation of a subclass can become so bound up with the implementation of its parent class that any change in the parent's implementation will force the subclass to change. Furthermore, they claim that a way to avoid this is to inherit only from abstract classes—but then, they point out that there is minimal code reuse.</p>
+<p>Using inheritance is recommended mainly when adding to the functionality of existing components, reusing most of the old code and adding relatively small amounts of new code.</p>
+<p>To the authors, 'delegation' is an extreme form of object composition that can always be used to replace inheritance. Delegation involves two objects: a 'sender' passes itself to a 'delegate' to let the delegate refer to the sender. Thus the link between two parts of a system are established only at runtime, not at compile-time. The Callback article has more information about delegation.</p>
+<p>The authors also discuss so-called parameterized types, which are also known as generics (Ada, Eiffel, Java, C#, Visual Basic (.NET), and Delphi) or templates (C++). These allow any type to be defined without specifying all the other types it uses—the unspecified types are supplied as 'parameters' at the point of use.</p>
+<p>The authors admit that delegation and parameterization are very powerful but add a warning:</p>
+<p>"Dynamic, highly parameterized software is harder to understand and build than more static software." (Gang of Four 1995:21)</p>
+<p>The authors further distinguish between 'Aggregation', where one object 'has' or 'is part of' another object (implying that an aggregate object and its owner have identical lifetimes) and acquaintance, where one object merely 'knows of' another object. Sometimes acquaintance is called 'association' or the 'using' relationship. Acquaintance objects may request operations of each other, but they are not responsible for each other. Acquaintance is a weaker relationship than aggregation and suggests much looser coupling between objects, which can often be desirable for maximum maintainability in designs.</p>
+<p>The authors employ the term 'toolkit' where others might today use 'class library', as in C# or Java. In their parlance, toolkits are the object-oriented equivalent of subroutine libraries, whereas a 'framework' is a set of cooperating classes that make up a reusable design for a specific class of software. They state that applications are hard to design, toolkits are harder, and frameworks are the hardest to design.</p>
+<p>Patterns by type</p>
+<p>Creational</p>
+<p>Creational patterns are ones that create objects, rather than having to instantiate objects directly. This gives the program more flexibility in deciding which objects need to be created for a given case.</p>
+<p>Abstract factory groups object factories that have a common theme.</p>
+<p>Builder constructs complex objects by separating construction and representation.</p>
+<p>Factory method creates objects without specifying the exact class to create.</p>
+<p>Prototype creates objects by cloning an existing object.</p>
+<p>Singleton restricts object creation for a class to only one instance.</p>
+<p>Structural</p>
+<p>Structural patterns concern class and object composition. They use inheritance to compose interfaces and define ways to compose objects to obtain new functionality.</p>
+<p>Adapter allows classes with incompatible interfaces to work together by wrapping its own interface around that of an already existing class.</p>
+<p>Bridge decouples an abstraction from its implementation so that the two can vary independently.</p>
+<p>Composite composes zero-or-more similar objects so that they can be manipulated as one object.</p>
+<p>Decorator dynamically adds/overrides behavior in an existing method of an object.</p>
+<p>Facade provides a simplified interface to a large body of code.</p>
+<p>Flyweight reduces the cost of creating and manipulating a large number of similar objects.</p>
+<p>Proxy provides a placeholder for another object to control access, reduce cost, and reduce complexity.</p>
+<p>Behavioral</p>
+<p>Most behavioral design patterns are specifically concerned with communication between objects.</p>
+<p>Chain of responsibility delegates commands to a chain of processing objects.</p>
+<p>Command creates objects that encapsulate actions and parameters.</p>
+<p>Interpreter implements a specialized language.</p>
+<p>Iterator accesses the elements of an object sequentially without exposing its underlying representation.</p>
+<p>Mediator allows loose coupling between classes by being the only class that has detailed knowledge of their methods.</p>
+<p>Memento provides the ability to restore an object to its previous state (undo).</p>
+<p>Observer is a publish/subscribe pattern, which allows a number of observer objects to see an event.</p>
+<p>State allows an object to alter its behavior when its internal state changes.</p>
+<p>Strategy allows one of a family of algorithms to be selected on-the-fly at runtime.</p>
+<p>Template method defines the skeleton of an algorithm as an abstract class, allowing its subclasses to provide concrete behavior.</p>
+<p>Visitor separates an algorithm from an object structure by moving the hierarchy of methods into one object.</p>
+<p>Reception</p>
+<p>In 2005 the ACM SIGPLAN awarded that year's Programming Languages Achievement Award to the authors, in recognition of the impact of their work "on programming practice and programming language design".</p>
+<p>Criticism has been directed at the concept of software design patterns generally, and at Design Patterns specifically. A primary criticism of Design Patterns is that its patterns are simply workarounds for missing features in C++, replacing elegant abstract features with lengthy concrete patterns, essentially becoming a "human compiler". Paul Graham wrote:</p>
+<p>When I see patterns in my programs, I consider it a sign of trouble. The shape of a program should reflect only the problem it needs to solve. Any other regularity in the code is a sign, to me at least, that I'm using abstractions that aren't powerful enough-- often that I'm generating by hand the expansions of some macro that I need to write.</p>
+<p>Peter Norvig demonstrates that 16 out of the 23 patterns in Design Patterns are simplified or eliminated by language features in Lisp or Dylan. Related observations were made by Hannemann and Kiczales who implemented several of the 23 design patterns using an aspect-oriented programming language (AspectJ) and showed that code-level dependencies were removed from the implementations of 17 of the 23 design patterns and that aspect-oriented programming could simplify the implementations of design patterns.</p>
+<p>In an interview with InformIT in 2009, Erich Gamma stated that the book authors had a discussion in 2005 on how they would have refactored the book and concluded that they would have recategorized some patterns and added a few additional ones, such as extension object/interface, dependency injection, type object, and null object. Gamma wanted to remove the singleton pattern, but there was no consensus among the authors to do so.</p>
+<p>See also</p>
+<p>Software design pattern</p>
+<p>Enterprise Integration Patterns</p>
+<p>GRASP (object-oriented design)</p>
+<p>Pedagogical patterns</p>
+<p>== References ==</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
