@@ -1,0 +1,103 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Derivative-free optimization</title>
+        <link rel="stylesheet" href="wiki.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="intro">
+                <h2>Derivative-free optimization</h2>
+                <p>Derivative-free optimization (sometimes referred to as blackbox optimization) is a discipline in mathematical optimization that does not use derivative information in the classical sense to find optimal solutions: Sometimes information about the derivative of the objective function f is unavailable, unreliable or impractical to obtain. For example, f might be non-smooth, or time-consuming to evaluate, or in some way noisy, so that methods that rely on derivatives or approximate them via finite differences are of little use. The problem to find optimal points in such situations is referred to as derivative-free optimization, algorithms that do not use derivatives or finite differences are called derivative-free algorithms.</p>
+<p>Introduction</p>
+<p>The problem to be solved is to numerically optimize an objective function </p>
+<p>        f</p>
+<p>        :</p>
+<p>        A</p>
+<p>        →</p>
+<p>          R</p>
+<p>    {\displaystyle f\colon A\to \mathbb {R} }</p>
+<p> for some set </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> (usually </p>
+<p>        A</p>
+<p>        ⊂</p>
+<p>            R</p>
+<p>            n</p>
+<p>    {\displaystyle A\subset \mathbb {R} ^{n}}</p>
+<p>), i.e. find </p>
+<p>          x</p>
+<p>            0</p>
+<p>        ∈</p>
+<p>        A</p>
+<p>    {\displaystyle x_{0}\in A}</p>
+<p> such that without loss of generality </p>
+<p>        f</p>
+<p>        (</p>
+<p>          x</p>
+<p>            0</p>
+<p>        )</p>
+<p>        ≤</p>
+<p>        f</p>
+<p>        (</p>
+<p>        x</p>
+<p>        )</p>
+<p>    {\displaystyle f(x_{0})\leq f(x)}</p>
+<p> for all </p>
+<p>        x</p>
+<p>        ∈</p>
+<p>        A</p>
+<p>    {\displaystyle x\in A}</p>
+<p>.</p>
+<p>When applicable, a common approach is to iteratively improve a parameter guess by local hill-climbing in the objective function landscape. Derivative-based algorithms use derivative information of </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> to find a good search direction, since for example the gradient gives the direction of steepest ascent. Derivative-based optimization is efficient at finding local optima for continuous-domain smooth single-modal problems. However, they can have problems when e.g. </p>
+<p>        A</p>
+<p>    {\displaystyle A}</p>
+<p> is disconnected, or (mixed-)integer, or when </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> is expensive to evaluate, or is non-smooth, or noisy, so that (numeric approximations of) derivatives do not provide useful information. A slightly different problem is when </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p> is multi-modal, in which case local derivative-based methods only give local optima, but might miss the global one.</p>
+<p>In derivative-free optimization, various methods are employed to address these challenges using only function values of </p>
+<p>        f</p>
+<p>    {\displaystyle f}</p>
+<p>, but no derivatives. Some of these methods can be proved to discover optima, but some are rather metaheuristic since the problems are in general more difficult to solve compared to convex optimization. For these, the ambition is rather to efficiently find "good" parameter values which can be near-optimal given enough resources, but optimality guarantees can typically not be given. One should keep in mind that the challenges are diverse, so that one can usually not use one algorithm for all kinds of problems.</p>
+<p>Algorithms</p>
+<p>Notable derivative-free optimization algorithms include:</p>
+<p>Bayesian optimization</p>
+<p>Coordinate descent and adaptive coordinate descent</p>
+<p>Differential evolution, including multi-objective variants</p>
+<p>DONE</p>
+<p>Evolution strategies, Natural evolution strategies (CMA-ES, xNES, SNES)</p>
+<p>Genetic algorithms</p>
+<p>MCS algorithm</p>
+<p>Nelder-Mead method</p>
+<p>Particle swarm optimization</p>
+<p>Pattern search</p>
+<p>Powell's methods based on interpolation, e.g., COBYLA (PRIMA)</p>
+<p>Random search (including Luus–Jaakola)</p>
+<p>Simulated annealing</p>
+<p>Stochastic optimization</p>
+<p>Subgradient method</p>
+<p>various model-based algorithms like BOBYQA and ORBIT</p>
+<p>Benchmarks</p>
+<p>There exist benchmarks for blackbox optimization algorithms, see e.g. the bbob-biobj tests.</p>
+<p>See also</p>
+<p>Mathematical optimization</p>
+<p>References</p>
+<p>External links</p>
+<p>Audet, Charles; Kokkolaras, Michael (2016). "Blackbox and derivative-free optimization: theory, algorithms and applications". Optimization and Engineering. 17: 1–2. doi:10.1007/s11081-016-9307-4.</p>
+
+            </section>
+        </div>
+    </body>
+    </html>
+    
